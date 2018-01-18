@@ -1,0 +1,42 @@
+---
+title: OnCommand Cloud Manager and ONTAP Cloud Documentation
+tags: [cloud_manager]
+keywords: ontap cloud, amazon web services, aws, azure, netapp, oncommand, cloud manager, hybrid cloud, documentation, help
+summary: "OnCommand Cloud Manager enables you to deploy and manage ONTAP Cloud, which is a data management solution that provides protection, visibility, and control for your cloud-based workloads."
+sidebar: sidebar
+permalink: index.html
+---
+
+= OnCommand Cloud Manager and ONTAP Cloud Documentation
+:toc: macro
+:toclevels: 1
+:hardbreaks:
+:doctype: book
+:nofooter:
+:icons: font
+:linkattrs:
+:linkcss:
+:figure-caption!:
+:stylesheet: netapp.css
+:keywords: ontap cloud, amazon web services, aws, azure, netapp, oncommand, cloud manager, hybrid cloud, documentation, help
+
+== Get started
+
+Get Cloud Manager and ONTAP Cloud up and running quickly in AWS and Azure.
+
+// [square]
+// * link:getting_started_aws.html[Deploy ONTAP Cloud in AWS]
+// * link:getting_started_azure.html[Deploy ONTAP Cloud in Azure]
+
+image:media/aws_logo.png[link=getting_started_aws.html] image:media/azure-image.jpg[link=getting_started_azure.html]
+
+== Learn about Cloud Manager and ONTAP Cloud
+
+video::9I5QToO6ZpU[youtube, width=780, height=442]
+
+== Get help and connect with peers
+
+[square]
+* https://www.youtube.com/watch?v=9I5QToO6ZpU&list=PLdXI3bZJEw7lnoRo8FBKsX1zHbK8AQOoT[Cloud Manager and ONTAP Cloud videos^]
+* https://mysupport.netapp.com/cloudontap[NetApp ONTAP Cloud Support^]
+* http://community.netapp.com/hybrid-cloud[NetApp Community: Hybrid Cloud^]

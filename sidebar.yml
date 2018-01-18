@@ -1,0 +1,25 @@
+entries:
+- title: Cloud Manager Home
+  url: /index.html
+- title: Overview
+  entries:
+    - title: ONTAP Cloud overview
+      url: /overview_ontap_cloud.html
+    - title: OnCommand Cloud Manager overview
+      url: /overview_cloud_manager.html
+    - title: What's new in Cloud Manager
+      url: /whats_new.html
+- title: Getting started
+  entries:
+    - title: Getting started with ONTAP Cloud in AWS
+      url: /getting_started_aws.html
+    - title: Getting started with ONTAP Cloud in Azure
+      url: /getting_started_azure.html
+- title: Deploying and managing ONTAP Cloud systems
+  entries:
+    - title: Logging in to Cloud Manager
+      url: /logging_in.html
+- title: Managing data across your hybrid cloud
+  entries:
+    - title: Discovering and managing ONTAP clusters
+      url: /discovering_and_managing_ontap.html

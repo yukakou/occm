@@ -1,0 +1,75 @@
+---
+title: What's new in Cloud Manager
+tags: [cloud_manager]
+keywords: ontap cloud, amazon web services, aws, netapp, new, features, oncommand, cloud manager
+summary: "OnCommand Cloud Manager typically introduces a new release every month to bring you new features, enhancements, and bug fixes."
+sidebar: sidebar
+permalink: whats_new.html
+---
+
+= What's new in Cloud Manager
+:toc: macro
+:toclevels: 1
+:hardbreaks:
+:doctype: book
+:nofooter:
+:icons: font
+:linkattrs:
+:linkcss:
+:stylesheet: netapp.css
+:keywords: ontap cloud, amazon web services, aws, netapp, new, features, oncommand, cloud manager
+
+OnCommand Cloud Manager typically introduces a new release every month to bring you new features, enhancements, and bug fixes.
+
+toc::[]
+
+== Cloud Manager 3.4
+
+=== Cloud Manager is now integrated with NetApp Cloud Data Services
+
+NetApp Cloud Data Services is a suite of data-driven services that allows you to run critical applications in the cloud, create automated DR sites, back up your SaaS data, and effectively migrate and control data across multiple clouds leveraging NetApp's prominent data management expertise and technologies.
+
+Cloud Manager's integration with NetApp Cloud Data Services provides several benefits, including a simplified deployment experience, a single location to view and manage multiple Cloud Manager systems, and centralized user authentication.
+
+With centralized user authentication, you can use the same set of credentials across Cloud Manager systems and between Cloud Manager and other data services, such as Cloud Sync. It's also easy to reset your password if you forgot it.
+
+You can keep using your existing Cloud Manager systems as is, but if you would like to use this new experience, you can deploy a new Cloud Manager 3.4 system from NetApp Cloud Data Services and then discover any existing ONTAP Cloud systems from the new Cloud Manager system.
+
+== Cloud Manager 3.3.4
+
+Cloud Manager 3.3.4 includes bug fixes.
+
+== Cloud Manager 3.3.3
+
+=== Support for installing Cloud Manager in the IBM Cloud
+Cloud Manager software is now supported in the IBM Cloud. You can download the software from the NetApp Support Site and install it on an existing host. Cloud Manager must have networking connections to other networks so it can deploy ONTAP Cloud in AWS or Azure and so it can discover ONTAP clusters.
+
+=== Management of ONTAP in the IBM Cloud
+
+Cloud Manager supports discovery of ONTAP clusters in the IBM Cloud. After you discover an ONTAP cluster, you can provision storage create volumes on existing aggregates and replicate data to and from the cluster.
+
+=== Selection of IAM roles when launching ONTAP Cloud in AWS
+
+In previous releases, Cloud Manager automatically created the required IAM roles for ONTAP Cloud in AWS. Now when you launch a new ONTAP Cloud system, you can select existing roles in your account that meet policy requirements or you can let Cloud Manager create the roles for you. Click here to see policy requirements.
+
+== Cloud Manager 3.3.2
+
+=== ONTAP Cloud Notification Report
+
+Cloud Manager can now email users an ONTAP Cloud Notification Report. Cloud Manager sends the report when an action requires your approval and when Cloud Manager automatically performs capacity-related actions, such as purchasing additional disks. This feature is automatically enabled when upgrading to Cloud Manager 3.3.2. You can change the setting by editing Cloud Manager user accounts.
+
+=== Automatic ONTAP Cloud updates when creating new systems
+
+When you deploy new ONTAP Cloud systems, Cloud Manager can now automatically update the software during working environment creation if a newer Release Candidate, General Availability, or patch release is available for the selected version. For example, the update occurs if you select ONTAP Cloud 9.2 RC1 and ONTAP Cloud 9.2 GA is available. The update does not occur from one release to another—for example, from 9.2 to 9.3. This feature is automatically enabled when upgrading to Cloud Manager 3.3.2. You can change the setting in the Settings page.
+
+=== Support for ONTAP Cloud storage tiering in the AWS GovCloud (US) region
+
+You can now use EBS as a performance tier and AWS S3 as a capacity tier in the AWS GovCloud (US) region when choosing the disk type for ONTAP Cloud volumes.
+
+=== Azure virtual machine types supported with new ONTAP Cloud systems
+
+When you deploy new ONTAP Cloud systems in Azure, you can choose from several v2 virtual machine types. v1 VM types are no longer supported with new systems.
+
+=== Fixed issue
+
+The following known issue was fixed in this release: ONTAP Cloud upgrades might not complete properly

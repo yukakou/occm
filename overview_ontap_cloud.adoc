@@ -1,0 +1,31 @@
+---
+title: ONTAP Cloud overview
+tags: [cloud_manager]
+keywords: ontap cloud, ontap, overview, concepts, understanding, how, configurations
+summary: "ONTAP Cloud provides enterprise-class features for your cloud storage and gives you a universal storage platform that enables you to easily replicate data across your hybrid cloud."
+sidebar: sidebar
+permalink: overview_ontap_cloud.html
+---
+
+= ONTAP Cloud overview
+:hardbreaks:
+:doctype: book
+:nofooter:
+:icons: font
+:linkattrs:
+:linkcss:
+:stylesheet: netapp.css
+:keywords: ontap cloud, ontap, overview, concepts, understanding, how, configurations
+
+ONTAP Cloud provides enterprise-class features for your cloud storage and gives you a universal storage platform that enables you to easily replicate data across your hybrid cloud. You must launch and manage ONTAP Cloud using OnCommand Cloud Manager software.
+
+ONTAP Cloud provides the following:
+[square]
+* High availability (HA) to ensure enterprise reliability and continuous operations in case of failures in the cloud (AWS only)
+* Multiprotocol support (NFS, CIFS, and iSCSI)
+* Data protection and replication (NetApp Snapshot copies, SnapMirror technology, and SnapVault technology)
+* Storage efficiency (thin provisioning, data deduplication, and data compression)
+* Data-at-rest encryption using encryption keys that are stored on key managers under your control (AWS only)
+* Storage tiering to AWS S3 to reduce storage costs (AWS only)
+
+NOTE: The licenses for these features are included with ONTAP Cloud.
