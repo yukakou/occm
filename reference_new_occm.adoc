@@ -1,0 +1,86 @@
+---
+sidebar: sidebar
+permalink: reference_new_occm.html
+keywords: what's new, features, new
+---
+
+= What's new in Cloud Manager
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+OnCommand Cloud Manager typically introduces a new release every month to bring you new features, enhancements, and bug fixes.
+
+toc::[]
+
+== Cloud Manager 3.4.2
+
+Cloud Manager 3.4.2 includes several new features and enhancements.
+
+=== Enhancements to the Cloud Storage Automation Report
+
+The Cloud Storage Automation Report identifies several savings opportunities, including savings for unassociated EBS volumes and unassociated S3 snapshots. Starting in version 3.4.2, Cloud Manager can now delete those unassociated EBS volumes and S3 snapshots for you.
+
+=== Support for multiple AWS accounts when using an IAM role
+
+You can now choose the AWS account that you want to use when launching an ONTAP Cloud system. This feature is supported if you associated the Cloud Manager instance with an IAM role.
+
+Before you can choose a different AWS account, you must first delegate access across AWS accounts. For instructions, see the Cloud Manager documentation.
+
+=== Support for multiple Azure accounts
+
+You can now choose the Azure subscription that you want to use when deploying an ONTAP Cloud system. Before you can choose a different Azure account, you must first bind the Active Directory service principal to multiple Azure subscriptions.
+
+=== Security group selection for the HA mediator
+
+You can now choose an existing security group for the HA mediator when you deploy a new ONTAP Cloud HA system. Cloud Manager always created this security group in previous releases.
+
+== Cloud Manager 3.4.1
+
+Cloud Manager 3.4.1 includes several new features and enhancements.
+
+=== Cloud Storage Automation (Beta)
+
+Cloud Manager can now analyze your cloud storage to show you savings opportunities, data protection enhancements, and operations that can optimize the cloud storage associated with your AWS account. For example, Cloud Manager identifies savings opportunities for unassociated EBS volumes and snapshots, the EBS volumes that impact your recovery point objective, and EBS volumes that are running out of space.
+
+image:cloud_storage_automation.jpg[Screenshot that shows the Cloud Storage Automation Report.]
+
+=== Improved reliability when upgrading ONTAP Cloud systems
+
+Cloud Manager now leverages Amazon S3 Transfer Acceleration when upgrading ONTAP Cloud software. This enhancement improves the reliability of downloading the software image, which reduces the chances of timeouts and proxy failures.
+
+=== Resource group naming in Azure
+
+You can now specify the name of the Azure resource group that Cloud Manager creates for an ONTAP Cloud system when you create a new working environment.
+
+=== Support for Azure US Gov regions
+
+You can now deploy Cloud Manager and ONTAP Cloud BYOL in the following Azure regions:
+
+* US Gov Arizona
+* US Gov Texas
+* US Gov Virginia
+
+To deploy Cloud Manager in these regions, you must create a CentOS 7.3 virtual machine from the Azure Marketplace, download the Cloud Manager installer from the NetApp Support Site, and then install the software. After Cloud Manager is running, you can deploy ONTAP Cloud BYOL systems in the these regions just like any other region.
+
+=== Improvement when replicating data from on-premises ONTAP systems
+
+When you replicate data from an on-premises ONTAP system, Cloud Manager now associates the LIF to the default IPspace.
+
+== Cloud Manager 3.4
+
+Cloud Manager 3.4.1 includes a new feature.
+
+=== Cloud Manager is now integrated with NetApp Cloud Central
+
+NetApp Cloud Central is a suite of data-driven services that allows you to run critical applications in the cloud, create automated DR sites, back up your SaaS data, and effectively migrate and control data across multiple clouds leveraging NetApp's prominent data management expertise and technologies.
+
+Cloud Manager's integration with NetApp Cloud Central provides several benefits, including a simplified deployment experience, a single location to view and manage multiple Cloud Manager systems, and centralized user authentication.
+
+With centralized user authentication, you can use the same set of credentials across Cloud Manager systems and between Cloud Manager and other data services, such as Cloud Sync. It's also easy to reset your password if you forgot it.
+
+You can keep using your existing Cloud Manager systems as is, but if you would like to use this new experience, you can deploy a new Cloud Manager 3.4 system from NetApp Cloud Central and then discover any existing ONTAP Cloud systems from the new Cloud Manager system.
