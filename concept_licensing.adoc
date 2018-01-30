@@ -20,14 +20,14 @@ Each ONTAP Cloud BYOL system must have a license installed with an active subscr
 A tenant must be linked to a NetApp Support Site account so Cloud Manager can obtain licenses for ONTAP Cloud BYOL systems. If the credentials are not present, Cloud Manager prompts you to enter them when you create a new ONTAP Cloud BYOL working environment.
 
 [discrete]
-=== Why you should link a tenant to your NetApp Support Site account*
+=== Why you should link a tenant to your NetApp Support Site account
 
 Each time you launch an ONTAP Cloud BYOL system, Cloud Manager automatically downloads the license from NetApp and installs it on the ONTAP Cloud system.
 
 If Cloud Manager cannot access the license file over the secure Internet connection, you can obtain the file yourself and then manually upload the file to Cloud Manager.
 
 [discrete]
-=== License expiration*
+=== License expiration
 
 Cloud Manager warns you 30 days before a license is due to expire and again when the license expires. The following image shows a 30-day expiration warning:
 
