@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_additional_info.html
-keywords: community, forums, help, support, videos, policies, json, api, ontap
+keywords: community, forums, help, support, videos, policies, json, api, ontap, release notes, bugs, limitations, known issues
 ---
 
 = Where to get help and find more information
@@ -25,6 +25,13 @@ Download JSON files that include the permissions that Cloud Manager needs to per
 * https://library.netapp.com/ecmdocs/ECMLP2839258/html/index.html[Cloud Manager API Developer Guide^]
 +
 Read an overview of the APIs, examples of how to use them, and an API reference.
+
+* Release Notes
+** https://library.netapp.com/ecm/ecm_get_file/ECMLP2839255[Cloud Manager 3.4 Release Notes^]
+** https://library.netapp.com/ecm/ecm_get_file/ECMLP2839309[ONTAP Cloud 9.3 for AWS Release Notes^]
+** https://library.netapp.com/ecm/ecm_get_file/ECMLP2839308[ONTAP Cloud 9.3 for Azure Release Notes^]
++
+Read about known issues and limitations that affect Cloud Manager and ONTAP Cloud.
 
 * http://docs.netapp.com/ontap-9/index.jsp[ONTAP 9 Documentation Center^]
 +

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_new_occm.html
-keywords: what's new, features, new
+keywords: what's new, features, new, release notes, bugs, limitations, known issues
 ---
 
 = What's new in Cloud Manager
@@ -15,6 +15,8 @@ keywords: what's new, features, new
 
 OnCommand Cloud Manager typically introduces a new release every month to bring you new features, enhancements, and bug fixes.
 
+You can find information about known issues and limitations in the https://library.netapp.com/ecm/ecm_get_file/ECMLP2839255[Cloud Manager 3.4 Release Notes^].
+
 toc::[]
 
 == Cloud Manager 3.4.2
@@ -23,17 +25,39 @@ Cloud Manager 3.4.2 includes several new features and enhancements.
 
 === Enhancements to the Cloud Storage Automation Report
 
-The Cloud Storage Automation Report identifies several savings opportunities, including savings for unassociated EBS volumes and unassociated S3 snapshots. Starting in version 3.4.2, Cloud Manager can now delete those unassociated EBS volumes and S3 snapshots for you.
+The Cloud Storage Automation Report identifies several savings opportunities, including savings for unassociated EBS volumes and snapshots. Starting in version 3.4.2, Cloud Manager now shows you the list of unassociated volumes and snapshots and enables you to delete them.
+
+The following image shows how you can access the list of volumes and snapshots:
+
+image:screenshot_csa_update.png[Screen shot: Shows the "View List" button that is now available for Unattached EBS Volumes and Unassociated EBS Snapshots, which are available in the Operations section.]
+
+The following image shows an example of how you can delete unassociated EBS volumes:
+
+image:screenshot_csa_delete.png[Screen shot: Shows a table of 44 EBS volumes that you can delete.]
 
 === Support for multiple AWS accounts when using an IAM role
 
-You can now choose the AWS account that you want to use when launching an ONTAP Cloud system. This feature is supported if you associated the Cloud Manager instance with an IAM role.
+Cloud Manager now enables you to choose the AWS account to use when launching an ONTAP Cloud system:
 
-Before you can choose a different AWS account, you must first delegate access across AWS accounts. For instructions, see the Cloud Manager documentation.
+image:screenshot_aws_accounts.gif[Screen shot: Shows the link to select a different account in the Details and Credentials page.]
+
+This feature is supported if you associated the Cloud Manager instance with an IAM role.
+
+Before you can choose from multiple AWS accounts, you must first delegate access across those accounts.
+
+link:task_additional_setup.html#adding-additional-aws-accounts-to-cloud-manager[Adding additional AWS accounts to Cloud Manager]
 
 === Support for multiple Azure accounts
 
-You can now choose the Azure subscription that you want to use when deploying an ONTAP Cloud system. Before you can choose a different Azure account, you must first bind the Active Directory service principal to multiple Azure subscriptions.
+Cloud Manager now enables you to choose the Azure subscription to use when deploying an ONTAP Cloud system:
+
+image:screenshot_azure_subscriptions.gif[Screen shot: Shows the link to select a different subscription in the Details and Credentials page.]
+
+Before you can choose from multiple Azure subscriptions, you must first bind the Active Directory service principal to multiple Azure subscriptions.
+
+link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Granting Azure permissions to Cloud Manager]
+
+NOTE: This change is possible because Cloud Manager no longer associates user accounts with specific Azure subscriptions. Instead, Cloud Manager obtains the list of Azure subscriptions that are bound to the Active Directory service principal.
 
 === Security group selection for the HA mediator
 

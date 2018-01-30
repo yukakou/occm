@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_default_configs.html
-keywords: linux, user name, operating system, installation files, folder, log, logs, service, mysql, packages, linux,  svm, LIF, LIFs, backups, attributes, autosize, security style, space guarantee, unix permissions, NTFS, UNIX, boot, root, disks, aggr0, aggr1
+keywords: linux, user name, operating system, installation files, folder, log, logs, service, mysql, packages, linux,  svm, LIF, LIFs, backups, attributes, autosize, security style, space guarantee, unix permissions, NTFS, UNIX, boot, root, disks, aggr0, aggr1, svm, svms, storage virtual machine
 ---
 
 = Default configurations
@@ -58,9 +58,9 @@ Understanding how ONTAP Cloud is configured by default can help you set up and a
 
 * ONTAP Cloud is available as a single system in AWS and Microsoft Azure, and as an HA pair in AWS.
 
-* Each ONTAP Cloud system supports a single storage virtual machine (SVM). Cloud Manager creates this SVM when it launches an instance.
+* Each ONTAP Cloud system supports one data-serving storage virtual machine (SVM) and one or more SVMs used for disaster recovery.
 +
-NOTE: Although you can create another SVM from System Manager or the CLI, using multiple SVMs is not supported.
+Cloud Manager creates the data-serving SVM when it deploys an ONTAP Cloud system. While you can create another data-serving SVM from System Manager or the CLI, using multiple data-serving SVMs is not supported.
 
 * Several network interfaces are created by default:
 ** A cluster management LIF

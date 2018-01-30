@@ -18,7 +18,7 @@ You can view the cost associated with running ONTAP Cloud in AWS. The monthly co
 
 The AWS payer account must meet specific billing and cost requirements and your Cloud Manager account must be associated with the AWS cost S3 bucket.
 
-link: Setting up AWS billing and cost management for Cloud Manager
+link:task_setting_up_cloud_manager.html#setting-up-aws-billing-and-cost-management-for-cloud-manager[Setting up AWS billing and cost management for Cloud Manager]
 
 .About this task
 

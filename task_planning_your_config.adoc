@@ -6,6 +6,7 @@ keywords: license, disk, ebs, storage, size, write speed, volume usage, explore,
 
 = Planning your ONTAP Cloud configuration
 :toc: macro
+:toclevels: 1
 :hardbreaks:
 :nofooter:
 :icons: font
