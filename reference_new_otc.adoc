@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_new_otc.html
-keywords: what's new, features, new
+keywords: what's new, features, new, release notes, bugs, limitations, known issues
 ---
 
 = What's new in ONTAP Cloud
@@ -15,9 +15,13 @@ keywords: what's new, features, new
 
 New releases of ONTAP Cloud introduce new features, enhancements, and bug fixes.
 
+You can find information about known issues and limitations in the https://library.netapp.com/ecm/ecm_get_file/ECMLP2839309[ONTAP Cloud 9.3 for AWS Release Notes^] and https://library.netapp.com/ecm/ecm_get_file/ECMLP2839308[ONTAP Cloud 9.3 for Azure Release Notes^].
+
 // toc::[]
 
 == ONTAP Cloud 9.3
+
+ONTAP Cloud 9.3 includes several new features and enhancements.
 
 === ONTAP Cloud HA enhancements in AWS
 

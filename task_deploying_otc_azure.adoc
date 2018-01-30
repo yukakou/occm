@@ -56,7 +56,7 @@ NOTE: If Azure credentials were not specified for your Cloud Manager account, yo
 
 . On the ONTAP Cloud BYOL License page, specify whether you want to enter a license for this ONTAP Cloud system.
 +
-link:How licensing works for ONTAP Cloud BYOL
+link:concept_licensing.html[How licensing works for ONTAP Cloud BYOL]
 
 . On the Preconfigured Packages page, select one of the packages to quickly launch an ONTAP Cloud system, or click *Create my own configuration*.
 +
@@ -74,23 +74,23 @@ NOTE: If a newer Release Candidate, General Availability, or patch release is av
 +
 Credentials are required for BYOL instances.
 +
-link:Why you should link a tenant to your NetApp Support Site account
+link:concept_storage.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account]
 
 . On the Underlying storage resources page, choose either *Premium Storage* or *Standard Storage*.
 +
 The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
 +
-link:Choosing an Azure disk type
+link:task_planning_your_config.html#choosing-an-azure-disk-type[Choosing an Azure disk type]
 
 . On the Disk Size page, select the default disk size for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option.
 +
 You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-link:Choosing disk size
+link:task_planning_your_config.html#choosing-a-disk-size[Choosing disk size]
 
 . On the Write Speed page, choose *Normal* or *High*.
 +
-link:Choosing a write speed
+link:task_planning_your_config.html#choosing-a-write-speed[Choosing a write speed]
 
 . On the Create Volume page, enter details for the new volume, and then click *Continue*.
 +
@@ -111,7 +111,8 @@ Some of the fields in this page are self-explanatory. The following table descri
 
 | Volume Protection | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
 
-| Usage Profile | Usage profiles define the NetApp storage efficiency features that are enabled for a volume. link: Understanding volume usage profiles.
+| Usage Profile | Usage profiles define the NetApp storage efficiency features that are enabled for a volume.
+link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles]
 |===
 +
 The following image shows the Volume page filled out for the CIFS protocol:
@@ -163,7 +164,7 @@ For additional help, go to https://mysupport.netapp.com/cloudontap[NetApp ONTAP 
 +
 Support from NetApp is included with your ONTAP Cloud system. To activate support, you must first register the system with NetApp.
 +
-link:Registering ONTAP Cloud instances
+link:task_registering.html[Registering ONTAP Cloud instances]
 
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 

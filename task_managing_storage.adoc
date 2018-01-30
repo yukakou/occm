@@ -251,7 +251,7 @@ You can move one or more volumes to another aggregate to avoid capacity issues.
 
 You can follow the steps in this task to correct the following Action Required message:
 
-Moving two or more volumes is necessary to avoid capacity issues; however, Cloud Manager cannot perform this action for you.
+`Moving two or more volumes is necessary to avoid capacity issues; however, Cloud Manager cannot perform this action for you.`
 
 .Steps
 

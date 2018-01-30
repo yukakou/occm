@@ -18,15 +18,9 @@ Getting started includes preparing your AWS environment, launching the OnCommand
 
 toc::[]
 
-== Preparing your AWS environment
+== Verifying your networking
 
-Before you can deploy Cloud Manager and ONTAP Cloud in AWS, you need to prepare your networking, attach an IAM policy to an IAM user, and subscribe to ONTAP Cloud from the AWS Marketplace.
-
-.Steps
-
-. Choose the AWS VPC and subnets in which you want to launch the Cloud Manager instance and ONTAP Cloud instances.
-+
-At a minimum, your networking must meet the following requirements:
+You must choose the AWS VPC and subnets in which you want to launch Cloud Manager and ONTAP Cloud. At a minimum, your networking must meet the following requirements:
 
 * The target VPC must have one or more subnets that have outbound internet access.
 
@@ -40,43 +34,51 @@ https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/SetUpVPNConnections.html[
 +
 https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html[AWS Documentation: VPC Endpoints^]
 
-+
 For additional information, see link:reference_networking_aws.html[AWS networking requirements].
+
 The following sample VPC configuration shows public and private subnets and a NAT device that enables outbound internet access for the private subnet:
 image:diagram_vpc_public_and_private.png[This illustration shows Cloud Manager and a NAT instance running in a public subnet, and ONTAP Cloud instances running in a private subnet.]
 
-. Grant a specific set of AWS permissions to the IAM user that you plan to use when deploying Cloud Manager from the NetApp Cloud Central:
+== Subscribing to ONTAP Cloud in AWS
 
-.. From the AWS IAM console, create your own policy by copying and pasting the contents of the https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Central IAM policy^].
+You must subscribe to ONTAP Cloud from the AWS Marketplace so you can launch ONTAP Cloud in AWS.
 
-.. Attach the policy that you just created to the IAM user.
-+
-The following video shows this process.
-+
-video::video_setup_portal_policy.mp4[width=848, height=480]
+.Steps
 
-. If you want to use Amazon encryption with ONTAP Cloud, then you must set up the AWS Key Management Service (KMS):
-
-* An active CMK must exist in your account. The CMK can be an AWS-managed CMK or a customer-managed CMK.
-
-* You must add the IAM role associated with Cloud Manager to the list of key users for a CMK. This gives Cloud Manager permissions to use the CMK with ONTAP Cloud.
-
-. Subscribe to ONTAP Cloud in AWS:
-
-.. Go to the AWS Marketplace pages for ONTAP Cloud:
+. Go to the AWS Marketplace pages for ONTAP Cloud:
 
 * http://aws.amazon.com/marketplace/pp/B011KEZ734[ONTAP Cloud for AWS (PayGo)^]
 * http://aws.amazon.com/marketplace/pp/B00OMA46T0[ONTAP Cloud for AWS (BYOL)^]
 * http://aws.amazon.com/marketplace/pp/B01H4LVJ84[ONTAP Cloud for AWS - High Availability (PayGo)^]
 * http://aws.amazon.com/marketplace/pp/B01H4LVJUC[ONTAP Cloud for AWS - High Availability (BYOL)^]
 
-.. Click *Continue*, review the terms, and then click *Accept Software Terms*.
+. Click *Continue*, review the terms, and then click *Accept Software Terms*.
 +
 IMPORTANT: You must not launch ONTAP Cloud instances from the AWS Marketplace. You must use Cloud Manager to launch ONTAP Cloud.
++
+NOTE: Subscribing is not required to launch ONTAP Cloud in the AWS GovCloud (US) region.
 
-.Result
+== Granting AWS permissions
 
-Your environment is ready to deploy Cloud Manager and ONTAP Cloud.
+When you launch Cloud Manager from NetApp Cloud Central, you must provide AWS credentials for a user that has specific AWS permissions. Cloud Central needs the credentials and permissions to launch the Cloud Manager instance on your behalf.
+
+.About this task
+
+Providing the credentials is secure and private—NetApp does not save the credentials. It uses them only to launch the instance.
+
+When you launch Cloud Manager, NetApp Cloud Central creates an IAM policy and an IAM role for the instance. This gives Cloud Manager permissions to deploy and manage ONTAP Cloud in AWS.
+
+link:reference_permissions.html[AWS and Azure permissions for Cloud Manager]
+
+.Steps
+
+. From the AWS IAM console, create your own policy by copying and pasting the contents of the https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Central IAM policy^].
+
+. Attach the policy that you just created to the IAM user.
++
+The following video shows this process.
++
+video::video_setup_portal_policy.mp4[width=848, height=480]
 
 == Launching Cloud Manager in AWS
 

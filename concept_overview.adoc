@@ -28,7 +28,7 @@ You can run Cloud Manager in the cloud or in your network—it just needs a conn
 
 image:diagram_cloud_manager_overview.png[Shows the components that Cloud Manager can manage across your hybrid cloud: an ONTAP Cloud system serving EBS storage to EC2 compute, an ONTAP Cloud system serving Azure storage to virtual machines, and data replication across a hybrid cloud and multi-cloud environment.]
 
-https://www.netapp.com/us/products/data-infrastructure-management/cloud-manager.aspx[Learn more^]
+https://www.netapp.com/us/products/data-infrastructure-management/cloud-manager.aspx[Learn more about Cloud Manager^]
 
 == ONTAP Cloud
 
@@ -56,4 +56,6 @@ Secure your data at rest with advanced data encryption (AWS only).
 
 NOTE: The licenses for these features are included with ONTAP Cloud.
 
-https://www.netapp.com/us/cloud/ontap-cloud-native-product-details[Learn more^]
+link:task_planning_your_config.html#choosing-a-license-type[View supported ONTAP Cloud configurations]
+
+https://www.netapp.com/us/cloud/ontap-cloud-native-product-details[Learn more about ONTAP Cloud^]

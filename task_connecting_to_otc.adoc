@@ -70,13 +70,11 @@ image:screenshot_mgmt_ip.gif[Screen shot: Shows the Information page, which prov
 +
 The following image shows an example using PuTTY:
 +
-image:screenshot_cli.gif[Screen shot: Shows the PuTTY application in which admin@192.168.111.5 is entered in the Host Name field, 22 is entered in the Port field, and SSH is selected as the Connection type.]
+image:screenshot_cli2.gif[Screen shot: Shows the destination admin@192.168.11.5 on port 22.]
 
 . At the login prompt, enter the password for the admin account.
 +
 *Example*
 +
-....
  Password: ********
  COT2::>
-....

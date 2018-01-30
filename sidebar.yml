@@ -7,6 +7,8 @@ entries:
         url: /task_getting_started_aws.html
       - title: Getting started in Azure
         url: /task_getting_started_azure.html
+      - title: Setting up Cloud Manager
+        url: /task_setting_up_cloud_manager.html        
       - title: Detailed networking requirements
         entries:
           - title: AWS networking requirements
@@ -29,8 +31,6 @@ entries:
             url: /task_installing_azure_gov.html
           - title: Installing Cloud Manager in Azure Germany
             url: /task_installing_azure_germany.html
-      - title: Additional setup options
-        url: /task_additional_setup.html
   - title: Concepts
     entries:
       - title: Product overview
@@ -89,6 +89,8 @@ entries:
         url: /task_syncing_s3.html
   - title: Provisioning NFS volumes
     entries:
+      - title: Renewing the HTTPS certificate
+        url: /task_renewing_https_cert.html
       - title: Changing to the Volume View
         url: /task_changing_volume_view.html
       - title: Creating and mounting NFS volumes
@@ -110,7 +112,7 @@ entries:
       - title: Managing encryption settings
         url: /task_managing_encryption.html
       - title: Renewing the HTTPS certificate
-        url: /task_renewing_https_cert.html
+        url: /task_renewing_cert.html
       - title: Uninstalling Cloud Manager
         url: /task_uninstalling.html
   - title: Reference
