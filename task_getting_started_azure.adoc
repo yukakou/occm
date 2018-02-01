@@ -166,7 +166,7 @@ Just like the application ID and application key, you must enter the Active Dire
 
 .Result
 
-You should now have an Active Directory service principal and you should have copied the application ID, the application key, and the Active Directory tenant ID.
+You should now have an Active Directory service principal and you should have copied the application ID, the application key, and the Active Directory tenant ID. You need to enter this information in Cloud Manager when you set up user accounts.
 
 === Assigning the Cloud Manager Operator role to the service principal
 

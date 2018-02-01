@@ -3,12 +3,14 @@ entries:
     url: /index.html
   - title: Getting started
     entries:
+      - title: Overview
+        url: /reference_deployment_overview.html
       - title: Getting started in AWS
         url: /task_getting_started_aws.html
       - title: Getting started in Azure
         url: /task_getting_started_azure.html
       - title: Setting up Cloud Manager
-        url: /task_setting_up_cloud_manager.html        
+        url: /task_setting_up_cloud_manager.html
       - title: Detailed networking requirements
         entries:
           - title: AWS networking requirements

@@ -18,6 +18,8 @@ The Azure Marketplace is not available in the Azure Germany region, so you must 
 
 .Steps
 
+. link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Grant Azure permissions to Cloud Manager].
+
 . Review link:reference_cloud_mgr_reqs.html[Cloud Manager host requirements].
 
 . Download and install Cloud Manager.
