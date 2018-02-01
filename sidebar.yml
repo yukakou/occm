@@ -91,8 +91,6 @@ entries:
         url: /task_syncing_s3.html
   - title: Provisioning NFS volumes
     entries:
-      - title: Renewing the HTTPS certificate
-        url: /task_renewing_https_cert.html
       - title: Changing to the Volume View
         url: /task_changing_volume_view.html
       - title: Creating and mounting NFS volumes
