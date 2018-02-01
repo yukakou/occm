@@ -22,15 +22,15 @@ For a list of supported Azure US Gov regions, see the http://mysupport.netapp.co
 
 .Steps
 
+. link:reference_networking_azure.html[Review networking requirements for Azure].
+
 . link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Grant Azure permissions to Cloud Manager].
 
 . Create a CentOS 7.3 virtual machine from the Azure Marketplace.
 +
 While Cloud Manager supports other operating systems, it only supports CentOS 7.3 in the Azure US Gov regions.
 
-. Download and install Cloud Manager.
-+
-link:task_installing_linux.html[Installing Cloud Manager on an existing Linux host]
+. link:task_installing_linux.html[Download and install Cloud Manager].
 
 .After you finish
 
