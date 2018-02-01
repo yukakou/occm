@@ -14,7 +14,6 @@ keywords: install, installation, installing, linux, installer, software
 :imagesdir: ./media/
 
 [.lead]
-
 If you want to run the Cloud Manager software on an existing host, you can download and install the software on a Linux host in your network or in the cloud.
 
 .About this task
@@ -27,15 +26,17 @@ If you receive a message that installing the awscli failed, you can safely ignor
 
 .Steps
 
+. Review networking requirements for your cloud service provider:
+
+* link:reference_networking_aws.html[AWS networking requirements]
+* link:reference_networking_azure.html[Azure networking requirements]
+* link:reference_networking_ibm.html[IBM Cloud networking requirements]
+
 . Set up permissions for Cloud Manager:
 
-.. If you want to deploy ONTAP Cloud systems in AWS, set up an IAM role that includes the required permissions.
-+
-link:task_granting_aws_permissions.html[Granting permissions when Cloud Manager is not launched from Cloud Central]
+.. If you want to deploy ONTAP Cloud systems in AWS, link:task_granting_aws_permissions.html[set up an IAM role that includes the required permissions].
 
-.. If you want to deploy ONTAP Cloud systems in Azure, create and set up a service principal in Azure Active Directory.
-+
-link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Granting Azure permissions to Cloud Manager]
+.. If you want to deploy ONTAP Cloud systems in Azure, link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[create and set up a service principal in Azure Active Directory].
 
 . Review link:reference_cloud_mgr_reqs.html[Cloud Manager host requirements].
 

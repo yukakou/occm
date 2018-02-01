@@ -18,11 +18,13 @@ The Azure Marketplace is not available in the Azure Germany region, so you must 
 
 .Steps
 
-. Review link:reference_cloud_mgr_reqs.html[Cloud Manager host requirements].
+. link:reference_networking_azure.html[Review networking requirements for Azure].
 
-. Download and install Cloud Manager.
-+
-link:task_installing_linux.html[Installing Cloud Manager on an existing Linux host]
+. link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Grant Azure permissions to Cloud Manager].
+
+. link:reference_cloud_mgr_reqs.html[Review Cloud Manager host requirements].
+
+. link:task_installing_linux.html[Download and install Cloud Manager].
 
 .After you finish
 

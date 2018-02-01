@@ -25,13 +25,13 @@ Cloud Manager 3.4.2 includes several new features and enhancements.
 
 === Enhancements to the Cloud Storage Automation Report
 
-The Cloud Storage Automation Report identifies several savings opportunities, including savings for unassociated EBS volumes and snapshots. Starting in version 3.4.2, Cloud Manager now shows you the list of unassociated volumes and snapshots and enables you to delete them.
+The Cloud Storage Automation Report identifies several savings opportunities, including savings for unattached EBS volumes and unassociated snapshots. Starting in version 3.4.2, Cloud Manager now shows you the list of those volumes and snapshots and enables you to delete them.
 
-The following image shows how you can access the list of volumes and snapshots:
+The following image shows how you can access the list of unattached volumes and unassociated snapshots:
 
 image:screenshot_csa_update.png[Screen shot: Shows the "View List" button that is now available for Unattached EBS Volumes and Unassociated EBS Snapshots, which are available in the Operations section.]
 
-The following image shows an example of how you can delete unassociated EBS volumes:
+The following image shows an example of how you can delete unattached EBS volumes:
 
 image:screenshot_csa_delete.png[Screen shot: Shows a table of 44 EBS volumes that you can delete.]
 

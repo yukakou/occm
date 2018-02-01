@@ -3,12 +3,14 @@ entries:
     url: /index.html
   - title: Getting started
     entries:
+      - title: Overview
+        url: /reference_deployment_overview.html
       - title: Getting started in AWS
         url: /task_getting_started_aws.html
       - title: Getting started in Azure
         url: /task_getting_started_azure.html
       - title: Setting up Cloud Manager
-        url: /task_setting_up_cloud_manager.html        
+        url: /task_setting_up_cloud_manager.html
       - title: Detailed networking requirements
         entries:
           - title: AWS networking requirements
@@ -89,8 +91,6 @@ entries:
         url: /task_syncing_s3.html
   - title: Provisioning NFS volumes
     entries:
-      - title: Renewing the HTTPS certificate
-        url: /task_renewing_https_cert.html
       - title: Changing to the Volume View
         url: /task_changing_volume_view.html
       - title: Creating and mounting NFS volumes
