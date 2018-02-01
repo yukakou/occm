@@ -15,7 +15,7 @@ keywords: volumes, aggregates, managing, cloning, editing, CIFS server, edit, fl
 
 [.lead]
 
-Cloud Manager enables you to manage volumes, aggregates, CIFS servers, and prompts you to move volumes to avoid capacity issues.
+Cloud Manager enables you to manage volumes, aggregates, and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
 
 toc::[]
 

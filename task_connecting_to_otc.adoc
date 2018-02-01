@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_connecting_to_otc.html
-keywords: system manager, connecting, cli, command, command line, connect
+keywords: system manager, connecting, cli, command, command line, connect, shell, interface
 ---
 
 = Connecting to ONTAP Cloud systems
@@ -24,7 +24,7 @@ You might need to perform some ONTAP Cloud tasks from OnCommand System Manager, 
 
 The computer from which you are accessing Cloud Manager must have a network connection to ONTAP Cloud. For example, you might need to log in to Cloud Manager from a jump host in AWS or Azure.
 
-NOTE: When deployed in multiple AZs, ONTAP Cloud HA configurations use a floating IP address for the cluster management interface, which means external routing is not available. You must connect from a host that is part of the same routing domain.
+NOTE: When deployed in multiple AWS Availability Zones, ONTAP Cloud HA configurations use a floating IP address for the cluster management interface, which means external routing is not available. You must connect from a host that is part of the same routing domain.
 
 .Steps
 

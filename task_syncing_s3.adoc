@@ -14,7 +14,7 @@ keywords: sync, data, s3, cloud sync, bucket, service
 :imagesdir: ./media/
 
 [.lead]
-You can sync data to an AWS S3 bucket by integrating a working environment with the NetApp Data Fabric Cloud Sync service. You can then use the synced data as a secondary copy or for data processing using AWS services like EMR and Redshift.
+You can sync data to an AWS S3 bucket by integrating a working environment with https://www.netapp.com/us/cloud/data-sync-saas-product-details[NetApp Cloud Sync^]. You can then use the synced data as a secondary copy or for data processing using AWS services like EMR and Redshift.
 
 toc::[]
 

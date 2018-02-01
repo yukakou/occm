@@ -12,7 +12,7 @@ keywords: logging in, log in, sign in, signing in, cloud data services
 :imagesdir: ./media/
 
 [.lead]
-You can log in to Cloud Manager from any web browser that has a connection to the Cloud Manager system. For new Cloud Manager 3.4 systems and later, you must have a NetApp Cloud Central user account to log in.
+You can log in to Cloud Manager from any web browser that has a connection to the Cloud Manager system. For new Cloud Manager 3.4 systems and later, you must have a https://cloud.netapp.com[NetApp Cloud Central^] user account to log in.
 
 .Steps
 
