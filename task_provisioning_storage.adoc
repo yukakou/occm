@@ -161,16 +161,16 @@ link:task_provisioning_storage.html#creating-aggregates[Creating aggregates]
 
 .About this task
 
-These steps describe how to use System Manager for ONTAP Cloud 9.0 and later.
+These steps describe how to use System Manager for ONTAP Cloud 9.3 and later.
 
 .Steps
 
 . Log in to System Manager.
 +
 link:task_connecting_to_otc.html[Connecting to ONTAP Cloud systems]
-. Click *LUNs*.
+. Click *Storage > LUNs*.
 
-. Click *Create* and follow the prompts in the Create LUN wizard to create the LUN.
+. Click *Create* and follow the prompts to create the LUN.
 
 . Connect to the LUN from your hosts.
 +
