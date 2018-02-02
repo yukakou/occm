@@ -20,4 +20,4 @@ before_install:
 - sed -i 's/\/jekyll/'$JEKYLL_BASEURL'/g' ./_config.yml
 script:
 - bundle exec rake deploy
-- echo "Done"
+- echo "Done 1"
