@@ -148,7 +148,7 @@ a|
 * DS13_v2
 * DS14_v2
 
-| Raw capacity limit | 2 TB | 10 TB 2+| 248 TB
+| Raw capacity limit | 2 TB | 10 TB 2+| 252 TB
 
 | Term 3+| Hourly | 12 months
 
@@ -156,7 +156,7 @@ a|
 
 Notes:
 
-. The actual maximum capacity may be less because of virtual machine limits: 56 TB for DS3, 120 TB for DS4 and DS13, and 248 TB for DS5 and DS14.
+. The actual maximum capacity may be less because of virtual machine limits: 60 TB for DS3, 124 TB for DS4 and DS13, and 252 TB for DS5 and DS14.
 
 . For Azure region support, see the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^].
 
