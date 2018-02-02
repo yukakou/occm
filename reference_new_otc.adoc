@@ -43,7 +43,7 @@ NOTE: Write performance enhancements are not supported when using the DS3_v2 vir
 
 === Increased capacity limit for ONTAP Cloud Premium and BYOL in Azure
 
-The capacity limit for ONTAP Cloud Premium and ONTAP Cloud BYOL has doubled to 248 TB when using the DS5_v2 or DS14_v2 virtual machine types.
+The capacity limit for ONTAP Cloud Premium and ONTAP Cloud BYOL has doubled to 252 TB when using the DS5_v2 or DS14_v2 virtual machine types.
 
 NOTE: This change is possible due to an increase in the number of disks available per Azure virtual machine. It does not change the maximum capacity per aggregate.
 

@@ -72,7 +72,7 @@ https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/SetUpVPNConnections.html[
 Connection to key managers::
 If you want to use the ONTAP Cloud data encryption feature, ONTAP Cloud instances must have a connection to one or more key managers that are either in AWS or in your network.
 +
-link:task_additional_setup.html#setting-up-ontap-cloud-encryption[Setting up ONTAP Cloud encryption]
+link:task_setting_up_cloud_manager.html#setting-up-ontap-cloud-encryption[Setting up ONTAP Cloud encryption]
 
 DNS and Active Directory for CIFS::
 If you want to provision CIFS storage, you must set up DNS and Active Directory in AWS or extend your on-premises setup to AWS.

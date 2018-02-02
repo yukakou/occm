@@ -45,7 +45,7 @@ This feature is supported if you associated the Cloud Manager instance with an I
 
 Before you can choose from multiple AWS accounts, you must first delegate access across those accounts.
 
-link:task_additional_setup.html#adding-additional-aws-accounts-to-cloud-manager[Adding additional AWS accounts to Cloud Manager]
+link:task_setting_up_cloud_manager.html#adding-additional-aws-accounts-to-cloud-manager[Adding additional AWS accounts to Cloud Manager]
 
 === Support for multiple Azure accounts
 
@@ -71,7 +71,7 @@ Cloud Manager 3.4.1 includes several new features and enhancements.
 
 Cloud Manager can now analyze your cloud storage to show you savings opportunities, data protection enhancements, and operations that can optimize the cloud storage associated with your AWS account. For example, Cloud Manager identifies savings opportunities for unassociated EBS volumes and snapshots, the EBS volumes that impact your recovery point objective, and EBS volumes that are running out of space.
 
-image:cloud_storage_automation.jpg[Screenshot that shows the Cloud Storage Automation Report.]
+image:screenshot_csa.jpg[Screenshot that shows the Cloud Storage Automation Report.]
 
 === Improved reliability when upgrading ONTAP Cloud systems
 

@@ -28,5 +28,3 @@ Password and user information must be changed in the https://cloud.netapp.com[Ne
 image:screenshot_edit_user.gif[Screen shot: Shows the menu to edit a user account. The menu is located next to the user name.]
 
 . In the User Settings page, modify the user account.
-+
-Go to the https://cloud.netapp.com[NetApp Cloud Central^] if you want to change your password or user information.

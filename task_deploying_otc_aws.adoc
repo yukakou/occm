@@ -54,7 +54,7 @@ Some of the fields in this page are self-explanatory. The following table descri
 | Credentials | These are the credentials for the ONTAP Cloud cluster admin account. You can use these credentials to connect to ONTAP Cloud through OnCommand System Manager or its CLI.
 | Name | Cloud Manager uses the working environment name to name both the ONTAP Cloud system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 | AWS tags | AWS tags are metadata for your AWS resources. Cloud Manager adds the tags to the ONTAP Cloud instance and each AWS resource associated with the instance.
-+
+
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^]
 |===
 +
@@ -72,7 +72,7 @@ link:concept_security.html#data-encryption-in-aws[Data encryption in AWS]
 +
 For AWS-managed encryption, you can choose a different master key if more than one key is available in your account.
 +
-NOTE: If Cloud Manager was not set up for encryption, the Cloud Manager Admin must set it up. See link:task_additional_setup.html#setting-up-ontap-cloud-encryption[Setting up Cloud Manager for ONTAP Cloud encryption in AWS].
+NOTE: If Cloud Manager was not set up for encryption, the Cloud Manager Admin must set it up. See link:task_setting_up_cloud_manager.html#setting-up-ontap-cloud-encryption[Setting up ONTAP Cloud encryption].
 
 . If you chose ONTAP Cloud encryption, select one to four key managers, select the certificate of the CA that signed the server certificate for each key manager, and then click *Continue*.
 +
@@ -80,7 +80,7 @@ NOTE: The key manager CA certificate is for all selected key managers, which mea
 
 . On the ONTAP Cloud BYOL License page, specify whether you want to enter a license for this ONTAP Cloud system.
 +
-link:concept_licensing.html[How licensing works for ONTAP Cloud BYOL]
+To understand how licenses work, see link:concept_licensing.html[Licensing].
 
 . On the Preconfigured Packages page, select one of the packages to quickly launch an ONTAP Cloud system, or click *Create my own configuration*.
 +
@@ -275,7 +275,7 @@ link:concept_security.html#data-encryption-in-aws[Data encryption in AWS]
 +
 For AWS-managed encryption, you can choose a different master key if more than one key is available in your account.
 +
-NOTE: If Cloud Manager was not set up for encryption, the Cloud Manager Admin must set it up. See link:task_additional_setup.html#setting-up-ontap-cloud-encryption[Setting up Cloud Manager for ONTAP Cloud encryption in AWS].
+NOTE: If Cloud Manager was not set up for encryption, the Cloud Manager Admin must set it up. See link:task_setting_up_cloud_manager.html#setting-up-ontap-cloud-encryption[Setting up ONTAP Cloud encryption].
 
 . If you selected ONTAP Cloud encryption, select one to four key managers, select the certificate of the CA that signed the server certificate for each key manager, and then click *Continue*.
 +
@@ -283,7 +283,7 @@ NOTE: The key manager CA certificate is for all selected key managers, which mea
 
 . On the ONTAP Cloud BYOL License page, specify whether you want to enter a license for this ONTAP Cloud system.
 +
-link:concept_licensing.html[How licensing works for ONTAP Cloud BYOL]
+To understand how licenses work, see link:concept_licensing.html[Licensing].
 
 . On the Preconfigured Packages page, select one of the packages to quickly launch an ONTAP Cloud system, or click *Create my own configuration*.
 +

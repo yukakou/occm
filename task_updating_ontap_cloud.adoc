@@ -54,7 +54,7 @@ If an ONTAP Cloud system has active SnapMirror relationships, it is best to susp
 
 .About this task
 
-These steps describe how to use System Manager for ONTAP Cloud 9.0 and later.
+These steps describe how to use System Manager for ONTAP Cloud 9.3 and later.
 
 .Steps
 
@@ -72,7 +72,7 @@ ONTAP Cloud aggregates must be online before you update the software. Aggregates
 
 .About this task
 
-These steps describe how to use System Manager for ONTAP Cloud 9.0 and later.
+These steps describe how to use System Manager for ONTAP Cloud 9.3 and later.
 
 .Steps
 
@@ -88,9 +88,9 @@ image:screenshot_aggr_state.gif[Screen shot: Shows the State field when you view
 +
 link:task_connecting_to_otc.html[Connecting to OnCommand System Manager]
 
-.. Click *Hardware and Diagnostics > Aggregates*.
+.. Click *Storage > Aggregates & Disks > Aggregates*.
 
-.. Select the aggregate, and then click *Status > Online*.
+.. Select the aggregate, and then click *More Actions > Status > Online*.
 
 == Upgrading ONTAP Cloud to the latest version
 
