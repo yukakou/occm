@@ -54,6 +54,11 @@ a|
 .. Select a volume, and then click *Restore from Snapshot copy*.
 .. Select a Snapshot copy, enter a name for the new volume, and then click *Restore*.
 
+| Create a Snapshot copy on demand
+a|
+.. Select a volume, and then click *Create a Snapshot copy*.
+.. Change the name, if needed, and then click *Create*.
+
 | Get the NFS mount command
 a|
 .. Select a volume, and then click *Mount Command*.
