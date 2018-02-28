@@ -19,6 +19,12 @@ You can find information about known issues and limitations in the https://libra
 
 toc::[]
 
+== Cloud Manager 3.4.3
+
+You can now create ONTAP Snapshot copies on demand.
+
+image:screenshot_create_snapshot.gif[Screenshot: Shows the "Create a Snapshot copy" action which is available when you select a Volume within a working environment.]
+
 == Cloud Manager 3.4.2
 
 Cloud Manager 3.4.2 includes several new features and enhancements.
