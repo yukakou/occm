@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_planning_your_config.html
-keywords: license, disk, ebs, storage, size, write speed, volume usage, explore, standard, premium, ec2, capacity, limit, configurations, virtual machine, vm, regions, supported disks, types, general purpose, gp2 provisioned IOPS, piops, throughput optimized, cold, SSD, HDD, st1, sc1, tiering, performance tier, capacity tier, s3, premium storage, standard storage, thin provisioning, deduplication, compression
+keywords: license, disk, ebs, storage, size, write speed, volume usage, explore, standard, premium, ec2, capacity, limit, configurations, virtual machine, vm, regions, supported disks, types, general purpose, gp2 provisioned IOPS, piops, throughput optimized, cold, SSD, HDD, st1, sc1, tiering, performance tier, capacity tier, s3, premium storage, standard storage, thin provisioning, deduplication, compression, tier, s3 endpoint, storage tier, storage tiering
 ---
 
 = Planning your ONTAP Cloud configuration
@@ -212,7 +212,7 @@ NOTE: You do not need to install a feature license to enable storage tiering.
 
 Before you choose a tiered storage configuration, you must ensure that ONTAP Cloud has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service.
 
-When you create the VPC Endpoint, be sure to select the region, VPC, and VPC route table that corresponds to the ONTAP Cloud instance.
+For details, see link:reference_networking_aws.html[AWS networking requirements].
 
 === Configurations supported with storage tiering
 
