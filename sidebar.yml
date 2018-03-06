@@ -49,6 +49,8 @@ entries:
         url: /concept_licensing.html
       - title: Performance
         url: /concept_performance.html
+      - title: Cloud Storage Automation
+        url: /concept_storage_automation.html
   - title: Deploying ONTAP Cloud
     entries:
       - title: Before you begin
