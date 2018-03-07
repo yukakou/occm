@@ -41,6 +41,8 @@ entries:
         url: /concept_cloud_central.html
       - title: Storage
         url: /concept_storage.html
+      - title: Storage management
+        url: /concept_storage_management.html
       - title: High-availability pairs
         url: /concept_ha.html
       - title: Security

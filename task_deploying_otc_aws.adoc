@@ -98,7 +98,7 @@ NOTE: If a newer Release Candidate, General Availability, or patch release is av
 +
 Credentials are required for BYOL instances.
 +
-link:concept_storage.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account]
+link:concept_storage_management.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account]
 
 . On the Underlying storage resources page, choose a single storage type or a tiered storage configuration.
 +
@@ -301,7 +301,7 @@ NOTE: If a newer Release Candidate, General Availability, or patch release is av
 +
 Credentials are required for BYOL instances.
 +
-link:concept_storage.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account]
+link:concept_storage_management.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account]
 
 . On the Underlying storage resources page, choose a single storage type or a tiered storage configuration.
 +

@@ -32,7 +32,7 @@ https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/SetUpVPNConnections.html[
 
 * To reduce storage costs by using EBS as a performance tier and AWS S3 as a capacity tier, the VPC in which you launch ONTAP Cloud must have an endpoint to the S3 service.
 +
-https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html[AWS Documentation: VPC Endpoints^]
+https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^]
 
 For additional information, see link:reference_networking_aws.html[AWS networking requirements].
 
