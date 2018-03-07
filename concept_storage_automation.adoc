@@ -12,7 +12,7 @@ keywords: cloud storage automation, report, scan, savings, protection, operation
 :imagesdir: ./media/
 
 [.lead]
-The Cloud Storage Automation Report analyzes your cloud storage to show you savings opportunities, data protection enhancements, and operations that can optimize the storage associated with your AWS account.
+The Cloud Storage Automation Report analyzes your cloud storage to show you savings opportunities, data protection enhancements, and operations that can optimize the storage associated with your AWS account. This is a beta feature.
 
 == Sample report
 

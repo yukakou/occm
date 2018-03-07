@@ -14,7 +14,7 @@ keywords: volume view, changing, selecting
 [.lead]
 Cloud Manager provides two management views: the Storage System View for managing storage systems across a hybrid cloud and the Volume View for creating volumes in AWS without having to manage storage systems. You can switch between these views, but those instances should be rare because a single view should meet your needs.
 
-link:concept_storage.html#simplified-storage-management-using-the-volume-view[Simplified storage management using the Volume View]
+link:concept_storage_management.html#simplified-storage-management-using-the-volume-view[Simplified storage management using the Volume View]
 
 .Steps
 
