@@ -218,7 +218,7 @@ Note the following as you configure the virtual machine:
 
 * It is best to keep the default selection of a new network security group. This new security group includes the required inbound and outbound rules for Cloud Manager.
 +
-If you need to use your own, refer to link:reference_security_groups.html[Security group rules].
+If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].
 
 . Review your selections and click *OK*.
 +
@@ -258,7 +258,7 @@ Note the following as you complete the wizard:
 
 * The predefined network security group includes the rules that ONTAP Cloud needs to operate successfully.
 +
-If you need to use your own, refer to link:reference_security_groups.html[Security group rules].
+If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].
 
 * The underlying Azure disk type is for the initial ONTAP Cloud volume. You can choose a different disk type for subsequent volumes.
 

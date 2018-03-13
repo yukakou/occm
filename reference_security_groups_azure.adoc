@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar
-permalink: reference_security_groups.html
-keywords: security group, security groups, rules, ports, aws
+permalink: reference_security_groups_azure.html
+keywords: security group, security groups, rules, ports, azure
 ---
 
-= Security group rules for AWS
+= Security group rules for Azure
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -98,65 +98,5 @@ The source for inbound rules is 0.0.0.0/0.
 | All ICMP |	All |	All outbound traffic (SnapMirror and SnapVault)
 | All TCP |	All |	All outbound traffic
 | All UDP |	All |	All outbound traffic
-
-|===
-
-== External security group rules for the HA mediator
-
-*Inbound rules*
-
-The source for inbound rules is 0.0.0.0/0.
-
-[cols=3*,options="header",cols="30,30,40"]
-|===
-
-| Type
-| Port range
-| Purpose
-
-| SSH |	22 | SSH connections to the HA mediator
-| TCP |	3000 | RESTful API access from Cloud Manager
-
-|===
-
-*Outbound rules*
-
-[cols=3*,options="header",cols="30,30,40"]
-|===
-
-| Type
-| Port range
-| Purpose
-
-| All TCP |	All |	All outbound traffic
-| All UDP |	All |	All outbound traffic
-
-|===
-
-== Internal security group rules for the HA mediator
-
-Cloud Manager always creates this security group. You do not have the option to use your own security group.
-
-*Inbound rules*
-
-[cols=3*,options="header",cols="30,30,40"]
-|===
-
-| Type
-| Port range
-| Purpose
-| All traffic | All | Communication between the HA mediator and ONTAP Cloud HA nodes only
-
-|===
-
-*Outbound rules*
-
-[cols=3*,options="header",cols="30,30,40"]
-|===
-
-| Type
-| Port range
-| Purpose
-| All traffic |	All |	Communication between the HA mediator and ONTAP Cloud HA nodes only
 
 |===
