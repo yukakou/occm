@@ -315,7 +315,7 @@ When you deploy ONTAP Cloud in Azure, you need to specify details about your vir
 [cols=2*,options="header",cols="30,70"]
 |===
 
-| AWS information
+| Azure information
 | Your value
 
 | Region |
