@@ -26,7 +26,7 @@ Note the following:
 * For VPN configurations, routing and firewall policies must allow Azure HTTP/HTTPS traffic to support.netapp.com so ONTAP Cloud can send AutoSupport messages.
 
 Security groups::
-You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference_security_groups.html[Security group rules].
+You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].
 
 Connection between Cloud Manager and ONTAP Cloud subnets::
 Cloud Manager requires a connection to the subnets in which you deploy ONTAP Cloud systems.

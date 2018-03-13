@@ -133,8 +133,10 @@ entries:
         url: /reference_default_configs.html
       - title: Permissions
         url: /reference_permissions.html
-      - title: Security group rules
+      - title: Security group rules for AWS
         url: /reference_security_groups.html
+      - title: Security group rules for Azure
+        url: /reference_security_groups_azure.html
       - title: User roles
         url: /reference_user_roles.html
       - title: Related links
