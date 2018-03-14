@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_installing_linux.html
-keywords: install, installation, installing, linux, installer, software
+keywords: install, installation, installing, linux, installer, software, on prem, on-prem, silent
 ---
 
 = Installing Cloud Manager on an existing Linux host

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_networking_ibm.html
-keywords: networking, network, requirements, connection, connections, IBM Cloud
+keywords: networking, network, requirements, connection, connections, IBM Cloud, internet, jump host
 ---
 
 = IBM Cloud networking requirements

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_deploying_otc_azure.html
-keywords: ontap cloud, deploying, launching, creating, deploy, launch, create, aws, HA, high availability
+keywords: ontap cloud, deploying, launching, creating, deploy, launch, create, azure, BYOL, license key, serial number, tags, azure tags, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree
 ---
 
 = Launching ONTAP Cloud in Azure

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_renewing_cert.html
-keywords: https, certificate, renewing
+keywords: https certificate, certificate, renewing
 ---
 
 = Renewing the Cloud Manager HTTPS certificate

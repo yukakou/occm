@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_changing_volume_view.html
-keywords: volume view, changing, selecting
+keywords: volume view, changing, selecting, switching, views
 ---
 
 = Changing to the Volume View

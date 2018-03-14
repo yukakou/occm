@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_launching_aws_mktp.html
-keywords: install, installation, installing, marketplace, aws, launch, launching
+keywords: install, installation, installing, marketplace, aws, launch, launching, ec2 console
 ---
 
 = Launching Cloud Manager from the AWS Marketplace

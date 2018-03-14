@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_storage.html
-keywords: storage, capacity, volumes, aggregates, raw capacity, usable capacity, storage tiering, tier, tiering, s3, capacity, performance, fabricpool, fabric pool, s3 endpoint, fabric pool, fabricpool
+keywords: storage, capacity, volumes, aggregates, raw capacity, usable capacity, storage tiering, tier, tiering, data tier, s3, capacity, performance, fabricpool, fabric pool, s3 endpoint, fabric pool, fabricpool, disks, Snapshot copies, s3 bucket, requirement, vpc endpoint, connect, connection, support
 ---
 
 = Storage

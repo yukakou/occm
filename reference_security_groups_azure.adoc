@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_security_groups_azure.html
-keywords: security group, security groups, rules, ports, azure
+keywords: security group, security groups, rules, ports, azure, inbound, outbound, rules
 ---
 
 = Security group rules for Azure

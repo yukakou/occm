@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_setting_up_ontap_cloud.html
-keywords: set up, setting up, ntp, time, synch, autosupport, asup, ems, lif, svm, backup, configuration files, config
+keywords: set up, setting up, ntp, time, synch, autosupport, asup, ems, lif, svm, backup, configuration files, config, snapcenter, snapdrive, ntp server, svm management lif, management lif
 ---
 
 = Setting up ONTAP Cloud

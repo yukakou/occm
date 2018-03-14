@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_licensing.html
-keywords: licenses, licensing, byol, license, subscription, renewal, expire
+keywords: licenses, licensing, byol, license, subscription, renewal, expire, tenant, netapp support site, account, credentials, file, license file, upload
 ---
 
 = Licensing

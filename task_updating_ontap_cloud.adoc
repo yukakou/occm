@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_updating_ontap_cloud.html
-keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP
+keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image
 ---
 
 = Updating ONTAP Cloud software

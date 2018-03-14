@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_installing_azure_gov.html
-keywords: install, installation, installing, software, azure, us gov
+keywords: install, installation, installing, software, azure, us gov, gov
 ---
 
 = Installing Cloud Manager in an Azure US Gov region

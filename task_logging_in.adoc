@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_logging_in.html
-keywords: logging in, log in, sign in, signing in, cloud data services
+keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account
 ---
 
 = Logging in to Cloud Manager

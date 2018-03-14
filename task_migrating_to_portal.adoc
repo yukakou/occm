@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_migrating_to_portal.html
-keywords: migrating, cloud central, portal
+keywords: migrating, cloud central, portal, migrate, move, existing
 ---
 
 = Migrating to NetApp Cloud Central
