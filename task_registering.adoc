@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_registering.html
-keywords: ontap cloud, register, registering, paygo, pay-as-you-go
+keywords: ontap cloud, register, registering, paygo, pay-as-you-go, registration, instance id, serial number, account id, support
 ---
 
 = Registering pay-as-you-go systems

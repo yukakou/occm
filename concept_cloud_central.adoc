@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_central.html
-keywords: netapp cloud central, cloud central, cloud data services, data services, user authentication, authentication
+keywords: netapp cloud central, cloud central, cloud data services, data services, user authentication, authentication, video
 ---
 
 = NetApp Cloud Central

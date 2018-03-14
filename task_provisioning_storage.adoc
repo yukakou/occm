@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_provisioning_storage.html
-keywords: storage, provisioning, iscsi, nfs, cifs, volumes, aggregates, aggregate, volume, provision, create, quotas, nas, san, LUNs
+keywords: storage, provisioning, iscsi, nfs, cifs, volumes, aggregates, provision, create, quotas, nas, san, LUNs, quotas, qtree, add, advanced allocation
 ---
 
 = Provisioning storage

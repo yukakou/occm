@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_user_roles.html
-keywords: user, role, task, permission, permissions, tasks, roles, admin
+keywords: user, role, task, permission, permissions, tasks, roles, admin, cloud manager admin, admin, tenant admin, working environment admin
 ---
 
 = User roles

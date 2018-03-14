@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_apis.html
-keywords: api, rest, apis, automation, automate
+keywords: api, rest, apis, automation, automate, rest apis, swagger
 ---
 
 = Cloud Manager REST APIs

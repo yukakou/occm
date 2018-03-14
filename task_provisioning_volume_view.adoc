@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_provisioning_volume_view.html
-keywords: NFS volumes, volume view, creating, mounting, provisioning
+keywords: NFS volumes, volume view, creating, mounting, provisioning, create, nfs volumes
 ---
 
 = Creating and mounting NFS volumes

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_deleting_working_env.html
-keywords: terminate, delete, working environment
+keywords: terminate, delete, working environment, remove, cloudformation
 ---
 
 = Deleting an ONTAP Cloud working environment

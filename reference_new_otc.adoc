@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_new_otc.html
-keywords: what's new, features, new, release notes, bugs, limitations, known issues
+keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements
 ---
 
 = What's new in ONTAP Cloud

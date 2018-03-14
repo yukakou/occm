@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_editing_users.html
-keywords: editing, users, user accounts, permissions, modify, modifying, permissions, report, notification, S3, cost bucket, billing report, password
+keywords: editing, users, user accounts, permissions, modify, modifying, permissions, report, notification, S3, cost bucket, billing report, password, notification report
 ---
 
 = Editing user accounts

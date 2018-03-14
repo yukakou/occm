@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_getting_started_aws.html
-keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, disk, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central
+keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, disk, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, tiering, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, IAM policy, free trial, security group
 ---
 
 = Getting started with ONTAP Cloud in AWS

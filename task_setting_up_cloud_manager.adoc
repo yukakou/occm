@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_setting_up_cloud_manager.html
-keywords: https, certificate, security, users, adding, creating, tenants, linking, netapp support site account, nss, encryption, key managers, CA, key manager, requirements, safenet, vormetric, kms, key management service, cmk, amazon encryption, encryption, billing, s3 bucket, cost
+keywords: https certificate, certificate, security, users, adding, creating, tenants, linking, netapp support site account, nss, encryption, key managers, CA, key manager, requirements, safenet, vormetric, kms, key management service, cmk, amazon encryption, encryption, billing, s3 bucket, cost, accounts, aws accounts, trust relationship, csr
 ---
 
 = Setting up Cloud Manager

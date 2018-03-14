@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_security_groups.html
-keywords: security group, security groups, rules, ports, aws
+keywords: security group, security groups, rules, ports, aws, inbound, outbound, rules
 ---
 
 = Security group rules for AWS

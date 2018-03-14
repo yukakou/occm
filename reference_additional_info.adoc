@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_additional_info.html
-keywords: community, forums, help, support, videos, policies, json, api, ontap, release notes, bugs, limitations, known issues
+keywords: community, forums, help, support, videos, policies, json, api, ontap, release notes, bugs, limitations, known issues, permissions, apis
 ---
 
 = Where to get help and find more information

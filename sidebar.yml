@@ -81,6 +81,8 @@ entries:
         url: /task_modifying_ontap_cloud.html
       - title: Connecting to ONTAP Cloud systems
         url: /task_connecting_to_otc.html
+      - title: Managing the state of ONTAP Cloud systems
+        url: /task_managing_state.html
       - title: Monitoring AWS costs
         url: /task_monitoring_costs.html
       - title: Adding existing ONTAP Cloud systems

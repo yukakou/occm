@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_removing.html
-keywords: working environments, removing
+keywords: working environments, removing, remove, rediscover
 ---
 
 = Removing ONTAP Cloud working environments

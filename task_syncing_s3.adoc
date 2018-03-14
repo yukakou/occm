@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_syncing_s3.html
-keywords: sync, data, s3, cloud sync, bucket, service
+keywords: sync, data, s3, cloud sync, bucket, service, sync to s3, volume sync
 ---
 
 = Syncing data to AWS S3

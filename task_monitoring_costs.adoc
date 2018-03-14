@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_monitoring_costs.html
-keywords: cost, costs, storage, compute, savings, aws, aws costs
+keywords: cost, costs, storage, compute, savings, aws, aws costs, billing
 ---
 
 = Monitoring AWS storage and compute costs
