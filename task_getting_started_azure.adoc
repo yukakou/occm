@@ -214,7 +214,7 @@ Note the following as you configure the virtual machine:
 
 * Cloud Manager can perform optimally with either HDD or SSD disks.
 
-* You should choose one of the recommended virtual machine sizes: D1_v2 or D2_v2.
+* You should choose one of the recommended virtual machine sizes: A2 or D2_v2.
 
 * It is best to keep the default selection of a new network security group. This new security group includes the required inbound and outbound rules for Cloud Manager.
 +
