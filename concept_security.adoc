@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_security.html
-keywords: security, encryption, antivirus, concepts, key managers, safenet, kms, keys, vscan, encrypt, aws, key management service, cmk, customer master key, data at rest, data-at-rest, netapp storage encryption, certificate signing request, csr, certificate, ca certificate, virus, scan, virus scan, certificate authority, 
+keywords: security, encryption, antivirus, concepts, key managers, safenet, kms, keys, vscan, encrypt, aws, key management service, cmk, customer master key, data at rest, data-at-rest, netapp storage encryption, certificate signing request, csr, certificate, ca certificate, virus, scan, virus scan, certificate authority,
 ---
 
 = Security
@@ -27,8 +27,6 @@ You can choose whether to encrypt data on ONTAP Cloud systems in AWS when you cr
 === Encryption using the AWS KMS
 
 The AWS Key Management Service (KMS) is a managed service that gives you control of encryption keys without having to administer a key management infrastructure. If you choose AWS-managed encryption, Cloud Manager requests data keys using a customer master key (CMK).
-
-IMPORTANT: If you choose AWS-managed encryption, a single ONTAP Cloud system can have no more than 30 EBS volumes and an HA pair can have no more than 60 EBS volumes. AWS limits you to 30 encrypted EBS volumes per EC2 instance for each CMK. You should contact AWS if you need a larger number of encrypted volumes.
 
 If you want to use this encryption option, then you must ensure that the AWS KMS is set up appropriately. For details, see link:task_setting_up_cloud_manager.html#setting-up-the-aws-kms[Setting up the AWS KMS].
 
