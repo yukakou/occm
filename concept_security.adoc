@@ -20,6 +20,8 @@ toc::[]
 
 https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] for data at rest is enabled by default for ONTAP Cloud data in Azure.
 
+NOTE: Customer-managed keys are not supported with ONTAP Cloud.
+
 == Data encryption in AWS
 
 You can choose whether to encrypt data on ONTAP Cloud systems in AWS when you create a new working environment. If data encryption is needed, you can choose between AWS-managed encryption and ONTAP Cloud encryption.

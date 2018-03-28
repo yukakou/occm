@@ -1,0 +1,100 @@
+---
+sidebar: sidebar
+permalink: reference_regions.html
+keywords: region, regions, mumbai, seoul, singapore, sydney, tokyo, frankfurt, paris, london, ireland, canada, govcloud, us east, us west, sao paulo, australia, japan, korea, southeast asia, east asia, germany, north europe, uk south, uk west, west europe, canada, central us, east us, north central, south central, west us, west central
+---
+
+= Supported regions
+:toc: macro
+:toclevels: 1
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Manager and ONTAP Cloud are supported in a number of AWS regions and Microsoft Azure regions.
+
+toc::[]
+
+== Supported AWS regions
+
+You can deploy Cloud Manager and ONTAP Cloud in the following AWS regions.
+
+=== Asia Pacific
+
+* Mumbai
+* Seoul
+* Singapore
+* Sydney
+* Tokyo
+
+=== EU
+
+* Frankfurt
+* Ireland
+* London
+* Paris
+
+=== North America
+
+* Canada (Central)
+* GovCloud (US)
+* US East (N. Virginia)
+* US East (Ohio)
+* US West (N. California)
+* US West (Oregon)
+
+=== South America
+
+* Sao Paulo
+
+== Supported Azure regions
+
+You can deploy Cloud Manager and ONTAP Cloud in the following Azure regions.
+
+=== Asia Pacific
+
+* Australia East
+* Australia Southeast
+* Central India
+* East Asia
+* Japan East
+* Japan West
+* Korea Central
+* Korea South
+* South India
+* Southeast Asia
+* West India
+
+=== EU
+
+* France Central
+* France South
+* Germany Central
+* Germany Northeast
+* North Europe
+* UK South
+* UK West
+* West Europe
+
+=== North America
+
+* Canada Central
+* Canada East
+* Central US
+* East US
+* East US 2
+* North Central US
+* South Central US
+* US Gov Arizona
+* US Gov Texas
+* US Gov Virginia
+* West US
+* West US 2
+* West Central US
+
+=== South America
+
+* Brazil South

@@ -129,16 +129,18 @@ entries:
         url: /reference_new_occm.html
       - title: What's new in ONTAP Cloud
         url: /reference_new_otc.html
-      - title: REST APIs
-        url: /reference_apis.html
-      - title: Default configurations
-        url: /reference_default_configs.html
-      - title: Permissions
-        url: /reference_permissions.html
+      - title: Supported regions
+        url: /reference_regions.html
       - title: Security group rules for AWS
         url: /reference_security_groups.html
       - title: Security group rules for Azure
         url: /reference_security_groups_azure.html
+      - title: REST APIs
+        url: /reference_apis.html
+      - title: Permissions
+        url: /reference_permissions.html
+      - title: Default configurations
+        url: /reference_default_configs.html
       - title: User roles
         url: /reference_user_roles.html
       - title: Related links

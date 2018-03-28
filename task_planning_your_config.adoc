@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_planning_your_config.html
-keywords: license, disk, ebs, storage, size, write speed, volume usage, explore, standard, premium, byol, ec2, capacity, limit, configurations, virtual machine, vm, regions, supported disks, disk types, general purpose, gp2 provisioned IOPS, piops, throughput optimized, cold, SSD, HDD, st1, sc1, premium storage, standard storage, use profile, thin provisioning, deduplication, compression, ontap cloud explore, ontap cloud standard, ontap cloud premium, ontap cloud byol, shared instance, dedicated instance, write speed, high write speed, normal write speed, network information, worksheet
+keywords: license, disk, ebs, storage, size, write speed, volume usage, explore, standard, premium, byol, ec2, capacity, limit, configurations, virtual machine, vm, regions, supported disks, disk types, general purpose, gp2 provisioned IOPS, piops, throughput optimized, cold, SSD, HDD, st1, sc1, premium storage, standard storage, use profile, thin provisioning, deduplication, compression, ontap cloud explore, ontap cloud standard, ontap cloud premium, ontap cloud byol, shared instance, dedicated instance, write speed, high write speed, normal write speed, network information, worksheet, limit, limits, storage limits
 ---
 
 = Planning your ONTAP Cloud configuration
@@ -159,6 +159,15 @@ Notes:
 . The actual maximum capacity may be less because of virtual machine limits: 60 TB for DS3, 124 TB for DS4 and DS13, and 252 TB for DS5 and DS14.
 
 . For Azure region support, see the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^].
+
+== Understanding storage limits
+
+The raw capacity limit for an ONTAP Cloud system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
+
+You can find storage limits in the ONTAP Cloud Release Notes.
+
+https://library.netapp.com/ecm/ecm_get_file/ECMLP2839309[ONTAP Cloud 9.3 for AWS Release Notes^]
+https://library.netapp.com/ecm/ecm_get_file/ECMLP2839308[ONTAP Cloud 9.3 for Azure Release Notes^]
 
 == Choosing an AWS disk type
 
