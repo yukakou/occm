@@ -22,13 +22,17 @@ toc::[]
 
 You must choose the Azure VNet and subnets in which you want to deploy Cloud Manager and ONTAP Cloud. At a minimum, your networking must meet the following requirements:
 
-* The target VNet must have one or more subnets that have outbound internet access.
+* The target VNet must have one or more subnets that have outbound internet access so Cloud Manager and ONTAP Cloud can contact several endpoints.
++
+To see the list of endpoints, see link:reference_networking_azure.html[Azure networking requirements].
 
 * To deploy ONTAP Cloud systems in subnets or networks separate from Cloud Manager, connections between those networks must be in place.
 
 * To replicate data across a hybrid cloud or multi-cloud environment, VPN connections between networks must be in place.
 +
 https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal[Microsoft Azure Documentation: Create a Site-to-Site connection in the Azure portal^]
+
+For additional information, see link:reference_networking_azure.html[Azure networking requirements].
 
 == Enabling programmatic deployments of ONTAP Cloud
 

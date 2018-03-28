@@ -22,7 +22,9 @@ toc::[]
 
 You must choose the AWS VPC and subnets in which you want to launch Cloud Manager and ONTAP Cloud. At a minimum, your networking must meet the following requirements:
 
-* The target VPC must have one or more subnets that have outbound internet access.
+* The target VPC must have one or more subnets that have outbound internet access so Cloud Manager and ONTAP Cloud can contact several endpoints.
++
+To see the list of endpoints, see link:reference_networking_aws.html[AWS networking requirements].
 
 * To deploy ONTAP Cloud systems in subnets or networks separate from Cloud Manager, connections between those networks must be in place.
 

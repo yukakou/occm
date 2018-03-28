@@ -117,6 +117,8 @@ entries:
         url: /task_removing.html
       - title: Editing user accounts
         url: /task_editing_users.html
+      - title: Configuring Cloud Manager to use a proxy server
+        url: /task_configuring_proxy.html
       - title: Managing encryption settings
         url: /task_managing_encryption.html
       - title: Renewing the HTTPS certificate

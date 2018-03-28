@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_networking_azure.html
-keywords: networking, network, requirements, connection, connections, vnet, security group, security groups, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host
+keywords: networking, network, requirements, connection, connections, vnet, security group, security groups, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, URL, URLs, endpoints, endpoint
 ---
 
 = Azure networking requirements
@@ -16,14 +16,54 @@ keywords: networking, network, requirements, connection, connections, vnet, secu
 [.lead]
 You must set up your Azure networking so that Cloud Manager can deploy ONTAP Cloud systems and so those systems can operate properly.
 
-Outbound internet access::
-Outbound internet access is required to enable communication between Cloud Manager and Azure services, to access software images in Amazon S3, and to enable technical support from NetApp. You must ensure that network security groups assigned to the VNet or subnets do not block outbound internet access.
+Outbound internet access for Cloud Manager::
+Cloud Manager requires outbound internet access to contact the following endpoints when deploying and managing ONTAP Cloud in Microsoft Azure:
 +
-Note the following:
+[cols=2*,options="header",cols="50,50"]
+|===
+| Endpoint
+| Purpose
+|
 
-* If you have a proxy, you must configure Cloud Manager to use it. You can do so when using the Cloud Manager Setup wizard.
+\https://management.azure.com
+\https://login.microsoftonline.com
 
-* For VPN configurations, routing and firewall policies must allow Azure HTTP/HTTPS traffic to support.netapp.com so ONTAP Cloud can send AutoSupport messages.
+| Enables Cloud Manager to deploy and manage ONTAP Cloud systems in most Azure regions.
+
+|
+\https://management.microsoftazure.de
+\https://login.microsoftonline.de
+| Enables Cloud Manager to deploy and manage ONTAP Cloud systems in the Azure Germany regions.
+
+|
+\https://management.usgovcloudapi.net
+\https://login.microsoftonline.com
+| Enables Cloud Manager to deploy and manage ONTAP Cloud systems in the Azure US Gov regions.
+
+| us-east-1.amazonaws.com	| Provides access to software images in Amazon S3 for upgrades.
+
+|
+cognito-idp.us-east-1.amazonaws.com
+cognito-identity.us-east-1.amazonaws.com
+| Enables Cloud Manager to access and download manifests, templates, and ONTAP Cloud upgrade images.
+
+| kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
+
+| \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
+
+| \https://mysupport.netapp.com | Communication with NetApp AutoSupport.
+|
+\https://support.netapp.com/svcgw
+\https://support.netapp.com/ServiceGW/entitlement
+| Communication with NetApp for licensing and support registration.
+|===
++
+NOTE: If your network uses a proxy server for all communication to the internet, Cloud Manager prompts you to specify the proxy during setup. You can also specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring Cloud Manager to use a proxy server].
+
+Outbound internet access for ONTAP Cloud::
+ONTAP Cloud requires outbound internet access to send messages to NetApp AutoSupport, which proactively monitors the health of your storage.
++
+Routing and firewall policies must allow Azure HTTP/HTTPS traffic to mysupport.netapp.com so ONTAP Cloud can send AutoSupport messages.
 
 Security groups::
 You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].
