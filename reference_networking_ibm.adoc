@@ -20,6 +20,8 @@ NOTE: While you can install Cloud Manager in the IBM Cloud, ONTAP Cloud is not s
 
 Outbound internet access::
 Cloud Manager needs outbound internet access to communicate with AWS and Azure services when deploying ONTAP Cloud, to access software images for upgrades, and to enable technical support from NetApp.
++
+For details about the specific endpoints, see link:reference_networking_aws.html[AWS networking requirements] and link:reference_networking_azure.html[Azure networking requirements].
 
 Connection between Cloud Manager and ONTAP Cloud subnets::
 Cloud Manager requires a network connection to the AWS VPCs and Azure VNets in which you want to deploy ONTAP Cloud systems.
