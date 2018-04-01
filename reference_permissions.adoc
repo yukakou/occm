@@ -200,6 +200,12 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 | Creates ONTAP Cloud systems and stops, starts, deletes, and obtains the status of the system.
 
 |
+"Microsoft.Compute/images/write",
+"Microsoft.Compute/images/read",
+
+| Enables ONTAP Cloud deployment from a VHD.
+
+|
 "Microsoft.Compute/disks/delete",
 "Microsoft.Compute/disks/read",
 "Microsoft.Compute/disks/write",

@@ -96,7 +96,7 @@ You should add the ID for each Azure subscription from which users will create O
 +
 The following example shows how to create a custom role using the Azure CLI 2.0:
 +
-*az role definition create --role-definition C:\Policy_for_Cloud_Manager_Azure_3.3.1.json*
+*az role definition create --role-definition C:\Policy_for_Cloud_Manager_Azure_3.3.4.json*
 
 .Result
 
