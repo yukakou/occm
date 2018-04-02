@@ -58,9 +58,7 @@ Understanding how ONTAP Cloud is configured by default can help you set up and a
 
 * ONTAP Cloud is available as a single system in AWS and Microsoft Azure, and as an HA pair in AWS.
 
-* Each ONTAP Cloud system supports one data-serving storage virtual machine (SVM) and one or more SVMs used for disaster recovery.
-+
-Cloud Manager creates the data-serving SVM when it deploys an ONTAP Cloud system. While you can create another data-serving SVM from System Manager or the CLI, using multiple data-serving SVMs is not supported.
+* Cloud Manager creates one data-serving SVM when it deploys an ONTAP Cloud system. While you can create another data-serving SVM from System Manager or the CLI, using multiple data-serving SVMs is not supported.
 
 * Several network interfaces are created by default:
 ** A cluster management LIF

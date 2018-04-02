@@ -19,6 +19,40 @@ You can find information about known issues and limitations in the https://libra
 
 toc::[]
 
+== Cloud Manager 3.4.4
+
+Cloud Manager 3.4.4 includes new features and enhancements.
+
+* <<Support for Azure France regions>>
+* <<Enhancement to default disk size selection in AWS>>
+
+=== Support for Azure France regions
+
+Cloud Manager and ONTAP Cloud are now supported in the France Central and France South regions.
+
+=== Enhancement to default disk size selection in AWS
+
+Cloud Manager now chooses larger disks as ONTAP Cloud systems grow in AWS.
+
+When Cloud Manager creates new aggregates for ONTAP Cloud systems in AWS, it steadily increases the disk size in an aggregate, as the number of aggregates in the system increases. Cloud Manager does this to ensure that you can utilize the system's maximum capacity before it reaches the maximum number of data disks allowed by AWS.
+
+For example, Cloud Manager might choose the following disk sizes for aggregates in an ONTAP Cloud Premium or BYOL system:
+
+[cols=3*,options="header",width=60%]
+|===
+
+| Aggregate number
+| Disk size
+| Max aggregate capacity
+
+| 1 |	500 MB | 3 TB
+| 4 | 1 TB | 6 TB
+| 6 | 2 TB | 12 TB
+
+|===
+
+You can choose the disk size yourself by using the advanced allocation option.
+
 == Cloud Manager 3.4.3
 
 You can now create ONTAP Snapshot copies on demand.

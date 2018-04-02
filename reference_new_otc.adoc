@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_new_otc.html
-keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements
+keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, SVM DR, disaster recovery, storage virtual machine DR, storage virtual machine disaster recovery, SVM, SVM disaster recovery
 ---
 
 = What's new in ONTAP Cloud
@@ -63,7 +63,7 @@ ONTAP Cloud supports one data-serving Storage Virtual Machine (SVM) and one or m
 
 SVM disaster recovery is the asynchronous mirroring of SVM data and configuration from a source SVM to a destination SVM. You can quickly activate a destination SVM for data access if the source SVM is no longer available.
 
-NOTE: Cloud Manager does not provide any setup or orchestration support for SVM disaster recovery.
+NOTE: Cloud Manager does not provide any setup or orchestration support for SVM disaster recovery. It also does not support storage-related tasks on any additional SVMs. You must use System Manager or the CLI for SVM disaster recovery.
 
 https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[ONTAP Cloud 9.3 SVM Disaster Recovery Preparation Express Guide^]
 
