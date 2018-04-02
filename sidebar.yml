@@ -89,7 +89,7 @@ entries:
         url: /task_adding_ontap_cloud.html
       - title: Deleting ONTAP Cloud systems
         url: /task_deleting_working_env.html
-  - title: Managing and protecting data across a hybrid cloud
+  - title: Managing data across a hybrid cloud
     entries:
       - title: Discovering and managing ONTAP clusters
         url: /task_discovering_ontap.html
@@ -97,8 +97,6 @@ entries:
         url: /task_replicating_data.html
       - title: Syncing data to AWS S3
         url: /task_syncing_s3.html
-      - title: SVM disaster recovery
-        url: /task_svm_disaster_recovery.html
   - title: Provisioning NFS volumes
     entries:
       - title: Changing to the Volume View
