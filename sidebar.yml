@@ -73,6 +73,8 @@ entries:
         url: /task_provisioning_storage.html
   - title: Managing ONTAP Cloud
     entries:
+      - title: Tiering data in AWS
+        url: task_tiering.html
       - title: Managing storage
         url: /task_managing_storage.html
       - title: Updating ONTAP Cloud software

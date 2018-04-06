@@ -173,7 +173,7 @@ https://library.netapp.com/ecm/ecm_get_file/ECMLP2839308[ONTAP Cloud 9.3 for Azu
 
 When you create volumes for ONTAP Cloud systems, you need to choose the underlying EBS volume type (which ONTAP Cloud sees as a _disk_). You should choose the configuration that meets your requirements for performance and cost.
 
-The underlying AWS disk type for ONTAP Cloud can be a single EBS disk type or a tiered storage configuration that uses EBS as a performance tier and S3 as a capacity tier. For an overview of storage tiering, see link:concept_storage.html[Storage].
+The underlying AWS disk type for ONTAP Cloud can be a single EBS disk type or a tiered storage configuration that uses EBS as a performance tier and S3 as a capacity tier. For an overview of data tiering, see link:concept_storage.html[Storage]. For requirements, see link:task_tiering.html[Tiering data in AWS].
 
 === Supported EBS disk types
 

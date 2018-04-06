@@ -90,7 +90,7 @@ Users must access Cloud Manager from a web browser. If you deploy Cloud Manager 
 
 * A host in your network that has a VPN connection to the private IP address
 
-Connection from ONTAP Cloud to AWS S3 for storage tiering::
+Connection from ONTAP Cloud to AWS S3 for data tiering::
 If you want to use EBS as a performance tier and AWS S3 as a capacity tier, you must ensure that ONTAP Cloud has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
 +
 When you create the VPC Endpoint, be sure to select the region, VPC, and route table that corresponds to the ONTAP Cloud instance. You must also modify the security group to add an outbound HTTPS rule that enables traffic to the S3 endpoint. Otherwise, ONTAP Cloud cannot connect to the S3 service.
