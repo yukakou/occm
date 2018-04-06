@@ -1,0 +1,91 @@
+---
+sidebar: sidebar
+permalink: task_tiering.html
+keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, S3 tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store
+---
+
+= Tiering data in AWS
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+
+You can reduce storage costs in AWS by combining an EBS performance tier for "hot" data with an S3 capacity tier for "cold" data. For an overview of data tiering, see link:concept_storage.html#data-tiering-in-aws[Data tiering in AWS].
+
+toc::[]
+
+=== Configurations supported with data tiering
+
+Data tiering is supported with specific configurations and features:
+
+* Data tiering is supported with ONTAP Cloud Standard, Premium, and BYOL.
++
+It is not supported with ONTAP Cloud Explore or with M3 and R3 instance types when using Standard and Premium.
+
+* Data tiering is supported with AWS-managed encryption.
++
+It is not supported with ONTAP Cloud-managed encryption.
+
+* Thin provisioning must be enabled on volumes.
+
+* ONTAP performance enhancements introduced in ONTAP Cloud 9.2 are not supported with data tiering.
+
+=== Requirements for data tiering
+
+You must ensure that ONTAP Cloud has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
+
+When you create the VPC Endpoint, be sure to select the region, VPC, and route table that corresponds to the ONTAP Cloud instance. You must also modify the security group to add an outbound HTTPS rule that enables traffic to the S3 endpoint. Otherwise, ONTAP Cloud cannot connect to the S3 service.
+
+If you experience any issues, see https://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/[AWS Support Knowledge Center: Why can’t I connect to an S3 bucket using a gateway VPC endpoint?^].
+
+[NOTE]
+.What's not required for data tiering
+====
+* You do not need to install a feature license to enable data tiering.
+* You do not need to create the S3 bucket. Cloud Manager creates it for you.
+====
+
+== Tiering data on read-write volumes
+
+ONTAP Cloud can tier Snapshot copies of read-write volumes to cost-effective S3 storage, freeing up the EBS performance tier for "hot" data.
+
+.Steps
+
+. In the working environment, create a new volume or change the tier of an existing volume:
++
+[cols=2*,options="header",cols="30,70"]
+|===
+
+| Task
+| Action
+
+| Create a new volume	| Click *Add New Volume*.
+
+| Modify an existing volume | Select the volume and click *Change Tier*.
+
+|===
+
+. Enable S3 Tiering:
++
+image:screenshot_tiered_storage.gif[Screenshot that shows the icon to enable tiering to S3.]
++
+Cloud Manager creates a new aggregate if a data tiering-enabled aggregate does not already exist.
++
+TIP: If you prefer to create aggregates yourself, you can enable data tiering when creating aggregates.
+
+== Tiering data on data protection volumes
+
+ONTAP Cloud can tier data from a data protection volume to an S3 capacity tier. If you activate the destination volume, the data gradually moves to the EBS performance tier as it is read.
+
+.Steps
+
+. On the Working Environments page, select the working environment that contains the source volume, and then drag it to the working environment to which you want to replicate the volume.
+
+. Follow the prompts until you reach the tiering page and enable *S3 Tiering*.
++
+For help with replicating data, see link:task_replicating_data.html[Replicating data to and from the cloud].

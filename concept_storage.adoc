@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_storage.html
-keywords: storage, capacity, volumes, aggregates, raw capacity, usable capacity, storage tiering, tier, tiering, data tier, s3, capacity, performance, fabricpool, fabric pool, s3 endpoint, fabric pool, fabricpool, disks, Snapshot copies, s3 bucket, requirement, vpc endpoint, connect, connection, support
+keywords: storage, capacity, volumes, aggregates, raw capacity, usable capacity, storage tiering, tier, tiering, data tiering, s3, s3 tiering, capacity, performance, fabricpool, fabric pool, s3 endpoint, fabric pool, fabricpool, disks, Snapshot copies, s3 bucket, requirement, vpc endpoint, connect, connection, support
 ---
 
 = Storage
@@ -18,7 +18,7 @@ Understanding how ONTAP Cloud uses cloud storage can help you understand your st
 
 toc::[]
 
-== Overview
+== How ONTAP Cloud uses cloud storage
 
 ONTAP Cloud uses AWS and Azure volumes as back-end storage. It sees these volumes as disks and groups them into one or more aggregates. Aggregates provide storage to one or more ONTAP Cloud volumes.
 
@@ -36,19 +36,17 @@ You choose the disk type and the default disk size when you deploy an ONTAP Clou
 
 TIP: The total amount of storage purchased from AWS or Azure is the _raw capacity_. The _usable capacity_ is less because approximately 12 to 14 percent is overhead that is reserved for ONTAP Cloud use. For example, if Cloud Manager creates a 500 GB aggregate, the usable capacity is 442.94 GB.
 
-== Storage tiering overview
+== Data tiering in AWS
 
-With ONTAP Cloud for AWS, you can reduce your storage costs by using EBS as a performance tier and AWS S3 as a capacity tier.
+With ONTAP Cloud for AWS, you can reduce storage costs by using EBS as a performance tier for "hot" data and AWS S3 as a capacity tier for "cold" data.
 
 image:diagram_storage_tiering.png[This is a conceptual image that shows hot data going to EBS storage and cold data going to S3 storage.]
 
-A tiered storage configuration is a good choice if your data changes frequently or if you use ONTAP Cloud for disaster recovery or long-term retention:
+Tiering data is a good choice if your data changes frequently or if you use ONTAP Cloud for disaster recovery or long-term retention:
 
 * After an aggregate has reached 50% capacity, ONTAP Cloud tiers Snapshot copies of read-write volumes to cost-effective S3 storage, freeing up the EBS performance tier for "hot" data.
 
-* When you replicate a volume to a tiered storage configuration for disaster recovery or long-term retention, data for the destination volume resides in the S3 capacity tier.
-+
-If you activate the destination volume, the data gradually moves to the EBS performance tier as it is read.
+* When you replicate a volume for disaster recovery or long-term retention, data for the destination volume resides in the S3 capacity tier. If you activate the destination volume, the data gradually moves to the EBS performance tier as it is read.
 
 Note the following about the EBS and S3 tiers:
 
@@ -56,40 +54,14 @@ Note the following about the EBS and S3 tiers:
 
 * The EBS tier can be General Purpose SSDs or Throughput Optimized HDDs.
 
-* An ONTAP Cloud working environment uses a single S3 bucket for tiered storage. This includes an HA working environment.
+* An ONTAP Cloud working environment uses a single S3 bucket for tiered data. This includes an HA working environment.
 
 * Cloud Manager creates the S3 bucket and names it fabric-pool-_cluster unique identifier_.
 
-NOTE: You do not need to install a feature license to enable storage tiering.
-
-=== Connection requirement for storage tiering
-
-Before you choose a tiered storage configuration, you must ensure that ONTAP Cloud has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service.
-
-https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^]
-
-For additional information, see link:reference_networking_aws.html[AWS networking requirements].
+NOTE: You do not need to install a feature license to enable data tiering.
 
 === Setting up a tiered storage configuration
 
-After you create a VPC Endpoint to S3, you can choose a tiered storage configuration when you create an ONTAP Cloud volume and when you replicate data. The following image shows the S3 Tiering option when creating a new volume:
+You simply need to create a VPC Endpoint to S3 and then enable S3 tiering when creating a volume. For details, see link:task_tiering.html[Tiering data in AWS].
 
 image:screenshot_tiered_storage.gif[Screenshot that shows the icon to enable tiering to S3.]
-
-Cloud Manager creates the S3 bucket for you.
-
-=== Configurations supported with storage tiering
-
-Storage tiering is supported with specific configurations and features:
-
-* Storage tiering is supported with ONTAP Cloud Standard, Premium, and BYOL.
-+
-It is not supported with ONTAP Cloud Explore or with M3 and R3 instance types when using Standard and Premium.
-
-* Storage tiering is supported with AWS-managed encryption.
-+
-It is not supported with ONTAP Cloud-managed encryption.
-
-* Thin provisioning must be enabled on volumes that use a tiered storage configuration.
-
-* ONTAP performance enhancements introduced in ONTAP Cloud 9.2 are not supported with tiered storage configurations.
