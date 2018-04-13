@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_updating_cloud_manager.html
 keywords: updating, upgrading, patch, automatic, updates, upgrade, update
+summary: You can update Cloud Manager to the latest version or with a patch that NetApp personnel shared with you.
 ---
 
 = Updating Cloud Manager

@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: reference_new_occm.html
 keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements
+summary: OnCommand Cloud Manager typically introduces a new release every month to bring you new features, enhancements, and bug fixes.
 ---
 
 = What's new in Cloud Manager
@@ -13,6 +14,7 @@ keywords: what's new, features, new, release notes, bugs, limitations, known iss
 :linkattrs:
 :imagesdir: ./media/
 
+[.lead]
 OnCommand Cloud Manager typically introduces a new release every month to bring you new features, enhancements, and bug fixes.
 
 You can find information about known issues and limitations in the https://library.netapp.com/ecm/ecm_get_file/ECMLP2839255[Cloud Manager 3.4 Release Notes^].

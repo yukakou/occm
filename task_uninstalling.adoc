@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_uninstalling.html
 keywords: uninstalling, uninstall, reinstall
+summary: Cloud Manager includes an uninstallation script that you can use to uninstall the software to troubleshoot issues or to permanently remove the software from the host.
 ---
 
 = Uninstalling Cloud Manager

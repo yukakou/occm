@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_storage.html
 keywords: volumes, aggregates, managing, cloning, editing, CIFS server, edit, flexclone, snapshot copy, restore, mount, tier, delete, advanced allocation, disks, cifs setup, DNS, active directory, AD, domain, NetBIOS, identify, move, capacity, action required, clone, snapshot copies, restoring, disk type, add disk, change disk, sync to S3
+summary: Cloud Manager enables you to manage volumes, aggregates, and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
 ---
 
 = Managing existing storage

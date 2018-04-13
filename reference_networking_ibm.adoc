@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: reference_networking_ibm.html
 keywords: networking, network, requirements, connection, connections, IBM Cloud, internet, jump host
+summary: If you want to install Cloud Manager in the IBM Cloud, then the environment must meet a few requirements.
 ---
 
 = IBM Cloud networking requirements

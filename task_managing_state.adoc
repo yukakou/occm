@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_state.html
 keywords: schedule, schedules, scheduling, shutdowns, shut down, restart, stop, stopping, turn off, weekday, weekend
+summary: You can stop and start ONTAP Cloud systems from Cloud Manager to manage your cloud compute costs.
 ---
 
 = Managing the state of ONTAP Cloud systems

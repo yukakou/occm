@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_setting_up_cloud_manager.html
 keywords: https certificate, certificate, security, users, adding, creating, tenants, linking, netapp support site account, nss, encryption, key managers, CA, key manager, requirements, safenet, vormetric, kms, key management service, cmk, amazon encryption, encryption, billing, s3 bucket, cost, accounts, aws accounts, trust relationship, csr
+summary: You can start creating ONTAP Cloud systems right after you deploy Cloud Manager. However, you might want to perform additional setup first by setting up the AWS Key Management Service, installing an HTTPS certificate, and more.
 ---
 
 = Setting up Cloud Manager
@@ -109,11 +110,11 @@ image:screenshot_https_cert.gif[Screen shot: Shows the HTTPS Setup page after yo
 
 == Adding users to Cloud Manager
 
-If additional users need to use your Cloud Manager system, they must sign up for an account in the NetApp Cloud Data Services Portal. You can then add the users to Cloud Manager.
+If additional users need to use your Cloud Manager system, they must sign up for an account in NetApp Cloud Central. You can then add the users to Cloud Manager.
 
 .Steps
 
-. If the user does not yet have an account in the NetApp Cloud Data Services Portal, send them a link to your Cloud Manager system and have them sign up.
+. If the user does not yet have an account in NetApp Cloud Central, send them a link to your Cloud Manager system and have them sign up.
 +
 Wait until the user confirms that they have signed up for an account.
 

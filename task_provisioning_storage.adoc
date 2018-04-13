@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_provisioning_storage.html
 keywords: storage, provisioning, iscsi, nfs, cifs, volumes, aggregates, provision, create, quotas, nas, san, LUNs, quotas, qtree, add, advanced allocation
+summary: You can provision additional NFS and CIFS storage for your ONTAP Cloud systems from Cloud Manager by managing volumes and aggregates.
 ---
 
 = Provisioning storage
@@ -14,7 +15,7 @@ keywords: storage, provisioning, iscsi, nfs, cifs, volumes, aggregates, provisio
 
 [.lead]
 
-You can provision additional NFS and CIFS storage for your ONTAP Cloud instances from Cloud Manager by managing volumes and aggregates. If you need to create iSCSI storage, you should do so from System Manager.
+You can provision additional NFS and CIFS storage for your ONTAP Cloud systems from Cloud Manager by managing volumes and aggregates. If you need to create iSCSI storage, you should do so from System Manager.
 
 image:workflow_storage_provisioning.png[This illustration shows the steps to provision storage for ONTAP Cloud: if using NFS, create volumes in Cloud Manager and if using CIFS or iSCSI, create aggregates in Cloud Manager and then provision storage in System Manager.]
 

@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_syncing_s3.html
 keywords: sync, data, s3, cloud sync, bucket, service, sync to s3, volume sync
+summary: You can sync data from ONTAP volumes to an AWS S3 bucket by integrating a working environment with NetApp Cloud Sync. You can then use the synced data as a secondary copy or for data processing using AWS services like EMR and Redshift.
 ---
 
 = Syncing data to AWS S3
@@ -14,7 +15,7 @@ keywords: sync, data, s3, cloud sync, bucket, service, sync to s3, volume sync
 :imagesdir: ./media/
 
 [.lead]
-You can sync data to an AWS S3 bucket by integrating a working environment with https://www.netapp.com/us/cloud/data-sync-saas-product-details[NetApp Cloud Sync^]. You can then use the synced data as a secondary copy or for data processing using AWS services like EMR and Redshift.
+You can sync data from ONTAP volumes to an AWS S3 bucket by integrating a working environment with https://www.netapp.com/us/cloud/data-sync-saas-product-details[NetApp Cloud Sync^]. You can then use the synced data as a secondary copy or for data processing using AWS services like EMR and Redshift.
 
 toc::[]
 

@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_encryption.html
 keywords: encryption, managing, settings, certificate, CA, expire, renew, intermediate, CSR, key managers
+summary: You might need to periodically manage Cloud Manager encryption settings to ensure that ONTAP Cloud systems in AWS can communicate with key managers.
 ---
 
 = Managing encryption settings for ONTAP Cloud

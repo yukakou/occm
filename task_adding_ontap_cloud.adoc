@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_adding_ontap_cloud.html
 keywords: discover, discovering, add, adding, existing
+summary: You can discover and add existing ONTAP Cloud instances to Cloud Manager.
 ---
 
 = Adding existing ONTAP Cloud systems to Cloud Manager

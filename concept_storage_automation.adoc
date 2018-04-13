@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: concept_storage_automation.html
 keywords: cloud storage automation, report, scan, savings, protection, operations, automation
+summary: The Cloud Storage Automation Report analyzes your cloud storage to show you savings opportunities, data protection enhancements, and operations that can optimize the storage associated with your AWS account.
 ---
 
 = Cloud Storage Automation

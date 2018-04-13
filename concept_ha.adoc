@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: concept_ha.html
 keywords: high availability, HA, mediator, concepts, understanding, overview, availability zones, AZs, takeover, giveback, rpo, rto, floating ip, nondisruptive, ha pairs, node, nodes, synchronous, resync, recovery point objective, recovery time objective, nas, nfs, cifs, floating ip address, route tables, iscsi, mpio, alua, failover, mount, remount, failure, data access, access, ip address, performance
+summary: An ONTAP Cloud high availability (HA) configuration provides nondisruptive operations and fault tolerance. HA pairs are supported in AWS only.
 ---
 
 = High-availability pairs

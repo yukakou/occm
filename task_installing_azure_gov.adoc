@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_installing_azure_gov.html
 keywords: install, installation, installing, software, azure, us gov, gov
+summary: To deploy Cloud Manager in an Azure US Gov region, you must download the Cloud Manager installer from the NetApp Support Site and install it on an existing CentOS 7.3 host.
 ---
 
 = Installing Cloud Manager in an Azure US Gov region

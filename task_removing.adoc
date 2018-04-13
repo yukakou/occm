@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_removing.html
 keywords: working environments, removing, remove, rediscover
+summary: The Cloud Manager Admin can remove an ONTAP Cloud working environment to move it to another system or to troubleshoot discovery issues.
 ---
 
 = Removing ONTAP Cloud working environments

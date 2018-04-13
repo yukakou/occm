@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_connecting_to_otc.html
 keywords: system manager, connecting, cli, command, command line, connect, shell, interface
+summary: If you need to perform advanced management of ONTAP Cloud systems, you can do so using OnCommand System Manager or the command line interface.
 ---
 
 = Connecting to ONTAP Cloud systems

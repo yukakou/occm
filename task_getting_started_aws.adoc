@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_getting_started_aws.html
 keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, disk, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, tiering, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, IAM policy, free trial, security group
+summary: Getting started with ONTAP Cloud includes preparing your AWS environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching ONTAP Cloud systems using Cloud Manager.
 ---
 
 = Getting started with ONTAP Cloud in AWS
@@ -14,7 +15,7 @@ keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, pu
 :imagesdir: ./media/
 
 [.lead]
-Getting started includes preparing your AWS environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching ONTAP Cloud systems using Cloud Manager.
+Getting started with ONTAP Cloud includes preparing your AWS environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching ONTAP Cloud systems using Cloud Manager.
 
 toc::[]
 

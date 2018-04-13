@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_installing_linux.html
 keywords: install, installation, installing, linux, installer, software, on prem, on-prem, silent
+summary: If you want to run the Cloud Manager software on an existing host, you can download and install the software on a Linux host in your network or in the cloud.
 ---
 
 = Installing Cloud Manager on an existing Linux host

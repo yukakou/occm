@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_updating_ontap_cloud.html
 keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image
+summary: Cloud Manager includes several options that you can use to upgrade to the current ONTAP Cloud release or to downgrade ONTAP Cloud to an earlier release.
 ---
 
 = Updating ONTAP Cloud software
