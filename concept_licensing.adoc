@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: concept_licensing.html
 keywords: licenses, licensing, byol, license, subscription, renewal, expire, tenant, netapp support site, account, credentials, file, license file, upload
+summary: Each ONTAP Cloud BYOL system must have a license installed with an active subscription. Cloud Manager simplifies the licensing process by managing licenses for you and by notifying you before they expire.
 ---
 
 = Licensing

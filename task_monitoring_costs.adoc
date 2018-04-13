@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_monitoring_costs.html
 keywords: cost, costs, storage, compute, savings, aws, aws costs, billing
+summary: You can view the cost associated with running ONTAP Cloud in AWS. The monthly cost consists of the compute purchased from AWS to run ONTAP Cloud and the disks purchased from AWS for ONTAP Cloud use.
 ---
 
 = Monitoring AWS storage and compute costs

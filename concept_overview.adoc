@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: concept_overview.html
 keywords: overview, concepts, features, use case
+summary: OnCommand Cloud Manager enables you to deploy ONTAP Cloud systems, which provide enterprise-class features for your cloud storage, and to easily replicate data across hybrid clouds built on NetApp.
 ---
 
 = Cloud Manager and ONTAP Cloud overview

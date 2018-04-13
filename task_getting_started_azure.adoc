@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_getting_started_azure.html
 keywords: microsoft, azure, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, marketplace, virtual machine, vnet, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, permissions, vpn, multi-cloud, deploy programtically, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, free trial, security group
+summary: Getting started with ONTAP Cloud includes preparing your Azure environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching ONTAP Cloud systems using Cloud Manager.
 ---
 
 = Getting started with ONTAP Cloud in Azure
@@ -14,7 +15,7 @@ keywords: microsoft, azure, netapp, data fabric, hybrid cloud, cloud, public clo
 :imagesdir: ./media/
 
 [.lead]
-Getting started includes preparing your Azure environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching ONTAP Cloud systems using Cloud Manager.
+Getting started with ONTAP Cloud includes preparing your Azure environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching ONTAP Cloud systems using Cloud Manager.
 
 toc::[]
 

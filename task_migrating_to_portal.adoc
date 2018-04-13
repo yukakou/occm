@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_migrating_to_portal.html
 keywords: migrating, cloud central, portal, migrate, move, existing
+summary: You can migrate to NetApp Cloud Central if you have an existing Cloud Manager system. You just need to deploy a new Cloud Manager system from Cloud Central and then discover existing ONTAP Cloud systems from the new Cloud Manager system.
 ---
 
 = Migrating to NetApp Cloud Central

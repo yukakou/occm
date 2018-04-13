@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: reference_earlier_versions.html
 keywords: documentation, 3.2, 3.3
+summary: You can find documentation for previous releases of Cloud Manager in the Cloud Manager Documentation Center.
 ---
 
 = Earlier versions of Cloud Manager documentation

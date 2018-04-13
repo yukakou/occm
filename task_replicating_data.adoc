@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_replicating_data.html
 keywords: ontap, cluster, discover, manage, cloud manager, hybrid cloud, replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, fanout, cascade, source, destination, schedule, relationship, break, resync, max transfer, maximum transfer rate, rate, transfer rate, reverse resync, status, replication status, intercluster lif, replication requirement, requirements, disaster recovery, DR, archive, archiving, retention
+summary: You can replicate data between Cloud Manager working environments. You can choose a one-time data replication to move data to and from the cloud, or a recurring schedule for disaster recovery or long-term retention.
 ---
 
 = Replicating data to and from the cloud

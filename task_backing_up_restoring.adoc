@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_backing_up_restoring.html
 keywords: backing up, back up, backup, restore, restoring
+summary: Cloud Manager enables you to back up and restore its database to protect your configuration and troubleshoot issues.
 ---
 
 = Backing up and restoring Cloud Manager

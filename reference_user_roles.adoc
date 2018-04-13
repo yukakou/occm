@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: reference_user_roles.html
 keywords: user, role, task, permission, permissions, tasks, roles, admin, cloud manager admin, admin, tenant admin, working environment admin
+summary: Each Cloud Manager user account is assigned a role that defines permissions.
 ---
 
 = User roles
@@ -53,3 +54,4 @@ Each Cloud Manager user account is assigned a role that defines permissions.
 | Install an HTTPS certificate |	Yes |	No |	No
 
 | Set up Active Directory |	Yes |	No |	No
+|===

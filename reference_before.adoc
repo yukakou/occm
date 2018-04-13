@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: reference_before.html
 keywords: prerequisites, requirements, before
+summary: Before you use Cloud Manager to create and manage ONTAP Cloud systems, your Cloud Manager administrator should have prepared networking and installed and set up Cloud Manager.
 ---
 
 = Before you create ONTAP Cloud systems

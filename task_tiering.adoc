@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_tiering.html
 keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, S3 tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store
+summary: You can reduce storage costs in AWS by combining an EBS performance tier for "hot" data with an S3 capacity tier for "cold" data.
 ---
 
 = Tiering data in AWS
@@ -19,7 +20,7 @@ You can reduce storage costs in AWS by combining an EBS performance tier for "ho
 
 toc::[]
 
-=== Configurations supported with data tiering
+== Configurations supported with data tiering
 
 Data tiering is supported with specific configurations and features:
 
@@ -35,7 +36,7 @@ It is not supported with ONTAP Cloud-managed encryption.
 
 * ONTAP performance enhancements introduced in ONTAP Cloud 9.2 are not supported with data tiering.
 
-=== Requirements for data tiering
+== Requirements for data tiering
 
 You must ensure that ONTAP Cloud has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
 

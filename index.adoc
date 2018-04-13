@@ -1,6 +1,7 @@
 ---
 sidebar: sidebar
 permalink: index.html
+summary: Welcome to the documentation portal for Cloud Manager and ONTAP Cloud.
 ---
 
 = Cloud Manager and ONTAP Cloud documentation

@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_launching_aws_mktp.html
 keywords: install, installation, installing, marketplace, aws, launch, launching, ec2 console
+summary: It is best to launch Cloud Manager in AWS using NetApp Cloud Central, but you can launch it from the AWS Marketplace, if needed.
 ---
 
 = Launching Cloud Manager from the AWS Marketplace

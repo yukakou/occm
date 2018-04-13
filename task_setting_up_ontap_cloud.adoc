@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_setting_up_ontap_cloud.html
 keywords: set up, setting up, ntp, time, synch, autosupport, asup, ems, lif, svm, backup, configuration files, config, snapcenter, snapdrive, ntp server, svm management lif, management lif
+summary: After you deploy ONTAP Cloud, you can set it up by synchronizing the system time using NTP and by performing a few optional tasks from either System Manager or the CLI.
 ---
 
 = Setting up ONTAP Cloud
@@ -48,3 +49,4 @@ network interface create -vserver svm_cloud -lif svm_mgmt -role data -data-proto
 By default, ONTAP Cloud backs up the files to the Cloud Manager host every eight hours. If you want to send the backups to an alternate location, you can change the location to an FTP or HTTP server in your data center or in AWS. For example, you might already have a backup location for your FAS storage systems.
 
 You can change the backup location using the CLI. See the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html[ONTAP 9 System Administration Reference^].
+|===

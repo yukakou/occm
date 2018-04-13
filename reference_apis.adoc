@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: reference_apis.html
 keywords: api, rest, apis, automation, automate, rest apis, swagger
+summary: Cloud Manager includes REST APIs that enable software developers to automate the management of NetApp storage in the cloud. There is an API for every action that is available from the user interface.
 ---
 
 = Cloud Manager REST APIs

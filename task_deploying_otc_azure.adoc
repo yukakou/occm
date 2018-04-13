@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_deploying_otc_azure.html
 keywords: ontap cloud, deploying, launching, creating, deploy, launch, create, azure, BYOL, license key, serial number, tags, azure tags, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree
+summary: You can launch a single ONTAP Cloud system in Azure by creating an ONTAP Cloud working environment in Cloud Manager.
 ---
 
 = Launching ONTAP Cloud in Azure

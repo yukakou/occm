@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: reference_cloud_mgr_reqs.html
 keywords: configurations, ec2, vm, ports, ram, operating system, os, host, requirement, requirements, hypervisor, disk, space, mysql, centos, rhel, red hat, cpu, disk space, 3306
+summary: If you install Cloud Manager on your own host, then you must verify support for your configuration, which includes operating system requirements, port requirements, and so on.
 ---
 
 = Cloud Manager host requirements

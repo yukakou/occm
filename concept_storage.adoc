@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: concept_storage.html
 keywords: storage, capacity, volumes, aggregates, raw capacity, usable capacity, storage tiering, tier, tiering, data tiering, s3, s3 tiering, capacity, performance, fabricpool, fabric pool, s3 endpoint, fabric pool, fabricpool, disks, Snapshot copies, s3 bucket, requirement, vpc endpoint, connect, connection, support
+summary: Understanding how ONTAP Cloud uses cloud storage can help you understand your storage costs.
 ---
 
 = Storage

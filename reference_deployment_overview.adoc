@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: reference_deployment_overview.html
 keywords: installation, installing, install, setting up, set up, setup, deploy, deployment
+summary: Before you get started, you might want to better understand your options for deploying OnCommand Cloud Manager and ONTAP Cloud.
 ---
 
 = Deployment overview

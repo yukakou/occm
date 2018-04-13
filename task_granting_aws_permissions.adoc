@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_granting_aws_permissions.html
 keywords: permissions, aws, policy, iam, instance, iam role, role, granting, policy, iam policy, iam user, iam group, access keys, custom launch
+summary: If you cannot launch Cloud Manager in AWS from NetApp Cloud Central, then you must provide Cloud Manager with the permissions that it needs if you want to launch and manage ONTAP Cloud in AWS.
 ---
 
 = Granting permissions when Cloud Manager is not launched from Cloud Central

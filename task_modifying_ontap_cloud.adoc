@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_modifying_ontap_cloud.html
 keywords: license, licensing, install, instance type, virtual machine type, VM type, change, modify, configuration, subscription, paygo, pay-as-you-go, pay as you go, byol, password, MTU, jumbo frames, c4.xlarge, c4.8xlarge, HA pair, file, license file, install, upload, change, modify, svm, storage virtual machine, password, route tables
+summary: You might need to change the configuration of ONTAP Cloud instances as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and move to an alternate subscription.
 ---
 
 = Modifying ONTAP Cloud systems

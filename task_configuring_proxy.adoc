@@ -2,6 +2,7 @@
 sidebar: sidebar
 permalink: task_configuring_proxy.html
 keywords: proxy, proxy server, proxy, internet
+summary: When you first deploy Cloud Manager, it prompts you to enter a proxy server if the system does not have internet access. You can also manually enter and modify the proxy from Cloud Manager's settings.
 ---
 
 = Configuring Cloud Manager to use a proxy server
