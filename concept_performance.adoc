@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_performance.html
 keywords: performance, technical report, TR, workload
-summary: To identify which workloads are appropriate for ONTAP Cloud, refer to NetApp Technical Report 4383: Performance Characterization of ONTAP Cloud with Application Workloads.
+summary: You can review performance results to help you decide which workloads are appropriate for ONTAP Cloud.
 ---
 
 = Performance
@@ -13,4 +13,8 @@ summary: To identify which workloads are appropriate for ONTAP Cloud, refer to N
 :imagesdir: ./media/
 
 [.lead]
-To identify which workloads are appropriate for ONTAP Cloud, refer to https://www.netapp.com/us/media/tr-4383.pdf[NetApp Technical Report 4383: Performance Characterization of ONTAP Cloud with Application Workloads^].
+You can review performance results to help you decide which workloads are appropriate for ONTAP Cloud.
+
+For ONTAP Cloud for AWS, refer to https://www.netapp.com/us/media/tr-4383.pdf[NetApp Technical Report 4383: Performance Characterization of ONTAP Cloud in Amazon Web Services with Application Workloads^].
+
+For ONTAP Cloud for Microsoft Azure, refer to https://www.netapp.com/us/media/tr-4671.pdf[NetApp Technical Report 4671: Performance Characterization of ONTAP Cloud in Azure with Application Workloads^].
