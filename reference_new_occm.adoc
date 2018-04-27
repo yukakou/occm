@@ -21,6 +21,80 @@ You can find information about known issues and limitations in the https://libra
 
 toc::[]
 
+== Cloud Manager 3.4.5
+
+Cloud Manager 3.4.5 includes new support and enhancements.
+
+* <<Support for RHEL 7.4 and CentOS 7.4>>
+* <<Cloud Manager can now enable programmatic deployments>>
+* <<Data disk limit for ONTAP Cloud for AWS>>
+* <<Changes coming soon>>
+
+=== Support for RHEL 7.4 and CentOS 7.4
+
+Cloud Manager is now supported on Red Hat Enterprise Linux 7.4 and CentOS 7.4.
+
+=== Cloud Manager can now enable programmatic deployments
+
+In previous releases, you had to manually enable programmatic deployments of ONTAP Cloud from the Azure Marketplace for each Azure subscription. Cloud Manager can now do this for you.
+
+To enable programmatic deployments for an Azure subscription, Cloud Manager requires the following permissions:
+
+"Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read"
+"Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write"
+
+You should update the role definition for the Cloud Manager Operator role to include these permissions.
+
+You can find the entire list of required permissions in https://mysupport.netapp.com/info/web/ECMP11022837.html[the policies provided by NetApp^].
+
+=== Data disk limit for ONTAP Cloud for AWS
+
+Due to AWS infrastructure changes, the number of data disks supported in AWS has been reduced. Cloud Manager enforces the following data disk limits:
+
+* A single-node ONTAP Cloud system can have to 35 data disks.
+* An ONTAP Cloud HA node can have up to 32 data disks.
+
+NOTE: The data disk limit does not include the boot disk and root disk.
+
+To ensure that you can utilize the system's maximum capacity before it reaches the maximum number of data disks, Cloud Manager chooses larger disks as ONTAP Cloud systems grow in AWS. For additional details, see link:concept_storage_management.html#disk-size-selection-for-aggregates-in-aws[Disk size selection for aggregates in AWS].
+
+=== Changes coming soon
+
+NetApp occasionally announces changes that will be made in upcoming releases of Cloud Manager and ONTAP Cloud so that you are provided advance notice.
+
+* <<Deprecation of EC2 instance types>>
+* <<New permissions required for ONTAP Cloud 9.4>>
+
+==== Deprecation of EC2 instance types
+
+Several EC2 instance types will not be supported with the upcoming release of ONTAP Cloud 9.4 when creating new systems. Existing ONTAP Cloud systems running these instance types will continue to operate normally; however, NetApp strongly recommends changing to a different instance type.
+
+To review pricing differences between instance types and NetApp licenses, go to the AWS Marketplace for http://aws.amazon.com/marketplace/pp/B011KEZ734[single-node ONTAP Cloud systems^] and for http://aws.amazon.com/marketplace/pp/B01H4LVJ84[ONTAP Cloud HA pairs^].
+
+[cols=2*,options="header",width=60%]
+|===
+| Instance type no longer supported
+| Recommended instance type
+
+| c3.2xlarge | m4.xlarge
+| c4.2xlarge | m4.2xlarge
+| m3.xlarge | m4.xlarge
+| m3.2xlarge | m4.2xlarge
+| r3.xlarge | r4.xlarge
+| r3.2xlarge | r4.2xlarge
+|===
+
+TIP: M3 and R3 instance types are not supported with ONTAP Cloud data tiering and enhanced performance, so moving to the M4 and R4 instance types allows you to take advantage of those features.
+
+==== New permissions required for ONTAP Cloud 9.4
+
+Cloud Manager will require new permissions for key features in the upcoming ONTAP Cloud 9.4 release. To ensure that your Cloud Manager systems are ready to deploy and manage ONTAP Cloud 9.4 systems, we recommend that you update your Cloud Manager policy now by adding the following permissions:
+
+* For AWS: "ec2:DescribeInstanceAttribute",
+* For Azure: "Microsoft.Network/virtualNetworks/subnets/write",
+
+You can find the entire list of required permissions in https://mysupport.netapp.com/info/web/ECMP11022837.html[the policies provided by NetApp^].
+
 == Cloud Manager 3.4.4
 
 Cloud Manager 3.4.4 includes new features and enhancements.
