@@ -51,7 +51,7 @@ You can find the entire list of required permissions in https://mysupport.netapp
 
 Due to AWS infrastructure changes, the number of data disks supported in AWS has been reduced. Cloud Manager enforces the following data disk limits:
 
-* A single-node ONTAP Cloud system can have to 35 data disks.
+* A single-node ONTAP Cloud system can have up to 35 data disks.
 * An ONTAP Cloud HA node can have up to 32 data disks.
 
 NOTE: The data disk limit does not include the boot disk and root disk.
@@ -93,7 +93,7 @@ Cloud Manager will require new permissions for key features in the upcoming ONTA
 * For AWS: "ec2:DescribeInstanceAttribute",
 * For Azure: "Microsoft.Network/virtualNetworks/subnets/write",
 
-You can find the entire list of required permissions in https://mysupport.netapp.com/info/web/ECMP11022837.html[the policies provided by NetApp^].
+You can find the entire list of required permissions in https://mysupport.netapp.com/info/web/ECMP11022837.html[the latest policies provided by NetApp^].
 
 == Cloud Manager 3.4.4
 
