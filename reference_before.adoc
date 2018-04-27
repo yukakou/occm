@@ -22,7 +22,7 @@ The following conditions should exist before you get started:
 
 * Cloud Manager has permissions to perform operations in AWS and Azure on your behalf.
 
-* Each ONTAP Cloud product that users will deploy was subscribed to from the AWS Marketplace and programmatic deployment was enabled from the Azure Marketplace.
+* Each ONTAP Cloud product that users will deploy was subscribed to from the AWS Marketplace.
 
 * Cloud Manager was installed.
 
