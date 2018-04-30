@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_getting_started_azure.html
-keywords: microsoft, azure, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, marketplace, virtual machine, vnet, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, permissions, vpn, multi-cloud, deploy programtically, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, free trial, security group
+keywords: microsoft, azure, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, marketplace, virtual machine, vnet, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, permissions, vpn, multi-cloud, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, free trial, security group
 summary: Getting started with ONTAP Cloud includes preparing your Azure environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching ONTAP Cloud systems using Cloud Manager.
 ---
 
@@ -34,29 +34,6 @@ To see the list of endpoints, see link:reference_networking_azure.html[Azure net
 https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal[Microsoft Azure Documentation: Create a Site-to-Site connection in the Azure portal^]
 
 For additional information, see link:reference_networking_azure.html[Azure networking requirements].
-
-== Enabling programmatic deployments of ONTAP Cloud
-
-Cloud Manager deploys ONTAP Cloud using API calls, so you must enable programmatic deployments of ONTAP Cloud from the Azure Marketplace.
-
-.Steps
-
-. Using an Azure user account that has at least the Contributor role, go to the https://azure.microsoft.com/en-us/marketplace/partners/netapp/netapp-ontap-cloud/[Azure Marketplace page for ONTAP Cloud^].
-
-. Click *Get it now*, select the PAYGo or BYOL offering, and click *Continue*.
-+
-image:screenshot_azure_marketplace.gif[Shows the drop-down list that you can use to select either ONTAP Cloud PayGo or ONTAP Cloud BYOL in the Azure Marketplace.]
-
-. From the Azure portal, click *Want to deploy programmatically?*
-+
-image:screenshot_azure_programmatic.gif[Shows the Want to deploy programmatically option in Microsoft Azure.]
-. Click *Enable* for each Azure subscription from which you want to deploy ONTAP Cloud.
-+
-image:screenshot_azure_programmatic_enable.gif[Shows how to enable programmatic deployment for a subscription in Microsoft Azure.]
-
-. Click *Save*.
-
-. If you want to deploy both ONTAP Cloud BYOL and PAYGo, repeat the steps for the other offering.
 
 == Granting Azure permissions to Cloud Manager
 
@@ -101,7 +78,7 @@ You should add the ID for each Azure subscription from which users will create O
 +
 The following example shows how to create a custom role using the Azure CLI 2.0:
 +
-*az role definition create --role-definition C:\Policy_for_Cloud_Manager_Azure_3.3.4.json*
+*az role definition create --role-definition C:\Policy_for_Cloud_Manager_Azure_3_4_5.json*
 
 .Result
 

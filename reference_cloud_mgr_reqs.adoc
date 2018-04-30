@@ -25,8 +25,10 @@ A2 or D2_v2
 Operating system::
 * CentOS 7.2
 * CentOS 7.3
+* CentOS 7.4
 * Red Hat Enterprise Linux 7.2
 * Red Hat Enterprise Linux 7.3
+* Red Hat Enterprise Linux 7.4
 +
 Cloud Manager is supported on English-language versions of these operating systems.
 

@@ -28,6 +28,8 @@ Data tiering is supported with specific configurations and features:
 +
 It is not supported with ONTAP Cloud Explore or with M3 and R3 instance types when using Standard and Premium.
 
+* The EBS tier can be General Purpose SSDs or Throughput Optimized HDDs.
+
 * Data tiering is supported with AWS-managed encryption.
 +
 It is not supported with ONTAP Cloud-managed encryption.

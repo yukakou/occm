@@ -279,4 +279,10 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 | Creates and manages availability sets for ONTAP Cloud systems.
 
+|
+"Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read",
+"Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/write"
+
+| Enables programmatic deployments from the Azure Marketplace.
+
 |===
