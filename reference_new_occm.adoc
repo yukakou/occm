@@ -67,7 +67,7 @@ NetApp occasionally announces changes that will be made in upcoming releases of 
 
 ==== Deprecation of EC2 instance types
 
-In June 2018, ONTAP Cloud 9.3 and the upcoming release of ONTAP Cloud 9.4 will no longer support several EC2 instance types when creating new systems. Existing ONTAP Cloud systems running these instance types will continue to operate normally; however, NetApp strongly recommends changing to a different instance type.
+In June 2018, all versions of ONTAP Cloud will no longer support several EC2 instance types. Existing ONTAP Cloud systems running these instance types will continue to operate normally; however, NetApp strongly recommends changing to a different instance type.
 
 To review pricing differences between instance types and NetApp licenses, go to the AWS Marketplace for http://aws.amazon.com/marketplace/pp/B011KEZ734[single-node ONTAP Cloud systems^] and for http://aws.amazon.com/marketplace/pp/B01H4LVJ84[ONTAP Cloud HA pairs^].
 
