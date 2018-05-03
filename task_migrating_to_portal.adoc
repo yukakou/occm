@@ -23,12 +23,8 @@ Cloud Manager's integration with NetApp Cloud Central provides several benefits,
 
 . Deploy a new Cloud Manager system from the https://cloud.netapp.com[NetApp Cloud Central^].
 
-. If needed, add user accounts to Cloud Manager.
-+
-link:task_setting_up_cloud_manager.html#adding-users-to-cloud-manager[Adding users to Cloud Manager]
+. If needed, link:task_setting_up_cloud_manager.html#adding-users-to-cloud-manager[add user accounts to Cloud Manager].
 
-. Discover existing ONTAP Cloud systems from the new Cloud Manager system.
-+
-link:task_adding_ontap_cloud.html[Adding existing ONTAP Cloud systems to Cloud Manager]
+. link:task_adding_ontap_cloud.html[Discover existing ONTAP Cloud systems] from the new Cloud Manager system.
 
 . Delete the old Cloud Manager system.

@@ -47,9 +47,7 @@ In the event of an outage, data should be available in 60 seconds or less.
 
 === HA deployment models
 
-You can ensure the high availability of your data by deploying an ONTAP Cloud HA configuration across multiple Availability Zones (AZs) or in a single AZ.
-
-You should review more details about each configuration to choose which best fits your needs.
+You can ensure the high availability of your data by deploying an ONTAP Cloud HA configuration across multiple Availability Zones (AZs) or in a single AZ. You should review more details about each configuration to choose which best fits your needs.
 
 == ONTAP Cloud HA in multiple Availability Zones
 
@@ -63,7 +61,7 @@ These floating IP addresses are not natively accessible to clients that are outs
 
 You should review requirements for floating IP addresses and route tables before you deploy an HA configuration across multiple Availability Zones. You must specify the floating IP addresses when you deploy the configuration.
 
-link:reference_networking_aws.html#networking-requirements-for-ontap-cloud-ha-in-multiple-azs[Networking requirements for ONTAP Cloud HA in multiple AZs]
+For details, see link:reference_networking_aws.html#networking-requirements-for-ontap-cloud-ha-in-multiple-azs[Networking requirements for ONTAP Cloud HA in multiple AZs].
 
 === NFS and CIFS data access for clients outside the VPC
 
@@ -135,7 +133,7 @@ An ONTAP Cloud HA configuration synchronously replicates data between nodes, whi
 
 * For HA configurations that serve data from both nodes, read performance is higher than the read performance of a single-node configuration, and write performance is the same or higher.
 
-https://www.netapp.com/us/media/tr-4383.pdf[NetApp Technical Report 4383: Performance Characterization of ONTAP Cloud with Application Workloads^]
+For more details about ONTAP Cloud performance, see link:concept_performance.html[Performance].
 
 === Client access to storage
 
@@ -143,9 +141,7 @@ Clients should access NFS and CIFS volumes by using the data IP address of the n
 
 IMPORTANT: If you move a volume between nodes in an HA pair, you should remount the volume by using the IP address of the other node. Otherwise, you can experience reduced performance. If clients support NFSv4 referrals or folder redirection for CIFS, you can enable those features on the ONTAP Cloud systems to avoid remounting the volume. For details, see ONTAP documentation.
 
-You can easily identify the correct IP address from Cloud Manager.
-
-The following image shows the Storage System View:
+You can easily identify the correct IP address from Cloud Manager. The following image shows the Storage System View:
 
 image:screenshot_mount.gif[Screen shot: Shows the Mount Command which is available when you select an ONTAP Cloud volume.]
 

@@ -77,7 +77,7 @@ If Cloud Manager is not installed in the target VNet, it must have network conne
 Connections to ONTAP systems in other networks::
 To replicate data between an ONTAP Cloud system in Azure and ONTAP systems in other networks, you must have a VPN connection between the Azure VNet and the other network—for example, an AWS VPC or your corporate network.
 +
-https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal[Microsoft Azure Documentation: Create a Site-to-Site connection in the Azure portal^]
+For instructions, refer to https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal[Microsoft Azure Documentation: Create a Site-to-Site connection in the Azure portal^].
 
 Connection to the Cloud Manager web console::
 Users must access Cloud Manager from a web browser. If you deploy Cloud Manager in Azure, the easiest way to provide access is by allocating a public IP address. However, if you want to use a private IP address instead, users can access the console through either of the following:

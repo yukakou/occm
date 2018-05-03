@@ -17,15 +17,11 @@ You can view the cost associated with running ONTAP Cloud in AWS. The monthly co
 
 .Before you begin
 
-The AWS payer account must meet specific billing and cost requirements and your Cloud Manager account must be associated with the AWS cost S3 bucket.
-
-link:task_setting_up_cloud_manager.html#setting-up-aws-billing-and-cost-management-for-cloud-manager[Setting up AWS billing and cost management for Cloud Manager]
+The AWS payer account must meet specific billing and cost requirements and your Cloud Manager account must be associated with the AWS cost S3 bucket. For instructions, see link:task_setting_up_cloud_manager.html#setting-up-aws-billing-and-cost-management-for-cloud-manager[Setting up AWS billing and cost management for Cloud Manager].
 
 .About this task
 
-Cloud Manager updates the storage and compute costs every 12 hours.
-
-You should refer to AWS for final cost details.
+Cloud Manager updates the storage and compute costs every 12 hours. You should refer to AWS for final cost details.
 
 .Step
 

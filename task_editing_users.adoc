@@ -19,7 +19,7 @@ You can modify user accounts in Cloud Manager by changing the cloud permissions 
 
 .About this task
 
-Password and user information must be changed in the https://cloud.netapp.com[NetApp Cloud Central^].
+Password and user information must be changed in https://cloud.netapp.com[NetApp Cloud Central^].
 
 .Steps
 . In the upper-right corner of the Cloud Manager console, click the user icon, and then select *Users*.

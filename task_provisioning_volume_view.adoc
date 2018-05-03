@@ -62,7 +62,7 @@ a| You should choose the disk that meets your requirements for both performance 
 
 * Cold HDD disks are meant for backups, or infrequently accessed data, because the performance is very low. Like Throughput Optimized HDD disks, performance is defined in terms of throughput.
 
-http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^]
+For more details, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^].
 |===
 +
 The following image shows the Create Volume page filled out:
@@ -88,7 +88,8 @@ a| You should choose the disk that meets your requirements for both performance 
 
 * Throughput Optimized HDD disks are for frequently accessed workloads that require fast and consistent throughput.
 
-http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^]
+For more details, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^].
+
 | Location	| You should choose a VPC that includes three subnets in three separate Availability Zones.
 
 | Nodes and Mediator	| If possible, Cloud Manager chooses separate Availability Zones for each instance because it is the supported and optimal configuration.
@@ -97,7 +98,7 @@ http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Docum
 
 | Route Table	| If you have more than one route table, it is very important to select the correct route tables. Otherwise, some clients might not have access to the ONTAP Cloud HA pair.
 
-http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html[AWS Documentation: Route Tables^]
+For more details, refer to  http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html[AWS Documentation: Route Tables^].
 |===
 +
 The following image shows the Nodes and Mediator page. Each instance is in a separate Availability Zone.

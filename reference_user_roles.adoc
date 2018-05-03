@@ -54,4 +54,6 @@ Each Cloud Manager user account is assigned a role that defines permissions.
 | Install an HTTPS certificate |	Yes |	No |	No
 
 | Set up Active Directory |	Yes |	No |	No
+
+| Enable the Cloud Storage Automation Report | Yes | No | No
 |===

@@ -44,7 +44,7 @@ The following image shows a schedule that instructs Cloud Manager to shut down t
 +
 image:screenshot_shutdown.gif[Screen shot: Shows a shutdown schedule that shuts down a ONTAP Cloud instance every weekend at 12:00 AM for 48 hours.]
 
-. Click Save.
+. Click *Save*.
 
 .Result
 

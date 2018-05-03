@@ -45,6 +45,4 @@ NOTE: ONTAP Cloud can also notify you through email, an SNMP traphost, or syslog
 
 When you renew a BYOL subscription by contacting a NetApp representative, Cloud Manager automatically obtains the new license from NetApp and installs it on the ONTAP Cloud system.
 
-If Cloud Manager cannot access the license file over the secure Internet connection, you can obtain the file yourself and then manually upload the file to Cloud Manager.
-
-link:task_modifying_ontap_cloud.html#installing-license-files-on-ontap-cloud-byol-systems[Installing license files on ONTAP Cloud BYOL systems]
+If Cloud Manager cannot access the license file over the secure internet connection, you can obtain the file yourself and then manually upload the file to Cloud Manager. For instructions, see link:task_modifying_ontap_cloud.html#installing-license-files-on-ontap-cloud-byol-systems[Installing license files on ONTAP Cloud BYOL systems].

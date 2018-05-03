@@ -53,9 +53,7 @@ You must set up and configure a key management infrastructure to use ONTAP Cloud
 
 ==== How ONTAP Cloud encryption works with SafeNet key managers
 
-Understanding how ONTAP Cloud encryption works with SafeNet key managers can help you set up and use the feature.
-
-The following graphic shows the steps and components involved in the encryption process when using SafeNet key managers:
+Understanding how ONTAP Cloud encryption works with SafeNet key managers can help you set up and use the feature. The following graphic shows the steps and components involved in the encryption process when using SafeNet key managers:
 
 image:diagram_encryption_overview.png[This illustration shows how to set up and use ONTAP Cloud encryption. The following text describes this illustration.]
 

@@ -39,9 +39,7 @@ You should enable automatic updates to Cloud Manager, but you can always do a ma
 
 .Before you begin
 
-You should have reviewed what is new in the release to identify new requirements and changes in support.
-
-link:reference_new_occm.html[What's new in Cloud Manager]
+You should have reviewed link:reference_new_occm.html[what is new in the release] to identify new requirements and changes in support.
 
 .About this task
 

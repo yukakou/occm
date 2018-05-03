@@ -147,20 +147,14 @@ These pages appear if an ONTAP cluster that has multiple LIFs is the source or d
 . On the Destination Volume Name and Tiering page, specify the destination volume name, choose an underlying disk type, change any of the advanced options, and then click *Continue*.
 +
 If the destination is an ONTAP cluster, you must also specify the destination SVM and aggregate.
-+
-link:task_planning_your_config.html#choosing-an-aws-disk-type[Choosing an AWS disk type]
-+
-link:task_planning_your_config.html#choosing-an-azure-disk-type[Choosing an Azure disk type]
 
 . On the Max Transfer Rate page, specify the maximum rate (in megabytes per second) at which data can be transferred.
 
 . On the Replication Policy page, choose one of the default policies or click *Additional Policies*, and then select one of the advanced policies.
 +
-link:task_replicating_data.html#choosing-a-replication-policy[Choosing a replication policy]
+For help, see link:task_replicating_data.html#choosing-a-replication-policy[Choosing a replication policy].
 +
-If you choose a custom SnapVault policy, the labels associated with the policy must match the labels of the Snapshot copies on the source volume.
-+
-link:task_replicating_data.html#how-snapvault-policies-work[How SnapVault policies work]
+If you choose a custom SnapVault policy, the labels associated with the policy must match the labels of the Snapshot copies on the source volume. For more information, see link:task_replicating_data.html#how-snapvault-policies-work[How SnapVault policies work].
 
 . On the Schedule page, choose a one-time copy or a recurring schedule.
 +
@@ -222,7 +216,7 @@ For information about configuring a destination volume for data access and react
 
 IMPORTANT: When you resynchronize the volumes, the contents on the destination volume are overwritten by the contents on the source volume.
 
-To perform a reverse resync, which resynchronizes the data from the destination volume to the source volume, see the ONTAP 9 Volume Disaster Recovery Express Guide
+To perform a reverse resync, which resynchronizes the data from the destination volume to the source volume, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html[ONTAP 9 Volume Disaster Recovery Express Guide^].
 
 | Reverse Resync | Reverses the roles of the source and destination volumes. Contents from the original source volume are overwritten by contents of the destination volume. This is helpful when you want to reactivate a source volume that went offline.
 

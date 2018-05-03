@@ -57,13 +57,9 @@ NOTE: When deployed in multiple AZs, ONTAP Cloud HA configurations use a floatin
 
 . In Cloud Manager, identify the IP address of the cluster management interface:
 
-.. On the Working Environments page, double-click the name of the instance.
+.. On the Working Environments page, select the ONTAP Cloud system.
 
-.. Click the menu icon and then click *Information*.
-
-.. Copy the cluster management IP address:
-+
-image:screenshot_mgmt_ip.gif[Screen shot: Shows the Information page, which provides the cluster management IP address for a ONTAP Cloud system.]
+.. Copy the cluster management IP address that appears in the right pane.
 
 . Use SSH to connect to the cluster management interface IP address using the admin account.
 +
