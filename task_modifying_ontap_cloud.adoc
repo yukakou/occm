@@ -110,19 +110,13 @@ If you want to move between a pay-as-you-go subscription and a BYOL subscription
 link:task_deploying_otc_aws.html[Launching ONTAP Cloud in AWS]
 link:task_deploying_otc_azure.html[Launching ONTAP Cloud in Azure]
 
-. If you chose an ONTAP Cloud pay-as-you-go license and the tenant does not have a NetApp Support Site account assigned to it, manually register the systems with NetApp.
+. If you chose an ONTAP Cloud pay-as-you-go license and the tenant does not have a NetApp Support Site account assigned to it, link:task_registering.html[manually register the systems with NetApp].
 +
 Support from NetApp is included with ONTAP Cloud. To activate support, you must first register the system with NetApp.
-+
-link:task_registering.html[Registering ONTAP Cloud instances]
 
-. Set up one-time data replication between the systems for each volume that you must replicate.
-+
-link:task_replicating_data.html[Replicating data between systems]
+. link:task_replicating_data.html[Set up one-time data replication] between the systems for each volume that you must replicate.
 
-. Terminate the ONTAP Cloud system that you no longer need by deleting the original working environment.
-+
-link:task_deleting_working_env.html[Deleting an ONTAP Cloud working environment]
+. Terminate the ONTAP Cloud system that you no longer need by link:task_deleting_working_env.html[deleting the original working environment].
 
 == Modifying the storage virtual machine name
 
@@ -153,7 +147,7 @@ The new password must be different than one of the last six passwords that you u
 
 == Changing the network MTU for c4.4xlarge and c4.8xlarge instances
 
-ONTAP Cloud is configured to use 9,000 MTU (also called jumbo frames) with c4.4xlarge and c4.8xlarge instances by default. You can change the network MTU to 1,500 bytes if that is more appropriate for your network configuration.
+By default, ONTAP Cloud is configured to use 9,000 MTU (also called jumbo frames) when you choose the c4.4xlarge instance or the c4.8xlarge instance in AWS. You can change the network MTU to 1,500 bytes if that is more appropriate for your network configuration.
 
 .About this task
 

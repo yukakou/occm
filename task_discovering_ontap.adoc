@@ -33,7 +33,7 @@ If Cloud Manager is in AWS, all outbound communication is allowed by the predefi
 
 * The ONTAP cluster must allow inbound HTTPS access through port 443.
 +
-The default "mgmt" firewall policy allows inbound HTTPS access from all IP addresses. If you modify this default policy, or if you create your own firewall policy, you must associate the HTTPS protocol with that policy and enable access from the Cloud Manager host.
+The default "mgmt" firewall policy allows inbound HTTPS access from all IP addresses. If you modified this default policy, or if you created your own firewall policy, you must associate the HTTPS protocol with that policy and enable access from the Cloud Manager host.
 
 .Steps
 
@@ -75,7 +75,7 @@ You can create volumes on existing aggregates. You cannot create new aggregates 
 
 . On the Working Environments page, double-click the name of the ONTAP cluster on which you want to provision volumes.
 
-. Click the create new volume icon.
+. Click *Add New Volume*.
 
 . On the Create New Volume page, enter details for the volume, and then click *Create*.
 +

@@ -22,7 +22,7 @@ It is best to launch Cloud Manager in AWS using https://cloud.netapp.com[NetApp 
 
 If you want to assign a public IP address to the Cloud Manager instance and use the AWS 1-Click Launch option, the public subnet must be already enabled to automatically assign public IP addresses. Otherwise, you must use the Manual Launch option to assign a public IP address to the instance.
 
-http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-ip-addressing.html[AWS Documentation: IP Addressing in Your VPC^]
+For details, refer to http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-ip-addressing.html[AWS Documentation: IP Addressing in Your VPC^].
 
 .Steps
 

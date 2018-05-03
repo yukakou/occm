@@ -23,17 +23,17 @@ toc::[]
 
 You must choose the Azure VNet and subnets in which you want to deploy Cloud Manager and ONTAP Cloud. At a minimum, your networking must meet the following requirements:
 
-* The target VNet must have one or more subnets that have outbound internet access so Cloud Manager and ONTAP Cloud can contact several endpoints.
+* Outbound internet access
 +
-To see the list of endpoints, see link:reference_networking_azure.html[Azure networking requirements].
+The target VNet must have one or more subnets that have outbound internet access so Cloud Manager and ONTAP Cloud can contact several endpoints. To review the list of endpoints, see link:reference_networking_azure.html[Azure networking requirements].
 
-* To deploy ONTAP Cloud systems in subnets or networks separate from Cloud Manager, connections between those networks must be in place.
+* Connections between networks
 
-* To replicate data across a hybrid cloud or multi-cloud environment, VPN connections between networks must be in place.
-+
-https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal[Microsoft Azure Documentation: Create a Site-to-Site connection in the Azure portal^]
+** To deploy ONTAP Cloud systems in subnets or networks separate from Cloud Manager, connections between those networks must be in place.
 
-For additional information, see link:reference_networking_azure.html[Azure networking requirements].
+** To replicate data across a hybrid cloud or multi-cloud environment, VPN connections between networks must be in place. For details, refer to https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal[Microsoft Azure Documentation: Create a Site-to-Site connection in the Azure portal^].
+
+For additional networking information, see link:reference_networking_azure.html[Azure networking requirements].
 
 == Granting Azure permissions to Cloud Manager
 
@@ -90,8 +90,7 @@ You must create an Active Directory service principal so Cloud Manager can authe
 
 .Before you begin
 
-You must have the appropriate permissions in Azure to create an Active Directory application and to assign the application to a role.
-https://azure.microsoft.com/en-us/documentation/articles/resource-group-create-service-principal-portal/[Microsoft Azure Documentation: Use portal to create Active Directory application and service principal that can access resources^]
+You must have the appropriate permissions in Azure to create an Active Directory application and to assign the application to a role. For details, refer to https://azure.microsoft.com/en-us/documentation/articles/resource-group-create-service-principal-portal/[Microsoft Azure Documentation: Use portal to create Active Directory application and service principal that can access resources^]
 
 .Steps
 . From the Azure portal, open the *Azure Active Directory* service.
@@ -198,9 +197,7 @@ Note the following as you configure the virtual machine:
 
 * You should choose one of the recommended virtual machine sizes: A2 or D2_v2.
 
-* It is best to keep the default selection of a new network security group. This new security group includes the required inbound and outbound rules for Cloud Manager.
-+
-If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].
+* For the network security group, it is best to choose *Advanced*. The *Advanced* option creates a new security group that includes the required inbound rules for Cloud Manager. If you choose Basic, refer to link:reference_security_groups_azure.html[Security group rules] for the list of required rules.
 
 . Review your selections and click *OK*.
 +
@@ -238,9 +235,7 @@ You can deploy ONTAP Cloud in Azure to provide enterprise-class features for you
 +
 Note the following as you complete the wizard:
 
-* The predefined network security group includes the rules that ONTAP Cloud needs to operate successfully.
-+
-If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].
+* The predefined network security group includes the rules that ONTAP Cloud needs to operate successfully. If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].
 
 * The underlying Azure disk type is for the initial ONTAP Cloud volume. You can choose a different disk type for subsequent volumes.
 

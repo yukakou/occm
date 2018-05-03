@@ -27,9 +27,7 @@ If you need more storage after you launch an ONTAP Cloud system, you can provisi
 
 .Before you begin
 
-If you want to use CIFS in AWS, you must have set up DNS and Active Directory.
-
-link:reference_networking_aws.html[AWS networking requirements]
+If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[AWS networking requirements].
 
 .Steps
 
@@ -90,7 +88,7 @@ The listed DNS servers must contain the service location records (SRV) needed to
 
 . On the Usage Profile & Tiering page, choose a usage profile and disk type, and then click *Go*.
 +
-link:task_planning_your_config.html[Planning your configuration]
+For details about usage profiles, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Choosing a volume usage profile].
 
 . When prompted, click *Approve*.
 
@@ -102,9 +100,7 @@ ONTAP Cloud provisions the volume.
 
 If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
-If you want to apply quotas to volumes, you must use System Manager or the CLI.
-
-Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
+If you want to apply quotas to volumes, you must use System Manager or the CLI. Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
 
 == Provisioning volumes on the second node in an HA configuration
 
@@ -142,7 +138,7 @@ You can create aggregates yourself or let Cloud Manager do it for you when it cr
 
 . Click *Add Aggregate* and then specify details for the aggregate.
 +
-link:task_planning_your_config.html[Planning your configuration]
+For help with disk type and disk size, see link:task_planning_your_config.html[Planning your configuration].
 
 . Click *Go*, and then click *Approve and Purchase*.
 
@@ -156,9 +152,7 @@ If you want to create iSCSI LUNs, you need to do so from System Manager.
 
 * You must have recorded the iSCSI initiator name from the host. You need to supply this name when you create an igroup for the LUN.
 
-* Before you create volumes in System Manager, you must ensure that you have an aggregate with sufficient space. You need to create aggregates in Cloud Manager.
-+
-link:task_provisioning_storage.html#creating-aggregates[Creating aggregates]
+* Before you create volumes in System Manager, you must ensure that you have an aggregate with sufficient space. You need to create aggregates in Cloud Manager. For details, see link:task_provisioning_storage.html#creating-aggregates[Creating aggregates].
 
 .About this task
 
@@ -166,9 +160,8 @@ These steps describe how to use System Manager for ONTAP Cloud 9.3 and later.
 
 .Steps
 
-. Log in to System Manager.
-+
-link:task_connecting_to_otc.html[Connecting to ONTAP Cloud systems]
+. link:task_connecting_to_otc.html[Log in to System Manager].
+
 . Click *Storage > LUNs*.
 
 . Click *Create* and follow the prompts to create the LUN.

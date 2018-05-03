@@ -48,7 +48,9 @@ a|
 .. Select a volume, and then click *Clone*.
 .. Modify the clone name as needed, and then click *Clone*.
 
-This process creates a FlexClone volume. To learn about FlexClone volumes, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[ONTAP 9 Logical Storage Management Guide^].
+This process creates a FlexClone volume. A FlexClone volume is a writable, point-in-time copy that is space-efficient because it uses a small amount of space for metadata, and then only consumes additional space as data is changed or added.
+
+To learn more about FlexClone volumes, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html[ONTAP 9 Logical Storage Management Guide^].
 
 | Restore data from a Snapshot copy to a new volume
 a|
@@ -75,7 +77,7 @@ NOTE: Cloud Manager moves the volume to an existing aggregate that uses the sele
 | Enable or disable sync to S3 for a volume
 a| Select a volume and then click *Sync to S3* or *Delete Sync Relationship*.
 
-NOTE: The sync to S3 feature must be enabled before you can use these options.
+NOTE: The sync to S3 feature must be enabled before you can use these options. For instructions, see link:task_syncing_s3.html[Syncing data to AWS S3]
 
 | Delete a volume
 a|
@@ -95,8 +97,6 @@ If you want to delete an aggregate, you must have first deleted the volumes in t
 .About this task
 
 If an aggregate is running out of space, you can move volumes to another aggregate by using OnCommand System Manager.
-
-link:task_connecting_to_otc.html[Connecting to OnCommand System Manager]
 
 .Steps
 
@@ -205,7 +205,7 @@ You should choose volumes that are large enough to free space in the aggregate s
 
 . If the system has not reached the disk limit, you should move the volumes to an existing aggregate or a new aggregate on the same system.
 +
-link:task_managing_storage.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues[Moving volumes to another aggregate to avoid capacity issues]
+For details, see link:task_managing_storage.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues[Moving volumes to another aggregate to avoid capacity issues].
 
 . If the system has reached the disk limit, do any of the following:
 
@@ -213,11 +213,11 @@ link:task_managing_storage.html#moving-volumes-to-another-aggregate-to-avoid-cap
 
 .. Rearrange volumes to free space on an aggregate.
 +
-link:task_managing_storage.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues[Moving volumes to another aggregate to avoid capacity issues]
+For details, see link:task_managing_storage.html#moving-volumes-to-another-aggregate-to-avoid-capacity-issues[Moving volumes to another aggregate to avoid capacity issues].
 
 .. Move two or more volumes to another system that has space.
 +
-link:task_managing_storage.html#moving-volumes-to-another-system-to-avoid-capacity-issues[Moving volumes to another system to avoid capacity issues]
+For details, see link:task_managing_storage.html#moving-volumes-to-another-system-to-avoid-capacity-issues[Moving volumes to another system to avoid capacity issues].
 
 === Moving volumes to another system to avoid capacity issues
 
@@ -235,19 +235,19 @@ You can follow the steps in this task to correct the following Action Required m
 
 . Drag and drop the source working environment on the target working environment to perform a one-time data replication of the volume.
 +
-link:task_replicating_data.html#replicating-data-between-systems[Replicating data between systems]
+For details, see link:task_replicating_data.html#replicating-data-between-systems[Replicating data between systems].
 
 . Go to the Replication Status page, and then break the SnapMirror relationship to convert the replicated volume from a data protection volume to a read/write volume.
 +
-link:task_replicating_data.html#managing-data-replication-schedules-and-relationships[Managing data replication schedules and relationships]
+For details, see link:task_replicating_data.html#managing-data-replication-schedules-and-relationships[Managing data replication schedules and relationships].
 
 . Configure the volume for data access.
 +
-For information about configuring a destination volume for data access, see the ONTAP 9 Volume Disaster Recovery Express Guide.
+For information about configuring a destination volume for data access, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-sm-ic-fr/home.html[ONTAP 9 Volume Disaster Recovery Express Guide^].
 
 . Delete the original volume.
 +
-link:task_managing_storage.html#managing-existing-volumes[Managing existing volumes]
+For details, see link:task_managing_storage.html#managing-existing-volumes[Managing existing volumes].
 
 === Moving volumes to another aggregate to avoid capacity issues
 
@@ -277,7 +277,7 @@ image:screenshot_aggr_capacity.gif[Screen shot: Shows the total aggregate capaci
 
 . If no aggregates have available capacity, create a new aggregate.
 +
-link:task_provisioning_storage.html#creating-aggregates[Creating aggregates]
+For details, see link:task_provisioning_storage.html#creating-aggregates[Creating aggregates].
 
 . Use System Manager or the CLI to move the volumes to the aggregate.
 

@@ -18,9 +18,7 @@ You can launch a single ONTAP Cloud system in Azure by creating an ONTAP Cloud w
 
 .Before you begin
 
-* You should have prepared by choosing a configuration and by obtaining Azure networking information from your administrator.
-+
-link:task_planning_your_config.html[Planning your ONTAP Cloud configuration]
+* You should have prepared by choosing a configuration and by obtaining Azure networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your ONTAP Cloud configuration].
 
 * If you want to launch an ONTAP Cloud BYOL instance, you must have the 20-digit serial number (license key) and you must have credentials for a NetApp Support Site account, if the tenant is not already linked with an account.
 
@@ -47,8 +45,7 @@ Some of the fields in this page are self-explanatory. The following table descri
 
 | Name |	Cloud Manager uses the working environment name to name both the ONTAP Cloud system and the Azure virtual machine. It also uses the name as the prefix for the predefined security group, if you select that option.
 
-| Tags |	Tags are metadata for your Azure resources. Cloud Manager adds the tags to the ONTAP Cloud system and each Azure resource associated with the system.
-https://azure.microsoft.com/documentation/articles/resource-group-using-tags/[Microsoft Azure Documentation: Using tags to organize your Azure resources^]
+| Tags |	Tags are metadata for your Azure resources. Cloud Manager adds the tags to the ONTAP Cloud system and each Azure resource associated with the system. For information about tags, refer to https://azure.microsoft.com/documentation/articles/resource-group-using-tags/[Microsoft Azure Documentation: Using tags to organize your Azure resources^].
 |===
 +
 NOTE: If Azure credentials were not specified for your Cloud Manager account, you are prompted to enter them after you click Continue. You need to enter them before you can proceed.
@@ -57,7 +54,7 @@ NOTE: If Azure credentials were not specified for your Cloud Manager account, yo
 
 . On the ONTAP Cloud BYOL License page, specify whether you want to enter a license for this ONTAP Cloud system.
 +
-link:concept_licensing.html[How licensing works for ONTAP Cloud BYOL]
+To understand how licenses work, see link:concept_licensing.html[Licensing].
 
 . On the Preconfigured Packages page, select one of the packages to quickly launch an ONTAP Cloud system, or click *Create my own configuration*.
 +
@@ -67,31 +64,27 @@ If you choose one of the packages, you only need to specify a volume and then re
 +
 If your needs change after you launch the system, you can modify the license or virtual machine type later.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select ONTAP Cloud 9.2 RC1 and ONTAP Cloud 9.2 GA is available. The update does not occur from one release to another—for example, from 9.2 to 9.3.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select ONTAP Cloud 9.3 RC1 and ONTAP Cloud 9.3 GA is available. The update does not occur from one release to another—for example, from 9.2 to 9.3.
 
 . On the Azure Marketplace page, follow the steps if Cloud Manager could not enable programmatic deployments of ONTAP Cloud.
 
 . If the NetApp Support Site credentials page is displayed, enter your NetApp Support Site credentials.
 +
-Credentials are required for BYOL instances.
-+
-link:concept_storage_management.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account]
+Credentials are required for BYOL instances. For details, see link:concept_storage_management.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account].
 
 . On the Underlying storage resources page, choose either *Premium Storage* or *Standard Storage*.
 +
-The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
-+
-link:task_planning_your_config.html#choosing-an-azure-disk-type[Choosing an Azure disk type]
+The disk type is for the initial volume. You can choose a different disk type for subsequent volumes. For help choosing a disk type, see link:task_planning_your_config.html#choosing-an-azure-disk-type[Choosing an Azure disk type].
 
 . On the Disk Size page, select the default disk size for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option.
 +
 You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-link:task_planning_your_config.html#choosing-a-disk-size[Choosing disk size]
+For help choosing a size, see link:task_planning_your_config.html#choosing-a-disk-size[Choosing disk size].
 
 . On the Write Speed page, choose *Normal* or *High*.
 +
-link:task_planning_your_config.html#choosing-a-write-speed[Choosing a write speed]
+For help choosing between the options, see link:task_planning_your_config.html#choosing-a-write-speed[Choosing a write speed].
 
 . On the Create Volume page, enter details for the new volume, and then click *Continue*.
 +
@@ -161,11 +154,9 @@ For additional help, go to https://mysupport.netapp.com/cloudontap[NetApp ONTAP 
 
 .After you finish
 
-* If you deployed an ONTAP Cloud pay-as-you-go system and the tenant is not linked to a NetApp Support Site account, manually register the system with NetApp to enable support.
+* If you deployed an ONTAP Cloud pay-as-you-go system and the tenant is not linked to a NetApp Support Site account, manually register the system with NetApp to enable support. For instructions, see link:task_registering.html[Registering ONTAP Cloud instances].
 +
 Support from NetApp is included with your ONTAP Cloud system. To activate support, you must first register the system with NetApp.
-+
-link:task_registering.html[Registering ONTAP Cloud instances]
 
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 

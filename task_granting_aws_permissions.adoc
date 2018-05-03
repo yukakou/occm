@@ -42,13 +42,11 @@ https://mysupport.netapp.com/cloudontap/iampolicies[NetApp OnCommand Cloud Manag
 |===
 | Option
 | Description
-| Grant permissions to the Cloud Manager instance |  Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
+| Grant permissions to the Cloud Manager instance a|
+.. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
+.. Attach the IAM role to Cloud Manager when you launch it from the AWS Marketplace (choose *Custom Launch*) or by modifying an existing instance from the EC2 console.
 
-Attach the IAM role to Cloud Manager when you launch it from the AWS Marketplace (choose Custom Launch) or by modifying an existing instance from the EC2 console.
-
-| Grant permissions to IAM users | Attach the policy to IAM users or groups.
-
-http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html[AWS Documentation: Managing IAM Policies^]
+| Grant permissions to IAM users | Attach the policy to IAM users or groups. For instructions, refer to http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html[AWS Documentation: Managing IAM Policies^].
 |===
 
 .Result

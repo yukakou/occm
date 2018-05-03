@@ -18,7 +18,7 @@ Support from NetApp is included with ONTAP Cloud Explore, Standard, and Premium 
 
 .Before you begin
 
-The host from which you are logged in to Cloud Manager must have Internet access. If it does not, you can register from another location by going to https://register.netapp.com/[NetApp ONTAP Cloud Registration^].
+The host from which you are logged in to Cloud Manager must have internet access. If it does not, you can register from another location by going to https://register.netapp.com/[NetApp ONTAP Cloud Registration^].
 
 .About this task
 
@@ -28,7 +28,7 @@ If a tenant is linked to a NetApp Support Site account, Cloud Manager automatica
 
 . On the Working Environments page, double-click the name of the system that you want to register.
 
-. Click the menu icon and then click Support registration:
+. Click the menu icon and then click *Support registration*:
 +
 image:screenshot_menu_registration.gif[Screen shot: Shows the Support registration option selected in the menu icon for a ONTAP Cloud system.]
 +

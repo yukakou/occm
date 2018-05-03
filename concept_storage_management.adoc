@@ -15,7 +15,7 @@ summary: Cloud Manager makes storage provisioning easy by purchasing the AWS and
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager makes storage provisioning easy by purchasing the AWS and Azure storage that you need to provision volumes for ONTAP Cloud.
+Cloud Manager provides simplified and advanced management of ONTAP Cloud storage.
 
 toc::[]
 
@@ -41,7 +41,7 @@ TIP: The Cloud Manager Admin can modify free space thresholds from the *Settings
 
 ==== Disk size selection for aggregates in AWS
 
-When Cloud Manager creates new aggregates for ONTAP Cloud systems in AWS, it steadily increases the disk size in an aggregate, as the number of aggregates in the system increases. Cloud Manager does this to ensure that you can utilize the system's maximum capacity before it reaches the maximum number of data disks allowed by AWS.
+When Cloud Manager creates new aggregates for ONTAP Cloud systems in AWS, it gradually increases the disk size in an aggregate, as the number of aggregates in the system increases. Cloud Manager does this to ensure that you can utilize the system's maximum capacity before it reaches the maximum number of data disks allowed by AWS.
 
 For example, Cloud Manager might choose the following disk sizes for aggregates in an ONTAP Cloud Premium or BYOL system:
 
@@ -85,8 +85,6 @@ Note that free space is now available on the original aggregate. Existing volume
 === Manual capacity management
 
 If the Cloud Manager Admin set the Capacity Management Mode to manual, Cloud Manager displays Action Required messages when capacity decisions must be made. The same examples described in the automatic mode apply to the manual mode, but it is up to you to accept the actions.
-
-Cloud Manager provides a separate management view called the _Volume View_, which further simplifies storage management in AWS.
 
 == Storage isolation using tenants
 
@@ -150,6 +148,8 @@ Each NetApp Support Site account that you link to a tenant must be a NetApp cust
 
 == Simplified storage management using the Volume View
 
+Cloud Manager provides a separate management view called the _Volume View_, which further simplifies storage management in AWS.
+
 The Volume View enables you to simply specify the NFS volumes that you need in AWS and then Cloud Manager handles the rest: it deploys ONTAP Cloud systems as needed and it makes capacity allocation decisions as volumes grow. This view gives you the benefits of enterprise-class storage in the cloud with very little storage management.
 
 The following image shows how you interact with Cloud Manager in the Volume View:
@@ -182,32 +182,16 @@ NOTE: Cloud Manager does not launch ONTAP Cloud BYOL instances in the Volume Vie
 
 When you create additional volumes, Cloud Manager creates the volumes on existing ONTAP Cloud instances or on new ONTAP Cloud instances. Cloud Manager can create a volume on an existing instance if the instance's AWS location and disk type match the requested volume, and if there is enough space.
 
-If Cloud Manager creates a volume on an existing instance, it purchases the required EBS storage, which can be 1 TB or larger disks, depending on the requested volume size.
-
-If Cloud Manager creates a volume on a new instance, it purchases one to six 1 TB EBS disks, just like it did for the initial volume.
-
 === NetApp storage efficiency features and storage costs
 
-Cloud Manager automatically enables NetApp storage efficiency features on all volumes. These efficiencies can reduce the total amount of storage that you need.
-
-With these features enabled, you might see a difference between your allocated capacity and the purchased AWS capacity, which can result in storage cost savings.
+Cloud Manager automatically enables NetApp storage efficiency features on all volumes. These efficiencies can reduce the total amount of storage that you need. You might see a difference between your allocated capacity and the purchased AWS capacity, which can result in storage cost savings.
 
 === Capacity allocation decisions that Cloud Manager automatically handles
 
-* Cloud Manager purchases additional EBS disks as capacity thresholds are exceeded.
-+
-This happens as your volumes grow.
+* Cloud Manager purchases additional EBS disks as capacity thresholds are exceeded. This happens as your volumes grow.
 
 * Cloud Manager deletes unused sets of EBS disks if the disks contain no volumes for 12 hours.
 
 * Cloud Manager moves volumes between sets of disks to avoid capacity issues.
 +
 In some cases, this requires purchasing additional EBS disks. It also frees space on the original set of disks for new and existing volumes.
-
-=== Actions that require your approval
-
-* Cloud Manager prompts you for approval if it needs to upgrade to an ONTAP Cloud license that supports a higher EBS raw capacity limit.
-+
-You are prompted because it requires a reboot, during which I/O is interrupted.
-
-* Cloud Manager prompts you to delete ONTAP Cloud instances that contain no volumes.

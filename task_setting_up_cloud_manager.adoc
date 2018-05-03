@@ -91,7 +91,7 @@ Cloud Manager displays a certificate signing request.
 +
 The certificate must use the Privacy Enhanced Mail (PEM) Base-64 encoded X.509 format.
 
-.. Copy the content of the signed certificate, paste it in the Certificate field, and then click *Install*.
+.. Copy the contents of the signed certificate, paste it in the Certificate field, and then click *Install*.
 
 | Install your own CA-signed certificate
 a|
@@ -154,9 +154,7 @@ Cloud Manager can display the monthly compute and storage costs associated with 
 
 .Before you begin
 
-You must have granted AWS permissions to Cloud Manager so it can access an S3 bucket.
-
-link:task_getting_started_aws.html#granting-aws-permissions[Granting AWS permissions to Cloud Manager]
+You must have granted AWS permissions to Cloud Manager so it can access an S3 bucket. For details, see link:task_getting_started_aws.html#granting-aws-permissions[Granting AWS permissions to Cloud Manager].
 
 .About this task
 
