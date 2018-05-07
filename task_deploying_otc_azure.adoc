@@ -32,20 +32,24 @@ When Cloud Manager creates an ONTAP Cloud system in Azure, it creates a resource
 
 . Under Create, select *ONTAP Cloud*.
 
-. On the Details and Credentials page, enter a name for the working environment, add tags if needed, enter a password, and then click *Continue*.
+. On the Details and Credentials page, optionally change the Azure subscription, specify a cluster name and resource group name, add tags if needed, and then specify credentials.
 +
-Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
+The following table describes fields for which you might need guidance:
 +
 [cols=2*,options="header",cols="25,75"]
 |===
 | Field
 | Description
 
-| Credentials |	These are the credentials for the ONTAP Cloud cluster admin account. You can use these credentials to connect to ONTAP Cloud through OnCommand System Manager or its CLI.
+| Azure Subscription | If the Azure service principal is bound to multiple Azure subscriptions, select the current subscription and then choose another subscription. For instructions about binding the service principal, see link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Granting Azure Permissions to Cloud Manager].
 
-| Name |	Cloud Manager uses the working environment name to name both the ONTAP Cloud system and the Azure virtual machine. It also uses the name as the prefix for the predefined security group, if you select that option.
+| Working Environment Name |	Cloud Manager uses the working environment name to name both the ONTAP Cloud system and the Azure virtual machine. It also uses the name as the prefix for the predefined security group, if you select that option.
+
+| Resource Group Name | If you uncheck *Use Default*, you can type the name of an existing resource group or a new resource group.
 
 | Tags |	Tags are metadata for your Azure resources. Cloud Manager adds the tags to the ONTAP Cloud system and each Azure resource associated with the system. For information about tags, refer to https://azure.microsoft.com/documentation/articles/resource-group-using-tags/[Microsoft Azure Documentation: Using tags to organize your Azure resources^].
+
+| Credentials |	These are the credentials for the ONTAP Cloud cluster admin account. You can use these credentials to connect to ONTAP Cloud through OnCommand System Manager or its CLI.
 |===
 +
 NOTE: If Azure credentials were not specified for your Cloud Manager account, you are prompted to enter them after you click Continue. You need to enter them before you can proceed.
