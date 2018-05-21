@@ -28,8 +28,24 @@ Connection between Cloud Manager and ONTAP Cloud subnets::
 Cloud Manager requires a network connection to the AWS VPCs and Azure VNets in which you want to deploy ONTAP Cloud systems.
 
 Connection to the Cloud Manager web console::
-Users must access Cloud Manager from a web browser. The easiest way to provide access is by allocating a public IP address to the host. However, if you want to use a private IP address instead, users can access the console through either of the following:
+Users must access Cloud Manager from a web browser. A web browser must have connections to the following endpoints:
 +
-* A jump host that has a connection to Cloud Manager
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoint
+| Purpose
+|
+The Cloud Manager host
 
-* A host in your network that has a VPN connection to the private IP address
+a| You must enter the host's IP address from a web browser to load the Cloud Manager console.
+
+The easiest way to provide access is by allocating a public IP address. However, if you want to use a private IP address instead, users can access the console through either of the following:
+
+** A jump host that has a connection to Cloud Manager
+** A host in your network that has a VPN connection to the private IP address
+
+|
+\https://netapp-cloud-account.auth0.com
+| Your web browser connects to this endpoint for centralized user authentication through NetApp Cloud Central.
+
+|===

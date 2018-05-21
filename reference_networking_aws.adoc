@@ -26,9 +26,9 @@ The following requirements must be met in AWS.
 Outbound internet access for Cloud Manager::
 Cloud Manager requires outbound internet access to contact the following endpoints when deploying and managing ONTAP Cloud in AWS:
 +
-[cols=2*,options="header",cols="50,50"]
+[cols=2*,options="header,autowidth"]
 |===
-| Endpoint
+| Endpoints
 | Purpose
 a|
 AWS services (amazonaws.com):
@@ -58,6 +58,15 @@ cognito-identity.us-east-1.amazonaws.com
 \https://support.netapp.com/svcgw
 \https://support.netapp.com/ServiceGW/entitlement
 | Communication with NetApp for licensing and support registration.
+
+a| Various third-party locations, for example:
+
+\https://repo1.maven.org/maven2
+\https://oss.sonatype.org/content/repositories/
+
+Third-party locations are subject to change.
+
+| During upgrades, Cloud Manager downloads the latest packages for third-party dependencies.
 |===
 +
 NOTE: If your network uses a proxy server for all communication to the internet, Cloud Manager prompts you to specify the proxy during setup. You can also specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring Cloud Manager to use a proxy server].
@@ -74,6 +83,30 @@ The HA mediator instance must have an outbound connection to the AWS EC2 service
 +
 The manual option can be a NAT gateway or an interface VPC endpoint from the target subnet to the AWS EC2 service. For details about VPC endpoints, refer to http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html[AWS Documentation: Interface VPC Endpoints (AWS PrivateLink)^].
 
+Outbound internet access from your web browser::
+Users must access Cloud Manager from a web browser. A web browser must have connections to the following endpoints:
++
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoint
+| Purpose
+|
+The Cloud Manager host
+
+a| You must enter the host's IP address from a web browser to load the Cloud Manager console.
+
+If you deploy Cloud Manager in AWS, the easiest way to provide access is by allocating a public IP address. However, if you want to use a private IP address instead, users can access the console through either of the following:
+
+** A jump host in the VPC that has a connection to Cloud Manager
+** A host in your network that has a VPN connection to the private IP address
+
+|
+\https://netapp-cloud-account.auth0.com
+
+| Your web browser connects to this endpoint for centralized user authentication through NetApp Cloud Central.
+
+|===
+
 Security groups::
 You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference_security_groups.html[Security group rules].
 
@@ -81,13 +114,6 @@ Connection between Cloud Manager and ONTAP Cloud subnets::
 Cloud Manager requires a connection to the subnets in which you launch ONTAP Cloud systems, including the HA mediator.
 +
 If Cloud Manager is not installed in the target VPC, it must have network connectivity to that VPC. For example, if you install Cloud Manager in Azure or in your corporate network, then you must set up a VPN connection to the VPC in which you launch ONTAP Cloud systems.
-
-Connection to the Cloud Manager web console::
-Users must access Cloud Manager from a web browser. If you deploy Cloud Manager in AWS, the easiest way to provide access is by launching Cloud Manager in a public subnet with a public IP address. However, if you want to use a private IP address instead, users can access the console through either of the following:
-
-* A jump host in the VPC that has a connection to Cloud Manager
-
-* A host in your network that has a VPN connection to the private IP address
 
 Connection from ONTAP Cloud to AWS S3 for data tiering::
 If you want to use EBS as a performance tier and AWS S3 as a capacity tier, you must ensure that ONTAP Cloud has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].

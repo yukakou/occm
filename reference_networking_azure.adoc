@@ -20,9 +20,9 @@ You must set up your Azure networking so that Cloud Manager can deploy ONTAP Clo
 Outbound internet access for Cloud Manager::
 Cloud Manager requires outbound internet access to contact the following endpoints when deploying and managing ONTAP Cloud in Microsoft Azure:
 +
-[cols=2*,options="header",cols="50,50"]
+[cols=2*,options="header,autowidth"]
 |===
-| Endpoint
+| Endpoints
 | Purpose
 |
 
@@ -46,6 +46,7 @@ Cloud Manager requires outbound internet access to contact the following endpoin
 |
 cognito-idp.us-east-1.amazonaws.com
 cognito-identity.us-east-1.amazonaws.com
+sts.amazonaws.com
 | Enables Cloud Manager to access and download manifests, templates, and ONTAP Cloud upgrade images.
 
 | kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
@@ -57,6 +58,15 @@ cognito-identity.us-east-1.amazonaws.com
 \https://support.netapp.com/svcgw
 \https://support.netapp.com/ServiceGW/entitlement
 | Communication with NetApp for licensing and support registration.
+
+a| Various third-party locations, for example:
+
+\https://repo1.maven.org/maven2
+\https://oss.sonatype.org/content/repositories/
+
+Third-party locations are subject to change.
+
+| During upgrades, Cloud Manager downloads the latest packages for third-party dependencies.
 |===
 +
 NOTE: If your network uses a proxy server for all communication to the internet, Cloud Manager prompts you to specify the proxy during setup. You can also specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring Cloud Manager to use a proxy server].
@@ -65,6 +75,30 @@ Outbound internet access for ONTAP Cloud::
 ONTAP Cloud requires outbound internet access to send messages to NetApp AutoSupport, which proactively monitors the health of your storage.
 +
 Routing and firewall policies must allow Azure HTTP/HTTPS traffic to mysupport.netapp.com so ONTAP Cloud can send AutoSupport messages.
+
+Outbound internet access from your web browser::
+Users must access Cloud Manager from a web browser. A web browser must have connections to the following endpoints:
++
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoint
+| Purpose
+|
+The Cloud Manager host
+
+a| You must enter the host's IP address from a web browser to load the Cloud Manager console.
+
+If you deploy Cloud Manager in Azure, the easiest way to provide access is by allocating a public IP address. However, if you want to use a private IP address instead, users can access the console through either of the following:
+
+** A jump host in the VNet that has a connection to Cloud Manager
+** A host in your network that has a VPN connection to the private IP address
+
+|
+\https://netapp-cloud-account.auth0.com
+
+| Your web browser connects to this endpoint for centralized user authentication through NetApp Cloud Central.
+
+|===
 
 Security groups::
 You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].
@@ -78,10 +112,3 @@ Connections to ONTAP systems in other networks::
 To replicate data between an ONTAP Cloud system in Azure and ONTAP systems in other networks, you must have a VPN connection between the Azure VNet and the other network—for example, an AWS VPC or your corporate network.
 +
 For instructions, refer to https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal[Microsoft Azure Documentation: Create a Site-to-Site connection in the Azure portal^].
-
-Connection to the Cloud Manager web console::
-Users must access Cloud Manager from a web browser. If you deploy Cloud Manager in Azure, the easiest way to provide access is by allocating a public IP address. However, if you want to use a private IP address instead, users can access the console through either of the following:
-
-* A jump host in the VNet that has a connection to Cloud Manager
-
-* A host in your network that has a VPN connection to the private IP address
