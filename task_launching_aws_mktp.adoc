@@ -45,7 +45,7 @@ link:task_granting_aws_permissions.html[Granting permissions when Cloud Manager 
 a|
 .. On the Custom Launch tab, click *Launch with EC2 Console* for your region.
 
-.. Choose the t2.medium instance type.
+.. Choose the t2.medium or m3.large instance type.
 
 .. Select a VPC, subnet, IAM role, and other configuration options that meet your requirements.
 
@@ -61,7 +61,7 @@ a|
 a|
 .. On the 1-Click Launch tab, specify settings for the instance. Note the following:
 
-* The t2.medium instance type is supported.
+* The t2.medium and m3.large instance types are supported.
 
 * Under security group, select *Create new based on seller settings* to create a pre-defined security group that includes the rules required by Cloud Manager.
 
