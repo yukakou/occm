@@ -42,7 +42,7 @@ AWS services (amazonaws.com):
 The exact endpoint depends on the region in which you deploy ONTAP Cloud. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
 | Enables Cloud Manager to deploy and manage ONTAP Cloud systems in AWS.
 
-| s3.us-east-1.amazonaws.com	| Provides access to software images in Amazon S3 for upgrades.
+| cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
 
 |
 cognito-idp.us-east-1.amazonaws.com
