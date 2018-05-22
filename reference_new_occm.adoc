@@ -80,7 +80,7 @@ To review pricing differences between instance types and NetApp licenses, go to 
 | c4.2xlarge | m4.2xlarge
 | m3.xlarge | m4.xlarge
 | m3.2xlarge | m4.2xlarge
-| r3.xlarge | r4.xlarge
+| r3.xlarge | m4.2xlarge
 | r3.2xlarge | r4.2xlarge
 |===
 
