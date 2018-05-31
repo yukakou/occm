@@ -69,7 +69,7 @@ a|
 
 | Change the underlying disk type
 a|
-.. Select a volume, and then click *Change Tier*.
+.. Select a volume, and then click *Change Disk Type & Tiering Policy*.
 .. Select the disk type, and then click *Change*.
 
 NOTE: Cloud Manager moves the volume to an existing aggregate that uses the selected disk type or it creates a new aggregate for the volume.
@@ -227,7 +227,7 @@ You can move one or more volumes to another ONTAP Cloud system to avoid capacity
 
 You can follow the steps in this task to correct the following Action Required message:
 
-`Moving a volume is necessary to avoid capacity issues; however, Cloud Manager cannot perform this action for you because the system has reached the disk limit.`
+ Moving a volume is necessary to avoid capacity issues; however, Cloud Manager cannot perform this action for you because the system has reached the disk limit.
 
 .Steps
 
@@ -257,7 +257,7 @@ You can move one or more volumes to another aggregate to avoid capacity issues.
 
 You can follow the steps in this task to correct the following Action Required message:
 
-`Moving two or more volumes is necessary to avoid capacity issues; however, Cloud Manager cannot perform this action for you.`
+ Moving two or more volumes is necessary to avoid capacity issues; however, Cloud Manager cannot perform this action for you.
 
 .Steps
 

@@ -28,7 +28,7 @@ When Cloud Manager creates an ONTAP Cloud system in Azure, it creates a resource
 
 .Steps
 
-. On the Working Environments page, click *Add environment*.
+. On the Working Environments page, click *Add Working Environment*
 
 . Under Create, select *ONTAP Cloud*.
 
@@ -56,7 +56,7 @@ NOTE: If Azure credentials were not specified for your Cloud Manager account, yo
 
 . On the Location page, enter the network information that you recorded in the worksheet, select the checkbox to confirm network connectivity, and then click *Continue*.
 
-. On the ONTAP Cloud BYOL License page, specify whether you want to enter a license for this ONTAP Cloud system.
+. On the ONTAP Cloud BYOL License page, specify whether you have a license for this ONTAP Cloud system.
 +
 To understand how licenses work, see link:concept_licensing.html[Licensing].
 
@@ -76,15 +76,13 @@ NOTE: If a newer Release Candidate, General Availability, or patch release is av
 +
 Credentials are required for BYOL instances. For details, see link:concept_storage_management.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account].
 
-. On the Underlying storage resources page, choose either *Premium Storage* or *Standard Storage*.
+. On the Underlying Storage Resources page, choose either *Premium Storage* or *Standard Storage* and select a disk size.
 +
 The disk type is for the initial volume. You can choose a different disk type for subsequent volumes. For help choosing a disk type, see link:task_planning_your_config.html#choosing-an-azure-disk-type[Choosing an Azure disk type].
-
-. On the Disk Size page, select the default disk size for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option.
 +
-You can create aggregates that use a different disk size by using the advanced allocation option.
+The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a size, see link:task_planning_your_config.html#choosing-a-disk-size[Choosing disk size].
+For help choosing a size, see link:task_planning_your_config.html#choosing-a-disk-size[Choosing a disk size].
 
 . On the Write Speed page, choose *Normal* or *High*.
 +
@@ -107,10 +105,8 @@ Some of the fields in this page are self-explanatory. The following table descri
 
 | Permissions and Users / Groups (for CIFS only) |	These fields enable you to control the level of access to a share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
 
-| Volume Protection | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
+| Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
 
-| Usage Profile | Usage profiles define the NetApp storage efficiency features that are enabled for a volume.
-link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles]
 |===
 +
 The following image shows the Volume page filled out for the CIFS protocol:
@@ -137,6 +133,10 @@ The listed DNS servers must contain the service location records (SRV) needed to
 
 | DNS Domain | The DNS domain for the ONTAP Cloud storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 |===
+
+. On the Usage Profile, Disk Type, and Tiering Policy page, choose whether you want to enable storage efficiency features.
++
+For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles].
 
 . On the Review & Approve page, review and confirm your selections:
 

@@ -39,6 +39,10 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 
 | Launches an ONTAP Cloud instance and stops, starts, and monitors the instance.
 
+| "ec2:DescribeInstanceAttribute",
+
+| Verifies that enhanced networking is enabled for supported instance types.
+
 |
 "ec2:DescribeRouteTables",
 "ec2:DescribeImages",
@@ -245,6 +249,10 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 "Microsoft.Network/virtualNetworks/subnets/join/action",
 
 | Gets network information about regions, the target VNet and subnet, and adds ONTAP Cloud systems to VNets.
+
+| "Microsoft.Network/virtualNetworks/subnets/write",
+
+| Enables VNet service endpoints for data tiering.
 
 |
 "Microsoft.Resources/deployments/operations/read",

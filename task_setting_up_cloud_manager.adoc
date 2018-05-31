@@ -118,11 +118,9 @@ If additional users need to use your Cloud Manager system, they must sign up for
 +
 Wait until the user confirms that they have signed up for an account.
 
-. In Cloud Manager, click the user icon and then click *Users*.
-+
-image:screenshot_user.gif[Screen shot: Shows the Users option selected in the task drop-down list.]
+. In Cloud Manager, click the user icon and then click *View Users*.
 
-. Click *Add User*.
+. Click *New User*.
 
 . Enter the email address associated with the user account, select a role, and click *Add*.
 
@@ -136,9 +134,13 @@ You should link a tenant to a NetApp Support Site account so Cloud Manager can m
 
 .Steps
 
-. Click *Tenants*.
+. Click the tenants icon and then click *Switch Tenant*.
++
+image:screenshot_tenants_icon.gif[Screen shot: Shows the tenant icon (a push pin) and the Switch Tenant button, which are available in the upper right of the Cloud Manager console.]
 
-. Select the tenant that you want to link to a NetApp Support Site account.
+. Click the edit icon for the tenant that you want to link to a NetApp Support Site account.
++
+image:screenshot_tenant_edit.gif[Screen shot: Shows the edit icon (a pencil) which is available when hovering over a tenant.]
 
 . Click *Change NSS account*.
 

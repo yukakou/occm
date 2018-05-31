@@ -29,7 +29,7 @@ OnCommand Cloud Manager enables you to deploy and manage ONTAP Cloud, which is a
 
 == Automate with APIs
 
-https://library.netapp.com/ecmdocs/ECMLP2839258/html/index.html[OnCommand Cloud Manager API Developer Guide^]
+link:api.html[OnCommand Cloud Manager API Developer Guide^]
 
 == Learn about Cloud Manager and ONTAP Cloud
 

@@ -23,16 +23,21 @@ Watch videos that show you how to deploy and manage ONTAP Cloud in AWS and Azure
 +
 Download JSON files that include the permissions that Cloud Manager needs to perform actions in AWS and Azure.
 
-* https://library.netapp.com/ecmdocs/ECMLP2839258/html/index.html[Cloud Manager API Developer Guide^]
+* link:api.html[OnCommand Cloud Manager API Developer Guide^]
 +
 Read an overview of the APIs, examples of how to use them, and an API reference.
 
-* Release Notes
-** https://library.netapp.com/ecm/ecm_get_file/ECMLP2839255[Cloud Manager 3.4 Release Notes^]
-** https://library.netapp.com/ecm/ecm_get_file/ECMLP2839309[ONTAP Cloud 9.3 for AWS Release Notes^]
-** https://library.netapp.com/ecm/ecm_get_file/ECMLP2839308[ONTAP Cloud 9.3 for Azure Release Notes^]
+* Technical reports
+** https://www.netapp.com/us/media/tr-4383.pdf[NetApp Technical Report 4383: Performance Characterization of ONTAP Cloud in Amazon Web Services with Application Workloads^]
+** https://www.netapp.com/us/media/tr-4671.pdf[NetApp Technical Report 4671: Performance Characterization of ONTAP Cloud in Azure with Application Workloads^]
+
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[ONTAP Cloud 9 SVM Disaster Recovery Preparation Express Guide^]
 +
-Read about known issues and limitations that affect Cloud Manager and ONTAP Cloud.
+Describes how to quickly configure a destination SVM in preparation for disaster recovery.
+
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857[ONTAP Cloud 9 SVM Disaster Recovery Express Guide^]
++
+Describes how to quickly activate a destination SVM after a disaster, and then reactivate the source SVM.
 
 * http://docs.netapp.com/ontap-9/index.jsp[ONTAP 9 Documentation Center^]
 +
