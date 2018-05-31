@@ -35,65 +35,24 @@ In AWS, you can deploy ONTAP Cloud as a single system or an HA pair.
 | Premium
 | BYOL
 
-| EC2 instance types for single node systems a|
-* m3.xlarge
-* m4.xlarge
+| EC2 instance types  | m4.xlarge
 
 a|
-* c4.2xlarge
-* m3.2xlarge
 * m4.2xlarge
-* r3.xlarge
 * r4.xlarge
 
 a|
 * c4.4xlarge
 * c4.8xlarge
 * m4.4xlarge
-* r3.2xlarge
 * r4.2xlarge
 
 a|
-* c4.2xlarge
-* c4.4xlarge
-* c4.8xlarge
-* m3.xlarge
-* m3.2xlarge
-* m4.xlarge
-* m4.2xlarge
-* m4.4xlarge
-* r3.xlarge
-* r3.2xlarge
-* r4.xlarge
-* r4.2xlarge
-
-| EC2 instance types for HA pairs | m4.xlarge
-
-a|
-
-* c4.2xlarge
-* m4.2xlarge
-* r3.xlarge
-* r4.xlarge
-
-a|
-
-* c4.4xlarge
-* c4.8xlarge
-* m4.4xlarge
-* r3.2xlarge
-* r4.2xlarge
-
-a|
-
-* c4.2xlarge
 * c4.4xlarge
 * c4.8xlarge
 * m4.xlarge
 * m4.2xlarge
 * m4.4xlarge
-* r3.xlarge
-* r3.2xlarge
 * r4.xlarge
 * r4.2xlarge
 
@@ -110,13 +69,11 @@ Notes:
 
 . Pay-as-you-go configurations are not supported in GovCloud (US).
 
-. ONTAP Cloud encryption is not supported with M3 instances.
-
 . When you choose an EC2 instance type, you can specify whether it is a shared instance or a dedicated instance.
 
-. Enhanced write performance is supported when using EBS SSDs with ONTAP Cloud Standard, Premium, and BYOL, except when using M3 and R3 instance types with Standard and Premium.
+. Enhanced write performance is supported when using EBS SSDs with ONTAP Cloud Standard, Premium, and BYOL.
 
-. Tiered storage configurations are supported with ONTAP Cloud Standard, Premium, and BYOL, except when using M3 and R3 instance types when using Standard and Premium.
+. Data tiering is supported with ONTAP Cloud Standard, Premium, and BYOL.
 
 . For AWS region support, see link:reference_regions.html#supported-aws-regions[Supported AWS regions].
 

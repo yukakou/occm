@@ -19,4 +19,4 @@ Cloud Manager provides interactive API documentation using the Swagger interface
 
 image:screenshot_apis.gif[Shows the API documentation link that is available from the lower-right hand corner of the Cloud Manager web console.]
 
-You can also find an overview, examples, and an API reference in the https://library.netapp.com/ecmdocs/ECMLP2839258/html/index.html[OnCommand Cloud Manager API Developer Guide^].
+You can also find an overview, examples, and an API reference in the link:api.html[OnCommand Cloud Manager API Developer Guide^].

@@ -63,6 +63,6 @@ NOTE: You do not need to install a feature license to enable data tiering.
 
 === Setting up a tiered storage configuration
 
-You simply need to create a VPC Endpoint to S3 and then enable S3 tiering when creating a volume. For details, see link:task_tiering.html[Tiering data in AWS].
+You simply need to create a VPC Endpoint to S3 and then choose a tiering policy when creating a volume. For details, see link:task_tiering.html[Tiering data in AWS].
 
 image:screenshot_tiered_storage.gif[Screenshot that shows the icon to enable tiering to S3.]

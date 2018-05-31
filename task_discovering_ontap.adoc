@@ -37,7 +37,7 @@ The default "mgmt" firewall policy allows inbound HTTPS access from all IP addre
 
 .Steps
 
-. On the Working Environments page, click *Add environment*.
+. On the Working Environments page, click *Add Working Environment*.
 
 . Under *Discover*, select one of the icons to discover an ONTAP cluster.
 +
@@ -94,5 +94,5 @@ Some of the fields in this page are self-explanatory. The following table descri
 
 | Usage Profile | Usage profiles define the NetApp storage efficiency features that are enabled for a volume.
 
-| Volume Protection | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
+| Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
 |===

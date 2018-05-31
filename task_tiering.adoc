@@ -25,8 +25,6 @@ toc::[]
 Data tiering is supported with specific configurations and features:
 
 * Data tiering is supported with ONTAP Cloud Standard, Premium, and BYOL.
-+
-It is not supported with ONTAP Cloud Explore or with M3 and R3 instance types when using Standard and Premium.
 
 * The EBS tier can be General Purpose SSDs or Throughput Optimized HDDs.
 
@@ -69,7 +67,7 @@ ONTAP Cloud can tier Snapshot copies of read-write volumes to cost-effective S3 
 
 | Create a new volume	| Click *Add New Volume*.
 
-| Modify an existing volume | Select the volume and click *Change Tier*.
+| Modify an existing volume | Select the volume and click *Change Disk Type & Tiering Policy*.
 
 |===
 

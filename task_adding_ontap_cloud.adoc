@@ -21,7 +21,7 @@ You must know the password for the ONTAP Cloud admin user account.
 
 .Steps
 
-. On the Working Environments page, click *Add environment*.
+. On the Working Environments page, click *Add Working Environment*.
 
 . Under Discover, select *ONTAP Cloud*.
 +

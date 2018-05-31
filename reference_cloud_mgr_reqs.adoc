@@ -17,7 +17,7 @@ If you install Cloud Manager on your own host, then you must verify support for 
 
 [horizontal]
 AWS EC2 instance type::
-t2.medium or m3.large
+t2.medium or m4.large
 
 Azure VM size::
 A2 or D2_v2

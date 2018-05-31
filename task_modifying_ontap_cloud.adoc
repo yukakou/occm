@@ -63,7 +63,7 @@ For HA pairs, the change is nondisruptive. HA pairs continue to serve data.
 
 .Steps
 
-. From the working environment, click the menu icon, and then click *Change license or instance for AWS* or click *Change license or VM for Azure*.
+. From the working environment, click the menu icon, and then click *Change license or instance* for AWS or click *Change license or VM* for Azure.
 
 . If you are using a pay-as-you-go configuration, you can optionally choose a different license.
 
@@ -91,7 +91,7 @@ For HA pairs, the change is nondisruptive. HA pairs continue to serve data.
 
 .Steps
 
-. From the working environment, click the menu icon, and then click *Change license or instance for AWS* or click *Change license or VM for Azure*.
+. From the working environment, click the menu icon, and then click *Change license or instance* for AWS or click *Change license or VM* for Azure.
 
 . Select a license type and an instance type or virtual machine type, select the check box to confirm that you understand the implications of the change, and then click *OK*.
 

@@ -34,7 +34,7 @@ image:screenshot_shutdown_icon.gif[Screen shot: Shows the icon that loads the au
 
 . Specify the shutdown schedule:
 
-.. Choose whether you want to shut down the instance every weekday, every weekend, or both.
+.. Choose whether you want to shut down the instance every day, every weekday, every weekend, or any combination of the three options.
 
 .. Specify when you want to turn off the instance and for how long you want it turned off.
 +

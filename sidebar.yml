@@ -1,6 +1,18 @@
 entries:
-  - title: Cloud Manager 3.4 docs
+  - title: Cloud Manager 3.5 docs
     url: /index.html
+  - title: Release notes
+    entries:
+      - title: Cloud Manager
+        entries:
+          - title: What's new
+            url: /reference_new_occm.html
+          - title: Known issues
+            url: /reference_issues.html
+          - title: Known limitations
+            url: /reference_limitations.html
+      - title: ONTAP Cloud
+        url: /reference_new_otc.html
   - title: Getting started
     entries:
       - title: Overview
@@ -111,8 +123,6 @@ entries:
     entries:
       - title: Updating Cloud Manager
         url: /task_updating_cloud_manager.html
-      - title: Migrating to NetApp Cloud Central
-        url: /task_migrating_to_portal.html
       - title: Backing up and restoring
         url: /task_backing_up_restoring.html
       - title: Removing ONTAP Cloud working environments
@@ -129,10 +139,8 @@ entries:
         url: /task_uninstalling.html
   - title: Reference
     entries:
-      - title: What's new in Cloud Manager
-        url: /reference_new_occm.html
-      - title: What's new in ONTAP Cloud
-        url: /reference_new_otc.html
+      - title: FAQ for Cloud Central integration
+        url: /reference_integration_faq.html
       - title: Supported regions
         url: /reference_regions.html
       - title: Security group rules for AWS
