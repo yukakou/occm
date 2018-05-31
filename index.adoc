@@ -24,7 +24,6 @@ OnCommand Cloud Manager enables you to deploy and manage ONTAP Cloud, which is a
 * link:task_getting_started_aws.html[Get started in AWS]
 * link:task_getting_started_azure.html[Get started in Azure]
 * link:task_planning_your_config.html[Plan your ONTAP Cloud configuration]
-* link:task_migrating_to_portal.html[Migrate to NetApp Cloud Central]
 * link:task_replicating_data.html[Replicate data to and from the cloud]
 
 == Automate with APIs
