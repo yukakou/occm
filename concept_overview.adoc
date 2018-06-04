@@ -57,6 +57,6 @@ Secure your data at rest with advanced data encryption (AWS only).
 
 NOTE: The licenses for these features are included with ONTAP Cloud.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[View supported ONTAP Cloud configurations]
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[View supported ONTAP Cloud configurations^]
 
 https://www.netapp.com/us/cloud/ontap-cloud-native-product-details[Learn more about ONTAP Cloud^]

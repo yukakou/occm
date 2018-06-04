@@ -23,15 +23,15 @@ toc::[]
 
 ONTAP Cloud is available in AWS and Azure in two pricing options: pay-as-you-go and Bring Your Own License (BYOL). For pay-as-you-go, you can choose from three licenses: Explore, Standard, or Premium. Each license provides different capacity and compute options.
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[Supported configurations for ONTAP Cloud 9.4]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_93.html[Supported configurations for ONTAP Cloud 9.3]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[Supported configurations for ONTAP Cloud 9.4^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_93.html[Supported configurations for ONTAP Cloud 9.3^]
 
 == Understanding storage limits
 
 The raw capacity limit for an ONTAP Cloud system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_storage_limits_94.html[Storage limits for ONTAP Cloud 9.4]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_storage_limits_93.html[Storage limits for ONTAP Cloud 9.3]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_storage_limits_94.html[Storage limits for ONTAP Cloud 9.4^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_storage_limits_93.html[Storage limits for ONTAP Cloud 9.3^]
 
 == Choosing an AWS disk type
 
