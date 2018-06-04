@@ -109,6 +109,15 @@ Cloud Manager requires a connection to the subnets in which you deploy ONTAP Clo
 +
 If Cloud Manager is not installed in the target VNet, it must have network connectivity to that VNet. For example, if you install Cloud Manager in AWS or in your corporate network, you must set up a VPN connection to the VNet in which you deploy ONTAP Cloud systems.
 
+Connection from ONTAP Cloud to Azure Blob storage for data tiering::
+If you want to tier cold data to Azure Blob storage, you do not need to set up a VNet service endpoint as long as Cloud Manager has the required permission:
+
+"Microsoft.Network/virtualNetworks/subnets/write",
+
+That permission is included in the latest Cloud Manager policy. For details about providing permissions, see link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Granting Azure Permissions to Cloud Manager].
+
+For details about setting up data tiering, see link:task_tiering.html[Tiering cold data to low-cost object storage].
+
 Connections to ONTAP systems in other networks::
 To replicate data between an ONTAP Cloud system in Azure and ONTAP systems in other networks, you must have a VPN connection between the Azure VNet and the other network—for example, an AWS VPC or your corporate network.
 +
