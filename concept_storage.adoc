@@ -37,32 +37,52 @@ You choose the disk type and the default disk size when you deploy an ONTAP Clou
 
 TIP: The total amount of storage purchased from AWS or Azure is the _raw capacity_. The _usable capacity_ is less because approximately 12 to 14 percent is overhead that is reserved for ONTAP Cloud use. For example, if Cloud Manager creates a 500 GB aggregate, the usable capacity is 442.94 GB.
 
-== Data tiering in AWS
+== Data tiering
 
-With ONTAP Cloud for AWS, you can reduce storage costs by using EBS as a performance tier for "hot" data and AWS S3 as a capacity tier for "cold" data.
+You can reduce your storage costs by enabling automated tiering of cold data to low-cost object storage. Active data remains in high-performance SSDs or HDDs (the performance tier), while inactive data is tiered to low-cost object storage (the capacity tier). This enables you to reclaim space on your primary storage and shrink secondary storage.
 
-image:diagram_storage_tiering.png[This is a conceptual image that shows hot data going to EBS storage and cold data going to S3 storage.]
-
-Tiering data is a good choice if your data changes frequently or if you use ONTAP Cloud for disaster recovery or long-term retention:
-
-* After an aggregate has reached 50% capacity, ONTAP Cloud tiers Snapshot copies of read-write volumes to cost-effective S3 storage, freeing up the EBS performance tier for "hot" data.
-
-* When you replicate a volume for disaster recovery or long-term retention, data for the destination volume resides in the S3 capacity tier. If you activate the destination volume, the data gradually moves to the EBS performance tier as it is read.
-
-Note the following about the EBS and S3 tiers:
-
-* An ONTAP Cloud system's capacity limit is spread across EBS and S3 storage.
-
-* The EBS tier can be General Purpose SSDs or Throughput Optimized HDDs.
-
-* An ONTAP Cloud working environment uses a single S3 bucket for tiered data. This includes an HA working environment.
-
-* Cloud Manager creates the S3 bucket and names it fabric-pool-_cluster unique identifier_.
+ONTAP Cloud supports data tiering in AWS and in Microsoft Azure.
 
 NOTE: You do not need to install a feature license to enable data tiering.
 
-=== Setting up a tiered storage configuration
+=== How tiering works in AWS
 
-You simply need to create a VPC Endpoint to S3 and then choose a tiering policy when creating a volume. For details, see link:task_tiering.html[Tiering data in AWS].
+When you enable data tiering in AWS, ONTAP Cloud uses EBS as a performance tier for hot data and AWS S3 as a capacity tier for cold data:
 
-image:screenshot_tiered_storage.gif[Screenshot that shows the icon to enable tiering to S3.]
+image:diagram_storage_tiering.png[This is a conceptual image that shows hot data going to EBS storage and cold data going to S3 storage.]
+
+The performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Throughput Optimized HDDs.
+
+An ONTAP Cloud working environment uses a _single_ S3 bucket for all tiered data. This includes an HA working environment. Cloud Manager creates the S3 bucket and names it fabric-pool-_cluster unique identifier_.
+
+=== How tiering works in Microsoft Azure
+
+When you enable data tiering in Azure, ONTAP Cloud uses Azure managed disks as a performance tier for hot data and Azure Blob storage as a capacity tier for cold data:
+
+image:diagram_storage_tiering_azure.png[This is a conceptual image that shows hot data going to Azure managed disks and cold data going to Azure Blob storage.]
+
+The performance tier can be either Premium Storage (SSD) or Standard Storage (HDD).
+
+An ONTAP Cloud working environment uses a _single_ Azure Blob container for all tiered data. Cloud Manager creates a new storage account with a container for each ONTAP Cloud system. The name of the storage account is random.
+
+=== How tiering affects capacity limits
+
+An ONTAP Cloud system's capacity limit is spread across the performance tier and the capacity tier.
+
+=== Data tiering policies
+
+To enable data tiering, you must select a tiering policy when you create, modify, or replicate a volume. ONTAP Cloud supports the following tiering policies:
+
+Snapshot Only:: After an aggregate has reached 50% capacity, ONTAP Cloud tiers cold user data of Snapshot copies that are not associated with the active file system to the capacity tier. If read, cold data blocks on the capacity tier become hot and are moved to the performance tier.
+
+Auto:: After an aggregate has reached 50% capacity, ONTAP Cloud tiers cold data blocks in a volume to a capacity tier. The cold data includes not just Snapshot copies but also cold user data from the active file system. This policy is supported starting with ONTAP Cloud 9.4. It is supported with Premium and BYOL only.
++
+If read by random reads, the cold data blocks in the capacity tier become hot and move to the performance tier. If read by sequential reads, such as those associated with index and antivirus scans, the cold data blocks stay cold and do not move to the performance tier.
+
+Backup:: When you replicate a volume for disaster recovery or long-term retention, data for the destination volume starts in the capacity tier. If you activate the destination volume, the data gradually moves to the performance tier as it is read.
+
+None:: Keeps data of a volume in the performance tier, preventing it from being moved to the capacity tier.
+
+=== Setting up data tiering
+
+For instructions and a list of supported configurations, see link:task_tiering.html[Tiering cold data to low-cost object storage].

@@ -86,11 +86,16 @@ The listed DNS servers must contain the service location records (SRV) needed to
 | DNS Domain | The DNS domain for the ONTAP Cloud storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 |===
 
-. On the Usage Profile & Tiering page, choose a usage profile and disk type, and then click *Go*.
+. On the Usage Profile, Disk Type, and Tiering Policy page, choose whether you want to enable storage efficiency features, choose a disk type, and edit the S3 tiering policy, if needed.
 +
-For details about usage profiles, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Choosing a volume usage profile].
+For help, refer to the following:
 
-. When prompted, click *Approve*.
+* link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles]
+* link:task_planning_your_config.html#choosing-an-aws-disk-type[Choosing an AWS disk type]
+* link:task_planning_your_config.html#choosing-an-azure-disk-type[Choosing an Azure disk type]
+* link:concept_storage.html#data-tiering[Data tiering]
+
+. Click *Go*.
 
 .Result
 

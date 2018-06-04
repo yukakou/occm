@@ -19,4 +19,4 @@ Known issues identify problems that might prevent you from using this release of
 
 There are no known issues in this release of Cloud Manager.
 
-You can find known issues for ONTAP Cloud in the https://mysupport.netapp.com/documentation/docweb/index.html?productID=62567&language=en-US[ONTAP Cloud Release Notes^] and for ONTAP software in general in the https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508[ONTAP Release Notes^].
+You can find known issues for ONTAP Cloud in the https://docs.netapp.com/us-en/cloud-volumes-ontap/[ONTAP Cloud Release Notes^] and for ONTAP software in general in the https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508[ONTAP Release Notes^].
