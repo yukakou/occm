@@ -17,14 +17,14 @@ OnCommand Cloud Manager enables you to deploy and manage ONTAP Cloud, which is a
 == Discover what's new
 
 * link:reference_new_occm.html[What's new in Cloud Manager]
-* link:reference_new_otc.html[What's new in ONTAP Cloud]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_94.html[What's new in ONTAP Cloud]
 
 == Perform top tasks
 
 * link:task_getting_started_aws.html[Get started in AWS]
 * link:task_getting_started_azure.html[Get started in Azure]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[Find supported configurations for ONTAP Cloud]
 * link:task_planning_your_config.html[Plan your ONTAP Cloud configuration]
-* link:task_migrating_to_portal.html[Migrate to NetApp Cloud Central]
 * link:task_replicating_data.html[Replicate data to and from the cloud]
 
 == Automate with APIs

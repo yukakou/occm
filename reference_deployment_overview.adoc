@@ -52,6 +52,7 @@ After you get Cloud Manager up and running, you can start deploying ONTAP Cloud 
 
 link:task_getting_started_aws.html[Getting started in AWS] and link:task_getting_started_azure.html[Getting started in Azure] provide instructions for getting ONTAP Cloud up and running quickly. For additional help, refer to the following:
 
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[Supported configurations for ONTAP Cloud 9.4]
 * link:task_planning_your_config.html[Planning your configuration]
 * link:task_deploying_otc_aws.html[Launching ONTAP Cloud in AWS]
 * link:task_deploying_otc_azure.html[Launching ONTAP Cloud in Azure]

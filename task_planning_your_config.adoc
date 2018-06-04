@@ -21,117 +21,23 @@ toc::[]
 
 == Choosing a license type
 
-ONTAP Cloud is available in AWS and Azure in two pricing options: pay-as-you-go and Bring Your Own License (BYOL). For pay-as-you-go, you can choose from three configurations: Explore, Standard, or Premium.
+ONTAP Cloud is available in AWS and Azure in two pricing options: pay-as-you-go and Bring Your Own License (BYOL). For pay-as-you-go, you can choose from three licenses: Explore, Standard, or Premium. Each license provides different capacity and compute options.
 
-=== ONTAP Cloud for AWS
-
-In AWS, you can deploy ONTAP Cloud as a single system or an HA pair.
-
-[cols=5*,options="header"]
-|===
-|
-| Explore
-| Standard
-| Premium
-| BYOL
-
-| EC2 instance types  | m4.xlarge
-
-a|
-* m4.2xlarge
-* r4.xlarge
-
-a|
-* c4.4xlarge
-* c4.8xlarge
-* m4.4xlarge
-* r4.2xlarge
-
-a|
-* c4.4xlarge
-* c4.8xlarge
-* m4.xlarge
-* m4.2xlarge
-* m4.4xlarge
-* r4.xlarge
-* r4.2xlarge
-
-| EBS raw capacity limit | 2 TB | 10 TB
-2+<a|
-* 368 TB for single node systems
-* 360 TB per node in an HA pair
-
-| Term 3+| Hourly | 6 or 12 months
-
-|===
-
-Notes:
-
-. Pay-as-you-go configurations are not supported in GovCloud (US).
-
-. When you choose an EC2 instance type, you can specify whether it is a shared instance or a dedicated instance.
-
-. Enhanced write performance is supported when using EBS SSDs with ONTAP Cloud Standard, Premium, and BYOL.
-
-. Data tiering is supported with ONTAP Cloud Standard, Premium, and BYOL.
-
-. For AWS region support, see link:reference_regions.html#supported-aws-regions[Supported AWS regions].
-
-=== ONTAP Cloud for Azure
-
-In Azure, you can deploy ONTAP Cloud as a single node system.
-
-[cols=5*,options="header"]
-|===
-|
-| Explore
-| Standard
-| Premium
-| BYOL
-
-| Virtual machine types | DS3_v2
-
-a|
-* DS4_v2
-* DS13_v2
-
-a|
-* DS5_v2
-* DS14_v2
-
-a|
-* DS3_v2
-* DS4_v2
-* DS5_v2
-* DS13_v2
-* DS14_v2
-
-| Raw capacity limit | 2 TB | 10 TB 2+| 252 TB
-
-| Term 3+| Hourly | 12 months
-
-|===
-
-Notes:
-
-. The actual maximum capacity may be less because of virtual machine limits: 60 TB for DS3, 124 TB for DS4 and DS13, and 252 TB for DS5 and DS14.
-
-. For Azure region support, see link:reference_regions.html#supported-azure-regions[Supported Azure regions].
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[Supported configurations for ONTAP Cloud 9.4]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_93.html[Supported configurations for ONTAP Cloud 9.3]
 
 == Understanding storage limits
 
 The raw capacity limit for an ONTAP Cloud system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
 
-You can find storage limits in the ONTAP Cloud Release Notes.
-
-https://library.netapp.com/ecm/ecm_get_file/ECMLP2839309[ONTAP Cloud 9.3 for AWS Release Notes^]
-https://library.netapp.com/ecm/ecm_get_file/ECMLP2839308[ONTAP Cloud 9.3 for Azure Release Notes^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_storage_limits_94.html[Storage limits for ONTAP Cloud 9.4]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_storage_limits_93.html[Storage limits for ONTAP Cloud 9.3]
 
 == Choosing an AWS disk type
 
-When you create volumes for ONTAP Cloud systems, you need to choose the underlying EBS volume type (which ONTAP Cloud sees as a _disk_). You should choose the configuration that meets your requirements for performance and cost.
+When you create volumes for ONTAP Cloud systems, you need to choose the underlying cloud storage that ONTAP Cloud uses as a disk. In AWS, you can choose a single EBS disk type or a tiered storage configuration that uses EBS storage as a performance tier and S3 as a capacity tier. You should choose the configuration that meets your requirements for performance and cost.
 
-The underlying AWS disk type for ONTAP Cloud can be a single EBS disk type or a tiered storage configuration that uses EBS as a performance tier and S3 as a capacity tier. For an overview of data tiering, see link:concept_storage.html[Storage]. For requirements, see link:task_tiering.html[Tiering data in AWS].
+For an overview of data tiering, see link:concept_storage.html[Storage]. For requirements, see link:task_tiering.html[Tiering data in AWS].
 
 === Supported EBS disk types
 
@@ -151,7 +57,11 @@ For additional details about the use cases for these disks, refer to http://docs
 
 == Choosing an Azure disk type
 
-When you create volumes for ONTAP Cloud systems, you need to choose the underlying Azure disk type. Each disk type is designed for different workloads. You should choose the disk that meets your requirements for both performance and cost.
+When you create volumes for ONTAP Cloud systems, you need to choose the underlying cloud storage that ONTAP Cloud uses as a disk. in Azure, you can choose a managed disk or a tiered storage configuration that uses managed disks as a performance tier and Azure Blob storage as a capacity tier. You should choose the configuration that meets your requirements for performance and cost.
+
+For an overview of data tiering, see link:concept_storage.html[Storage]. For requirements, see link:task_tiering.html[Tiering cold data to low-cost object storage].
+
+=== Supported Azure managed disks
 
 The underlying disk type for Azure can be Premium Storage or Standard Storage:
 

@@ -12,7 +12,7 @@ entries:
           - title: Known limitations
             url: /reference_limitations.html
       - title: ONTAP Cloud
-        url: /reference_new_otc.html
+        url: https://docs.netapp.com/us-en/cloud-volumes-ontap/
   - title: Getting started
     entries:
       - title: Overview
@@ -85,7 +85,7 @@ entries:
         url: /task_provisioning_storage.html
   - title: Managing ONTAP Cloud
     entries:
-      - title: Tiering data in AWS
+      - title: Tiering cold data to object storage
         url: /task_tiering.html
       - title: Managing storage
         url: /task_managing_storage.html
@@ -141,6 +141,8 @@ entries:
     entries:
       - title: FAQ for Cloud Central integration
         url: /reference_integration_faq.html
+      - title: Supported configurations for ONTAP Cloud
+        url: https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_94.html
       - title: Supported regions
         url: /reference_regions.html
       - title: Security group rules for AWS
