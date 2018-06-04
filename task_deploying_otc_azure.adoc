@@ -134,9 +134,9 @@ The listed DNS servers must contain the service location records (SRV) needed to
 | DNS Domain | The DNS domain for the ONTAP Cloud storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 |===
 
-. On the Usage Profile, Disk Type, and Tiering Policy page, choose whether you want to enable storage efficiency features.
+. On the Usage Profile, Disk Type, and Tiering Policy page, choose whether you want to enable storage efficiency features and change the tiering policy, if needed.
 +
-For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles].
+For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_storage.html#data-tiering[Data tiering].
 
 . On the Review & Approve page, review and confirm your selections:
 

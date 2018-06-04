@@ -159,7 +159,7 @@ The listed DNS servers must contain the service location records (SRV) needed to
 
 . On the Usage Profile, Disk Type, and Tiering Policy page, choose whether you want to enable storage efficiency features and edit the S3 tiering policy, if needed.
 +
-For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_storage.html#data-tiering-in-aws[Data tiering].
+For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_storage.html#data-tiering[Data tiering].
 
 . On the Review & Approve page, review and confirm your selections:
 
@@ -347,7 +347,7 @@ The listed DNS servers must contain the service location records (SRV) needed to
 
 . On the Usage Profile, Disk Type, and Tiering Policy page, choose whether you want to enable storage efficiency features and edit the S3 tiering policy, if needed.
 +
-For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_storage.html#data-tiering-in-aws[Data tiering].
+For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_storage.html#data-tiering[Data tiering].
 
 . On the Review & Approve page, review and confirm your selections:
 

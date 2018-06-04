@@ -74,6 +74,14 @@ a|
 
 NOTE: Cloud Manager moves the volume to an existing aggregate that uses the selected disk type or it creates a new aggregate for the volume.
 
+| Change the tiering policy
+a|
+.. Select a volume, and then click *Change Disk Type & Tiering Policy*.
+.. Click *Edit Policy*.
+.. Select a different policy and click *Change*.
+
+NOTE: Cloud Manager moves the volume to an existing aggregate that uses the selected disk type with tiering, or it creates a new aggregate for the volume.
+
 | Enable or disable sync to S3 for a volume
 a| Select a volume and then click *Sync to S3* or *Delete Sync Relationship*.
 
