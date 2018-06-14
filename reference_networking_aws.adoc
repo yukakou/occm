@@ -89,7 +89,7 @@ Users must access Cloud Manager from a web browser. A web browser must have conn
 +
 [cols=2*,options="header,autowidth"]
 |===
-| Endpoint
+| Endpoints
 | Purpose
 |
 The Cloud Manager host
@@ -103,8 +103,9 @@ If you deploy Cloud Manager in AWS, the easiest way to provide access is by allo
 
 |
 \https://netapp-cloud-account.auth0.com
+\https://services.cloud.netapp.com
 
-| Your web browser connects to this endpoint for centralized user authentication through NetApp Cloud Central.
+| Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
 
 |===
 
