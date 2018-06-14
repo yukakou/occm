@@ -32,7 +32,7 @@ Users must access Cloud Manager from a web browser. A web browser must have conn
 +
 [cols=2*,options="header,autowidth"]
 |===
-| Endpoint
+| Endpoints
 | Purpose
 |
 The Cloud Manager host
@@ -46,6 +46,8 @@ The easiest way to provide access is by allocating a public IP address. However,
 
 |
 \https://netapp-cloud-account.auth0.com
-| Your web browser connects to this endpoint for centralized user authentication through NetApp Cloud Central.
+\https://services.cloud.netapp.com
+
+| Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
 
 |===
