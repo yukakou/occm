@@ -20,7 +20,7 @@ You must set up your Azure networking so that Cloud Manager can deploy ONTAP Clo
 Outbound internet access for Cloud Manager::
 Cloud Manager requires outbound internet access to contact the following endpoints when deploying and managing ONTAP Cloud in Microsoft Azure:
 +
-[cols=2*,options="header,autowidth"]
+[cols="43,57",options="header"]
 |===
 | Endpoints
 | Purpose
@@ -61,9 +61,9 @@ sts.amazonaws.com
 
 a| Various third-party locations, for example:
 
-\https://repo1.maven.org/maven2
-\https://oss.sonatype.org/content/repositories
-\https://repo.typesafe.org
+* \https://repo1.maven.org/maven2
+* \https://oss.sonatype.org/content/repositories
+* \https://repo.typesafe.org
 
 Third-party locations are subject to change.
 
@@ -80,7 +80,7 @@ Routing and firewall policies must allow Azure HTTP/HTTPS traffic to mysupport.n
 Outbound internet access from your web browser::
 Users must access Cloud Manager from a web browser. A web browser must have connections to the following endpoints:
 +
-[cols=2*,options="header,autowidth"]
+[cols="43,57",options="header"]
 |===
 | Endpoints
 | Purpose
@@ -95,6 +95,7 @@ If you deploy Cloud Manager in Azure, the easiest way to provide access is by al
 ** A host in your network that has a VPN connection to the private IP address
 
 |
+\https://auth0.com
 \https://netapp-cloud-account.auth0.com
 \https://services.cloud.netapp.com
 
