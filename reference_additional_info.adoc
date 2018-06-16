@@ -55,6 +55,10 @@ Connect with peers, ask questions, exchange ideas, find resources, and share bes
 +
 Find information about additional NetApp products and solutions for the cloud.
 
-* http://docs.netapp.com[NetApp Product Documentation]
+* http://docs.netapp.com[NetApp Product Documentation^]
 +
 Search NetApp product documentation for instructions, resources, and answers.
+
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2846509[Notice for Cloud Manager 3.5^]
++
+Provides information about third-party copyright and licenses.

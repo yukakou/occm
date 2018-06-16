@@ -76,7 +76,7 @@ NOTE: If a newer Release Candidate, General Availability, or patch release is av
 +
 Credentials are required for BYOL instances. For details, see link:concept_storage_management.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account].
 
-. On the Underlying Storage Resources page, choose either *Premium Storage* or *Standard Storage* and select a disk size.
+. On the Underlying Storage Resources page, choose either *Premium Storage* (SSD) or *Standard Storage* (HDD) and select a disk size.
 +
 The disk type is for the initial volume. You can choose a different disk type for subsequent volumes. For help choosing a disk type, see link:task_planning_your_config.html#choosing-an-azure-disk-type[Choosing an Azure disk type].
 +
