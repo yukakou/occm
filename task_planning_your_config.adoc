@@ -63,7 +63,7 @@ For an overview of data tiering, see link:concept_storage.html[Storage]. For req
 
 === Supported Azure managed disks
 
-The underlying disk type for Azure can be Premium Storage or Standard Storage:
+The underlying managed disk type for Azure can be Premium Storage or Standard Storage:
 
 * _Premium Storage_ disks store data on solid state drives (SSDs). The SSD disks provide high performance for I/O-intensive workloads at a higher cost.
 

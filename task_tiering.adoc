@@ -48,7 +48,7 @@ For a description of these policies, see link:concept_storage.html#data-tiering[
 
 * In AWS, the performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Throughput Optimized HDDs.
 
-* In Azure, the performance tier can be either Premium Storage (SSD) or Standard Storage (HDD).
+* In Azure, the performance tier can be either Premium SSD managed disks or Standard HDD managed disks.
 
 * Data tiering is supported with AWS-managed encryption and Azure-managed encryption.
 +
