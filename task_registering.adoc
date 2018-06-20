@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_registering.html
-keywords: ontap cloud, register, registering, paygo, pay-as-you-go, registration, instance id, serial number, account id, support
-summary: Support from NetApp is included with ONTAP Cloud Explore, Standard, and Premium systems, but you must first activate support by registering the systems with NetApp, if you have not set up automatic registration.
+keywords: Cloud Volumes ONTAP, register, registering, paygo, pay-as-you-go, registration, instance id, serial number, account id, support
+summary: Support from NetApp is included with Cloud Volumes ONTAP Explore, Standard, and Premium systems, but you must first activate support by registering the systems with NetApp, if you have not set up automatic registration.
 ---
 
 = Registering pay-as-you-go systems
@@ -14,11 +14,11 @@ summary: Support from NetApp is included with ONTAP Cloud Explore, Standard, and
 :imagesdir: ./media/
 
 [.lead]
-Support from NetApp is included with ONTAP Cloud Explore, Standard, and Premium systems, but you must first activate support by registering the systems with NetApp, if you have not set up automatic registration.
+Support from NetApp is included with Cloud Volumes ONTAP Explore, Standard, and Premium systems, but you must first activate support by registering the systems with NetApp, if you have not set up automatic registration.
 
 .Before you begin
 
-The host from which you are logged in to Cloud Manager must have internet access. If it does not, you can register from another location by going to https://register.netapp.com/[NetApp ONTAP Cloud Registration^].
+The host from which you are logged in to Cloud Manager must have internet access. If it does not, you can register from another location by going to https://register.netapp.com/[NetApp Cloud Volumes ONTAP Registration^].
 
 .About this task
 
@@ -30,7 +30,7 @@ If a tenant is linked to a NetApp Support Site account, Cloud Manager automatica
 
 . Click the menu icon and then click *Support registration*:
 +
-image:screenshot_menu_registration.gif[Screen shot: Shows the Support registration option selected in the menu icon for a ONTAP Cloud system.]
+image:screenshot_menu_registration.gif[Screen shot: Shows the Support registration option selected in the menu icon for a Cloud Volumes ONTAP system.]
 +
 The information that you need to register an instance is displayed:
 
@@ -44,4 +44,4 @@ The information that you need to register an instance is displayed:
 +
 Following this link automatically completes the instance ID, serial number, and account ID in the registration form.
 
-. Follow the instructions to register your ONTAP Cloud instance.
+. Follow the instructions to register your Cloud Volumes ONTAP system.

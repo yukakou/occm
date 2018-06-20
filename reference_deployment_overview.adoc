@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_deployment_overview.html
 keywords: installation, installing, install, setting up, set up, setup, deploy, deployment
-summary: Before you get started, you might want to better understand your options for deploying OnCommand Cloud Manager and ONTAP Cloud.
+summary: Before you get started, you might want to better understand your options for deploying OnCommand Cloud Manager and Cloud Volumes ONTAP.
 ---
 
 = Deployment overview
@@ -14,13 +14,13 @@ summary: Before you get started, you might want to better understand your option
 :imagesdir: ./media/
 
 [.lead]
-Before you get started, you might want to better understand your options for deploying OnCommand Cloud Manager and ONTAP Cloud.
+Before you get started, you might want to better understand your options for deploying OnCommand Cloud Manager and Cloud Volumes ONTAP.
 
 toc::[]
 
 == Cloud Manager installation
 
-Cloud Manager software is required to deploy and manage ONTAP Cloud systems. You can deploy Cloud Manager in any of the following locations:
+Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. You can deploy Cloud Manager in any of the following locations:
 
 * Amazon Web Services (AWS)
 * Microsoft Azure
@@ -46,13 +46,13 @@ For all other scenarios, refer to the following:
 
 You might want to perform additional setup after you install Cloud Manager, such as adding additional AWS accounts, installing an HTTPS certificate, and more. For instructions, see link:task_setting_up_cloud_manager.html[Setting up Cloud Manager].
 
-== ONTAP Cloud deployment
+== Cloud Volumes ONTAP deployment
 
-After you get Cloud Manager up and running, you can start deploying ONTAP Cloud systems in AWS and in Microsoft Azure.
+After you get Cloud Manager up and running, you can start deploying Cloud Volumes ONTAP in AWS and in Microsoft Azure.
 
-link:task_getting_started_aws.html[Getting started in AWS] and link:task_getting_started_azure.html[Getting started in Azure] provide instructions for getting ONTAP Cloud up and running quickly. For additional help, refer to the following:
+link:task_getting_started_aws.html[Getting started in AWS] and link:task_getting_started_azure.html[Getting started in Azure] provide instructions for getting Cloud Volumes ONTAP up and running quickly. For additional help, refer to the following:
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[Supported configurations for ONTAP Cloud 9.4^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[Supported configurations for Cloud Volumes ONTAP 9.4^]
 * link:task_planning_your_config.html[Planning your configuration]
-* link:task_deploying_otc_aws.html[Launching ONTAP Cloud in AWS]
-* link:task_deploying_otc_azure.html[Launching ONTAP Cloud in Azure]
+* link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
+* link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]

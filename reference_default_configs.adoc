@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_default_configs.html
 keywords: linux, user name, operating system, installation files, installation folder, folder, log, logs, service, mysql, packages, linux,  svm, LIF, LIFs, configuration backups, attributes, autosize, security style, space guarantee, unix permissions, NTFS, UNIX, boot, root, disks, aggr0, aggr1, svm, svms, storage virtual machine, LIF failover, failover, attributes, volume attributes, boot disk, root disk
-summary: Details about how Cloud Manager and ONTAP Cloud are configured by default can help you administer the systems.
+summary: Details about how Cloud Manager and Cloud Volumes ONTAP are configured by default can help you administer the systems.
 ---
 
 = Default configurations
@@ -16,7 +16,7 @@ summary: Details about how Cloud Manager and ONTAP Cloud are configured by defau
 
 [.lead]
 
-Details about how Cloud Manager and ONTAP Cloud are configured by default can help you administer the systems.
+Details about how Cloud Manager and Cloud Volumes ONTAP are configured by default can help you administer the systems.
 
 toc::[]
 
@@ -53,13 +53,13 @@ If the MySQL service is down, then the occm service is down too.
 ** MySQL
 ** Wget
 
-== Default configuration for ONTAP Cloud
+== Default configuration for Cloud Volumes ONTAP
 
-Understanding how ONTAP Cloud is configured by default can help you set up and administer your systems, especially if you are familiar with ONTAP because the default setup for ONTAP Cloud is different than ONTAP.
+Understanding how Cloud Volumes ONTAP is configured by default can help you set up and administer your systems, especially if you are familiar with ONTAP because the default setup for Cloud Volumes ONTAP is different than ONTAP.
 
-* ONTAP Cloud is available as a single system in AWS and Microsoft Azure, and as an HA pair in AWS.
+* Cloud Volumes ONTAP is available as a single system in AWS and Microsoft Azure, and as an HA pair in AWS.
 
-* Cloud Manager creates one data-serving SVM when it deploys an ONTAP Cloud system. While you can create another data-serving SVM from System Manager or the CLI, using multiple data-serving SVMs is not supported.
+* Cloud Manager creates one data-serving SVM when it deploys Cloud Volumes ONTAP. While you can create another data-serving SVM from System Manager or the CLI, using multiple data-serving SVMs is not supported.
 
 * Several network interfaces are created by default:
 ** A cluster management LIF
@@ -68,9 +68,9 @@ Understanding how ONTAP Cloud is configured by default can help you set up and a
 ** An iSCSI data LIF
 ** A CIFS and NFS data LIF
 +
-NOTE: LIF failover is disabled by default for ONTAP Cloud due to EC2 requirements. Migrating a LIF to a different port breaks the external mapping between IP addresses and network interfaces on the instance, making the LIF inaccessible.
+NOTE: LIF failover is disabled by default for Cloud Volumes ONTAP due to EC2 requirements. Migrating a LIF to a different port breaks the external mapping between IP addresses and network interfaces on the instance, making the LIF inaccessible.
 
-* ONTAP Cloud sends configuration backups to Cloud Manager using HTTPS.
+* Cloud Volumes ONTAP sends configuration backups to Cloud Manager using HTTPS.
 
 * When logged in to Cloud Manager, the backups are accessible from https://ipaddress/occm/offboxconfig/
 
@@ -99,25 +99,25 @@ UNIX for NFS volumes
 +
 See the _volume create_ man page for information about these attributes.
 
-== Boot and root data for ONTAP cloud
+== Boot and root data for Cloud Volumes ONTAP
 
-In addition to the storage for user data, Cloud Manager also purchases cloud storage for boot and root data on each ONTAP Cloud system.
+In addition to the storage for user data, Cloud Manager also purchases cloud storage for boot and root data on each Cloud Volumes ONTAP system.
 
 === AWS
 
-* One Provisioned IOPS SSD disk for ONTAP Cloud boot data, which is approximately 45 GB and 1,250 PIOPS
+* One Provisioned IOPS SSD disk for Cloud Volumes ONTAP boot data, which is approximately 45 GB and 1,250 PIOPS
 
-* One General Purpose SSD disk for ONTAP Cloud root data, which is approximately 140 GB
+* One General Purpose SSD disk for Cloud Volumes ONTAP root data, which is approximately 140 GB
 
 * One EBS snapshot for each boot disk and root disk
 
-In an HA pair, both ONTAP Cloud nodes replicate its root disk to the partner node.
+In an HA pair, both Cloud Volumes ONTAP nodes replicate its root disk to the partner node.
 
 === Azure
 
-* One Premium Storage SSD disk for ONTAP Cloud boot data, which is approximately 73 GB
+* One Premium Storage SSD disk for Cloud Volumes ONTAP boot data, which is approximately 73 GB
 
-* One Premium Storage SSD disk for ONTAP Cloud root data, which is approximately 140 GB
+* One Premium Storage SSD disk for Cloud Volumes ONTAP root data, which is approximately 140 GB
 
 * One Azure snapshot for each boot disk and root disk
 
@@ -127,7 +127,7 @@ Cloud Manager lays out the storage from AWS and Azure as follows:
 
 * Boot data resides on a disk attached to the EC2 instance or Azure virtual machine.
 +
-This disk, which contains the boot image, is not available to ONTAP Cloud.
+This disk, which contains the boot image, is not available to Cloud Volumes ONTAP.
 
 * Root data, which contains the system configuration and logs, resides in aggr0.
 

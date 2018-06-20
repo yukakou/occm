@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_managing_state.html
 keywords: schedule, schedules, scheduling, shutdowns, shut down, restart, stop, stopping, turn off, weekday, weekend
-summary: You can stop and start ONTAP Cloud systems from Cloud Manager to manage your cloud compute costs.
+summary: You can stop and start Cloud Volumes ONTAP from Cloud Manager to manage your cloud compute costs.
 ---
 
-= Managing the state of ONTAP Cloud systems
+= Managing the state of Cloud Volumes ONTAP
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -14,13 +14,13 @@ summary: You can stop and start ONTAP Cloud systems from Cloud Manager to manage
 :imagesdir: ./media/
 
 [.lead]
-You can stop and start ONTAP Cloud systems from Cloud Manager to manage your cloud compute costs.
+You can stop and start Cloud Volumes ONTAP from Cloud Manager to manage your cloud compute costs.
 
 toc::[]
 
-== Scheduling automatic shutdowns of ONTAP Cloud instances
+== Scheduling automatic shutdowns of Cloud Volumes ONTAP
 
-You might want to shut down ONTAP Cloud instances during specific time intervals to lower your compute costs. Rather than do this manually, you can configure Cloud Manager to automatically shut down and then restart instances at specific times.
+You might want to shut down Cloud Volumes ONTAP during specific time intervals to lower your compute costs. Rather than do this manually, you can configure Cloud Manager to automatically shut down and then restart systems at specific times.
 
 .About this task
 
@@ -34,15 +34,15 @@ image:screenshot_shutdown_icon.gif[Screen shot: Shows the icon that loads the au
 
 . Specify the shutdown schedule:
 
-.. Choose whether you want to shut down the instance every day, every weekday, every weekend, or any combination of the three options.
+.. Choose whether you want to shut down the system every day, every weekday, every weekend, or any combination of the three options.
 
-.. Specify when you want to turn off the instance and for how long you want it turned off.
+.. Specify when you want to turn off the system and for how long you want it turned off.
 +
 *Example*
 +
-The following image shows a schedule that instructs Cloud Manager to shut down the instance every Saturday at 12:00 a.m. for 48 hours. Cloud Manager restarts the instance every Monday at 12:00 a.m.
+The following image shows a schedule that instructs Cloud Manager to shut down the system every Saturday at 12:00 a.m. for 48 hours. Cloud Manager restarts the system every Monday at 12:00 a.m.
 +
-image:screenshot_shutdown.gif[Screen shot: Shows a shutdown schedule that shuts down a ONTAP Cloud instance every weekend at 12:00 AM for 48 hours.]
+image:screenshot_shutdown.gif[Screen shot: Shows a shutdown schedule that shuts down Cloud Volumes ONTAP every weekend at 12:00 AM for 48 hours.]
 
 . Click *Save*.
 
@@ -50,22 +50,22 @@ image:screenshot_shutdown.gif[Screen shot: Shows a shutdown schedule that shuts 
 
 Cloud Manager saves the schedule. The clock icon changes to indicate that a schedule is set: image:screenshot_shutdown_icon_scheduled.gif[Screen shot: Shows the automatic shutdown icon after a schedule is defined.]
 
-== Stopping ONTAP Cloud instances
+== Stopping Cloud Volumes ONTAP
 
-Stopping ONTAP Cloud saves you from accruing compute costs and creates snapshots of the root and boot disks, which can be helpful for troubleshooting.
+Stopping Cloud Volumes ONTAP saves you from accruing compute costs and creates snapshots of the root and boot disks, which can be helpful for troubleshooting.
 
 .About this task
 
-When you stop an ONTAP Cloud HA pair, Cloud Manager shuts down both nodes.
+When you stop an HA pair, Cloud Manager shuts down both nodes.
 
 .Steps
 
 . From the working environment, click the *Turn off* icon.
 +
-image:screenshot_otc_turn_off.gif[Screen shot: Shows the icon to turn off an ONTAP Cloud system.]
+image:screenshot_otc_turn_off.gif[Screen shot: Shows the icon to turn off a Cloud Volumes ONTAP system.]
 
 . Keep the option to create snapshots enabled because the snapshots can enable system recovery.
 
 . Click *Turn Off*.
 +
-It can take up to a few minutes to stop the instance or instances. You can restart instances at a later time from the working environment page.
+It can take up to a few minutes to stop the system. You can restart systems at a later time from the working environment page.

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_provisioning_storage.html
 keywords: storage, provisioning, iscsi, nfs, cifs, volumes, aggregates, provision, create, quotas, nas, san, LUNs, quotas, qtree, add, advanced allocation
-summary: You can provision additional NFS and CIFS storage for your ONTAP Cloud systems from Cloud Manager by managing volumes and aggregates.
+summary: You can provision additional NFS and CIFS storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates.
 ---
 
 = Provisioning storage
@@ -15,15 +15,15 @@ summary: You can provision additional NFS and CIFS storage for your ONTAP Cloud 
 
 [.lead]
 
-You can provision additional NFS and CIFS storage for your ONTAP Cloud systems from Cloud Manager by managing volumes and aggregates. If you need to create iSCSI storage, you should do so from System Manager.
+You can provision additional NFS and CIFS storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates. If you need to create iSCSI storage, you should do so from System Manager.
 
-image:workflow_storage_provisioning.png[This illustration shows the steps to provision storage for ONTAP Cloud: if using NFS, create volumes in Cloud Manager and if using CIFS or iSCSI, create aggregates in Cloud Manager and then provision storage in System Manager.]
+image:workflow_storage_provisioning.png[This illustration shows the steps to provision storage for Cloud Volumes ONTAP: if using NFS, create volumes in Cloud Manager and if using CIFS or iSCSI, create aggregates in Cloud Manager and then provision storage in System Manager.]
 
 toc::[]
 
 == Provisioning volumes
 
-If you need more storage after you launch an ONTAP Cloud system, you can provision new NFS and CIFS volumes from Cloud Manager.
+If you need more storage after you launch a Cloud Volumes ONTAP system, you can provision new NFS and CIFS volumes from Cloud Manager.
 
 .Before you begin
 
@@ -31,7 +31,7 @@ If you want to use CIFS in AWS, you must have set up DNS and Active Directory. F
 
 .Steps
 
-. On the Working Environments page, double-click the name of the ONTAP Cloud system on which you want to provision volumes.
+. On the Working Environments page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision volumes.
 
 . Create a new volume on any aggregate or on a specific aggregate:
 +
@@ -83,7 +83,7 @@ The listed DNS servers must contain the service location records (SRV) needed to
 
 | Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
 
-| DNS Domain | The DNS domain for the ONTAP Cloud storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
+| DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 |===
 
 . On the Usage Profile, Disk Type, and Tiering Policy page, choose whether you want to enable storage efficiency features, choose a disk type, and edit the S3 tiering policy, if needed.
@@ -99,7 +99,7 @@ For help, refer to the following:
 
 .Result
 
-ONTAP Cloud provisions the volume.
+Cloud Volumes ONTAP provisions the volume.
 
 .After you finish
 
@@ -113,7 +113,7 @@ By default, Cloud Manager creates volumes on the first node in an HA configurati
 
 .Steps
 
-. On the Working Environments page, double-click the name of the ONTAP Cloud working environment on which you want to manage aggregates.
+. On the Working Environments page, double-click the name of the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
 
 . Click the menu icon and then click *Advanced > Advanced allocation*.
 
@@ -137,7 +137,7 @@ You can create aggregates yourself or let Cloud Manager do it for you when it cr
 
 .Steps
 
-. On the Working Environments page, double-click the name of the ONTAP Cloud instance on which you want to manage aggregates.
+. On the Working Environments page, double-click the name of the Cloud Volumes ONTAP instance on which you want to manage aggregates.
 
 . Click the menu icon, and then click *Advanced > Advanced allocation*.
 
@@ -161,7 +161,7 @@ If you want to create iSCSI LUNs, you need to do so from System Manager.
 
 .About this task
 
-These steps describe how to use System Manager for ONTAP Cloud 9.3 and later.
+These steps describe how to use System Manager for version 9.3 and later.
 
 .Steps
 

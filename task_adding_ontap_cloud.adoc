@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_adding_ontap_cloud.html
 keywords: discover, discovering, add, adding, existing
-summary: You can discover and add existing ONTAP Cloud instances to Cloud Manager.
+summary: You can discover and add existing Cloud Volumes ONTAP systems to Cloud Manager.
 ---
 
-= Adding existing ONTAP Cloud systems to Cloud Manager
+= Adding existing Cloud Volumes ONTAP systems to Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,11 @@ summary: You can discover and add existing ONTAP Cloud instances to Cloud Manage
 :imagesdir: ./media/
 
 [.lead]
-You can discover and add existing ONTAP Cloud instances to Cloud Manager. You might do this if your Cloud Manager instance became unusable and you launched a new instance, but you could not restore all ONTAP Cloud instances from a recent Cloud Manager backup.
+You can discover and add existing Cloud Volumes ONTAP systems to Cloud Manager. You might do this if your Cloud Manager system became unusable and you launched a new system, but you could not restore all Cloud Volumes ONTAP systems from a recent Cloud Manager backup.
 
 .Before you begin
 
-You must know the password for the ONTAP Cloud admin user account.
+You must know the password for the Cloud Volumes ONTAP admin user account.
 
 .Steps
 
@@ -25,12 +25,12 @@ You must know the password for the ONTAP Cloud admin user account.
 
 . Under Discover, select *ONTAP Cloud*.
 +
-image:screenshot_discover_otc.gif[Screen shot: Shows the ONTAP Cloud icon for creating or discovering an instance.]
+image:screenshot_discover_otc.gif[Screen shot: Shows the Cloud Volumes ONTAP icon for creating or discovering an instance.]
 
 . On the Region page, choose the region where the instances are running, and then select the instances.
 
-. On the Credentials page, enter the password for the ONTAP Cloud admin user, and then click *Go*.
+. On the Credentials page, enter the password for the Cloud Volumes ONTAP admin user, and then click *Go*.
 
 .Result
 
-Cloud Manager adds the ONTAP Cloud instances to the tenant.
+Cloud Manager adds the Cloud Volumes ONTAP instances to the tenant.

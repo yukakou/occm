@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_modifying_ontap_cloud.html
 keywords: license, licensing, install, instance type, virtual machine type, VM type, change, modify, configuration, subscription, paygo, pay-as-you-go, pay as you go, byol, password, MTU, jumbo frames, c4.xlarge, c4.8xlarge, HA pair, file, license file, install, upload, change, modify, svm, storage virtual machine, password, route tables
-summary: You might need to change the configuration of ONTAP Cloud instances as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and move to an alternate subscription.
+summary: You might need to change the configuration of Cloud Volumes ONTAP instances as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and move to an alternate subscription.
 ---
 
-= Modifying ONTAP Cloud systems
+= Modifying Cloud Volumes ONTAP
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -15,29 +15,29 @@ summary: You might need to change the configuration of ONTAP Cloud instances as 
 
 [.lead]
 
-You might need to change the configuration of ONTAP Cloud instances as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and move to an alternate subscription.
+You might need to change the configuration of Cloud Volumes ONTAP instances as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and move to an alternate subscription.
 
 toc::[]
 
-== Installing license files on ONTAP Cloud BYOL systems
+== Installing license files on Cloud Volumes ONTAP BYOL systems
 
-If Cloud Manager cannot obtain an ONTAP Cloud BYOL license file from NetApp, you can obtain the file yourself and then manually upload the file to Cloud Manager so it can install the license on the ONTAP Cloud system.
+If Cloud Manager cannot obtain a BYOL license file from NetApp, you can obtain the file yourself and then manually upload the file to Cloud Manager so it can install the license on the Cloud Volumes ONTAP system.
 
 .Steps
 
 . Go to the https://register.netapp.com/register/getlicensefile[NetApp License File Generator^] and log in using your NetApp Support Site credentials.
 
-. Enter your password, choose your product (either *NetApp ONTAP Cloud BYOL for AWS*, *NetApp ONTAP Cloud BYOL for Azure*, or *NetApp ONTAP Cloud BYOL HA for AWS*), enter the serial number, confirm that you have read and accepted the privacy policy, and then click *Submit*.
+. Enter your password, choose your product (either *NetApp Cloud Volumes ONTAP BYOL for AWS*, *NetApp Cloud Volumes ONTAP BYOL for Azure*, or *NetApp Cloud Volumes ONTAP BYOL HA for AWS*), enter the serial number, confirm that you have read and accepted the privacy policy, and then click *Submit*.
 +
 *Example*
 +
-image:screenshot_license_generator.gif[Screen shot: Shows an example of the NetApp License File Generator web page filled out, including a password, a product (NetApp ONTAP Cloud BYOL for AWS), and a product serial number.]
+image:screenshot_license_generator.gif[Screen shot: Shows an example of the NetApp License File Generator web page filled out, including a password, a product (NetApp Cloud Volumes ONTAP BYOL for AWS), and a product serial number.]
 
 . Choose whether you want to receive the serialnumber.NLF JSON file through email or direct download.
 
-. In Cloud Manager, select the ONTAP Cloud BYOL working environment.
+. In Cloud Manager, select the Cloud Volumes ONTAP BYOL working environment.
 
-. In the ONTAP Cloud Storage pane, click the menu icon, and then click *License*.
+. In the Storage pane, click the menu icon, and then click *License*.
 
 . Click *Upload License File*.
 
@@ -45,15 +45,15 @@ image:screenshot_license_generator.gif[Screen shot: Shows an example of the NetA
 
 .Result
 
-Cloud Manager installs the new license file on the ONTAP Cloud system.
+Cloud Manager installs the new license file on the Cloud Volumes ONTAP system.
 
-== Changing the instance or virtual machine type for ONTAP Cloud
+== Changing the instance or virtual machine type for Cloud Volumes ONTAP
 
-You can choose from several instance or virtual machine types when you launch ONTAP Cloud in AWS or Azure. You can change the instance or virtual machine type at any time if you determine that it is undersized or oversized for your needs.
+You can choose from several instance or virtual machine types when you launch Cloud Volumes ONTAP in AWS or Azure. You can change the instance or virtual machine type at any time if you determine that it is undersized or oversized for your needs.
 
 .About this task
 
-* The operation restarts ONTAP Cloud.
+* The operation restarts Cloud Volumes ONTAP.
 +
 For single node systems, I/O is interrupted.
 +
@@ -71,17 +71,17 @@ For HA pairs, the change is nondisruptive. HA pairs continue to serve data.
 
 .Result
 
-ONTAP Cloud reboots with the new configuration.
+Cloud Volumes ONTAP reboots with the new configuration.
 
 == Changing between pay-as-you-go configurations
 
-After you launch pay-as-you-go ONTAP Cloud systems, you can change between the Explore, Standard, and Premium configurations at any time by modifying the license. Changing the license increases or decreases the raw capacity limit and enables you to choose from different EC2 instance types or Azure virtual machine types.
+After you launch pay-as-you-go Cloud Volumes ONTAP systems, you can change between the Explore, Standard, and Premium configurations at any time by modifying the license. Changing the license increases or decreases the raw capacity limit and enables you to choose from different EC2 instance types or Azure virtual machine types.
 
 .About this task
 
 Note the following about changing between pay-as-you-go licenses:
 
-* The operation restarts ONTAP Cloud.
+* The operation restarts Cloud Volumes ONTAP.
 +
 For single node systems, I/O is interrupted.
 +
@@ -97,30 +97,30 @@ For HA pairs, the change is nondisruptive. HA pairs continue to serve data.
 
 .Result
 
-ONTAP Cloud reboots with the new license, instance type or virtual machine type, or both.
+Cloud Volumes ONTAP reboots with the new license, instance type or virtual machine type, or both.
 
-== Moving to an alternate ONTAP Cloud configuration
+== Moving to an alternate Cloud Volumes ONTAP configuration
 
-If you want to move between a pay-as-you-go subscription and a BYOL subscription or between a single ONTAP Cloud system and an ONTAP Cloud HA pair, you can deploy a new system and then replicate data from the existing system to the new system.
+If you want to move between a pay-as-you-go subscription and a BYOL subscription or between a single Cloud Volumes ONTAP system and an HA pair, you can deploy a new system and then replicate data from the existing system to the new system.
 
 .Steps
 
-. Create a new ONTAP Cloud working environment.
+. Create a new Cloud Volumes ONTAP working environment.
 +
-link:task_deploying_otc_aws.html[Launching ONTAP Cloud in AWS]
-link:task_deploying_otc_azure.html[Launching ONTAP Cloud in Azure]
+link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
+link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]
 
-. If you chose an ONTAP Cloud pay-as-you-go license and the tenant does not have a NetApp Support Site account assigned to it, link:task_registering.html[manually register the systems with NetApp].
+. If you chose a pay-as-you-go license and the tenant does not have a NetApp Support Site account assigned to it, link:task_registering.html[manually register the systems with NetApp].
 +
-Support from NetApp is included with ONTAP Cloud. To activate support, you must first register the system with NetApp.
+Support from NetApp is included with Cloud Volumes ONTAP. To activate support, you must first register the system with NetApp.
 
 . link:task_replicating_data.html[Set up one-time data replication] between the systems for each volume that you must replicate.
 
-. Terminate the ONTAP Cloud system that you no longer need by link:task_deleting_working_env.html[deleting the original working environment].
+. Terminate the Cloud Volumes ONTAP system that you no longer need by link:task_deleting_working_env.html[deleting the original working environment].
 
 == Modifying the storage virtual machine name
 
-Cloud Manager automatically names the storage virtual machine (SVM) for an ONTAP Cloud system. You can modify the name of the SVM if you have strict naming standards. For example, you might want it to match how you name the SVMs for your ONTAP clusters.
+Cloud Manager automatically names the storage virtual machine (SVM) for Cloud Volumes ONTAP. You can modify the name of the SVM if you have strict naming standards. For example, you might want it to match how you name the SVMs for your ONTAP clusters.
 
 .Steps
 
@@ -132,9 +132,9 @@ image:screenshot_svm.gif[Screen shot: Shows the SVM Name field and the edit icon
 
 . In the Modify SVM Name dialog box, modify the SVM name, and then click *Save*.
 
-== Changing the password for ONTAP Cloud
+== Changing the password for Cloud Volumes ONTAP
 
-ONTAP Cloud includes a cluster admin account. You can change the password for this account from Cloud Manager, if needed.
+Cloud Volumes ONTAP includes a cluster admin account. You can change the password for this account from Cloud Manager, if needed.
 
 IMPORTANT: You should not change the password for the admin account through System Manager or the CLI. The password will not be reflected in Cloud Manager. As a result, Cloud Manager cannot monitor the instance properly.
 
@@ -147,15 +147,15 @@ The new password must be different than one of the last six passwords that you u
 
 == Changing the network MTU for c4.4xlarge and c4.8xlarge instances
 
-By default, ONTAP Cloud is configured to use 9,000 MTU (also called jumbo frames) when you choose the c4.4xlarge instance or the c4.8xlarge instance in AWS. You can change the network MTU to 1,500 bytes if that is more appropriate for your network configuration.
+By default, Cloud Volumes ONTAP is configured to use 9,000 MTU (also called jumbo frames) when you choose the c4.4xlarge instance or the c4.8xlarge instance in AWS. You can change the network MTU to 1,500 bytes if that is more appropriate for your network configuration.
 
 .About this task
 
 A network maximum transmission unit (MTU) of 9,000 bytes can provide the highest maximum network throughput possible for specific configurations.
 
-9,000 MTU is a good choice if clients in the same VPC communicate with the ONTAP Cloud system and some or all of those clients also support 9,000 MTU. If traffic leaves the VPC, packet fragmentation can occur, which degrades performance.
+9,000 MTU is a good choice if clients in the same VPC communicate with the Cloud Volumes ONTAP system and some or all of those clients also support 9,000 MTU. If traffic leaves the VPC, packet fragmentation can occur, which degrades performance.
 
-A network MTU of 1,500 bytes is a good choice if clients or systems outside of the VPC communicate with the ONTAP Cloud system.
+A network MTU of 1,500 bytes is a good choice if clients or systems outside of the VPC communicate with the Cloud Volumes ONTAP system.
 
 .Steps
 
@@ -165,7 +165,7 @@ A network MTU of 1,500 bytes is a good choice if clients or systems outside of t
 
 . Click *Change*.
 
-== Changing route tables associated with ONTAP Cloud HA pairs
+== Changing route tables associated with HA pairs
 
 You can modify the route tables that include routes to the floating IP addresses for an HA pair. You might do this if new NFS or CIFS clients need to access the HA pair.
 

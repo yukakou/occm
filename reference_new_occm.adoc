@@ -5,7 +5,7 @@ keywords: what's new, features, new, release notes, bugs, limitations, known iss
 summary: OnCommand Cloud Manager typically introduces a new release every month to bring you new features, enhancements, and bug fixes.
 ---
 
-= What's new in Cloud Manager
+= What's new in Cloud Manager 3.5
 :toc: macro
 :hardbreaks:
 :toclevels: 1
@@ -21,19 +21,19 @@ OnCommand Cloud Manager typically introduces a new release every month to bring 
 
 Cloud Manager 3.5 includes new features and enhancements.
 
-* <<Support for ONTAP Cloud 9.4>>
-* <<New permissions required for ONTAP Cloud 9.4>>
+* <<Support for Cloud Volumes ONTAP 9.4>>
+* <<New permissions required for Cloud Volumes ONTAP 9.4>>
 * <<Cloud Manager integration with NetApp Cloud Central>>
 * <<Support for the m4.large instance type>>
 * <<Marketplace image now based on RHEL 7.4>>
 
-=== Support for ONTAP Cloud 9.4
+=== Support for Cloud Volumes ONTAP 9.4
 
-You can now deploy new ONTAP Cloud 9.4 systems from Cloud Manager and upgrade your existing systems to the 9.4 release. Cloud Manager also provides support for https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_94.html[the new features introduced in ONTAP Cloud 9.4^].
+You can now deploy new Cloud Volumes ONTAP 9.4 systems from Cloud Manager and upgrade your existing systems to the 9.4 release. Cloud Manager also provides support for https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_94.html[the new features introduced in Cloud Volumes ONTAP 9.4^].
 
-=== New permissions required for ONTAP Cloud 9.4
+=== New permissions required for Cloud Volumes ONTAP 9.4
 
-Cloud Manager requires new permissions for key features in the ONTAP Cloud 9.4 release. To ensure that your Cloud Manager systems can deploy and manage ONTAP Cloud 9.4 systems, you must update your Cloud Manager policy by adding the following permissions:
+Cloud Manager requires new permissions for key features in the Cloud Volumes ONTAP 9.4 release. To ensure that your Cloud Manager systems can deploy and manage Cloud Volumes ONTAP 9.4 systems, you must update your Cloud Manager policy by adding the following permissions:
 
 * For AWS: "ec2:DescribeInstanceAttribute",
 +
