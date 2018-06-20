@@ -5,7 +5,7 @@ keywords: license, licensing, install, instance type, virtual machine type, VM t
 summary: You might need to change the configuration of Cloud Volumes ONTAP instances as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and move to an alternate subscription.
 ---
 
-= Modifying Cloud Volumes ONTAP
+= Modifying Cloud Volumes ONTAP systems
 :toc: macro
 :hardbreaks:
 :nofooter:
