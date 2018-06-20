@@ -49,7 +49,7 @@ Cloud Volumes ONTAP uses the XTS-AES algorithm, a mode of the Advanced Encryptio
 
 If you use the NetApp Storage Encryption feature with a physical FAS system and enable encryption on a Cloud Volumes ONTAP system, any data that you replicate between those systems is decrypted before it is replicated and then re-encrypted after it is replicated.
 
-You must set up and configure a key management infrastructure to use Cloud Volumes ONTAP encryption. For details, see link:task_setting_up_cloud_manager.html#setting-up-ontap-cloud-encryption[Setting up Cloud Volumes ONTAP encryption].
+You must set up and configure a key management infrastructure to use Cloud Volumes ONTAP encryption. For details, see link:task_setting_up_cloud_manager.html#setting-up-cloud-volumes-ontap-encryption[Setting up Cloud Volumes ONTAP encryption].
 
 ==== How Cloud Volumes ONTAP encryption works with SafeNet key managers
 

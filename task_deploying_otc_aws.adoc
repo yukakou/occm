@@ -73,7 +73,7 @@ To better understand these options, see link:concept_security.html#data-encrypti
 +
 For AWS-managed encryption, you can choose a different master key if more than one key is available in your account.
 +
-NOTE: If Cloud Manager was not set up for encryption, the Cloud Manager Admin must set it up. See link:task_setting_up_cloud_manager.html#setting-up-ontap-cloud-encryption[Setting up Cloud Volumes ONTAP encryption].
+NOTE: If Cloud Manager was not set up for encryption, the Cloud Manager Admin must set it up. See link:task_setting_up_cloud_manager.html#setting-up-cloud-volumes-ontap-encryption[Setting up Cloud Volumes ONTAP encryption].
 
 . If you chose Cloud Volumes ONTAP encryption, select one to four key managers, select the certificate of the CA that signed the server certificate for each key manager, and then click *Continue*.
 +
@@ -249,7 +249,7 @@ image:screenshot_cot_vpc_ha.gif[Screen shot: Shows the VPC page filled out for a
 
 . If you chose multiple AZs, specify the floating IP addresses for the cluster management interface port and the two NFS/CIFS data ports and then click *Continue*.
 +
-The IP addresses must be outside of the CIDR block for all VPCs in the region. For additional details, see link:reference_networking_aws.html#networking-requirements-for-ontap-cloud-ha-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs].
+The IP addresses must be outside of the CIDR block for all VPCs in the region. For additional details, see link:reference_networking_aws.html#networking-requirements-for-cloud-volumes-ontap-ha-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs].
 
 . If you chose multiple AZs, select the route tables that should include routes to the floating IP addresses and then click *Continue*.
 +
@@ -261,7 +261,7 @@ To better understand these options, see link:concept_security.html#data-encrypti
 +
 For AWS-managed encryption, you can choose a different master key if more than one key is available in your account.
 +
-NOTE: If Cloud Manager was not set up for encryption, the Cloud Manager Admin must set it up. See link:task_setting_up_cloud_manager.html#setting-up-ontap-cloud-encryption[Setting up Cloud Volumes ONTAP encryption].
+NOTE: If Cloud Manager was not set up for encryption, the Cloud Manager Admin must set it up. See link:task_setting_up_cloud_manager.html#setting-up-cloud-volumes-ontap-encryption[Setting up Cloud Volumes ONTAP encryption].
 
 . If you selected Cloud Volumes ONTAP encryption, select one to four key managers, select the certificate of the CA that signed the server certificate for each key manager, and then click *Continue*.
 +

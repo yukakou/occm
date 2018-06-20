@@ -61,7 +61,7 @@ These floating IP addresses are not natively accessible to clients that are outs
 
 You should review requirements for floating IP addresses and route tables before you deploy an HA configuration across multiple Availability Zones. You must specify the floating IP addresses when you deploy the configuration.
 
-For details, see link:reference_networking_aws.html#networking-requirements-for-ontap-cloud-ha-in-multiple-azs[Networking requirements for Cloud Volumes ONTAP HA in multiple AZs].
+For details, see link:reference_networking_aws.html#networking-requirements-for-cloud-volumes-ontap-ha-in-multiple-azs[Networking requirements for Cloud Volumes ONTAP HA in multiple AZs].
 
 === NFS and CIFS data access for clients outside the VPC
 
