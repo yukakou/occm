@@ -19,7 +19,7 @@ When you first deploy Cloud Manager, it prompts you to enter a proxy server if t
 
 If your corporate policies dictate that you use a proxy server for all HTTP communication to the internet, then you must configure Cloud Manager to use that proxy server. The proxy server can be in the cloud or in your network.
 
-When you configure Cloud Manager to use a proxy server, Cloud Manager, ONTAP Cloud, and the HA mediator all use the proxy server.
+When you configure Cloud Manager to use a proxy server, Cloud Manager, Cloud Volumes ONTAP, and the HA mediator all use the proxy server.
 
 .Steps
 
@@ -31,4 +31,4 @@ NOTE: Cloud Manager does not support passwords that include the @ character.
 
 .Result
 
-After you specify the proxy server, new ONTAP Cloud systems are automatically configured to use the proxy server when sending AutoSupport messages. If you do not specify the proxy server before users create ONTAP Cloud systems, then they must use System Manager to manually set the proxy server in the AutoSupport options for each system.
+After you specify the proxy server, new Cloud Volumes ONTAP systems are automatically configured to use the proxy server when sending AutoSupport messages. If you do not specify the proxy server before users create Cloud Volumes ONTAP systems, then they must use System Manager to manually set the proxy server in the AutoSupport options for each system.

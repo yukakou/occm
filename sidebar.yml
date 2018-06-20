@@ -11,7 +11,7 @@ entries:
             url: /reference_issues.html
           - title: Known limitations
             url: /reference_limitations.html
-      - title: ONTAP Cloud
+      - title: Cloud Volumes ONTAP
         url: https://docs.netapp.com/us-en/cloud-volumes-ontap/
   - title: Getting started
     entries:
@@ -65,7 +65,7 @@ entries:
         url: /concept_performance.html
       - title: Cloud Storage Automation
         url: /concept_storage_automation.html
-  - title: Deploying ONTAP Cloud
+  - title: Deploying Cloud Volumes ONTAP
     entries:
       - title: Before you begin
         url: /reference_before.html
@@ -73,35 +73,35 @@ entries:
         url: /task_logging_in.html
       - title: Planning your configuration
         url: /task_planning_your_config.html
-      - title: Launching ONTAP Cloud in AWS
+      - title: Launching Cloud Volumes ONTAP in AWS
         url: /task_deploying_otc_aws.html
-      - title: Launching ONTAP Cloud in Azure
+      - title: Launching Cloud Volumes ONTAP in Azure
         url: /task_deploying_otc_azure.html
       - title: Registering pay-as-you-go systems
         url: /task_registering.html
-      - title: Setting up ONTAP Cloud
+      - title: Setting up Cloud Volumes ONTAP
         url: /task_setting_up_ontap_cloud.html
       - title: Provisioning storage
         url: /task_provisioning_storage.html
-  - title: Managing ONTAP Cloud
+  - title: Managing Cloud Volumes ONTAP
     entries:
       - title: Tiering cold data to object storage
         url: /task_tiering.html
       - title: Managing storage
         url: /task_managing_storage.html
-      - title: Updating ONTAP Cloud software
+      - title: Updating Cloud Volumes ONTAP software
         url: /task_updating_ontap_cloud.html
-      - title: Modifying ONTAP Cloud systems
+      - title: Modifying Cloud Volumes ONTAP
         url: /task_modifying_ontap_cloud.html
-      - title: Connecting to ONTAP Cloud systems
+      - title: Connecting to Cloud Volumes ONTAP
         url: /task_connecting_to_otc.html
-      - title: Managing the state of ONTAP Cloud systems
+      - title: Managing the state of Cloud Volumes ONTAP
         url: /task_managing_state.html
       - title: Monitoring AWS costs
         url: /task_monitoring_costs.html
-      - title: Adding existing ONTAP Cloud systems
+      - title: Adding existing Cloud Volumes ONTAP systems
         url: /task_adding_ontap_cloud.html
-      - title: Deleting ONTAP Cloud systems
+      - title: Deleting Cloud Volumes ONTAP systems
         url: /task_deleting_working_env.html
   - title: Managing data across a hybrid cloud
     entries:
@@ -125,7 +125,7 @@ entries:
         url: /task_updating_cloud_manager.html
       - title: Backing up and restoring
         url: /task_backing_up_restoring.html
-      - title: Removing ONTAP Cloud working environments
+      - title: Removing Cloud Volumes ONTAP working environments
         url: /task_removing.html
       - title: Editing user accounts
         url: /task_editing_users.html
@@ -141,7 +141,7 @@ entries:
     entries:
       - title: FAQ for Cloud Central integration
         url: /reference_integration_faq.html
-      - title: Supported configurations for ONTAP Cloud
+      - title: Supported configurations for Cloud Volumes ONTAP
         url: https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_94.html
       - title: Supported regions
         url: /reference_regions.html

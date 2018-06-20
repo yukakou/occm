@@ -1,38 +1,38 @@
 ---
 sidebar: sidebar
 permalink: index.html
-summary: Welcome to the documentation portal for Cloud Manager and ONTAP Cloud.
+summary: Welcome to the documentation portal for Cloud Manager and Cloud Volumes ONTAP.
 ---
 
-= Cloud Manager and ONTAP Cloud documentation
+= Cloud Manager and Cloud Volumes ONTAP documentation
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
-:keywords: ontap cloud, amazon web services, aws, azure, netapp, oncommand, cloud manager, hybrid cloud, documentation, help
+:keywords: Cloud Volumes ONTAP, amazon web services, aws, azure, netapp, oncommand, cloud manager, hybrid cloud, documentation, help
 
-OnCommand Cloud Manager enables you to deploy and manage ONTAP Cloud, which is a data management solution that provides protection, visibility, and control for your cloud-based workloads.
+OnCommand Cloud Manager enables you to deploy and manage NetApp Cloud Volumes ONTAP (formerly ONTAP Cloud), which is a data management solution that provides protection, visibility, and control for your cloud-based workloads.
 
 == Discover what's new
 
 * link:reference_new_occm.html[What's new in Cloud Manager]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_94.html[What's new in ONTAP Cloud^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_94.html[What's new in Cloud Volumes ONTAP^]
 
 == Get started
 
 * link:task_getting_started_aws.html[Get started in AWS]
 * link:task_getting_started_azure.html[Get started in Azure]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[Find supported configurations for ONTAP Cloud^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[Find supported configurations for Cloud Volumes ONTAP^]
 * link:reference_networking_aws.html[Review detailed networking requirements for AWS]
 * link:reference_networking_azure.html[Review detailed networking requirements for Azure]
-* link:task_planning_your_config.html[Plan your ONTAP Cloud configuration]
+* link:task_planning_your_config.html[Plan your Cloud Volumes ONTAP configuration]
 
 == Automate with APIs
 
 link:api.html[OnCommand Cloud Manager API Developer Guide^]
 
-== Learn about Cloud Manager and ONTAP Cloud
+== Learn about Cloud Manager and Cloud Volumes ONTAP
 
 video::9I5QToO6ZpU[youtube, width=848, height=480]
 
@@ -41,5 +41,5 @@ https://www.youtube.com/playlist?list=PLdXI3bZJEw7lnoRo8FBKsX1zHbK8AQOoT[Watch a
 == Connect with peers, get help, and find more information
 
 * http://community.netapp.com/hybrid-cloud[NetApp Community: Hybrid Cloud^]
-* https://mysupport.netapp.com/cloudontap[NetApp ONTAP Cloud Support^]
+* https://mysupport.netapp.com/cloudontap[NetApp Cloud Volumes ONTAP Support^]
 * link:reference_additional_info.html[Where to get help and find more information]

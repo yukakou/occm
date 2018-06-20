@@ -19,7 +19,7 @@ You can log in to Cloud Manager from any web browser that has a connection to th
 
 . Open a web browser and log in to https://cloud.netapp.com[NetApp Cloud Central^].
 
-. Click *Go to Cloud Data Services* and select *ONTAP Cloud*.
+. Click *Go to Cloud Data Services* and select *Cloud Volumes ONTAP*.
 
 . Click *Go to Cloud Manager* for the Cloud Manager system that you want to access.
 +

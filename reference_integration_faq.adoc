@@ -64,7 +64,7 @@ If your system uses LDAP, NetApp cannot automatically integrate the system with 
 
 . Deploy a new Cloud Manager system from https://cloud.netapp.com/[NetApp Cloud Central^].
 . https://services.cloud.netapp.com/ldap-support[Set up LDAP with the new system^].
-. link:task_adding_ontap_cloud.html[Discover existing ONTAP Cloud systems] from the new Cloud Manager system.
+. link:task_adding_ontap_cloud.html[Discover existing Cloud Volumes ONTAP systems] from the new Cloud Manager system.
 . Delete the old Cloud Manager system.
 
 == Does it matter where I installed my Cloud Manager system?

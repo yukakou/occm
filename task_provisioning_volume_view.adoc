@@ -96,14 +96,14 @@ For more details, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EB
 
 | Floating IP |	The IP addresses must be outside of the CIDR block for all VPCs in the region.
 
-| Route Table	| If you have more than one route table, it is very important to select the correct route tables. Otherwise, some clients might not have access to the ONTAP Cloud HA pair.
+| Route Table	| If you have more than one route table, it is very important to select the correct route tables. Otherwise, some clients might not have access to the HA pair.
 
 For more details, refer to  http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html[AWS Documentation: Route Tables^].
 |===
 +
 The following image shows the Nodes and Mediator page. Each instance is in a separate Availability Zone.
 +
-image:screenshot_volume_view_ha_network.gif[Screen shot: Shows AWS networking selections for the two ONTAP Cloud nodes and the mediator. Each instance is in a separate Availability Zone and subnet.]
+image:screenshot_volume_view_ha_network.gif[Screen shot: Shows AWS networking selections for the two Cloud Volumes ONTAP nodes and the mediator. Each instance is in a separate Availability Zone and subnet.]
 
 .Result
 

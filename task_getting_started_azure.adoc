@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_getting_started_azure.html
 keywords: microsoft, azure, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, marketplace, virtual machine, vnet, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, permissions, vpn, multi-cloud, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, free trial, security group
-summary: Getting started with ONTAP Cloud includes preparing your Azure environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching ONTAP Cloud systems using Cloud Manager.
+summary: Getting started with Cloud Volumes ONTAP includes preparing your Azure environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching Cloud Volumes ONTAP using Cloud Manager.
 ---
 
-= Getting started with ONTAP Cloud in Azure
+= Getting started with Cloud Volumes ONTAP in Azure
 :toc: macro
 :toclevels: 1
 :hardbreaks:
@@ -15,21 +15,21 @@ summary: Getting started with ONTAP Cloud includes preparing your Azure environm
 :imagesdir: ./media/
 
 [.lead]
-Getting started with ONTAP Cloud includes preparing your Azure environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching ONTAP Cloud systems using Cloud Manager.
+Getting started with Cloud Volumes ONTAP (formerly ONTAP Cloud) includes preparing your Azure environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching Cloud Volumes ONTAP using Cloud Manager.
 
 toc::[]
 
 == Verifying your networking
 
-You must choose the Azure VNet and subnets in which you want to deploy Cloud Manager and ONTAP Cloud. At a minimum, your networking must meet the following requirements:
+You must choose the Azure VNet and subnets in which you want to deploy Cloud Manager and Cloud Volumes ONTAP. At a minimum, your networking must meet the following requirements:
 
 * Outbound internet access
 +
-The target VNet must have one or more subnets that have outbound internet access so Cloud Manager and ONTAP Cloud can contact several endpoints. To review the list of endpoints, see link:reference_networking_azure.html[Azure networking requirements].
+The target VNet must have one or more subnets that have outbound internet access so Cloud Manager and Cloud Volumes ONTAP can contact several endpoints. To review the list of endpoints, see link:reference_networking_azure.html[Azure networking requirements].
 
 * Connections between networks
 
-** To deploy ONTAP Cloud systems in subnets or networks separate from Cloud Manager, connections between those networks must be in place.
+** To deploy Cloud Volumes ONTAP in subnets or networks separate from Cloud Manager, connections between those networks must be in place.
 
 ** To replicate data across a hybrid cloud or multi-cloud environment, VPN connections between networks must be in place. For details, refer to https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal[Microsoft Azure Documentation: Create a Site-to-Site connection in the Azure portal^].
 
@@ -57,7 +57,7 @@ NOTE: The following steps use the new Azure portal. If you experience any issues
 
 === Creating a custom role with the required Cloud Manager permissions
 
-A custom role is required to provide Cloud Manager with the permissions that it needs to launch and manage ONTAP Cloud in Azure.
+A custom role is required to provide Cloud Manager with the permissions that it needs to launch and manage Cloud Volumes ONTAP in Azure.
 
 .Steps
 
@@ -65,7 +65,7 @@ A custom role is required to provide Cloud Manager with the permissions that it 
 
 . Modify the JSON file by adding Azure subscription IDs to the assignable scope.
 +
-You should add the ID for each Azure subscription from which users will create ONTAP Cloud systems.
+You should add the ID for each Azure subscription from which users will create Cloud Volumes ONTAP systems.
 +
 *Example*
 +
@@ -155,7 +155,7 @@ You must bind the service principal to one or more Azure subscriptions and assig
 
 .About this task
 
-If you want to deploy ONTAP Cloud from multiple Azure subscriptions, then you must bind the service principal to each of those subscriptions. Cloud Manager enables you to select the subscription that you want to use when deploying ONTAP Cloud.
+If you want to deploy Cloud Volumes ONTAP from multiple Azure subscriptions, then you must bind the service principal to each of those subscriptions. Cloud Manager enables you to select the subscription that you want to use when deploying Cloud Volumes ONTAP.
 
 .Steps
 
@@ -177,13 +177,13 @@ The service principal for Cloud Manager now has the required Azure permissions.
 
 == Installing and setting up Cloud Manager in Azure
 
-You need to install and set up Cloud Manager so you can use it to launch ONTAP Cloud in Azure.
+You need to install and set up Cloud Manager so you can use it to launch Cloud Volumes ONTAP in Azure.
 
 .Steps
 
 . Go to https://cloud.netapp.com[NetApp Cloud Central^] and sign up or log in.
 
-. Under *ONTAP Cloud*, click *Start Free Trial*.
+. Under *Cloud Volumes ONTAP*, click *Start Free Trial*.
 
 . Select *Microsoft Azure* to deploy Cloud Manager from the Azure Marketplace.
 
@@ -219,11 +219,11 @@ When you log in, Cloud Manager automatically adds your user account as the admin
 
 .Result
 
-Cloud Manager is now installed and set up so users can deploy ONTAP Cloud in Azure.
+Cloud Manager is now installed and set up so users can deploy Cloud Volumes ONTAP in Azure.
 
-== Deploying ONTAP Cloud in Azure
+== Deploying Cloud Volumes ONTAP in Azure
 
-You can deploy ONTAP Cloud in Azure to provide enterprise-class features for your cloud storage.
+You can deploy Cloud Volumes ONTAP in Azure to provide enterprise-class features for your cloud storage.
 
 .Steps
 
@@ -235,9 +235,9 @@ You can deploy ONTAP Cloud in Azure to provide enterprise-class features for you
 +
 Note the following as you complete the wizard:
 
-* The predefined network security group includes the rules that ONTAP Cloud needs to operate successfully. If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].
+* The predefined network security group includes the rules that Cloud Volumes ONTAP needs to operate successfully. If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].
 
-* The underlying Azure disk type is for the initial ONTAP Cloud volume. You can choose a different disk type for subsequent volumes.
+* The underlying Azure disk type is for the initial Cloud Volumes ONTAP volume. You can choose a different disk type for subsequent volumes.
 
 * The performance of Azure Premium Storage is tied to the disk size. Larger disks provide higher IOPS and throughput.
 
@@ -245,10 +245,10 @@ Note the following as you complete the wizard:
 +
 TIP: If you need a different size later, you can use the *Advanced allocation* option to create an aggregate that uses disks of a specific size.
 +
-The following video shows how to deploy ONTAP Cloud in Azure.
+The following video shows how to deploy Cloud Volumes ONTAP in Azure.
 +
 video::video_launch_otc_azure.mp4[width=848, height=480]
 
 .Result
 
-Cloud Manager deploys the ONTAP Cloud system. You can track the progress in the timeline.
+Cloud Manager deploys the Cloud Volumes ONTAP system. You can track the progress in the timeline.

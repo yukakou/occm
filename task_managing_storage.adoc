@@ -26,7 +26,7 @@ You can manage existing volumes as your storage needs change. You can view, edit
 
 .Steps
 
-. On the Working Environments page, double-click the ONTAP Cloud working environment on which you want to manage volumes.
+. On the Working Environments page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
 
 . Manage your volumes:
 +
@@ -108,7 +108,7 @@ If an aggregate is running out of space, you can move volumes to another aggrega
 
 .Steps
 
-. On the Working Environments page, double-click the ONTAP Cloud working environment on which you want to manage aggregates.
+. On the Working Environments page, double-click the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
 
 . Click the menu icon and then click *Advanced > Advanced allocation*.
 . Manage your aggregates:
@@ -137,7 +137,7 @@ a|
 
 == Modifying the CIFS server
 
-If you change your DNS servers or Active Directory domain, you need to modify the CIFS server in ONTAP Cloud so that it can continue to serve storage to clients.
+If you change your DNS servers or Active Directory domain, you need to modify the CIFS server in Cloud Volumes ONTAP so that it can continue to serve storage to clients.
 
 .Steps
 
@@ -163,7 +163,7 @@ The listed DNS servers must contain the service location records (SRV) needed to
 
 | Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
 
-| DNS Domain | The DNS domain for the ONTAP Cloud storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
+| DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
 |===
 
@@ -171,7 +171,7 @@ The listed DNS servers must contain the service location records (SRV) needed to
 
 .Result
 
-ONTAP Cloud updates the CIFS server with the changes.
+Cloud Volumes ONTAP updates the CIFS server with the changes.
 
 == Moving a volume to avoid capacity issues
 
@@ -229,7 +229,7 @@ For details, see link:task_managing_storage.html#moving-volumes-to-another-syste
 
 === Moving volumes to another system to avoid capacity issues
 
-You can move one or more volumes to another ONTAP Cloud system to avoid capacity issues. You might need to do this if the system reached its disk limit.
+You can move one or more volumes to another Cloud Volumes ONTAP system to avoid capacity issues. You might need to do this if the system reached its disk limit.
 
 .About this task
 
@@ -239,7 +239,7 @@ You can follow the steps in this task to correct the following Action Required m
 
 .Steps
 
-. Identify an ONTAP Cloud system that has available capacity, or deploy a new system.
+. Identify a Cloud Volumes ONTAP system that has available capacity, or deploy a new system.
 
 . Drag and drop the source working environment on the target working environment to perform a one-time data replication of the volume.
 +

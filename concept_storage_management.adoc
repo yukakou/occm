@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_storage_management.html
 keywords: tenants, provisioning, volume view, working environments, capacity management, storage provisioning, netapp support site, manual, automatic, advanced allocation, aggregates, thin provisioning, free space, mode, tenants, isolate, isolation, cloud manager admin, admin, tenant admin, working environment admin, support registration, registration, volume view
-summary: Cloud Manager makes storage provisioning easy by purchasing the AWS and Azure storage that you need to provision volumes for ONTAP Cloud.
+summary: Cloud Manager makes storage provisioning easy by purchasing the AWS and Azure storage that you need to provision volumes for Cloud Volumes ONTAP.
 ---
 
 = Storage management
@@ -15,17 +15,17 @@ summary: Cloud Manager makes storage provisioning easy by purchasing the AWS and
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager provides simplified and advanced management of ONTAP Cloud storage.
+Cloud Manager provides simplified and advanced management of Cloud Volumes ONTAP storage.
 
 toc::[]
 
 == Storage provisioning
 
-Cloud Manager makes storage provisioning for ONTAP Cloud easy by purchasing disks and managing aggregates for you. You simply need to create volumes. You can use an advanced allocation option to provision aggregates yourself, if desired.
+Cloud Manager makes storage provisioning for Cloud Volumes ONTAP easy by purchasing disks and managing aggregates for you. You simply need to create volumes. You can use an advanced allocation option to provision aggregates yourself, if desired.
 
 === Simplified provisioning
 
-Aggregates provide cloud storage to ONTAP Cloud volumes. Cloud Manager creates aggregates for you when you launch an instance, and when you provision additional volumes.
+Aggregates provide cloud storage to volumes. Cloud Manager creates aggregates for you when you launch an instance, and when you provision additional volumes.
 
 When you create a volume, Cloud Manager does one of three things:
 
@@ -41,9 +41,9 @@ TIP: The Cloud Manager Admin can modify free space thresholds from the *Settings
 
 ==== Disk size selection for aggregates in AWS
 
-When Cloud Manager creates new aggregates for ONTAP Cloud systems in AWS, it gradually increases the disk size in an aggregate, as the number of aggregates in the system increases. Cloud Manager does this to ensure that you can utilize the system's maximum capacity before it reaches the maximum number of data disks allowed by AWS.
+When Cloud Manager creates new aggregates for Cloud Volumes ONTAP in AWS, it gradually increases the disk size in an aggregate, as the number of aggregates in the system increases. Cloud Manager does this to ensure that you can utilize the system's maximum capacity before it reaches the maximum number of data disks allowed by AWS.
 
-For example, Cloud Manager might choose the following disk sizes for aggregates in an ONTAP Cloud Premium or BYOL system:
+For example, Cloud Manager might choose the following disk sizes for aggregates in a Cloud Volumes ONTAP Premium or BYOL system:
 
 [cols=3*,options="header",width=60%]
 |===
@@ -70,7 +70,7 @@ The Cloud Manager Admin can choose whether Cloud Manager notifies you of storage
 
 === Automatic capacity management
 
-If the Cloud Manager Admin set the Capacity Management Mode to automatic, Cloud Manager automatically purchases new disks for ONTAP Cloud instances when more capacity is needed, deletes unused collections of disks (aggregates), and moves volumes between aggregates, as needed.
+If the Cloud Manager Admin set the Capacity Management Mode to automatic, Cloud Manager automatically purchases new disks for Cloud Volumes ONTAP instances when more capacity is needed, deletes unused collections of disks (aggregates), and moves volumes between aggregates, as needed.
 
 The following examples illustrate how this mode works:
 
@@ -94,13 +94,13 @@ Cloud Manager enables you to provision and manage storage in isolated groups cal
 
 Cloud Manager represents storage systems as _working environments_. A working environment is any of the following:
 
-* A single ONTAP Cloud system or an HA pair
+* A single Cloud Volumes ONTAP system or an HA pair
 * An on-premises ONTAP cluster in your network
 * An ONTAP cluster in a NetApp Private Storage configuration
 
-The following image shows an ONTAP Cloud working environment:
+The following image shows a Cloud Volumes ONTAP working environment:
 
-image:screenshot_working_env.gif[Screen shot: an ONTAP Cloud working environment, which shows ONTAP Cloud storage.]
+image:screenshot_working_env.gif[Screen shot: a Cloud Volumes ONTAP working environment, which shows Cloud Volumes ONTAP storage.]
 
 === Tenants
 
@@ -128,11 +128,11 @@ image:diagram_users_and_tenants.png[This illustration shows a Cloud Manager Admi
 
 === Why you should link a tenant to your NetApp Support Site account
 
-Cloud Manager prompts you to enter NetApp Support Site credentials for a tenant because it uses the credentials to manage licenses for ONTAP Cloud BYOL systems, to register pay-as-you-go instances for support, and to upgrade ONTAP Cloud software.
+Cloud Manager prompts you to enter NetApp Support Site credentials for a tenant because it uses the credentials to manage licenses for Cloud Volumes ONTAP BYOL systems, to register pay-as-you-go instances for support, and to upgrade Cloud Volumes ONTAP software.
 
 ==== License management for BYOL systems
 
-Linking a tenant to your NetApp Support Site account is required if you plan to launch BYOL instances in a tenant. Cloud Manager uses your account to obtain license files from NetApp and installs them on ONTAP Cloud BYOL systems. The NetApp Support Site account must be authorized to access the serial numbers of the ONTAP Cloud BYOL systems in the tenant.
+Linking a tenant to your NetApp Support Site account is required if you plan to launch BYOL instances in a tenant. Cloud Manager uses your account to obtain license files from NetApp and installs them on Cloud Volumes ONTAP BYOL systems. The NetApp Support Site account must be authorized to access the serial numbers of the Cloud Volumes ONTAP BYOL systems in the tenant.
 
 ==== Support registration for pay-as-you-go instances
 
@@ -140,7 +140,7 @@ While entering an account is not required to launch pay-as-you-go instances, it 
 
 ==== Software upgrades
 
-Entering a NetApp Support Site account also enables ONTAP Cloud software upgrades directly from Cloud Manager for both pay-as-you-go and BYOL instances.
+Entering a NetApp Support Site account also enables Cloud Volumes ONTAP software upgrades directly from Cloud Manager for both pay-as-you-go and BYOL instances.
 
 ==== NetApp Support Site account requirements
 
@@ -150,15 +150,15 @@ Each NetApp Support Site account that you link to a tenant must be a NetApp cust
 
 Cloud Manager provides a separate management view called the _Volume View_, which further simplifies storage management in AWS.
 
-The Volume View enables you to simply specify the NFS volumes that you need in AWS and then Cloud Manager handles the rest: it deploys ONTAP Cloud systems as needed and it makes capacity allocation decisions as volumes grow. This view gives you the benefits of enterprise-class storage in the cloud with very little storage management.
+The Volume View enables you to simply specify the NFS volumes that you need in AWS and then Cloud Manager handles the rest: it deploys Cloud Volumes ONTAP systems as needed and it makes capacity allocation decisions as volumes grow. This view gives you the benefits of enterprise-class storage in the cloud with very little storage management.
 
 The following image shows how you interact with Cloud Manager in the Volume View:
 
-image:diagram_volume_view_overview.png[This is a conceptual image of how the Volume View works. There are four callouts. The number 1 points to volumes. The number 2 points to ONTAP Cloud storage systems and the underlying EBS storage. Number 3 points to volumes available to hosts. Number 4 points to ONTAP Cloud systems and the underlying storage.]
+image:diagram_volume_view_overview.png[This is a conceptual image of how the Volume View works. There are four callouts. The number 1 points to volumes. The number 2 points to Cloud Volumes ONTAP storage systems and the underlying EBS storage. Number 3 points to volumes available to hosts. Number 4 points to Cloud Volumes ONTAP systems and the underlying storage.]
 
 . You create NFS volumes.
 
-. Cloud Manager launches ONTAP Cloud instances in AWS for new volumes or it creates volumes on existing instances. It also purchases physical EBS storage for the volumes.
+. Cloud Manager launches Cloud Volumes ONTAP instances in AWS for new volumes or it creates volumes on existing instances. It also purchases physical EBS storage for the volumes.
 
 . You make the volumes available to your hosts and applications.
 
@@ -168,19 +168,19 @@ This means that you simply need to interact with volumes (the image on the left)
 
 === Allocation of cloud resources for the initial volume
 
-When you create your first volume, Cloud Manager launches an ONTAP Cloud instance or an ONTAP Cloud HA pair in AWS and purchases Amazon EBS storage for the volume:
+When you create your first volume, Cloud Manager launches a Cloud Volumes ONTAP instance or a Cloud Volumes ONTAP HA pair in AWS and purchases Amazon EBS storage for the volume:
 
-image:diagram_volume_view_resources.png[This conceptual image shows the AWS resources that Cloud Manager creates for the initial volume: a ONTAP Cloud instance that has an instance type of m4.xlarge or m4.2xlarge and one to four one terabyte EBS encrypted disks.]
+image:diagram_volume_view_resources.png[This conceptual image shows the AWS resources that Cloud Manager creates for the initial volume: a Cloud Volumes ONTAP instance that has an instance type of m4.xlarge or m4.2xlarge and one to four one terabyte EBS encrypted disks.]
 
 The size of the initial volume determines the EC2 instance type and the number of EBS disks.
 
-NOTE: Cloud Manager launches an ONTAP Cloud Explore or Standard instance, depending on the initial volume size. As the volumes grow, Cloud Manager might prompt you to make an AWS instance change which means it needs to upgrade the instance's license to Standard or Premium. Upgrading increases the EBS raw capacity limit, which allows your volumes to grow.
+NOTE: Cloud Manager launches a Cloud Volumes ONTAP Explore or Standard instance, depending on the initial volume size. As the volumes grow, Cloud Manager might prompt you to make an AWS instance change which means it needs to upgrade the instance's license to Standard or Premium. Upgrading increases the EBS raw capacity limit, which allows your volumes to grow.
 
-NOTE: Cloud Manager does not launch ONTAP Cloud BYOL instances in the Volume View. You should use Cloud Manager in the Storage System View if you purchased an ONTAP Cloud license.
+NOTE: Cloud Manager does not launch Cloud Volumes ONTAP BYOL instances in the Volume View. You should use Cloud Manager in the Storage System View if you purchased a Cloud Volumes ONTAP license.
 
 === Allocation of cloud resources for additional volumes
 
-When you create additional volumes, Cloud Manager creates the volumes on existing ONTAP Cloud instances or on new ONTAP Cloud instances. Cloud Manager can create a volume on an existing instance if the instance's AWS location and disk type match the requested volume, and if there is enough space.
+When you create additional volumes, Cloud Manager creates the volumes on existing Cloud Volumes ONTAP instances or on new Cloud Volumes ONTAP instances. Cloud Manager can create a volume on an existing instance if the instance's AWS location and disk type match the requested volume, and if there is enough space.
 
 === NetApp storage efficiency features and storage costs
 

@@ -35,4 +35,4 @@ While Cloud Manager supports other operating systems, it only supports CentOS 7.
 
 .After you finish
 
-Cloud Manager is now ready to deploy ONTAP Cloud systems in an Azure US Gov region, just like any other region. However, you might want to perform additional setup first.
+Cloud Manager is now ready to deploy Cloud Volumes ONTAP in an Azure US Gov region, just like any other region. However, you might want to perform additional setup first.

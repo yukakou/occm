@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_regions.html
 keywords: region, regions, mumbai, seoul, singapore, sydney, tokyo, frankfurt, paris, london, ireland, canada, govcloud, us east, us west, sao paulo, australia, japan, korea, southeast asia, east asia, germany, north europe, uk south, uk west, west europe, canada, central us, east us, north central, south central, west us, west central
-summary: Cloud Manager and ONTAP Cloud are supported in a number of AWS regions and Microsoft Azure regions.
+summary: Cloud Manager and Cloud Volumes ONTAP are supported in a number of AWS regions and Microsoft Azure regions.
 ---
 
 = Supported regions
@@ -15,13 +15,13 @@ summary: Cloud Manager and ONTAP Cloud are supported in a number of AWS regions 
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager and ONTAP Cloud are supported in a number of AWS regions and Microsoft Azure regions.
+Cloud Manager and Cloud Volumes ONTAP are supported in a number of AWS regions and Microsoft Azure regions.
 
 toc::[]
 
 == Supported AWS regions
 
-You can deploy Cloud Manager and ONTAP Cloud in the following AWS regions.
+You can deploy Cloud Manager and Cloud Volumes ONTAP in the following AWS regions.
 
 === Asia Pacific
 
@@ -53,7 +53,7 @@ You can deploy Cloud Manager and ONTAP Cloud in the following AWS regions.
 
 == Supported Azure regions
 
-You can deploy Cloud Manager and ONTAP Cloud in the following Azure regions.
+You can deploy Cloud Manager and Cloud Volumes ONTAP in the following Azure regions.
 
 === Asia Pacific
 

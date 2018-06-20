@@ -37,7 +37,7 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "ec2:TerminateInstances",
 "ec2:ModifyInstanceAttribute",
 
-| Launches an ONTAP Cloud instance and stops, starts, and monitors the instance.
+| Launches a Cloud Volumes ONTAP instance and stops, starts, and monitors the instance.
 
 | "ec2:DescribeInstanceAttribute",
 
@@ -47,7 +47,7 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "ec2:DescribeRouteTables",
 "ec2:DescribeImages",
 
-| Launches an ONTAP Cloud HA configuration.
+| Launches a Cloud Volumes ONTAP HA configuration.
 
 | "ec2:CreateTags",
 
@@ -61,7 +61,7 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "ec2:DeleteVolume",
 "ec2:DetachVolume",
 
-| Manages the EBS volumes that ONTAP Cloud uses as back-end storage.
+| Manages the EBS volumes that Cloud Volumes ONTAP uses as back-end storage.
 
 |
 "ec2:CreateSecurityGroup",
@@ -72,7 +72,7 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "ec2:AuthorizeSecurityGroupIngress",
 "ec2:RevokeSecurityGroupIngress",
 
-| Creates predefined security groups for ONTAP Cloud.
+| Creates predefined security groups for Cloud Volumes ONTAP.
 
 |
 "ec2:CreateNetworkInterface",
@@ -80,28 +80,28 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "ec2:DeleteNetworkInterface",
 "ec2:ModifyNetworkInterfaceAttribute",
 
-| Creates and manages network interfaces for ONTAP Cloud in the target subnet.
+| Creates and manages network interfaces for Cloud Volumes ONTAP in the target subnet.
 
 |
 "ec2:DescribeSubnets",
 "ec2:DescribeVpcs",
 
-| Gets the list of destination subnets and security groups, which is needed when creating a new working environment for ONTAP Cloud.
+| Gets the list of destination subnets and security groups, which is needed when creating a new working environment for Cloud Volumes ONTAP.
 
 | "ec2:DescribeDhcpOptions",
 
-| Determines DNS servers and the default domain name when launching ONTAP Cloud instances.
+| Determines DNS servers and the default domain name when launching Cloud Volumes ONTAP instances.
 
 |
 "ec2:CreateSnapshot",
 "ec2:DeleteSnapshot",
 "ec2:DescribeSnapshots",
 
-| Takes snapshots of EBS volumes during initial setup and whenever an ONTAP Cloud instance is stopped.
+| Takes snapshots of EBS volumes during initial setup and whenever a Cloud Volumes ONTAP instance is stopped.
 
 | "ec2:GetConsoleOutput",
 
-| Captures the ONTAP Cloud console, which is attached to AutoSupport messages.
+| Captures the Cloud Volumes ONTAP console, which is attached to AutoSupport messages.
 
 | "ec2:DescribeKeyPairs",
 
@@ -115,7 +115,7 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "ec2:DeleteTags",
 "ec2:DescribeTags",
 
-| Manages tags for resources associated with ONTAP Cloud instances.
+| Manages tags for resources associated with Cloud Volumes ONTAP instances.
 
 |
 "cloudformation:CreateStack",
@@ -124,7 +124,7 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "cloudformation:DescribeStackEvents",
 "cloudformation:ValidateTemplate",
 
-| Launches ONTAP Cloud instances.
+| Launches Cloud Volumes ONTAP instances.
 
 |
 "iam:PassRole",
@@ -137,7 +137,7 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "iam:RemoveRoleFromInstanceProfile",
 "iam:DeleteInstanceProfile",
 
-| Launches an ONTAP Cloud HA configuration.
+| Launches a Cloud Volumes ONTAP HA configuration.
 
 |
 "iam:ListInstanceProfiles",
@@ -146,13 +146,13 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "ec2:DescribeIamInstanceProfileAssociations",
 "ec2:DisassociateIamInstanceProfile",
 
-| Manages instance profiles for ONTAP Cloud instances.
+| Manages instance profiles for Cloud Volumes ONTAP instances.
 
 |
 "s3:GetObject",
 "s3:ListBucket"
 
-| Obtains AWS cost data for ONTAP Cloud.
+| Obtains AWS cost data for Cloud Volumes ONTAP.
 
 |
 "s3:GetBucketTagging",
@@ -169,7 +169,7 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "s3:PutBucketTagging",
 "s3:ListBucketVersions",
 
-| Manages the S3 bucket that an ONTAP Cloud system uses as a capacity tier.
+| Manages the S3 bucket that a Cloud Volumes ONTAP system uses as a capacity tier.
 
 |
 "kms:List*",
@@ -181,7 +181,7 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 
 == What Cloud Manager does with Azure permissions
 
-The Cloud Manager Azure policy includes the permissions that Cloud Manager needs to deploy and manage ONTAP Cloud systems in Azure.
+The Cloud Manager Azure policy includes the permissions that Cloud Manager needs to deploy and manage Cloud Volumes ONTAP in Azure.
 
 [cols=2*,options="header",cols="50,50"]
 |===
@@ -202,13 +202,13 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 "Microsoft.Compute/virtualMachines/vmSizes/read",
 "Microsoft.Compute/virtualMachines/write",
 
-| Creates ONTAP Cloud systems and stops, starts, deletes, and obtains the status of the system.
+| Creates Cloud Volumes ONTAP and stops, starts, deletes, and obtains the status of the system.
 
 |
 "Microsoft.Compute/images/write",
 "Microsoft.Compute/images/read",
 
-| Enables ONTAP Cloud deployment from a VHD.
+| Enables Cloud Volumes ONTAP deployment from a VHD.
 
 |
 "Microsoft.Compute/disks/delete",
@@ -221,21 +221,21 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 "Microsoft.Storage/storageAccounts/regeneratekey/action",
 "Microsoft.Storage/storageAccounts/write"
 
-| Manages Azure storage accounts and disks, and attaches the disks to ONTAP Cloud systems.
+| Manages Azure storage accounts and disks, and attaches the disks to Cloud Volumes ONTAP.
 
 |
 "Microsoft.Network/networkInterfaces/read",
 "Microsoft.Network/networkInterfaces/write",
 "Microsoft.Network/networkInterfaces/join/action",
 
-| Creates and manages network interfaces for ONTAP Cloud systems in the target subnet.
+| Creates and manages network interfaces for Cloud Volumes ONTAP in the target subnet.
 
 |
 "Microsoft.Network/networkSecurityGroups/read",
 "Microsoft.Network/networkSecurityGroups/write",
 "Microsoft.Network/networkSecurityGroups/join/action",
 
-| Creates predefined network security groups for ONTAP Cloud systems.
+| Creates predefined network security groups for Cloud Volumes ONTAP.
 
 |
 "Microsoft.Resources/subscriptions/locations/read",
@@ -248,7 +248,7 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 "Microsoft.Network/virtualNetworks/virtualMachines/read",
 "Microsoft.Network/virtualNetworks/subnets/join/action",
 
-| Gets network information about regions, the target VNet and subnet, and adds ONTAP Cloud systems to VNets.
+| Gets network information about regions, the target VNet and subnet, and adds Cloud Volumes ONTAP to VNets.
 
 | "Microsoft.Network/virtualNetworks/subnets/write",
 
@@ -259,7 +259,7 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 "Microsoft.Resources/deployments/read",
 "Microsoft.Resources/deployments/write",
 
-| Deploys ONTAP Cloud systems from a template.
+| Deploys Cloud Volumes ONTAP from a template.
 
 |
 "Microsoft.Resources/deployments/operations/read",
@@ -272,7 +272,7 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
 "Microsoft.Resources/subscriptions/resourceGroups/write",
 
-| Creates and manages resource groups for ONTAP Cloud systems.
+| Creates and manages resource groups for Cloud Volumes ONTAP.
 
 |
 "Microsoft.Compute/snapshots/write",
@@ -285,7 +285,7 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 "Microsoft.Compute/availabilitySets/write",
 "Microsoft.Compute/availabilitySets/read",
 
-| Creates and manages availability sets for ONTAP Cloud systems.
+| Creates and manages availability sets for Cloud Volumes ONTAP.
 
 |
 "Microsoft.MarketplaceOrdering/offertypes/publishers/offers/plans/agreements/read",

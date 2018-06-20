@@ -35,7 +35,7 @@ toc::[]
 
 You can enable data tiering when using specific configurations and features:
 
-* Data tiering is supported with ONTAP Cloud Standard, Premium, and BYOL, starting with ONTAP Cloud 9.2 for AWS and ONTAP Cloud 9.4 for Microsoft Azure.
+* Data tiering is supported with Cloud Volumes ONTAP Standard, Premium, and BYOL, starting with version 9.2 in AWS and version 9.4 in Microsoft Azure.
 +
 NOTE: Data tiering is not supported in Azure with the DS3_v2 virtual machine type.
 
@@ -52,15 +52,15 @@ For a description of these policies, see link:concept_storage.html#data-tiering[
 
 * Data tiering is supported with AWS-managed encryption and Azure-managed encryption.
 +
-It is not supported with ONTAP Cloud-managed encryption.
+It is not supported with Cloud Volumes ONTAP-managed encryption.
 
 * Thin provisioning must be enabled on volumes.
 
 == Requirements for tiering data in AWS
 
-You must ensure that ONTAP Cloud has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
+You must ensure that Cloud Volumes ONTAP has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
 
-When you create the VPC Endpoint, be sure to select the region, VPC, and route table that corresponds to the ONTAP Cloud instance. You must also modify the security group to add an outbound HTTPS rule that enables traffic to the S3 endpoint. Otherwise, ONTAP Cloud cannot connect to the S3 service.
+When you create the VPC Endpoint, be sure to select the region, VPC, and route table that corresponds to the Cloud Volumes ONTAP instance. You must also modify the security group to add an outbound HTTPS rule that enables traffic to the S3 endpoint. Otherwise, Cloud Volumes ONTAP cannot connect to the S3 service.
 
 If you experience any issues, see https://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/[AWS Support Knowledge Center: Why can’t I connect to an S3 bucket using a gateway VPC endpoint?^].
 
@@ -74,7 +74,7 @@ That permission is included in the latest Cloud Manager policy. For details abou
 
 == Tiering data on read-write volumes
 
-ONTAP Cloud can tier cold data on read-write volumes to cost-effective object storage, freeing up the performance tier for hot data.
+Cloud Volumes ONTAP can tier cold data on read-write volumes to cost-effective object storage, freeing up the performance tier for hot data.
 
 .Steps
 
@@ -92,7 +92,7 @@ ONTAP Cloud can tier cold data on read-write volumes to cost-effective object st
 
 |===
 
-. Select the Snapshot Only policy or the Auto policy (supported only with ONTAP Cloud Premium or BYOL).
+. Select the Snapshot Only policy or the Auto policy (supported only with Cloud Volumes ONTAP Premium or BYOL).
 +
 *Example*
 +
@@ -104,7 +104,7 @@ TIP: If you prefer to create aggregates yourself, you can enable data tiering on
 
 == Tiering data on data protection volumes
 
-ONTAP Cloud can tier data from a data protection volume to a capacity tier. If you activate the destination volume, the data gradually moves to the performance tier as it is read.
+Cloud Volumes ONTAP can tier data from a data protection volume to a capacity tier. If you activate the destination volume, the data gradually moves to the performance tier as it is read.
 
 .Steps
 

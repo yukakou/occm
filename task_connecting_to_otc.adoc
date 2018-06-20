@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_connecting_to_otc.html
 keywords: system manager, connecting, cli, command, command line, connect, shell, interface
-summary: If you need to perform advanced management of ONTAP Cloud systems, you can do so using OnCommand System Manager or the command line interface.
+summary: If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using OnCommand System Manager or the command line interface.
 ---
 
-= Connecting to ONTAP Cloud systems
+= Connecting to Cloud Volumes ONTAP
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -13,23 +13,23 @@ summary: If you need to perform advanced management of ONTAP Cloud systems, you 
 :linkattrs:
 :imagesdir: ./media/
 
-If you need to perform advanced management of ONTAP Cloud systems, you can do so using OnCommand System Manager or the command line interface.
+If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using OnCommand System Manager or the command line interface.
 
 toc::[]
 
 == Connecting to OnCommand System Manager
 
-You might need to perform some ONTAP Cloud tasks from OnCommand System Manager, which is a browser-based management tool that runs on the ONTAP Cloud system. For example, you need to use System Manager if you want to create LUNs.
+You might need to perform some Cloud Volumes ONTAP tasks from OnCommand System Manager, which is a browser-based management tool that runs on the Cloud Volumes ONTAP system. For example, you need to use System Manager if you want to create LUNs.
 
 .Before you begin
 
-The computer from which you are accessing Cloud Manager must have a network connection to ONTAP Cloud. For example, you might need to log in to Cloud Manager from a jump host in AWS or Azure.
+The computer from which you are accessing Cloud Manager must have a network connection to Cloud Volumes ONTAP. For example, you might need to log in to Cloud Manager from a jump host in AWS or Azure.
 
-NOTE: When deployed in multiple AWS Availability Zones, ONTAP Cloud HA configurations use a floating IP address for the cluster management interface, which means external routing is not available. You must connect from a host that is part of the same routing domain.
+NOTE: When deployed in multiple AWS Availability Zones, Cloud Volumes ONTAP HA configurations use a floating IP address for the cluster management interface, which means external routing is not available. You must connect from a host that is part of the same routing domain.
 
 .Steps
 
-. From the Working Environments page, double-click the ONTAP Cloud system that you want to manage with System Manager.
+. From the Working Environments page, double-click the Cloud Volumes ONTAP system that you want to manage with System Manager.
 
 . Click the menu icon, and then click *Advanced > System Manager*.
 
@@ -41,23 +41,23 @@ System Manager loads in a new browser tab.
 
 .Result
 
-The System Manager console loads. You can now use it to manage ONTAP Cloud.
+The System Manager console loads. You can now use it to manage Cloud Volumes ONTAP.
 
-== Connecting to the ONTAP Cloud CLI
+== Connecting to the Cloud Volumes ONTAP CLI
 
-The ONTAP Cloud CLI enables you to execute all administrative commands and is a good choice for advanced tasks or if you are more comfortable using the CLI. You can connect to the CLI using Secure Shell (SSH).
+The Cloud Volumes ONTAP CLI enables you to execute all administrative commands and is a good choice for advanced tasks or if you are more comfortable using the CLI. You can connect to the CLI using Secure Shell (SSH).
 
 .Before you begin
 
-The host from which you use SSH to connect to ONTAP Cloud must have a network connection to ONTAP Cloud. For example, you might need to use SSH from a jump host in AWS or Azure.
+The host from which you use SSH to connect to Cloud Volumes ONTAP must have a network connection to Cloud Volumes ONTAP. For example, you might need to use SSH from a jump host in AWS or Azure.
 
-NOTE: When deployed in multiple AZs, ONTAP Cloud HA configurations use a floating IP address for the cluster management interface, which means external routing is not available. You must connect from a host that is part of the same routing domain.
+NOTE: When deployed in multiple AZs, Cloud Volumes ONTAP HA configurations use a floating IP address for the cluster management interface, which means external routing is not available. You must connect from a host that is part of the same routing domain.
 
 .Steps
 
 . In Cloud Manager, identify the IP address of the cluster management interface:
 
-.. On the Working Environments page, select the ONTAP Cloud system.
+.. On the Working Environments page, select the Cloud Volumes ONTAP system.
 
 .. Copy the cluster management IP address that appears in the right pane.
 

@@ -27,7 +27,7 @@ image:screenshot_csa_delete.png[Screen shot: Shows a table of 44 EBS volumes tha
 
 == What happens when you enable the report
 
-Cloud Manager collects information about the EC2 instances, EBS volumes, and EBS snapshots associated with your AWS account, in the region where Cloud Manager resides. AWS resources used for ONTAP Cloud systems are excluded. There is no performance impact on AWS resources.
+Cloud Manager collects information about the EC2 instances, EBS volumes, and EBS snapshots associated with your AWS account, in the region where Cloud Manager resides. AWS resources used for Cloud Volumes ONTAP are excluded. There is no performance impact on AWS resources.
 
 When Cloud Manager collects the information, it identifies improvement opportunities by using EBS snapshots to calculate used capacity and daily usage growth predictions.
 

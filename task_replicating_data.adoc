@@ -89,19 +89,19 @@ If you create custom policies, the labels defined by those policies must match. 
 
 == Data replication requirements
 
-Before you can replicate data, you should confirm that specific requirements are met for both ONTAP Cloud systems and ONTAP clusters.
+Before you can replicate data, you should confirm that specific requirements are met for both Cloud Volumes ONTAP systems and ONTAP clusters.
 
 Version requirements::
 You should verify that the source and destination volumes are running compatible ONTAP versions before replicating data. For details, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-dap/home.html[Data Protection Power Guide^].
 
-Requirements specific to ONTAP Cloud::
+Requirements specific to Cloud Volumes ONTAP::
 * The instance's security group must include the required inbound and outbound rules: specifically, rules for ICMP and ports 10000, 11104, and 11105.
 +
 These rules are included in the predefined security group.
 
-* To replicate data between two ONTAP Cloud systems in different subnets, the subnets must be routed together (this is the default setting).
+* To replicate data between two Cloud Volumes ONTAP systems in different subnets, the subnets must be routed together (this is the default setting).
 
-* To replicate data between an ONTAP Cloud system in AWS and a system in Azure, you must have a VPN connection between the AWS VPC and the Azure VNet.
+* To replicate data between a Cloud Volumes ONTAP system in AWS and a system in Azure, you must have a VPN connection between the AWS VPC and the Azure VNet.
 
 Requirements specific to ONTAP clusters::
 * An active SnapMirror license must be installed.
@@ -114,7 +114,7 @@ For details, see the Cluster and SVM Peering Express Guide for your version of O
 
 == Replicating data between systems
 
-You can replicate data between ONTAP Cloud systems and ONTAP clusters by choosing a one-time data replication, which can help you move data to and from the cloud, or a recurring schedule, which can help with disaster recovery or long-term retention.
+You can replicate data between Cloud Volumes ONTAP systems and ONTAP clusters by choosing a one-time data replication, which can help you move data to and from the cloud, or a recurring schedule, which can help with disaster recovery or long-term retention.
 
 .About this task
 

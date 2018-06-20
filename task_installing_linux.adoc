@@ -35,9 +35,9 @@ If you receive a message that installing the awscli failed, you can safely ignor
 
 . Set up permissions for Cloud Manager:
 
-.. If you want to deploy ONTAP Cloud systems in AWS, link:task_granting_aws_permissions.html[set up an IAM role that includes the required permissions].
+.. If you want to deploy Cloud Volumes ONTAP in AWS, link:task_granting_aws_permissions.html[set up an IAM role that includes the required permissions].
 
-.. If you want to deploy ONTAP Cloud systems in Azure, link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[create and set up a service principal in Azure Active Directory].
+.. If you want to deploy Cloud Volumes ONTAP in Azure, link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[create and set up a service principal in Azure Active Directory].
 
 . Review link:reference_cloud_mgr_reqs.html[Cloud Manager host requirements].
 
@@ -91,4 +91,4 @@ _port_ is required if you changed the default HTTP (80) or HTTPS (443) ports. Fo
 
 .After you finish
 
-You can start creating ONTAP Cloud systems but you might want to perform additional setup first.
+You can start creating Cloud Volumes ONTAP systems but you might want to perform additional setup first.

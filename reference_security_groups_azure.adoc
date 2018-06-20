@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_security_groups_azure.html
 keywords: security group, security groups, rules, ports, azure, inbound, outbound, rules
-summary: Cloud Manager creates Azure security groups that include the inbound and outbound rules that Cloud Manager and ONTAP Cloud need to operate successfully. You might want to refer to the ports for testing purposes or if you need to use your own.
+summary: Cloud Manager creates Azure security groups that include the inbound and outbound rules that Cloud Manager and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you need to use your own.
 ---
 
 = Security group rules for Azure
@@ -14,7 +14,7 @@ summary: Cloud Manager creates Azure security groups that include the inbound an
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager creates Azure security groups that include the inbound and outbound rules that Cloud Manager and ONTAP Cloud need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
+Cloud Manager creates Azure security groups that include the inbound and outbound rules that Cloud Manager and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
 
 toc::[]
 
@@ -51,7 +51,7 @@ The source for inbound rules is 0.0.0.0/0.
 
 |===
 
-== Security group rules for ONTAP Cloud
+== Security group rules for Cloud Volumes ONTAP
 
 *Inbound rules*
 

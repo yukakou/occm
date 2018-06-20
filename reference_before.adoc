@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: reference_before.html
 keywords: prerequisites, requirements, before
-summary: Before you use Cloud Manager to create and manage ONTAP Cloud systems, your Cloud Manager administrator should have prepared networking and installed and set up Cloud Manager.
+summary: Before you use Cloud Manager to create and manage Cloud Volumes ONTAP systems, your Cloud Manager administrator should have prepared networking and installed and set up Cloud Manager.
 ---
 
-= Before you create ONTAP Cloud systems
+= Before you create Cloud Volumes ONTAP systems
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,17 +14,17 @@ summary: Before you use Cloud Manager to create and manage ONTAP Cloud systems, 
 
 [.lead]
 
-Before you use Cloud Manager to create and manage ONTAP Cloud systems, your Cloud Manager administrator should have prepared networking and installed and set up Cloud Manager.
+Before you use Cloud Manager to create and manage Cloud Volumes ONTAP systems, your Cloud Manager administrator should have prepared networking and installed and set up Cloud Manager.
 
-Your administrator should have followed instructions to get up and running link:task_getting_started_aws.html[in AWS] or link:task_getting_started_azure.html[in Azure], and optionally link:task_setting_up_cloud_manager.html[set up Cloud Manager]. 
+Your administrator should have followed instructions to get up and running link:task_getting_started_aws.html[in AWS] or link:task_getting_started_azure.html[in Azure], and optionally link:task_setting_up_cloud_manager.html[set up Cloud Manager].
 
-The following conditions should exist before you start deploying ONTAP Cloud:
+The following conditions should exist before you start deploying Cloud Volumes ONTAP:
 
-* AWS and Azure networking requirements were met for Cloud Manager and ONTAP Cloud.
+* AWS and Azure networking requirements were met for Cloud Manager and Cloud Volumes ONTAP.
 
 * Cloud Manager has permissions to perform operations in AWS and Azure on your behalf.
 
-* Each ONTAP Cloud product that users will deploy was subscribed to from the AWS Marketplace.
+* Each Cloud Volumes ONTAP product that users will deploy was subscribed to from the AWS Marketplace.
 
 * Cloud Manager was installed.
 
@@ -32,4 +32,4 @@ The following conditions should exist before you start deploying ONTAP Cloud:
 
 * (Optional) Additional user accounts were created, which can include Tenant Admins and Working Environment Admins.
 
-* (Optional) If users want to enable ONTAP Cloud encryption in AWS, a key management infrastructure was set up and Cloud Manager encryption settings were defined.
+* (Optional) If users want to enable Cloud Volumes ONTAP encryption in AWS, a key management infrastructure was set up and Cloud Manager encryption settings were defined.
