@@ -50,3 +50,9 @@ When you add a key manager to Cloud Manager, it does not verify the IP address t
 == Cloud Manager does not set up iSCSI volumes
 
 When you create a volume in Cloud Manager using the Storage System View, you can choose the NFS or CIFS protocol. You must use OnCommand System Manager to create a volume for iSCSI.
+
+== Storage Virtual Machine (SVM) limitation
+
+ONTAP Cloud Volumes supports one data-serving SVM and one or more SVMs used for disaster recovery.
+
+Cloud Manager does not provide any setup or orchestration support for SVM disaster recovery. It also does not support storage-related tasks on any additional SVMs. You must use System Manager or the CLI for SVM disaster recovery.
