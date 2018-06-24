@@ -17,6 +17,10 @@ summary: If you want to run the Cloud Manager software on an existing host, you 
 [.lead]
 If you want to run the Cloud Manager software on an existing host, you can download and install the software on a Linux host in your network or in the cloud.
 
+.Before you begin
+
+A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Cloud Manager installation.
+
 .About this task
 
 * Root privileges are not required to install Cloud Manager.
