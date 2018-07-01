@@ -37,7 +37,7 @@ If you receive a message that installing the awscli failed, you can safely ignor
 
 .. If you want to deploy Cloud Volumes ONTAP in AWS, link:task_granting_aws_permissions.html[set up an IAM role that includes the required permissions].
 
-.. If you want to deploy Cloud Volumes ONTAP in Azure, link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[create and set up a service principal in Azure Active Directory].
+.. If you want to deploy Cloud Volumes ONTAP in Azure, link:task_creating_service_principal.html[create and set up a service principal in Azure Active Directory].
 
 . Review link:reference_cloud_mgr_reqs.html[Cloud Manager host requirements].
 

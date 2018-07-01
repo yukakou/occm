@@ -1,0 +1,71 @@
+---
+sidebar: sidebar
+permalink: task_enabling_msi.html
+keywords: microsoft, azure, netapp, managed service identity, msi, permissions, virtual machine
+summary: You can provide Azure permissions to Cloud Manager by using a Managed Service Identity. A Managed Service Identity allows the Cloud Manager virtual machine to identify itself to Azure Active Directory without providing any credentials.
+---
+
+= Providing Azure permissions to an existing Cloud Manager virtual machine using a Managed Service Identity
+:toc: macro
+:toclevels: 1
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can provide Azure permissions to Cloud Manager by using a Managed Service Identity. A Managed Service Identity allows the Cloud Manager virtual machine to identify itself to Azure Active Directory without providing any credentials.
+
+.About this task
+
+If you currently provide Cloud Manager with Azure permissions through a service principal, you can change to using a Managed Service Identity instead. This method is simpler than manually setting up an Azure service principal and providing the credentials to Cloud Manager.
+
+For more information about Managed Service Identities, refer to https://docs.microsoft.com/en-us/azure/active-directory/managed-service-identity/overview[Azure documentation^].
+
+.Steps
+
+. Log in to the Azure portal using an account that is associated with the Cloud Manager virtual machine.
+
+. Enable a Managed Service Identity on the virtual machine:
+
+.. Navigate to the virtual machine.
+
+.. Under Settings, select *Configuration*.
+
+.. Click *Yes* next to Managed Service Identity and then click *Save*.
+
+. Provide permissions to the Cloud Manager virtual machine for one or more subscriptions:
+
+.. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
+
+.. Click *Access control (IAM)*.
+
+.. Click *Add* and then add the permissions:
+
+* Select the *OnCommand Cloud Manager Operator* role.
++
+[NOTE]
+====
+OnCommand Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
+
+If you have not yet created this role, follow link:task_getting_started_azure.html#creating-a-role-for-the-azure-managed-service-identity[these instructions].
+====
+
+* Assign access to a *Virtual Machine*.
+
+* Select the subscription in which the Cloud Manager virtual machine was created.
+
+* Select the resource group for the Cloud Manager virtual machine.
+
+* Select the Cloud Manager virtual machine.
+
+* Click *Save*.
+
+.. If you want to deploy Cloud Volumes ONTAP from additional subscriptions, click *Subscriptions* again, select a subscription, and then repeat the steps for that subscription.
+
+.Result
+
+Cloud Manager now has permissions that are controlled by a Managed Service Identity. If you repeated the steps for several subscriptions, then you can choose a different subscription when creating a new working environment.
+
+image:screenshot_azure_subscriptions.gif[Screen shot: Shows the link to select a different subscription in the Details and Credentials page.]

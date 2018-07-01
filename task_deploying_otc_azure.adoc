@@ -41,13 +41,17 @@ The following table describes fields for which you might need guidance:
 | Field
 | Description
 
-| Azure Subscription | If the Azure service principal is bound to multiple Azure subscriptions, select the current subscription and then choose another subscription. For instructions about binding the service principal, see link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Granting Azure Permissions to Cloud Manager].
+| Azure Subscription | You can choose a different Azure subscription if you provided permissions through multiple subscriptions. If you are using a Managed Service Identity, see link:task_enabling_msi.html[Enabling a Managed Service Identity on an existing Cloud Manager virtual machine]. If you are using a service principal with credentials, see link:task_creating_service_principal.html#assigning-the-cloud-manager-operator-role-to-the-service-principal[Assigning the Cloud Manager Operator role to the service principal].
 
 | Working Environment Name |	Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Azure virtual machine. It also uses the name as the prefix for the predefined security group, if you select that option.
 
 | Resource Group Name | If you uncheck *Use Default*, you can type the name of an existing resource group or a new resource group.
 
-| Tags |	Tags are metadata for your Azure resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP system and each Azure resource associated with the system. For information about tags, refer to https://azure.microsoft.com/documentation/articles/resource-group-using-tags/[Microsoft Azure Documentation: Using tags to organize your Azure resources^].
+| Tags |	Tags are metadata for your Azure resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP system and each Azure resource associated with the system.
+
+You can add up to four tags from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four tags when creating a working environment.
+
+For information about tags, refer to https://azure.microsoft.com/documentation/articles/resource-group-using-tags/[Microsoft Azure Documentation: Using tags to organize your Azure resources^].
 
 | Credentials |	These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
 |===
@@ -136,7 +140,7 @@ The listed DNS servers must contain the service location records (SRV) needed to
 
 . On the Usage Profile, Disk Type, and Tiering Policy page, choose whether you want to enable storage efficiency features and change the tiering policy, if needed.
 +
-For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_storage.html#data-tiering[Data tiering].
+For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_storage.html#data-tiering-overview[Data tiering overview].
 
 . On the Review & Approve page, review and confirm your selections:
 

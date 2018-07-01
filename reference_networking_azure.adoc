@@ -116,7 +116,7 @@ If you want to tier cold data to Azure Blob storage, you do not need to set up a
 +
 "Microsoft.Network/virtualNetworks/subnets/write",
 +
-That permission is included in the latest Cloud Manager policy. For details about providing permissions, see link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Granting Azure Permissions to Cloud Manager].
+That permission is included in the latest Cloud Manager policy. For details about providing permissions, see link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Granting Azure permissions to Cloud Manager].
 +
 For details about setting up data tiering, see link:task_tiering.html[Tiering cold data to low-cost object storage].
 
