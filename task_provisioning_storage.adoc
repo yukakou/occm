@@ -93,7 +93,7 @@ For help, refer to the following:
 * link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles]
 * link:task_planning_your_config.html#choosing-an-aws-disk-type[Choosing an AWS disk type]
 * link:task_planning_your_config.html#choosing-an-azure-disk-type[Choosing an Azure disk type]
-* link:concept_storage.html#data-tiering[Data tiering]
+* link:concept_storage.html#data-tiering-overview[Data tiering overview]
 
 . Click *Go*.
 

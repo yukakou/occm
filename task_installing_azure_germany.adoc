@@ -21,11 +21,11 @@ The Azure Marketplace is not available in the Azure Germany region, so you must 
 
 . link:reference_networking_azure.html[Review networking requirements for Azure].
 
-. link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Grant Azure permissions to Cloud Manager].
-
 . link:reference_cloud_mgr_reqs.html[Review Cloud Manager host requirements].
 
 . link:task_installing_linux.html[Download and install Cloud Manager].
+
+. link:task_enabling_msi.html[Grant Azure permissions to Cloud Manager using a Managed Service Identity].
 
 .After you finish
 
