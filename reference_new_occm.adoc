@@ -17,6 +17,48 @@ summary: OnCommand Cloud Manager typically introduces a new release every month 
 [.lead]
 OnCommand Cloud Manager typically introduces a new release every month to bring you new features, enhancements, and bug fixes.
 
+toc::[]
+
+== Cloud Manager 3.5.1
+
+Cloud Manager 3.5.1 includes new features and enhancements.
+
+* <<Tiering levels for cold data>>
+* <<Providing Azure permissions using a Managed Service Identity>>
+* <<New used capacity charts>>
+
+=== Tiering levels for cold data
+
+After you deploy Cloud Volumes ONTAP, you can change the Amazon S3 storage class or the Azure Blob storage tier in which you want to store cold data. Changing the tiering level can reduce your storage costs, if you do not plan to access the data. The access costs are higher if you do access the data, so you must take that into consideration before you change the tiering level.
+
+The tiering level is system wide--it is not per volume. For details about changing the tiering level, see link:task_tiering.html[Tiering cold data to low-cost object storage].
+
+==== AWS tiering levels
+
+In AWS, Cloud Volumes ONTAP uses *Standard* as the default storage class for data tiering to Amazon S3. You can change the storage class to either *Standard-Infrequent Access* or *One Zone-Infrequent Access*. When you change the tiering level, cold data starts in the *Standard* storage class and moves to the storage class that you selected, if the data is not accessed after 30 days. For details about S3 storage classes, refer to https://aws.amazon.com/s3/storage-classes[AWS documentation^].
+
+image:screenshot_tiering_level_s3.gif[A screenshot that shows the three S3 storage classes.]
+
+==== Azure tiering levels
+
+In Azure, Cloud Volumes ONTAP uses the Azure *hot* storage tier as the default for data tiering to Blob storage. You can change to the Azure *cool* storage tier. When you change the tiering level, cold data starts in the *hot* storage tier and moves to the *cool* storage tier, if the data is not accessed after 30 days. For details about Azure Blob storage tiers, refer to https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers[Azure documentation^].
+
+image:screenshot_tiering_level_blob.gif[A screenshot that shows the two Blob storage tiers.]
+
+=== Providing Azure permissions using a Managed Service Identity
+
+You can now provide Azure permissions to Cloud Manager by using a Managed Service Identity. A Managed Service Identity allows a Cloud Manager virtual machine in Azure to identify itself to Azure Active Directory without providing any credentials. This method is simpler than manually setting up an Azure service principal and providing the credentials to Cloud Manager.
+
+To use a Managed Service Identity with Cloud Manager, follow link:task_getting_started_azure.html[instructions for new Cloud Manager virtual machines] or link:task_enabling_msi.html[instructions for existing Cloud Manager virtual machines].
+
+For more information about Managed Service Identities, refer to https://docs.microsoft.com/en-us/azure/active-directory/managed-service-identity/overview[Azure documentation^].
+
+=== New used capacity charts
+
+Cloud Manager now provides a graphical representation of used capacity when viewing volumes and aggregates.
+
+image:screenshot_used_capacity.gif[A screenshot that shows a volume and its used capacity.]
+
 == Cloud Manager 3.5
 
 Cloud Manager 3.5 includes new features and enhancements.
