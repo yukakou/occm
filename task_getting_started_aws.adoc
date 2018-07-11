@@ -56,8 +56,6 @@ You must subscribe to Cloud Volumes ONTAP from the AWS Marketplace so you can la
 . Click *Continue*, review the terms, and then click *Accept Software Terms*.
 +
 IMPORTANT: You must not launch Cloud Volumes ONTAP instances from the AWS Marketplace. You must use Cloud Manager to launch Cloud Volumes ONTAP.
-+
-NOTE: Subscribing is not required to launch Cloud Volumes ONTAP in the AWS GovCloud (US) region.
 
 == Granting AWS permissions
 
