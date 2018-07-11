@@ -17,7 +17,7 @@ summary: Getting started with Cloud Volumes ONTAP (formerly ONTAP Cloud) include
 [.lead]
 Getting started with Cloud Volumes ONTAP (formerly ONTAP Cloud) includes verifying your networking, deploying Cloud Manager, granting Azure permissions, and then launching Cloud Volumes ONTAP using Cloud Manager.
 
-IMPORTANT: Getting started in the Azure US Gov regions is different than other regions because Managed Service Identities are not supported in the US Gov regions. See link:task_getting_started_azure_gov.html[Getting started with Cloud Volumes ONTAP in Azure US Gov regions] for details.
+IMPORTANT: The steps to deploy Cloud Manager in an Azure US Gov region or in an Azure Germany region are different than the steps on this page. Refer to instructions for link:task_installing_azure_gov.html[US Gov regions] or for link:task_installing_azure_germany.html[Azure Germany regions] instead.
 
 toc::[]
 
@@ -67,7 +67,7 @@ This setting is important because a Managed Service Identity allows a Cloud Mana
 +
 For more information about Managed Service Identities, refer to https://docs.microsoft.com/en-us/azure/active-directory/managed-service-identity/overview[Azure documentation^].
 +
-IMPORTANT: Managed Service Identities are not supported in the US Gov regions. See link:task_getting_started_azure_gov.html[Getting started with Cloud Volumes ONTAP in Azure US Gov regions] for details.
+IMPORTANT: Managed Service Identities are not supported in the US Gov regions. See link:task_installing_azure_germany.html[Installing Cloud Manager in an Azure Germany region] instead.
 
 . On the summary page, review your selections and click *Create* to start the deployment.
 +
