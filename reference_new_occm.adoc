@@ -19,13 +19,27 @@ OnCommand Cloud Manager typically introduces a new release every month to bring 
 
 toc::[]
 
+[NOTE]
+.Looking for a previous version?
+====
+* https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in Cloud Manager 3.4]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2735470[What's new in Cloud Manager 3.3]
+====
+
 == Cloud Manager 3.5.1
 
 Cloud Manager 3.5.1 includes new features and enhancements.
 
+* <<Support for pay-as-you-go in the AWS GovCloud (US) region>>
 * <<Tiering levels for cold data>>
 * <<Providing Azure permissions using a Managed Service Identity>>
 * <<New used capacity charts>>
+
+=== Support for pay-as-you-go in the AWS GovCloud (US) region
+
+The pay-as-you-go version of Cloud Volumes ONTAP is now supported in the AWS GovCloud (US) region. This is in addition to supporting Cloud Volumes ONTAP BYOL in the GovCloud (US) region.
+
+You can deploy Cloud Volumes ONTAP in the GovCloud (US) region just like any other region. Go to NetApp Cloud Central and launch Cloud Manager in GovCloud (US). Then launch Cloud Volumes ONTAP PAYGO or BYOL by creating a new working environment in Cloud Manager.
 
 === Tiering levels for cold data
 
@@ -50,6 +64,8 @@ image:screenshot_tiering_level_blob.gif[A screenshot that shows the two Blob sto
 You can now provide Azure permissions to Cloud Manager by using a Managed Service Identity. A Managed Service Identity allows a Cloud Manager virtual machine in Azure to identify itself to Azure Active Directory without providing any credentials. This method is simpler than manually setting up an Azure service principal and providing the credentials to Cloud Manager.
 
 To use a Managed Service Identity with Cloud Manager, follow link:task_getting_started_azure.html[instructions for new Cloud Manager virtual machines] or link:task_enabling_msi.html[instructions for existing Cloud Manager virtual machines].
+
+IMPORTANT: Managed Service Identities are not supported in the Azure US Gov regions. You must link:task_creating_service_principal.html[grant Azure permissions to Cloud Manager using a service principal and credentials].
 
 For more information about Managed Service Identities, refer to https://docs.microsoft.com/en-us/azure/active-directory/managed-service-identity/overview[Azure documentation^].
 
