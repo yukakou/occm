@@ -5,7 +5,7 @@ keywords: install, installation, installing, linux, installer, software, germany
 summary: The Azure Marketplace is not available in the Azure Germany region, so you must download the Cloud Manager installer from the NetApp Support Site and install it on an existing Linux host in the region.
 ---
 
-= Installing Cloud Manager in the Azure Germany region
+= Installing Cloud Manager in an Azure Germany region
 :toc: macro
 :hardbreaks:
 :toclevels: 1
@@ -15,7 +15,7 @@ summary: The Azure Marketplace is not available in the Azure Germany region, so 
 :imagesdir: ./media/
 
 [.lead]
-The Azure Marketplace is not available in the Azure Germany region, so you must download the Cloud Manager installer from the NetApp Support Site and install it on an existing Linux host in the region.
+The Azure Marketplace is not available in the Azure Germany regions, so you must download the Cloud Manager installer from the NetApp Support Site and install it on an existing Linux host in the region.
 
 .Steps
 
