@@ -21,6 +21,8 @@ entries:
         url: /task_getting_started_aws.html
       - title: Getting started in Azure
         url: /task_getting_started_azure.html
+      - title: Getting started in Azure US Gov regions
+        url: /task_getting_started_azure_gov.html
       - title: Additional installation options
         entries:
           - title: Cloud Manager host requirements
