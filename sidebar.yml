@@ -15,12 +15,22 @@ entries:
         url: https://docs.netapp.com/us-en/cloud-volumes-ontap/
   - title: Getting started
     entries:
-      - title: Overview
+      - title: Deployment overview
         url: /reference_deployment_overview.html
       - title: Getting started in AWS
         url: /task_getting_started_aws.html
       - title: Getting started in Azure
         url: /task_getting_started_azure.html
+      - title: Detailed networking requirements
+        entries:
+          - title: AWS networking requirements
+            url: /reference_networking_aws.html
+          - title: Azure networking requirements
+            url: /reference_networking_azure.html
+          - title: IBM Cloud networking requirements
+            url: /reference_networking_ibm.html
+      - title: Setting up Cloud Manager
+        url: /task_setting_up_cloud_manager.html
       - title: Additional installation options
         entries:
           - title: Cloud Manager host requirements
@@ -37,16 +47,6 @@ entries:
             url: /task_installing_azure_gov.html
           - title: Installing Cloud Manager in Azure Germany
             url: /task_installing_azure_germany.html
-      - title: Setting up Cloud Manager
-        url: /task_setting_up_cloud_manager.html
-      - title: Detailed networking requirements
-        entries:
-          - title: AWS networking requirements
-            url: /reference_networking_aws.html
-          - title: Azure networking requirements
-            url: /reference_networking_azure.html
-          - title: IBM Cloud networking requirements
-            url: /reference_networking_ibm.html
   - title: Concepts
     entries:
       - title: Product overview
@@ -146,7 +146,7 @@ entries:
       - title: FAQ for Cloud Central integration
         url: /reference_integration_faq.html
       - title: Supported configurations for Cloud Volumes ONTAP
-        url: https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_94.html
+        url: https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html
       - title: Supported regions
         url: /reference_regions.html
       - title: Security group rules for AWS
