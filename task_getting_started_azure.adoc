@@ -67,7 +67,7 @@ This setting is important because a Managed Service Identity allows a Cloud Mana
 +
 For more information about Managed Service Identities, refer to https://docs.microsoft.com/en-us/azure/active-directory/managed-service-identity/overview[Azure documentation^].
 +
-IMPORTANT: Managed Service Identities are not supported in the US Gov regions. See link:task_installing_azure_germany.html[Installing Cloud Manager in an Azure Germany region] instead.
+IMPORTANT: Managed Service Identities are not supported in the Azure US Gov regions and in the Germany regions. Refer to instructions for link:task_installing_azure_gov.html[US Gov regions] or for link:task_installing_azure_germany.html[Azure Germany regions] instead.
 
 . On the summary page, review your selections and click *Create* to start the deployment.
 +
