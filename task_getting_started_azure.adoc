@@ -165,6 +165,10 @@ Note the following as you complete the wizard:
 * The disk size is the default size for all disks on the system.
 +
 TIP: If you need a different size later, you can use the *Advanced allocation* option to create an aggregate that uses disks of a specific size.
++
+The following video shows how to deploy Cloud Volumes ONTAP in Azure.
++
+video::video_launch_otc_azure.mp4[width=848, height=480]
 
 .Result
 
