@@ -7,6 +7,7 @@ summary: Cloud Manager creates Azure security groups that include the inbound an
 
 = Security group rules for Azure
 :toc: macro
+:toclevels: 1
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -18,22 +19,24 @@ Cloud Manager creates Azure security groups that include the inbound and outboun
 
 toc::[]
 
-== Security group rules for Cloud Manager
+== Default rules for Cloud Manager
+
+The predefined security group for Cloud Manager includes the following rules.
 
 *Inbound rules*
 
 The source for inbound rules is 0.0.0.0/0.
 
-[cols=3*,options="header",cols="30,30,40"]
+[cols="15,15,70",width=85%,options="header"]
 |===
 
-| Type
-| Port range
+| Protocol
+| Port
 | Purpose
 
-| SSH | 22 | SSH connections to Cloud Manager
-| HTTP | 80 |	Accessing the Cloud Manager console
-| HTTPS |	443 |	Accessing the Cloud Manager console
+| SSH | 22 | Provides SSH access to the Cloud Manager host
+| HTTP | 80 |	Provides HTTP access from client web browsers to the Cloud Manager web console
+| HTTPS |	443 |	Provides HTTPS access from client web browsers to the Cloud Manager web console
 
 |===
 
@@ -42,8 +45,8 @@ The source for inbound rules is 0.0.0.0/0.
 [cols=3*,options="header",cols="30,30,40"]
 |===
 
-| Type
-| Port range
+| Protocol
+| Port
 | Purpose
 
 | All TCP | All | All outbound traffic
@@ -51,39 +54,43 @@ The source for inbound rules is 0.0.0.0/0.
 
 |===
 
-== Security group rules for Cloud Volumes ONTAP
+== Default rules for Cloud Volumes ONTAP
+
+The predefined security group for Cloud Volumes ONTAP includes the following rules.
 
 *Inbound rules*
 
 The source for inbound rules is 0.0.0.0/0.
 
-[cols=3*,options="header",cols="30,30,40"]
+[cols="15,15,70",width=85%,options="header"]
 |===
 
-| Type
-| Port range
+| Protocol
+| Port
 | Purpose
 
 | All ICMP | All | Pinging the instance
-| Custom TCP Rule |	111 |	Portmapper
-| Custom TCP Rule |	139 |	NetBIOS
-| Custom TCP Rule |	161-162 |	SNMP
-| Custom TCP Rule |	445 |	Microsoft SMB
-| Custom TCP Rule |	635 |	NFS mount
-| Custom TCP Rule |	749 |	Kerberos
-| Custom TCP Rule |	2049 |	NFS
-| Custom TCP Rule |	3260 |	iSCSI
-| Custom TCP Rule |	4045-4046 |	NFS mountd
-| Custom TCP Rule |	10000 |	NDMP
-| Custom TCP Rule |	11104-11105 |	Intercluster management and data
-| Custom UDP Rule |	111 | Portmapper
-| Custom UDP Rule |	161-162 |	SNMP
-| Custom UDP Rule |	635 |	NFS mount
-| Custom UDP Rule |	2049 |	NFS
-| Custom UDP Rule |	4045-4046 |	NFS mountd
-| HTTP | 80 |	System Manager access
-| HTTPS |	443 |	System Manager access
-| SSH |	22 |	SSH to the CLI
+| TCP |	111 |	Remote procedure call
+| TCP |	139 | NetBIOS service session
+| TCP |	161-162 |	Simple network management protocol
+| TCP |	445 |	Microsoft SMB/CIFS over TCP with NetBIOS framing
+| TCP |	635 |	NFS mount
+| TCP |	749 |	Kerberos
+| TCP |	2049 |	NFS Server daemon
+| TCP |	3260 |	iSCSI access through the iSCSI data LIF
+| TCP |	4045 |	NFS lock daemon
+| TCP | 4046 | Network status monitor
+| TCP |	10000 |	Backup using NDMP
+| TCP |	11104 |	Intercluster LIF communication sessions for SnapMirror
+| TCP | 11105 | SnapMirror data transfer using intercluster LIFs
+| UDP |	111 | Remote procedure call
+| UDP |	161-162 |	Simple network management protocol
+| UDP |	635 |	NFS mount
+| UDP |	2049 |	NFS Server daemon
+| UDP |	4045-4046 |	NFS mountd
+| HTTP | 80 |	Provides HTTP access to the System Manager web console using the IP address of the cluster management LIF
+| HTTPS |	443 |	Provides HTTPS access to the System Manager web console using the IP address of the cluster management LIF
+| SSH |	22 |	Provides SSH access to the IP address of the cluster management LIF or a node management LIF
 
 |===
 
@@ -92,12 +99,87 @@ The source for inbound rules is 0.0.0.0/0.
 [cols=3*,options="header",cols="30,30,40"]
 |===
 
-| Type
-| Port range
+| Protocol
+| Port
 | Purpose
 
 | All ICMP |	All |	All outbound traffic (SnapMirror and SnapVault)
 | All TCP |	All |	All outbound traffic
 | All UDP |	All |	All outbound traffic
+
+|===
+
+== Security hardening
+
+The predefined security groups open all outbound traffic. If you need more rigid rules, you can use the following information to open only those ports that are required for outbound communication by Cloud Manager and Cloud Volumes ONTAP.
+
+=== Cloud Manager
+
+Cloud Manager uses the following ports for outbound communication.
+
+[cols="10,10,20,60",width=100%,options="header"]
+|===
+
+| Protocol
+| Port
+| Destination
+| Purpose
+
+| HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, and sending AutoSupport messages to NetApp
+| TCP	| 88 | Active Directory forest | Kerberos V authentication
+| TCP	| 139 | Active Directory forest | NetBIOS service session
+| TCP	| 389 | Active Directory forest | LDAP
+| TCP	| 445 | Active Directory forest | Microsoft SMB/CIFS over TCP with NetBIOS framing
+| TCP	| 464 | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
+| TCP	| 749 | Active Directory forest | Active Directory Kerberos V change & set password (RPCSEC_GSS)
+| TCP	| 3000 | ONTAP cluster management LIF | API calls to ONTAP
+| UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
+| UDP	| 137 | Active Directory forest | NetBIOS name service
+| UDP	| 138 | Active Directory forest | NetBIOS datagram service
+| UDP	| 464 | Active Directory forest | Kerberos key administration
+
+|===
+
+=== Cloud Volumes ONTAP
+
+Cloud Volumes ONTAP uses the following ports for outbound communication.
+
+[cols="10,10,20,20,40",width=100%,options="header"]
+|===
+
+| Service
+| Port/Protocol
+| Source
+| Destination
+| Purpose
+
+| NDMP | 18600 – 18699/TCP | Node management LIF | Destination Servers | NDMP copy
+| SMTP | 25/TCP | Node management LIF | Mail server | SMTP alerts, can be used for AutoSupport
+| Syslog | 514/UDP | Node management LIF | Syslog server | Syslog forward messages
+| SNMP | 161/TCP | Node management LIF | Monitor server | Monitoring by SNMP traps
+| SNMP | 161/UDP | Node management LIF | Monitor server | Monitoring by SNMP traps
+| SNMP | 162/TCP | Node management LIF | Monitor server | Monitoring by SNMP traps
+| SNMP | 162/UDP | Node management LIF | Monitor server | Monitoring by SNMP traps
+| Active Directory | 88/TCP | Node management LIF | Active Directory forest | Kerberos V authentication
+| Active Directory | 137/UDP | Node management LIF | Active Directory forest | NetBIOS name service
+| Active Directory | 138/UDP | Node management LIF | Active Directory forest | NetBIOS datagram service
+| Active Directory | 139/TCP | Node management LIF | Active Directory forest | NetBIOS service session
+| Active Directory | 389/TCP | Node management LIF | Active Directory forest | LDAP
+| Active Directory | 445/TCP | Node management LIF | Active Directory forest | Microsoft SMB/CIFS over TCP with NetBIOS framing
+| Active Directory | 464/TCP | Node management LIF | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
+| Active Directory | 464/UDP | Node management LIF | Active Directory forest | Kerberos key administration
+| Active Directory | 749/TCP | Node management LIF | Active Directory forest | Kerberos V change & set Password (RPCSEC_GSS)
+| Active Directory | 88/TCP | Data LIF (nfs,cifs)| Active Directory forest | Kerberos V authentication
+| Active Directory | 137/UDP | Data LIF (nfs,cifs) | Active Directory forest | NetBIOS name service
+| Active Directory | 138/UDP | Data LIF (nfs,cifs) | Active Directory forest | NetBIOS datagram service
+| Active Directory | 139/TCP | Data LIF (nfs,cifs) | Active Directory forest | NetBIOS service session
+| Active Directory | 389/TCP | Data LIF (nfs,cifs) | Active Directory forest | LDAP
+| Active Directory | 445/TCP | Data LIF (nfs,cifs) | Active Directory forest | Microsoft SMB/CIFS over TCP with NetBIOS framing
+| Active Directory | 464/TCP | Data LIF (nfs,cifs) | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
+| Active Directory | 464/UDP | Data LIF (nfs,cifs) | Active Directory forest | Kerberos key administration
+| Active Directory | 749/TCP | Data LIF (nfs,cifs) | Active Directory forest | Kerberos V change & set password (RPCSEC_GSS)
+| SnapMirror | 11104/TCP | Intercluster LIF | ONTAP intercluster LIFs | Manages intercluster LIF communication sessions for SnapMirror
+| SnapMirror | 11105/TCP | Intercluster LIF | ONTAP intercluster LIFs | SnapMirror data transfer
+| SnapVault | 10566/TCP | Intercluster LIF | ONTAP intercluster LIFs | SnapVault data transfer
 
 |===
