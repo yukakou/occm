@@ -293,4 +293,7 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 | Enables programmatic deployments from the Azure Marketplace.
 
+| "Microsoft.Authorization/locks/*"
+| Enables management of locks on Azure disks.
+
 |===
