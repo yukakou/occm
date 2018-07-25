@@ -109,7 +109,7 @@ You can launch Cloud Volumes ONTAP in AWS to provide enterprise-class features f
 
 . On the Working Environments page in Cloud Manager, click *Create*.
 
-. Under Create, select *ONTAP Cloud* or *ONTAP Cloud HA*.
+. Under Create, select *Cloud Volumes ONTAP* or *Cloud Volumes ONTAP HA*.
 
 . Complete the steps in the wizard to launch the instance.
 +

@@ -149,7 +149,7 @@ NOTE: The predefined Cloud Volumes ONTAP security group allows outbound HTTP and
 
 . Copy the software image to the directory on the HTTP or FTP server from which the file will be served.
 
-. From the working environment in Cloud Manager, click the menu icon, and then click *Advanced > Update ONTAP Cloud software*.
+. From the working environment in Cloud Manager, click the menu icon, and then click *Advanced > Update Cloud Volumes ONTAP*.
 
 . On the update software page, choose *Select an image available from a URL*, enter the URL, and then click *Change Image*.
 
@@ -173,7 +173,7 @@ This downgrade process is available for single Cloud Volumes ONTAP systems only.
 
 .Steps
 
-. From the working environment, click the menu icon, and then click *Advanced > Update ONTAP Cloud software*.
+. From the working environment, click the menu icon, and then click *Advanced > Update Cloud Volumes ONTAP*.
 
 . On the update software page, select the alternate image, and then click *Change Image*.
 

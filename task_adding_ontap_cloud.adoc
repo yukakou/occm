@@ -23,7 +23,7 @@ You must know the password for the Cloud Volumes ONTAP admin user account.
 
 . On the Working Environments page, click *Add Working Environment*.
 
-. Under Discover, select *ONTAP Cloud*.
+. Under Discover, select *Cloud Volumes ONTAP*.
 +
 image:screenshot_discover_otc.gif[Screen shot: Shows the Cloud Volumes ONTAP icon for creating or discovering an instance.]
 
