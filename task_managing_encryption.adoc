@@ -16,6 +16,8 @@ summary: You might need to periodically manage Cloud Manager encryption settings
 [.lead]
 You might need to periodically manage Cloud Manager encryption settings to ensure that Cloud Volumes ONTAP systems in AWS can communicate with key managers.
 
+NOTE: Data-at-rest encryption provided by Cloud Volumes ONTAP is no longer supported when launching new Cloud Volumes ONTAP systems in AWS. Existing systems that use this feature are still supported. See link:reference_new_occm.html[What's new in Cloud Manager] for more details.
+
 toc::[]
 
 == Renewing the Cloud Manager intermediate CA certificate

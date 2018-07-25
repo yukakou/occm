@@ -49,8 +49,6 @@ Each Cloud Manager user account is assigned a role that defines permissions.
 
 | Update Cloud Manager |	Yes |	No |	No
 
-| Set up encryption |	Yes |	No |	No
-
 | Install an HTTPS certificate |	Yes |	No |	No
 
 | Set up Active Directory |	Yes |	No |	No

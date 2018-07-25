@@ -30,7 +30,7 @@ When Cloud Manager creates a Cloud Volumes ONTAP system in Azure, it creates a r
 
 . On the Working Environments page, click *Add Working Environment*
 
-. Under Create, select *ONTAP Cloud*.
+. Under Create, select *Cloud Volumes ONTAP*.
 
 . On the Details and Credentials page, optionally change the Azure subscription, specify a cluster name and resource group name, add tags if needed, and then specify credentials.
 +
@@ -88,9 +88,11 @@ The disk size is for all disks in the initial aggregate and for any additional a
 +
 For help choosing a size, see link:task_planning_your_config.html#choosing-a-disk-size[Choosing a disk size].
 
-. On the Write Speed page, choose *Normal* or *High*.
+. On the Write Speed & WORM page, choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
 +
-For help choosing between the options, see link:task_planning_your_config.html#choosing-a-write-speed[Choosing a write speed].
+link:task_planning_your_config.html#choosing-a-write-speed[Learn more about write speed].
++
+link:concept_worm.html[Learn more about WORM storage].
 
 . On the Create Volume page, enter details for the new volume, and then click *Continue*.
 +

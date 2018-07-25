@@ -37,10 +37,6 @@ Starting with version 3.4, new installations of Cloud Manager do not support usi
 
 * Cloud Manager does not launch Cloud Volumes ONTAP BYOL instances in the Volume View.
 
-* Cloud Volumes ONTAP encryption is not available in the Volume View.
-+
-NOTE: All instances use Amazon EBS encryption.
-
 == Cloud Manager does not verify IP addresses of key managers
 
 When you add a key manager to Cloud Manager, it does not verify the IP address that you entered because Cloud Manager does not communicate with key managers. If the IP address is incorrect, you are notified later when you try to create a Cloud Volumes ONTAP working environment. Be sure to verify key manager IP addresses after you enter them.
