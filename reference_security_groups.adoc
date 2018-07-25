@@ -48,7 +48,7 @@ The predefined security group for Cloud Manager opens all outbound traffic. If t
 
 The predefined security group for Cloud Manager includes the following outbound rules.
 
-[cols=3*,options="header",cols="30,30,40"]
+[cols=3*,options="header",width=70%,cols="20,20,60"]
 |===
 
 | Protocol
@@ -92,7 +92,7 @@ NOTE: The source IP address is the Cloud Manager host.
 
 == Rules for Cloud Volumes ONTAP
 
-The security group for Cloud Manager requires both inbound and outbound rules.
+The security group for Cloud Volumes ONTAP requires both inbound and outbound rules.
 
 === Inbound rules for Cloud Volumes ONTAP
 
@@ -125,9 +125,10 @@ The source for inbound rules in the predefined security group is 0.0.0.0/0.
 | UDP |	111 | Remote procedure call for NFS
 | UDP |	161-162 |	Simple network management protocol
 | UDP |	635 |	NFS mount
-| UDP |	2049 |	NFS server daemon
-| UDP |	4045 |	NFS lock daemon
+| UDP |	2049 | NFS server daemon
+| UDP |	4045 | NFS lock daemon
 | UDP | 4046 | Network status monitor for NFS
+| UDP | 4049 | NFS rquotad protocol
 
 |===
 
@@ -139,7 +140,7 @@ The predefined security group for Cloud Volumes ONTAP opens all outbound traffic
 
 The predefined security group for Cloud Volumes ONTAP includes the following outbound rules.
 
-[cols=3*,options="header",cols="30,30,40"]
+[cols=3*,options="header",width=70%,cols="20,20,60"]
 |===
 
 | Protocol
