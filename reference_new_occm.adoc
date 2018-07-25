@@ -19,13 +19,6 @@ OnCommand Cloud Manager typically introduces a new release every month to bring 
 
 toc::[]
 
-[NOTE]
-.Looking for a previous version?
-====
-* https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in Cloud Manager 3.4]
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP2735470[What's new in Cloud Manager 3.3]
-====
-
 == Cloud Manager 3.5.2
 
 Cloud Manager 3.5.2 includes new features and enhancements.
@@ -42,9 +35,9 @@ IMPORTANT: Changes in this release require a new Azure permission for Cloud Mana
 
 === Support for WORM storage
 
-You can now enable WORM storage on new Cloud Volumes ONTAP systems. Write once, read many (WORM) storage enables you to retain critical files in unmodified form for regulatory and governance purposes and to protect from malware attacks. WORM files are protected at the file level.
+You can now activate WORM storage on new Cloud Volumes ONTAP systems. Write once, read many (WORM) storage enables you to retain critical files in unmodified form for regulatory and governance purposes and to protect from malware attacks. WORM files are protected at the file level.
 
-link:pending.html[Learn more about WORM storage].
+link:concept_worm.html[Learn more about WORM storage].
 
 === Support for the auto tiering policy with Cloud Volumes ONTAP Standard
 
