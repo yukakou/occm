@@ -44,6 +44,4 @@ NOTE: Cloud Volumes ONTAP support for WORM storage is equivalent to SnapLock Ent
 
 * If you delete or move a disk directly from AWS or Azure, then a volume can be deleted before its expiry date.
 
-* The clock stops every time that you shut down Cloud Volumes ONTAP. As a result, a file might be deleted after its planned expiry date. For example, if a file should be kept for 10 years, but Cloud Volumes ONTAP was stopped for a month, then the file would be deleted after 10 years and one month.
-
 * When WORM storage is activated, data tiering to object storage cannot be enabled.
