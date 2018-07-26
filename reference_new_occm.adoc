@@ -43,6 +43,8 @@ link:concept_worm.html[Learn more about WORM storage].
 
 The _auto_ volume tiering policy is now supported with the pay-as-you-go Standard license for Cloud Volumes ONTAP. You can select the auto tiering policy when creating, modifying, or replicating a volume. Data tiering enables automated tiering of cold data to low-cost object storage.
 
+NOTE: Auto is the default policy when creating new volumes for Cloud Volumes ONTAP Standard, Premium, and BYOL.
+
 link:concept_storage.html#data-tiering-overview[Learn more about data tiering].
 
 === Cloud Manager deployment in Azure from NetApp Cloud Central
