@@ -105,7 +105,7 @@ NOTE: A Cloud Volumes ONTAP working environment uses an Azure Blob container for
 
 === How data tiering affects capacity limits
 
-A system's capacity limit is spread across the performance tier and the capacity tier.
+If you enable data tiering, a system's capacity limit stays the same. The limit is spread across the performance tier and the capacity tier.
 
 === Volume tiering policies
 
