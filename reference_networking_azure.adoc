@@ -121,6 +121,8 @@ If you want to tier cold data to Azure Blob storage, you do not need to set up a
 That permission is included in the latest Cloud Manager policy. For details about providing permissions, see link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Granting Azure permissions to Cloud Manager].
 +
 For details about setting up data tiering, see link:task_tiering.html[Tiering cold data to low-cost object storage].
++
+NOTE: If your network configuration uses route tables, then Cloud Manager also requires the following permission: Microsoft.Network/routeTables/join/action
 
 Connections to ONTAP systems in other networks::
 To replicate data between a Cloud Volumes ONTAP system in Azure and ONTAP systems in other networks, you must have a VPN connection between the Azure VNet and the other network—for example, an AWS VPC or your corporate network.

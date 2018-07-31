@@ -63,6 +63,8 @@ You do not need to set up a connection between the performance tier and the capa
 
 That permission is included in the latest Cloud Manager policy. For details about providing permissions, see link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Granting Azure permissions to Cloud Manager].
 
+NOTE: If your network configuration uses route tables, then Cloud Manager also requires the following permission: Microsoft.Network/routeTables/join/action
+
 == Tiering data on read-write volumes
 
 Cloud Volumes ONTAP can tier cold data on read-write volumes to cost-effective object storage, freeing up the performance tier for hot data.

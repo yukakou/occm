@@ -250,7 +250,9 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 | Gets network information about regions, the target VNet and subnet, and adds Cloud Volumes ONTAP to VNets.
 
-| "Microsoft.Network/virtualNetworks/subnets/write",
+a| "Microsoft.Network/virtualNetworks/subnets/write",
+
+NOTE: If your network configuration uses route tables, then Cloud Manager also requires the following permission: Microsoft.Network/routeTables/join/action
 
 | Enables VNet service endpoints for data tiering.
 
