@@ -31,5 +31,3 @@ The following conditions should exist before you start deploying Cloud Volumes O
 * (Optional) Additional tenants were defined.
 
 * (Optional) Additional user accounts were created, which can include Tenant Admins and Working Environment Admins.
-
-* (Optional) If users want to enable Cloud Volumes ONTAP encryption in AWS, a key management infrastructure was set up and Cloud Manager encryption settings were defined.

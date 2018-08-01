@@ -52,10 +52,7 @@ Switch between high and low-performance storage pools on-demand without taking a
 * Application consistency
 Ensure consistency of NetApp Snapshot copies using the NetApp SnapManager tool suite.
 
-* Data security
-Secure your data at rest with advanced data encryption (AWS only).
-
-NOTE: The licenses for these features are included with Cloud Volumes ONTAP.
+NOTE: Licenses for ONTAP features are included with Cloud Volumes ONTAP.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[View supported Cloud Volumes ONTAP configurations^]
 

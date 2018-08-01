@@ -65,7 +65,7 @@ When you launch Cloud Manager from NetApp Cloud Central, you must provide AWS cr
 
 Providing the credentials is secure and private—NetApp does not save the credentials. It uses them only to launch the instance.
 
-When you launch Cloud Manager, NetApp Cloud Central creates an IAM policy and an IAM role for the instance. This gives Cloud Manager permissions to deploy and manage Cloud Volumes ONTAP in AWS. To review the list of permissions, see link:reference_permissions.html[AWS and Azure permissions for Cloud Manager].
+When you launch Cloud Manager, NetApp Cloud Central creates an IAM policy and an IAM role for the instance. This gives Cloud Manager permissions to deploy and manage Cloud Volumes ONTAP in AWS. To review the list of permissions, see link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[What Cloud Manager does with AWS permissions].
 
 .Steps
 
@@ -109,7 +109,7 @@ You can launch Cloud Volumes ONTAP in AWS to provide enterprise-class features f
 
 . On the Working Environments page in Cloud Manager, click *Create*.
 
-. Under Create, select *ONTAP Cloud* or *ONTAP Cloud HA*.
+. Under Create, select *Cloud Volumes ONTAP* or *Cloud Volumes ONTAP HA*.
 
 . Complete the steps in the wizard to launch the instance.
 +

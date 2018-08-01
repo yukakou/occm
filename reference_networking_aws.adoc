@@ -130,9 +130,6 @@ If you experience any issues, see https://aws.amazon.com/premiumsupport/knowledg
 Connections to ONTAP systems in other networks::
 To replicate data between a Cloud Volumes ONTAP system in AWS and ONTAP systems in other networks, you must have a VPN connection between the AWS VPC and the other network—for example, an Azure VNet or your corporate network. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/SetUpVPNConnections.html[AWS Documentation: Setting Up an AWS VPN Connection^].
 
-Connection to key managers::
-If you want to use the Cloud Volumes ONTAP data encryption feature, the instances must have a connection to one or more key managers that are either in AWS or in your network. For instructions, see link:task_setting_up_cloud_manager.html#setting-up-cloud-volumes-ontap-encryption[Setting up Cloud Volumes ONTAP encryption].
-
 DNS and Active Directory for CIFS::
 If you want to provision CIFS storage, you must set up DNS and Active Directory in AWS or extend your on-premises setup to AWS.
 +

@@ -17,7 +17,7 @@ summary: Getting started with Cloud Volumes ONTAP (formerly ONTAP Cloud) include
 [.lead]
 Getting started with Cloud Volumes ONTAP (formerly ONTAP Cloud) includes verifying your networking, deploying Cloud Manager, granting Azure permissions, and then launching Cloud Volumes ONTAP using Cloud Manager.
 
-IMPORTANT: The steps to deploy Cloud Manager in an Azure US Gov region or in an Azure Germany region are different than the steps on this page. Refer to instructions for link:task_installing_azure_gov.html[US Gov regions] or for link:task_installing_azure_germany.html[Azure Germany regions] instead.
+NOTE: The steps to deploy Cloud Manager in an Azure US Gov region or in an Azure Germany region are different than the steps on this page. Refer to instructions for link:task_installing_azure_gov.html[US Gov regions] or for link:task_installing_azure_germany.html[Azure Germany regions] instead.
 
 toc::[]
 
@@ -67,7 +67,7 @@ This setting is important because a Managed Service Identity allows a Cloud Mana
 +
 For more information about Managed Service Identities, refer to https://docs.microsoft.com/en-us/azure/active-directory/managed-service-identity/overview[Azure documentation^].
 +
-IMPORTANT: Managed Service Identities are not supported in the Azure US Gov regions and in the Germany regions. Refer to instructions for link:task_installing_azure_gov.html[US Gov regions] or for link:task_installing_azure_germany.html[Azure Germany regions] instead.
+NOTE: Managed Service Identities are not supported in the Azure US Gov regions and in the Germany regions. Refer to instructions for link:task_installing_azure_gov.html[US Gov regions] or for link:task_installing_azure_germany.html[Azure Germany regions] instead.
 
 . On the summary page, review your selections and click *Create* to start the deployment.
 +
@@ -110,7 +110,7 @@ You should add the ID for each Azure subscription from which users will create C
 +
 The following example shows how to create a custom role using the Azure CLI 2.0:
 +
-*az role definition create --role-definition C:\Policy_for_Cloud_Manager_Azure_3_4_5.json*
+*az role definition create --role-definition C:\Policy_for_Cloud_Manager_Azure_3_5_2.json*
 +
 You should now have a custom role called OnCommand Cloud Manager Operator that you can assign to the Cloud Manager virtual machine.
 
@@ -150,7 +150,7 @@ You can deploy Cloud Volumes ONTAP in Azure to provide enterprise-class features
 
 . On the Working Environments page in Cloud Manager, click *Create*.
 
-. Under Create, select *ONTAP Cloud for Azure*.
+. Under Create, select *Cloud Volumes ONTAP for Azure*.
 
 . Complete the steps in the wizard to launch the system.
 +

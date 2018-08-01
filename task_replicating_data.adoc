@@ -21,8 +21,6 @@ Cloud Manager simplifies data replication between volumes on separate systems. Y
 
 NOTE: The baseline transfer includes a full copy of the source data. Subsequent transfers contain differential copies of the source data.
 
-image:screenshot_replication_summary.gif[Shows a source system and volume and the destination system and volume to which the data will be replicated.]
-
 toc::[]
 
 == Choosing a replication policy

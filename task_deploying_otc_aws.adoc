@@ -38,7 +38,7 @@ Immediately after you create the working environment, Cloud Manager launches a t
 
 . On the Working Environments page, click *Add Working Environment*.
 
-. Under Create, select *ONTAP Cloud*.
+. Under Create, select *Cloud Volumes ONTAP*.
 
 . On the Details and Credentials page, optionally change the AWS account, enter a working environment name, add tags if needed, and then enter a password.
 +
@@ -71,17 +71,11 @@ The following image shows the Location page filled out:
 +
 image:screenshot_cot_vpc.gif[Screen shot: Shows the VPC page filled out for a new Cloud Volumes ONTAP instance.]
 
-. On the Data Encryption page, choose no data encryption, encryption managed by Cloud Volumes ONTAP, or AWS-managed encryption.
+. On the Data Encryption page, choose no data encryption or AWS-managed encryption.
 +
 To better understand these options, see link:concept_security.html#data-encryption-in-aws[Data encryption in AWS].
 +
 For AWS-managed encryption, you can choose a different master key if more than one key is available in your account.
-+
-NOTE: If Cloud Manager was not set up for encryption, the Cloud Manager Admin must set it up. See link:task_setting_up_cloud_manager.html#setting-up-cloud-volumes-ontap-encryption[Setting up Cloud Volumes ONTAP encryption].
-
-. If you chose Cloud Volumes ONTAP encryption, select one to four key managers, select the certificate of the CA that signed the server certificate for each key manager, and then click *Continue*.
-+
-NOTE: The key manager CA certificate is for all selected key managers, which means the same certificate authority (CA) must have signed the server certificate for each key manager.
 
 . On the BYOL License page, specify whether you have a license for this Cloud Volumes ONTAP system.
 +
@@ -111,9 +105,11 @@ You can choose a different disk type for subsequent volumes. For help choosing a
 +
 For help choosing a disk size, see link:task_planning_your_config.html#choosing-a-disk-size[Choosing a disk size].
 
-. On the Write Speed page, choose *Normal* or *High*.
+. On the Write Speed & WORM page, choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
 +
-For help choosing between the options, see link:task_planning_your_config.html#choosing-a-write-speed[Choosing a write speed].
+link:task_planning_your_config.html#choosing-a-write-speed[Learn more about write speed].
++
+link:concept_worm.html[Learn more about WORM storage].
 
 . On the Create Volume page, enter details for the new volume, and then click *Continue*.
 +
@@ -217,7 +213,7 @@ Immediately after you create the working environment, Cloud Manager launches a t
 
 . On the Working Environments page, click *Add Working Environment*.
 
-. Under Create, select *ONTAP Cloud HA*.
+. Under Create, select *Cloud Volumes ONTAP HA*.
 
 . On the Details and Credentials page, optionally change the AWS account, enter a working environment name, add tags if needed, and then enter a password.
 +
@@ -259,17 +255,11 @@ The IP addresses must be outside of the CIDR block for all VPCs in the region. F
 +
 If you have more than one route table, it is very important to select the correct route tables. Otherwise, some clients might not have access to the Cloud Volumes ONTAP HA pair. For more information about route tables, refer to http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html[AWS Documentation: Route Tables^].
 
-. On the Data Encryption page, choose no data encryption, encryption managed by Cloud Volumes ONTAP, or AWS-managed encryption.
+. On the Data Encryption page, choose no data encryption or AWS-managed encryption.
 +
 To better understand these options, see link:concept_security.html#data-encryption-in-aws[Data encryption in AWS].
 +
 For AWS-managed encryption, you can choose a different master key if more than one key is available in your account.
-+
-NOTE: If Cloud Manager was not set up for encryption, the Cloud Manager Admin must set it up. See link:task_setting_up_cloud_manager.html#setting-up-cloud-volumes-ontap-encryption[Setting up Cloud Volumes ONTAP encryption].
-
-. If you selected Cloud Volumes ONTAP encryption, select one to four key managers, select the certificate of the CA that signed the server certificate for each key manager, and then click *Continue*.
-+
-NOTE: The key manager CA certificate is for all selected key managers, which means the same certificate authority (CA) must have signed the server certificate for each key manager.
 
 . On the BYOL License page, specify whether you have a license for this Cloud Volumes ONTAP system.
 +
@@ -298,6 +288,10 @@ Credentials are required for BYOL instances. For details, see link:concept_stora
 You can choose a different disk type for subsequent volumes. For help choosing a disk type, see link:task_planning_your_config.html#choosing-an-aws-disk-type[Choosing an AWS disk type].
 +
 For help choosing a disk size, see link:task_planning_your_config.html#choosing-a-disk-size[Choosing a disk size].
+
+. On the WORM page, activate write once, read many (WORM) storage, if desired.
++
+link:concept_worm.html[Learn more about WORM storage].
 
 . On the Create Volume page, enter details for the new volume, and then click *Continue*.
 +

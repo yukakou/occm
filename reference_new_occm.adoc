@@ -19,12 +19,63 @@ OnCommand Cloud Manager typically introduces a new release every month to bring 
 
 toc::[]
 
-[NOTE]
-.Looking for a previous version?
-====
-* https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in Cloud Manager 3.4]
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP2735470[What's new in Cloud Manager 3.3]
-====
+== Cloud Manager 3.5.2
+
+Cloud Manager 3.5.2 includes new features and enhancements.
+
+NOTE: Changes in this release require a new Azure permission for Cloud Manager. Read the changes below.
+
+* <<Support for WORM storage>>
+* <<Support for the auto tiering policy with Cloud Volumes ONTAP Standard>>
+* <<Cloud Manager deployment in Azure from NetApp Cloud Central>>
+* <<Animation added to used capacity charts>>
+* <<Locks on Azure disks>>
+* <<Tags on AWS CloudFormation stacks>>
+* <<Deprecation of Cloud Volumes ONTAP encryption in AWS>>
+
+=== Support for WORM storage
+
+You can now activate WORM storage on new Cloud Volumes ONTAP systems. Write once, read many (WORM) storage enables you to retain critical files in unmodified form for regulatory and governance purposes and to protect from malware attacks. WORM files are protected at the file level.
+
+link:concept_worm.html[Learn more about WORM storage].
+
+=== Support for the auto tiering policy with Cloud Volumes ONTAP Standard
+
+The _auto_ volume tiering policy is now supported with the pay-as-you-go Standard license for Cloud Volumes ONTAP. You can select the auto tiering policy when creating, modifying, or replicating a volume. Data tiering enables automated tiering of cold data to low-cost object storage.
+
+NOTE: Auto is the default policy when creating new volumes for Cloud Volumes ONTAP Standard, Premium, and BYOL.
+
+link:concept_storage.html#data-tiering-overview[Learn more about data tiering].
+
+=== Cloud Manager deployment in Azure from NetApp Cloud Central
+
+Starting soon, you can deploy new Cloud Manager systems in Microsoft Azure directly from https://cloud.netapp.com[NetApp Cloud Central]. Cloud Central simplifies the deployment experience and provides a single location to view and manage multiple Cloud Manager systems. Providing your Azure credentials is secure and private because they are entered in an Azure pop-up window.
+
+link:concept_cloud_central.html[Learn more about Cloud Central].
+
+=== Animation added to used capacity charts
+
+An animation now shows you the amount of used capacity when you view volumes or aggregates.
+
+image:screenshot_used_capacity_animation.gif[An animated screenshot that shows an aggregate and its used capacity.]
+
+=== Locks on Azure disks
+
+Cloud Manager can now add locks to the Azure disks that it allocates to Cloud Volumes ONTAP. The locks help to ensure that the disks are not accidently deleted. This change requires a new permission so Cloud Manager can add, delete, and query the locks:
+
+"Microsoft.Authorization/locks/*"
+
+You should add this permission to the custom role that provides Cloud Manager with the required permissions.
+
+=== Tags on AWS CloudFormation stacks
+
+Cloud Manager now adds user tags to the AWS CloudFormation stacks that it creates. The tags can help to ensure that the stacks are not deleted by automated processes.
+
+=== Deprecation of Cloud Volumes ONTAP encryption in AWS
+
+Data-at-rest encryption of aggregates using external key managers is no longer supported when launching new Cloud Volumes ONTAP systems in AWS. Existing systems that use this feature are still supported; however, Cloud Volumes ONTAP encryption will be deprecated in the 9.5 release. NetApp will contact you to discuss how to upgrade those systems to the 9.5 release and how to implement a replacement encryption feature.
+
+You can still enable data encryption on new systems by using the AWS Key Management Service (KMS).
 
 == Cloud Manager 3.5.1
 
@@ -65,7 +116,7 @@ You can now provide Azure permissions to Cloud Manager by using a Managed Servic
 
 To use a Managed Service Identity with Cloud Manager, follow link:task_getting_started_azure.html[instructions for new Cloud Manager virtual machines] or link:task_enabling_msi.html[instructions for existing Cloud Manager virtual machines].
 
-IMPORTANT: Managed Service Identities are not supported in the Azure US Gov regions and in the Germany regions. You must link:task_creating_service_principal.html[grant Azure permissions to Cloud Manager using a service principal and credentials].
+NOTE: Managed Service Identities are not supported in the Azure US Gov regions and in the Germany regions. You must link:task_creating_service_principal.html[grant Azure permissions to Cloud Manager using a service principal and credentials].
 
 For more information about Managed Service Identities, refer to https://docs.microsoft.com/en-us/azure/active-directory/managed-service-identity/overview[Azure documentation^].
 

@@ -61,6 +61,8 @@ entries:
         url: /concept_ha.html
       - title: Security
         url: /concept_security.html
+      - title: WORM storage
+        url: /concept_worm.html
       - title: Licensing
         url: /concept_licensing.html
       - title: Performance

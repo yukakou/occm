@@ -39,20 +39,11 @@ You can enable data tiering when using specific configurations and features:
 +
 NOTE: Data tiering is not supported in Azure with the DS3_v2 virtual machine type.
 
-* Tiering policies are supported with the following licenses:
-** Snapshot-only is supported with Standard, Premium, and BYOL.
-** Backup is supported with Standard, Premium, and BYOL.
-** Auto is supported with Premium and BYOL only.
-+
-For a description of these policies, see link:concept_storage.html#data-tiering-overview[Data tiering overview].
-
 * In AWS, the performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Throughput Optimized HDDs.
 
 * In Azure, the performance tier can be either Premium SSD managed disks or Standard HDD managed disks.
 
 * Data tiering is supported with AWS-managed encryption and Azure-managed encryption.
-+
-It is not supported with Cloud Volumes ONTAP-managed encryption.
 
 * Thin provisioning must be enabled on volumes.
 
@@ -71,6 +62,8 @@ You do not need to set up a connection between the performance tier and the capa
 "Microsoft.Network/virtualNetworks/subnets/write",
 
 That permission is included in the latest Cloud Manager policy. For details about providing permissions, see link:task_getting_started_azure.html#granting-azure-permissions-to-cloud-manager[Granting Azure permissions to Cloud Manager].
+
+NOTE: If your network configuration uses route tables, then Cloud Manager also requires the following permission: Microsoft.Network/routeTables/join/action
 
 == Tiering data on read-write volumes
 
@@ -92,7 +85,9 @@ Cloud Volumes ONTAP can tier cold data on read-write volumes to cost-effective o
 
 |===
 
-. Select the Snapshot Only policy or the Auto policy (supported only with Cloud Volumes ONTAP Premium or BYOL).
+. Select the Snapshot Only policy or the Auto policy.
++
+For a description of these policies, see link:concept_storage.html#data-tiering-overview[Data tiering overview].
 +
 *Example*
 +
@@ -134,6 +129,6 @@ For more information about how tiering levels work, see link:concept_storage.htm
 
 .Steps
 
-. From the working environment, click menu icon and then click *Tiering Level*.
+. From the working environment, click the menu icon and then click *Tiering Level*.
 
 . Choose the tiering level and then click *Save*.
