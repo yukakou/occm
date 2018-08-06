@@ -121,8 +121,6 @@ Cloud Manager supports simple, fanout, and cascade data protection configuration
 * In a simple configuration, replication occurs from volume A to volume B.
 
 * In a fanout configuration, replication occurs from volume A to multiple destinations, which can be SnapMirror or SnapVault destinations.
-+
-NOTE: Only one SnapVault relationship is allowed in a fanout configuration.
 
 * In a cascade configuration, replication occurs from volume A to volume B and from volume B to volume C.
 
