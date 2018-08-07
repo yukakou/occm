@@ -19,7 +19,7 @@ OnCommand Cloud Manager typically introduces a new release every month to bring 
 
 toc::[]
 
-== Cloud Manager 3.5.2
+== Cloud Manager 3.5.2 (1 Aug 2018)
 
 Cloud Manager 3.5.2 includes new features and enhancements.
 
@@ -77,7 +77,7 @@ Data-at-rest encryption of aggregates using external key managers is no longer s
 
 You can still enable data encryption on new systems by using the AWS Key Management Service (KMS).
 
-== Cloud Manager 3.5.1
+== Cloud Manager 3.5.1 (2 July 2018)
 
 Cloud Manager 3.5.1 includes new features and enhancements.
 
@@ -126,7 +126,7 @@ Cloud Manager now provides a graphical representation of used capacity when view
 
 image:screenshot_used_capacity.gif[A screenshot that shows a volume and its used capacity.]
 
-== Cloud Manager 3.5
+== Cloud Manager 3.5 (3 June 2018)
 
 Cloud Manager 3.5 includes new features and enhancements.
 
