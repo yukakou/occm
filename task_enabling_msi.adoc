@@ -17,7 +17,7 @@ summary: You can provide Azure permissions to Cloud Manager by using a Managed S
 [.lead]
 You can provide Azure permissions to Cloud Manager by using a Managed Service Identity. A Managed Service Identity allows the Cloud Manager virtual machine to identify itself to Azure Active Directory without providing any credentials.
 
-IMPORTANT: Managed Service Identities are not supported in the Azure US Gov regions and in the Germany regions. You must link:task_creating_service_principal.html[grant Azure permissions to Cloud Manager using a service principal and credentials].
+NOTE: Managed Service Identities are not supported in the Azure US Gov regions and in the Germany regions. You must link:task_creating_service_principal.html[grant Azure permissions to Cloud Manager using a service principal and credentials].
 
 .About this task
 
@@ -51,14 +51,12 @@ For more information about Managed Service Identities, refer to https://docs.mic
 ====
 OnCommand Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
 
-If you have not yet created this role, follow link:task_getting_started_azure.html#creating-a-role-for-the-azure-managed-service-identity[these instructions].
+If you have not yet created this role, follow link:task_getting_started_azure.html#granting-azure-permissions[these instructions].
 ====
 
 * Assign access to a *Virtual Machine*.
 
 * Select the subscription in which the Cloud Manager virtual machine was created.
-
-* Select the resource group for the Cloud Manager virtual machine.
 
 * Select the Cloud Manager virtual machine.
 
