@@ -49,7 +49,7 @@ link:concept_storage.html#data-tiering-overview[Learn more about data tiering].
 
 === Cloud Manager deployment in Azure from NetApp Cloud Central
 
-Starting soon, you can deploy new Cloud Manager systems in Microsoft Azure directly from https://cloud.netapp.com[NetApp Cloud Central]. Cloud Central simplifies the deployment experience and provides a single location to view and manage multiple Cloud Manager systems. Providing your Azure credentials is secure and private because they are entered in an Azure pop-up window.
+You can now deploy new Cloud Manager systems in Microsoft Azure directly from https://cloud.netapp.com[NetApp Cloud Central]. Cloud Central simplifies the deployment experience and provides a single location to view and manage multiple Cloud Manager systems. Providing your Azure credentials is secure and private because they are entered in an Azure pop-up window.
 
 link:concept_cloud_central.html[Learn more about Cloud Central].
 

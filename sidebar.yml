@@ -21,6 +21,8 @@ entries:
         url: /task_getting_started_aws.html
       - title: Getting started in Azure
         url: /task_getting_started_azure.html
+      - title: Setting up Cloud Manager
+        url: /task_setting_up_cloud_manager.html
       - title: Detailed networking requirements
         entries:
           - title: AWS networking requirements
@@ -29,24 +31,28 @@ entries:
             url: /reference_networking_azure.html
           - title: IBM Cloud networking requirements
             url: /reference_networking_ibm.html
-      - title: Setting up Cloud Manager
-        url: /task_setting_up_cloud_manager.html
-      - title: Additional installation options
+      - title: Additional deployment options
         entries:
           - title: Cloud Manager host requirements
             url: /reference_cloud_mgr_reqs.html
-          - title: Granting Azure permissions using a service principal and credentials
-            url: /task_creating_service_principal.html
-          - title: Granting AWS permissions when not launching Cloud Manager from Cloud Central
-            url: /task_granting_aws_permissions.html
-          - title: Launching Cloud Manager from the AWS Marketplace
+          - title: Deploying Cloud Manager from the AWS Marketplace
             url: /task_launching_aws_mktp.html
+          - title: Deploying Cloud Manager from the Azure Marketplace
+            url: /task_launching_azure_mktp.html
           - title: Installing Cloud Manager on a Linux host
             url: /task_installing_linux.html
           - title: Intalling Cloud Manager in Azure Gov
             url: /task_installing_azure_gov.html
           - title: Installing Cloud Manager in Azure Germany
             url: /task_installing_azure_germany.html
+      - title: Additional ways to provide permissions
+        entries:
+          - title: Granting AWS permissions when Cloud Manager is not launched from Cloud Central
+            url: /task_granting_aws_permissions.html
+          - title: Granting Azure permissions using a service principal and credentials
+            url: /task_creating_service_principal.html
+          - title: Changing to a Managed Service Identity
+            url: /task_enabling_msi.html
   - title: Concepts
     entries:
       - title: Product overview
@@ -125,8 +131,6 @@ entries:
         url: /task_managing_volume_view.html
   - title: Administering Cloud Manager
     entries:
-      - title: Changing to a Managed Service Identity
-        url: /task_enabling_msi.html
       - title: Updating Cloud Manager
         url: /task_updating_cloud_manager.html
       - title: Backing up and restoring
