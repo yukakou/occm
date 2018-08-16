@@ -51,7 +51,7 @@ When deploying Cloud Manager, Cloud Central grants Cloud Manager with the permis
 
 . Create a custom role using the Cloud Central policy:
 
-.. Download the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Central policy for Azure^].
+.. Download the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[Cloud Central policy for Azure^].
 
 .. Use the JSON file to create a custom role in Azure.
 +
