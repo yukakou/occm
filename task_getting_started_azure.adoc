@@ -55,14 +55,10 @@ When deploying Cloud Manager, Cloud Central grants Cloud Manager with the permis
 
 .. Modify the JSON file by adding your Azure subscription ID to the assignable scope.
 +
-//You should add the ID for each Azure subscription from which users will create Cloud Volumes ONTAP systems.
-//+
 *Example*
 +
 "AssignableScopes": [
 "/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
-//"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
-//"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
 ],
 
 .. Use the JSON file to create a custom role in Azure.
