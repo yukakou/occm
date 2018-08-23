@@ -162,7 +162,7 @@ You must manually enter the floating IP addresses in Cloud Manager when you crea
 NOTE: Cloud Manager automatically creates static IP addresses for iSCSI access and for NAS access from clients outside the VPC. You do not need to meet any requirements for these types of IP addresses.
 
 Floating IP address for SVM management::
-If you use SnapDrive for Windows or SnapCenter with an HA pair, a floating IP address is also required for the SVM management LIF. You must create this LIF after you launch the HA pair. For details, see link:task_setting_up_ontap_cloud.html[Setting up Cloud Volumes ONTAP].
+If you use SnapDrive for Windows or SnapCenter with an HA pair, a floating IP address is also required for the SVM management LIF. Cloud Manager prompts you to specify the IP address when you launch the HA pair. If you did not specify the IP address, you can create the SVM Management LIF later. For details, see link:task_setting_up_ontap_cloud.html[Setting up Cloud Volumes ONTAP].
 
 Route tables::
 After you specify the floating IP addresses in Cloud Manager, you must select the route tables that should include routes to the floating IP addresses. This enables client access to the HA pair.
