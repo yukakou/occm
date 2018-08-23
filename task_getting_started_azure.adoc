@@ -53,6 +53,14 @@ When deploying Cloud Manager, Cloud Central grants Cloud Manager with the permis
 
 .. Download the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[Cloud Central policy for Azure^].
 
+.. Modify the JSON file by adding your Azure subscription ID to the assignable scope.
++
+*Example*
++
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+],
+
 .. Use the JSON file to create a custom role in Azure.
 +
 The following example shows how to create a custom role using the Azure CLI 2.0:
