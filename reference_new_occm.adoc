@@ -19,6 +19,24 @@ OnCommand Cloud Manager typically introduces a new release every month to bring 
 
 toc::[]
 
+== Cloud Manager 3.5.3 (? Aug 2018)
+
+Cloud Manager 3.5.3 includes a few enhancements.
+
+* <<Creation of SVM management LIF for HA systems in multiple AZs>>
+* <<Ability to break SMB/CIFS locks when changing instance types>>
+
+=== Creation of SVM management LIF for HA systems in multiple AZs
+
+When deploying Cloud Volumes ONTAP HA systems in multiple Availability Zones, you can now specify the floating IP address for an SVM management network interface (LIF). The SVM management LIF enables you to use SnapCenter or SnapDrive for Windows with the HA system.
+
+<insert screenshot>
+
+=== Ability to break SMB/CIFS locks when changing instance types
+
+In previous releases, modifying the instance type for a Cloud Volumes ONTAP HA system could fail if locks were present on SMB/CIFS files.
+Starting in this release, Cloud Manager can detect and break the locks before it proceeds with the instance change. You simply need to confirm when prompted.
+
 == Cloud Manager 3.5.2 (1 Aug 2018)
 
 Cloud Manager 3.5.2 includes new features and enhancements.
