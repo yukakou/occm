@@ -130,6 +130,8 @@ image:diagram_users_and_tenants.png[This illustration shows a Cloud Manager Admi
 
 Cloud Manager prompts you to enter NetApp Support Site credentials for a tenant because it uses the credentials to manage licenses for Cloud Volumes ONTAP BYOL systems, to register pay-as-you-go instances for support, and to upgrade Cloud Volumes ONTAP software.
 
+For instructions, see link:task_setting_up_cloud_manager.html#linking-tenants-to-a-netapp-support-site-account[Linking tenants to a NetApp Support Site account].
+
 ==== License management for BYOL systems
 
 Linking a tenant to your NetApp Support Site account is required if you plan to launch BYOL instances in a tenant. Cloud Manager uses your account to obtain license files from NetApp and installs them on Cloud Volumes ONTAP BYOL systems. The NetApp Support Site account must be authorized to access the serial numbers of the Cloud Volumes ONTAP BYOL systems in the tenant.
@@ -144,7 +146,15 @@ Entering a NetApp Support Site account also enables Cloud Volumes ONTAP software
 
 ==== NetApp Support Site account requirements
 
-Each NetApp Support Site account that you link to a tenant must be a NetApp customer-level account (not a guest or temp account). For the AWS GovCloud (US) region, the NetApp Support Site account must be a secure account. If you do not have an account, you can create one from the http://mysupport.netapp.com/[NetApp Support Site^].
+Each NetApp Support Site account that you link to a tenant must meet the following requirements:
+
+* The account must be a NetApp customer-level account (not a guest or temp account).
+* If you purchased a _secure_ BYOL subscription, then a _secure_ NetApp Support Site account is required to upload the license file.
++
+Contact your NetApp account team for further information about secure BYOL subscriptions.
+* The account must be authorized to access the serial numbers of any BYOL systems deployed in the tenant.
+
+If you do not have an account, you can create one from the http://mysupport.netapp.com/[NetApp Support Site^].
 
 == Simplified storage management using the Volume View
 

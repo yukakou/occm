@@ -20,12 +20,11 @@ Each Cloud Volumes ONTAP BYOL system must have a license installed with an activ
 
 A tenant must be linked to a NetApp Support Site account so Cloud Manager can obtain licenses for Cloud Volumes ONTAP BYOL systems. If the credentials are not present, Cloud Manager prompts you to enter them when you create a new Cloud Volumes ONTAP BYOL working environment.
 
-[discrete]
-=== Why you should link a tenant to your NetApp Support Site account
+For instructions, see link:task_setting_up_cloud_manager.html#linking-tenants-to-a-netapp-support-site-account[Linking tenants to a NetApp Support Site account].
 
 Each time you launch a BYOL system, Cloud Manager automatically downloads the license from NetApp and installs it on the Cloud Volumes ONTAP system.
 
-If Cloud Manager cannot access the license file over the secure Internet connection, you can obtain the file yourself and then manually upload the file to Cloud Manager.
+If Cloud Manager cannot access the license file over the secure internet connection, you can obtain the file yourself and then manually upload the file to Cloud Manager.
 
 [discrete]
 === License expiration
