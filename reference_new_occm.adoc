@@ -19,7 +19,7 @@ OnCommand Cloud Manager typically introduces a new release every month to bring 
 
 toc::[]
 
-== Cloud Manager 3.5.3 (? Aug 2018)
+== Cloud Manager 3.5.3 (2 Sept 2018)
 
 Cloud Manager 3.5.3 includes a few enhancements.
 
