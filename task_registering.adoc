@@ -24,6 +24,8 @@ The host from which you are logged in to Cloud Manager must have internet access
 
 If a tenant is linked to a NetApp Support Site account, Cloud Manager automatically registers the system with that account. However, if the tenant is not linked to an account, then you should register systems with NetApp after you launch them.
 
+For instructions, see link:task_setting_up_cloud_manager.html#linking-tenants-to-a-netapp-support-site-account[Linking tenants to a NetApp Support Site account].
+
 .Steps
 
 . On the Working Environments page, double-click the name of the system that you want to register.
