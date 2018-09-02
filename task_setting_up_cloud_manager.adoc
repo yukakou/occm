@@ -130,7 +130,7 @@ Inform the user that they can now log in to the Cloud Manager system.
 
 == Linking tenants to a NetApp Support Site account
 
-You should link a tenant to a NetApp Support Site account so Cloud Manager can manage licenses for BYOL systems, register pay-as-you-go instances for support, and upgrade Cloud Volumes ONTAP software.
+You should link a tenant to a NetApp Support Site account so Cloud Manager can manage licenses for BYOL systems, register pay-as-you-go instances for support, and upgrade Cloud Volumes ONTAP software. For more information about these benefits, https://youtu.be/_8s16fS_L1Y[watch this video^].
 
 .Before you begin
 
