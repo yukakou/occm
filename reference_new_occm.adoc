@@ -24,7 +24,7 @@ toc::[]
 Cloud Manager 3.5.3 includes a few enhancements.
 
 * <<Creation of SVM management LIF for HA systems in multiple AZs>>
-* <<Ability to break SMB/CIFS locks when changing instance types>>
+* <<Ability to break SMB/CIFS locks>>
 
 === Creation of SVM management LIF for HA systems in multiple AZs
 
@@ -32,9 +32,9 @@ When deploying Cloud Volumes ONTAP HA systems in multiple Availability Zones, yo
 
 image:screenshot_svm_lif.gif[Shows the Floating IPs page in the Create a New Working Environment wizard. The fourth text box enables you to specify a floating IP address for the SVM management LIF.]
 
-=== Ability to break SMB/CIFS locks when changing instance types
+=== Ability to break SMB/CIFS locks
 
-In previous releases, modifying the instance type for a Cloud Volumes ONTAP HA system could fail if locks were present on SMB/CIFS files. Starting in this release, Cloud Manager can detect and break the locks before it proceeds with the instance change. You simply need to confirm when prompted.
+In previous releases, upgrading or modifying the instance type and license type for a Cloud Volumes ONTAP HA system could fail if locks were present on SMB/CIFS files. Starting in this release, Cloud Manager can detect and break the locks before it proceeds with the operation. You simply need to confirm when prompted.
 
 == Cloud Manager 3.5.2 (1 Aug 2018)
 
