@@ -15,14 +15,13 @@ summary: If you install Cloud Manager on your own host, then you must verify sup
 [.lead]
 If you install Cloud Manager on your own host, then you must verify support for your configuration, which includes operating system requirements, port requirements, and so on.
 
-[horizontal]
-AWS EC2 instance type::
+Supported AWS EC2 instance types::
 t2.medium or m4.large
 
-Azure VM size::
+Supported Azure VM sizes::
 A2 or D2_v2
 
-Operating system::
+Supported operating systems::
 * CentOS 7.2
 * CentOS 7.3
 * CentOS 7.4
@@ -43,19 +42,27 @@ RAM:: 4 GB
 
 Free disk space:: 50 GB
 
+Outbound internet access::
+Cloud Manager software must have access to the following URLs during installation:
+* \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+* \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+* \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
+* \http://169.254.169.254/latest/meta-data/public-hostname
++
+Cloud Manager accesses additional endpoints when it deploys Cloud Volumes ONTAP in AWS or in Azure. Refer to link:reference_networking_aws.html[networking requirements for AWS] and link:reference_networking_azure.html[networking requirements for Azure].
+
 Ports::
 The following ports must be available:
 * 80 for HTTP access
 * 443 for HTTPS access
 * 3306 for the Cloud Manager database
 * 8080 for the Cloud Manager API proxy
-
++
 If other services are using these ports, Cloud Manager installation fails.
-
++
 NOTE: There is a potential conflict with port 3306. If another instance of MySQL is running on the host, it uses port 3306 by default. You must change the port that the existing MySQL instance uses.
-
++
 You can change the default HTTP and HTTPS ports when you install Cloud Manager. You cannot change the default port for the MySQL database. If you change the HTTP and HTTPS ports, you must ensure that users can access the Cloud Manager web console from a remote host:
-
-* Modify the security group to allow inbound connections through the ports.
-
-* Specify the port when you enter the URL to the Cloud Manager web console.
++
+** Modify the security group to allow inbound connections through the ports.
+** Specify the port when you enter the URL to the Cloud Manager web console.
