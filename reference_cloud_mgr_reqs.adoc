@@ -43,7 +43,7 @@ RAM:: 4 GB
 Free disk space:: 50 GB
 
 Outbound internet access::
-Cloud Manager software must have access to the following URLs during installation:
+The Cloud Manager installer must have access to the following URLs during the installation process:
 * \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
 * \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 * \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
