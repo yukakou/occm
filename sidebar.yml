@@ -35,12 +35,12 @@ entries:
         entries:
           - title: Cloud Manager host requirements
             url: /reference_cloud_mgr_reqs.html
+          - title: Installing Cloud Manager on a Linux host
+            url: /task_installing_linux.html
           - title: Deploying Cloud Manager from the AWS Marketplace
             url: /task_launching_aws_mktp.html
           - title: Deploying Cloud Manager from the Azure Marketplace
             url: /task_launching_azure_mktp.html
-          - title: Installing Cloud Manager on a Linux host
-            url: /task_installing_linux.html
           - title: Intalling Cloud Manager in Azure Gov
             url: /task_installing_azure_gov.html
           - title: Installing Cloud Manager in Azure Germany
