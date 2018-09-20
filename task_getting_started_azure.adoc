@@ -27,7 +27,7 @@ You must choose the Azure VNet and subnets in which you want to deploy Cloud Man
 
 * Outbound internet access
 +
-The target VNet must have one or more subnets that have outbound internet access so Cloud Manager and Cloud Volumes ONTAP can contact several endpoints. To review the list of endpoints, see link:reference_networking_azure.html[Azure networking requirements].
+The target VNet must have one or more subnets that have outbound internet access so Cloud Manager and Cloud Volumes ONTAP can contact several endpoints. To review the list of endpoints, see link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager] and link:reference_networking_azure.html[Networking requirements for Cloud Volumes ONTAP for Azure].
 
 * Connections between networks
 
@@ -35,7 +35,7 @@ The target VNet must have one or more subnets that have outbound internet access
 
 ** To replicate data across a hybrid cloud or multi-cloud environment, VPN connections between networks must be in place. For details, refer to https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal[Microsoft Azure Documentation: Create a Site-to-Site connection in the Azure portal^].
 
-For additional networking information, see link:reference_networking_azure.html[Azure networking requirements].
+For additional networking information, see link:reference_networking_azure.html[Networking requirements for Cloud Volumes ONTAP for Azure].
 
 == Granting Azure permissions
 

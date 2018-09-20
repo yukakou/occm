@@ -29,7 +29,7 @@ If you need more storage after you launch a Cloud Volumes ONTAP system, you can 
 
 .Before you begin
 
-If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[AWS networking requirements].
+If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
 
 .Steps
 

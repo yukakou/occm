@@ -25,7 +25,7 @@ You must choose the AWS VPC and subnets in which you want to launch Cloud Manage
 
 * Outbound internet access
 +
-The target VPC must have one or more subnets that have outbound internet access so Cloud Manager and Cloud Volumes ONTAP can contact several endpoints. To review the list of endpoints, see link:reference_networking_aws.html[AWS networking requirements].
+The target VPC must have one or more subnets that have outbound internet access so Cloud Manager and Cloud Volumes ONTAP can contact several endpoints. To review the list of endpoints, see link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager] and link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
 
 * Connections between networks
 ** To deploy Cloud Volumes ONTAP in subnets or networks separate from Cloud Manager, connections between those networks must be in place.
@@ -35,7 +35,7 @@ The target VPC must have one or more subnets that have outbound internet access 
 +
 To reduce storage costs by using EBS as a performance tier and AWS S3 as a capacity tier, the VPC in which you launch Cloud Volumes ONTAP must have an endpoint to the S3 service. For details, refer to https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
 
-For additional networking information, see link:reference_networking_aws.html[AWS networking requirements].
+For additional networking information, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
 
 The following sample VPC configuration shows public and private subnets and a NAT device that enables outbound internet access for the private subnet:
 image:diagram_vpc_public_and_private.png[This illustration shows Cloud Manager and a NAT instance running in a public subnet, and Cloud Volumes ONTAP instances running in a private subnet.]
