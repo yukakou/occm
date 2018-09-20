@@ -47,7 +47,6 @@ The Cloud Manager installer must have access to the following URLs during the in
 * \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
 * \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 * \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
-* \http://169.254.169.254/latest/meta-data/public-hostname
 +
 Cloud Manager accesses additional endpoints when it deploys Cloud Volumes ONTAP in AWS or in Azure. Refer to link:reference_networking_aws.html[networking requirements for AWS] and link:reference_networking_azure.html[networking requirements for Azure].
 
