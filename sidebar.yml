@@ -23,7 +23,15 @@ entries:
         url: /task_getting_started_azure.html
       - title: Setting up Cloud Manager
         url: /task_setting_up_cloud_manager.html
-      - title: Detailed networking requirements
+      - title: Detailed networking requirements [NEW]
+        entries:
+          - title: Requirements for Cloud Manager
+            url: /reference_networking_cloud_manager.html
+          - title: Requirements for Cloud Volumes ONTAP in AWS
+            url: /reference_networking_aws2.html
+          - title: Requirements for Cloud Volumes ONTAP in Azure
+            url: /reference_networking_azure2.html
+      - title: Detailed networking requirements [OLD]
         entries:
           - title: AWS networking requirements
             url: /reference_networking_aws.html
