@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_networking_cloud_manager.html
-keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, vpn, internet, nat, s3, dns, ad, active directory, az, availability zone, floating IP, floating, SVM, management LIF, route, route tables, proxy, HTTP, private, tier, s3 endpoint, tiering, storage tier, storage tiering, proxy server, nat device, vpn, snapmanager, snapcenter, iscsi, nfs, cifs, nas, san, outbound, inbound, connections, jump host, autosupport, URL, URLs, endpoints, endpoint
+keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, proxy server, vpn, outbound, inbound, connections, jump host, URL, URLs, endpoints, endpoint, ports
 summary: You must set up your networking so that Cloud Manager can deploy Cloud Volumes ONTAP systems in AWS or in Microsoft Azure. The most important step is ensuring outbound internet access to various endpoints.
 ---
 
@@ -19,17 +19,19 @@ You must set up your networking so that Cloud Manager can deploy Cloud Volumes O
 
 TIP: If your network uses a proxy server for all communication to the internet, Cloud Manager prompts you to specify the proxy during setup. You can also specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring Cloud Manager to use a proxy server].
 
-Connection between Cloud Manager and target subnets::
+toc::[]
+
+== Connection to target networks
+
 Cloud Manager requires a network connection to the AWS VPCs and Azure VNets in which you want to deploy Cloud Volumes ONTAP.
-+
+
 For example, if you install Cloud Manager in your corporate network, then you must set up a VPN connection to the AWS VPC or Azure VNet in which you launch Cloud Volumes ONTAP.
 
-Outbound internet access to install Cloud Manager on a Linux host::
-The Cloud Manager installer must access the following URLs during the installation process:
+== Outbound internet access
 
-* \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
-* \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-* \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
+Cloud Manager requires outbound internet access to deploy and manage Cloud Volumes ONTAP. Outbound internet access is also required when accessing Cloud Manager from your web browser and when running the Cloud Manager installer on a Linux host.
+
+The following sections identify the specific endpoints.
 
 Outbound internet access to manage Cloud Volumes ONTAP in AWS::
 Cloud Manager requires outbound internet access to contact the following endpoints when deploying and managing Cloud Volumes ONTAP in AWS:
@@ -161,7 +163,15 @@ If you deploy Cloud Manager in AWS, the easiest way to provide access is by allo
 
 |===
 
-Port requirements::
+Outbound internet access to install Cloud Manager on a Linux host::
+The Cloud Manager installer must access the following URLs during the installation process:
+
+* \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+* \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+* \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
+
+== Ports and security groups
+
 * If you deploy Cloud Manager from Cloud Central or from the marketplace images, refer to the following:
 ** link:reference_security_groups.html#rules-for-cloud-manager[Security group rules for Cloud Manager in AWS]
 ** link:reference_security_groups_azure.html#rules-for-cloud-manager[Security group rules for Cloud Manager in Azure]
