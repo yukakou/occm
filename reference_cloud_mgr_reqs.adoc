@@ -43,12 +43,7 @@ RAM:: 4 GB
 Free disk space:: 50 GB
 
 Outbound internet access::
-The Cloud Manager installer must have access to the following URLs during the installation process:
-* \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
-* \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-* \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
-+
-Cloud Manager accesses additional endpoints when it deploys Cloud Volumes ONTAP in AWS or in Azure. Refer to link:reference_networking_aws.html[networking requirements for AWS] and link:reference_networking_azure.html[networking requirements for Azure].
+Outbound internet access is required when installing Cloud Manager and when using Cloud Manager to deploy Cloud Volumes ONTAP. For a list of endpoints, see link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager].
 
 Ports::
 The following ports must be available:

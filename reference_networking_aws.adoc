@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: reference_networking_aws.html
-keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, vpn, internet, nat, s3, dns, ad, active directory, az, availability zone, floating IP, floating, SVM, management LIF, route, route tables, proxy, HTTP, private, tier, s3 endpoint, tiering, storage tier, storage tiering, proxy server, nat device, vpn, snapmanager, snapcenter, iscsi, nfs, cifs, nas, san, outbound, inbound, connections, jump host, autosupport, URL, URLs, endpoints, endpoint
-summary: You must set up your AWS networking so that Cloud Manager can deploy Cloud Volumes ONTAP systems and so those systems can operate properly.
+keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, vpn, internet, nat, s3, dns, ad, active directory, az, availability zone, floating IP, floating, SVM, management LIF, route, route tables, proxy, HTTP, private, tier, s3 endpoint, tiering, storage tier, storage tiering, proxy server, nat device, vpn, snapmanager, snapcenter, iscsi, nfs, cifs, nas, san, outbound, inbound, connections, autosupport, ha, ha pair, high availability
+summary: You must set up your AWS networking so Cloud Volumes ONTAP systems can operate properly.
 ---
 
-= AWS networking requirements
+= Networking requirements for Cloud Volumes ONTAP in AWS
 :toc: macro
 :hardbreaks:
 :toclevels: 1
@@ -15,67 +15,20 @@ summary: You must set up your AWS networking so that Cloud Manager can deploy Cl
 :imagesdir: ./media/
 
 [.lead]
-You must set up your AWS networking so that Cloud Manager can deploy Cloud Volumes ONTAP systems and so those systems can operate properly.
+You must set up your AWS networking so Cloud Volumes ONTAP systems can operate properly.
+
+****
+Looking for the list of endpoints to which Cloud Manager requires access? They're now maintained in a single location. link:reference_networking_cloud_manager.html[Click here for details].
+****
 
 toc::[]
 
-== General networking requirements
+== General AWS networking requirements for Cloud Volumes ONTAP
 
 The following requirements must be met in AWS.
 
-Outbound internet access for Cloud Manager::
-Cloud Manager requires outbound internet access to contact the following endpoints when deploying and managing Cloud Volumes ONTAP in AWS:
-+
-[cols="43,57",options="header"]
-|===
-| Endpoints
-| Purpose
-a|
-AWS services (amazonaws.com):
-
-*	CloudFormation
-*	Elastic Compute Cloud (EC2)
-*	Key Management Service (KMS)
-*	Security Token Service (STS)
-*	Simple Storage Service (S3)
-
-The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
-| Enables Cloud Manager to deploy and manage Cloud Volumes ONTAP in AWS.
-
-| api.services.cloud.netapp.com:443 | API requests to NetApp Cloud Central.
-
-| cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
-
-|
-cognito-idp.us-east-1.amazonaws.com
-cognito-identity.us-east-1.amazonaws.com
-| Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
-
-| kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
-
-| \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
-
-| \https://mysupport.netapp.com | Communication with NetApp AutoSupport.
-|
-\https://support.netapp.com/svcgw
-\https://support.netapp.com/ServiceGW/entitlement
-| Communication with NetApp for licensing and support registration.
-
-a| Various third-party locations, for example:
-
-* \https://repo1.maven.org/maven2
-* \https://oss.sonatype.org/content/repositories
-* \https://repo.typesafe.org
-
-Third-party locations are subject to change.
-
-| During upgrades, Cloud Manager downloads the latest packages for third-party dependencies.
-|===
-+
-NOTE: If your network uses a proxy server for all communication to the internet, Cloud Manager prompts you to specify the proxy during setup. You can also specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring Cloud Manager to use a proxy server].
-
-Outbound internet access for Cloud Volumes ONTAP::
-Cloud Volumes ONTAP requires outbound internet access to send messages to NetApp AutoSupport, which proactively monitors the health of your storage.
+Outbound internet access for Cloud Volumes ONTAP nodes::
+Cloud Volumes ONTAP nodes require outbound internet access to send messages to NetApp AutoSupport, which proactively monitors the health of your storage.
 +
 Routing and firewall policies must allow AWS HTTP/HTTPS traffic to mysupport.netapp.com.
 +
@@ -86,39 +39,8 @@ The HA mediator instance must have an outbound connection to the AWS EC2 service
 +
 The manual option can be a NAT gateway or an interface VPC endpoint from the target subnet to the AWS EC2 service. For details about VPC endpoints, refer to http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html[AWS Documentation: Interface VPC Endpoints (AWS PrivateLink)^].
 
-Outbound internet access from your web browser::
-Users must access Cloud Manager from a web browser. A web browser must have connections to the following endpoints:
-+
-[cols="43,57",options="header"]
-|===
-| Endpoints
-| Purpose
-|
-The Cloud Manager host
-
-a| You must enter the host's IP address from a web browser to load the Cloud Manager console.
-
-If you deploy Cloud Manager in AWS, the easiest way to provide access is by allocating a public IP address. However, if you want to use a private IP address instead, users can access the console through either of the following:
-
-** A jump host in the VPC that has a connection to Cloud Manager
-** A host in your network that has a VPN connection to the private IP address
-
-|
-\https://auth0.com
-\https://netapp-cloud-account.auth0.com
-\https://services.cloud.netapp.com
-
-| Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
-
-|===
-
 Security groups::
 You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference_security_groups.html[Security group rules].
-
-Connection between Cloud Manager and target subnets::
-Cloud Manager requires a connection to the subnets in which you launch Cloud Volumes ONTAP, including the HA mediator.
-+
-If Cloud Manager is not installed in the target VPC, it must have network connectivity to that VPC. For example, if you install Cloud Manager in Azure or in your corporate network, then you must set up a VPN connection to the VPC in which you launch Cloud Volumes ONTAP.
 
 Connection from Cloud Volumes ONTAP to AWS S3 for data tiering::
 If you want to use EBS as a performance tier and AWS S3 as a capacity tier, you must ensure that Cloud Volumes ONTAP has a connection to S3. The best way to provide that connection is by creating a VPC Endpoint to the S3 service. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
@@ -137,7 +59,7 @@ The DNS server must provide name resolution services for the Active Directory en
 +
 For instructions, refer to https://s3.amazonaws.com/quickstart-reference/microsoft/activedirectory/latest/doc/Microsoft_Active_Directory_Quick_Start.pdf[AWS Documentation: Active Directory Domain Services on the AWS Cloud Quick Start Reference Deployment^].
 
-== Networking requirements for Cloud Volumes ONTAP HA in multiple AZs
+== AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs
 
 Additional AWS networking requirements apply to Cloud Volumes ONTAP HA configurations that use multiple Availability Zones (AZs). You should review these requirements before you launch an HA pair because you must enter the networking details in Cloud Manager.
 

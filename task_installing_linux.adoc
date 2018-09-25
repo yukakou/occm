@@ -21,7 +21,7 @@ If you want to run the Cloud Manager software on an existing host, you can downl
 
 * A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Cloud Manager installation.
 
-* The Cloud Manager installer accesses several URLs during the installation process. You must ensure that outbound internet access is allowed to those endpoints. Refer to link:reference_cloud_mgr_reqs.html[Cloud Manager host requirements for details].
+* The Cloud Manager installer accesses several URLs during the installation process. You must ensure that outbound internet access is allowed to those endpoints. Refer to link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager].
 
 .About this task
 
@@ -33,11 +33,11 @@ If you receive a message that installing the awscli failed, you can safely ignor
 
 .Steps
 
-. Review networking requirements for your cloud service provider:
+. Review networking requirements:
 
-* link:reference_networking_aws.html[AWS networking requirements]
-* link:reference_networking_azure.html[Azure networking requirements]
-* link:reference_networking_ibm.html[IBM Cloud networking requirements]
+* link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager]
+* link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP for AWS]
+* link:reference_networking_azure.html[Networking requirements for Cloud Volumes ONTAP for Azure]
 
 . Set up permissions for Cloud Manager:
 

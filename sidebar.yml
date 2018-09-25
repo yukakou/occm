@@ -25,12 +25,12 @@ entries:
         url: /task_setting_up_cloud_manager.html
       - title: Detailed networking requirements
         entries:
-          - title: AWS networking requirements
+          - title: Requirements for Cloud Manager
+            url: /reference_networking_cloud_manager.html
+          - title: Requirements for Cloud Volumes ONTAP in AWS
             url: /reference_networking_aws.html
-          - title: Azure networking requirements
+          - title: Requirements for Cloud Volumes ONTAP in Azure
             url: /reference_networking_azure.html
-          - title: IBM Cloud networking requirements
-            url: /reference_networking_ibm.html
       - title: Additional deployment options
         entries:
           - title: Cloud Manager host requirements
