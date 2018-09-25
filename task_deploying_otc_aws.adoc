@@ -249,7 +249,7 @@ image:screenshot_cot_vpc_ha.gif[Screen shot: Shows the VPC page filled out for a
 
 . If you chose multiple AZs, specify the floating IP addresses and then click *Continue*.
 +
-The IP addresses must be outside of the CIDR block for all VPCs in the region. For additional details, see link:reference_networking_aws2.html#aws-networking-requirements-for-cloud-volumes-ontap-ha-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs].
+The IP addresses must be outside of the CIDR block for all VPCs in the region. For additional details, see link:reference_networking_aws.html#aws-networking-requirements-for-cloud-volumes-ontap-ha-in-multiple-azs[AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs].
 
 . If you chose multiple AZs, select the route tables that should include routes to the floating IP addresses and then click *Continue*.
 +
