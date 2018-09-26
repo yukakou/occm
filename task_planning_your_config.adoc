@@ -57,7 +57,7 @@ For additional details about the use cases for these disks, refer to http://docs
 
 == Choosing an Azure disk type
 
-When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses as a disk. in Azure, you can choose a managed disk or a tiered storage configuration that uses managed disks as a performance tier and Azure Blob storage as a capacity tier. You should choose the configuration that meets your requirements for performance and cost.
+When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses as a disk. In Azure, you can choose a managed disk or a tiered storage configuration that uses managed disks as a performance tier and Azure Blob storage as a capacity tier. You should choose the configuration that meets your requirements for performance and cost.
 
 For an overview of data tiering, see link:concept_storage.html[Storage]. For requirements, see link:task_tiering.html[Tiering cold data to low-cost object storage].
 
