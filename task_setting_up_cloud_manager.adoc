@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_setting_up_cloud_manager.html
-keywords: https certificate, certificate, security, users, adding, creating, tenants, linking, netapp support site account, nss, encryption, key managers, CA, key manager, requirements, safenet, vormetric, kms, key management service, cmk, billing, s3 bucket, cost, accounts, aws accounts, trust relationship, csr
+keywords: https certificate, certificate, security, users, adding, creating, tenants, linking, netapp support site account, nss, encryption, kms, key management service, cmk, billing, s3 bucket, cost, accounts, aws accounts, multiple, subscription, azure, select
 summary: You can start creating Cloud Volumes ONTAP systems right after you deploy Cloud Manager. However, you might want to perform additional setup first by setting up the AWS Key Management Service, installing an HTTPS certificate, and more.
 ---
 
@@ -18,6 +18,42 @@ summary: You can start creating Cloud Volumes ONTAP systems right after you depl
 You can start creating Cloud Volumes ONTAP systems right after you deploy Cloud Manager. However, you might want to perform additional setup first by setting up the AWS Key Management Service, installing an HTTPS certificate, and more.
 
 toc::[]
+
+== Adding additional Azure subscriptions to Cloud Manager
+
+If you want to deploy Cloud Volumes ONTAP systems in multiple Azure subscriptions, then you must add permissions for those subscriptions.
+
+.About this task
+
+The following steps apply if you deployed Cloud Manager from NetApp Cloud Central. When you deployed Cloud Manager, Cloud Central created the OnCommand Cloud Manager Operator role and assigned it to the Cloud Manager virtual machine.
+
+.Steps
+
+. Log in to the Azure portal.
+
+. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
+
+. Click *Access control (IAM)*.
+
+. Click *Add* and then add the permissions:
+
+* Select the *OnCommand Cloud Manager Operator* role.
+
+* Assign access to a *Virtual Machine*.
+
+* Select the subscription in which the Cloud Manager virtual machine was created.
+
+* Select the Cloud Manager virtual machine.
+
+* Click *Save*.
+
+. Repeat these steps for additional subscriptions.
+
+.Result
+
+When you create a new working environment, you should now have the ability to select from multiple Azure subscriptions.
+
+image:screenshot_azure_subscriptions.gif[Shows the Details and Credentials page in the create new working environment wizard. A link is available to select a different Azure subscription.]
 
 == Adding additional AWS accounts to Cloud Manager
 
