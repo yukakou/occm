@@ -18,6 +18,8 @@ summary: It is best to deploy Cloud Manager in Azure using NetApp Cloud Central,
 
 It is best to deploy Cloud Manager in Azure using https://cloud.netapp.com[NetApp Cloud Central^], but you can deploy it from the Azure Marketplace, if needed.
 
+TIP: If you deploy Cloud Manager from the Azure Marketplace, Cloud Manager is still integrated with NetApp Cloud Central. link:concept_cloud_central.html[Learn more about the integration].
+
 toc::[]
 
 == Deploying Cloud Manager in Azure

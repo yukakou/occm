@@ -18,6 +18,8 @@ summary: It is best to launch Cloud Manager in AWS using NetApp Cloud Central, b
 
 It is best to launch Cloud Manager in AWS using https://cloud.netapp.com[NetApp Cloud Central^], but you can launch it from the AWS Marketplace, if needed.
 
+TIP: If you launch Cloud Manager from the AWS Marketplace, Cloud Manager is still integrated with NetApp Cloud Central. link:concept_cloud_central.html[Learn more about the integration].
+
 .Before you begin
 
 If you want to assign a public IP address to the Cloud Manager instance and use the AWS 1-Click Launch option, the public subnet must be already enabled to automatically assign public IP addresses. Otherwise, you must use the Manual Launch option to assign a public IP address to the instance.
