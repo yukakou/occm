@@ -1,0 +1,61 @@
+---
+sidebar: sidebar
+permalink: task_getting_started_azure2.html
+keywords: microsoft, azure, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, marketplace, virtual machine, vnet, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, permissions, vpn, multi-cloud, custom role, role, json, active directory, ad, managed service identity, msi, permissions, virtual machine
+summary: You can get started with Cloud Volumes ONTAP in Azure by completing a few quick steps.
+---
+
+= Getting started with Cloud Volumes ONTAP in Azure
+:toc: macro
+:toclevels: 1
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can get started with Cloud Volumes ONTAP in Azure by completing a few quick steps.
+
+=== image:number1.png[number1] Set up your networking
+
+[role="quick-margin-para"]
+Enable outbound internet access from the target VNet so Cloud Manager and Cloud Volumes ONTAP can contact several endpoints.
+
+[role="quick-margin-para"]
+This step is important because Cloud Manager cannot deploy Cloud Volumes ONTAP without outbound internet access. If you need to limit outbound connectivity, refer to link:reference_networking_cloud_manager.html#outbound-internet-access[the list of endpoints] that Cloud Manager must contact.
+
+=== image:number2.png[number1] Provide the required Azure permissions
+
+[role="quick-margin-para"]
+When you deploy Cloud Manager from NetApp Cloud Central, you must use an Azure account that has permissions to deploy the Cloud Manager virtual machine on your behalf.
+
+[role="quick-margin-list"]
+.. Download the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[NetApp-provided JSON file^].
+
+.. Modify the JSON file by adding your Azure subscription ID to the assignable scope.
+
+.. Use the JSON file to create a custom role in Azure called Azure SetupAsService.
+
+.. From the Azure portal, assign the custom role to the user who will deploy Cloud Manager from Cloud Central.
+
+=== image:number3.png[number1] Launch Cloud Manager from NetApp Cloud Central
+
+[role="quick-margin-para"]
+Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance from https://cloud.netapp.com[Cloud Central^].
+
+=== image:number4.png[number1] Launch Cloud Volumes ONTAP using Cloud Manager
+
+[role="quick-margin-para"]
+Once Cloud Manager is ready, just click Create, select the type of system that you would like to deploy, and complete the steps in the wizard. After 25 minutes, your first Cloud Volumes ONTAP system should be up and running.
+
+Watch the following video for a walk through of each step:
+
+video::getting_started_azure.mp4[width=848, height=480]
+
+.Related links
+
+* link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager]
+* link:reference_networking_azure.html[Networking requirements for Cloud Volumes ONTAP in Azure]
+* link:task_setting_up_cloud_manager.html[Setting up Cloud Manager]
+* link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]

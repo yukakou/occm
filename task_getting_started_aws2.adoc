@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_getting_started_aws2.html
 keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, disk, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, tiering, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, IAM policy, free trial, security group
-summary: Getting started with Cloud Volumes ONTAP includes preparing your AWS environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching Cloud Volumes ONTAP using Cloud Manager.
+summary: You can get started with Cloud Volumes ONTAP in AWS by completing a few quick steps.
 ---
 
 = Getting started with Cloud Volumes ONTAP in AWS
