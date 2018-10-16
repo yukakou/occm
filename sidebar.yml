@@ -22,7 +22,7 @@ entries:
       - title: Getting started in AWS [OLD]
         url: /task_getting_started_aws.html
       - title: Getting started in Azure [NEW]
-        url: /task_getting_started_azure2.html        
+        url: /task_getting_started_azure2.html
       - title: Getting started in Azure [OLD]
         url: /task_getting_started_azure.html
       - title: Setting up Cloud Manager
@@ -175,3 +175,5 @@ entries:
         url: /reference_additional_info.html
   - title: Earlier versions
     url: /reference_earlier_versions.html
+  - title: Notice
+    url: /notice.html
