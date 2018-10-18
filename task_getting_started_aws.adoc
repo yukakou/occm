@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_getting_started_aws.html
-keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, disk, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, tiering, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, IAM policy, free trial, security group
-summary: Getting started with Cloud Volumes ONTAP includes preparing your AWS environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching Cloud Volumes ONTAP using Cloud Manager.
+keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, tiering, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, IAM policy
+summary: You can get started with Cloud Volumes ONTAP in AWS by completing a few quick steps.
 ---
 
 = Getting started with Cloud Volumes ONTAP in AWS
@@ -15,120 +15,52 @@ summary: Getting started with Cloud Volumes ONTAP includes preparing your AWS en
 :imagesdir: ./media/
 
 [.lead]
-Getting started with Cloud Volumes ONTAP (formerly ONTAP Cloud) includes preparing your AWS environment, launching the OnCommand Cloud Manager software from NetApp Cloud Central, and then launching Cloud Volumes ONTAP using Cloud Manager.
+You can get started with Cloud Volumes ONTAP in AWS by completing a few quick steps.
 
-toc::[]
+=== image:number1.png[number1] Set up your networking
 
-== Verifying your networking
-
-You must choose the AWS VPC and subnets in which you want to launch Cloud Manager and Cloud Volumes ONTAP. At a minimum, your networking must meet the following requirements:
-
-* Outbound internet access
+[role="quick-margin-list"]
+.. Enable outbound internet access from the target VPC so Cloud Manager and Cloud Volumes ONTAP can contact several endpoints.
 +
-The target VPC must have one or more subnets that have outbound internet access so Cloud Manager and Cloud Volumes ONTAP can contact several endpoints. To review the list of endpoints, see link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager] and link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
+This step is important because Cloud Manager cannot deploy Cloud Volumes ONTAP without outbound internet access. If you need to limit outbound connectivity, refer to the list of endpoints for link:reference_networking_cloud_manager.html#outbound-internet-access[Cloud Manager] and link:reference_networking_aws.html#general-aws-networking-requirements-for-cloud-volumes-ontap[Cloud Volumes ONTAP].
 
-* Connections between networks
-** To deploy Cloud Volumes ONTAP in subnets or networks separate from Cloud Manager, connections between those networks must be in place.
-** To replicate data across a hybrid cloud or multi-cloud environment, VPN connections between networks must be in place. For details, refer to https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/SetUpVPNConnections.html[AWS Documentation: Setting Up an AWS VPN Connection^].
-
-* Endpoint to S3
+.. Set up a VPC endpoint to the S3 service.
 +
-To reduce storage costs by using EBS as a performance tier and AWS S3 as a capacity tier, the VPC in which you launch Cloud Volumes ONTAP must have an endpoint to the S3 service. For details, refer to https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
+A VPC endpoint is required if you want to tier cold data from Cloud Volumes ONTAP to low-cost object storage.
 
-For additional networking information, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
+=== image:number2.png[number1] Subscribe to Cloud Volumes ONTAP from the AWS Marketplace
 
-The following sample VPC configuration shows public and private subnets and a NAT device that enables outbound internet access for the private subnet:
-image:diagram_vpc_public_and_private.png[This illustration shows Cloud Manager and a NAT instance running in a public subnet, and Cloud Volumes ONTAP instances running in a private subnet.]
+[role="quick-margin-para"]
+Subscribing from https://aws.amazon.com/marketplace/search/results?page=1&searchTerms=netapp+cloud+volumes+ontap[the AWS Marketplace^] is required to accept the software terms. You should only subscribe from the Marketplace. Launching Cloud Volumes ONTAP from anywhere but Cloud Manager is not supported.
 
-== Subscribing to Cloud Volumes ONTAP in AWS
+=== image:number3.png[number1] Provide the required AWS permissions
 
-You must subscribe to Cloud Volumes ONTAP from the AWS Marketplace so you can launch systems in AWS.
+[role="quick-margin-para"]
+When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS account that has permissions to deploy the instance.
 
-.Steps
+[role="quick-margin-list"]
+.. Go to the AWS IAM console and create a policy by copying and pasting the contents of the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service.json[NetApp-provided JSON file^].
 
-. Go to the AWS Marketplace pages for Cloud Volumes ONTAP:
+.. Attach the policy to the IAM user.
 
-* http://aws.amazon.com/marketplace/pp/B011KEZ734[Cloud Volumes ONTAP for AWS (PayGo)^]
-* http://aws.amazon.com/marketplace/pp/B00OMA46T0[Cloud Volumes ONTAP for AWS (BYOL)^]
-* http://aws.amazon.com/marketplace/pp/B01H4LVJ84[Cloud Volumes ONTAP for AWS - High Availability (PayGo)^]
-* http://aws.amazon.com/marketplace/pp/B01H4LVJUC[Cloud Volumes ONTAP for AWS - High Availability (BYOL)^]
+=== image:number4.png[number1] Launch Cloud Manager from NetApp Cloud Central
 
-. Click *Continue*, review the terms, and then click *Accept Software Terms*.
-+
-IMPORTANT: You must not launch Cloud Volumes ONTAP instances from the AWS Marketplace. You must use Cloud Manager to launch Cloud Volumes ONTAP.
+[role="quick-margin-para"]
+Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance from https://cloud.netapp.com[Cloud Central^].
 
-== Granting AWS permissions
+=== image:number5.png[number1] Launch Cloud Volumes ONTAP using Cloud Manager
 
-When you launch Cloud Manager from NetApp Cloud Central, you must provide AWS credentials for a user that has specific AWS permissions. Cloud Central needs the credentials and permissions to launch the Cloud Manager instance on your behalf.
+[role="quick-margin-para"]
+Once Cloud Manager is ready, just click Create, select the type of system that you would like to launch, and complete the steps in the wizard. After 25 minutes, your first Cloud Volumes ONTAP system should be up and running.
 
-.About this task
+Watch the following video for a walk through of these steps:
 
-Providing the credentials is secure and private—NetApp does not save the credentials. It uses them only to launch the instance.
+video::au5qQDiPuzo[youtube, width=848, height=480]
 
-When you launch Cloud Manager, NetApp Cloud Central creates an IAM policy and an IAM role for the instance. This gives Cloud Manager permissions to deploy and manage Cloud Volumes ONTAP in AWS. To review the list of permissions, see link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[What Cloud Manager does with AWS permissions].
+.Related links
 
-.Steps
-
-. From the AWS IAM console, create your own policy by copying and pasting the contents of the https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Central IAM policy^].
-
-. Attach the policy that you just created to the IAM user.
-+
-The following video shows this process.
-+
-video::video_setup_portal_policy.mp4[width=848, height=480]
-
-== Launching Cloud Manager in AWS
-
-You need to install and set up Cloud Manager so you can use it to launch Cloud Volumes ONTAP in AWS.
-
-.Steps
-
-. Go to https://cloud.netapp.com[NetApp Cloud Central^] and sign up or log in.
-
-. Under *Cloud Volumes ONTAP*, click *Start Free Trial*.
-
-. Follow the prompts to deploy the Cloud Manager instance and software in AWS.
-+
-You should keep the page open until the deployment is complete. The portal redirects you to the Cloud Manager system when it is available.
-+
-NOTE: If a proxy server is required for internet connectivity in the subnet, Cloud Manager prompts you to add the proxy details.
-+
-The following video shows how to launch Cloud Manager.
-+
-video::video_launch_occm.mp4[width=848, height=480]
-
-.Result
-
-Cloud Manager is now installed and set up so users can launch Cloud Volumes ONTAP instances.
-
-== Launching Cloud Volumes ONTAP in AWS
-
-You can launch Cloud Volumes ONTAP in AWS to provide enterprise-class features for your cloud storage. You can choose a single-node configuration, or an HA pair to provide nondisruptive operations and fault tolerance in AWS.
-
-.Steps
-
-. On the Working Environments page in Cloud Manager, click *Create*.
-
-. Under Create, select *Cloud Volumes ONTAP* or *Cloud Volumes ONTAP HA*.
-
-. Complete the steps in the wizard to launch the instance.
-+
-Note the following as you complete the wizard:
-
-* The predefined security group includes the rules that Cloud Volumes ONTAP needs to operate successfully. If you need to use your own, refer to link:reference_security_groups.html[Security group rules].
-
-* The underlying AWS disk type is for the initial Cloud Volumes ONTAP volume. You can choose a different disk type for subsequent volumes.
-
-* The performance of AWS disks is tied to disk size. You should choose the disk size that gives you the sustained performance that you need. For details, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: Amazon EBS Volume Types^].
-
-* The disk size is the default size for all disks on the system.
-+
-TIP: If you need a different size later, you can use the *Advanced allocation* option to create an aggregate that uses disks of a specific size.
-+
-The following video shows how to launch a single-node configuration.
-+
-video::video_launch_otc_aws.mp4[width=848, height=480]
-
-.Result
-
-Cloud Manager launches the Cloud Volumes ONTAP instance in AWS. You can track the progress in the timeline.
+* link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager]
+* link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS]
+* link:reference_security_groups.html[Security group rules for AWS]
+* link:task_setting_up_cloud_manager.html[Setting up Cloud Manager]
+* link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
