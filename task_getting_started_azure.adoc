@@ -15,9 +15,7 @@ summary: You can get started with Cloud Volumes ONTAP in Azure by completing a f
 :imagesdir: ./media/
 
 [.lead]
-You can get started with Cloud Volumes ONTAP in Azure by completing a few quick steps.
-
-NOTE: The steps to deploy Cloud Manager in an Azure US Gov region or in an Azure Germany region are different than the steps on this page. Refer to instructions for link:task_installing_azure_gov.html[US Gov regions] or for link:task_installing_azure_germany.html[Azure Germany regions] instead.
+You can get started with Cloud Volumes ONTAP in Azure by completing a few quick steps. Separate instructions are available to deploy Cloud Manager in link:task_installing_azure_gov.html[US Gov regions] and in link:task_installing_azure_germany.html[Azure Germany regions].
 
 === image:number1.png[The number 1] Set up your networking
 
@@ -35,7 +33,7 @@ When you deploy Cloud Manager from NetApp Cloud Central, you need to use an Azur
 [role="quick-margin-list"]
 .. Download the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[NetApp-provided JSON file^].
 
-.. Modify the JSON file by adding your Azure subscription ID to the assignable scope.
+.. Modify the JSON file by adding your Azure subscription ID to the "AssignableScopes" field.
 
 .. Use the JSON file to create a custom role in Azure named _Azure SetupAsService_.
 +
