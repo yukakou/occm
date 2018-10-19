@@ -13,6 +13,28 @@ entries:
             url: /reference_limitations.html
       - title: Cloud Volumes ONTAP
         url: https://docs.netapp.com/us-en/cloud-volumes-ontap/
+  - title: Concepts
+    entries:
+      - title: Product overview
+        url: /concept_overview.html
+      - title: NetApp Cloud Central
+        url: /concept_cloud_central.html
+      - title: Storage
+        url: /concept_storage.html
+      - title: Storage management
+        url: /concept_storage_management.html
+      - title: High-availability pairs
+        url: /concept_ha.html
+      - title: Security
+        url: /concept_security.html
+      - title: WORM storage
+        url: /concept_worm.html
+      - title: Licensing
+        url: /concept_licensing.html
+      - title: Performance
+        url: /concept_performance.html
+      - title: Cloud Storage Automation
+        url: /concept_storage_automation.html
   - title: Getting started
     entries:
       - title: Deployment overview
@@ -53,28 +75,6 @@ entries:
             url: /task_creating_service_principal.html
           - title: Changing to a Managed Service Identity
             url: /task_enabling_msi.html
-  - title: Concepts
-    entries:
-      - title: Product overview
-        url: /concept_overview.html
-      - title: NetApp Cloud Central
-        url: /concept_cloud_central.html
-      - title: Storage
-        url: /concept_storage.html
-      - title: Storage management
-        url: /concept_storage_management.html
-      - title: High-availability pairs
-        url: /concept_ha.html
-      - title: Security
-        url: /concept_security.html
-      - title: WORM storage
-        url: /concept_worm.html
-      - title: Licensing
-        url: /concept_licensing.html
-      - title: Performance
-        url: /concept_performance.html
-      - title: Cloud Storage Automation
-        url: /concept_storage_automation.html
   - title: Deploying Cloud Volumes ONTAP
     entries:
       - title: Before you begin
@@ -91,28 +91,22 @@ entries:
         url: /task_registering.html
       - title: Setting up Cloud Volumes ONTAP
         url: /task_setting_up_ontap_cloud.html
-      - title: Provisioning storage
-        url: /task_provisioning_storage.html
-  - title: Managing Cloud Volumes ONTAP
+  - title: Provisioning storage
     entries:
+      - title: Creating volumes, aggregates, and LUNs
+        url: /task_provisioning_storage.html
       - title: Tiering cold data to object storage
         url: /task_tiering.html
-      - title: Managing storage
+      - title: Managing existing storage
         url: /task_managing_storage.html
-      - title: Updating Cloud Volumes ONTAP software
-        url: /task_updating_ontap_cloud.html
-      - title: Modifying Cloud Volumes ONTAP
-        url: /task_modifying_ontap_cloud.html
-      - title: Connecting to Cloud Volumes ONTAP
-        url: /task_connecting_to_otc.html
-      - title: Managing the state of Cloud Volumes ONTAP
-        url: /task_managing_state.html
-      - title: Monitoring AWS costs
-        url: /task_monitoring_costs.html
-      - title: Adding existing Cloud Volumes ONTAP systems
-        url: /task_adding_ontap_cloud.html
-      - title: Deleting Cloud Volumes ONTAP systems
-        url: /task_deleting_working_env.html
+      - title: Provisioning NFS volumes from the Volume View
+        entries:
+          - title: Changing to the Volume View
+            url: /task_changing_volume_view.html
+          - title: Creating and mounting NFS volumes
+            url: /task_provisioning_volume_view.html
+          - title: Managing NFS volumes
+            url: /task_managing_volume_view.html
   - title: Managing data across a hybrid cloud
     entries:
       - title: Discovering and managing ONTAP clusters
@@ -121,14 +115,22 @@ entries:
         url: /task_replicating_data.html
       - title: Syncing data to AWS S3
         url: /task_syncing_s3.html
-  - title: Provisioning NFS volumes
+  - title: Administering Cloud Volumes ONTAP
     entries:
-      - title: Changing to the Volume View
-        url: /task_changing_volume_view.html
-      - title: Creating and mounting NFS volumes
-        url: /task_provisioning_volume_view.html
-      - title: Managing NFS volumes
-        url: /task_managing_volume_view.html
+      - title: Connecting to Cloud Volumes ONTAP
+        url: /task_connecting_to_otc.html
+      - title: Updating Cloud Volumes ONTAP software
+        url: /task_updating_ontap_cloud.html
+      - title: Modifying Cloud Volumes ONTAP systems
+        url: /task_modifying_ontap_cloud.html
+      - title: Managing the state of Cloud Volumes ONTAP
+        url: /task_managing_state.html
+      - title: Monitoring AWS costs
+        url: /task_monitoring_costs.html
+      - title: Adding existing Cloud Volumes ONTAP systems
+        url: /task_adding_ontap_cloud.html
+      - title: Deleting Cloud Volumes ONTAP systems
+        url: /task_deleting_working_env.html
   - title: Administering Cloud Manager
     entries:
       - title: Updating Cloud Manager
