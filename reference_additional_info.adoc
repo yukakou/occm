@@ -47,7 +47,7 @@ Access product documentation for ONTAP, which can help you as you use Cloud Volu
 +
 Access support resources to get help and troubleshoot issues with Cloud Volumes ONTAP.
 
-* http://community.netapp.com/hybrid-cloud[NetApp Community: Hybrid Cloud^]
+* https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS[NetApp Community: Cloud Data Services^]
 +
 Connect with peers, ask questions, exchange ideas, find resources, and share best practices.
 
@@ -58,7 +58,3 @@ Find information about additional NetApp products and solutions for the cloud.
 * http://docs.netapp.com[NetApp Product Documentation^]
 +
 Search NetApp product documentation for instructions, resources, and answers.
-
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP2848669[Notice for Cloud Manager 3.5^]
-+
-Provides information about third-party copyright and licenses.
