@@ -71,6 +71,11 @@ cognito-identity.us-east-1.amazonaws.com
 \https://support.netapp.com/ServiceGW/entitlement
 | Communication with NetApp for licensing and support registration.
 
+|
+\https://packages.cloud.google.com/yum
+\https://github.com/NetApp/trident/releases/download/
+| Required to connect Cloud Volumes ONTAP systems with a Kubernetes cluster. The endpoints enable installation of NetApp Trident.
+
 a| Various third-party locations, for example:
 
 * \https://repo1.maven.org/maven2
@@ -125,6 +130,11 @@ sts.amazonaws.com
 \https://support.netapp.com/svcgw
 \https://support.netapp.com/ServiceGW/entitlement
 | Communication with NetApp for licensing and support registration.
+
+|
+\https://packages.cloud.google.com/yum
+\https://github.com/NetApp/trident/releases/download/
+| Required to connect Cloud Volumes ONTAP systems with a Kubernetes cluster. The endpoints enable installation of NetApp Trident.
 
 a| Various third-party locations, for example:
 
