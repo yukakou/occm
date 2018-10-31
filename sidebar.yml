@@ -97,8 +97,8 @@ entries:
         url: /task_provisioning_storage.html
       - title: Tiering cold data to object storage
         url: /task_tiering.html
-      - title: Provisioning Kubernetes persistent volumes
-        url: /task_persistent_volumes.html
+      - title: Using Cloud Volumes ONTAP as persistent storage
+        url: /task_connecting_kubernetes.html
       - title: Managing existing storage
         url: /task_managing_storage.html
       - title: Provisioning NFS volumes from the Volume View

@@ -31,4 +31,4 @@ Cloud Manager 3.6 includes a new feature.
 
 Cloud Manager can now automate the deployment of https://netapp-trident.readthedocs.io/en/stable-v18.10/introduction.html[NetApp Trident^] on a single Kubernetes cluster so you can use Cloud Volumes ONTAP as persistent storage for containers. Users can then request and manage Persistent Volumes using native Kubernetes interfaces and constructs, while taking advantage of ONTAP's advanced data management features without having to know anything about it.
 
-link:task_persistent_volumes.html[Learn how to connect Cloud Volumes ONTAP systems to a Kubernetes cluster]
+link:task_connecting_kubernetes.html[Learn how to connect Cloud Volumes ONTAP systems to a Kubernetes cluster]
