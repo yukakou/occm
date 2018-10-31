@@ -31,7 +31,7 @@ Cloud Manager can automate the deployment of https://netapp-trident.readthedocs.
 === image:number2.png[Number 2] Upload the Kubernetes configuration file to Cloud Manager
 
 [role="quick-margin-para"]
-The configuration file (kubeconfig) should be in YAML format. After you upload the file, Cloud Manager installs Trident on the Kubernetes cluster.
+The Cloud Manager Admin needs to upload a configuration file (kubeconfig) that is in YAML format. After you upload the file, Cloud Manager installs Trident on the Kubernetes cluster.
 
 [role="quick-margin-para"]
 image:screenshot_kubernetes_setup.gif[sdf]
