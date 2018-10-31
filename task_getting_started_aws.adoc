@@ -17,7 +17,7 @@ summary: You can get started with Cloud Volumes ONTAP in AWS by completing a few
 [.lead]
 You can get started with Cloud Volumes ONTAP in AWS by completing a few quick steps.
 
-=== image:number1.png[number1] Set up your networking
+=== image:number1.png[Number 1] Set up your networking
 
 [role="quick-margin-list"]
 .. Enable outbound internet access from the target VPC so Cloud Manager and Cloud Volumes ONTAP can contact several endpoints.
@@ -28,12 +28,12 @@ This step is important because Cloud Manager cannot deploy Cloud Volumes ONTAP w
 +
 A VPC endpoint is required if you want to tier cold data from Cloud Volumes ONTAP to low-cost object storage.
 
-=== image:number2.png[number1] Subscribe to Cloud Volumes ONTAP from the AWS Marketplace
+=== image:number2.png[Number 2] Subscribe to Cloud Volumes ONTAP from the AWS Marketplace
 
 [role="quick-margin-para"]
 Subscribing from https://aws.amazon.com/marketplace/search/results?page=1&searchTerms=netapp+cloud+volumes+ontap[the AWS Marketplace^] is required to accept the software terms. You should only subscribe from the Marketplace. Launching Cloud Volumes ONTAP from anywhere but Cloud Manager is not supported.
 
-=== image:number3.png[number1] Provide the required AWS permissions
+=== image:number3.png[Number 3] Provide the required AWS permissions
 
 [role="quick-margin-para"]
 When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS account that has permissions to deploy the instance.
@@ -43,12 +43,12 @@ When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS 
 
 .. Attach the policy to the IAM user.
 
-=== image:number4.png[number1] Launch Cloud Manager from NetApp Cloud Central
+=== image:number4.png[Number 4] Launch Cloud Manager from NetApp Cloud Central
 
 [role="quick-margin-para"]
 Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance from https://cloud.netapp.com[Cloud Central^].
 
-=== image:number5.png[number1] Launch Cloud Volumes ONTAP using Cloud Manager
+=== image:number5.png[Number 5] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]
 Once Cloud Manager is ready, just click Create, select the type of system that you would like to launch, and complete the steps in the wizard. After 25 minutes, your first Cloud Volumes ONTAP system should be up and running.
