@@ -41,6 +41,6 @@ https://www.youtube.com/playlist?list=PLdXI3bZJEw7lnoRo8FBKsX1zHbK8AQOoT[Watch a
 
 == Connect with peers, get help, and find more information
 
-* http://community.netapp.com/hybrid-cloud[NetApp Community: Hybrid Cloud^]
+* https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS[NetApp Community: Cloud Data Services^]
 * https://mysupport.netapp.com/cloudontap[NetApp Cloud Volumes ONTAP Support^]
 * link:reference_additional_info.html[Where to get help and find more information]
