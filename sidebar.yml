@@ -1,5 +1,5 @@
 entries:
-  - title: Cloud Manager 3.5 docs
+  - title: Cloud Manager 3.6 docs
     url: /index.html
   - title: Release notes
     entries:
@@ -97,6 +97,8 @@ entries:
         url: /task_provisioning_storage.html
       - title: Tiering cold data to object storage
         url: /task_tiering.html
+      - title: Using Cloud Volumes ONTAP as persistent storage
+        url: /task_connecting_kubernetes.html
       - title: Managing existing storage
         url: /task_managing_storage.html
       - title: Provisioning NFS volumes from the Volume View
@@ -119,17 +121,17 @@ entries:
     entries:
       - title: Connecting to Cloud Volumes ONTAP
         url: /task_connecting_to_otc.html
-      - title: Updating Cloud Volumes ONTAP software
+      - title: Updating software
         url: /task_updating_ontap_cloud.html
-      - title: Modifying Cloud Volumes ONTAP systems
+      - title: Modifying system configurations
         url: /task_modifying_ontap_cloud.html
-      - title: Managing the state of Cloud Volumes ONTAP
+      - title: Stopping and starting systems
         url: /task_managing_state.html
       - title: Monitoring AWS costs
         url: /task_monitoring_costs.html
-      - title: Adding existing Cloud Volumes ONTAP systems
+      - title: Adding existing systems
         url: /task_adding_ontap_cloud.html
-      - title: Deleting Cloud Volumes ONTAP systems
+      - title: Deleting systems
         url: /task_deleting_working_env.html
   - title: Administering Cloud Manager
     entries:
@@ -137,11 +139,11 @@ entries:
         url: /task_updating_cloud_manager.html
       - title: Backing up and restoring
         url: /task_backing_up_restoring.html
-      - title: Removing Cloud Volumes ONTAP working environments
+      - title: Removing working environments
         url: /task_removing.html
       - title: Editing user accounts
         url: /task_editing_users.html
-      - title: Configuring Cloud Manager to use a proxy server
+      - title: Configuring proxy settings
         url: /task_configuring_proxy.html
       - title: Managing encryption settings
         url: /task_managing_encryption.html
@@ -173,3 +175,5 @@ entries:
         url: /reference_additional_info.html
   - title: Earlier versions
     url: /reference_earlier_versions.html
+  - title: Legal notices
+    url: /reference_legal_notices.html

@@ -21,7 +21,7 @@ toc::[]
 
 == Enabling automatic updates
 
-Cloud Manager can automatically update itself to the latest maintenance or minor release whenever a new version is available. This ensures that you are running the latest version.
+Cloud Manager can automatically update itself when a new version is available. This ensures that you are running the latest version.
 
 .About this task
 
