@@ -57,6 +57,7 @@ video::S2gP6ii9LAU[youtube, width=848, height=480]
 
 .Related links
 
+* link:concept_evaluating.html[Free trials and evaluation licenses]
 * link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager]
 * link:reference_networking_azure.html[Networking requirements for Cloud Volumes ONTAP in Azure]
 * link:reference_security_groups_azure.html[Security group rules for Azure]
