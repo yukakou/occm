@@ -20,17 +20,21 @@ entries:
       - title: NetApp Cloud Central
         url: /concept_cloud_central.html
       - title: Storage
-        url: /concept_storage.html
-      - title: Storage management
-        url: /concept_storage_management.html
+        entries:
+          - title: Overview
+            url: /concept_storage.html
+          - title: Storage management
+            url: /concept_storage_management.html
+          - title: WORM storage
+            url: /concept_worm.html
       - title: High-availability pairs
         url: /concept_ha.html
-      - title: Security
-        url: /concept_security.html
-      - title: WORM storage
-        url: /concept_worm.html
+      - title: Free trials and evaluations
+        url: /concept_evaluating.html
       - title: Licensing
         url: /concept_licensing.html
+      - title: Security
+        url: /concept_security.html
       - title: Performance
         url: /concept_performance.html
       - title: Cloud Storage Automation
