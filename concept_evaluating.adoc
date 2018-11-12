@@ -5,7 +5,7 @@ keywords: free trial, evaluation, evaluate
 summary: You can evaluate Cloud Volumes ONTAP before you pay for the software. If you intend to pay hourly, then you should use a free trial. If you intend to purchase a license, then you should contact NetApp Sales.
 ---
 
-= Evaluations
+= Evaluating
 :toc: macro
 :hardbreaks:
 :nofooter:
