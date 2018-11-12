@@ -59,7 +59,7 @@ video::au5qQDiPuzo[youtube, width=848, height=480]
 
 .Related links
 
-* link:concept_evaluating.html[Free trials and evaluation licenses]
+* link:concept_evaluating.html[Evaluating]
 * link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager]
 * link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS]
 * link:reference_security_groups.html[Security group rules for AWS]
