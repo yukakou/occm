@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: concept_evaluating.html
-keywords: free trial, evaluation, license, evaluate
-summary: You can evaluate Cloud Volumes ONTAP before you pay for the software by starting a free trial.
+keywords: free trial, evaluation, evaluate
+summary: You can evaluate Cloud Volumes ONTAP before you pay for the software. If you intend to pay hourly, then you should use a free trial. If you intend to purchase a license, then you should contact NetApp Sales.
 ---
 
-= Free trials
+= Evaluations
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -14,10 +14,16 @@ summary: You can evaluate Cloud Volumes ONTAP before you pay for the software by
 :imagesdir: ./media/
 
 [.lead]
-You can evaluate Cloud Volumes ONTAP before you pay for the software by starting a free trial.
+You can evaluate Cloud Volumes ONTAP before you pay for the software. If you intend to pay hourly, then you should use a free trial. If you intend to purchase a license, then you should contact NetApp Sales.
 
-You can start a 30-day free trial of a single-node Cloud Volumes ONTAP system from https://cloud.netapp.com[NetApp Cloud Central^].
+== Free trials
+
+A free trial is a good choice if you plan to pay for Cloud Volumes ONTAP as you go. You can start a 30-day free trial of a single-node Cloud Volumes ONTAP system from https://cloud.netapp.com[NetApp Cloud Central].
 
 There are no hourly software charges for that instance, but AWS infrastructure charges still apply. A free trial automatically converts to a paid hourly subscription when it expires.
 
-Use the chat option from https://cloud.netapp.com[NetApp Cloud Central^] if you need any help during your assessment.
+== Licenses
+
+If you expect to pay for Cloud Volumes ONTAP with a license, contact NetApp Sales by using the chat option from https://cloud.netapp.com[NetApp Cloud Central^].
+
+link:concept_licensing.html[Learn more about licensing]
