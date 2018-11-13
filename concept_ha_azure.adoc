@@ -1,0 +1,67 @@
+---
+sidebar: sidebar
+permalink: concept_ha_azure.html
+keywords: high availability, HA, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, recovery point objective, recovery time objective, nas, nfs, cifs, iscsi, mpio, alua, failover, mount, remount, failure, data access, access, ip address, performance
+summary: A Cloud Volumes ONTAP high availability (HA) pair provides enterprise reliability and continuous operations in case of failures in your cloud environment. In Azure, storage is shared between the two nodes.
+---
+
+= High-availability pairs in Azure
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+A Cloud Volumes ONTAP high availability (HA) pair provides enterprise reliability and continuous operations in case of failures in your cloud environment. In Azure, storage is shared between the two nodes.
+
+toc::[]
+
+== HA components
+
+In Azure, a Cloud Volumes ONTAP HA configuration includes the following components:
+
+image:asdfasdf.png[Text]
+
+Azure Standard Load Balancer::
+Description
+
+Availability Set::
+Description
+
+Storage accounts::
+Description
+
+== RPO and RTO
+
+An HA configuration maintains high availability of your data as follows:
+
+* The recovery point objective (RPO) is 0 seconds.
+Your data is transactionally consistent with no data loss.
+
+* The recovery time objective (RTO) is 60 seconds.
+In the event of an outage, data should be available in 60 seconds or less.
+
+== How storage works
+
+Similar to a physical ONTAP cluster, storage in an Azure HA pair is shared between nodes. Connections to the partner's storage allows each node to access the other's storage in the event of a takeover. Network path failover mechanisms ensure that clients and hosts continue to communicate with the surviving node.
+
+=== Storage configurations
+
+You can use an HA pair as an active-active configuration, in which both nodes serve data to clients, or as an active-passive configuration, in which the passive node responds to data requests only if it has taken over storage for the active node.
+
+=== Client access to storage
+
+Launch and check
+
+== How storage takeover and giveback works
+
+If a node fails or if you need to bring a node down for routine maintenance, its partner can _take over_ its storage and continue to serve data from it. The partner _gives back_ storage when the node is brought back on line.
+
+For NAS configurations, data IP addresses automatically migrate between HA nodes if failures occur. This ensures client access to storage.
+
+For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical Unit Access (ALUA) to manage path failover between the active-optimized and non-optimized paths.
+
+NOTE: For information about which specific host configurations support ALUA, see the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the Host Utilities Installation and Setup Guide for your host operating system.
