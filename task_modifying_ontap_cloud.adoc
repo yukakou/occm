@@ -165,9 +165,9 @@ A network MTU of 1,500 bytes is a good choice if clients or systems outside of t
 
 . Click *Change*.
 
-== Changing route tables associated with HA pairs
+== Changing AWS route tables associated with HA pairs
 
-You can modify the route tables that include routes to the floating IP addresses for an HA pair. You might do this if new NFS or CIFS clients need to access the HA pair.
+You can modify the AWS route tables that include routes to the floating IP addresses for an HA pair. You might do this if new NFS or CIFS clients need to access an HA pair in AWS.
 
 .Steps
 
