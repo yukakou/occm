@@ -41,7 +41,7 @@ Cloud Volumes ONTAP extends enterprise storage to the cloud with the following k
 Leverage built-in data deduplication, data compression, thin provisioning, and cloning to minimize storage costs.
 
 * High availability
-Ensure enterprise reliability and continuous operations in case of failures in your cloud environment (AWS only).
+Ensure enterprise reliability and continuous operations in case of failures in your cloud environment.
 
 * Data replication
 Cloud Volumes ONTAP leverages SnapMirror, NetApp’s industry-leading replication technology, to replicate on-premises data to the cloud so it’s easy to have secondary copies available for multiple use cases.
@@ -50,7 +50,7 @@ Cloud Volumes ONTAP leverages SnapMirror, NetApp’s industry-leading replicatio
 Switch between high and low-performance storage pools on-demand without taking applications offline.
 
 * Application consistency
-Ensure consistency of NetApp Snapshot copies using the NetApp SnapManager tool suite.
+Ensure consistency of NetApp Snapshot copies using NetApp SnapCenter.
 
 NOTE: Licenses for ONTAP features are included with Cloud Volumes ONTAP.
 
