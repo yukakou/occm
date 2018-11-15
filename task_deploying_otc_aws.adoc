@@ -49,7 +49,7 @@ Some of the fields in this page are self-explanatory. The following table descri
 | Field
 | Description
 
-| AWS Account | If you want to deploy Cloud Volumes ONTAP in other AWS accounts, then you must delegate access across accounts using an IAM role. For instructions, see link:task_setting_up_cloud_manager.html#adding-additional-aws-accounts-to-cloud-manager[Adding additional AWS accounts to Cloud Manager].
+| Switch Account | You can choose a different account if you added additional Cloud Provider Accounts. For details, see link:task_setting_up_cloud_manager.html[Setting up Cloud Manager].
 
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
@@ -191,8 +191,6 @@ Support from NetApp is included with your Cloud Volumes ONTAP system. To activat
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
 
-* If this is the first Cloud Volumes ONTAP instance launched in AWS, remind your administrator to finish link:task_setting_up_cloud_manager.html#setting-up-aws-billing-and-cost-management-for-cloud-manager[setting up AWS billing and cost management for Cloud Manager] by enabling the WorkingEnvironmentId tag. This tag is not available in AWS until after you create your first Cloud Volumes ONTAP working environment under the AWS payer account.
-
 == Launching a Cloud Volumes ONTAP HA pair in AWS
 
 If you want to launch a Cloud Volumes ONTAP HA pair in AWS, you need to create an HA working environment in Cloud Manager.
@@ -224,7 +222,7 @@ Some of the fields in this page are self-explanatory. The following table descri
 | Field
 | Description
 
-| AWS Account | If you want to deploy Cloud Volumes ONTAP in other AWS accounts, then you must delegate access across accounts using an IAM role. For instructions, see link:task_setting_up_cloud_manager.html#adding-additional-aws-accounts-to-cloud-manager[Adding additional AWS accounts to Cloud Manager].
+| Switch Account | You can choose a different account if you added additional Cloud Provider Accounts. For details, see link:task_setting_up_cloud_manager.html[Setting up Cloud Manager].
 
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
@@ -372,5 +370,3 @@ Support from NetApp is included with your Cloud Volumes ONTAP system. To activat
 * If you want to apply quotas to volumes, use System Manager or the CLI.
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
-
-* If this is the first Cloud Volumes ONTAP instance launched in AWS, remind your administrator to finish link:task_setting_up_cloud_manager.html#setting-up-aws-billing-and-cost-management-for-cloud-manager[setting up AWS billing and cost management for Cloud Manager] by enabling the WorkingEnvironmentId tag. This tag is not available in AWS until after you create your first Cloud Volumes ONTAP working environment under the AWS payer account.

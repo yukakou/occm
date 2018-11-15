@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_setting_up_cloud_manager.html
-keywords: https certificate, certificate, security, users, adding, creating, tenants, linking, netapp support site account, nss, encryption, kms, key management service, cmk, billing, s3 bucket, cost, accounts, aws accounts, multiple, subscription, azure, select
+keywords: https certificate, certificate, security, users, adding, creating, tenants, linking, netapp support site account, nss, encryption, kms, key management service, cmk, accounts, aws accounts, multiple, subscription, azure, cloud provider account, cloud provider profile
 summary: You can start creating Cloud Volumes ONTAP systems right after you deploy Cloud Manager. However, you might want to perform additional setup first by setting up the AWS Key Management Service, installing an HTTPS certificate, and more.
 ---
 
@@ -19,75 +19,47 @@ You can start creating Cloud Volumes ONTAP systems right after you deploy Cloud 
 
 toc::[]
 
-== Adding additional Azure subscriptions to Cloud Manager
+== Adding additional Cloud Provider Accounts
 
-If you want to deploy Cloud Volumes ONTAP systems in multiple Azure subscriptions, then you must add permissions for those subscriptions.
+If you want to deploy Cloud Volumes ONTAP in different AWS or Azure accounts, then you need to add details about those accounts to Cloud Manager.
 
 .About this task
 
-The following steps apply if you deployed Cloud Manager from NetApp Cloud Central. When you deployed Cloud Manager, Cloud Central created the OnCommand Cloud Manager Operator role and assigned it to the Cloud Manager virtual machine.
+When you deploy Cloud Manager in AWS or in Azure, Cloud Manager automatically adds a Cloud Provider Account for the account in which you deployed Cloud Manager. A Cloud Provider Account is not added if you manually installed the Cloud Manager software on an existing system.
 
 .Steps
 
-. Log in to the Azure portal.
+. Grant the required permissions to the AWS or Azure account.
++
+* AWS link
+* Azure link
 
-. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
+. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *Cloud Provider Accounts*.
 
-. Click *Access control (IAM)*.
+. Select the cloud provider.
 
-. Click *Add* and then add the permissions:
+. Enter the required information for the cloud provider:
 
-* Select the *OnCommand Cloud Manager Operator* role.
+[cols=2*,options="header",cols="25,75"]
+|===
+| Cloud Provider
+| Action
 
-* Assign access to a *Virtual Machine*.
+| AWS | Choose whether you want to provide AWS keys or an IAM role.
 
-* Select the subscription in which the Cloud Manager virtual machine was created.
+| Azure | Enter information about the Azure Active Directory service principal that grants the required permissions.
 
-* Select the Cloud Manager virtual machine.
+|===
 
-* Click *Save*.
-
-. Repeat these steps for additional subscriptions.
+. Confirm that the policy requirements have been met and then click *Add Account*.
 
 .Result
 
-When you create a new working environment, you should now have the ability to select from multiple Azure subscriptions.
+You can now choose from multiple Cloud Provider Accounts when you create a new Cloud Volumes ONTAP system.
 
-image:screenshot_azure_subscriptions.gif[Shows the Details and Credentials page in the create new working environment wizard. A link is available to select a different Azure subscription.]
+The following image shows the option when deploying Cloud Volumes ONTAP in Azure:
 
-== Adding additional AWS accounts to Cloud Manager
-
-When Cloud Manager is associated with an IAM role, it deploys Cloud Volumes ONTAP in the AWS account from which the Cloud Manager instance was created. If you want to deploy Cloud Volumes ONTAP in other AWS accounts, then you must delegate access across accounts.
-
-.About this task
-
-The following image depicts the steps that you must complete below.
-
-image:diagram_aws_accounts.png[A conceptual graphic that shows a new IAM role that gains permissions from an IAM policy and has a trust relationship with the IAM role attached to the Cloud Manager instance. That IAM role gains permissions from an IAM policy as well. Finally, it shows a screenshot of the page in Cloud Manager where you enter the AWS Account ID and IAM role name.]
-
-.Steps
-
-. Create an IAM role in the AWS account in which you want to deploy Cloud Volumes ONTAP.
-+
-The role must meet the following requirements:
-
-* It must adhere to https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager IAM policy requirements^].
-
-* It must have a trust relationship that allows the IAM role associated with the Cloud Manager instance to assume this new role.
-
-. Add a permission to the Cloud Manager IAM role policy that enables it to assume the IAM role that you just created.
-+
-TIP: You can find the name of the Cloud Manager IAM role from the EC2 console by viewing a description of the instance.
-
-. When you create a new working environment, add the target account in the Details & Credentials page by specifying the AWS account ID of the target account and the name of the IAM role in that account.
-
-NOTE: As always, you must ensure network connectivity between Cloud Manager and the location of the target Cloud Volumes ONTAP systems. This is important when the instances are created by different accounts.
-
-For additional background about this process, refer to https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html[AWS Documentation: Tutorial: Delegate Access Across AWS Accounts Using IAM Roles^]. In this tutorial, the production account is similar to the target account and the development account is similar to the Cloud Manager account.
-
-.After you finish
-
-If you have additional accounts, complete these steps for those accounts, as well.
+<screenshot>
 
 == Setting up the AWS KMS
 
@@ -197,45 +169,3 @@ image:screenshot_tenant_edit.gif[Screen shot: Shows the edit icon (a pencil) whi
 .Result
 
 Cloud Manager registers all existing and future Cloud Volumes ONTAP systems in the tenant with NetApp support.
-
-== Setting up AWS billing and cost management for Cloud Manager
-
-Cloud Manager can display the monthly compute and storage costs associated with running Cloud Volumes ONTAP in AWS. Before Cloud Manager can display the costs, users of AWS payer accounts must set up AWS to store billing reports in an S3 bucket, Cloud Manager must have permissions to access that S3 bucket, and AWS report tags must be enabled after you launch your first Cloud Volumes ONTAP instance.
-
-.Before you begin
-
-You must have granted AWS permissions to Cloud Manager so it can access an S3 bucket. For details, see link:task_getting_started_aws.html#granting-aws-permissions[Granting AWS permissions to Cloud Manager].
-
-.About this task
-
-Users of AWS payer accounts must set up AWS to store billing reports in an S3 bucket. Cloud Manager uses the information from the reports to show monthly compute and storage costs associated with a Cloud Volumes ONTAP instance, as well as storage cost savings from NetApp product efficiency features (if they are enabled). For an example, see see link:task_monitoring_costs.html[Monitoring AWS storage and compute costs].
-
-.Steps
-
-. Go to the Amazon S3 console and set up an S3 bucket for the detailed billing reports:
-
-.. Create an S3 bucket.
-.. Apply a resource-based bucket policy to the S3 bucket to allow Billing and Cost Management to deposit the billing reports into the S3 bucket.
-+
-For details about using an S3 bucket for detailed billing reports and to use an example bucket policy, see http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html[AWS Documentation: Understand Your Usage with Detailed Billing Reports^].
-
-. From the Billing and Cost Management console, go to Preferences and enable the reports:
-
-.. Enable *Receive Billing Reports* and specify the S3 bucket.
-.. Enable *Cost allocation report*.
-
-. When you set up a user account in Cloud Manager, specify the S3 bucket that you created.
-+
-NOTE: If you grant AWS permissions to Cloud Manager by specifying AWS keys, you must set up a Cloud Manager user account by specifying AWS keys for an IAM user created under the payer account or the AWS keys for the payer account itself.
-
-. After you launch your first Cloud Volumes ONTAP instance, go back to Billing and Cost Management *Preferences*, click *Manage report tags*, and enable the *WorkingEnvironmentId* tag.
-+
-This tag is not available in AWS until you create your first Cloud Volumes ONTAP working environment using any account under the AWS payer account.
-
-.Result
-
-Cloud Manager updates the cost information at each 12-hour polling interval.
-
-.After you finish
-
-Repeat these steps for other AWS payer accounts for which cost reporting is needed. For details about how to view the cost information, see link:task_monitoring_costs.html[Monitoring AWS storage and compute costs].
