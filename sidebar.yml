@@ -77,8 +77,6 @@ entries:
             url: /task_granting_aws_permissions.html
           - title: Granting Azure permissions using a service principal and credentials
             url: /task_creating_service_principal.html
-          - title: Changing to a Managed Service Identity
-            url: /task_enabling_msi.html
   - title: Deploying Cloud Volumes ONTAP
     entries:
       - title: Before you begin
