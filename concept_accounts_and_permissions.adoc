@@ -1,0 +1,77 @@
+---
+sidebar: sidebar
+permalink: concept_accounts_and_permissions.html
+keywords: cloud provider accounts, aws, azure, aws account, azure account, keys, service principal, multiple, permissions, policy, policies, json, subscriptions
+summary: Cloud Manager enables you to choose the AWS or Azure account in which you want to deploy a Cloud Volumes ONTAP system. You should understand the permissions requirements before you add the accounts to Cloud Manager.
+---
+
+= Cloud Provider Accounts and permissions
+:toc: macro
+:toclevels: 1
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Manager enables you to choose the _Cloud Provider Account_ in which you want to deploy a Cloud Volumes ONTAP system. You should understand the permissions requirements before you add the accounts to Cloud Manager.
+
+toc::[]
+
+== AWS accounts and permissions
+
+You can deploy all of your Cloud Volumes ONTAP systems in the initial AWS account, or you can set up additional accounts.
+
+=== The initial AWS account
+
+When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS account that has permissions to launch the Cloud Manager instance. The required permissions are listed in the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service.json[Cloud Central policy for AWS].
+
+When Cloud Central launches the Cloud Manager instance in AWS, it assigns an IAM policy to an IAM role, and attaches the role to the instance. The policy and role provide Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP in that AWS account.
+
+image:diagram_permissions_initial_aws.png[A conceptual image that shows Cloud Central deploying Cloud Manager in an AWS account. An IAM policy is assigned to an IAM that is attached to the Cloud Manager instance.]
+
+Cloud Manager uses this Cloud Provider Account when you launch Cloud Volumes ONTAP systems:
+
+<screenshot>
+
+=== Additional AWS accounts
+
+If you want to launch Cloud Volumes ONTAP in different AWS accounts, then you must link:task_granting_aws_permissions.html[create an IAM policy in those accounts and attach the policy to an IAM user or an IAM role]. The following image shows two additional accounts, one providing permissions through an IAM user and another through an IAM role:
+
+image:diagram_permissions_multiple_aws.png[A conceptual image that shows two additional accounts. Each has an IAM policy, one is attached to IAM user and the other is attached to an IAM role.]
+
+You would then link:task_setting_up_cloud_manager.html#adding-additional-cloud-provider-accounts[add the Cloud Provider Accounts to Cloud Manager] by specifying AWS keys for the IAM user or the Amazon Resource Name (ARN) of the IAM role.
+
+== Azure accounts and permissions
+
+You can deploy all of your Cloud Volumes ONTAP systems in the initial Azure account, or you can set up additional accounts.
+
+=== The initial Azure account
+
+When you deploy Cloud Manager from NetApp Cloud Central, you need to use an Azure account that has permissions to deploy the Cloud Manager virtual machine. The required permissions are listed in the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[Cloud Central policy for Azure].
+
+When Cloud Central deploys the Cloud Manager virtual machine in Azure, it enables a Managed Service Identity on the Cloud Manager virtual machine, creates a custom role, and assigns it to the virtual machine. The role provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP in that Azure account.
+
+image:diagram_permissions_initial_azure.png[A conceptual image that shows Cloud Central deploying Cloud Manager in an Azure account. A Managed Service Identity is enabled and a custom role is assigned to the Cloud Manager virtual machine.]
+
+Cloud Manager uses this Cloud Provider Account when you launch Cloud Volumes ONTAP systems:
+
+<screenshot>
+
+=== Additional Azure accounts
+
+If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you must grant the required permissions by link:task_creating_service_principal.html[creating and setting up a service principal in Azure Active Directory] for each Azure account. The following image shows two additional accounts, each set up with a service principal and custom role that provides permissions:
+
+image:diagram_permissions_multiple_azure.png[]
+
+You would then link:task_setting_up_cloud_manager.html#adding-additional-cloud-provider-accounts[add the Cloud Provider Accounts to Cloud Manager] by providing details about the AD service principal.
+
+.What about Marketplace deployments and on-prem deployments?
+****
+The sections above describe the recommended deployment method from NetApp Cloud Central. You can also deploy Cloud Manager from the AWS or Azure Marketplaces and you can install Cloud Manager on-premises.
+
+If you use either of the Marketplaces, permissions are provided in the same way. You just need to manually create and set up the IAM role or Managed Service Identity for Cloud Manager, and then provide permissions for any additional accounts.
+
+For on-premises deployments, you can't set up an IAM role or Managed Service Identity for the Cloud Manager system, but you can provide permissions just like you would for additional accounts.
+****

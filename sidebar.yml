@@ -19,6 +19,8 @@ entries:
         url: /concept_overview.html
       - title: NetApp Cloud Central
         url: /concept_cloud_central.html
+      - title: Accounts and permissions
+        url: /concept_accounts_and_permissions.html
       - title: Storage
         entries:
           - title: Overview
@@ -47,6 +49,12 @@ entries:
         url: /task_getting_started_aws.html
       - title: Getting started in Azure
         url: /task_getting_started_azure.html
+      - title: Adding accounts to Cloud Manager
+        entries:
+          - title: Adding AWS accounts
+            url: task_adding_aws_accounts.html
+          - title: Adding Azure accounts
+            url: task_adding_azure_accounts.html
       - title: Setting up Cloud Manager
         url: /task_setting_up_cloud_manager.html
       - title: Detailed networking requirements
@@ -71,12 +79,6 @@ entries:
             url: /task_installing_azure_gov.html
           - title: Installing Cloud Manager in Azure Germany
             url: /task_installing_azure_germany.html
-      - title: Additional ways to provide permissions
-        entries:
-          - title: Granting AWS permissions when Cloud Manager is not launched from Cloud Central
-            url: /task_granting_aws_permissions.html
-          - title: Granting Azure permissions using a service principal and credentials
-            url: /task_creating_service_principal.html
   - title: Deploying Cloud Volumes ONTAP
     entries:
       - title: Before you begin
