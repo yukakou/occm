@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_accounts_and_permissions.html
 keywords: cloud provider accounts, aws, azure, aws account, azure account, keys, service principal, multiple, permissions, policy, policies, json, subscriptions
-summary: Cloud Manager enables you to choose the AWS or Azure account in which you want to deploy a Cloud Volumes ONTAP system. You should understand the permissions requirements before you add the accounts to Cloud Manager.
+summary: Cloud Manager enables you to choose the AWS or Azure account in which you want to deploy a Cloud Volumes ONTAP system. You should understand requirements for permissions before you add the accounts to Cloud Manager.
 ---
 
 = Cloud Provider Accounts and permissions
