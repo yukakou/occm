@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_setting_up_cloud_manager.html
-keywords: https certificate, certificate, security, users, adding, creating, tenants, linking, netapp support site account, nss, encryption, kms, key management service, cmk, accounts, aws accounts, multiple, subscription, azure, cloud provider account, cloud provider profile
+keywords: https certificate, certificate, security, users, adding, creating, tenants, linking, netapp support site account, nss, encryption, kms, key management service, cmk
 summary: You can start creating Cloud Volumes ONTAP systems right after you deploy Cloud Manager. However, you might want to perform additional setup first by setting up the AWS Key Management Service, installing an HTTPS certificate, and more.
 ---
 
@@ -18,48 +18,6 @@ summary: You can start creating Cloud Volumes ONTAP systems right after you depl
 You can start creating Cloud Volumes ONTAP systems right after you deploy Cloud Manager. However, you might want to perform additional setup first by setting up the AWS Key Management Service, installing an HTTPS certificate, and more.
 
 toc::[]
-
-== Adding additional Cloud Provider Accounts
-
-If you want to deploy Cloud Volumes ONTAP in different AWS or Azure accounts, then you need to add details about those accounts to Cloud Manager.
-
-.About this task
-
-When you deploy Cloud Manager in AWS or in Azure, Cloud Manager automatically adds a Cloud Provider Account for the account in which you deployed Cloud Manager. A Cloud Provider Account is not added if you manually installed the Cloud Manager software on an existing system.
-
-.Steps
-
-. Grant the required permissions to the AWS or Azure account.
-+
-* AWS link
-* Azure link
-
-. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *Cloud Provider Accounts*.
-
-. Select the cloud provider.
-
-. Enter the required information for the cloud provider:
-
-[cols=2*,options="header",cols="25,75"]
-|===
-| Cloud Provider
-| Action
-
-| AWS | Choose whether you want to provide AWS keys or an IAM role.
-
-| Azure | Enter information about the Azure Active Directory service principal that grants the required permissions.
-
-|===
-
-. Confirm that the policy requirements have been met and then click *Add Account*.
-
-.Result
-
-You can now choose from multiple Cloud Provider Accounts when you create a new Cloud Volumes ONTAP system.
-
-The following image shows the option when deploying Cloud Volumes ONTAP in Azure:
-
-<screenshot>
 
 == Setting up the AWS KMS
 
