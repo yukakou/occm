@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_ha_azure.html
-keywords: high availability, HA, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, recovery point objective, recovery time objective, nas, nfs, cifs, iscsi, mpio, alua, failover, mount, remount, failure, data access, access, ip address, performance
+keywords: high availability, HA, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, recovery point objective, recovery time objective, nas, nfs, cifs, iscsi, mpio, alua, failover, failure, azure, shared storage, active, passive, load balancer, availability set, storage accounts, page blobs
 summary: A Cloud Volumes ONTAP high availability (HA) pair provides enterprise reliability and continuous operations in case of failures in your cloud environment. In Azure, storage is shared between the two nodes.
 ---
 
@@ -21,18 +21,18 @@ toc::[]
 
 == HA components
 
-In Azure, a Cloud Volumes ONTAP HA configuration includes the following components:
+A Cloud Volumes ONTAP HA configuration in Azure includes the following components:
 
-image:asdfasdf.png[Text]
+image:diagram_ha_azure.png[A conceptual image that shows a load balancer managing incoming traffic from Cloud Manager and clients, two Cloud Volumes ONTAP nodes in an Availability Set, SSD disks for boot data, and Page Blobs for customer data.]
 
 Azure Standard Load Balancer::
-Description
+The load balancer manages incoming internet traffic to the Cloud Volumes ONTAP HA pair.
 
 Availability Set::
-Description
+The Availability Set ensures that the nodes are in different fault and update domains, which means  they are not on the same host.
 
 Storage accounts::
-Description
+One storage account is required for boot data, which resides on Standard SSD Managed Disks. One or more storage accounts are required for customer data, which resides on Premium Page Blobs.
 
 == RPO and RTO
 
@@ -44,24 +44,20 @@ Your data is transactionally consistent with no data loss.
 * The recovery time objective (RTO) is 60 seconds.
 In the event of an outage, data should be available in 60 seconds or less.
 
-== How storage works
+== Storage takeover and giveback
 
-Similar to a physical ONTAP cluster, storage in an Azure HA pair is shared between nodes. Connections to the partner's storage allows each node to access the other's storage in the event of a takeover. Network path failover mechanisms ensure that clients and hosts continue to communicate with the surviving node.
+Similar to a physical ONTAP cluster, storage in an Azure HA pair is shared between nodes. Connections to the partner's storage allows each node to access the other's storage in the event of a _takeover_. Network path failover mechanisms ensure that clients and hosts continue to communicate with the surviving node. The partner _gives back_ storage when the node is brought back on line.
 
-=== Storage configurations
-
-You can use an HA pair as an active-active configuration, in which both nodes serve data to clients, or as an active-passive configuration, in which the passive node responds to data requests only if it has taken over storage for the active node.
-
-=== Client access to storage
-
-Launch and check
-
-== How storage takeover and giveback works
-
-If a node fails or if you need to bring a node down for routine maintenance, its partner can _take over_ its storage and continue to serve data from it. The partner _gives back_ storage when the node is brought back on line.
-
-For NAS configurations, data IP addresses automatically migrate between HA nodes if failures occur. This ensures client access to storage.
+For NAS configurations, data IP addresses automatically migrate between HA nodes if failures occur.
 
 For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical Unit Access (ALUA) to manage path failover between the active-optimized and non-optimized paths.
 
 NOTE: For information about which specific host configurations support ALUA, see the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the Host Utilities Installation and Setup Guide for your host operating system.
+
+== Storage configurations
+
+You can use an HA pair as an active-active configuration, in which both nodes serve data to clients, or as an active-passive configuration, in which the passive node responds to data requests only if it has taken over storage for the active node.
+
+== NFS version limitation
+
+NFSv4 is not supported with HA pairs in Azure. NFSv3 is supported.
