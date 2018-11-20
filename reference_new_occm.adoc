@@ -54,7 +54,7 @@ image:screenshot_cost.gif[Screen shot: Shows the costs per month for a Cloud Vol
 
 * The report also shows your cost savings when using S3 tiering.
 
-* We simplified how Cloud Manager obtains cost data from AWS.
+* We also simplified how Cloud Manager obtains cost data from AWS.
 +
 Cloud Manager no longer needs access to billing reports that you store in an S3 bucket. Instead, Cloud Manager uses the Cost Explorer API. You just need to ensure that the IAM policy that provides Cloud Manager with permissions includes the following actions:
 
