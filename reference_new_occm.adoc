@@ -27,8 +27,13 @@ link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 
 
 Cloud Manager 3.6.1 includes new features and enhancements.
 
+* <<Support for Cloud Volumes ONTAP 9.5>>
 * <<Cloud Provider Accounts>>
 * <<Enhancements to the AWS Cost report>>
+
+=== Support for Cloud Volumes ONTAP 9.5
+
+Cloud Manager now supports the Cloud Volumes ONTAP 9.5 release. For details about the release, see the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_95.html[Cloud Volumes ONTAP 9.5 Release Notes].
 
 === Cloud Provider Accounts
 
