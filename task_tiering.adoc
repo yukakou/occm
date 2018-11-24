@@ -16,7 +16,7 @@ summary: You can reduce storage costs in AWS and Azure by combining an SSD or HD
 
 [.lead]
 
-You can reduce storage costs in AWS and Azure by combining an SSD or HDD performance tier for "hot" data with an object storage capacity tier for "cold" data. For a high-level overview, see link:concept_storage.html#data-tiering-overview[Data tiering overview].
+You can reduce storage costs in AWS and Azure by combining an SSD or HDD performance tier for "hot" data with an object storage capacity tier for "cold" data. For a high-level overview, see link:concept_data_tiering.html[Data tiering overview].
 
 To set up data tiering, you simply need to do the following:
 
@@ -87,7 +87,7 @@ Cloud Volumes ONTAP can tier cold data on read-write volumes to cost-effective o
 
 . Select the Snapshot Only policy or the Auto policy.
 +
-For a description of these policies, see link:concept_storage.html#data-tiering-overview[Data tiering overview].
+For a description of these policies, see link:concept_data_tiering.html[Data tiering overview].
 +
 *Example*
 +
@@ -125,7 +125,7 @@ In AWS, you can change the tiering level so cold data moves to the  _Standard-In
 
 In Azure, you can change the tiering level so cold data moves to the  _cool_ storage tier after 30 days of inactivity.
 
-For more information about how tiering levels work, see link:concept_storage.html#data-tiering-overview[Data tiering overview].
+For more information about how tiering levels work, see link:concept_data_tiering.html[Data tiering overview].
 
 .Steps
 
