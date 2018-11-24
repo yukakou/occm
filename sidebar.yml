@@ -107,6 +107,8 @@ entries:
         url: /task_tiering.html
       - title: Using Cloud Volumes ONTAP as persistent storage
         url: /task_connecting_kubernetes.html
+      - title: Encrypting volumes with NetApp Volume Encryption
+        url: /task_encrypting_volumes.html
       - title: Managing existing storage
         url: /task_managing_storage.html
       - title: Provisioning NFS volumes from the Volume View
