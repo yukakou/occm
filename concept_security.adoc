@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_security.html
-keywords: security, encryption, antivirus, concepts, key managers, safenet, kms, keys, vscan, encrypt, aws, key management service, cmk, customer master key, data at rest, data-at-rest, netapp storage encryption, certificate signing request, csr, certificate, ca certificate, virus, scan, virus scan, certificate authority
+keywords: security, encryption, antivirus, concepts, key managers, safenet, kms, keys, vscan, encrypt, aws, key management service, cmk, customer master key, data at rest, data-at-rest, netapp storage encryption, certificate signing request, csr, certificate, ca certificate, virus, scan, virus scan, certificate authority, netapp volume encryption, nve, volume encryption, key management server, key manager
 summary: Cloud Volumes ONTAP supports data encryption and provides protection against viruses.
 ---
 
@@ -18,17 +18,35 @@ Cloud Volumes ONTAP supports data encryption and provides protection against vir
 
 toc::[]
 
-== Data encryption in Azure
+== Encryption of data at rest
 
-https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] for data at rest is enabled by default for Cloud Volumes ONTAP data in Azure.
+Cloud Volumes ONTAP supports the following encryption technologies:
 
-NOTE: Customer-managed keys are not supported with Cloud Volumes ONTAP.
+* NetApp Volume Encryption in both AWS and Azure
+* AWS Key Management Service
+* Azure Storage Service Encryption
 
-== Data encryption in AWS
+You can use NetApp Volume Encryption with native AWS and Azure encryption, which encrypt data at the hypervisor level.
 
-Data encryption is supported in AWS using the http://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS Key Management Service (KMS)^]. Cloud Manager requests data keys using a customer master key (CMK).
+=== NetApp Volume Encryption
+
+NetApp Volume Encryption (NVE) is a software-based technology for encrypting data at rest one volume at a time. Data, Snapshot copies, and metadata are encrypted. Access to the data is given by a unique XTS-AES-256 key, one per volume.
+
+Cloud Volumes ONTAP supports NetApp Volume Encryption with an external key management server. An Onboard Key Manager is not supported.
+
+You can enable NetApp Volume Encryption on a new or existing volume by using the CLI. Cloud Manager does not support NetApp Volume Encryption. For instructions, see link:task_encrypting_volumes.html[Encrypting volumes with NetApp Volume Encryption].
+
+=== AWS Key Management Service
+
+When you launch a Cloud Volumes ONTAP system in AWS, you can enable data encryption using the http://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS Key Management Service (KMS)^]. Cloud Manager requests data keys using a customer master key (CMK).
 
 If you want to use this encryption option, then you must ensure that the AWS KMS is set up appropriately. For details, see link:task_setting_up_cloud_manager.html#setting-up-the-aws-kms[Setting up the AWS KMS].
+
+=== Azure Storage Service Encryption
+
+https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] for data at rest is enabled by default for Cloud Volumes ONTAP data in Azure. No setup is required.
+
+NOTE: Customer-managed keys are not supported with Cloud Volumes ONTAP.
 
 == ONTAP virus scanning
 
