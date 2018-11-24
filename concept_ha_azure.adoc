@@ -25,20 +25,20 @@ A Cloud Volumes ONTAP HA configuration in Azure includes the following component
 
 image:diagram_ha_azure.png[A conceptual image that shows a load balancer managing incoming traffic from Cloud Manager and clients, two Cloud Volumes ONTAP nodes in an Availability Set, SSD disks for boot data, and Page Blobs for customer data.]
 
+Note the following about the Azure components:
+
 Azure Standard Load Balancer::
 The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 
 Availability Set::
 The Availability Set ensures that the nodes are in different fault and update domains.
 
-Storage accounts::
-One storage account is required for boot data, which resides on Standard SSD Managed Disks. One or more storage accounts are required for customer data, which resides on Premium Page Blobs.
-
-The boot disk is a Premium Managed Disk.
-
-* The boot disk for each node is a Premium Managed Disk.
-* A sharable root disk is also required for HA operations. The disk resides on a Page Blob.
-* Customer data resides on Premium Page Blobs.
+Storage::
+Customer data resides on Premium Storage page blobs. Each node has access to the other node's storage.
+Additional storage is also required for boot and root data:
++
+* A node's boot data resides on a Premium SSD Managed Disk.
+* A node's root data resides on a Premium Storage page blob.
 
 == RPO and RTO
 
