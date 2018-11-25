@@ -82,7 +82,7 @@ Credentials are required for BYOL instances. For details, see link:concept_stora
 
 . On the Underlying Storage Resources page, choose either *Premium Storage* (SSD) or *Standard Storage* (HDD) and select a disk size.
 +
-The disk type is for the initial volume. You can choose a different disk type for subsequent volumes. For help choosing a disk type, see link:task_planning_your_config.html#choosing-an-azure-disk-type[Choosing an Azure disk type].
+The disk type is for the initial volume. You can choose a different disk type for subsequent volumes. For help choosing a disk type, see link:task_planning_your_config.html#sizing-your-system-in-azure[Sizing your system in Azure].
 +
 The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
