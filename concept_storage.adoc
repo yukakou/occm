@@ -19,6 +19,8 @@ Understanding how Cloud Volumes ONTAP uses cloud storage can help you understand
 
 toc::[]
 
+== Overview
+
 Cloud Volumes ONTAP uses AWS and Azure volumes as back-end storage. It sees these volumes as disks and groups them into one or more aggregates. Aggregates provide storage to one or more volumes.
 
 image:diagram_storage.png[This illustration shows an aggregate that is comprised of EBS disks, and the data volumes that Cloud Volumes ONTAP makes available to hosts.]
@@ -45,6 +47,8 @@ NOTE: Cold HDD disks are not supported with HA configurations.
 
 For additional details about the use cases for these disks, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^].
 
+link:task_planning_your_config.html#sizing-your-system-in-aws[Learn how to choose disk types and disk sizes for your systems in AWS].
+
 == Azure storage
 
 In Azure, an aggregate can contain up to 12 disks, with a maximum disk size of 4 TB. The underlying Azure managed disk type can be either Standard Storage (HDD) or Premium Storage (SSD). You can also pair a managed disk with Azure Blob storage for data tiering.
@@ -56,3 +60,5 @@ The underlying managed disk type for Azure can be Premium Storage or Standard St
 * If you do not need high IOPS, you can reduce your costs by using _Standard Storage_ disks which are backed by hard disk drives (HDD).
 
 For additional details about the use cases for these disks, see https://azure.microsoft.com/documentation/articles/storage-introduction/[Microsoft Azure Documentation: Introduction to Microsoft Azure Storage^].
+
+link:task_planning_your_config.html#sizing-your-system-in-azure[Learn how to choose disk types and disk sizes for your systems in Azure].
