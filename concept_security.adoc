@@ -34,7 +34,7 @@ NetApp Volume Encryption (NVE) is a software-based technology for encrypting dat
 
 Cloud Volumes ONTAP supports NetApp Volume Encryption with an external key management server. An Onboard Key Manager is not supported.
 
-You can enable NetApp Volume Encryption on a new or existing volume by using the CLI. Cloud Manager does not support NetApp Volume Encryption. For instructions, see link:task_encrypting_volumes.html[Encrypting volumes with NetApp Volume Encryption].
+You can enable NetApp Volume Encryption on a new or existing volume by using the CLI or System Manager. Cloud Manager does not support NetApp Volume Encryption. For instructions, see link:task_encrypting_volumes.html[Encrypting volumes with NetApp Volume Encryption].
 
 === AWS Key Management Service
 
