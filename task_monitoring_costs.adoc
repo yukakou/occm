@@ -5,7 +5,7 @@ keywords: cost, costs, storage, compute, savings, aws, aws costs, billing
 summary: Cloud Manager enables you to view the costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp features that can reduce storage costs.
 ---
 
-= Monitoring AWS costs
+= Monitoring AWS resource costs
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,17 +13,17 @@ summary: Cloud Manager enables you to view the costs associated with running Clo
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager enables you to view the costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp features that can reduce storage costs.
+Cloud Manager enables you to view the resource costs associated with running Cloud Volumes ONTAP in AWS. You can also see how much money you saved by using NetApp features that can reduce storage costs.
 
 .About this task
 
-Cloud Manager updates the storage and compute costs every 12 hours. You should refer to AWS for final cost details.
+Cloud Manager updates the costs when you refresh the page. You should refer to AWS for final cost details.
 
 .Step
 
 . On the Working Environments page, select a Cloud Volumes ONTAP working environment and then click *Cost*.
 +
-The Cost page displays costs for the current and previous months and shows your storage costs savings, if you enabled NetApp's efficiency features on volumes. If the cost information is not available, verify that the Cloud Manager Admin met the prerequisites listed earlier.
+The Cost page displays costs for the current and previous months and shows your annual NetApp savings, if you enabled NetApp's cost-saving features on volumes.
 +
 The following image shows a sample Cost page:
 +
