@@ -3,7 +3,6 @@ sidebar: sidebar
 permalink: concept_storage_management.html
 keywords: tenants, provisioning, volume view, working environments, capacity management, storage provisioning, netapp support site, manual, automatic, advanced allocation, aggregates, thin provisioning, free space, mode, tenants, isolate, isolation, cloud manager admin, admin, tenant admin, working environment admin, support registration, registration, volume view, register, paygo, license, upgrade
 summary: Cloud Manager makes storage provisioning easy by purchasing the AWS and Azure storage that you need to provision volumes for Cloud Volumes ONTAP.
-pagenav: true
 ---
 
 = Storage management
