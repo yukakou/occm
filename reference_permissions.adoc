@@ -177,6 +177,14 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 
 | Obtains information about keys from the AWS Key Management Service.
 
+|
+"ce:GetReservationUtilization",
+"ce:GetDimensionValues",
+"ce:GetCostAndUsage",
+"ce:GetTags"
+
+| Obtains AWS cost data for Cloud Volumes ONTAP.
+
 |===
 
 == What Cloud Manager does with Azure permissions
