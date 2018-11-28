@@ -17,8 +17,6 @@ summary: OnCommand Cloud Manager typically introduces a new release every month 
 [.lead]
 OnCommand Cloud Manager typically introduces a new release every month to bring you new features, enhancements, and bug fixes.
 
-toc::[]
-
 TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
@@ -36,23 +34,53 @@ Cloud Manager 3.6.1 includes new features and enhancements.
 
 Cloud Manager now supports the Cloud Volumes ONTAP 9.5 release. For details about the release, see the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_95.html[Cloud Volumes ONTAP 9.5 Release Notes].
 
+==== New Azure permissions required for Cloud Volumes ONTAP 9.5
+
+Cloud Manager requires new Azure permissions for key features in the Cloud Volumes ONTAP 9.5 release. To ensure that Cloud Manager can deploy and manage Cloud Volumes ONTAP 9.5 systems, you should update your Cloud Manager policy by adding the following permissions:
+
+----
+"Microsoft.Network/loadBalancers/read",
+"Microsoft.Network/loadBalancers/write",
+"Microsoft.Network/loadBalancers/delete",
+"Microsoft.Network/loadBalancers/backendAddressPools/read",
+"Microsoft.Network/loadBalancers/backendAddressPools/join/action",
+"Microsoft.Network/loadBalancers/frontendIPConfigurations/read",
+"Microsoft.Network/loadBalancers/loadBalancingRules/read",
+"Microsoft.Network/loadBalancers/probes/read",
+"Microsoft.Network/loadBalancers/probes/join/action",
+"Microsoft.Network/routeTables/join/action"
+"Microsoft.Authorization/roleDefinitions/write",
+"Microsoft.Authorization/roleAssignments/write",
+"Microsoft.Web/sites/*"
+"Microsoft.Storage/storageAccounts/delete",
+"Microsoft.Storage/usages/read",
+----
+
+You can find the entire list of required permissions in the https://s3.amazonaws.com/occm-sample-policies/Policy_for_cloud_Manager_Azure_3.6.1.json[latest Azure policy for Cloud Manager^].
+
+link:reference_permissions.html[Learn how Cloud Manager uses these permissions].
+
 === Cloud Provider Accounts
 
 It's now easier to manage multiple AWS and Azure accounts in Cloud Manager by using Cloud Provider Accounts.
 
 In previous releases, you needed to specify cloud provider permissions for each Cloud Manager user account. The permissions are now managed at the Cloud Manager system level by using Cloud Provider Accounts.
 
-<screenshot>
+image:screenshot_cloud_provider_accounts.gif[text]
 
-When you create a new working environment, you simply select the account in which you want to deploy the Cloud Volumes ONTAP system.
+When you create a new working environment, you simply select the account in which you want to deploy the Cloud Volumes ONTAP system:
 
-<screenshot>
+image:screenshot_accounts_select_aws.gif[text]
 
 When you upgrade to 3.6.1, Cloud Manager automatically creates Cloud Provider Accounts for you, based on your current configuration. If you have scripts, backwards compatibility is in place so nothing breaks.
 
+* link:concept_accounts_and_permissions.html[Learn how Cloud Provider Accounts and permissions work]
+* link:task_adding_aws_accounts.html[Learn how to set up and add AWS accounts to Cloud Manager]
+* link:task_adding_azure_accounts.html[Learn how to set up and add Azure accounts to Cloud Manager]
+
 === Enhancements to the AWS Cost report
 
-The AWS Cost report now provides more data and is easier to set up.
+The AWS Cost report now provides more information and is easier to set up.
 
 * The report breaks down the monthly resource costs associated with running Cloud Volumes ONTAP in AWS. You can view monthly costs for compute, EBS storage, S3 storage, and data transfers.
 
@@ -66,8 +94,8 @@ Cloud Manager no longer needs access to billing reports that you store in an S3 
  "ce:GetDimensionValues",
  "ce:GetCostAndUsage",
  "ce:GetTags"
-
-These actions are included in the latest NetApp-provided policy. New systems deployed from NetApp Cloud Central automatically include these permissions.
++
+These actions are included in the latest https://s3.amazonaws.com/occm-sample-policies/Policy_for_Cloud_Manager_3.6.1.json[NetApp-provided policy]. New systems deployed from NetApp Cloud Central automatically include these permissions.
 
 image:screenshot_cost.gif[Screen shot: Shows the costs per month for a Cloud Volumes ONTAP instance.]
 
