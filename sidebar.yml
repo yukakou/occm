@@ -54,9 +54,11 @@ entries:
       - title: Adding accounts to Cloud Manager
         entries:
           - title: Adding AWS accounts
-            url: task_adding_aws_accounts.html
+            url: /task_adding_aws_accounts.html
           - title: Adding Azure accounts
-            url: task_adding_azure_accounts.html
+            url: /task_adding_azure_accounts.html
+          - title: Associating additional Azure subscriptions
+            url: /task_adding_azure_subscriptions.html
       - title: Setting up Cloud Manager
         url: /task_setting_up_cloud_manager.html
       - title: Detailed networking requirements

@@ -6,23 +6,19 @@ summary: If you want to deploy Cloud Volumes ONTAP in different Azure accounts, 
 ---
 
 = Setting up and adding Azure accounts to Cloud Manager
-:toc: macro
-:toclevels: 1
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
-If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions and then add details about those accounts to Cloud Manager.
+[.lead]
+If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions to those accounts and then add details about the accounts to Cloud Manager.
 
-When you deploy Cloud Manager in Azure, Cloud Manager automatically adds a _Cloud Provider Account_ for the account in which you deployed Cloud Manager. A Cloud Provider Account is not added if you manually installed the Cloud Manager software on an existing system.
-
+TIP: When you deploy Cloud Manager in Azure, Cloud Manager automatically adds a _Cloud Provider Account_ for the account in which you deployed Cloud Manager. A Cloud Provider Account is not added if you manually installed the Cloud Manager software on an existing system.
 link:concept_accounts_and_permissions.html[Learn more about Cloud Provider Accounts and permissions].
 
-toc::[]
-
-== Granting Azure permissions using a service principal and credentials
+== Granting Azure permissions using a service principal
 
 Cloud Manager needs permissions to perform actions in Azure. You can grant the required permissions by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that Cloud Manager needs.
 
@@ -65,7 +61,7 @@ You should add the ID for each Azure subscription from which users will create C
 +
 The following example shows how to create a custom role using the Azure CLI 2.0:
 +
-*az role definition create --role-definition C:\Policy_for_Cloud_Manager_Azure_3_5_2.json*
+*az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.6.1.json*
 
 .Result
 
@@ -164,7 +160,7 @@ The service principal for Cloud Manager now has the required Azure permissions.
 
 == Adding Azure accounts to Cloud Manager
 
-Cloud Manager enables you to add different Cloud Provider Accounts that you can select when you create new Cloud Volumes ONTAP systems.
+After you provide an Azure account with the required permissions, you can add the account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.
 
 .Steps
 
@@ -178,8 +174,6 @@ Cloud Manager enables you to add different Cloud Provider Accounts that you can 
 
 .Result
 
-You can now choose from multiple Azure accounts when you create a new Cloud Volumes ONTAP system.
-
-The following image shows the option when deploying Cloud Volumes ONTAP in Azure:
+You can now switch to another account from the Details and Credentials page when creating a new working environment:
 
 <screenshot>

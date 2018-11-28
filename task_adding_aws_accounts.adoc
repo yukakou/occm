@@ -6,26 +6,28 @@ summary: If you want to deploy Cloud Volumes ONTAP in different AWS accounts, th
 ---
 
 = Setting up and adding AWS accounts to Cloud Manager
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
 [.lead]
-If you want to deploy Cloud Volumes ONTAP in different AWS accounts, then you need to provide the required permissions and then add details about those accounts to Cloud Manager.
+If you want to deploy Cloud Volumes ONTAP in different AWS accounts, then you need to provide the required permissions to those accounts and then add the details to Cloud Manager. You can either provide AWS keys or the ARN of a role in a trusted account.
 
-When you deploy Cloud Manager in AWS, Cloud Manager automatically adds a _Cloud Provider Account_ for the account in which you deployed Cloud Manager. A Cloud Provider Account is not added if you manually installed the Cloud Manager software on an existing system.
-
+TIP: When you deploy Cloud Manager in AWS, Cloud Manager automatically adds a _Cloud Provider Account_ for the AWS account in which you deployed Cloud Manager. A Cloud Provider Account is not added if you manually installed the Cloud Manager software on an existing system.
 link:concept_accounts_and_permissions.html[Learn more about Cloud Provider Accounts and permissions].
 
-toc::[]
+== Setting up AWS accounts
 
-== Granting permissions to AWS accounts
+You need to provide each AWS account with the required permissions to deploy Cloud Volumes ONTAP. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
 
-The AWS accounts in which you want to deploy Cloud Volumes ONTAP must have specific permissions to Cloud Manager can deploy and manage the systems on your behalf.
+* <<Granting permissions when providing AWS keys>>
+* <<Granting permissions by assuming IAM roles in other accounts>>
+
+=== Granting permissions when providing AWS keys
+
+If you want to provide Cloud Manager with AWS keys for an IAM user, then you need to grant the required permissions to that user.
 
 .About this task
 
@@ -33,27 +35,60 @@ The Cloud Manager IAM policy defines the AWS actions and resources that Cloud Ma
 
 .Steps
 
-. Download the Cloud Manager IAM policy from the following location:
-+
-https://mysupport.netapp.com/cloudontap/iampolicies[NetApp OnCommand Cloud Manager: AWS and Azure Policies^]
+. Download the Cloud Manager IAM policy from the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Policies page^].
 
 . From the IAM console, create your own policy by copying and pasting the text from the Cloud Manager IAM policy.
 +
-https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies]
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies^]
 
 . Attach the policy to an IAM role or an IAM user.
 +
-https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html[AWS Documentation: Creating IAM Roles]
-+
-https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html[AWS Documentation: Adding and Removing IAM Policies]
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html[AWS Documentation: Creating IAM Roles^]
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html[AWS Documentation: Adding and Removing IAM Policies^]
 
 .Result
 
-The account now has the required permissions. You can now add the account to Cloud Manager.
+The account now has the required permissions. <<Adding AWS accounts to Cloud Manager,You can now add it to Cloud Manager>>.
+
+=== Granting permissions by assuming IAM roles in other accounts
+
+You can set up a trust relationship between the source account in which you deployed the Cloud Manager instance and other AWS accounts by using IAM roles. You would then provide Cloud Manager with the ARN of the IAM roles from the trusted accounts.
+
+.Steps
+
+. Go to the target account where you want to deploy Cloud Volumes ONTAP and create an IAM role by selecting *Another AWS account*.
++
+Be sure to do the following:
+
+* Enter the ID of the account where the Cloud Manager instance resides.
+* Attach the Cloud Manager IAM policy, which is available from the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Policies page^].
++
+image:screenshot_iam_create_role.gif[text]
+
+. Go to the source account where the Cloud Manager instance resides and select the IAM role that is attached to the instance.
+.. Click *Trust Relationships > Edit trust relationship*.
+.. Add the "sts:AssumeRole" action and the ARN of the role that you created in the target account.
++
+*Example*
++
+----
+{
+ "Version": "2012-10-17",
+ "Statement": {
+   "Effect": "Allow",
+   "Action": "sts:AssumeRole",
+   "Resource": "arn:aws:iam::ACCOUNT-B-ID:role/ACCOUNT-B-ROLENAME"
+}
+}
+----
+
+.Result
+
+The account now has the required permissions. <<Adding AWS accounts to Cloud Manager,You can now add it to Cloud Manager>>.
 
 == Adding AWS accounts to Cloud Manager
 
-Cloud Manager enables you to add different Cloud Provider Accounts that you can select when you create new Cloud Volumes ONTAP systems.
+After you provide an AWS account with the required permissions, you can add the account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.
 
 .Steps
 
@@ -61,14 +96,12 @@ Cloud Manager enables you to add different Cloud Provider Accounts that you can 
 
 . Select *AWS*.
 
-. Choose whether you want to provide AWS keys or an IAM role.
+. Choose whether you want to provide AWS keys or the ARN of a trusted IAM role.
 
 . Confirm that the policy requirements have been met and then click *Add Account*.
 
 .Result
 
-You can now choose from multiple AWS accounts when you create a new Cloud Volumes ONTAP system.
+You can now switch to another account from the Details and Credentials page when creating a new working environment:
 
-The following image shows the option when deploying Cloud Volumes ONTAP in AWS:
-
-<screenshot>
+image:screenshot_accounts_switch_aws.gif[asdf]
