@@ -176,4 +176,4 @@ After you provide an Azure account with the required permissions, you can add th
 
 You can now switch to another account from the Details and Credentials page when creating a new working environment:
 
-<screenshot>
+image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between Cloud Provider Accounts after clicking Switch Account in the Details & Credentials page.]

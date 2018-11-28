@@ -63,7 +63,7 @@ Be sure to do the following:
 * Enter the ID of the account where the Cloud Manager instance resides.
 * Attach the Cloud Manager IAM policy, which is available from the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Policies page^].
 +
-image:screenshot_iam_create_role.gif[text]
+image:screenshot_iam_create_role.gif[A screenshot that shows the Create role page in the AWS IAM Console. Under Select type of trusted entity, Another AWS account is selected.]
 
 . Go to the source account where the Cloud Manager instance resides and select the IAM role that is attached to the instance.
 .. Click *Trust Relationships > Edit trust relationship*.
@@ -104,4 +104,4 @@ After you provide an AWS account with the required permissions, you can add the 
 
 You can now switch to another account from the Details and Credentials page when creating a new working environment:
 
-image:screenshot_accounts_switch_aws.gif[asdf]
+image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting between Cloud Provider Accounts after clicking Switch Account in the Details & Credentials page.]

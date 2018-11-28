@@ -47,4 +47,4 @@ link:concept_accounts_and_permissions.html[Learn more about Cloud Provider Accou
 
 When you create a new working environment, you should now have the ability to select from multiple Azure subscriptions for the Managed Service Identity profile.
 
-<screenshot>
+image:screenshot_accounts_switch_azure_subscription.gif[texts]

@@ -29,7 +29,7 @@ image:diagram_permissions_initial_aws.png[A conceptual image that shows Cloud Ce
 
 Cloud Manager selects this Cloud Provider Account by default when you create a new working environment:
 
-image:screenshot_accounts_select_aws.gif[text]
+image:screenshot_accounts_select_aws.gif[A screenshot that shows the Switch Account option in the Details & Credentials page.]
 
 === Additional AWS accounts
 
@@ -41,7 +41,7 @@ You would then link:task_adding_aws_accounts.html#adding-aws-accounts-to-cloud-m
 
 After you add another account, you can switch to it when creating a new working environment:
 
-image:screenshot_accounts_switch_aws.gif[texts]
+image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting between Cloud Provider Accounts after clicking Switch Account in the Details & Credentials page.]
 
 == Azure accounts and permissions
 
@@ -57,7 +57,7 @@ image:diagram_permissions_initial_azure.png[A conceptual image that shows Cloud 
 
 Cloud Manager selects this Cloud Provider Account by default when you create a new working environment:
 
-<screenshot>
+image:screenshot_accounts_select_azure.gif[A screenshot that shows the Switch Account option in the Details & Credentials page.]
 
 === Additional Azure subscriptions for the initial account
 
@@ -67,13 +67,13 @@ The Managed Service Identity is associated with the subscription in which you la
 
 If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you must grant the required permissions by link:task_adding_azure_accounts.html[creating and setting up a service principal in Azure Active Directory] for each Azure account. The following image shows two additional accounts, each set up with a service principal and custom role that provides permissions:
 
-image:diagram_permissions_multiple_azure.png[]
+image:diagram_permissions_multiple_azure.png[A conceptual image that shows the initial Azure account, which receives permissions through a custom role and managed service identity, and two additional accounts that receive permissions through a custom role and service principal.]
 
 You would then link:task_adding_azure_accounts.html#adding-azure-accounts-to-cloud-manager[add the Cloud Provider Accounts to Cloud Manager] by providing details about the AD service principal.
 
 After you add another account, you can switch to it when creating a new working environment:
 
-<screenshot>
+image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between Cloud Provider Accounts after clicking Switch Account in the Details & Credentials page.]
 
 .What about Marketplace deployments and on-prem deployments?
 ****
