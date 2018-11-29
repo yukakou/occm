@@ -60,10 +60,9 @@ If you experience any issues, see https://aws.amazon.com/premiumsupport/knowledg
 You do not need to set up a connection between the performance tier and the capacity tier as long as Cloud Manager has the required permissions. Cloud Manager enables a VNet service endpoint for you if the Cloud Manager policy has the appropriate permission:
 
 "Microsoft.Network/virtualNetworks/subnets/write",
+"Microsoft.Network/routeTables/join/action",
 
-That permission is included in the latest Cloud Manager policy. For details about providing permissions, see link:task_getting_started_azure.html#granting-azure-permissions[Granting Azure permissions].
-
-NOTE: If your network configuration uses route tables, then Cloud Manager also requires the following permission: Microsoft.Network/routeTables/join/action
+These permissions are included in the latest Cloud Manager policy. For details about providing permissions, see link:task_getting_started_azure.html#granting-azure-permissions[Granting Azure permissions].
 
 == Tiering data on read-write volumes
 
