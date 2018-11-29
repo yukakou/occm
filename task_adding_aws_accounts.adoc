@@ -15,7 +15,7 @@ summary: If you want to deploy Cloud Volumes ONTAP in different AWS accounts, th
 [.lead]
 If you want to deploy Cloud Volumes ONTAP in different AWS accounts, then you need to provide the required permissions to those accounts and then add the details to Cloud Manager. You can either provide AWS keys or the ARN of a role in a trusted account.
 
-TIP: When you deploy Cloud Manager in AWS, Cloud Manager automatically adds a _Cloud Provider Account_ for the AWS account in which you deployed Cloud Manager. A Cloud Provider Account is not added if you manually installed the Cloud Manager software on an existing system.
+TIP: When you deploy Cloud Manager in AWS, Cloud Manager automatically adds a _Cloud Provider Account_ for the AWS account in which you deployed Cloud Manager. An initial Cloud Provider Account is not added if you manually installed the Cloud Manager software on an existing system.
 link:concept_accounts_and_permissions.html[Learn more about Cloud Provider Accounts and permissions].
 
 == Setting up AWS accounts
@@ -52,7 +52,7 @@ The account now has the required permissions. <<Adding AWS accounts to Cloud Man
 
 === Granting permissions by assuming IAM roles in other accounts
 
-You can set up a trust relationship between the source account in which you deployed the Cloud Manager instance and other AWS accounts by using IAM roles. You would then provide Cloud Manager with the ARN of the IAM roles from the trusted accounts.
+You can set up a trust relationship between the source AWS account in which you deployed the Cloud Manager instance and other AWS accounts by using IAM roles. You would then provide Cloud Manager with the ARN of the IAM roles from the trusted accounts.
 
 .Steps
 

@@ -31,7 +31,7 @@ While Cloud Manager supports other operating systems, it only supports CentOS 7.
 
 . link:task_installing_linux.html[Download and install Cloud Manager].
 
-. link:task_creating_service_principal.html[Grant Azure permissions to Cloud Manager using a service principal and credentials].
+. link:task_adding_azure_accounts.html[Grant Azure permissions to Cloud Manager using a service principal].
 +
 NOTE: Managed Service Identities are not supported in the US Gov regions.
 
