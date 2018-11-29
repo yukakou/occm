@@ -6,7 +6,6 @@ summary: Cloud Volumes ONTAP supports data encryption and provides protection ag
 ---
 
 = Security
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,8 +14,6 @@ summary: Cloud Volumes ONTAP supports data encryption and provides protection ag
 
 [.lead]
 Cloud Volumes ONTAP supports data encryption and provides protection against viruses.
-
-toc::[]
 
 == Data encryption in Azure
 

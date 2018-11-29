@@ -6,9 +6,7 @@ summary: You must set up your AWS networking so Cloud Volumes ONTAP systems can 
 ---
 
 = Networking requirements for Cloud Volumes ONTAP in AWS
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -20,8 +18,6 @@ You must set up your AWS networking so Cloud Volumes ONTAP systems can operate p
 ****
 Looking for the list of endpoints to which Cloud Manager requires access? They're now maintained in a single location. link:reference_networking_cloud_manager.html[Click here for details].
 ****
-
-toc::[]
 
 == General AWS networking requirements for Cloud Volumes ONTAP
 

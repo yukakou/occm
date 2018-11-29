@@ -6,9 +6,7 @@ summary: If you want to run the Cloud Manager software on an existing host, you 
 ---
 
 = Installing Cloud Manager on an existing Linux host
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:

@@ -6,9 +6,7 @@ summary: You can reduce your storage costs by enabling automated tiering of cold
 ---
 
 = Data tiering overview
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -20,8 +18,6 @@ You can reduce your storage costs by enabling automated tiering of cold data to 
 Cloud Volumes ONTAP supports data tiering in AWS and in Microsoft Azure. Data tiering is powered by FabricPool technology.
 
 NOTE: You do not need to install a feature license to enable data tiering.
-
-toc::[]
 
 == How data tiering works in AWS
 

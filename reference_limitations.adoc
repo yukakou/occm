@@ -6,9 +6,7 @@ summary: Known limitations identify platforms, devices, or functions that are no
 ---
 
 = Known limitations
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,8 +14,6 @@ summary: Known limitations identify platforms, devices, or functions that are no
 
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
-
-toc::[]
 
 == Active Directory not supported by default with new installations of Cloud Manager
 

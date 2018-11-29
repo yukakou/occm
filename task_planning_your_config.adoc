@@ -6,8 +6,6 @@ summary: When you deploy Cloud Volumes ONTAP, you can choose a preconfigured sys
 ---
 
 = Planning your Cloud Volumes ONTAP configuration
-:toc: macro
-:toclevels: 1
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,8 +14,6 @@ summary: When you deploy Cloud Volumes ONTAP, you can choose a preconfigured sys
 
 [.lead]
 When you deploy Cloud Volumes ONTAP, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
-
-toc::[]
 
 == Choosing a license type
 

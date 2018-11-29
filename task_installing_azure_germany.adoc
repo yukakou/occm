@@ -6,9 +6,7 @@ summary: The Azure Marketplace is not available in the Azure Germany region, so 
 ---
 
 = Installing Cloud Manager in an Azure Germany region
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:

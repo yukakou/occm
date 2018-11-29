@@ -6,9 +6,7 @@ summary: It is best to launch Cloud Manager in AWS using NetApp Cloud Central, b
 ---
 
 = Launching Cloud Manager from the AWS Marketplace
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:

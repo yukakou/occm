@@ -6,7 +6,6 @@ summary: You can update Cloud Manager to the latest version or with a patch that
 ---
 
 = Updating Cloud Manager
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,8 +15,6 @@ summary: You can update Cloud Manager to the latest version or with a patch that
 [.lead]
 
 You can update Cloud Manager to the latest version or with a patch that NetApp personnel shared with you.
-
-toc::[]
 
 == Enabling automatic updates
 

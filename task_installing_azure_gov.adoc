@@ -6,9 +6,7 @@ summary: To deploy Cloud Manager in an Azure US Gov region, you must download th
 ---
 
 = Installing Cloud Manager in an Azure US Gov region
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:

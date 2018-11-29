@@ -6,7 +6,6 @@ summary: You can launch Cloud Volumes ONTAP instances in a single-system configu
 ---
 
 = Launching Cloud Volumes ONTAP in AWS
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,8 +14,6 @@ summary: You can launch Cloud Volumes ONTAP instances in a single-system configu
 
 [.lead]
 You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA pair in AWS.
-
-toc::[]
 
 == Launching a single Cloud Volumes ONTAP system in AWS
 

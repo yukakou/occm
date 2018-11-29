@@ -6,7 +6,6 @@ summary: Support from NetApp is included with Cloud Volumes ONTAP Explore, Stand
 ---
 
 = Registering pay-as-you-go systems
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font

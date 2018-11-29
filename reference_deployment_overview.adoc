@@ -16,8 +16,6 @@ summary: Before you get started, you might want to better understand your option
 [.lead]
 Before you get started, you might want to better understand your options for deploying OnCommand Cloud Manager and Cloud Volumes ONTAP.
 
-toc::[]
-
 == Cloud Manager installation
 
 Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. You can deploy Cloud Manager in any of the following locations:

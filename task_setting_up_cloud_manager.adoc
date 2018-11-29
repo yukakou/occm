@@ -6,7 +6,6 @@ summary: You can start creating Cloud Volumes ONTAP systems right after you depl
 ---
 
 = Setting up Cloud Manager
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,8 +15,6 @@ summary: You can start creating Cloud Volumes ONTAP systems right after you depl
 [.lead]
 
 You can start creating Cloud Volumes ONTAP systems right after you deploy Cloud Manager. However, you might want to perform additional setup first by setting up the AWS Key Management Service, installing an HTTPS certificate, and more.
-
-toc::[]
 
 == Setting up the AWS KMS
 

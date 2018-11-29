@@ -6,9 +6,7 @@ summary: You must set up your networking so that Cloud Manager can deploy Cloud 
 ---
 
 = Networking requirements for Cloud Manager
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -18,8 +16,6 @@ summary: You must set up your networking so that Cloud Manager can deploy Cloud 
 You must set up your networking so that Cloud Manager can deploy Cloud Volumes ONTAP systems in AWS or in Microsoft Azure. The most important step is ensuring outbound internet access to various endpoints.
 
 TIP: If your network uses a proxy server for all communication to the internet, Cloud Manager prompts you to specify the proxy during setup. You can also specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring Cloud Manager to use a proxy server].
-
-toc::[]
 
 == Connection to target networks
 

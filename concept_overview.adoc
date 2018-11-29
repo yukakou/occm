@@ -6,7 +6,6 @@ summary: OnCommand Cloud Manager enables you to deploy Cloud Volumes ONTAP, whic
 ---
 
 = Cloud Manager and Cloud Volumes ONTAP overview
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,8 +13,6 @@ summary: OnCommand Cloud Manager enables you to deploy Cloud Volumes ONTAP, whic
 :imagesdir: ./media/
 
 OnCommand Cloud Manager enables you to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage, and to easily replicate data across hybrid clouds built on NetApp.
-
-toc::[]
 
 == Cloud Manager
 

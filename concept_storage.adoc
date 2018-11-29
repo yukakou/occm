@@ -6,9 +6,7 @@ summary: Understanding how Cloud Volumes ONTAP uses cloud storage can help you u
 ---
 
 = How Cloud Volumes ONTAP uses cloud storage
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,8 +14,6 @@ summary: Understanding how Cloud Volumes ONTAP uses cloud storage can help you u
 
 [.lead]
 Understanding how Cloud Volumes ONTAP uses cloud storage can help you understand your storage costs.
-
-toc::[]
 
 == Overview
 

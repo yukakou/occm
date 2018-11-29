@@ -6,9 +6,7 @@ summary: You must set up your Azure networking so Cloud Volumes ONTAP systems ca
 ---
 
 = Networking requirements for Cloud Volumes ONTAP in Azure
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:

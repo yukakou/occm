@@ -6,9 +6,7 @@ summary: Cloud Manager makes storage provisioning easy by purchasing the AWS and
 ---
 
 = Storage management
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -18,8 +16,6 @@ summary: Cloud Manager makes storage provisioning easy by purchasing the AWS and
 Cloud Manager provides simplified and advanced management of Cloud Volumes ONTAP storage.
 
 IMPORTANT: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
-
-toc::[]
 
 == Storage provisioning
 

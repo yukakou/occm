@@ -6,7 +6,6 @@ summary: You might need to change the configuration of Cloud Volumes ONTAP insta
 ---
 
 = Modifying Cloud Volumes ONTAP systems
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,8 +15,6 @@ summary: You might need to change the configuration of Cloud Volumes ONTAP insta
 [.lead]
 
 You might need to change the configuration of Cloud Volumes ONTAP instances as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and move to an alternate subscription.
-
-toc::[]
 
 == Installing license files on Cloud Volumes ONTAP BYOL systems
 

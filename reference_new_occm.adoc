@@ -6,9 +6,7 @@ summary: OnCommand Cloud Manager typically introduces a new release every month 
 ---
 
 = What's new in Cloud Manager 3.6
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:

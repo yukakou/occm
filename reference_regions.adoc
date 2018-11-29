@@ -6,8 +6,6 @@ summary: Cloud Manager and Cloud Volumes ONTAP are supported in a number of AWS 
 ---
 
 = Supported regions
-:toc: macro
-:toclevels: 1
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,8 +14,6 @@ summary: Cloud Manager and Cloud Volumes ONTAP are supported in a number of AWS 
 
 [.lead]
 Cloud Manager and Cloud Volumes ONTAP are supported in a number of AWS regions and Microsoft Azure regions.
-
-toc::[]
 
 == Supported AWS regions
 

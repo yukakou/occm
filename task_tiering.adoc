@@ -6,9 +6,7 @@ summary: You can reduce storage costs in AWS and Azure by combining an SSD or HD
 ---
 
 = Tiering cold data to low-cost object storage
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -28,8 +26,6 @@ image:diagram_tiering.gif[A diagram that shows the workflow for enabling tiering
 * You do not need to install a feature license to enable data tiering.
 * You do not need to create the capacity tier (either an S3 bucket or an Azure Blob container). Cloud Manager does that for you.
 ====
-
-toc::[]
 
 == Configurations that support data tiering
 

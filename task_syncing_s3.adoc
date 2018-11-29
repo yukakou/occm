@@ -6,8 +6,6 @@ summary: You can sync data from ONTAP volumes to an AWS S3 bucket by integrating
 ---
 
 = Syncing data to AWS S3
-:toc: macro
-:toclevels: 1
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,8 +14,6 @@ summary: You can sync data from ONTAP volumes to an AWS S3 bucket by integrating
 
 [.lead]
 You can sync data from ONTAP volumes to an AWS S3 bucket by integrating a working environment with https://www.netapp.com/us/cloud/data-sync-saas-product-details[NetApp Cloud Sync^]. You can then use the synced data as a secondary copy or for data processing using AWS services like EMR and Redshift.
-
-toc::[]
 
 == How the sync to S3 feature works
 

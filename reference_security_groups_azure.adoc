@@ -6,8 +6,6 @@ summary: Cloud Manager creates Azure security groups that include the inbound an
 ---
 
 = Security group rules for Azure
-:toc: macro
-:toclevels: 1
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,8 +14,6 @@ summary: Cloud Manager creates Azure security groups that include the inbound an
 
 [.lead]
 Cloud Manager creates Azure security groups that include the inbound and outbound rules that Cloud Manager and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
-
-toc::[]
 
 == Rules for Cloud Manager
 
