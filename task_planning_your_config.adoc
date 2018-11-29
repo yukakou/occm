@@ -51,7 +51,7 @@ EBS disk type::
 General Purpose SSDs are the most common disk type for Cloud Volumes ONTAP. To view the use cases for EBS disks, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^].
 
 EBS disk size::
-You need to choose an initial disk size when you launch a Cloud Volumes ONTAP system. After that, you can let Cloud Manager manage a system's capacity for you, but if you want more control, be aware of the following:
+You need to choose an initial disk size when you launch a Cloud Volumes ONTAP system. After that, you can link:concept_storage_management.html[let Cloud Manager manage a system's capacity for you], but if you want to link:task_provisioning_storage.html#creating-aggregates[build aggregates yourself], be aware of the following:
 
 ** The performance of EBS disks is tied to disk size. The size determines the baseline IOPS and maximum burst duration for SSD disks and the baseline and burst throughput for HDD disks.
 ** Ultimately, you should choose the disk size that gives you the _sustained performance_ that you need.
@@ -68,36 +68,37 @@ video::GELcXmOuYPw[youtube, width=848, height=480]
 Sizing your Cloud Volumes ONTAP system can help you meet requirements for performance and capacity. You should be aware of a few key points when choosing a VM type, disk type, and disk size:
 
 Virtual machine type::
-Look at the supported virtual machine types in the http://docs.netapp.com/cloud-volumes-ontap/us-en/index.html[Cloud Volumes ONTAP Release Notes^] and then review details about each supported VM type:
+Look at the supported virtual machine types in the http://docs.netapp.com/cloud-volumes-ontap/us-en/index.html[Cloud Volumes ONTAP Release Notes^] and then review details about each supported VM type. Be aware that each VM type supports a specific number of data disks.
 
-* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general#dsv2-series[Azure documentation: General purpose virtual machine sizes]
-* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-memory#dsv2-series-11-15[Azure documentation: Memory optimized virtual machine sizes]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general#dsv2-series[Azure documentation: General purpose virtual machine sizes^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-memory#dsv2-series-11-15[Azure documentation: Memory optimized virtual machine sizes^]
 
 Azure disk type::
 When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses as a disk.
 +
-HA systems use Premium Storage page blobs--you don't need to choose between different disk types. Meanwhile, single node systems can use two types of Azure Managed Disks:
+HA systems use Premium page blobs.
++
+Meanwhile, single node systems can use two types of Azure Managed Disks:
 
-* _Premium Storage_ disks store data on solid state drives (SSDs). The SSD disks provide high performance for I/O-intensive workloads at a higher cost.
+* _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
 
-* If you do not need high IOPS, you can reduce your costs by using _Standard Storage_ disks which are backed by hard disk drives (HDD).
+* _Standard HDD Managed Disks_ are a good choice if you don't need high IOPS and want to reduce your costs.
 +
 For additional details about the use cases for these disks, see https://azure.microsoft.com/documentation/articles/storage-introduction/[Microsoft Azure Documentation: Introduction to Microsoft Azure Storage^].
 
 Azure disk size::
-When you launch Cloud Volumes ONTAP instances, you must choose the default disk size for aggregates. Cloud Manager uses this disk size for the initial aggregate, and for any additional aggregates that it creates when you use the simple provisioning option. You can create aggregates that use a disk size different from the default by using the advanced allocation option.
+When you launch Cloud Volumes ONTAP instances, you must choose the default disk size for aggregates. Cloud Manager uses this disk size for the initial aggregate, and for any additional aggregates that it creates when you use the simple provisioning option. You can create aggregates that use a disk size different from the default by link:task_provisioning_storage.html#creating-aggregates[using the advanced allocation option].
 +
-When choosing disk size, you should take several factors into consideration. The disk size impacts how much you pay for storage, the size of volumes that you can create in an aggregate, the total capacity available to Cloud Volumes ONTAP, and storage performance.
+When choosing a disk size, you should take several factors into consideration. The disk size impacts how much you pay for storage, the size of volumes that you can create in an aggregate, the total capacity available to Cloud Volumes ONTAP, and storage performance.
 +
 The performance of Azure Premium Storage is tied to the disk size. Larger disks provide higher IOPS and throughput. For example, choosing 1 TB disks can provide better performance than 500 GB disks, at a higher cost.
 +
-When sizing for performance, you should also be aware of performance limits tied to Azure virtual machine types. For details, refer to the following:
-
-* https://azure.microsoft.com/documentation/articles/storage-premium-storage/[Microsoft Azure Documentation: High-performance Premium Storage and managed disks for VMs^]
-
-* https://azure.microsoft.com/documentation/articles/virtual-machines-linux-sizes/[Microsoft Azure Documentation: Sizes for Linux virtual machines in Azure^]
-+
 There are no performance differences between disk sizes for Standard Storage. You should choose disk size based on the capacity that you need.
++
+Refer to Azure for IOPS and throughput by disk size:
++
+* https://azure.microsoft.com/en-us/pricing/details/managed-disks/[Microsoft Azure: Managed Disks pricing^]
+* https://azure.microsoft.com/en-us/pricing/details/storage/page-blobs/[Microsoft Azure: Page Blobs pricing^]
 
 == Choosing a write speed
 

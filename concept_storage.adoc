@@ -31,7 +31,7 @@ TIP: The total amount of storage purchased from AWS or Azure is the _raw capacit
 
 == AWS storage
 
-In AWS, an aggregate can contain up to 6 disks, with a maximum disk size of 16 TB. The underlying EBS disk type can be either General Purpose SSD, Provisioned IOPS SSD, Throughput Optimized HDD, or Cold HDD. You can also pair an EBS disk with Amazon S3 for data tiering (not supported with Cold HDDs).
+In AWS, an aggregate can contain up to 6 disks, with a maximum disk size of 16 TB. The underlying EBS disk type can be either General Purpose SSD, Provisioned IOPS SSD, Throughput Optimized HDD, or Cold HDD. You can also pair an EBS disk with Amazon S3 for link:concept_data_tiering.html[data tiering] (not supported with Cold HDDs).
 
 At a high level, the differences between EBS disk types are as follows:
 
@@ -49,16 +49,28 @@ For additional details about the use cases for these disks, refer to http://docs
 
 link:task_planning_your_config.html#sizing-your-system-in-aws[Learn how to choose disk types and disk sizes for your systems in AWS].
 
+https://cloud.netapp.com/cloud-volumes-ontap/us-en/reference_storage_limits_95.html[Review storage limits for Cloud Volumes ONTAP].
+
 == Azure storage
 
-In Azure, an aggregate can contain up to 12 disks, with a maximum disk size of 4 TB. The underlying Azure managed disk type can be either Standard Storage (HDD) or Premium Storage (SSD). You can also pair a managed disk with Azure Blob storage for data tiering.
+In Azure, an aggregate can contain up to 12 disks. The disk type and maximum disk size depends on whether you use a single node system or an HA pair:
 
-The underlying managed disk type for Azure can be Premium Storage or Standard Storage:
+Single node systems::
+Single node systems can use two types of Azure Managed Disks:
 
-* _Premium Storage_ disks store data on solid state drives (SSDs). The SSD disks provide high performance for I/O-intensive workloads at a higher cost.
+* _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
 
-* If you do not need high IOPS, you can reduce your costs by using _Standard Storage_ disks which are backed by hard disk drives (HDD).
+* _Standard HDD Managed Disks_ are a good choice if you don't need high IOPS and want to reduce your costs.
++
+Both disk types have a maximum disk size of 4 TB.
++
+You can pair a managed disk with Azure Blob storage for link:concept_data_tiering.html[data tiering].
+
+HA pairs::
+HA pairs use Premium page blobs, which have a maximum disk size of 8 TB.
 
 For additional details about the use cases for these disks, see https://azure.microsoft.com/documentation/articles/storage-introduction/[Microsoft Azure Documentation: Introduction to Microsoft Azure Storage^].
 
 link:task_planning_your_config.html#sizing-your-system-in-azure[Learn how to choose disk types and disk sizes for your systems in Azure].
+
+https://cloud.netapp.com/cloud-volumes-ontap/us-en/reference_storage_limits_95.html[Review storage limits for Cloud Volumes ONTAP].
