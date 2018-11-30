@@ -1,0 +1,281 @@
+---
+sidebar: sidebar
+permalink: 3_api_examples_storage_system_view.html
+keywords: script, scripts, scripting, api request, api response, json schema, authentication, api, restful, restful API, rest API, rest, error codes, api parameters, netapp, cloud, ontap, Cloud Volumes ONTAP, manager, management, oncommand, storage
+summary: OnCommand Cloud Manager includes REST APIs that enable software developers to automate the management of Cloud Volumes ONTAP. You should understand how the APIs work before you get started.
+---
+
+= API examples
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Reviewing API examples can help you understand how to use the Cloud Manager APIs yourself.
+
+NOTE: The examples use curl as the HTTP client. Some examples show API calls for single Cloud Volumes ONTAP systems and others show API calls for Cloud Volumes ONTAP HA configurations.
+
+== Preparing to launch Cloud Volumes ONTAP in AWS
+
+When you launch Cloud Volumes ONTAP, you must specify valid values for license type, AWS region, Cloud Volumes ONTAP version, and instance type. You can obtain valid values for your version of Cloud Manager by using the following API call:
+
+----
+curl http://localhost/occm/api/vsa/metadata/manifests -X
+GET --header "Content-Type:application/json" --header "Authorization:$token"
+----
+
+Note the following about the response for this API:
+
+* For licenses, the _type_ field displays valid values for the _licenseType_ parameter.
+* For regions, the _code_ field displays valid values for the _region_ parameter.
+* For Cloud Volumes ONTAP versions, the valid values for the _ontapVersion_ parameter display underneath the version of Cloud Manager that you are running.
+* For instance types, the valid values for the _instanceType_ parameter display underneath each license type.
+
+You must also identify the target VPC and subnet before you can launch Cloud Volumes ONTAP. The following API call provides the target VPC ID and subnet ID in a specific region:
+
+----
+curl http://localhost/occm/api/vsa/metadata/vpcs?region=%region% -X GET --header "Content-Type:application/json" --header "Authorization:$token" | jq .
+----
+
+== Launching a single Cloud Volumes ONTAP instance in AWS
+
+The following operation launches Cloud Volumes ONTAP in AWS:
+
+----
+curl http://localhost/occm/api/vsa/working-environments -X POST --header "Authorization:$token" --header "Content-Type:application/json" --data "{\"name\":\"kuki\",\"tenantId\":\"%tenantId%\",\"region\":\"%region%\",\"subnetId\":\"%subnetId%\",\"ebsVolumeType\":\"gp2\",\"ebsVolumeSize\": {\"size\":500,\"unit\":\"GB\"},\"dataEncryptionType\":\"NONE\",\"ontapEncryptionParameters\":null,\"svmPassword\":\"%svmPassword%\",\"vpcId\":\"%vpcId%\",\"vsaMetadata\":{\"platformSerialNumber\":null,\"ontapVersion\":\"ONTAP-9.4.T1\",\"licenseType\":\"cot-standard-paygo\",\"instanceType\":\"m4.2xlarge\"},\"writingSpeedState\":\"NORMAL\"}"
+----
+
+NOTE: The preceding example does not specify a license or a volume.
+
+To monitor the creation of the instance, you can use the following API call:
+
+----
+curl http://localhost/occm/api/vsa/working-environments -X GET --header "Content-Type:application/json" --header "Authorization:$token" | jq -r .[0].publicId > vsaId.txt
+weid=`cat vsaId.txt`
+----
+
+After the Cloud Volumes ONTAP instance is up and running, you can use the following API call to get details about the instance:
+
+----
+curl "http://localhost/occm/api/vsa/working-environments?fields=status,svmName,awsProperties,reservedSize,encryptionProperties,ontapProperties,actionsRequired,cronJobSchedules,snapshotPolicies,svms,activeActions,interClusterLifs,capacityFeatures,replicationProperties&tenantId=%tenantId%" -X GET --header "Content-Type:application/json" --header "Authorization:$token"
+----
+
+A sample response follows:
+
+----
+{"id":"VsaWorkingEnvironment-UU72AEtE","status":"ON",
+"lifs":[{"ip":"4.4.4.4","netmask":"mgmt","lifType":"Node Management",
+"dataProtocols":[]},{"ip":"10.20.1.2","netmask":"data","lifType":
+"Node Management","dataProtocols":[]},{"ip":"10.20.1.1","netmask":
+"data","lifType":"Cluster Management","dataProtocols":[]},
+{"ip":"10.20.1.6","netmask":"data","lifType":"Intercluster",
+"dataProtocols":[]},{"ip":"10.20.1.4","netmask":"data","lifType":
+"Data","dataProtocols":["iscsi"]},{"ip":"10.20.1.5","netmask":
+"data","lifType":"Data","dataProtocols":["nfs","cifs"]},
+{"ip":"10.20.1.7","netmask":"mgmt","lifType":"SVM Management",
+"dataProtocols":[]}],
+"serialNumber":"serial-vsa1",
+"systemId":"system-id-vsa1",
+"clusterName":"vsa1",
+"ontapVersion":"ONTAP-9.4.T1",
+"accountId":"account123",
+"productCode":"",
+"amiId":"ami-7731c31c",
+"systemManagerUrl":"https://10.20.1.1/sysmgr/SysMgr.html",
+"creationTime":1388527200000,
+"instanceId":"i-1",
+"platformLicense":"",
+"licenseExpiryDate":0,
+"instanceType":"m4.2xlarge",
+"publicIp":null,
+"publicDnsName":null,
+"activeActions":null,
+"licenseType":{"name":"ONTAP Cloud Standard",
+"capacityLimit":{"size":10.0,"unit":"TB"}},
+"vsaEncryptionResponse":{"awsVolumeEncryption":false,"keyManagers":[],
+"ontapEncryption":false,
+"ontapEncryptionCertificates":[]}}
+----
+
+You should make note of the working environment ID because you must specify it when performing subsequent operations on the working environment.
+
+== Deploying a Cloud Volumes ONTAP system in Azure
+
+The following operation deploys a Cloud Volumes ONTAP system in Azure:
+
+----
+curl http://localhost/occm/api/azure/vsa/working-environments -X POST --header "Content-Type:application/json" --header "Authorization:$token" --data "{\"name\": \"vsaAzure\",\"tenantId\": \"%tenantId%\",\"region\": \"westus\",\"vsaMetadata\": {  \"ontapVersion\": \"ONTAP-9.4.T1.azure\",  \"licenseType\": \"azure-cot-standard-paygo\",  \"instanceType\": \"Standard_DS4_v2\"},\"writingSpeedState\": \"NORMAL\",\"subnetId\": \"%azureSubnetId%\",\"svmPassword\": \"%svmPassword%\",\"vnetId\": \"%azureVnetId%\",\"cidr\": \"%azureCidr%\",\"dataEncryptionType\": \"NONE\",\"ontapEncryptionParameters\": null,\"securityGroupId\": null,\"skipSnapshots\": false,\"diskSize\": {  \"size\": 1,  \"unit\": \"TB\"},\"storageType\": \"Premium_LRS\",\"azureTags\": []}" | jq .
+----
+
+The following API call monitors creation of the system:
+
+----
+curl http://localhost/occm/api/azure/vsa/working-environments -X GET --header "Content-Type:application/json" --header "Authorization:$token" | jq -r .[0].publicId > azureId.txt
+azureId=`cat azureId.txt`
+----
+
+== Creating an aggregate for a single Cloud Volumes ONTAP system in AWS
+
+Use the following API call to create a new aggregate on a Cloud Volumes ONTAP system:
+
+----
+curl http://localhost/occm/api/vsa/aggregates -X POST --header "Content-Type:application/json" header "Authorization:$token" --data "{\"name\": \"aggr33\",\"workingEnvironmentId\": \"%weid%\", \"numberOfDisks\": \"2\", \"diskSize\": {\"size\": \"500\", \"unit\": \"GB\"}, \"providerVolumeType\": \"gp2\"}"
+----
+
+After Cloud Manager creates the aggregate, you can use the following API call to get details about it:
+
+----
+curl http://localhost/occm/api/vsa/aggregates?workingEnvironmentId=%weid% -X GET --header "Content-Type:application/json" --header "Authorization:$token"
+----
+
+== Creating an aggregate for a Cloud Volumes ONTAP system in Azure
+
+The following API call creates an aggregate on a Cloud Volumes ONTAP system in Azure using the public ID returned when creating the working environment:
+
+----
+curl http://localhost/occm/api/azure/vsa/aggregates -X POST --header "Content-Type:application/json" header "Authorization:$token" --data "{\"name\": \"aggr2\",\"workingEnvironmentId\": \"%azureId%\",\"numberOfDisks\": \"2\",\"diskSize\": {\"size\": \"1\",\"unit\": \"TB\"},\"providerVolumeType\": \"Standard_LRS\"}"
+----
+
+== Creating a volume on a single Cloud Volumes ONTAP system in AWS
+
+The first API call in the following example gets the Storage Virtual Machine (SVM) name to specify when creating the volume. The second API call gets the required number of disks and the aggregate name in which to create the volume. The third API call creates a new volume on a Cloud Volumes ONTAP system using the public ID of the working environment, which was returned after Cloud Manager created the working environment.
+
+NOTE: If _aggregateName_ and _maxNumOfDisksApprovedToAdd_ are not specified, then the response fails with a suggested aggregate name and the number of disks that Cloud Manager needs to create to fulfill the request.
+
+----
+curl "http://localhost/occm/api/vsa/working-environments/%weid%?fields=svmName" -X GET --header "Content-Type:application/json" --header "Authorization:$token" | jq -r .svmName > svm.txt
+svm=`cat svm.txt`
+curl http://localhost/occm/api/vsa/volumes/quote -X POST --header "Content-Type:application/json" header "Authorization:$token" --data "{\"workingEnvironmentId\": \"%weid%\",\"svmName\": \"%svm%\",\"aggregateName\": \"aggr33\", \"name\": \"newVol\", \"size\": {\"size\": \"100\", \"unit\": \"GB\"}, \"enableThinProvisioning\": \"true\", \"providerVolumeType\": \"gp2\"}" > quote.txt
+cat quote.txt| jq -r .numOfDisks >disks.txt
+cat quote.txt| jq -r .aggregateName >aggrName.txt
+disks=`cat disks.txt`
+aggrName=`cat aggrName.txt`
+curl http://localhost/occm/api/vsa/volumes -X POST --header "Content-Type:application/json" header "Authorization:$token" --data "{\"name\":\"newVol\",\"workingEnvironmentId\":\"%weid%\",\"svmName\":\"%svm%\",\"exportPolicyInfo\":{\"policyType\":\"custom\",\"ips\":[\"0.0.0.0\/0\"]},\"snapshotPolicyName\":\"default\",\"size\":{\"size\":\"100\",\"unit\":\"GB\"},\"enableThinProvisioning\":\"true\",\"enableDeduplication\":\"true\",\"enableCompression\":\"false\",\"maxNumOfDisksApprovedToAdd\":\"%disks%\",\"aggregateName\":\"%aggrName%\",\"providerVolumeType\":\"gp2\"}"
+----
+
+== Creating a volume on an aggregate that uses Provisioned IOPS SSDs
+
+In this example, the first API call obtains the required number of disks and the aggregate name for the volume. The second call creates the volume. Note that the first API call might not return the aggregateName parameter. If that happens, Cloud Manager chooses the best matching aggregate (if one exists) or it creates a new aggregate that meets the requirements.
+
+----
+curl http://localhost/occm/api/vsa/volumes/quote -X POST --header "Content-Type:application/json" --header "Authorization:$token" --data "{\"workingEnvironmentId\":\"%weid%\",\"svmName\":\"%svm%\", \"name\":\"newVol1\",\"iops\":500,\"providerVolumeType\":\"io1\",\"verifyNameUniqueness\":true,\"size\":{\"size\":100,\"unit\":\"GB\"},\"enableThinProvisioning\":true,\"enableDeduplication\":true,\"enableCompression\":true}" > quote.txt
+cat quote.txt| jq -r .numOfDisks >disks.txt
+cat quote.txt| jq -r .aggregateName >aggrName.txt
+disks=`cat disks.txt`
+aggrName=`cat aggrName.txt`
+curl http://localhost/occm/api/vsa/volumes?createAggregateIfNotFound=true -X POST --header "Content-Type:application/json" --header "Authorization:$token" --data "{\"workingEnvironmentId\":\"%weid%\", \"svmName\":\"%svm%\", \"exportPolicyInfo\":{\"policyType\":\"custom\", \"ips\":[\"10.30.0.0/16\"],\"_ips\":\"10.30.0.0/16\"},\"snapshotPolicyName\":\"default\",\"name\":\"newVol1\",\"iops\":500,\"providerVolumeType\":\"io1\",\"verifyNameUniqueness\":true,\"size\":{\"size\":100,\"unit\":\"GB\"},\"enableThinProvisioning\":true,\"enableDeduplication\":true,\"enableCompression\":true,\"maxNumOfDisksApprovedToAdd\":\"%disks%\", \"aggregateName\":\"%aggrName%\"}"
+----
+
+== Stopping a single Cloud Volumes ONTAP instance in AWS
+
+The following operation stops a Cloud Volumes ONTAP instance in AWS:
+
+----
+curl http://localhost/occm/api/vsa/working-environments/%weid%/stop?take_snapshots=true -X POST --header "Content-Type:application/json" --header "Authorization:$token"
+----
+
+== Starting a single Cloud Volumes ONTAP instance in AWS
+
+The following operation starts a Cloud Volumes ONTAP instance in AWS:
+
+----
+curl http://localhost/occm/api/vsa/working-environments/%weid%/start -X POST --header "Content-Type:application/json" --header "Authorization:$token"
+----
+
+== Deleting a single Cloud Volumes ONTAP working environment
+
+The following API call deletes a Cloud Volumes ONTAP working environment, which terminates the instance in AWS:
+
+----
+curl http://localhost/occm/api/vsa/working-environments/%weid% -X DELETE --header "Content-Type:application/json" --header "Authorization:$token"
+----
+
+== Launching a Cloud Volumes ONTAP HA configuration in multiple Availability Zones
+
+The following API call launches an HA configuration in AWS:
+
+----
+curl http://localhost/occm/api/aws/ha/working-environments -X POST --header "Content-Type:application/json" --header "Authorization:$token" --data "{\"name\": \"Ha1\",\"tenantId\": \"%tenantId%\",\"region\": \"%haRegion%\",\"vsaMetadata\": {\"ontapVersion\": \"ONTAP-9.4.T1.ha\",\"licenseType\": \"ha-cot-standard-paygo\",\"instanceType\": \"m4.2xlarge\"},\"svmPassword\": \"%svmPassword%\",\"vpcId\": \"%haVpcId%\",\"dataEncryptionType\": \"NONE\",\"ontapEncryptionParameters\": null,\"ebsVolumeType\": \"gp2\",\"ebsVolumeSize\": {\"size\": 1,\"unit\": \"TB\"},\"haParams\": {\"node2SubnetId\": \"%haSubnetId2%\",\"mediatorSubnetId\": \"%haSubnetId3%\",\"mediatorKeyPairName\": \"%keyPair%\",\"clusterFloatingIP\": \"%floatingIp4%\",\"dataFloatingIP\": \"%floatingIp5%\",\"dataFloatingIP2\": \"%floatingIp6%\",\"node1SubnetId\": \"%haSubnetId1%\",\"routeTableIds\": [\"%routeTableId1%\"]},\"awsTags\": []}" | jq .
+----
+
+== Launching an HA configuration in a single Availability Zone
+
+The following API call launches a Cloud Volumes ONTAP HA configuration in a single AZ in AWS, sets up a proxy configuration for the mediator, and uses dedicated EC2 instances:
+
+----
+curl http://localhost/occm/api/aws/ha/working-environments -X POST --header "Content-Type:application/json" --header "Authorization:$token" --data "{\"name\": \"Ha2\",\"tenantId\": \"%tenantId%\",\"volume\": {\"exportPolicyInfo\": {\"policyType\": \"custom\",\"ips\": [\"10.20.0.0/16\"]},\"snapshotPolicyName\": \"default\",\"name\": \"newVol1\",\"enableThinProvisioning\": true,\"enableDeduplication\": true,\"enableCompression\": true,\"size\": {\"size\": 50,\"unit\": \"GB\"}},\"region\": \"%haRegion%\",\"vsaMetadata\": {\"ontapVersion\": \"ONTAP-9.4.T1.ha\",\"licenseType\": \"ha-cot-standard-paygo\",\"instanceType\": \"m4.2xlarge\"},\"svmPassword\": \"%svmPassword%\",\"vpcId\": \"%haVpcId%\",\"dataEncryptionType\": \"AWS\",\"ontapEncryptionParameters\": null,\"ebsVolumeType\": \"gp2\",\"ebsVolumeSize\": {\"size\": 1,\"unit\": \"TB\"},\"haParams\": {\"node2SubnetId\": \"%haSubnetId1%\",\"failoverMode\":\"PrivateIP\",\"mediatorSubnetId\": \"%haSubnetId1%\",\"mediatorKeyPairName\": \"%keyPair%\",\"node1SubnetId\": \"%haSubnetId1%\",\"routeTableIds\": [\"%routeTableId1%\"],\"mediatorProxy\": {\"url\": \"proxyUrl\",\"userName\": null,\"password\": null}},\"awsTags\": [],\"instanceTenancy\": \"dedicated\",\"awsEncryptionParameters\": {\"kmsKeyId\": \"eecb7e25-848a-40c7-85da-7af078e74ade\"}}" | jq .
+----
+
+To monitor creation of the HA configuration, you can use the following API call:
+
+----
+curl http://localhost/occm/api/vsa/working-environments -X GET --header "Content-Type:application/json" --header "Authorization:$token" > getHA.txt
+cat getHA.txt| jq -r .[3].publicId > haId.txt
+cat getHA.txt| jq -r .[3].svmName > svmName.txt
+haid=`cat haId.txt`
+svm=`cat svmName.txt`
+----
+
+== Specifying a proxy for the HA mediator
+
+The following example creates an HA working environment that uses a proxy to provide the mediator instance with outbound internet connectivity.
+
+----
+curl http://localhost/occm/api/aws/ha/working-environments -X POST --header "Content-Type:application/json" --header "Authorization:$token" --data "{\"name\": \"Ha3\",\"tenantId\": \"%tenantId%\",\"region\": \"%haRegion%\",\"vsaMetadata\": {\"ontapVersion\": \"ONTAP-9.4.T1.ha\",\"licenseType\": \"ha-cot-standard-paygo\",\"instanceType\": \"m4.2xlarge\"},\"svmPassword\": \"%svmPassword%\",\"vpcId\": \"%haVpcId%\",\"dataEncryptionType\": \"NONE\",\"ontapEncryptionParameters\": null,\"ebsVolumeType\": \"gp2\",\"ebsVolumeSize\": {\"size\": 1,\"unit\": \"TB\"},\"haParams\": {\"node2SubnetId\": \"%haSubnetId2%\",\"failoverMode\":\"FloatingIP\",\"mediatorSubnetId\": \"%haSubnetId3%\",\"mediatorKeyPairName\": \"%keyPair%\",\"clusterFloatingIP\": \"%floatingIp7%\",\"dataFloatingIP\": \"%floatingIp8%\",\"dataFloatingIP2\": \"%floatingIp9%\",\"node1SubnetId\": \"%haSubnetId1%\",\"routeTableIds\": [\"%routeTableId1%\"], \"mediatorProxy\": {\"url\": \"http:///0.0.0.0:555\",\"userName\": \"admin\",\"password\":\"admin\"}},\"awsTags\": []}"
+----
+
+== Specifying a public IP address for the HA mediator
+
+The following example creates an HA working environment that uses a public IP address to provide the mediator instance with outbound internet connectivity.
+
+----
+curl http://localhost/occm/api/aws/ha/working-environments -X POST --header "Content-Type:application/json" --header "Authorization:$token" --data "{\"name\": \"Ha3\",\"tenantId\": \"%tenantId%\",\"region\": \"%haRegion%\",\"vsaMetadata\": {\"ontapVersion\": \"ONTAP-9.4.T1.ha\",\"licenseType\": \"ha-cot-standard-paygo\",\"instanceType\": \"m4.2xlarge\"},\"svmPassword\": \"%svmPassword%\",\"vpcId\": \"%haVpcId%\",\"dataEncryptionType\": \"NONE\",\"ontapEncryptionParameters\": null,\"ebsVolumeType\": \"gp2\",\"ebsVolumeSize\": {\"size\": 1,\"unit\": \"TB\"},\"haParams\": {\"node2SubnetId\": \"%haSubnetId2%\",\"failoverMode\":\"FloatingIP\",\"mediatorSubnetId\": \"%haSubnetId3%\",\"mediatorKeyPairName\": \"%keyPair%\",\"clusterFloatingIP\": \"%floatingIp7%\",\"dataFloatingIP\": \"%floatingIp8%\",\"dataFloatingIP2\": \"%floatingIp9%\",\"node1SubnetId\": \"%haSubnetId1%\",\"routeTableIds\": [\"%routeTableId1%\"], \"mediatorAssignPublicIP\":true,\"awsTags\": []}"
+----
+
+== Creating an aggregate on a node in an HA configuration
+
+The following operation creates an aggregate on the first node in an HA configuration:
+
+----
+curl http://localhost/occm/api/aws/ha/aggregates -X POST --header "Content-Type:application/json" --header "Authorization:$token" --data "{\"name\": \"aggr2\",\"workingEnvironmentId\": \"%haid%\",\"numberOfDisks\": \"2\",\"diskSize\": {\"size\": \"500\",\"unit\": \"GB\"},\"homeNode\": \"Ha2-01\", \"providerVolumeType\": \"gp2\"}"
+----
+
+== Changing the underlying AWS disk type to use storage tiering
+
+The following API commands change the underlying AWS disk type to use storage tiering (General Purpose SSD + S3). Note that the first API call might not return the aggregateName parameter. If that happens, Cloud Manager chooses the best matching aggregate (if one exists) or it creates a new aggregate that meets the requirements.
+
+----
+curl http://localhost/occm/api/aws/ha/volumes/quote -X POST --header "Content-Type:application/json" --header "Authorization:$token" --data "{\"workingEnvironmentId\":\"%haid%\",\"svmName\":\"%svm%\",\"name\":\"newVol1\",\"verifyNameUniqueness\":false,\"size\":{\"size\":100,\"unit\":\"GB\"},\"enableThinProvisioning\":true,\"providerVolumeType\":\"gp2\",\"capacityTier\":\"S3\"}" > quote.txt
+cat quote.txt| jq -r .numOfDisks >disks.txt
+cat quote.txt| jq -r .aggregateName >aggrName.txt
+disks=`cat disks.txt`
+aggrName=`cat aggrName.txt`
+
+curl http://localhost/occm/api/aws/ha/volumes/%haid%/%svm%/newVol1/change-tier -X POST --header "Content-Type:application/json" --header "Authorization:$token" --data "{\"aggregateName\":\"%aggrName%\",\"numOfDisks\":\"%disks%\",\"newAggregate\":true,\"newDiskTypeName\":\"gp2\",\"newCapacityTier\":\"S3\"}"
+----
+
+== Updating route tables for an HA configuration
+
+The following API call updates the list of route tables that contain route entries for an HA configuration's floating IP addresses:
+
+----
+curl http://localhost/occm/api/aws/ha/working-environments/%haid%/route-tables -X PUT --header "Content-Type:application/json" --header "Authorization:$token" --data "{\"routeTableIds\": [\"%routeTableId1%\", \"%routeTableId2%\"]}"
+----
+
+== Stopping an HA configuration
+
+The following API call stops all instances in an HA configuration:
+
+----
+curl http://localhost/occm/api/aws/ha/working-environments/%haid%/stop?take_snapshots=true -X POST --header "Content-Type:application/json" --header "Authorization:$token"
+----
+
+== Starting an HA configuration
+
+The following API call starts all instances in an HA configuration:
+
+----
+curl http://localhost/occm/api/aws/ha/working-environments/%haid%/start -X POST --header "Content-Type:application/json" --header "Authorization:$token"
+----

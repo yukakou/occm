@@ -1,0 +1,3762 @@
+---
+sidebar: sidebar
+permalink: 6_definitions.html
+keywords: script, scripts, scripting, api request, api response, json schema, authentication, api, restful, restful API, rest API, rest, error codes, api parameters, netapp, cloud, ontap, Cloud Volumes ONTAP, manager, management, oncommand, storage
+summary: OnCommand Cloud Manager includes REST APIs that enable software developers to automate the management of Cloud Volumes ONTAP. You should understand how the APIs work before you get started.
+---
+
+= Definitions
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+This section describes existing data format definitions.
+
+=== About
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|version||true|string|
+|dbVersion||true|string|
+|build||true|string|
+|buildTimestamp||true|integer (int64)|
+|systemId||true|string|
+|environment||true|string|
+|siteIdentifier||true|<<SiteIdentifier>>|
+|serverTimeZone||true|<<ServerTimeZone>>|
+|beta||true|boolean|
+|releaseNumber||true|integer (int32)|
+|simplicatorUrl||true|string|
+|migrationPerformed||true|boolean|
+|===
+
+=== ActionRequired
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|actionType|The type of the Action|true|string|
+|parameters|The relevant parameters of the action|true|<<ActionRequiredParameters>>|
+|severity|Action Severity|true|string|
+|===
+
+=== ActionRequiredParameters
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|aggregateName|Aggregate name|true|string|
+|numOfDisks|Number of disks relevant to the action|true|integer (int32)|
+|diskSize|The size of the disks needed|true|<<Capacity>>|
+|volumeNames|A limited list of volumes on the aggregate|true|string array|
+|maxCapacity|The maximum capacity of the Cloud Volumes ONTAP instance|true|<<Capacity>>|
+|licenseExpiryDate|License expiry date|true|integer (int64)|
+|serialNumber|Platform Serial number|true|string|
+|volumeMoveParameters|Volume Move Parameters|false|<<VolumeMoveParameters>>|
+|workingEnvironmentId|Working environment public id|true|string|
+|licenseParameters|License and instance parameters|false|<<ChangeLicenseParameters>>|
+|resourcesToDelete|Resources to delete if not been utilized|false|<<ResourcesToDelete>>|
+|instances|Instances info|true|<<InstanceNameIdAndType>> array|
+|moreInfo|More info|false|string|
+|providerVolumeType|Provider volume type|false|string|
+|currentInstanceType|Current instance type|false|string|
+|===
+
+=== ActionRequiredResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|actionRequired||true|<<ActionRequired>>|
+|affectedVolumes||true|string array|
+|===
+
+=== ActiveDirectoryCheckConnectionRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|host|host|true|string|
+|port|port|true|integer (int32)|
+|userName|user name|true|string|
+|password|password|true|string|
+|===
+
+=== ActiveDirectoryCreateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|connection name|true|string|
+|host|host|true|string|
+|port|port|true|integer (int32)|
+|===
+
+=== ActiveDirectoryEntry
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id||false|integer (int32)|
+|publicId||false|string|
+|name||false|string|
+|host||false|string|
+|port||false|integer (int32)|
+|===
+
+=== ActiveDirectoryUpdateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||false|string|
+|host||false|string|
+|port||false|integer (int32)|
+|===
+
+=== AddAwsAccountRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|accountId||true|string|
+|role||true|string|
+|===
+
+=== AddDisksToAggregateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|numberOfDisks|Number of Disks|true|integer (int32)|
+|===
+
+=== AddPortalUserRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|email|User email address|true|string|
+|roleId|Role ID of the user|true|string|
+|tenantId|Tenant ID of the user|false|string|
+|===
+
+=== AddTagsRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|tags|Tags|true|<<AwsTag>> array|
+|===
+
+=== AddTenantRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Tenant name|true|string|
+|description|Tenant description|false|string|
+|costCenter|Tenant cost center|false|string|
+|nssKeys|NSS keys|false|<<SetNssKeysRequest>>|
+|===
+
+=== AdminUserInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|email||true|string|
+|portalUserId||false|string|
+|===
+
+=== AggregateResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Aggregate name|true|string|
+|availableCapacity|Available capacity|true|<<Capacity>>|
+|totalCapacity|Total capacity|true|<<Capacity>>|
+|usedCapacity|Used capacity|true|<<Capacity>>|
+|volumes|Volumes|true|<<Volume>> array|
+|providerVolumes|Provider volumes|true|<<ProviderVolumeResponse>> array|
+|disks|Disks|true|<<Disk>> array|
+|state|State|true|string|
+|encryptionType|Encryption Type|true|string|
+|encryptionKeyId|Encryption Key|false|string|
+|homeNode|Home node|true|string|
+|ownerNode|Owner node|true|string|
+|capacityTier|Capacity tier|false|enum (S3,  Blob)|
+|capacityTierUsed|Object store used|false|<<Capacity>>|
+|sidlEnabled|SIDL enabled|true|boolean|
+|snaplockType|Snaplock type|true|enum (non_snaplock,  compliance,  enterprise)|
+|root||true|boolean|
+|===
+
+=== AssociatedSubscription
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|subscriptionId||true|string|
+|name||true|string|
+|default||true|boolean|
+|===
+
+=== AsupConfiguration
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|enabled||true|boolean|
+|site||true|string|
+|company||true|string|
+|hostName||true|string|
+|os||true|string|
+|schedule||true|<<AsupSchedule>>|
+|url||true|string|
+|===
+
+=== AsupConfigurationRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|enabled||true|boolean|
+|schedule||false|<<AsupSchedule>>|
+|===
+
+=== AsupInterval
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|length||true|integer (int32)|
+|unit||true|string|
+|===
+
+=== AsupSchedule
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|dayOfWeek||true|integer (int32)|
+|hourOfDay||true|integer (int32)|
+|interval||true|<<AsupInterval>>|
+|minuteOfHour||true|integer (int32)|
+|===
+
+=== AuditGroupSummary
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|_id||true|integer (int32)|
+|id|Audit group public ID|true|string|
+|requestId|Request ID of action associated with audit group|true|string|
+|startDate|Start date|true|integer (int64)|
+|endDate|End date|false|integer (int64)|
+|actionName|Audit group name|true|string|
+|status|Audit group status|false|string|
+|userName|Name of user who performed the action|false|string|
+|tenantName|Name of tenant|false|string|
+|workingEnvironmentName|Name of working environment related to the user action|false|string|
+|actionParameters|Parameters of the user action|false|string|
+|records|List of audit records|true|<<AuditGroupSummaryRecord>> array|
+|errorMessage|Audit failure information (if relevant)|false|string|
+|version|Version of Cloud Manager used to create this audit|true|string|
+|parentId||false|integer (int32)|
+|containsFailedRecords||true|boolean|
+|===
+
+=== AuditGroupSummaryRecord
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Audit record public ID|true|string|
+|date|Date|true|integer (int64)|
+|actionName|Action|true|string|
+|status|Status|true|string|
+|parameters|Action parameters|false|string|
+|errorMessage|Audit failure information (if relevant)|false|string|
+|count|Aggregated count of similar records|true|integer (int32)|
+|===
+
+=== Auth0Information
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|domain||true|string|
+|audience||true|string|
+|clientId||true|string|
+|===
+
+=== AvailableIpsResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|availableIps||true|integer (int32)|
+|===
+
+=== AwsAccountResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|publicId||true|string|
+|accountId||true|string|
+|role||false|string|
+|roleArn||false|string|
+|default||true|boolean|
+|===
+
+=== AwsDisksConstraints
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|numReservedDisksSingleNode||true|integer (int32)|
+|numReservedDisksHa||true|integer (int32)|
+|maxDisksSingleNode||true|integer (int32)|
+|maxDisksHa||true|integer (int32)|
+|numDisksWarnSingleNode||true|integer (int32)|
+|numDisksWarnHa||true|integer (int32)|
+|aggregatesNumToDiskSize||true|<<AggregateNumToDiskSize>> array|
+|===
+
+=== AggregateNumToDiskSize
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|from||false|integer (int32)|
+|to||true|integer (int32)|
+|stepsUp||true|integer (int32)|
+|===
+
+=== AwsEncryption
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|kmsKeyId||true|string|
+|===
+
+=== AwsEncryptionKey
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|alias||false|string|
+|keyId||true|string|
+|status||true|string|
+|validTo||false|integer (int64)|
+|origin||false|string|
+|default||true|boolean|
+|===
+
+=== AwsHaFloatingIpValidationData
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|floatingIps||true|<<AwsHaFloatingIpValidationData:FloatingIps>>|
+|routeTablesIds||true|string array|
+|vpcId||true|string|
+|region||true|string|
+|roleArn||false|string|
+|===
+
+=== AwsHaFloatingIpValidationResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|result||true|boolean|
+|reasons||true|string array|
+|===
+
+=== AwsProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|regionName||true|string|
+|availabilityZones||true|string array|
+|instances||true|<<InstanceResponse>> array|
+|vpc||true|<<VpcBasicResponse>>|
+|accountId||true|string|
+|roleArn||false|string|
+|===
+
+=== AwsTag
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|tagKey||true|string|
+|tagValue||false|string|
+|===
+
+=== AwsValidateSubscribedToOntapCloudRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|region||true|string|
+|subnetId||true|string|
+|vsaMetadata||true|<<VsaMetadataRequest>>|
+|roleArn||false|string|
+|===
+
+=== AwsValidateSubscribedToOntapCloudResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|failureInfo||false|string|
+|subscribed||true|boolean|
+|===
+
+=== AzureAvailabilitySet
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|faultDomain||true|integer (int32)|
+|updateDomain||true|integer (int32)|
+|===
+
+=== AzureCredentials
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|subscriptionId||true|string|
+|tenantId||true|string|
+|applicationId||true|string|
+|applicationKey||true|string|
+|===
+
+=== AzureCredentialsRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|subscriptionId|Subscription Id|false|string|
+|tenantId|Tenant Id|true|string|
+|applicationId|Application Id|true|string|
+|applicationKey|Application Key|true|string|
+|===
+
+=== AzureDiskSize
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|size||true|<<Capacity>>|
+|description||true|string|
+|supportedOccmLicenses||true|string array|
+|default||true|boolean|
+|===
+
+=== AzureDisksConstraints
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|numReservedDisksSingleNode||true|integer (int32)|
+|===
+
+=== AzureHaNodeInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceName||true|string|
+|instanceId||true|string|
+|primaryIp||true|string|
+|state||true|string|
+|serialNumber||true|string|
+|availabilitySet||true|<<AzureAvailabilitySet>>|
+|===
+
+=== AzureHaParameters
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|platformSerialNumberNode1||false|string|
+|platformSerialNumberNode2||false|string|
+|===
+
+=== AzureHaProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|loadBalancerName||true|string|
+|node1Info||true|<<AzureHaNodeInfo>>|
+|node2Info||true|<<AzureHaNodeInfo>>|
+|===
+
+=== AzureNetworkExtendedResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|virtualNetworks||true|<<AzureVirtualNetworkResponse>> array|
+|securityGroups||true|<<AzureSecurityGroupResponse>> array|
+|===
+
+=== AzureNetworkRequirementsResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|vsaMinimumRequiredIps||true|integer (int32)|
+|haVsaMinimumRequiredIps||true|integer (int32)|
+|===
+
+=== AzureRegionResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|displayName||true|string|
+|name||true|string|
+|vnets||false|<<AzureNetworkExtendedResponse>>|
+|===
+
+=== AzureResourceGroupResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|location||true|string|
+|tags||true|Map[string,string]|
+|===
+
+=== AzureSecurityGroupResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Security Group Id|true|string|
+|name|Security Group Name|true|string|
+|resourceGroup|Resource Group|true|string|
+|===
+
+=== AzureStorageAccountTypeResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|diskType||true|string|
+|availabilityTypes||true|string array|
+|sizes||true|<<AzureDiskSize>> array|
+|===
+
+=== AzureSubnetResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Subnet Id|true|string|
+|cidr|CIDR|true|string|
+|name|Subnet name|true|string|
+|availableIps|The number of available IPs on the subnet|true|integer (int32)|
+|minimumRequiredIps|The minimum needed IP addresses for the Cloud Volumes ONTAP creation|true|integer (int32)|
+|===
+
+=== AzureTag
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|tagKey||true|string|
+|tagValue||false|string|
+|===
+
+=== AzureValidateSubscribedToOntapCloudRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|region||true|string|
+|vsaMetadata||true|<<VsaMetadataRequest>>|
+|subscriptionId||false|string|
+|===
+
+=== AzureValidateSubscribedToOntapCloudResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|failureInfo||false|string|
+|subscribed||true|boolean|
+|===
+
+=== AzureVirtualNetworkCidrData
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|cidr|CIDR|true|string|
+|subnets|Subnets|true|<<AzureSubnetResponse>> array|
+|===
+
+=== AzureVirtualNetworkResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Virtual Network Name|true|string|
+|id|Virtual Network ID|true|string|
+|cidrs|CIDRs|true|<<AzureVirtualNetworkCidrData>> array|
+|resourceGroup|Resource Group|true|string|
+|tags|Tags|true|<<TagResponse>> array|
+|===
+
+=== AzureVsaWorkingEnvironmentResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|publicId||true|string|
+|name||true|string|
+|tenantId||true|string|
+|svmName||false|string|
+|creatorUserEmail||true|string|
+|status||false|<<StatusProperties>>|
+|providerProperties||false|<<ProviderProperties>>|
+|reservedSize||false|<<Capacity>>|
+|clusterProperties||false|<<VsaClusterProperties>>|
+|ontapClusterProperties||false|<<OntapClusterProperties>>|
+|cloudProviderName||true|string|
+|snapshotPolicies||false|<<SnapshotPolicy>> array|
+|actionsRequired||false|<<ActionRequired>> array|
+|activeActions|Actions currently being performed on this working environment|false|string array|
+|replicationProperties||false|<<ReplicationProperties>>|
+|schedules||false|<<VsaSchedule>> array|
+|svms||false|<<Svm>> array|
+|workingEnvironmentType||true|string|
+|supportRegistrationProperties||false|<<SupportRegistrationProperties>>|
+|supportRegistrationInformation||false|<<SupportRegistrationInformation>> array|
+|capacityFeatures||false|<<CapacityFeatures>>|
+|encryptionProperties||false|<<EncryptionProperties>>|
+|supportedFeatures||false|<<SupportedFeatures>>|
+|haProperties||false|<<AzureHaProperties>>|
+|k8sProperties||false|<<K8sProperties>>|
+|hA||true|boolean|
+|===
+
+=== BasicManagedHaParameters
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|node1SubnetId||true|string|
+|node2SubnetId||true|string|
+|mediatorSubnetId||true|string|
+|===
+
+=== BroadcastDomainInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|broadcastDomain||true|string|
+|ipSpace||true|string|
+|mtu||true|integer (int32)|
+|===
+
+=== BucketInformation
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|bucketName|Bucket's name|true|string|
+|fullPath|Object's full path|true|string|
+|===
+
+=== BucketNameRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|bucketName|Bucket Name|false|string|
+|===
+
+=== CIFSConfigurationRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|dnsDomain|DNS domain name|true|string|
+|ipAddresses|DNS server ip addresses|true|string array|
+|netBIOS|CIFS server NetBIOS name|true|string|
+|organizationalUnit|Organizational Unit to register in|true|string|
+|activeDirectoryDomain|Active Directory domain name|true|string|
+|activeDirectoryUsername|Active Directory username|true|string|
+|activeDirectoryPassword|Active Directory password|true|string|
+|===
+
+=== CIFSConfigurationResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|dnsDomain|DNS domain name|true|string|
+|activeDirectoryDomain|Active Directory domain name|true|string|
+|ipAddresses|DNS server ip addresses|true|string array|
+|netBIOS|CIFS server NetBIOS name|true|string|
+|organizationalUnit|Organizational Unit to register in|true|string|
+|authenticationType|Authentication type|true|string|
+|===
+
+=== CIFSWorkgroupConfigurationRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|serverName|Workgroup name|true|string|
+|workgroupName|Workgroup name|true|string|
+|===
+
+=== Capacity
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|size|Size|true|number (double)|
+|unit|Unit|true|enum (Byte,  KB,  MB,  GB,  TB)|
+|===
+
+=== CapacityFeatures
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|providerVolumesType||true|<<ProviderVolumeTypeResponse>> array|
+|defaultProviderVolumeType||true|<<DefaultProviderVolume>>|
+|supportedCapacityTiers||true|<<SupportedCapacityTiers>>|
+|maxDisksPerAggregate||true|integer (int32)|
+|existingIops||true|integer (int32) array|
+|===
+
+=== CapacityTierInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|capacityTierUsedSize||true|<<Capacity>>|
+|s3BucketName||true|string|
+|tierLevel||true|string|
+|===
+
+=== CertificateResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|publicId||true|string|
+|directIssuerName||true|string|
+|subjectName||true|string|
+|startDate||true|integer (int64)|
+|endDate||true|integer (int64)|
+|serialNumber||true|string|
+|certificate||true|string|
+|certificateType||true|string|
+|===
+
+=== CertificateSigningRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|commonName||true|string|
+|===
+
+=== ChangeAzureKeysRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|azureCredentials||false|<<AzureCredentialsRequest>>|
+|===
+
+=== ChangeInstanceTypeRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceType||true|string|
+|===
+
+=== ChangeKeysRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|accessKey|AWS Access key|false|string|
+|secretKey|AWS Secret key|false|string|
+|===
+
+=== ChangeLicenseParameters
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|newLicenseType||true|<<OntapLicenseType>>|
+|newInstanceType||true|string|
+|===
+
+=== ChangeNetworkOptimizationRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|optimize||true|boolean|
+|===
+
+=== ChangeSerialNumberRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|nodeOne||true|string|
+|nodeTwo||false|string|
+|===
+
+=== ChangeTierLevelRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|level|Change tier level|true|enum (normal,  ia,  ia-single,  cool)|
+|===
+
+=== ChangeVolumeTierRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|aggregateName|Target aggregate name|true|string|
+|numOfDisks|Number of new disks needed|true|integer (int32)|
+|newAggregate|Is it a newly created aggregate|true|boolean|
+|newDiskTypeName|New disk type name|true|string|
+|newCapacityTier|New capacity tier|false|enum (S3,  Blob)|
+|iops|Provisioned IOPS|false|integer (int32)|
+|newTieringPolicy|New tiering policy|false|enum (none,  snapshot_only,  auto)|
+|===
+
+=== CifsShareInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|shareName|Share name|true|string|
+|accessControlList|List of CIFS share permissions|true|<<CifsShareUserPermissions>> array|
+|===
+
+=== CifsShareUserPermissions
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|permission|CIFS share permission type|true|string|
+|users|List of users with the permission|true|string array|
+|===
+
+=== CloudOntapManifest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|ontap_version||true|string|
+|ontap_image_versions_allowed_to_upgrade_from||true|string array|
+|encryption_enabled_instance_types||true|string array|
+|license_to_ami_mapping||true|<<LicenseToAmis>> array|
+|===
+
+=== CloudResourceTag
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|tagKey||true|string|
+|tagValue||false|string|
+|===
+
+=== CloudStorageAutomationConfigurationRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|enabled||true|boolean|
+|===
+
+=== CloudStorageAutomationExtendedReport
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|report||false|<<CloudStorageAutomationReport>>|
+|volumesExtendedReport||true|<<VolumesExtendedReport>>|
+|===
+
+=== CloudStorageAutomationProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumeMigrations||true|<<VolumeMigrationResponse>> array|
+|===
+
+=== CloudStorageAutomationReport
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|generalReport||true|<<GeneralReport>>|
+|savingsOpportunities||true|<<SavingsOpportunitiesReport>>|
+|protection||true|<<ProtectionReport>>|
+|operations||true|<<OperationsReport>>|
+|===
+
+=== CloudSyncConstants
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|reminderPeriod||true|integer (int32)|
+|warningPeriod||true|integer (int32)|
+|===
+
+=== CloudSyncLicenseInformation
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|cloudSyncLicenseTypes|Cloud Sync License types|true|string array|
+|licenseExpirationDate|Cloud Sync License Expiration Date|false|integer (int64)|
+|===
+
+=== CloudSyncProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|status||false|<<CloudSyncStatus>>|
+|dataBrokerProperties||false|<<DataBrokerProperties>>|
+|s3Location||false|string|
+|relationships||true|<<CloudSyncRelationship>> array|
+|synced||true|boolean|
+|===
+
+=== CloudSyncRelationship
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumeName||true|string|
+|svmName||true|string|
+|relationshipStatus||true|string|
+|s3Location||true|string|
+|id||true|string|
+|progress||true|integer (int32)|
+|failureMessage||false|string|
+|===
+
+=== CloudSyncStatus
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|status||true|string|
+|failureMessage||false|string|
+|===
+
+=== ClusterCredentialsRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|userName||true|string|
+|password||true|string|
+|===
+
+=== ClusterInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|serialNumber||true|string|
+|clusterName||true|string|
+|clusterUuid||true|string|
+|===
+
+=== ConfigResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|uri||true|string|
+|status||true|<<Status>>|
+|redirected||true|boolean|
+|pollingIntervalSeconds||true|integer (int64)|
+|debugLogLevel||true|string|
+|cacheConfig||true|string|
+|startInstanceDelaySeconds||true|integer (int64)|
+|===
+
+=== ConfigValuesResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|simplicatorUri||true|string|
+|proxyUri||true|string|
+|debugLogLevel||true|string|
+|cacheConfig||true|string|
+|keyManagerPort||true|integer (int32)|
+|ipaManualUrl||true|string|
+|certificateValidityPeriod||true|integer (int32)|
+|maxAggregateFreeSpacePercentage||true|integer (int32)|
+|asupSite||true|string|
+|asupCompany||true|string|
+|maxVolumeGrowSizePercentage||true|integer (int32)|
+|autoVsaCapacityManagement||true|boolean|
+|useVolumeViewAsDefault||true|boolean|
+|proxyUserName||true|string|
+|proxyPassword||true|string|
+|proxyDomain||true|string|
+|autoUpgrade||true|boolean|
+|cotRollback||true|boolean|
+|cloudSyncConstants||true|<<CloudSyncConstants>>|
+|licenseMaxCapacityUsedPercentage||true|integer (int32)|
+|s3EbsRatio||true|integer (int32)|
+|ebsSizeToPiopsRatio||true|integer (int32)|
+|autoOntapUpgrade||true|boolean|
+|===
+
+=== ConfigValuesUpdateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|simplicatorUri||false|string|
+|proxyUri||false|string|
+|debugLogLevel||false|string|
+|cacheConfig||false|string|
+|keyManagerPort||false|integer (int32)|
+|maxAggregateFreeSpacePercentage||false|integer (int32)|
+|maxVolumeGrowSizePercentage||false|integer (int32)|
+|autoVsaCapacityManagement||false|boolean|
+|proxyUserName||false|string|
+|proxyPassword||false|string|
+|proxyDomain||false|string|
+|autoUpgrade||false|boolean|
+|cotRollback||false|boolean|
+|s3EbsRatio||false|integer (int32)|
+|autoOntapUpgrade||false|boolean|
+|===
+
+=== Configuration
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|ontapVersion||true|string|
+|license||true|<<OntapLicenseType>>|
+|instanceType||true|string|
+|region||true|<<Region>>|
+|defaultInstance||true|boolean|
+|features||true|string array|
+|upgradeableFrom||true|string array|
+|===
+
+=== CostDetail
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|month|cost period month|false|integer (int32)|
+|year|cost period year|false|integer (int32)|
+|lastModified|cost last modification date|false|string (date-time)|
+|computeCost|Working environment cost for the period due computation|false|<<Money>>|
+|storageCost|Working environment cost for the period due storage|false|<<Money>>|
+|===
+
+=== CreateAwsHaWorkingEnvironmentRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|svmPassword||true|string|
+|vpcId||true|string|
+|description||false|string|
+|region||true|string|
+|tenantId||true|string|
+|volume|Optionally create a volume with this working environment|false|<<VsaVolumeOnNewVsaCreateRequest>>|
+|ebsVolumeSize|EBS volume size|true|<<Capacity>>|
+|ebsVolumeType|EBS volume type|true|enum (gp2,  st1,  io1)|
+|vsaMetadata||true|<<VsaMetadataRequest>>|
+|dataEncryptionType|Type of encryption to use for this working environment|true|enum (NONE,  AWS,  ONTAP)|
+|ontapEncryptionParameters|Parameters required if using ontap encryption|false|<<OntapEncryption>>|
+|awsEncryptionParameters|Parameters required if using aws encryption|false|<<AwsEncryption>>|
+|haParams||true|<<HaParameters>>|
+|securityGroupId||false|string|
+|skipSnapshots|Take snapshot flag|true|boolean|
+|awsTags|Optionally provide up to four key-value pairs with which to tag all AWS entities created by Cloud Manager|false|<<AwsTag>> array|
+|cifsConfigurationRequest||false|<<CIFSConfigurationRequest>>|
+|optimizedNetworkUtilization|Use optimized network utilization|false|boolean|
+|clusterKeyPairName|Support SSH using key-pair|false|string|
+|instanceTenancy|Instance tenancy|false|enum (default,  dedicated)|
+|failedToCreateWorkingEnvironmentId|Public ID of failed-to-create working environment|false|string|
+|capacityTier|Capacity tier|false|enum (S3)|
+|iops|Provisioned IOPS|false|integer (int32)|
+|packageName|Pre-configured package name|false|string|
+|instanceProfileName|Instance profile name|false|string|
+|roleArn|Optional Role ARN to assume|false|string|
+|svmName|Svm name|false|string|
+|wormRequest|WORM request|false|<<WormRequest>>|
+|ontapEncryptionDefined||true|boolean|
+|===
+
+=== CreateAzureVSAWorkingEnvironmentRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|svmPassword||true|string|
+|vnetId||true|string|
+|cidr||true|string|
+|description||false|string|
+|volume|Optionally create a volume with this working environment|false|<<VsaVolumeOnNewVsaCreateRequest>>|
+|region||true|string|
+|tenantId||true|string|
+|subnetId|Subnet ID for a single node cluster|true|string|
+|dataEncryptionType|Type of encryption to use for this working environment|true|enum (NONE,  AZURE,  ONTAP)|
+|ontapEncryptionParameters|Parameters required if using ontap encryption|false|<<OntapEncryption>>|
+|securityGroupId||false|string|
+|serialNumber||false|string|
+|cifsConfigurationRequest||false|<<CIFSConfigurationRequest>>|
+|skipSnapshots|Take snapshot flag|true|boolean|
+|diskSize|Disk size|true|<<Capacity>>|
+|storageType|Storage type|true|enum (Standard_LRS,  Premium_LRS)|
+|azureTags|Optionally provide up to four key-value pairs with which to tag the Resource group created by Cloud Manager|false|<<AzureTag>> array|
+|writingSpeedState|Writing speed state|false|string|
+|vsaMetadata||true|<<VsaMetadataRequest>>|
+|failedToCreateWorkingEnvironmentId|Public ID of failed-to-create working environment|false|string|
+|packageName|Pre-configured package name|false|string|
+|vhdImageRequest|Optionally provide parameters for VHD image deployment|false|<<VhdImageRequest>>|
+|resourceGroup|Custom resource group name|false|string|
+|subscriptionId|Subscription Id|false|string|
+|capacityTier|Capacity tier|false|enum (Blob)|
+|haParams||false|<<AzureHaParameters>>|
+|allowDeployInExistingRg|Allow Deploy In Existing Resource Group|false|boolean|
+|svmName|Svm name|false|string|
+|wormRequest|WORM request|false|<<WormRequest>>|
+|===
+
+=== CreateCifsShareInfoRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|shareName|Share name|true|string|
+|accessControl|CIFS share permissions|true|<<CifsShareUserPermissions>>|
+|===
+
+=== CreateReplicationRequestToOnPrem
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|replicationRequest|Replication Request|true|<<ReplicationRequest>>|
+|replicationVolume|Replication volume|true|<<OnPremVolumeRequest>>|
+|===
+
+=== CreateReplicationRequestToVsa
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|replicationRequest|Replication Request|true|<<ReplicationRequest>>|
+|replicationVolume|Replication volume|true|<<VsaVolumeRequest>>|
+|===
+
+=== CreateRequestParametersResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|parameters||false|Map[string,any]|
+|===
+
+=== CreateSyncRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumeNames|Volume's name|true|string array|
+|s3Location|S3 path location (i.e. s3://BucketName/Folder1/Folder11), maximum length - 255 characters|true|string|
+|dataBrokerNetworkInformation|Data Broker Network information|true|<<DataBrokerNetworkInformation>>|
+|===
+
+=== CreateVSAWorkingEnvironmentRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|svmPassword||true|string|
+|vpcId||true|string|
+|description||false|string|
+|volume|Optionally create a volume with this working environment|false|<<VsaVolumeOnNewVsaCreateRequest>>|
+|region||true|string|
+|tenantId||true|string|
+|subnetId|Subnet ID for a single node cluster|true|string|
+|dataEncryptionType|Type of encryption to use for this working environment|true|enum (NONE,  AWS,  ONTAP)|
+|ontapEncryptionParameters|Parameters required if using ontap encryption|false|<<OntapEncryption>>|
+|awsEncryptionParameters|Parameters required if using aws encryption|false|<<AwsEncryption>>|
+|securityGroupId||false|string|
+|vsaMetadata||true|<<VsaMetadataRequest>>|
+|cifsConfigurationRequest||false|<<CIFSConfigurationRequest>>|
+|skipSnapshots|Take snapshot flag|true|boolean|
+|ebsVolumeSize|EBS volume size|true|<<Capacity>>|
+|ebsVolumeType|EBS volume type|true|enum (gp2,  st1,  sc1,  io1)|
+|awsTags|Optionally provide up to four key-value pairs with which to tag all AWS entities created by Cloud Manager|false|<<AwsTag>> array|
+|writingSpeedState|Writing speed state|false|string|
+|optimizedNetworkUtilization|Use optimized network utilization|false|boolean|
+|clusterKeyPairName|Support SSH using key-pair|false|string|
+|instanceTenancy|Instance tenancy|false|enum (default,  dedicated)|
+|failedToCreateWorkingEnvironmentId|Public ID of failed-to-create working environment|false|string|
+|capacityTier|Capacity tier|false|enum (S3)|
+|iops|Provisioned IOPS|false|integer (int32)|
+|packageName|Pre-configured package name|false|string|
+|instanceProfileName|Instance profile name|false|string|
+|roleArn|Optional Role ARN to assume|false|string|
+|svmName|Svm name|false|string|
+|wormRequest|WORM request|false|<<WormRequest>>|
+|ontapEncryptionDefined||true|boolean|
+|===
+
+=== CreateVirtualNetworkRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|region|Virtual Network region|true|string|
+|resourceGroupName|Resource Group name|true|string|
+|networkForPeering|Virtual Network for peering in CIDR notation|true|string|
+|subscriptionId|Subscription Id|false|string|
+|===
+
+=== CreateVirtualNetworkResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|vnetId|Virtual Network id|true|string|
+|subnetId|Subnet id|true|string|
+|===
+
+=== CronJobSchedule
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|description||true|string|
+|months||true|integer (int32) array|
+|days||true|integer (int32) array|
+|weekDays||true|integer (int32) array|
+|hours||true|integer (int32) array|
+|minutes||true|integer (int32) array|
+|===
+
+=== CronJobScheduleResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|months|List of months|true|integer (int32) array|
+|days|List of days of the month|true|integer (int32) array|
+|weekDays|List of week days|true|integer (int32) array|
+|hours|List of hours|true|integer (int32) array|
+|minutes|List of minutes|true|integer (int32) array|
+|===
+
+=== CsrResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|csr||true|string|
+|===
+
+=== DataBrokerNetworkInformation
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|vpcId|Data Broker Vpc Id|true|string|
+|subnetId|Data Broker Subnet Id|true|string|
+|keyPair|Data Broker Key pair|true|string|
+|region|Data Broker Region|true|string|
+|===
+
+=== DataBrokerPlacement
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|vpcId||true|string|
+|subnetId||true|string|
+|instanceType||true|string|
+|instanceId||true|string|
+|keyPair||true|string|
+|===
+
+=== DataBrokerProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id||true|string|
+|name||true|string|
+|dataBrokerPlacement||false|<<DataBrokerPlacement>>|
+|===
+
+=== DataCollectionInformation
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|currentScan||false|<<DataCollectionProcessingInfo>>|
+|lastScan||false|<<DataCollectionProcessingInfo>>|
+|lastSuccessfulScan||false|<<DataCollectionProcessingInfo>>|
+|schedulerEnabled||true|boolean|
+|===
+
+=== DataCollectionProcessingInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|status||true|string|
+|startTime||true|integer (int64)|
+|endTime||false|integer (int64)|
+|estimatedRunningTimeInMinutes||false|integer (int32)|
+|error||false|string|
+|===
+
+=== DataMigrationRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceIp|Source volume attached instance IP|true|string|
+|sourceExportPath|Source export path|true|string|
+|volumeCreateRequest|Volume create request|true|<<VsaVolumeCreateRequest>>|
+|workingEnvironmentId|Public Id of VSA working environment|true|string|
+|===
+
+=== DefaultProviderVolume
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|size||true|<<Capacity>>|
+|diskType||true|string|
+|capacityTier||false|string|
+|iops||false|integer (int32)|
+|===
+
+=== DeleteUnassociatedSnapshotsRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|snapshotsIds||true|string array|
+|===
+
+=== DeleteUnassociatedVolumesRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumeIds||true|string array|
+|===
+
+=== DiscoveredAwsHaResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|publicId||true|string|
+|region||true|string|
+|vpcName||true|string|
+|vpcId||true|string|
+|availabilityZones||true|string array|
+|subnetIds||true|string array|
+|stackName||true|string|
+|stackId||true|string|
+|clusterAddress||true|string|
+|recoverable||true|boolean|
+|===
+
+=== DiscoveredAzureHaResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|publicId||true|string|
+|region||true|string|
+|vnetName||true|string|
+|vnetId||true|string|
+|subnetId||true|string|
+|subnetName||true|string|
+|resourceGroup||true|string|
+|clusterAddress||true|string|
+|recoverable||true|boolean|
+|===
+
+=== DiscoveredAzureVSAResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|id||true|string|
+|publicId||true|string|
+|region||true|string|
+|vnetName||true|string|
+|vnetId||true|string|
+|subnetId||true|string|
+|subnetName||true|string|
+|resourceGroup||true|string|
+|clusterAddress||true|string|
+|recoverable||true|boolean|
+|===
+
+=== DiscoveredVsaResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|publicId||true|string|
+|region||true|string|
+|vpcName||true|string|
+|vpcId||true|string|
+|availabilityZone||true|string|
+|subnetId||true|string|
+|stackName||true|string|
+|stackId||true|string|
+|clusterAddress||true|string|
+|recoverable||true|boolean|
+|===
+
+=== Disk
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Name|true|string|
+|position|Position|true|string|
+|ownerNode|Owner node|true|string|
+|device|Device|true|string|
+|vmDiskProperties|VmDiskProperties|false|<<VmDiskProperties>>|
+|===
+
+=== DisksConfiguration
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|aws||true|<<AwsDisksConstraints>>|
+|azure||true|<<AzureDisksConstraints>>|
+|===
+
+=== DisksDetails
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|numberOfDisks|Number of disks|true|integer (int32)|
+|diskSize|Disk size|true|<<Capacity>>|
+|diskType|Disk type|true|string|
+|===
+
+=== Duration
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|length|Length|true|integer (int64)|
+|unit|Unit|true|enum (DAYS,  HOURS,  MINUTES,  SECONDS,  MILLISECONDS,  MICROSECONDS,  NANOSECONDS)|
+|===
+
+=== EbsSnapshotReport
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|snapshotId||true|string|
+|volumeId||true|string|
+|accountId||true|string|
+|region||true|string|
+|tags||true|Map[string,string]|
+|encrypted||true|boolean|
+|kmsKeyId||false|string|
+|allocatedCapacityGB||true|number (double)|
+|usedCapacityGB||false|number (double)|
+|partitionsInfo||false|string|
+|state||true|string|
+|timestamp||true|integer (int64)|
+|processed||true|boolean|
+|description||false|string|
+|deletingStatus||false|string|
+|failureMessage||false|string|
+|usedByAMI||true|boolean|
+|===
+
+=== EbsVolumeDetails
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|numOfVolumes||true|integer (int32)|
+|size||true|<<Capacity>>|
+|volumeType||true|string|
+|===
+
+=== EbsVolumeReport
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumeId||true|string|
+|instanceId||false|string|
+|accountId||true|string|
+|region||true|string|
+|tags||true|Map[string,string]|
+|volumeType||true|string|
+|iops||false|integer (int32)|
+|encrypted||true|boolean|
+|allocatedCapacityGB||true|number (double)|
+|state||true|string|
+|creationTime||true|integer (int64)|
+|timestamp||true|integer (int64)|
+|deletingStatus||false|string|
+|failureMessage||false|string|
+|===
+
+=== EbsVolumeType
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|description||true|string|
+|size||true|<<Capacity>>|
+|supportedVolumeTypes||true|string array|
+|supportedOccmLicenses||true|string array|
+|default||true|boolean|
+|===
+
+=== EligibilityResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|eligibilityResponse||true|string|
+|===
+
+=== EnableCapacityTieringRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceProfileName||false|string|
+|===
+
+=== EncryptionProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|ontapEncryption||true|boolean|
+|awsVolumeEncryption||true|boolean|
+|azureVolumeEncryption||true|boolean|
+|keyManagers||true|<<KeyManagerResponse>> array|
+|encryptionCertificates||true|<<CertificateResponse>> array|
+|awsEncryptionKey||false|<<AwsEncryptionKey>>|
+|===
+
+=== EvaluationOntapLicenses
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|worm||true|string|
+|===
+
+=== EvaluationSerialNumbers
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|single_aws||true|string|
+|single_azure||true|string|
+|ha_aws_node1||true|string|
+|ha_aws_node2||true|string|
+|ha_azure_node1||true|string|
+|ha_azure_node2||true|string|
+|===
+
+=== ExportPolicyInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|policyType|Export policy type|true|string|
+|ips|Custom export policy list of IPs|true|string array|
+|===
+
+=== ExtendedManagedHaParameters
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|node1SubnetId||true|string|
+|node2SubnetId||true|string|
+|mediatorSubnetId||true|string|
+|clusterFloatingIP||true|string|
+|dataFloatingIP||true|string|
+|dataFloatingIP2||true|string|
+|mediatorKeyPairName||true|string|
+|routeTableIds||true|string array|
+|===
+
+=== ExtendedManagedHaVolumeCreateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Volume name|true|string|
+|size|Size as Capacity|true|<<PositiveCapacity>>|
+|diskType|Disk type|true|enum (gp2,  st1)|
+|region||true|string|
+|vpcId||true|string|
+|haParams||true|<<ExtendedManagedHaParameters>>|
+|skipSnapshots|Take snapshot flag|true|boolean|
+|upgradeCreateRequest|Instance upgrade information|false|<<UpgradeCreateRequest>>|
+|===
+
+=== ExtendedManagedVolumeCreateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Volume name|true|string|
+|size|Size as Capacity|true|<<PositiveCapacity>>|
+|diskType|Disk type|true|enum (gp2,  st1,  sc1)|
+|region||true|string|
+|vpcId||true|string|
+|subnetId|Subnet ID|true|string|
+|skipSnapshots|Take snapshot flag|true|boolean|
+|upgradeCreateRequest|Instance upgrade information|false|<<UpgradeCreateRequest>>|
+|===
+
+=== FailureCauses
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|invalidOntapCredentials||true|boolean|
+|noCloudProviderConnection||true|boolean|
+|invalidCloudProviderCredentials||true|boolean|
+|===
+
+=== FeatureFlag
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|azure||true|boolean|
+|===
+
+=== FloatingIps
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|clusterFloatingIP||true|string|
+|dataFloatingIP||true|string|
+|dataFloatingIP2||true|string|
+|===
+
+=== AwsHaFloatingIpValidationData:FloatingIps
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|clusterFloatingIP||false|string|
+|dataFloatingIP||false|string|
+|dataFloatingIP2||false|string|
+|svmFloatingIP||false|string|
+|===
+
+=== GeneralReport
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|accountId||true|string|
+|region||true|string|
+|scanDate||true|integer (int64)|
+|totalInstances||true|integer (int32)|
+|totalVolumes||true|integer (int32)|
+|totalSnapshots||true|integer (int32)|
+|totalAllocatedCapacityGB||true|integer (int32)|
+|===
+
+=== GlobalManifest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|license_types||true|<<OntapLicenseType>> array|
+|regions||true|<<Region>> array|
+|azureRegions||true|<<Region>> array|
+|cot_versions||true|Map[string,Map[string,List[string]]]|
+|cot_versions_to_upgrade_to||true|Map[string,Map[string,List[string]]]|
+|supportedFeatures||true|Map[string,Map[string,FeatureProperties]]|
+|===
+
+=== GrantPermission
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|addWorkingEnvironments|List of working environment public IDs for which permissions should be added|true|string array|
+|removeWorkingEnvironments|List of working environment public IDs for which permissions should be removed|true|string array|
+|===
+
+=== HaParameters
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|node1SubnetId||true|string|
+|node2SubnetId||true|string|
+|mediatorSubnetId||true|string|
+|clusterFloatingIP||false|string|
+|dataFloatingIP||false|string|
+|dataFloatingIP2||false|string|
+|svmFloatingIP||false|string|
+|mediatorKeyPairName||true|string|
+|routeTableIds||false|string array|
+|platformSerialNumberNode1||false|string|
+|platformSerialNumberNode2||false|string|
+|providedLicenseNode1||false|string|
+|providedLicenseNode2||false|string|
+|failoverMode|HA failover mode|false|enum (FloatingIP,  PrivateIP)|
+|mediatorProxy||false|<<MediatorProxy>>|
+|mediatorAssignPublicIP||false|boolean|
+|mediatorInstanceProfileName||false|string|
+|mediatorSecurityGroupId||false|string|
+|===
+
+=== HaPlacementResult
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|vsaAndVolume||true|<<VsaAndVolumeParams>>|
+|floatingIps||true|<<FloatingIps>>|
+|upgradeInfo||false|<<ChangeInstanceTypeRequest>>|
+|affectedVolumes||true|string array|
+|===
+
+=== HaProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|mediatorVersionInfo||true|<<MediatorVersionInfo>>|
+|mediatorStatus||true|<<MediatorStatus>>|
+|routeTables||true|string array|
+|mediatorVersionsToUpdate||true|<<MediatorUpdateVersionMetadata>> array|
+|failoverMode||true|string|
+|===
+
+=== InitialSetupResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|upgradeToVersion||false|string|
+|===
+
+=== InstallCertificatesAndPrivateKeyRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|occmCertificate||true|string|
+|privateKey||true|string|
+|===
+
+=== InstallCertificatesRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|occmCertificate||true|string|
+|===
+
+=== InstanceNameIdAndType
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceName|Instance name|true|string|
+|instanceType|Instance type|true|string|
+|instanceId|Instance Id|true|string|
+|===
+
+=== InstancePlacementResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|region|Region|true|string|
+|vpcId|VPC|false|string|
+|subnetId|Subnet|false|string|
+|keyPair|KeyPair|false|string|
+|installLocation|Install Location|true|string|
+|role|Role|false|string|
+|providerRoleType|Provider Role Type|false|string|
+|ic|IC|true|boolean|
+|publicIp|Public IP|false|string|
+|account|Account|false|string|
+|govCloud|Gov cloud|true|boolean|
+|===
+
+=== InstanceProfileResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceProfileId||true|string|
+|name||true|string|
+|===
+
+=== InstanceResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Instance Id|true|string|
+|name|Instance name|true|string|
+|instanceType|Instance type|true|string|
+|state|Instance state|true|string|
+|publicIpAddress|Public IP address that is assigned to the instance|true|string|
+|privateIpAddress|Private IP address that is assigned to the instance|true|string|
+|publicDnsName|Public DNS|true|string|
+|privateDnsName|Private DNS name|true|string|
+|imageId|Image Id|true|string|
+|subnetId|Subnet Id|true|string|
+|availabilityZone|Availability Zone|true|string|
+|tags|Instance tags|true|Map[string,string]|
+|productCode|Product code|true|string|
+|tenancy|Instance Tenancy|true|string|
+|keyPairName|Key Pair|true|string|
+|instanceProfileId|Instance profile ID|false|string|
+|oCCMInstance||true|boolean|
+|vsaInstance||true|boolean|
+|===
+
+=== InstanceTypeInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceType||true|string|
+|supportsEncryption||true|boolean|
+|supportedFeatures||true|string array|
+|default||true|boolean|
+|===
+
+=== InstanceTypeResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceType||true|string|
+|===
+
+=== InstanceTypesNotSupportingAccelerationAndCapacityTieringResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceTypes||true|<<InstanceTypeResponse>> array|
+|===
+
+=== InterClusterLif
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|address||true|string|
+|port||true|string|
+|node||true|string|
+|status||true|string|
+|peered||true|boolean|
+|===
+
+=== K8sProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|connected||true|boolean|
+|main||true|boolean|
+|===
+
+=== K8sStatusResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|k8sEnabled||true|boolean|
+|clusterName||true|string|
+|clusterEndpoint||true|string|
+|errorMessage||true|string|
+|===
+
+=== KeyManagerCaCertificateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|certificate||true|string|
+|===
+
+=== KeyManagerRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|address||true|string|
+|usernameField||false|string|
+|usernameValue||false|string|
+|===
+
+=== KeyManagerResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|publicId||true|string|
+|name||true|string|
+|address||true|string|
+|usernameField||true|string|
+|usernameValue||true|string|
+|status||true|string|
+|===
+
+=== KeyPairsByRegionResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|regionToKeyPairs||true|Map[string,List[string]]|
+|===
+
+=== LegacyInstanceTypes
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceTypes||true|<<ProviderLegacyInstanceTypes>>|
+|===
+
+=== LicenseAndInstanceType
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|licenseType||true|string|
+|name||true|string|
+|description||true|string|
+|capacityLimit||true|<<Capacity>>|
+|instanceTypes||true|<<InstanceTypeInfo>> array|
+|===
+
+=== LicenseAndInstanceTypeModificationRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceType|New instance type|true|string|
+|licenseType|New license type|true|string|
+|===
+
+=== LicenseFileContent
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|licenseOne||true|string|
+|licenseTwo||false|string|
+|===
+
+=== LicenseToAmis
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|license_type||true|string|
+|instance_types||true|string array|
+|amis||true|<<RegionalAmi>> array|
+|===
+
+=== LifResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|ip|Lif ip|true|string|
+|netmask|Lif netmask|true|string|
+|lifType|Lif type|true|string|
+|dataProtocols|List of supported protocols|true|string array|
+|nodeName|Node name|true|string|
+|privateIp|Whether this Lif ip is a private address|true|boolean|
+|===
+
+=== ManagedHaVolumeCreateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Volume name|true|string|
+|size|Size as Capacity|true|<<PositiveCapacity>>|
+|diskType|Disk type|true|enum (gp2,  st1)|
+|region||true|string|
+|vpcId||true|string|
+|haParams||true|<<BasicManagedHaParameters>>|
+|===
+
+=== ManagedInstanceIdResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|workingEnvironmentId||true|string|
+|===
+
+=== ManagedInstanceResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|workingEnvironmentId|Working environment id|true|string|
+|instanceId|Instance id|true|string|
+|name|Instance name|true|string|
+|instanceType|Instance type|true|string|
+|status|Status|true|enum (ON,  INITIALIZING,  UPDATING,  STARTING,  STOPPING,  DELETING,  OFF,  FAILED,  NOT_FOUND,  DEGRADED,  DEGRADED_ON,  DEGRADED_OFF,  DEGRADED_FAILED,  DEGRADED_IN_TAKEOVER)|
+|region|Region|true|string|
+|availabilityZone|Availability zone|true|string|
+|subnetCidr|Subnet CIDR|true|string|
+|ebsVolumes|EBS volumes|true|<<EbsVolumeDetails>> array|
+|volumes|Volumes|true|string array|
+|awsTags|AWS tags|true|Map[string,string]|
+|mediator||true|boolean|
+|===
+
+=== ManagedInstanceTypeResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceType||true|string|
+|===
+
+=== ManagedVolume
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id||true|string|
+|name||true|string|
+|cloudOntapInstanceName||true|string|
+|size||true|<<Capacity>>|
+|usedSize||true|<<Capacity>>|
+|compressionSavedSpace||true|<<Capacity>>|
+|deduplicationSpaceSaved||true|<<Capacity>>|
+|mountPoint||false|string|
+|exportPolicyInfo||true|<<NamedExportPolicyInfo>>|
+|parentVolumeName||true|string|
+|cloneNames||true|string array|
+|status||true|enum (ONLINE, OFFLINE, CREATING, ADDING_RESOURCES_AND_CREATING, ALLOCATING_NEW_RESOURCES_AND_CREATING, DELETING, DEGRADED)|
+|statusReason||false|string|
+|region||true|string|
+|availabilityZone|DEPRECATED|true|string|
+|subnetId|DEPRECATED|true|string|
+|diskType||true|enum (gp2, standard,  st1,  sc1)|
+|subnetCidr|DEPRECATED|true|string|
+|sourceOrTarget||true|<<SourceOrTargetReplication>>|
+|subnetIds||true|string array|
+|subnetCidrs||true|string array|
+|supportMixedAggregate||true|boolean|
+|moving||true|boolean|
+|ha||true|boolean|
+|encrypted||true|boolean|
+|===
+
+=== ManagedVolumeChangeDiskTypeRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|aggregateName|Target aggregate name|true|string|
+|diskType|Target disk type|true|enum (gp2,  st1,  sc1,  standard)|
+|upgradeCreateRequest|Instance upgrade information|false|<<UpgradeCreateRequest>>|
+|allowVsaUpgrade|Allow vsa upgrade|true|boolean|
+|===
+
+=== ManagedVolumeCloneRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|newVolumeName|New volume name|true|string|
+|===
+
+=== ManagedVolumeCreateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Volume name|true|string|
+|size|Size as Capacity|true|<<PositiveCapacity>>|
+|diskType|Disk type|true|enum (gp2,  st1,  sc1)|
+|region||true|string|
+|vpcId||true|string|
+|subnetId|Subnet ID|true|string|
+|===
+
+=== ManagedVolumeModifyRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|exportPolicyInfo|Export policy info for NFS|false|<<NamedExportPolicyInfo>>|
+|===
+
+=== ManagedVolumeQuoteRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|diskType|Target disk type|true|enum (gp2,  st1,  sc1,  standard)|
+|===
+
+=== ManagedVolumesResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumes||true|<<ManagedVolume>> array|
+|errors|DEPRECATED|true|string array|
+|unavailableInstances||true|<<UnavailableInstanceInfo>> array|
+|===
+
+=== MaxDisksAllow
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|numOfDisks||true|integer (int32)|
+|reason||false|string|
+|===
+
+=== MediatorProxy
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|url||false|string|
+|userName||false|string|
+|password||false|string|
+|===
+
+=== MediatorStatus
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|statusCode||true|integer (int32)|
+|statusMessage||true|string|
+|===
+
+=== MediatorUpdateVersionMetadata
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|mediatorVersion||true|string|
+|timeStamp||true|integer (int64)|
+|metadataFileName||true|string|
+|major||true|boolean|
+|manifestFileName||false|string|
+|===
+
+=== MediatorVersionInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|version||true|string|
+|description||true|string|
+|state||true|string|
+|===
+
+=== MetadataResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|globalManifest|Global Manifest|true|<<GlobalManifest>>|
+|ontapManifests|ONTAP manifests|true|<<CloudOntapManifest>> array|
+|===
+
+=== ModifyUserTagsRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|tags||true|<<CloudResourceTag>> array|
+|===
+
+=== Money
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|amount|Amount|false|number (double)|
+|currency|Currency|false|string|
+|===
+
+=== NamedExportPolicyInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Export policy name|false|string|
+|policyType|Export policy type|true|string|
+|ips|Custom export policy list of IPs|true|string array|
+|===
+
+=== NetworkRequirementsResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|nonHaNodeMinimumRequiredIps||true|integer (int32)|
+|haNodeMinimumRequiredIps||true|integer (int32)|
+|haMediatorMinimumRequiredIps||true|integer (int32)|
+|===
+
+=== NssUserName
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|nssUserName||true|string|
+|===
+
+=== OccmExternalConfiguration
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|email||true|string|
+|aws_product_page||true|string|
+|cot_aws_product_page||true|string|
+|ha_cot_aws_product_page||true|string|
+|intercom_prod_app_id||true|string|
+|intercom_test_app_id||true|string|
+|livechat_license||true|string|
+|features||true|<<OccmFeaturesFlags>>|
+|upgrade_path||true|<<OnCloudUpgradePath>> array|
+|occm_release_notes_url||true|string|
+|evaluation_serial_numbers||true|<<EvaluationSerialNumbers>>|
+|legacyInstanceTypes||true|<<LegacyInstanceTypes>>|
+|aws_cross_account_tutorial_url||true|string|
+|disksConfiguration||true|<<DisksConfiguration>>|
+|migration||true|<<OccmMigration>>|
+|evaluation_ontap_licenses||true|<<EvaluationOntapLicenses>>|
+|===
+
+=== OccmFeaturesFlags
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|intercom||true|boolean|
+|aws_environment_collector||true|boolean|
+|===
+
+=== OccmMigration
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|migrateAll||true|boolean|
+|blackList||true|string array|
+|===
+
+=== OnCloudUpgradePath
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|version||true|string|
+|path||true|string array|
+|===
+
+=== OnPremAggregateResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|totalCapacity||true|<<Capacity>>|
+|availableCapacity||true|<<Capacity>>|
+|state||true|string|
+|===
+
+=== OnPremClusterProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|clusterAddress||true|string|
+|ontapVersion||true|string|
+|clusterName||true|string|
+|serialNumber||true|string|
+|systemId||true|string|
+|licenses||true|string array|
+|systemManagerUrl||true|string|
+|location||true|enum (ON_PREM,  AZURE,  AWS,  SOFTLAYER,  GOOGLE)|
+|snapmirrorLicenseExists||true|boolean|
+|===
+
+=== OnPremVolumeCreateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|workingEnvironmentId|Target working environment ID|true|string|
+|svmName|SVM name|true|string|
+|aggregateName|Aggregate in which to create the volume|true|string|
+|name|Volume name, unique within the SVM|true|string|
+|size|Size as Capacity|true|<<PositiveCapacity>>|
+|initialSize|Initial size as Capacity. Relevant for thin provisioned volumes only. Default to 0.|false|<<Capacity>>|
+|snapshotPolicyName|Snapshot policy name|true|string|
+|exportPolicyInfo|NFS protocol parameters|false|<<ExportPolicyInfo>>|
+|shareInfo|CIFS protocol parameters|false|<<CreateCifsShareInfoRequest>>|
+|enableThinProvisioning|Enable thin provisioning|true|boolean|
+|enableCompression|Enable compression|true|boolean|
+|enableDeduplication|Enable deduplication|true|boolean|
+|syncToS3|Add Cloud Sync relationship|true|boolean|
+|===
+
+=== OnPremVolumeModifyRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|snapshotPolicyName|Snapshot Policy name|false|string|
+|shareInfo|Share names, permissions and users for CIFS|false|<<CifsShareInfo>>|
+|exportPolicyInfo|Export policy info for NFS|false|<<NamedExportPolicyInfo>>|
+|===
+
+=== OnPremVolumeRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|sourceSvmName|Source SVM name|true|string|
+|sourceVolumeName|Source volume name|true|string|
+|destinationVolumeName|Destination volume name|true|string|
+|destinationAggregateName|Destination aggregate name|true|string|
+|destinationSvmName|Destination SVM name|true|string|
+|destinationCapacityTier|Destination aggregate capacity tier|false|enum (S3,  Blob)|
+|===
+
+=== OnPremWorkingEnvironmentDiscoverRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|tenantId||true|string|
+|description||false|string|
+|name||true|string|
+|clusterAddress||true|string|
+|clusterUserName||true|string|
+|clusterPassword||true|string|
+|location||true|enum (ON_PREM,  AZURE,  AWS,  SOFTLAYER,  GOOGLE)|
+|===
+
+=== OnPremWorkingEnvironmentResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|publicId||true|string|
+|tenantId||true|string|
+|description||true|string|
+|name||true|string|
+|discoverUserEmail||true|string|
+|location||true|string|
+|reservedSize||false|<<Capacity>>|
+|status||false|<<StatusProperties>>|
+|interClusterLifs||false|<<InterClusterLif>> array|
+|cronJobSchedules||false|<<CronJobSchedule>> array|
+|svms||false|<<Svm>> array|
+|snapshotPolicies||false|<<SnapshotPolicy>> array|
+|replicationProperties|Working environments in which a SnapMirror relationship exists between volumes on this working environment|false|<<ReplicationProperties>>|
+|clusterProperties||false|<<OnPremClusterProperties>>|
+|ontapClusterProperties||false|<<OnPremClusterProperties>>|
+|workingEnvironmentType||true|string|
+|cloudSyncProperties||false|<<CloudSyncProperties>>|
+|actionsRequired||false|<<ActionRequired>> array|
+|===
+
+=== OntapCloudPasswordExists
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|exists||true|boolean|
+|===
+
+=== OntapCloudPasswordRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|ontapCloudPassword|Cloud Volumes ONTAP password|true|string|
+|===
+
+=== OntapClusterProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|nodes||true|<<OntapNodeProperties>> array|
+|clusterName||true|string|
+|ontapVersion||true|string|
+|systemManagerUrl||true|string|
+|creationTime||true|integer (int64)|
+|licenseType||true|<<VsaLicense>>|
+|lastModifiedOffbox||false|integer (int64)|
+|offboxTarget||true|boolean|
+|upgradeVersions||false|<<OntapUpdateImageMetadata>> array|
+|writingSpeedState||false|string|
+|broadcastDomainInfos||true|<<BroadcastDomainInfo>> array|
+|evaluation||true|boolean|
+|capacityTierInfo||false|<<CapacityTierInfo>>|
+|canConfigureCapacityTier||true|boolean|
+|usedCapacity||true|<<Capacity>>|
+|userName||true|string|
+|wormEnabled||true|boolean|
+|===
+
+=== OntapEncryption
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|keyManagerIds||true|string array|
+|keyManagerCaCertificateId||true|string|
+|===
+
+=== OntapLicenseType
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|type||true|string|
+|name||true|string|
+|description||true|string|
+|subName||true|string|
+|subDescription||true|string|
+|capacity_limit||true|string|
+|platformLicenseRequired||true|boolean|
+|default||true|boolean|
+|capacityLimit||true|<<Capacity>>|
+|===
+
+=== OntapNodeProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|lifs||true|<<LifResponse>> array|
+|serialNumber||true|string|
+|systemId||true|string|
+|platformLicense||false|string|
+|platformSerialNumber||false|string|
+|cloudProviderId||true|string|
+|healthy||true|boolean|
+|inTakeover||true|boolean|
+|===
+
+=== OntapUpdateImageMetadata
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|imageVersion||true|string|
+|lastModified||true|integer (int64)|
+|autoUpdateAllowed||true|boolean|
+|===
+
+=== OperationsReport
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumesWithoutSnapshots||true|integer (int32)|
+|volumesRunningOutOfSpace||true|integer (int32)|
+|unassociatedVolumes||true|integer (int32)|
+|unassociatedSnapshots||true|integer (int32)|
+|inefficientSnapshots||true|integer (int32)|
+|===
+
+=== PackageInfoResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|displayName||true|string|
+|description||true|string|
+|licenseType||true|string|
+|instanceTypeMapping||true|<<InstanceTypeRegionMapping>> array|
+|diskType||true|string|
+|diskSize||true|<<Capacity>>|
+|capacityTier||false|string|
+|instanceTenancy||false|string|
+|writingSpeedState||true|string|
+|===
+
+=== PasswordWrapper
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|password||true|string|
+|===
+
+=== Pattern
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|pattern||false|string|
+|flags||false|integer (int32)|
+|===
+
+=== PlacementResult
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|vsaAndVolume||true|<<VsaAndVolumeParams>>|
+|upgradeInfo||false|<<ChangeInstanceTypeRequest>>|
+|affectedVolumes||true|string array|
+|===
+
+=== PolicySchedule
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|frequency|Frequency|true|string|
+|retention|Retention|true|integer (int32)|
+|===
+
+=== PortalInformation
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|edit_user_url||true|string|
+|===
+
+=== PortalService
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|usePortalAuthentication||true|boolean|
+|auth0Information||false|<<Auth0Information>>|
+|portalInformation||false|<<PortalInformation>>|
+|===
+
+=== PortalSetupRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|adminUser||true|<<AdminUserInfo>>|
+|site||true|string|
+|company||true|string|
+|===
+
+=== PositiveCapacity
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|size|Size|true|number (double)|
+|unit|Unit|true|string|
+|===
+
+=== ProtectionReport
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumesWithSnapshots||true|integer (int32)|
+|averageRpoInMinutes||true|integer (int32)|
+|averageSnapshotsForVolume||true|integer (int32)|
+|===
+
+=== ProvidedLicenseResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|license||true|string|
+|serialNumber||true|string|
+|contractEndDate||false|integer (int64)|
+|===
+
+=== ProviderLegacyInstanceTypes
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|aws||true|string array|
+|azure||true|string array|
+|===
+
+=== ProviderProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|regionName||true|string|
+|resourceGroup|Resource group|true|<<AzureResourceGroupResponse>>|
+|vnetCidr||true|string|
+|tags||true|Map[string,string]|
+|subscriptionId||true|string|
+|deploymentId||true|string|
+|creationTime||true|integer (int64)|
+|instanceType||true|string|
+|numOfNics||true|integer (int32)|
+|singleNetworkInterface||true|boolean|
+|subscriptionName||true|string|
+|===
+
+=== ProviderSupportedRegions
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|aws||true|<<Region>> array|
+|azure||true|<<Region>> array|
+|===
+
+=== ProviderVolumeResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|Id|true|string|
+|name|Name|true|string|
+|size|Size|true|<<Capacity>>|
+|state|State|true|string|
+|device|Device|true|string|
+|instanceId|InstanceId|true|string|
+|diskType|Type|true|string|
+|encrypted|Encrypted|true|boolean|
+|iops|Provisioned IOPS|false|integer (int32)|
+|===
+
+=== ProviderVolumeTypeResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|size||true|<<Capacity>>|
+|supportedVolumeTypes||true|string array|
+|maxDisksAllow||true|<<MaxDisksAllow>>|
+|===
+
+=== ProxyUri
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|uri||false|string|
+|proxyUserName||false|string|
+|proxyPassword||false|string|
+|proxyDomain||false|string|
+|===
+
+=== RecoverAzureHARequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|region||true|string|
+|resourceGroupName||true|string|
+|clusterCredentials||true|<<ClusterCredentialsRequest>>|
+|tenantId||true|string|
+|providerAccount|ID of subscription where VSA is located|false|string|
+|===
+
+=== RecoverAzureVSARequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|region||true|string|
+|id||true|string|
+|resourceGroupName||true|string|
+|instanceName||true|string|
+|clusterCredentials||true|<<ClusterCredentialsRequest>>|
+|tenantId||true|string|
+|providerAccount|ID of subscription where VSA is located|false|string|
+|===
+
+=== RecoverVsaRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|region||true|string|
+|stackId||true|string|
+|clusterCredentials||true|<<ClusterCredentialsRequest>>|
+|tenantId||true|string|
+|providerAccount|Role ARN to assume|false|string|
+|===
+
+=== Region
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|code||true|string|
+|location||true|string|
+|s3Region||false|string|
+|===
+
+=== RegionalAmi
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|region||true|string|
+|ami_id||true|string|
+|===
+
+=== RegistrationResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|clientId||true|string|
+|===
+
+=== ReplicationInterClusterLif
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Name|true|string|
+|address|Address|true|string|
+|netmaskLength|Netmask Length|true|integer (int32)|
+|port|Port|true|string|
+|node|Node|true|string|
+|status|Status|true|string|
+|peered||true|boolean|
+|===
+
+=== ReplicationInterClusterLifs
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|interClusterLifs|Working Environment Intercluster Lifs|true|<<ReplicationInterClusterLif>> array|
+|peerInterClusterLifs|Peer Working Environment Intercluster Lifs|true|<<ReplicationInterClusterLif>> array|
+|===
+
+=== ReplicationProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|peers||true|string array|
+|replicationTargets||true|string array|
+|===
+
+=== ReplicationRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|sourceWorkingEnvironmentId|Source working environment Id|true|string|
+|destinationWorkingEnvironmentId|Destination working environment Id|true|string|
+|sourceInterclusterLifIps|Source intercluster LIF IPs|true|string array|
+|destinationInterclusterLifIps|Destination intercluster LIF IPs|true|string array|
+|policyName|SnapMirror policy name|true|string|
+|scheduleName|Schedule name|false|string|
+|maxTransferRate|Maximum transfer rate limit (KB/s). Use 0 for no limit, otherwise use number between 1024 and 2,147,482,624|false|integer (int32)|
+|===
+
+=== ReplicationSchedule
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Name|true|string|
+|description|Description|false|string|
+|cronJobSchedule|Cron jobs schedule|true|<<CronJobScheduleResponse>>|
+|===
+
+=== ReplicationStatusCurrentTransferInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|transferType|Current transfer type|true|enum (initialize,  update,  resync,  restore,  check,  file_restore)|
+|transferPriority|Current transfer priority|true|enum (low,  normal)|
+|transferError|Current transfer error|true|string|
+|===
+
+=== ReplicationStatusLastTransferInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|transferType|Last transfer type|true|enum (initialize,  update,  resync,  restore,  check,  file_restore)|
+|transferSize|Last transfer size|true|<<Capacity>>|
+|transferDuration|Last transfer duration|true|<<Duration>>|
+|transferEnded|Last transfer end time|true|string (date-time)|
+|transferError|Last transfer error|true|string|
+|===
+
+=== ReplicationStatusResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|source|Source Details|true|<<ReplicationStatusSide>>|
+|destination|Destination Details|true|<<ReplicationStatusSide>>|
+|mirrorState|SnapMirror status|true|enum (uninitialized,  snapmirrored,  brokenoff,  undefined)|
+|relationshipType|SnapMirror relationship type|true|enum (data_protection,  load_sharing,  vault,  restore,  transition_data_protection,  extended_data_protection)|
+|relationshipStatus|SnapMirror relationship status|true|enum (idle,  transferring,  checking,  quiescing,  quiesced,  queued,  preparing,  finalizing,  aborting,  breaking)|
+|relationshipProgress|SnapMirror relationship progress|true|<<Capacity>>|
+|policy|Policy name|true|string|
+|policyType|Policy type|true|enum (vault,  async_mirror,  mirror_vault,  sync_mirror)|
+|schedule|Schedule name|true|string|
+|maxTransferRate|Maximum transfer rate limit|true|<<Capacity>>|
+|networkCompressionRatio|Network compression ratio|true|string|
+|healthy|SnapMirror healthiness|true|boolean|
+|unhealthyReason|SnapMirror un-healthiness reason|true|string|
+|lagTime|Replication lag time|true|<<Duration>>|
+|newestSnapshotName|Newest snapshot name|true|string|
+|newestSnapshotCreated|Newest snapshot creation time|true|string (date-time)|
+|lastTransferInfo|Last transfer Information|true|<<ReplicationStatusLastTransferInfo>>|
+|currentTransferInfo|Current transfer Information|true|<<ReplicationStatusCurrentTransferInfo>>|
+|totalTransferTime|Total transfer time|true|<<Duration>>|
+|totalTransferSize|Total transfer size|true|<<Capacity>>|
+|volumeUsedSize|Volume used size|true|<<Capacity>>|
+|volumeCapacityTier|Volume capacity tier|true|<<Capacity>>|
+|===
+
+=== ReplicationStatusSide
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|workingEnvironmentId|Working environment ID|true|string|
+|workingEnvironmentType|Working environment type|true|string|
+|workingEnvironmentStatus|Working environment status|true|string|
+|clusterName|Cluster name|true|string|
+|region|AWS region name|false|string|
+|availabilityZone|AWS availability zone name|false|string|
+|svmName|Svm name|true|string|
+|nodeName|Node name|false|string|
+|volumeName|Volume name|true|string|
+|===
+
+=== ReplicationUpdateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|schedule|New replication schedule name name|false|string|
+|maxTransferRate|New maximum transfer rate limit (KB/s). Use 0 for no limit, otherwise use number between 1024 and 2,147,482,624|false|integer (int32)|
+|===
+
+=== ResetPassword
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|oldPassword|User's current password|true|string|
+|newPassword|User's new password|true|string|
+|===
+
+=== ResetUserPasswordRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|password|New password|true|string|
+|===
+
+=== ResourcesToDelete
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|instanceNameAndType||true|<<InstanceNameIdAndType>> array|
+|numberOfDisksAndDiskSize||true|<<DisksDetails>> array|
+|===
+
+=== Role
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Role name|true|string|
+|publicId|Role public ID|true|string|
+|permissions|List of permissions available to this role|true|string array|
+|===
+
+=== RouteTableResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id||true|string|
+|main||true|boolean|
+|subnets||true|string array|
+|tags||true|<<RouteTableTag>> array|
+|===
+
+=== RouteTableTag
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|key||true|string|
+|value||true|string|
+|===
+
+=== SavingsOpportunitiesReport
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|improveUtilization||true|integer (int32)|
+|unassociatedVolumes||true|integer (int32)|
+|unassociatedSnapshots||true|integer (int32)|
+|inefficientSnapshots||true|integer (int32)|
+|===
+
+=== SecurityGroupResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|securityGroupId|Security group ID|true|string|
+|description|Description|true|string|
+|name|Name|true|string|
+|===
+
+=== ServerTimeZone
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|timeZoneName||true|string|
+|formattedTimeZone||true|string|
+|===
+
+=== ServiceUrl
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|url|url|true|string|
+|===
+
+=== SetNssKeysRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|nssUserName|NSS username|false|string|
+|nssPassword|NSS password|false|string|
+|===
+
+=== SetProxyRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|uri||true|string|
+|proxyUserName||false|string|
+|proxyPassword||false|string|
+|proxyDomain||false|string|
+|===
+
+=== SetupRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|tenantRequest||true|<<AddTenantRequest>>|
+|userRequest||true|<<UserRequest>>|
+|site||true|string|
+|company||true|string|
+|proxyUrl||true|<<ProxyUri>>|
+|autoVsaCapacityManagement||true|boolean|
+|autoUpgrade||true|boolean|
+|===
+
+=== SiteIdentifier
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|company||true|string|
+|host||true|string|
+|site||true|string|
+|===
+
+=== SnapMirrorPolicyResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|comment||true|string|
+|policyType||true|string|
+|rules||true|<<SnapMirrorRuleResponse>> array|
+|reason||false|string|
+|default||true|boolean|
+|supported||true|boolean|
+|===
+
+=== SnapMirrorRuleResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|snapMirrorLabel||true|string|
+|retention||true|integer (int32)|
+|===
+
+=== SnapshotCreateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|snapshotName|Snapshot name|true|string|
+|===
+
+=== SnapshotPolicy
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Name|true|string|
+|schedules|Schedules|true|<<PolicySchedule>> array|
+|description|Description|true|string|
+|===
+
+=== SnapshotPolicyCreateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|snapshotPolicyName|Snapshot policy name|true|string|
+|schedules|Snapshot policy schedules|true|<<SnapshotPolicyScheduleRequest>> array|
+|===
+
+=== SnapshotPolicyScheduleRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|scheduleType|Snapshot policy schedule type|true|enum (5min,  8hour,  hourly,  daily,  weekly,  monthly)|
+|retention|Snapshot policy retention|true|integer (int32)|
+|===
+
+=== SnapshotResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Name|true|string|
+|accessTime|Access time|true|integer (int64)|
+|label|Label|false|string|
+|===
+
+=== SourceOrTargetReplication
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|source||true|boolean|
+|target||true|boolean|
+|===
+
+=== SourceSnapmirrorEndpoint
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|sourceWorkingEnvironmentId|working environment Id|true|string|
+|sourceSvmName|SVM name|true|string|
+|sourceVolumeName|volume name|true|string|
+|===
+
+=== StartStopRange
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|stop||true|<<TimePoint>>|
+|start||true|<<TimePoint>>|
+|===
+
+=== Status
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|status||false|string|
+|===
+
+=== StatusProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|status||true|string|
+|message||true|string|
+|failureCauses||true|<<FailureCauses>>|
+|extendedFailureReason||false|string|
+|===
+
+=== StorageDetail
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|usedSize|storage used size|false|<<Capacity>>|
+|requestedSize|storage requested size|false|<<Capacity>>|
+|ebsSize|EBS storage requested size|false|<<Capacity>>|
+|===
+
+=== SubnetResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|subnetId|Subnet ID|true|string|
+|cidr|CIDR|true|string|
+|subnetName|Subnet name|false|string|
+|availabilityZone|availability zone|true|string|
+|availableIps|The number of available IPs on the subnet|true|integer (int32)|
+|minimumRequiredIps|The minimum needed IP addresses for the Cloud Volumes ONTAP creation|true|integer (int32)|
+|===
+
+=== SupportRegistrationInformation
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|supportRegistrationStatus||true|string|
+|serialNumber||true|string|
+|licenseExpiryDate||false|integer (int64)|
+|cloudLicenseExists||true|boolean|
+|===
+
+=== SupportRegistrationProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|supportRegistrationStatus||true|string|
+|licenseExpiryDate||true|integer (int64)|
+|===
+
+=== SupportRegistrationResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|status||true|string|
+|===
+
+=== SupportServices
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|asupEnabled||true|boolean|
+|cognitoEnabled||true|boolean|
+|kinesisEnabled||true|boolean|
+|intercomEnabled||true|boolean|
+|liveChatEnabled||true|boolean|
+|volumeViewEnabled||true|boolean|
+|portalService||true|<<PortalService>>|
+|intercomAppId||true|string|
+|===
+
+=== SupportedCapacityTiers
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|supportedCapacityTiersPerVolumeType||true|<<SupportedCapacityTiersResponse>> array|
+|capacityTiersDisableReasons||true|string array|
+|compositeSupported||true|boolean|
+|forceCompositeVersion||true|boolean|
+|===
+
+=== SupportedCapacityTiersResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumeType||true|string|
+|supportedCapacityTiers||true|string array|
+|availableTieringPolicies||true|string array|
+|===
+
+=== SupportedFeatures
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|supportsMixedAggregates||true|boolean|
+|===
+
+=== SupportedFeaturesResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|wormSupportedVersion||true|boolean|
+|===
+
+=== Svm
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|state||true|string|
+|language||true|string|
+|allowedAggregates||true|string array|
+|===
+
+=== SvmNameModificationRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|svmName||true|string|
+|===
+
+=== S3BucketInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|bucketName||true|string|
+|region||true|string|
+|tags||true|Map[String, String]|
+|===
+
+=== TagKeyResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|key||true|string|
+|values||true|string array|
+|===
+
+=== TagResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|key|tag key|true|string|
+|value|tag value|true|string|
+|===
+
+=== TenantActionsRequiredResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|weActions||true|<<WeActionRequiredResponse>> array|
+|===
+
+=== TenantResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|publicId||true|string|
+|costCenter||true|string|
+|description||true|string|
+|nssUserName||true|string|
+|workingEnvironmentsInformation||false|<<WorkingEnvironmentsInformation>>|
+|===
+
+=== TimePoint
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|day||true|integer (int32)|
+|hour||true|integer (int32)|
+|minute||true|integer (int32)|
+|===
+
+=== TrustedCertificateResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|id|ID|true|string|
+|status|Status|true|enum (ACTIVE,  PENDING_DELETED,  PENDING_INSTALLED)|
+|certificateInfo|Certificate Info|true|<<CertificateResponse>>|
+|===
+
+=== UnassociatedSnapshotsReport
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|totalUnassociatedSnapshots||true|integer (int32)|
+|startIndex||false|integer (int32)|
+|maxItems||false|integer (int32)|
+|snapshots||true|<<EbsSnapshotReport>> array|
+|totalFilteredSnapshots||true|integer (int32)|
+|===
+
+=== UnassociatedVolumesReport
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|totalUnassociatedVolumes||true|integer (int32)|
+|startIndex||false|integer (int32)|
+|maxItems||false|integer (int32)|
+|volumes||true|<<EbsVolumeReport>> array|
+|totalFilteredVolumes||true|integer (int32)|
+|===
+
+=== UnavailableInstanceInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|instanceIds||true|string array|
+|status||true|string|
+|===
+
+=== UpdateCredentialsRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|username|Username|true|string|
+|password|Password|true|string|
+|===
+
+=== UpdateInfo
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|date||true|integer (int64)|
+|releaseNumber||true|integer (int32)|
+|===
+
+=== UpdateKeyManagerCaCertificateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|keyManagerCaCertificateId||true|string|
+|===
+
+=== UpdateLocalImage
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|version||true|string|
+|current||true|boolean|
+|===
+
+=== UpdateRouteTablesRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|routeTableIds||true|string array|
+|===
+
+=== UpdateSystemImageRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|updateType|System update type. System update can be performed by providing either: an external URL from which ONTAP will download the image file, a local image already in ONTAP or a name of an image provided by Cloud Manager|true|enum (EXTERNAL_FILE,  LOCAL_IMAGE,  OCCM_PROVIDED)|
+|updateParameter|Parameter specific to the specified update type. External file URL, local image name or Cloud Manager provided image name|true|string|
+|===
+
+=== UpdateTenantRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Tenant name|true|string|
+|description|Tenant description|false|string|
+|costCenter|Tenant cost center|false|string|
+|===
+
+=== UpdateUserRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|firstName|User first name|true|string|
+|lastName|User last name|true|string|
+|email|User email|true|string|
+|ldapUserName|AD user name|false|string|
+|notificationsOptIn|Email notifications opt-in|false|boolean|
+|===
+
+=== UpgradeCreateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|vsaAndVolume||true|<<VsaAndVolumeParams>>|
+|upgradeInfo||true|<<ChangeInstanceTypeRequest>>|
+|===
+
+=== UsedCapacityVolumeReport
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumeId||true|string|
+|usedSizeGb||false|number (double)|
+|allocatedSizeGb||true|number (double)|
+|overAllocation||false|number (double)|
+|dailyChangePredictionGb||false|number (double)|
+|daysTillFull||false|integer (int32)|
+|instanceName||false|string|
+|instanceIp||false|string|
+|instanceId||false|string|
+|===
+
+=== UserPasswordRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|email|Email address of the user attempting to login|true|string|
+|password|Password of the user attempting to login|true|string|
+|===
+
+=== UserPublicIdWrapper
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|userId||true|string|
+|===
+
+=== UserRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|firstName|User first name|true|string|
+|lastName|User last name|true|string|
+|email|User email|true|string|
+|roleId|Role ID of the user|true|string|
+|tenantId|Tenant ID of the user|false|string|
+|password|User password|true|string|
+|accessKey|User's AWS Access key|false|string|
+|secretKey|User's AWS Secret key|false|string|
+|s3Bucket|User's AWS S3 bucket|false|string|
+|azureCredentials|User's Azure credentials|false|<<AzureCredentialsRequest>>|
+|ldapUserName|LDAP User Name|false|string|
+|notificationsOptIn|Email notifications opt-in|false|boolean|
+|ldap||true|boolean|
+|===
+
+=== UserResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|publicId|User public ID|true|string|
+|assignedWorkingEnvironments|List of public IDs of all of the working environments visible to the user|true|string array|
+|firstName|User first name|true|string|
+|lastName|User last name|true|string|
+|email|User email|true|string|
+|roleId|Role ID of the user|true|string|
+|tenantId|Tenant ID of the user|true|string|
+|s3Bucket|AWS S3 bucket value assigned to the user|true|string|
+|accessKey|User AWS Access Key ID|true|string|
+|accountId|AWS Account ID|true|string|
+|createdWorkingEnvironments|List of all working environments created by the user|true|<<UserWorkingEnvironmentResponse>> array|
+|azureCredentials|Azure credentials|false|<<AzureCredentials>>|
+|cloudSyncLicenseInformation|Cloud Sync license information|false|<<CloudSyncLicenseInformation>>|
+|ldapUserName|LDAP User Name|true|string|
+|notificationsOptIn|Notification OptIn|true|boolean|
+|ldap||true|boolean|
+|===
+
+=== UserTagsResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|tags||true|<<CloudResourceTag>> array|
+|===
+
+=== UserWorkingEnvironmentResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|publicId|Working environment public ID|true|string|
+|name|Working environment name|true|string|
+|workingEnvironmentType|Working environment Type|true|string|
+|===
+
+=== ValidateTenant
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|reason||false|string|
+|valid||true|boolean|
+|===
+
+=== VersionWrapper
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|date||true|integer (int64)|
+|releaseNumber||true|integer (int32)|
+|===
+
+=== VhdImageRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|storageAccount||true|string|
+|container||true|string|
+|vhdOsBlob||true|string|
+|vhdDataBlob||true|string|
+|blobUrl||false|string|
+|===
+
+=== VmDiskProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|objectName||true|string|
+|storageAccountName||true|string|
+|containerName||true|string|
+|===
+
+=== Volume
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Name|true|string|
+|totalSize|Volume total size|true|<<Capacity>>|
+|usedSize|Volume used size|true|<<Capacity>>|
+|thinProvisioned|Is volume thin-provisioned|true|boolean|
+|rootVolume|Is volume the root volume of the SVM|true|boolean|
+|clone||true|boolean|
+|===
+
+=== VolumeCloneRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|newVolumeName|New volume name|true|string|
+|parentSnapshot|Snapshot name to use for clone|false|string|
+|===
+
+=== VolumeMigrationResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumeName||true|string|
+|svmName||true|string|
+|status||true|string|
+|progress||true|integer (int32)|
+|===
+
+=== VolumeModifyRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|snapshotPolicyName|Snapshot Policy name|false|string|
+|shareInfo|Share names, permissions and users for CIFS|false|<<CifsShareInfo>>|
+|exportPolicyInfo|Export policy info for NFS|false|<<NamedExportPolicyInfo>>|
+|qualityOfService|Quality of service|false|<<VolumeQualityOfService>>|
+|===
+
+=== VolumeMoveParameters
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumeName||true|string|
+|svmName||true|string|
+|targetAggregateName||true|string|
+|homeNode||false|string|
+|newTargetAggregate||true|boolean|
+|===
+
+=== VolumeMoveRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|targetAggregateName|Target aggregate name|true|string|
+|numOfDisksToAdd|Target aggregate number of disks to add|true|integer (int32)|
+|createTargetAggregate|Is new Target aggregate|true|boolean|
+|newDiskTypeName|Volume's new Disk type|false|string|
+|newCapacityTier|New capacity tier|false|enum (S3,  Blob)|
+|newTieringPolicy|New tiering policy|false|enum (none,  snapshot_only,  auto)|
+|===
+
+=== VolumeQualityOfService
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|maxIops||false|integer (int32)|
+|maxDataRate|Max Data rate per second|false|<<Capacity>>|
+|===
+
+=== VolumeResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Volume name|true|string|
+|svmName|Volume SVM name|true|string|
+|size|Volume total size|true|<<Capacity>>|
+|usedSize|Volume used size|true|<<Capacity>>|
+|junctionPath|The junction path at which this volume is mounted|true|string|
+|mountPoint|Mount Point|false|string|
+|compressionSpaceSaved|The total disk capacity that is saved by compressing blocks|true|<<Capacity>>|
+|deduplicationSpaceSaved|The disk space capacity that is saved by deduplication and file cloning|true|<<Capacity>>|
+|thinProvisioning|Whether thin provisioning is enabled|true|boolean|
+|compression|Whether compression is enabled|true|boolean|
+|deduplication|Whether deduplication is enabled|true|boolean|
+|snapshotPolicy|The name of the Snapshot policy|true|string|
+|securityStyle|The type of the Security style|true|string|
+|exportPolicyInfo|The export policy info for NFS|true|<<NamedExportPolicyInfo>>|
+|shareNames|The share names for CIFS|true|string array|
+|shareInfo|The share names, permissions and users for CIFS|true|<<CifsShareInfo>> array|
+|parentVolumeName|Name of the parent flexible volume for the clone|true|string|
+|rootVolume|Flag to indicate if the volume is a SVM root|true|boolean|
+|state|Volume state|true|string|
+|volumeType|Volume type|true|string|
+|aggregateName|Aggregate name|true|string|
+|parentSnapshot|The snapshot name the volume is based on|false|string|
+|autoSizeMode|The operating mode of autosize|true|string|
+|maxGrowSize|The maximum size to which the volume will grow automatically|true|<<Capacity>>|
+|providerVolumeType|Cloud provider volume type|false|string|
+|cloneNames|Names of cloned copies of the volume|true|string array|
+|moving|Is Volume during move process|true|boolean|
+|primaryNoFailoverMountPoint|Primary mount point without failover|false|string|
+|secondaryNoFailoverMountPoint|Secondary mount point without failover|false|string|
+|capacityTier|Capacity tier|false|enum ([S3,  Blob])|
+|capacityTierUsedSize|Capacity tier used size|false|<<Capacity>>|
+|cifsShareAccessPoint|CIFS share access point|false|string|
+|primaryCifsShareAccessPoint|Primary CIFS share access point|false|string|
+|secondaryCifsShareAccessPoint|Secondary CIFS share access point|false|string|
+|tieringPolicy|Tiering policy|false|string|
+|tierInactiveUserData|Tier inactive user data|false|<<Capacity>>|
+|tierInactiveUserDataPercent|Tier inactive user data percent|false|integer (int32)|
+|comment|Volume comment|false|string|
+|qosPolicyGroupName|Quality of service policy group name|false|string|
+|snaplockType|Snaplock type|false|enum (non_snaplock,  compliance,  enterprise)|
+|===
+
+=== VolumeViewSetupRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|userRequest||true|<<UserRequest>>|
+|company||true|string|
+|proxyUrl||true|<<ProxyUri>>|
+|autoUpgrade||true|boolean|
+|===
+
+=== VolumesExtendedReport
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|volumesRunningOutOfSpace||false|<<UsedCapacityVolumeReport>> array|
+|overAllocatedVolumes||false|<<UsedCapacityVolumeReport>> array|
+|===
+
+=== VpcBasicResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|vpcId|VPC ID|true|string|
+|state|VPC state|true|string|
+|cidrBlock|VPC CIDR block|true|string|
+|tags|VPC tags|true|<<VpcTagResponse>> array|
+|default|Is the VPC a default one|true|boolean|
+|===
+
+=== VpcExtendedResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|vpcId|VPC ID|true|string|
+|state|VPC state|true|string|
+|cidrBlock|VPC CIDR block|true|string|
+|tags|VPC tags|true|<<VpcTagResponse>> array|
+|default|Is the VPC a default one|true|boolean|
+|subnets|Subnets associated with vpc|true|<<SubnetResponse>> array|
+|securityGroups|Security groups associated with vpc|true|<<SecurityGroupResponse>> array|
+|tenancy|VPC Tenancy|true|string|
+|===
+
+=== VpcTagResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|key|VPC tag key|true|string|
+|value|VPC tag value|true|string|
+|===
+
+=== VsaAggregateCreateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|workingEnvironmentId||true|string|
+|numberOfDisks||true|integer (int32)|
+|diskSize||true|<<Capacity>>|
+|homeNode||false|string|
+|providerVolumeType||false|string|
+|capacityTier||false|enum (S3,  Blob)|
+|iops|Provisioned IOPS|false|integer (int32)|
+|===
+
+=== VsaAndVolumeParams
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|vsaId||true|string|
+|svmName||true|string|
+|aggregateName||true|string|
+|cidr||true|string|
+|===
+
+=== VsaClusterProperties
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|lifs||true|<<LifResponse>> array|
+|serialNumber||true|string|
+|systemId||true|string|
+|clusterName||true|string|
+|ontapVersion||true|string|
+|accountId||true|string|
+|productCode||true|string|
+|amiId||true|string|
+|systemManagerUrl||true|string|
+|creationTime||true|integer (int64)|
+|instanceId||true|string|
+|platformLicense||true|string|
+|licenseExpiryDate||true|integer (int64)|
+|instanceType||true|string|
+|publicIp||false|string|
+|publicDnsName||false|string|
+|licenseType||true|<<VsaLicense>>|
+|lastModifiedOffbox||false|integer (int64)|
+|offboxTarget||true|boolean|
+|upgradeVersions||false|<<OntapUpdateImageMetadata>> array|
+|writingSpeedState||false|string|
+|===
+
+=== VsaLicense
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|License name|true|string|
+|capacityLimit|Capacity limit|true|<<Capacity>>|
+|===
+
+=== VsaMetadataRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|ontapVersion||true|string|
+|licenseType||true|string|
+|instanceType||true|string|
+|platformSerialNumber||false|string|
+|providedLicense||false|string|
+|useLatestVersion||false|boolean|
+|===
+
+=== VsaSchedule
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name||true|string|
+|schedule||true|<<StartStopRange>> array|
+|enabled||true|boolean|
+|===
+
+=== VsaSchedulesRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|schedules||true|<<VsaSchedule>> array|
+|===
+
+=== VsaVolumeCreateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|workingEnvironmentId|Cloud Volumes ONTAP Working Environment ID|true|string|
+|svmName|SVM name|true|string|
+|aggregateName|Aggregate in which the volume will be created|true|string|
+|name|Volume name, unique within the SVM|true|string|
+|size|Size as Capacity|true|<<PositiveCapacity>>|
+|initialSize|Initial size as Capacity. Relevant for thin provisioned volumes only|false|<<Capacity>>|
+|snapshotPolicyName|Snapshot Policy name|true|string|
+|exportPolicyInfo|NFS protocol parameters|false|<<ExportPolicyInfo>>|
+|shareInfo|CIFS protocol parameters|false|<<CreateCifsShareInfoRequest>>|
+|enableThinProvisioning|Enable thin provisioning|true|boolean|
+|enableCompression|Enable compression|true|boolean|
+|enableDeduplication|Enable deduplication|true|boolean|
+|maxNumOfDisksApprovedToAdd|Maximum number of disks approved to allocate|true|integer (int32)|
+|providerVolumeType|Provider volume type|false|string|
+|syncToS3|Add Cloud Sync relationship|true|boolean|
+|capacityTier|Capacity tier|false|enum (S3,  Blob)|
+|iops|Provisioned IOPS|false|integer (int32)|
+|tieringPolicy|Tiering policy|false|enum (none,  snapshot_only,  auto)|
+|junctionPath|Junction path|false|string|
+|qualityOfService|Quality of service|false|<<VolumeQualityOfService>>|
+|===
+
+=== VsaVolumeOnNewVsaCreateRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|name|Volume name, unique within the SVM|true|string|
+|size|Size as Capacity|true|<<PositiveCapacity>>|
+|initialSize|Initial size as Capacity. Relevant for thin provisioned volumes only.|false|<<Capacity>>|
+|snapshotPolicyName||true|string|
+|exportPolicyInfo|NFS protocol parameters|false|<<ExportPolicyInfo>>|
+|shareInfo|CIFS protocol parameters|false|<<CreateCifsShareInfoRequest>>|
+|enableThinProvisioning|Enable thin provisioning|true|boolean|
+|enableCompression|Enable compression|true|boolean|
+|enableDeduplication|Enable deduplication|true|boolean|
+|tieringPolicy|Tiering policy|false|enum (none,  snapshot_only,  auto)|
+|junctionPath|Junction path|false|string|
+|qualityOfService|Quality of service|false|<<VolumeQualityOfService>>|
+|===
+
+=== VsaVolumeQuoteRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|workingEnvironmentId|Cloud Volumes ONTAP Working Environment ID|true|string|
+|svmName|SVM name|true|string|
+|aggregateName|Optionally choose in which aggregate to create the volume|false|string|
+|name|Volume name, unique within the SVM|true|string|
+|size|Size as Capacity|true|<<PositiveCapacity>>|
+|initialSize|Initial size as Capacity. Relevant for thin provisioned volumes only|false|<<Capacity>>|
+|enableThinProvisioning|Enable thin provisioning|true|boolean|
+|providerVolumeType|Provider volume type|false|string|
+|verifyNameUniqueness|Verify volume name uniqueness within the SVM|true|boolean|
+|capacityTier|Capacity tier|false|enum (S3,  Blob)|
+|iops|Provisioned IOPS|false|integer (int32)|
+|tieringPolicy|Tiering policy|false|enum (none,  snapshot_only,  auto)|
+|replicationFlow||true|boolean|
+|===
+
+=== VsaVolumeQuoteResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|numOfDisks|Number of new disks needed|true|integer (int32)|
+|diskSize|New disks size|true|<<Capacity>>|
+|aggregateName|The aggregate on which the requested volume will be created|true|string|
+|newAggregate|Is it a newly created aggregate|true|boolean|
+|autoVsaCapacityManagement|Is auto Cloud Volumes ONTAP capacity management enabled|true|boolean|
+|===
+
+=== VsaVolumeRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|sourceSvmName|Source SVM name|true|string|
+|sourceVolumeName|Source volume name|true|string|
+|destinationVolumeName|Destination volume name|true|string|
+|destinationAggregateName|Destination aggregate name|true|string|
+|numOfDisksApprovedToAdd|Maximum number of disks approved to add|true|integer (int32)|
+|advancedMode|Use advanced allocation for destination volume|true|boolean|
+|destinationProviderVolumeType|Destination provider volume type|false|string|
+|destinationCapacityTier|Destination aggregate capacity tier|false|enum (S3,  Blob)|
+|===
+
+=== VsaWorkingEnvironmentResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|publicId||true|string|
+|name||true|string|
+|tenantId||true|string|
+|svmName||false|string|
+|creatorUserEmail||true|string|
+|status||false|<<StatusProperties>>|
+|awsProperties||false|<<AwsProperties>>|
+|reservedSize||false|<<Capacity>>|
+|encryptionProperties||false|<<EncryptionProperties>>|
+|clusterProperties||false|<<VsaClusterProperties>>|
+|ontapClusterProperties||false|<<OntapClusterProperties>>|
+|actionsRequired||false|<<ActionRequired>> array|
+|interClusterLifs||false|<<InterClusterLif>> array|
+|cronJobSchedules||false|<<CronJobSchedule>> array|
+|snapshotPolicies||false|<<SnapshotPolicy>> array|
+|svms||false|<<Svm>> array|
+|activeActions|Actions currently being performed on this working environment|false|string array|
+|replicationProperties|Working environments in which a SnapMirror relationship exists between volumes on this working environment|false|<<ReplicationProperties>>|
+|schedules||false|<<VsaSchedule>> array|
+|cloudProviderName||true|string|
+|workingEnvironmentType||true|string|
+|supportRegistrationProperties||false|<<SupportRegistrationProperties>>|
+|supportRegistrationInformation||false|<<SupportRegistrationInformation>> array|
+|haProperties||false|<<HaProperties>>|
+|capacityFeatures||false|<<CapacityFeatures>>|
+|cloudSyncProperties||false|<<CloudSyncProperties>>|
+|supportedFeatures||false|<<SupportedFeatures>>|
+|cloudStorageAutomationProperties||false|<<CloudStorageAutomationProperties>>|
+|k8sProperties||false|<<K8sProperties>>|
+|hA||true|boolean|
+|===
+
+=== WeActionRequiredResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|publicId||true|string|
+|actions||true|<<ActionRequired>> array|
+|===
+
+=== WorkingEnvironmentCostResponse
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|storage|working environment storage details|true|<<StorageDetail>>|
+|costs|working environment cost details|true|<<CostDetail>> array|
+|===
+
+=== WorkingEnvironments
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|vsaWorkingEnvironments||true|<<VsaWorkingEnvironmentResponse>> array|
+|onPremWorkingEnvironments||true|<<OnPremWorkingEnvironmentResponse>> array|
+|azureVsaWorkingEnvironments||true|<<AzureVsaWorkingEnvironmentResponse>> array|
+|===
+
+=== WorkingEnvironmentsInformation
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|regionsCount|Number of regions for which working environments exist over this tenant|true|integer (int32)|
+|totalReservedSize|Total reserved size of all working environments created over this tenant|true|<<Capacity>>|
+|workingEnvironmentsCount|Number of working environments created over this tenant|true|integer (int32)|
+|===
+
+=== WormRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|activationCode|WORM Activation Code|true|string|
+|retentionPeriod|WORM Retention period|true|<<WormRetentionPeriod>>|
+|===
+
+=== WormRetentionPeriod
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|length|Length|true|integer (int32)|
+|unit|Unit|true|enum (years,  months,  days,  hours,  minutes,  seconds)|
+|===
+
+=== WritingSpeedRequest
+[options="header"]
+|===
+|Name|Description|Required|Schema|Default
+|writingSpeedState|Writing speed state|true|enum (NORMAL,  HIGH)|
+|===

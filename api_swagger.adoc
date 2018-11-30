@@ -1,0 +1,30 @@
+---
+sidebar: sidebar
+permalink: 2_accessing_and_running_api_operations.html
+keywords: script, scripts, scripting, api request, api response, json schema, authentication, api, restful, restful API, rest API, rest, error codes, api parameters, netapp, cloud, ontap, Cloud Volumes ONTAP, manager, management, oncommand, storage
+summary: OnCommand Cloud Manager includes REST APIs that enable software developers to automate the management of Cloud Volumes ONTAP. You should understand how the APIs work before you get started.
+---
+
+= Accessing the API reference and running operations using Swagger
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Manager provides interactive API documentation through the Swagger interface. You can use Swagger to find descriptions of the APIs and to run the operations.
+
+.Steps
+
+. Click the link in the lower-right corner of the console, or enter the URL _http://server/occm/api-doc_ in your web browser.
++
+image::screenshot_apis.gif[]
+
+. Expand the operations for the API calls to view the API descriptions.
+Example:: The following image shows an API description:
+image::screenshot_swagger_descriptions.gif[]
+
+. If desired, run the operations directly from Swagger by entering values for the parameters and then clicking *Try it out!*
+Example:: The following image shows an example result:
+image::screenshot_swagger_response.gif[]
