@@ -25,7 +25,7 @@ NOTE: Customer-managed keys are not supported with Cloud Volumes ONTAP.
 
 Data encryption is supported in AWS using the http://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS Key Management Service (KMS)^]. Cloud Manager requests data keys using a customer master key (CMK).
 
-If you want to use this encryption option, then you must ensure that the AWS KMS is set up appropriately. For details, see link:task_setting_up_cloud_manager.html#setting-up-the-aws-kms[Setting up the AWS KMS].
+If you want to use this encryption option, then you must ensure that the AWS KMS is set up appropriately. For details, see link:task_setting_up_kms.html[Setting up the AWS KMS].
 
 == ONTAP virus scanning
 

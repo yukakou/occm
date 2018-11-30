@@ -73,8 +73,7 @@ image:screenshot_accounts_select_aws.gif[A screenshot that shows the Switch Acco
 When you upgrade to 3.6.1, Cloud Manager automatically creates Cloud Provider Accounts for you, based on your current configuration. If you have scripts, backwards compatibility is in place so nothing breaks.
 
 * link:concept_accounts_and_permissions.html[Learn how Cloud Provider Accounts and permissions work]
-* link:task_adding_aws_accounts.html[Learn how to set up and add AWS accounts to Cloud Manager]
-* link:task_adding_azure_accounts.html[Learn how to set up and add Azure accounts to Cloud Manager]
+* link:task_adding_cloud_accounts.html[Learn how to set up and add Cloud Provider Accounts to Cloud Manager]
 
 === Enhancements to the AWS Cost report
 

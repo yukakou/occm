@@ -51,23 +51,23 @@ entries:
         url: /task_getting_started_aws.html
       - title: Getting started in Azure
         url: /task_getting_started_azure.html
-      - title: Adding accounts to Cloud Manager
-        entries:
-          - title: Adding AWS accounts
-            url: /task_adding_aws_accounts.html
-          - title: Adding Azure accounts
-            url: /task_adding_azure_accounts.html
-          - title: Associating additional Azure subscriptions
-            url: /task_adding_azure_subscriptions.html
       - title: Setting up Cloud Manager
-        url: /task_setting_up_cloud_manager.html
-      - title: Detailed networking requirements
         entries:
-          - title: Requirements for Cloud Manager
+          - title: Adding Cloud Provider Accounts
+            url: /task_adding_cloud_accounts.html
+          - title: Installing an HTTPS certificate
+            url: /task_installing_https_cert.html
+          - title: Setting up users and tenants
+            url: /task_setting_up_users_tenants.html
+          - title: Setting up the AWS KMS
+            url: /task_setting_up_kms.html
+      - title: Networking requirements
+        entries:
+          - title: Cloud Manager
             url: /reference_networking_cloud_manager.html
-          - title: Requirements for Cloud Volumes ONTAP in AWS
+          - title: Cloud Volumes ONTAP for AWS
             url: /reference_networking_aws.html
-          - title: Requirements for Cloud Volumes ONTAP in Azure
+          - title: Cloud Volumes ONTAP for Azure
             url: /reference_networking_azure.html
       - title: Additional deployment options
         entries:
@@ -159,6 +159,18 @@ entries:
         url: /task_renewing_cert.html
       - title: Uninstalling Cloud Manager
         url: /task_uninstalling.html
+  - title: REST APIs
+    entries:
+      - title: Overview
+        url: /1_overview_how_rest_apis_work.html
+      - title: Accessing
+        url: /2_accessing_and_running_api_operations.html
+      - title: Examples
+        url: /3_api_examples_storage_system_view.html
+      - title: Paths
+        url: /5_paths.html
+      - title: Definitions
+        url: /6_definitions.html
   - title: Reference
     entries:
       - title: FAQ for Cloud Central integration

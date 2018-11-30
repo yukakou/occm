@@ -33,11 +33,11 @@ image:screenshot_accounts_select_aws.gif[A screenshot that shows the Switch Acco
 
 === Additional AWS accounts
 
-If you want to launch Cloud Volumes ONTAP in different AWS accounts, then you can either link:task_adding_aws_accounts.html[provide AWS keys for an IAM user or the ARN of a role in a trusted account]. The following image shows two additional accounts, one providing permissions through an IAM role in a trusted account and another through the AWS keys of an IAM user:
+If you want to launch Cloud Volumes ONTAP in different AWS accounts, then you can either link:task_adding_cloud_accounts.html[provide AWS keys for an IAM user or the ARN of a role in a trusted account]. The following image shows two additional accounts, one providing permissions through an IAM role in a trusted account and another through the AWS keys of an IAM user:
 
 image:diagram_permissions_multiple_aws.png[A conceptual image that shows two additional accounts. Each has an IAM policy, one is attached to IAM user and the other is attached to an IAM role.]
 
-You would then link:task_adding_aws_accounts.html#adding-aws-accounts-to-cloud-manager[add the Cloud Provider Accounts to Cloud Manager] by specifying AWS keys for the IAM user or the Amazon Resource Name (ARN) of the IAM role.
+You would then link:task_adding_cloud_accounts.html[add the Cloud Provider Accounts to Cloud Manager] by specifying AWS keys for the IAM user or the Amazon Resource Name (ARN) of the IAM role.
 
 After you add another account, you can switch to it when creating a new working environment:
 
@@ -61,15 +61,15 @@ image:screenshot_accounts_select_azure.gif[A screenshot that shows the Switch Ac
 
 === Additional Azure subscriptions for the initial account
 
-The Managed Service Identity is associated with the subscription in which you launched Cloud Manager. If you want to select a different Azure subscription, then you need to link:task_adding_azure_subscriptions.html[associate the Managed Service Identity with those subscriptions].
+The Managed Service Identity is associated with the subscription in which you launched Cloud Manager. If you want to select a different Azure subscription, then you need to link:task_adding_cloud_accounts.html#associating-additional-azure-subscriptions-with-a-managed-service-identity[associate the Managed Service Identity with those subscriptions].
 
 === Additional Azure accounts
 
-If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you must grant the required permissions by link:task_adding_azure_accounts.html[creating and setting up a service principal in Azure Active Directory] for each Azure account. The following image shows two additional accounts, each set up with a service principal and custom role that provides permissions:
+If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you must grant the required permissions by link:task_adding_cloud_accounts.html#setting-up-and-adding-azure-accounts-to-cloud-manager[creating and setting up a service principal in Azure Active Directory] for each Azure account. The following image shows two additional accounts, each set up with a service principal and custom role that provides permissions:
 
 image:diagram_permissions_multiple_azure.png[A conceptual image that shows the initial Azure account, which receives permissions through a custom role and managed service identity, and two additional accounts that receive permissions through a custom role and service principal.]
 
-You would then link:task_adding_azure_accounts.html#adding-azure-accounts-to-cloud-manager[add the Cloud Provider Accounts to Cloud Manager] by providing details about the AD service principal.
+You would then link:task_adding_cloud_accounts.html#adding-azure-accounts-to-cloud-manager[add the Cloud Provider Accounts to Cloud Manager] by providing details about the AD service principal.
 
 After you add another account, you can switch to it when creating a new working environment:
 

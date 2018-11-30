@@ -23,7 +23,7 @@ The Azure Marketplace is not available in the Azure Germany regions, so you must
 
 . link:task_installing_linux.html[Download and install Cloud Manager].
 
-. link:task_adding_azure_accounts.html[Grant Azure permissions to Cloud Manager using a service principal].
+. task_adding_cloud_accounts.html#setting-up-and-adding-azure-accounts-to-cloud-manager[Grant Azure permissions to Cloud Manager using a service principal].
 +
 NOTE: Managed Service Identities are not supported in the Azure Germany regions.
 

@@ -42,7 +42,7 @@ For all other scenarios, refer to the following:
 
 == Cloud Manager setup
 
-You might want to perform additional setup after you install Cloud Manager, such as adding additional AWS accounts, installing an HTTPS certificate, and more. For instructions, see link:task_setting_up_cloud_manager.html[Setting up Cloud Manager].
+You might want to perform additional setup after you install Cloud Manager, such as adding additional AWS accounts, installing an HTTPS certificate, and more. For instructions, see link:task_installing_https_cert.html[Setting up Cloud Manager].
 
 == Cloud Volumes ONTAP deployment
 
