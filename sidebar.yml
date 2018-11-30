@@ -159,18 +159,6 @@ entries:
         url: /task_renewing_cert.html
       - title: Uninstalling Cloud Manager
         url: /task_uninstalling.html
-  - title: REST APIs
-    entries:
-      - title: Overview
-        url: /1_overview_how_rest_apis_work.html
-      - title: Accessing
-        url: /2_accessing_and_running_api_operations.html
-      - title: Examples
-        url: /3_api_examples_storage_system_view.html
-      - title: Paths
-        url: /5_paths.html
-      - title: Definitions
-        url: /6_definitions.html
   - title: Reference
     entries:
       - title: FAQ for Cloud Central integration
