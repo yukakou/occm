@@ -302,4 +302,4 @@ A Managed Service Identity is the initial link:concept_accounts_and_permissions.
 
 When you create a new working environment, you should now have the ability to select from multiple Azure subscriptions for the Managed Service Identity profile.
 
-image:screenshot_accounts_switch_azure_subscription.gif[texts]
+image:screenshot_accounts_switch_azure_subscription.gif[A screenshot that shows the ability to select multiple Azure subscriptions when selecting a Microsoft Azure Provider Account.]
