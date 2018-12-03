@@ -62,6 +62,10 @@ NOTE: For information about which specific host configurations support ALUA, see
 
 You can use an HA pair as an active-active configuration, in which both nodes serve data to clients, or as an active-passive configuration, in which the passive node responds to data requests only if it has taken over storage for the active node.
 
-== NFS version limitation
+== HA limitations
 
-NFSv4 is not supported with HA pairs in Azure. NFSv3 is supported.
+The following limitations affect Cloud Volumes ONTAP HA pairs in Azure:
+
+* Data tiering is not supported.
+* NFSv4 is not supported. NFSv3 is supported.
+* HA pairs are not supported in US Gov regions and in Germany regions.
