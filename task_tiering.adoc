@@ -32,14 +32,14 @@ image:diagram_tiering.gif[A diagram that shows the workflow for enabling tiering
 You can enable data tiering when using specific configurations and features:
 
 * Data tiering is supported with Cloud Volumes ONTAP Standard, Premium, and BYOL, starting with version 9.2 in AWS and version 9.4 in Microsoft Azure.
-+
-NOTE: Data tiering is not supported in Azure with the DS3_v2 virtual machine type.
+** Data tiering is not supported with HA pairs in Microsoft Azure.
+** Data tiering is not supported in Azure with the DS3_v2 virtual machine type.
 
 * In AWS, the performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Throughput Optimized HDDs.
 
 * In Azure, the performance tier can be either Premium SSD managed disks or Standard HDD managed disks.
 
-* Data tiering is supported with AWS-managed encryption and Azure-managed encryption.
+* Data tiering is supported with encryption technologies.
 
 * Thin provisioning must be enabled on volumes.
 
