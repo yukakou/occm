@@ -23,14 +23,16 @@ link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 
 
 Cloud Manager 3.6.1 includes new features and enhancements.
 
-* <<Support for Cloud Volumes ONTAP 9.5>>
+* <<Support for Cloud Volumes ONTAP 9.5 in Azure>>
 * <<Cloud Provider Accounts>>
 * <<Enhancements to the AWS Cost report>>
 * <<Support for new Azure regions>>
 
 === Support for Cloud Volumes ONTAP 9.5 in Azure
 
-Cloud Manager now supports the Cloud Volumes ONTAP 9.5 release in Azure. For details about the release, see the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_95.html[Cloud Volumes ONTAP 9.5 Release Notes^].
+Cloud Manager now supports the Cloud Volumes ONTAP 9.5 release in Microsoft Azure, which includes a public preview of high-availability (HA) pairs. You can request a preview license for an Azure HA pair by contacting us at ng-Cloud-Volume-ONTAP-preview@netapp.com.
+
+For more details about the 9.5 release, see the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_95.html[Cloud Volumes ONTAP 9.5 Release Notes^].
 
 ==== New Azure permissions required for Cloud Volumes ONTAP 9.5
 
