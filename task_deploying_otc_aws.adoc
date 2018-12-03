@@ -73,9 +73,9 @@ image:screenshot_cot_vpc.gif[Screen shot: Shows the VPC page filled out for a ne
 
 . On the Data Encryption page, choose no data encryption or AWS-managed encryption.
 +
-To better understand these options, see link:concept_security.html#data-encryption-in-aws[Data encryption in AWS].
-+
 For AWS-managed encryption, you can choose a different master key if more than one key is available in your account.
++
+link:concept_security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
 
 . On the BYOL License page, specify whether you have a license for this Cloud Volumes ONTAP system.
 +
@@ -257,9 +257,9 @@ If you have more than one route table, it is very important to select the correc
 
 . On the Data Encryption page, choose no data encryption or AWS-managed encryption.
 +
-To better understand these options, see link:concept_security.html#data-encryption-in-aws[Data encryption in AWS].
-+
 For AWS-managed encryption, you can choose a different master key if more than one key is available in your account.
++
+link:concept_security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
 
 . On the BYOL License page, specify whether you have a license for this Cloud Volumes ONTAP system.
 +
