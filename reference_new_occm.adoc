@@ -28,9 +28,9 @@ Cloud Manager 3.6.1 includes new features and enhancements.
 * <<Enhancements to the AWS Cost report>>
 * <<Support for new Azure regions>>
 
-=== Support for Cloud Volumes ONTAP 9.5
+=== Support for Cloud Volumes ONTAP 9.5 in Azure
 
-Cloud Manager now supports the Cloud Volumes ONTAP 9.5 release. For details about the release, see the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_95.html[Cloud Volumes ONTAP 9.5 Release Notes^].
+Cloud Manager now supports the Cloud Volumes ONTAP 9.5 release in Azure. For details about the release, see the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_95.html[Cloud Volumes ONTAP 9.5 Release Notes^].
 
 ==== New Azure permissions required for Cloud Volumes ONTAP 9.5
 
@@ -79,7 +79,7 @@ When you upgrade to 3.6.1, Cloud Manager automatically creates Cloud Provider Ac
 
 The AWS Cost report now provides more information and is easier to set up.
 
-* The report breaks down the monthly resource costs associated with running Cloud Volumes ONTAP in AWS. You can view monthly costs for compute, EBS storage, S3 storage, and data transfers.
+* The report breaks down the monthly resource costs associated with running Cloud Volumes ONTAP in AWS. You can view monthly costs for compute, EBS storage (including EBS snapshots), S3 storage, and data transfers.
 
 * The report now shows cost savings when you tier cold data to S3.
 
