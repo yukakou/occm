@@ -58,7 +58,7 @@ You do not need to set up a connection between the performance tier and the capa
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 
-These permissions are included in the latest Cloud Manager policy. For details about providing permissions, see link:task_getting_started_azure.html#granting-azure-permissions[Granting Azure permissions].
+These permissions are included in the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy].
 
 == Tiering data on read-write volumes
 

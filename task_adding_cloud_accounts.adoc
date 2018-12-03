@@ -105,12 +105,12 @@ image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting betwe
 
 If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions to those accounts and then add details about the accounts to Cloud Manager.
 
-TIP: When you deploy Cloud Manager in Azure, Cloud Manager automatically adds a _Cloud Provider Account_ for the account in which you deployed Cloud Manager. A Cloud Provider Account is not added if you manually installed the Cloud Manager software on an existing system.
-link:concept_accounts_and_permissions.html[Learn more about Cloud Provider Accounts and permissions].
+* <<Granting Azure permissions using a service principal>>
+* <<Adding Azure accounts to Cloud Manager>>
 
 === Granting Azure permissions using a service principal
 
-Cloud Manager needs permissions to perform actions in Azure. You can grant the required permissions by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that Cloud Manager needs.
+Cloud Manager needs permissions to perform actions in Azure. You can grant the required permissions to an Azure account by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that Cloud Manager needs.
 
 .About this task
 
@@ -163,7 +163,7 @@ You must create an Active Directory service principal so Cloud Manager can authe
 
 .Before you begin
 
-You must have the appropriate permissions in Azure to create an Active Directory application and to assign the application to a role. For details, refer to https://azure.microsoft.com/en-us/documentation/articles/resource-group-create-service-principal-portal/[Microsoft Azure Documentation: Use portal to create Active Directory application and service principal that can access resources^]
+You must have the appropriate permissions in Azure to create an Active Directory application and to assign the application to a role. For details, refer to https://azure.microsoft.com/en-us/documentation/articles/resource-group-create-service-principal-portal/[Microsoft Azure Documentation: Use portal to create Active Directory application and service principal that can access resources^].
 
 .Steps
 . From the Azure portal, open the *Azure Active Directory* service.
@@ -270,7 +270,7 @@ image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting bet
 
 == Associating additional Azure subscriptions with a Managed Service Identity
 
-Cloud Manager enables you to choose the Azure account and subscription in which you want to deploy Cloud Volumes ONTAP. You can't select a different Azure subscription for a Managed Service Identity profile unless you associate the Managed Service Identity with those subscriptions.
+Cloud Manager enables you to choose the Azure account and subscription in which you want to deploy Cloud Volumes ONTAP. You can't select a different Azure subscription for the Managed Service Identity profile unless you associate the Managed Service Identity with those subscriptions.
 
 .About this task
 

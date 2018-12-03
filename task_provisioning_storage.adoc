@@ -128,11 +128,11 @@ By default, Cloud Manager creates volumes on the first node in an HA configurati
 
 You can create additional volumes on this aggregate if required.
 
-IMPORTANT: When you mount the volume to clients, you must use the floating IP address of the node on which the volume resides.
+IMPORTANT: For HA pairs deployed in multiple AWS Availability Zones, you must mount the volume to clients by using the floating IP address of the node on which the volume resides.
 
 == Creating aggregates
 
-You can create aggregates yourself or let Cloud Manager do it for you when it creates volumes. The benefit of creating aggregates yourself is that you can choose the underlying EBS disk size, which enables you to size your aggregate for the capacity or the performance that you need.
+You can create aggregates yourself or let Cloud Manager do it for you when it creates volumes. The benefit of creating aggregates yourself is that you can choose the underlying disk size, which enables you to size your aggregate for the capacity or the performance that you need.
 
 .Steps
 

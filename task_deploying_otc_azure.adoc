@@ -79,11 +79,11 @@ Credentials are required for BYOL instances. For details, see link:concept_stora
 
 . On the Underlying Storage Resources page, choose a disk type and select a disk size.
 +
-The disk type is for the initial volume. You can choose a different disk type for subsequent volumes. For help choosing a disk type, see link:task_planning_your_config.html#sizing-your-system-in-azure[Sizing your system in Azure].
+The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
 +
 The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
-For help choosing a size, see link:task_planning_your_config.html#sizing-your-system-in-azure[Choosing a disk size].
+For help choosing a disk type and size, see link:task_planning_your_config.html#sizing-your-system-in-azure[Sizing your system in Azure].
 
 . On the Write Speed & WORM page, choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
 +

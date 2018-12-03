@@ -49,7 +49,7 @@ Switch between high and low-performance storage pools on-demand without taking a
 * Application consistency
 Ensure consistency of NetApp Snapshot copies using the NetApp SnapManager tool suite.
 
-NOTE: Licenses for ONTAP features are included with Cloud Volumes ONTAP.
+NOTE: Licenses for ONTAP features are included with Cloud Volumes ONTAP, except for NetApp Volume Encryption.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_95.html[View supported Cloud Volumes ONTAP configurations^]
 
