@@ -6,9 +6,7 @@ summary: A Cloud Volumes ONTAP high availability (HA) pair provides enterprise r
 ---
 
 = High-availability pairs in Azure (Preview)
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,9 +15,7 @@ summary: A Cloud Volumes ONTAP high availability (HA) pair provides enterprise r
 [.lead]
 A Cloud Volumes ONTAP high availability (HA) pair provides enterprise reliability and continuous operations in case of failures in your cloud environment. In Azure, storage is shared between the two nodes.
 
-NOTE: HA pairs in Azure are available as a Preview only. You can request access by using the chat icon in the lower right of the Cloud Manager interface.
-
-toc::[]
+NOTE: HA pairs in Azure are available as a preview. You can request a preview license by contacting us at ng-Cloud-Volume-ONTAP-preview@netapp.com.
 
 == HA components
 

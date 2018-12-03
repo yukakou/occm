@@ -6,7 +6,6 @@ summary: Cloud Volumes ONTAP supports data encryption and provides protection ag
 ---
 
 = Security
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,13 +15,11 @@ summary: Cloud Volumes ONTAP supports data encryption and provides protection ag
 [.lead]
 Cloud Volumes ONTAP supports data encryption and provides protection against viruses.
 
-toc::[]
-
 == Encryption of data at rest
 
 Cloud Volumes ONTAP supports the following encryption technologies:
 
-* NetApp Volume Encryption in both AWS and Azure
+* NetApp Volume Encryption (starting with Cloud Volumes ONTAP 9.5)
 * AWS Key Management Service
 * Azure Storage Service Encryption
 
@@ -40,7 +37,7 @@ You can enable NetApp Volume Encryption on a new or existing volume by using the
 
 When you launch a Cloud Volumes ONTAP system in AWS, you can enable data encryption using the http://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS Key Management Service (KMS)^]. Cloud Manager requests data keys using a customer master key (CMK).
 
-If you want to use this encryption option, then you must ensure that the AWS KMS is set up appropriately. For details, see link:task_setting_up_cloud_manager.html#setting-up-the-aws-kms[Setting up the AWS KMS].
+If you want to use this encryption option, then you must ensure that the AWS KMS is set up appropriately. For details, see link:task_setting_up_kms.html[Setting up the AWS KMS].
 
 === Azure Storage Service Encryption
 
