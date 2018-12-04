@@ -32,7 +32,11 @@ entries:
           - title: WORM storage
             url: /concept_worm.html
       - title: High-availability pairs
-        url: /concept_ha.html
+        entries:
+          - title: HA pairs in AWS
+            url: /concept_ha.html
+          - title: HA pairs in Azure
+            url: /concept_ha_azure.html
       - title: Evaluating
         url: /concept_evaluating.html
       - title: Licensing
@@ -107,6 +111,8 @@ entries:
         url: /task_tiering.html
       - title: Using Cloud Volumes ONTAP as persistent storage
         url: /task_connecting_kubernetes.html
+      - title: Encrypting volumes with NetApp Volume Encryption
+        url: /task_encrypting_volumes.html
       - title: Managing existing storage
         url: /task_managing_storage.html
       - title: Provisioning NFS volumes from the Volume View

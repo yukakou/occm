@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: concept_ha.html
 keywords: high availability, HA, mediator, concepts, understanding, overview, availability zones, AZs, takeover, giveback, rpo, rto, floating ip, nondisruptive, ha pairs, node, nodes, synchronous, resync, recovery point objective, recovery time objective, nas, nfs, cifs, floating ip address, route tables, iscsi, mpio, alua, failover, mount, remount, failure, data access, access, ip address, performance
-summary: A Cloud Volumes ONTAP high availability (HA) configuration provides nondisruptive operations and fault tolerance. HA pairs are supported in AWS only.
+summary: A Cloud Volumes ONTAP high availability (HA) configuration provides nondisruptive operations and fault tolerance. In AWS, data is synchronously mirrored between the two nodes.
 ---
 
-= High-availability pairs
+= High-availability pairs in AWS
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,11 @@ summary: A Cloud Volumes ONTAP high availability (HA) configuration provides non
 :imagesdir: ./media/
 
 [.lead]
-A Cloud Volumes ONTAP high availability (HA) configuration provides nondisruptive operations and fault tolerance. HA pairs are supported in AWS only.
+A Cloud Volumes ONTAP high availability (HA) configuration provides nondisruptive operations and fault tolerance. In AWS, data is synchronously mirrored between the two nodes.
 
 == Overview
 
-Cloud Volumes ONTAP HA configurations include the following components:
+In AWS, Cloud Volumes ONTAP HA configurations include the following components:
 
 * Two Cloud Volumes ONTAP nodes whose data is synchronously mirrored between each other.
 

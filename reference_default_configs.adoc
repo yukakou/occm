@@ -53,7 +53,7 @@ If the MySQL service is down, then the occm service is down too.
 
 Understanding how Cloud Volumes ONTAP is configured by default can help you set up and administer your systems, especially if you are familiar with ONTAP because the default setup for Cloud Volumes ONTAP is different than ONTAP.
 
-* Cloud Volumes ONTAP is available as a single system in AWS and Microsoft Azure, and as an HA pair in AWS.
+* Cloud Volumes ONTAP is available as a single-node system and as an HA pair in both AWS and Azure.
 
 * Cloud Manager creates one data-serving SVM when it deploys Cloud Volumes ONTAP. While you can create another data-serving SVM from System Manager or the CLI, using multiple data-serving SVMs is not supported.
 
