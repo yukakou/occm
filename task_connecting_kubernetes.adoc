@@ -1,4 +1,5 @@
 ---
+pagenav: false
 sidebar: sidebar
 permalink: task_connecting_kubernetes.html
 keywords: kubernetes, persistent volumes, containers, persistent storage, kubeconfig, trident, kubernetes cluster, storage classes, classes, cvo-single, cvo-ha, thick provisioning, trident_trident, connect, disconnect, provision
@@ -6,8 +7,6 @@ summary: Cloud Manager can automate the deployment of NetApp Trident on a single
 ---
 
 = Using Cloud Volumes ONTAP as persistent storage for Kubernetes
-:toc: macro
-:toclevels: 1
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -6,9 +6,7 @@ summary: Cloud Manager enables you to manage volumes, aggregates, and CIFS serve
 ---
 
 = Managing existing storage
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,8 +15,6 @@ summary: Cloud Manager enables you to manage volumes, aggregates, and CIFS serve
 [.lead]
 
 Cloud Manager enables you to manage volumes, aggregates, and CIFS servers. It also prompts you to move volumes to avoid capacity issues.
-
-toc::[]
 
 == Managing existing volumes
 

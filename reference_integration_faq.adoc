@@ -6,7 +6,6 @@ summary: When upgrading to Cloud Manager 3.5, NetApp will choose specific Cloud 
 ---
 
 = Frequently asked questions: Integrating Cloud Manager with NetApp Cloud Central
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,8 +14,6 @@ summary: When upgrading to Cloud Manager 3.5, NetApp will choose specific Cloud 
 
 [.lead]
 When upgrading to Cloud Manager 3.5, NetApp will choose specific Cloud Manager systems to integrate with NetApp Cloud Central, if they are not already integrated. This FAQ can answer questions that you might have about the process.
-
-toc::[]
 
 == What is NetApp Cloud Central?
 

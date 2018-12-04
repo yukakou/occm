@@ -6,7 +6,6 @@ summary: You can manage NFS volumes by cloning them, managing data access, chang
 ---
 
 = Managing NFS volumes
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,8 +14,6 @@ summary: You can manage NFS volumes by cloning them, managing data access, chang
 
 [.lead]
 You can manage NFS volumes by cloning them, managing data access, changing the underlying disk type, and more.
-
-toc::[]
 
 == Cloning volumes
 

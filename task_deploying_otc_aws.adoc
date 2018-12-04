@@ -6,7 +6,6 @@ summary: You can launch Cloud Volumes ONTAP instances in a single-system configu
 ---
 
 = Launching Cloud Volumes ONTAP in AWS
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,8 +14,6 @@ summary: You can launch Cloud Volumes ONTAP instances in a single-system configu
 
 [.lead]
 You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA pair in AWS.
-
-toc::[]
 
 == Launching a single Cloud Volumes ONTAP system in AWS
 
@@ -49,7 +46,7 @@ Some of the fields in this page are self-explanatory. The following table descri
 | Field
 | Description
 
-| AWS Account | If you want to deploy Cloud Volumes ONTAP in other AWS accounts, then you must delegate access across accounts using an IAM role. For instructions, see link:task_setting_up_cloud_manager.html#adding-additional-aws-accounts-to-cloud-manager[Adding additional AWS accounts to Cloud Manager].
+| Switch Account | You can choose a different account if you added additional Cloud Provider Accounts. For details, see link:task_adding_cloud_accounts.html[Adding Cloud Provider Accounts to Cloud Manager].
 
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
@@ -101,9 +98,7 @@ Credentials are required for BYOL instances. For details, see link:concept_stora
 
 . On the Underlying Storage Resources page, choose a storage type and a disk size for all disks in the initial aggregate.
 +
-You can choose a different disk type for subsequent volumes. For help choosing a disk type, see link:task_planning_your_config.html#choosing-an-aws-disk-type[Choosing an AWS disk type].
-+
-For help choosing a disk size, see link:task_planning_your_config.html#choosing-a-disk-size[Choosing a disk size].
+You can choose a different disk type for subsequent volumes. For help choosing a disk type and size, see link:task_planning_your_config.html#sizing-your-system-in-aws[Sizing your system in AWS].
 
 . On the Write Speed & WORM page, choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
 +
@@ -159,7 +154,7 @@ The listed DNS servers must contain the service location records (SRV) needed to
 
 . On the Usage Profile, Disk Type, and Tiering Policy page, choose whether you want to enable storage efficiency features and edit the S3 tiering policy, if needed.
 +
-For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_storage.html#data-tiering-overview[Data tiering overview].
+For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_data_tiering.html[Data tiering overview].
 
 . On the Review & Approve page, review and confirm your selections:
 
@@ -190,8 +185,6 @@ Support from NetApp is included with your Cloud Volumes ONTAP system. To activat
 * If you want to apply quotas to volumes, use System Manager or the CLI.
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
-
-* If this is the first Cloud Volumes ONTAP instance launched in AWS, remind your administrator to finish link:task_setting_up_cloud_manager.html#setting-up-aws-billing-and-cost-management-for-cloud-manager[setting up AWS billing and cost management for Cloud Manager] by enabling the WorkingEnvironmentId tag. This tag is not available in AWS until after you create your first Cloud Volumes ONTAP working environment under the AWS payer account.
 
 == Launching a Cloud Volumes ONTAP HA pair in AWS
 
@@ -224,7 +217,7 @@ Some of the fields in this page are self-explanatory. The following table descri
 | Field
 | Description
 
-| AWS Account | If you want to deploy Cloud Volumes ONTAP in other AWS accounts, then you must delegate access across accounts using an IAM role. For instructions, see link:task_setting_up_cloud_manager.html#adding-additional-aws-accounts-to-cloud-manager[Adding additional AWS accounts to Cloud Manager].
+| Switch Account | You can choose a different account if you added additional Cloud Provider Accounts. For details, see link:task_adding_cloud_accounts.html[Adding Cloud Provider Accounts to Cloud Manager].
 
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
@@ -285,9 +278,7 @@ Credentials are required for BYOL instances. For details, see link:concept_stora
 
 . On the Underlying Storage Resources page, choose a storage type and a disk size for all disks in the initial aggregate.
 +
-You can choose a different disk type for subsequent volumes. For help choosing a disk type, see link:task_planning_your_config.html#choosing-an-aws-disk-type[Choosing an AWS disk type].
-+
-For help choosing a disk size, see link:task_planning_your_config.html#choosing-a-disk-size[Choosing a disk size].
+You can choose a different disk type for subsequent volumes. For help choosing a disk type and size, see link:task_planning_your_config.html#sizing-your-system-in-aws[Sizing your system in AWS].
 
 . On the WORM page, activate write once, read many (WORM) storage, if desired.
 +
@@ -341,7 +332,7 @@ The listed DNS servers must contain the service location records (SRV) needed to
 
 . On the Usage Profile, Disk Type, and Tiering Policy page, choose whether you want to enable storage efficiency features and edit the S3 tiering policy, if needed.
 +
-For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_storage.html#data-tiering-overview[Data tiering overview].
+For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_data_tiering.html[Data tiering overview].
 
 . On the Review & Approve page, review and confirm your selections:
 
@@ -372,5 +363,3 @@ Support from NetApp is included with your Cloud Volumes ONTAP system. To activat
 * If you want to apply quotas to volumes, use System Manager or the CLI.
 +
 Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
-
-* If this is the first Cloud Volumes ONTAP instance launched in AWS, remind your administrator to finish link:task_setting_up_cloud_manager.html#setting-up-aws-billing-and-cost-management-for-cloud-manager[setting up AWS billing and cost management for Cloud Manager] by enabling the WorkingEnvironmentId tag. This tag is not available in AWS until after you create your first Cloud Volumes ONTAP working environment under the AWS payer account.

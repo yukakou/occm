@@ -6,9 +6,7 @@ summary: To deploy Cloud Manager in an Azure US Gov region, you must download th
 ---
 
 = Installing Cloud Manager in an Azure US Gov region
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -31,7 +29,7 @@ While Cloud Manager supports other operating systems, it only supports CentOS 7.
 
 . link:task_installing_linux.html[Download and install Cloud Manager].
 
-. link:task_creating_service_principal.html[Grant Azure permissions to Cloud Manager using a service principal and credentials].
+. link:task_adding_cloud_accounts.html#setting-up-and-adding-azure-accounts-to-cloud-manager[Grant Azure permissions to Cloud Manager using a service principal].
 +
 NOTE: Managed Service Identities are not supported in the US Gov regions.
 

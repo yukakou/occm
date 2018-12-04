@@ -6,7 +6,6 @@ summary: Cloud Manager requires permissions to perform actions in AWS and Azure 
 ---
 
 = AWS and Azure permissions for Cloud Manager
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,8 +14,6 @@ summary: Cloud Manager requires permissions to perform actions in AWS and Azure 
 
 [.lead]
 Cloud Manager requires permissions to perform actions in AWS and Azure on your behalf. These permissions are included in https://mysupport.netapp.com/info/web/ECMP11022837.html[the policies provided by NetApp^]. You might want to understand what Cloud Manager does with these permissions.
-
-toc::[]
 
 == What Cloud Manager does with AWS permissions
 
@@ -149,15 +146,10 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 | Manages instance profiles for Cloud Volumes ONTAP instances.
 
 |
-"s3:GetObject",
-"s3:ListBucket"
-
-| Obtains AWS cost data for Cloud Volumes ONTAP.
-
-|
 "s3:GetBucketTagging",
 "s3:GetBucketLocation",
 "s3:ListAllMyBuckets",
+"s3:ListBucket"
 
 | Obtains information about AWS S3 buckets so Cloud Manager can integrate with the NetApp Data Fabric Cloud Sync service.
 
@@ -176,6 +168,14 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "kms:Describe*"
 
 | Obtains information about keys from the AWS Key Management Service.
+
+|
+"ce:GetReservationUtilization",
+"ce:GetDimensionValues",
+"ce:GetCostAndUsage",
+"ce:GetTags"
+
+| Obtains AWS cost data for Cloud Volumes ONTAP.
 
 |===
 
@@ -220,6 +220,8 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 "Microsoft.Storage/storageAccounts/read",
 "Microsoft.Storage/storageAccounts/regeneratekey/action",
 "Microsoft.Storage/storageAccounts/write"
+"Microsoft.Storage/storageAccounts/delete",
+"Microsoft.Storage/usages/read",
 
 | Manages Azure storage accounts and disks, and attaches the disks to Cloud Volumes ONTAP.
 
@@ -250,9 +252,9 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 | Gets network information about regions, the target VNet and subnet, and adds Cloud Volumes ONTAP to VNets.
 
-a| "Microsoft.Network/virtualNetworks/subnets/write",
-
-NOTE: If your network configuration uses route tables, then Cloud Manager also requires the following permission: Microsoft.Network/routeTables/join/action
+|
+"Microsoft.Network/virtualNetworks/subnets/write",
+"Microsoft.Network/routeTables/join/action",
 
 | Enables VNet service endpoints for data tiering.
 
@@ -295,7 +297,28 @@ NOTE: If your network configuration uses route tables, then Cloud Manager also r
 
 | Enables programmatic deployments from the Azure Marketplace.
 
+|
+"Microsoft.Network/loadBalancers/read",
+"Microsoft.Network/loadBalancers/write",
+"Microsoft.Network/loadBalancers/delete",
+"Microsoft.Network/loadBalancers/backendAddressPools/read",
+"Microsoft.Network/loadBalancers/backendAddressPools/join/action",
+"Microsoft.Network/loadBalancers/frontendIPConfigurations/read",
+"Microsoft.Network/loadBalancers/loadBalancingRules/read",
+"Microsoft.Network/loadBalancers/probes/read",
+"Microsoft.Network/loadBalancers/probes/join/action",
+
+| Manages an Azure load balancer for HA pairs.
+
 | "Microsoft.Authorization/locks/*"
+
 | Enables management of locks on Azure disks.
+
+|
+"Microsoft.Authorization/roleDefinitions/write",
+"Microsoft.Authorization/roleAssignments/write",
+"Microsoft.Web/sites/*"
+
+| Manages failover for HA pairs.
 
 |===
