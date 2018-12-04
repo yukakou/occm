@@ -6,9 +6,7 @@ summary: Details about how Cloud Manager and Cloud Volumes ONTAP are configured 
 ---
 
 = Default configurations
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -17,8 +15,6 @@ summary: Details about how Cloud Manager and Cloud Volumes ONTAP are configured 
 [.lead]
 
 Details about how Cloud Manager and Cloud Volumes ONTAP are configured by default can help you administer the systems.
-
-toc::[]
 
 == Default configuration for Cloud Manager on Linux
 

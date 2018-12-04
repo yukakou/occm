@@ -1,4 +1,5 @@
 ---
+pagenav: false
 sidebar: sidebar
 permalink: task_getting_started_azure.html
 keywords: microsoft, azure, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, marketplace, virtual machine, vnet, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, permissions, custom role, role, json, permissions, virtual machine, video, connectivity, internet, outbound, endpoint, connection, networks, vpn, replicating, policy, iam, setupasservice, sign up, cloud manager, cloud volumes ontap, cloud ontap, subscription, create
@@ -6,8 +7,6 @@ summary: You can get started with Cloud Volumes ONTAP in Azure by completing a f
 ---
 
 = Getting started with Cloud Volumes ONTAP in Azure
-:toc: macro
-:toclevels: 1
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -61,5 +60,5 @@ video::S2gP6ii9LAU[youtube, width=848, height=480]
 * link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager]
 * link:reference_networking_azure.html[Networking requirements for Cloud Volumes ONTAP in Azure]
 * link:reference_security_groups_azure.html[Security group rules for Azure]
-* link:task_setting_up_cloud_manager.html[Setting up Cloud Manager]
+* link:task_adding_cloud_accounts.html[Adding Cloud Provider Accounts to Cloud Manager]
 * link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]

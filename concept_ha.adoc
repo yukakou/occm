@@ -6,9 +6,7 @@ summary: A Cloud Volumes ONTAP high availability (HA) configuration provides non
 ---
 
 = High-availability pairs in AWS
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,8 +14,6 @@ summary: A Cloud Volumes ONTAP high availability (HA) configuration provides non
 
 [.lead]
 A Cloud Volumes ONTAP high availability (HA) configuration provides nondisruptive operations and fault tolerance. In AWS, data is synchronously mirrored between the two nodes.
-
-toc::[]
 
 == Overview
 

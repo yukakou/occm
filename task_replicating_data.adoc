@@ -6,9 +6,7 @@ summary: You can replicate data between Cloud Manager working environments. You 
 ---
 
 = Replicating data to and from the cloud
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -20,8 +18,6 @@ You can replicate data between working environments by choosing a one-time data 
 Cloud Manager simplifies data replication between volumes on separate systems using SnapMirror and SnapVault technologies. You simply need to identify the source volume and the destination volume, and then choose a replication policy and schedule. Cloud Manager purchases the required disks, configures relationships, applies the replication policy, and then initiates the baseline transfer between volumes.
 
 NOTE: The baseline transfer includes a full copy of the source data. Subsequent transfers contain differential copies of the source data.
-
-toc::[]
 
 == Choosing a replication policy
 

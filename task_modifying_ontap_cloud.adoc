@@ -6,7 +6,6 @@ summary: You might need to change the configuration of Cloud Volumes ONTAP insta
 ---
 
 = Modifying Cloud Volumes ONTAP systems
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,8 +15,6 @@ summary: You might need to change the configuration of Cloud Volumes ONTAP insta
 [.lead]
 
 You might need to change the configuration of Cloud Volumes ONTAP instances as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and move to an alternate subscription.
-
-toc::[]
 
 == Installing license files on Cloud Volumes ONTAP BYOL systems
 
@@ -165,7 +162,7 @@ A network MTU of 1,500 bytes is a good choice if clients or systems outside of t
 
 . Click *Change*.
 
-== Changing AWS route tables associated with HA pairs
+== Changing route tables associated with HA pairs in multiple AWS AZs
 
 You can modify the AWS route tables that include routes to the floating IP addresses for an HA pair. You might do this if new NFS or CIFS clients need to access an HA pair in AWS.
 

@@ -16,8 +16,6 @@ summary: Before you get started, you might want to better understand your option
 [.lead]
 Before you get started, you might want to better understand your options for deploying OnCommand Cloud Manager and Cloud Volumes ONTAP.
 
-toc::[]
-
 == Cloud Manager installation
 
 Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. You can deploy Cloud Manager in any of the following locations:
@@ -44,7 +42,12 @@ For all other scenarios, refer to the following:
 
 == Cloud Manager setup
 
-You might want to perform additional setup after you install Cloud Manager, such as adding additional AWS accounts, installing an HTTPS certificate, and more. For instructions, see link:task_setting_up_cloud_manager.html[Setting up Cloud Manager].
+You might want to perform additional setup after you install Cloud Manager, such as adding additional AWS accounts, installing an HTTPS certificate, and more.
+
+* link:task_adding_cloud_accounts.html[Adding Cloud Provider Accounts to Cloud Manager]
+* link:task_installing_https_cert.html[Installing an HTTPS certificate]
+* link:task_setting_up_users_tenants.html[Setting up users and tenants]
+* link:task_setting_up_kms.html[Setting up the AWS KMS]
 
 == Cloud Volumes ONTAP deployment
 
@@ -52,7 +55,7 @@ After you get Cloud Manager up and running, you can start deploying Cloud Volume
 
 link:task_getting_started_aws.html[Getting started in AWS] and link:task_getting_started_azure.html[Getting started in Azure] provide instructions for getting Cloud Volumes ONTAP up and running quickly. For additional help, refer to the following:
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[Supported configurations for Cloud Volumes ONTAP 9.4^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_95.html[Supported configurations for Cloud Volumes ONTAP 9.5^]
 * link:task_planning_your_config.html[Planning your configuration]
 * link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
 * link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]

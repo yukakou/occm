@@ -6,9 +6,7 @@ summary: Cloud Manager makes storage provisioning easy by purchasing the AWS and
 ---
 
 = Storage management
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -18,8 +16,6 @@ summary: Cloud Manager makes storage provisioning easy by purchasing the AWS and
 Cloud Manager provides simplified and advanced management of Cloud Volumes ONTAP storage.
 
 IMPORTANT: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
-
-toc::[]
 
 == Storage provisioning
 
@@ -64,7 +60,7 @@ You can choose the disk size yourself by using the advanced allocation option.
 
 === Advanced allocation
 
-Rather than let Cloud Manager manage aggregates for you, you can do it yourself. From the *Advanced allocation* page, you can create new aggregates that include a specific number of disks, add disks to an existing aggregate, and create volumes in specific aggregates.
+Rather than let Cloud Manager manage aggregates for you, you can do it yourself. link:task_provisioning_storage.html#creating-aggregates[From the *Advanced allocation* page], you can create new aggregates that include a specific number of disks, add disks to an existing aggregate, and create volumes in specific aggregates.
 
 == Capacity management
 
@@ -138,7 +134,7 @@ Watch the following video for more information about providing Cloud Manager wit
 
 video::_8s16fS_L1Y[youtube, width=848, height=480]
 
-For step-by-step instructions and requirements for NetApp Support Site accounts, refer to link:task_setting_up_cloud_manager.html#linking-tenants-to-a-netapp-support-site-account[Linking tenants to a NetApp Support Site account].
+For step-by-step instructions and requirements for NetApp Support Site accounts, refer to link:task_setting_up_users_tenants.html#linking-tenants-to-a-netapp-support-site-account[Linking tenants to a NetApp Support Site account].
 
 For more information about how Cloud Manager manages license files, refer to link:concept_licensing.html[Licensing].
 

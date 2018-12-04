@@ -19,10 +19,14 @@ entries:
         url: /concept_overview.html
       - title: NetApp Cloud Central
         url: /concept_cloud_central.html
+      - title: Accounts and permissions
+        url: /concept_accounts_and_permissions.html
       - title: Storage
         entries:
           - title: Overview
             url: /concept_storage.html
+          - title: Data tiering
+            url: /concept_data_tiering.html
           - title: Storage management
             url: /concept_storage_management.html
           - title: WORM storage
@@ -52,14 +56,22 @@ entries:
       - title: Getting started in Azure
         url: /task_getting_started_azure.html
       - title: Setting up Cloud Manager
-        url: /task_setting_up_cloud_manager.html
-      - title: Detailed networking requirements
         entries:
-          - title: Requirements for Cloud Manager
+          - title: Adding Cloud Provider Accounts
+            url: /task_adding_cloud_accounts.html
+          - title: Installing an HTTPS certificate
+            url: /task_installing_https_cert.html
+          - title: Setting up users and tenants
+            url: /task_setting_up_users_tenants.html
+          - title: Setting up the AWS KMS
+            url: /task_setting_up_kms.html
+      - title: Networking requirements
+        entries:
+          - title: Cloud Manager
             url: /reference_networking_cloud_manager.html
-          - title: Requirements for Cloud Volumes ONTAP in AWS
+          - title: Cloud Volumes ONTAP for AWS
             url: /reference_networking_aws.html
-          - title: Requirements for Cloud Volumes ONTAP in Azure
+          - title: Cloud Volumes ONTAP for Azure
             url: /reference_networking_azure.html
       - title: Additional deployment options
         entries:
@@ -75,14 +87,6 @@ entries:
             url: /task_installing_azure_gov.html
           - title: Installing Cloud Manager in Azure Germany
             url: /task_installing_azure_germany.html
-      - title: Additional ways to provide permissions
-        entries:
-          - title: Granting AWS permissions when Cloud Manager is not launched from Cloud Central
-            url: /task_granting_aws_permissions.html
-          - title: Granting Azure permissions using a service principal and credentials
-            url: /task_creating_service_principal.html
-          - title: Changing to a Managed Service Identity
-            url: /task_enabling_msi.html
   - title: Deploying Cloud Volumes ONTAP
     entries:
       - title: Before you begin
@@ -166,7 +170,7 @@ entries:
       - title: FAQ for Cloud Central integration
         url: /reference_integration_faq.html
       - title: Supported configurations for Cloud Volumes ONTAP
-        url: https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html
+        url: https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_95.html
       - title: Supported regions
         url: /reference_regions.html
       - title: Security group rules for AWS

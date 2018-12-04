@@ -6,9 +6,7 @@ summary: You can reduce storage costs in AWS and Azure by combining an SSD or HD
 ---
 
 = Tiering cold data to low-cost object storage
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :nofooter:
 :icons: font
 :linkattrs:
@@ -16,7 +14,7 @@ summary: You can reduce storage costs in AWS and Azure by combining an SSD or HD
 
 [.lead]
 
-You can reduce storage costs in AWS and Azure by combining an SSD or HDD performance tier for "hot" data with an object storage capacity tier for "cold" data. For a high-level overview, see link:concept_storage.html#data-tiering-overview[Data tiering overview].
+You can reduce storage costs in AWS and Azure by combining an SSD or HDD performance tier for "hot" data with an object storage capacity tier for "cold" data. For a high-level overview, see link:concept_data_tiering.html[Data tiering overview].
 
 To set up data tiering, you simply need to do the following:
 
@@ -29,21 +27,19 @@ image:diagram_tiering.gif[A diagram that shows the workflow for enabling tiering
 * You do not need to create the capacity tier (either an S3 bucket or an Azure Blob container). Cloud Manager does that for you.
 ====
 
-toc::[]
-
 == Configurations that support data tiering
 
 You can enable data tiering when using specific configurations and features:
 
 * Data tiering is supported with Cloud Volumes ONTAP Standard, Premium, and BYOL, starting with version 9.2 in AWS and version 9.4 in Microsoft Azure.
-+
-NOTE: Data tiering is not supported in Azure with the DS3_v2 virtual machine type.
+** Data tiering is not supported with HA pairs in Microsoft Azure.
+** Data tiering is not supported in Azure with the DS3_v2 virtual machine type.
 
 * In AWS, the performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Throughput Optimized HDDs.
 
 * In Azure, the performance tier can be either Premium SSD managed disks or Standard HDD managed disks.
 
-* Data tiering is supported with AWS-managed encryption and Azure-managed encryption.
+* Data tiering is supported with encryption technologies.
 
 * Thin provisioning must be enabled on volumes.
 
@@ -60,10 +56,9 @@ If you experience any issues, see https://aws.amazon.com/premiumsupport/knowledg
 You do not need to set up a connection between the performance tier and the capacity tier as long as Cloud Manager has the required permissions. Cloud Manager enables a VNet service endpoint for you if the Cloud Manager policy has the appropriate permission:
 
 "Microsoft.Network/virtualNetworks/subnets/write",
+"Microsoft.Network/routeTables/join/action",
 
-That permission is included in the latest Cloud Manager policy. For details about providing permissions, see link:task_getting_started_azure.html#granting-azure-permissions[Granting Azure permissions].
-
-NOTE: If your network configuration uses route tables, then Cloud Manager also requires the following permission: Microsoft.Network/routeTables/join/action
+These permissions are included in the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy].
 
 == Tiering data on read-write volumes
 
@@ -87,7 +82,7 @@ Cloud Volumes ONTAP can tier cold data on read-write volumes to cost-effective o
 
 . Select the Snapshot Only policy or the Auto policy.
 +
-For a description of these policies, see link:concept_storage.html#data-tiering-overview[Data tiering overview].
+For a description of these policies, see link:concept_data_tiering.html[Data tiering overview].
 +
 *Example*
 +
@@ -125,7 +120,7 @@ In AWS, you can change the tiering level so cold data moves to the  _Standard-In
 
 In Azure, you can change the tiering level so cold data moves to the  _cool_ storage tier after 30 days of inactivity.
 
-For more information about how tiering levels work, see link:concept_storage.html#data-tiering-overview[Data tiering overview].
+For more information about how tiering levels work, see link:concept_data_tiering.html[Data tiering overview].
 
 .Steps
 

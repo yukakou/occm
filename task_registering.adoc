@@ -6,7 +6,6 @@ summary: Support from NetApp is included with Cloud Volumes ONTAP Explore, Stand
 ---
 
 = Registering pay-as-you-go systems
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -24,7 +23,7 @@ The host from which you are logged in to Cloud Manager must have internet access
 
 If a tenant is linked to a NetApp Support Site account, Cloud Manager automatically registers the system with that account. However, if the tenant is not linked to an account, then you should register systems with NetApp after you launch them.
 
-For instructions, see link:task_setting_up_cloud_manager.html#linking-tenants-to-a-netapp-support-site-account[Linking tenants to a NetApp Support Site account].
+For instructions, see link:task_setting_up_users_tenants.html#linking-tenants-to-a-netapp-support-site-account[Linking tenants to a NetApp Support Site account].
 
 .Steps
 

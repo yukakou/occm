@@ -37,6 +37,8 @@ Each Cloud Manager user account is assigned a role that defines permissions.
 
 | Modify user accounts |	Yes |	Yes, for the assigned tenant |	Yes, for their own account
 
+| Manage Cloud Provider Accounts | Yes | No | No
+
 | Setup Kubernetes | Yes | No | No
 
 | Switch between the Storage System View and the Volume View |	Yes |	No |	No

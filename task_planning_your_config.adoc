@@ -6,8 +6,6 @@ summary: When you deploy Cloud Volumes ONTAP, you can choose a preconfigured sys
 ---
 
 = Planning your Cloud Volumes ONTAP configuration
-:toc: macro
-:toclevels: 1
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -17,12 +15,11 @@ summary: When you deploy Cloud Volumes ONTAP, you can choose a preconfigured sys
 [.lead]
 When you deploy Cloud Volumes ONTAP, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 
-toc::[]
-
 == Choosing a license type
 
 Cloud Volumes ONTAP is available in AWS and Azure in two pricing options: pay-as-you-go and Bring Your Own License (BYOL). For pay-as-you-go, you can choose from three licenses: Explore, Standard, or Premium. Each license provides different capacity and compute options.
 
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_95.html[Supported configurations for Cloud Volumes ONTAP 9.5^]
 * https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_94.html[Supported configurations for Cloud Volumes ONTAP 9.4^]
 * https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_93.html[Supported configurations for ONTAP Cloud 9.3^]
 
@@ -30,88 +27,72 @@ Cloud Volumes ONTAP is available in AWS and Azure in two pricing options: pay-as
 
 The raw capacity limit for a Cloud Volumes ONTAP system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
 
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_storage_limits_95.html[Storage limits for Cloud Volumes ONTAP 9.5^]
 * https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_storage_limits_94.html[Storage limits for Cloud Volumes ONTAP 9.4^]
 * https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_storage_limits_93.html[Storage limits for ONTAP Cloud 9.3^]
 
-== Choosing an AWS disk type
+== Sizing your system in AWS
 
-When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses as a disk. In AWS, you can choose a single EBS disk type or a tiered storage configuration that uses EBS storage as a performance tier and S3 as a capacity tier. You should choose the configuration that meets your requirements for performance and cost.
+Sizing your Cloud Volumes ONTAP system can help you meet requirements for performance and capacity. You should be aware of a few key points when choosing an instance type, disk type, and disk size:
 
-For an overview of data tiering, see link:concept_storage.html[Storage]. For requirements, see link:task_tiering.html[Tiering data in AWS].
+Instance type::
+* Match your workload requirements to the maximum throughput and IOPS for each EC2 instance type.
+* If several users write to the system at the same time, choose an instance type that has enough CPUs to manage the requests.
+* If you have an application that is mostly reads, then choose a system with enough RAM.
++
+https://aws.amazon.com/ec2/instance-types/[AWS Documentation: Amazon EC2 Instance Types^]
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html[AWS Documentation: Amazon EBS–Optimized Instances^]
 
-=== Supported EBS disk types
+EBS disk type::
+General Purpose SSDs are the most common disk type for Cloud Volumes ONTAP. To view the use cases for EBS disks, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^].
 
-At a high level, the differences between EBS disk types are as follows:
+EBS disk size::
+You need to choose an initial disk size when you launch a Cloud Volumes ONTAP system. After that, you can link:concept_storage_management.html[let Cloud Manager manage a system's capacity for you], but if you want to link:task_provisioning_storage.html#creating-aggregates[build aggregates yourself], be aware of the following:
 
-* _General Purpose SSD_ disks balance cost and performance for a broad range of workloads. Performance is defined in terms of IOPS.
+** The performance of EBS disks is tied to disk size. The size determines the baseline IOPS and maximum burst duration for SSD disks and the baseline and burst throughput for HDD disks.
+** Ultimately, you should choose the disk size that gives you the _sustained performance_ that you need.
+** Even if you do choose larger disks (for example, six 4 TB disks), you might not get all of the IOPS because the EC2 instance can reach its bandwidth limit.
++
+For more details about EBS disk performance, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^].
 
-* _Provisioned IOPS SSD_ disks are for critical applications that require the highest performance at a higher cost.
+Watch the following video for more details about sizing your Cloud Volumes ONTAP system in AWS:
 
-* _Throughput Optimized HDD_ disks are for frequently accessed workloads that require fast and consistent throughput at a lower price.
+video::GELcXmOuYPw[youtube, width=848, height=480]
 
-* _Cold HDD_ disks are meant for backups, or infrequently accessed data, because the performance is very low. Like Throughput Optimized HDD disks, performance is defined in terms of throughput.
+== Sizing your system in Azure
 
-NOTE: Cold HDD disks are not supported with HA configurations.
+Sizing your Cloud Volumes ONTAP system can help you meet requirements for performance and capacity. You should be aware of a few key points when choosing a VM type, disk type, and disk size:
 
-For additional details about the use cases for these disks, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^].
+Virtual machine type::
+Look at the supported virtual machine types in the http://docs.netapp.com/cloud-volumes-ontap/us-en/index.html[Cloud Volumes ONTAP Release Notes^] and then review details about each supported VM type. Be aware that each VM type supports a specific number of data disks.
 
-== Choosing an Azure disk type
+* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general#dsv2-series[Azure documentation: General purpose virtual machine sizes^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-memory#dsv2-series-11-15[Azure documentation: Memory optimized virtual machine sizes^]
 
-When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses as a disk. In Azure, you can choose a managed disk or a tiered storage configuration that uses managed disks as a performance tier and Azure Blob storage as a capacity tier. You should choose the configuration that meets your requirements for performance and cost.
+Azure disk type::
+When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses as a disk.
++
+HA systems use Premium page blobs. Meanwhile, single node systems can use two types of Azure Managed Disks:
 
-For an overview of data tiering, see link:concept_storage.html[Storage]. For requirements, see link:task_tiering.html[Tiering cold data to low-cost object storage].
+* _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
 
-=== Supported Azure managed disks
-
-The underlying managed disk type for Azure can be Premium Storage or Standard Storage:
-
-* _Premium Storage_ disks store data on solid state drives (SSDs). The SSD disks provide high performance for I/O-intensive workloads at a higher cost.
-
-* If you do not need high IOPS, you can reduce your costs by using _Standard Storage_ disks which are backed by hard disk drives (HDD).
-
+* _Standard HDD Managed Disks_ are a good choice if you don't need high IOPS and want to reduce your costs.
++
 For additional details about the use cases for these disks, see https://azure.microsoft.com/documentation/articles/storage-introduction/[Microsoft Azure Documentation: Introduction to Microsoft Azure Storage^].
 
-== Choosing a disk size
-
-You can choose from several disk sizes when you launch Cloud Volumes ONTAP and when you use the advanced allocation option. You should consider the disk size carefully because it impacts cost, performance, and total volume and system capacity.
-
-When you launch Cloud Volumes ONTAP instances, you must choose the default disk size for aggregates. Cloud Manager uses this disk size for the initial aggregate, and for any additional aggregates that it creates when you use the simple provisioning option. You can create aggregates that use a disk size different from the default by using the advanced allocation option.
-
-NOTE: In AWS, Cloud Manager gradually increases the size of disks as a system grows. For details, see link:concept_storage_management.html#disk-size-selection-for-aggregates-in-aws[Disk size selection for aggregates in AWS].
-
-When choosing disk size, you should take several factors into consideration. The disk size impacts how much you pay for storage, the size of volumes that you can create in an aggregate, the total capacity available to Cloud Volumes ONTAP, and storage performance.
-
-Different disk sizes are available for each disk type. Note that all disks in an aggregate must be the same size.
-
-=== How disk size relates to performance in AWS
-
-The performance of EBS disks is tied to disk size. The size determines the baseline IOPS and maximum burst duration for SSD disks and the baseline and burst throughput for HDD disks.
-
-Larger disks have a higher baseline and burst performance, so you should always consider performance along with cost. Ultimately, you should choose the disk size that gives you the _sustained performance_ that you need.
-
-For example, when using General Purpose SSD disks, you might choose the following disk sizes:
-
-* 100 GB because you want to start out with something small or because you have low performance requirements
-
-* 500 GB because you want to get the best price to performance ratio
-
-* 4 TB because you need very high sustained IOPS performance
-
-Even if you do choose larger disks (for example, six 4 TB disks), you might not get all of the IOPS because the EC2 instance can reach its bandwidth limit.
-
-For more details about the relationship between disk size and performance, refer to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html[AWS Documentation: EBS Volume Types^].
-
-=== How disk size relates to performance in Azure
-
+Azure disk size::
+When you launch Cloud Volumes ONTAP instances, you must choose the default disk size for aggregates. Cloud Manager uses this disk size for the initial aggregate, and for any additional aggregates that it creates when you use the simple provisioning option. You can create aggregates that use a disk size different from the default by link:task_provisioning_storage.html#creating-aggregates[using the advanced allocation option].
++
+When choosing a disk size, you should take several factors into consideration. The disk size impacts how much you pay for storage, the size of volumes that you can create in an aggregate, the total capacity available to Cloud Volumes ONTAP, and storage performance.
++
 The performance of Azure Premium Storage is tied to the disk size. Larger disks provide higher IOPS and throughput. For example, choosing 1 TB disks can provide better performance than 500 GB disks, at a higher cost.
-
-When sizing for performance, you should also be aware of performance limits tied to Azure virtual machine types. For details, refer to the following:
-
-* https://azure.microsoft.com/documentation/articles/storage-premium-storage/[Microsoft Azure Documentation: High-performance Premium Storage and managed disks for VMs^]
-
-* https://azure.microsoft.com/documentation/articles/virtual-machines-linux-sizes/[Microsoft Azure Documentation: Sizes for Linux virtual machines in Azure^]
-
++
 There are no performance differences between disk sizes for Standard Storage. You should choose disk size based on the capacity that you need.
++
+Refer to Azure for IOPS and throughput by disk size:
++
+* https://azure.microsoft.com/en-us/pricing/details/managed-disks/[Microsoft Azure: Managed Disks pricing^]
+* https://azure.microsoft.com/en-us/pricing/details/storage/page-blobs/[Microsoft Azure: Page Blobs pricing^]
 
 == Choosing a write speed
 

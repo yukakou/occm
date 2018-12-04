@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_editing_users.html
-keywords: editing, users, user accounts, permissions, modify, modifying, permissions, report, notification, S3, cost bucket, billing report, password, notification report
-summary: You can modify user accounts in Cloud Manager by changing the cloud permissions associated with the account, enabling and disabling the notification report, and by changing the S3 cost bucket for detailed billing reports.
+keywords: editing, users, user accounts, modify, modifying, report, notification, password, notification report
+summary: You can modify user accounts in Cloud Manager by enabling and disabling the notification report.
 ---
 
 = Editing user accounts
@@ -15,7 +15,7 @@ summary: You can modify user accounts in Cloud Manager by changing the cloud per
 
 [.lead]
 
-You can modify user accounts in Cloud Manager by changing the cloud permissions associated with the account, enabling and disabling the notification report, and by changing the S3 cost bucket for detailed billing reports.
+You can modify user accounts in Cloud Manager by enabling and disabling the notification report.
 
 .About this task
 

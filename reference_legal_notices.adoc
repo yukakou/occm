@@ -6,7 +6,6 @@ summary: Legal notices provide access to copyright statements, trademarks, paten
 ---
 
 = Legal notices
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,8 +14,6 @@ summary: Legal notices provide access to copyright statements, trademarks, paten
 
 [.lead]
 Legal notices provide access to copyright statements, trademarks, patents, and more.
-
-toc::[]
 
 == Copyright
 
@@ -42,4 +39,5 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[^]
 
 Notice files provide information about third-party copyright and licenses used in NetApp software.
 
-link:media/notice_cloud_manager_3.6.pdf[Notice for OnCommand Cloud Manager^]
+* link:media/notice_cloud_manager_3.6.1.pdf[Notice for OnCommand Cloud Manager 3.6.1^]
+* link:media/notice_cloud_manager_3.6.pdf[Notice for OnCommand Cloud Manager 3.6^]

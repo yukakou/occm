@@ -6,8 +6,6 @@ summary: Cloud Manager includes several options that you can use to upgrade to t
 ---
 
 = Updating Cloud Volumes ONTAP software
-:toc: macro
-:toclevels: 1
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -17,8 +15,6 @@ summary: Cloud Manager includes several options that you can use to upgrade to t
 [.lead]
 
 Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release or to downgrade Cloud Volumes ONTAP to an earlier release. You should prepare Cloud Volumes ONTAP systems before you upgrade or downgrade the software.
-
-toc::[]
 
 == Overview
 
