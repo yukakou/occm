@@ -53,8 +53,8 @@ You can deploy Cloud Manager and Cloud Volumes ONTAP in the following Azure regi
 
 === Asia Pacific
 
-* Australia Central
-* Australia Central 2
+//* Australia Central
+//* Australia Central 2
 * Australia East
 * Australia Southeast
 * Central India
@@ -70,7 +70,7 @@ You can deploy Cloud Manager and Cloud Volumes ONTAP in the following Azure regi
 === EU
 
 * France Central
-* France South
+//* France South
 * Germany Central
 * Germany Northeast
 * North Europe

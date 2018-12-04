@@ -100,12 +100,14 @@ image:screenshot_cost.gif[Screen shot: Shows the costs per month for a Cloud Vol
 
 === Support for new Azure regions
 
-You can now deploy Cloud Manager and Cloud Volumes ONTAP in the following Azure regions:
+You can now deploy Cloud Manager and Cloud Volumes ONTAP in the France Central region.
 
-* Australia Central
-* Australia Central 2
-* France South
-* France Central
+//You can now deploy Cloud Manager and Cloud Volumes ONTAP in the following Azure regions:
+
+//* Australia Central
+//* Australia Central 2
+//* France South
+//* France Central
 
 == Cloud Manager 3.6 (4 Nov 2018)
 
