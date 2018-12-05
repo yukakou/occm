@@ -55,6 +55,7 @@ If you experience any issues, see https://aws.amazon.com/premiumsupport/knowledg
 
 You do not need to set up a connection between the performance tier and the capacity tier as long as Cloud Manager has the required permissions. Cloud Manager enables a VNet service endpoint for you if the Cloud Manager policy has the appropriate permission:
 
+[source,json]
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 
