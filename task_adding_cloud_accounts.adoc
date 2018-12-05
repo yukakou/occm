@@ -17,7 +17,8 @@ If you want to deploy Cloud Volumes ONTAP in different cloud accounts, then you 
 
 When you deploy Cloud Manager from Cloud Central, Cloud Manager automatically adds a link:concept_accounts_and_permissions.html[Cloud Provider Account] for the account in which you deployed Cloud Manager. An initial Cloud Provider Account is not added if you manually installed the Cloud Manager software on an existing system.
 
-== Setting up and adding AWS accounts to Cloud Manager
+//The [[aws]] anchor below is used to link from the GUI to this section. I could have linked to the actual section title, but that would have made it hard to tweak the title in the future.
+== Setting up and adding AWS accounts to Cloud Manager [[aws]]
 
 If you want to deploy Cloud Volumes ONTAP in different AWS accounts, then you need to provide the required permissions to those accounts and then add the details to Cloud Manager. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
 
@@ -66,7 +67,7 @@ image:screenshot_iam_create_role.gif[A screenshot that shows the Create role pag
 +
 *Example*
 +
-----
+[source,json]
 {
  "Version": "2012-10-17",
  "Statement": {
@@ -75,7 +76,6 @@ image:screenshot_iam_create_role.gif[A screenshot that shows the Create role pag
    "Resource": "arn:aws:iam::ACCOUNT-B-ID:role/ACCOUNT-B-ROLENAME"
 }
 }
-----
 
 .Result
 
@@ -101,7 +101,8 @@ You can now switch to another account from the Details and Credentials page when
 
 image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting between Cloud Provider Accounts after clicking Switch Account in the Details & Credentials page.]
 
-== Setting up and adding Azure accounts to Cloud Manager
+//The [[azure]] anchor below is used to link from the GUI to this section. I could have linked to the actual section title, but that would have made it hard to tweak the title in the future.
+== Setting up and adding Azure accounts to Cloud Manager [[azure]]
 
 If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions to those accounts and then add details about the accounts to Cloud Manager.
 
@@ -142,6 +143,7 @@ You should add the ID for each Azure subscription from which users will create C
 +
 *Example*
 +
+[source,json]
 "AssignableScopes": [
 "/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
 "/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",

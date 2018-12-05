@@ -30,6 +30,7 @@ You do not need to create security groups because Cloud Manager does that for yo
 Connection from Cloud Volumes ONTAP to Azure Blob storage for data tiering::
 If you want to tier cold data to Azure Blob storage, you do not need to set up a VNet service endpoint as long as Cloud Manager has the required permissions:
 +
+[source,json]
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 +
