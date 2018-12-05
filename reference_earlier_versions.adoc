@@ -17,5 +17,5 @@ Documentation for previous releases of Cloud Manager is available in case you ar
 
 * https://docs.netapp.com/us-en/occm35/[Cloud Manager 3.5^]
 * https://docs.netapp.com/us-en/occm34/[Cloud Manager 3.4^]
-* http://docs.netapp.com/occm/index.jsp[Cloud Manager 3.3^]
-* http://docs.netapp.com/occm/index.jsp[Cloud Manager 3.2^]
+* https://mysupport.netapp.com/documentation/docweb/index.html?productID=62509[Cloud Manager 3.3^]
+* https://mysupport.netapp.com/documentation/docweb/index.html?productID=62391[Cloud Manager 3.2^]
