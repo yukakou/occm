@@ -30,6 +30,6 @@ before_install:
 - sed -i 's/REPO\_URL/'$REPO_NAME'/g' ./webpack/components/Search.js
 - sed -i 's/ES\_AUTH/\"'$ES_AUTH'\"/g' ./webpack/components/Search.js
 - sed -i 's/SK\_ES\_URL/\"'$SK_ES_URL'\"/g' ./webpack/components/Search.js
-- npm install && node_modules/.bin/webpack -p --progress --colors
+- npm install --loglevel verbose && node_modules/.bin/webpack -p --progress --colors
 script:
 - bundle exec rake deploy
