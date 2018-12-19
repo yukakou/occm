@@ -19,6 +19,50 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Cloud Manager 3.6.2 (6 Jan 2019)
+
+Cloud Manager 3.6.2 includes new features and enhancements.
+
+* <<AWS spread placement groups for HA pairs in a single AWS AZ>>
+* <<Ransomware protection>>
+* <<New preset Snapshot policies>>
+* <<Support for new Azure regions>>
+* <<Support for AWS GovCloud (US-East)>>
+
+=== AWS spread placement groups for HA pairs in a single AWS AZ
+
+When you deploy a Cloud Volumes ONTAP HA pair in a single AWS Availability Zone, Cloud Manager now launches the two HA nodes in an https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html[AWS spread placement group^]. The placement group reduces the risk of simultaneous failures by spreading the HA nodes across distinct underlying hardware.
+
+=== Ransomware protection
+
+Ransomware attacks can cost a business time, resources, and reputation. Cloud Manager now enables you to apply the NetApp solution for ransomware, which provides effective tools for visibility, detection, and remediation.
+
+* Cloud Manager identifies volumes that are not protected by a Snapshot policy and enables you to activate the default Snapshot policy on those volumes.
++
+Snapshot copies are read-only, which prevents ransomware corruption. They can also provide the granularity to create images of a single file copy or a complete disaster recovery solution.
+
+* Cloud Manager also enables you to block common ransomware file extensions by enabling ONTAP's FPolicy solution.
+
+<add a screenshot>
+
+=== New preset Snapshot policies
+
+When creating and editing a volume, you can now choose from several preset Snapshot policies. These policies define how the system creates Snapshot copies, which protect your data with no performance impact and minimal consumption of storage space.
+
+<add screenshot>
+
+=== Support for AWS GovCloud (US-East)
+
+You can now deploy Cloud Manager and Cloud Volumes ONTAP in the AWS GovCloud (US-East) region. This is in addition to support for the AWS GovCloud (US-West) region.
+
+=== Support for new Azure regions
+
+You can now deploy Cloud Manager and Cloud Volumes ONTAP in the following Azure regions:
+
+* Australia Central
+* Australia Central 2
+* France South
+
 == Cloud Manager 3.6.1 (4 Dec 2018)
 
 Cloud Manager 3.6.1 includes new features and enhancements.
