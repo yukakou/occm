@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_licensing.html
-keywords: licenses, licensing, byol, license, subscription, renewal, expire, tenant, netapp support site, account, credentials, file, license file, upload
+keywords: licenses, licensing, byol, license, subscription, renewal, expire, tenant, netapp support site, account, credentials, file, license file, upload, nlf
 summary: Each Cloud Volumes ONTAP BYOL system must have a license installed with an active subscription. Cloud Manager simplifies the licensing process by managing licenses for you and by notifying you before they expire.
 ---
 
@@ -24,7 +24,7 @@ For instructions, see link:task_setting_up_users_tenants.html#linking-tenants-to
 
 Each time you launch a BYOL system, Cloud Manager automatically downloads the license from NetApp and installs it on the Cloud Volumes ONTAP system.
 
-If Cloud Manager cannot access the license file over the secure internet connection, you can obtain the file yourself and then manually upload the file to Cloud Manager.
+If Cloud Manager cannot access the license file over the secure internet connection, you can obtain the file yourself and then manually upload the file to Cloud Manager. For instructions, see link:task_modifying_ontap_cloud.html#installing-license-files-on-cloud-volumes-ontap-byol-systems[Installing license files on Cloud Volumes ONTAP BYOL systems].
 
 [discrete]
 === License expiration
