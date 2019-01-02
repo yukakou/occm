@@ -19,23 +19,30 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
-== Cloud Manager 3.6.2 (6 Jan 2019)
+== Cloud Manager 3.6.2 (2 Jan 2019)
 
 Cloud Manager 3.6.2 includes new features and enhancements.
 
-* <<AWS spread placement groups for HA pairs in a single AWS AZ>>
+* <<AWS spread placement group for Cloud Volumes ONTAP HA in a single AZ>>
 * <<Ransomware protection>>
-* <<New preset Snapshot policies>>
-* <<Support for new Azure regions>>
-* <<Support for AWS GovCloud (US-East)>>
+* <<New data replication policies>>
+* <<Volume access control for Kubernetes>>
 
-=== AWS spread placement groups for HA pairs in a single AWS AZ
+=== AWS spread placement group for Cloud Volumes ONTAP HA in a single AZ
 
-When you deploy a Cloud Volumes ONTAP HA pair in a single AWS Availability Zone, Cloud Manager now launches the two HA nodes in an https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html[AWS spread placement group^]. The placement group reduces the risk of simultaneous failures by spreading the HA nodes across distinct underlying hardware.
+When you deploy Cloud Volumes ONTAP HA in a single AWS Availability Zone, Cloud Manager now launches the two HA nodes and the mediator in an https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html[AWS spread placement group^]. The placement group reduces the risk of simultaneous failures by spreading the instances across distinct underlying hardware.
+
+Cloud Manager requires new permissions for this feature. Ensure that the IAM policy that provides Cloud Manager with permissions includes the following actions:
+
+[source,json]
+"ec2:CreatePlacement",
+"ec2:DeletePlacementGroup"
+
+You can find the entire list of required permissions in the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Cloud_Manager_3.6.2.json[latest AWS policy for Cloud Manager^].
 
 === Ransomware protection
 
-Ransomware attacks can cost a business time, resources, and reputation. Cloud Manager now enables you to apply the NetApp solution for ransomware, which provides effective tools for visibility, detection, and remediation.
+Ransomware attacks can cost a business time, resources, and reputation. Cloud Manager now enables you to implement the NetApp solution for ransomware, which provides effective tools for visibility, detection, and remediation.
 
 * Cloud Manager identifies volumes that are not protected by a Snapshot policy and enables you to activate the default Snapshot policy on those volumes.
 +
@@ -43,25 +50,30 @@ Snapshot copies are read-only, which prevents ransomware corruption. They can al
 
 * Cloud Manager also enables you to block common ransomware file extensions by enabling ONTAP's FPolicy solution.
 
-<add a screenshot>
+image:screenshot_ransomware_protection.gif[A screenshot that shows the Ransomware Protection page that is available from within a working environment. The screen shows the number of volumes without a Snapshot Policy and the ability to block ransomware file extensions.]
 
-=== New preset Snapshot policies
+=== New data replication policies
 
-When creating and editing a volume, you can now choose from several preset Snapshot policies. These policies define how the system creates Snapshot copies, which protect your data with no performance impact and minimal consumption of storage space.
+Cloud Manager includes five new data replication policies that you can use for data protection.
 
-<add screenshot>
+Three of the policies configure disaster recovery and long-term retention of backups on the same destination volume. Each policy provides a different backup retention period:
 
-=== Support for AWS GovCloud (US-East)
+* Mirror and Backup (7 year retention)
+* Mirror and Backup (7 year retention with more weekly backups)
+* Mirror and Backup (1 year retention, monthly)
 
-You can now deploy Cloud Manager and Cloud Volumes ONTAP in the AWS GovCloud (US-East) region. This is in addition to support for the AWS GovCloud (US-West) region.
+The remaining policies provide more options for long-term retention of backups:
 
-=== Support for new Azure regions
+* Backup (1 month retention)
+* Backup (1 week retention)
 
-You can now deploy Cloud Manager and Cloud Volumes ONTAP in the following Azure regions:
+Simply drag-and-drop a working environment to select one of the new policies.
 
-* Australia Central
-* Australia Central 2
-* France South
+=== Volume access control for Kubernetes
+
+You can now configure the export policy for Kubernetes Persistent Volumes. The export policy can enable access to clients if the Kubernetes cluster is in a different network than the Cloud Volumes ONTAP system.
+
+You can configure the export policy when you connect a working environment to a Kubernetes cluster and by editing an existing volume.
 
 == Cloud Manager 3.6.1 (4 Dec 2018)
 
