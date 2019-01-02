@@ -172,7 +172,7 @@ entries:
       - title: Supported configurations for Cloud Volumes ONTAP
         url: https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_95.html
       - title: Supported regions
-        url: /reference_regions.html
+        url: https://cloud.netapp.com/cloud-volumes-global-regions
       - title: Security group rules for AWS
         url: /reference_security_groups.html
       - title: Security group rules for Azure

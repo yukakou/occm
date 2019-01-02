@@ -177,6 +177,12 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 
 | Obtains AWS cost data for Cloud Volumes ONTAP.
 
+|
+"ec2:CreatePlacement",
+"ec2:DeletePlacementGroup"
+
+| When you deploy an HA configuration in a single AWS Availability Zone, Cloud Manager launches the two HA nodes and the mediator in an AWS spread placement group.
+
 |===
 
 == What Cloud Manager does with Azure permissions

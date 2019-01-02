@@ -17,7 +17,7 @@ To deploy Cloud Manager in an Azure US Gov region, you must download the Cloud M
 
 .About this task
 
-For a list of supported Azure US Gov regions, see link:reference_regions.html#supported-azure-regions[Supported Azure regions].
+For a list of supported Azure US Gov regions, see https://cloud.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions].
 
 .Steps
 
