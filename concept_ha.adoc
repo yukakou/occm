@@ -49,6 +49,10 @@ You can ensure the high availability of your data by deploying an HA configurati
 
 Deploying an HA configuration in multiple Availability Zones (AZs) ensures high availability of your data if a failure occurs with an AZ or an instance that runs a Cloud Volumes ONTAP node. You should understand how NAS IP addresses impact data access and storage failover.
 
+NOTE: Cloud Manager launches the two HA nodes and the mediator in an https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html[AWS spread placement group^]. The placement group reduces the risk of simultaneous failures by spreading the instances across distinct underlying hardware.
+
+When you deploy Cloud Volumes ONTAP HA in a single AWS Availability Zone, Cloud Manager now launches the two HA nodes and the mediator in an https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html[AWS spread placement group^]. The placement group reduces the risk of simultaneous failures by spreading the instances across distinct underlying hardware.
+
 === NFS and CIFS data access for clients within the VPC
 
 When an HA configuration is spread across multiple Availability Zones, three floating IP addresses are required for NAS data access from within the VPC. The floating IP addresses, which must be outside of the CIDR blocks for all VPCs in the region, can migrate between nodes when failures occur.
