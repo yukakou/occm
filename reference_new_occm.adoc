@@ -52,6 +52,8 @@ Snapshot copies are read-only, which prevents ransomware corruption. They can al
 
 image:screenshot_ransomware_protection.gif[A screenshot that shows the Ransomware Protection page that is available from within a working environment. The screen shows the number of volumes without a Snapshot Policy and the ability to block ransomware file extensions.]
 
+link:task_protecting_ransomware.html[Learn how to implement the NetApp solution for ransomware].
+
 === New data replication policies
 
 Cloud Manager includes five new data replication policies that you can use for data protection.

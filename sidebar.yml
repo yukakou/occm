@@ -143,6 +143,8 @@ entries:
         url: /task_managing_state.html
       - title: Monitoring AWS costs
         url: /task_monitoring_costs.html
+      - title: Improving ransomware protection
+        url: /task_protecting_ransomware.html
       - title: Adding existing systems
         url: /task_adding_ontap_cloud.html
       - title: Deleting systems
