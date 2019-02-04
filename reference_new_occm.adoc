@@ -26,6 +26,7 @@ Cloud Manager 3.6.3 includes the following enhancements.
 * <<368 TB capacity limit for all Premium and BYOL configurations>>
 * <<Support for new AWS regions>>
 * <<Ability to disable data tiering on the initial aggregate>>
+* <<EC2 instance type now t3.medium for Cloud Manager>>
 
 === 368 TB capacity limit for all Premium and BYOL configurations
 
@@ -55,6 +56,10 @@ In previous releases, Cloud Manager automatically enabled data tiering on the in
 This new option is available when choosing the underlying storage resources. The following image shows an example when launching a system in AWS:
 
 image:screenshot_s3_tiering_initial_aggr.gif[A screenshot that shows the S3 Tiering Edit option when choosing an underlying disk.]
+
+=== EC2 instance type now t3.medium for Cloud Manager
+
+The instance type for Cloud Manager is now t3.medium when deploying Cloud Manager in AWS from NetApp Cloud Central or from the AWS Marketplace. This change enables support in the latest AWS regions. The instance type was previously t2.medium.
 
 == Cloud Manager 3.6.2 (2 Jan 2019)
 
