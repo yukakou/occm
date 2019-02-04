@@ -96,9 +96,13 @@ NOTE: If a newer Release Candidate, General Availability, or patch release is av
 +
 Credentials are required for BYOL instances. For details, see link:concept_storage_management.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account].
 
-. On the Underlying Storage Resources page, choose a storage type and a disk size for all disks in the initial aggregate.
+. On the Underlying Storage Resources page, choose settings for the initial aggregate: a disk type, a size for each disk, and whether S3 tiering should be enabled.
 +
-You can choose a different disk type for subsequent volumes. For help choosing a disk type and size, see link:task_planning_your_config.html#sizing-your-system-in-aws[Sizing your system in AWS].
+The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
++
+The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
++
+For help choosing a disk type and size, see link:task_planning_your_config.html#sizing-your-system-in-aws[Sizing your system in AWS].
 
 . On the Write Speed & WORM page, choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
 +
@@ -276,9 +280,13 @@ NOTE: If a newer Release Candidate, General Availability, or patch release is av
 +
 Credentials are required for BYOL instances. For details, see link:concept_storage_management.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account].
 
-. On the Underlying Storage Resources page, choose a storage type and a disk size for all disks in the initial aggregate.
+. On the Underlying Storage Resources page, choose settings for the initial aggregate: a disk type, a size for each disk, and whether S3 tiering should be enabled.
 +
-You can choose a different disk type for subsequent volumes. For help choosing a disk type and size, see link:task_planning_your_config.html#sizing-your-system-in-aws[Sizing your system in AWS].
+The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
++
+The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
++
+For help choosing a disk type and size, see link:task_planning_your_config.html#sizing-your-system-in-aws[Sizing your system in AWS].
 
 . On the WORM page, activate write once, read many (WORM) storage, if desired.
 +

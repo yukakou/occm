@@ -19,6 +19,43 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Cloud Manager 3.6.3 (4 Feb 2019)
+
+Cloud Manager 3.6.3 includes the following enhancements.
+
+* <<368 TB capacity limit for all Premium and BYOL configurations>>
+* <<Support for new AWS regions>>
+* <<Ability to disable data tiering on the initial aggregate>>
+
+=== 368 TB capacity limit for all Premium and BYOL configurations
+
+The system capacity limit for Cloud Volumes ONTAP Premium and BYOL is now 368 TB across all configurations: single node and HA in both AWS and Azure. This change applies to Cloud Volumes ONTAP 9.5, 9.4, and 9.3 (AWS only with 9.3).
+
+For some configurations, disk limits prevent you from reaching the 368 TB capacity limit by using disks alone. In those cases, you can reach the 368 TB capacity limit by https://docs.netapp.com/us-en/occm/concept_data_tiering.html[tiering inactive data to object storage^]. For example, a single node system in Azure could have 252 TB of disk-based capacity, which would allow up to 116 TB of inactive data in Azure Blob storage.
+
+For information about disk limits, refer to storage limits in the https://docs.netapp.com/us-en/cloud-volumes-ontap/[Cloud Volumes ONTAP Release Notes^].
+
+=== Support for new AWS regions
+
+Cloud Manager and Cloud Volumes ONTAP are now supported in the following AWS regions:
+
+* Europe (Stockholm)
++
+Single node systems only. HA pairs are not supported at this time.
+* GovCloud (US-East)
++
+This is in addition to support for the AWS GovCloud (US-West) region.
+
+https://cloud.netapp.com/cloud-volumes-global-regions[See the full list of supported regions^].
+
+=== Ability to disable data tiering on the initial aggregate
+
+In previous releases, Cloud Manager automatically enabled data tiering on the initial Cloud Volumes ONTAP aggregate. You can now choose to disable data tiering on this initial aggregate. (You can enable or disable data tiering on subsequent aggregates, as well.)
+
+This new option is available when choosing the underlying storage resources. The following image shows an example when launching a system in AWS:
+
+image:screenshot_s3_tiering_initial_aggr.gif[A screenshot that shows the S3 Tiering Edit option when choosing an underlying disk.]
+
 == Cloud Manager 3.6.2 (2 Jan 2019)
 
 Cloud Manager 3.6.2 includes new features and enhancements.
@@ -142,7 +179,7 @@ The AWS Cost report now provides more information and is easier to set up.
 
 * The report breaks down the monthly resource costs associated with running Cloud Volumes ONTAP in AWS. You can view monthly costs for compute, EBS storage (including EBS snapshots), S3 storage, and data transfers.
 
-* The report now shows cost savings when you tier cold data to S3.
+* The report now shows cost savings when you tier inactive data to S3.
 
 * We also simplified how Cloud Manager obtains cost data from AWS.
 +
