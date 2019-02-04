@@ -45,7 +45,7 @@ For additional details about the use cases for these disks, refer to http://docs
 
 link:task_planning_your_config.html#sizing-your-system-in-aws[Learn how to choose disk types and disk sizes for your systems in AWS].
 
-https://docs.netapp.com/cloud-volumes-ontap/us-en/reference_storage_limits_94.html[Review storage limits for Cloud Volumes ONTAP].
+https://docs.netapp.com/cloud-volumes-ontap/us-en/reference_storage_limits_95.html[Review storage limits for Cloud Volumes ONTAP].
 
 == Azure storage
 
