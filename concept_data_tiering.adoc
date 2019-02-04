@@ -13,7 +13,7 @@ summary: You can reduce your storage costs by enabling automated tiering of cold
 :imagesdir: ./media/
 
 [.lead]
-You can reduce your storage costs by enabling automated tiering of cold data to low-cost object storage. Active data remains in high-performance SSDs or HDDs (the performance tier), while inactive data is tiered to low-cost object storage (the capacity tier). This enables you to reclaim space on your primary storage and shrink secondary storage.
+You can reduce your storage costs by enabling automated tiering of inactive data to low-cost object storage. Active data remains in high-performance SSDs or HDDs (the performance tier), while inactive data is tiered to low-cost object storage (the capacity tier). This enables you to reclaim space on your primary storage and shrink secondary storage.
 
 Cloud Volumes ONTAP supports data tiering in AWS and in Microsoft Azure. Data tiering is powered by FabricPool technology.
 
@@ -21,9 +21,9 @@ NOTE: You do not need to install a feature license to enable data tiering.
 
 == How data tiering works in AWS
 
-When you enable data tiering in AWS, Cloud Volumes ONTAP uses EBS as a performance tier for hot data and AWS S3 as a capacity tier for cold data:
+When you enable data tiering in AWS, Cloud Volumes ONTAP uses EBS as a performance tier for hot data and AWS S3 as a capacity tier for inactive data:
 
-image:diagram_storage_tiering.png[This is a conceptual image that shows hot data going to EBS storage and cold data going to S3 storage.]
+image:diagram_storage_tiering.png[This is a conceptual image that shows hot data going to EBS storage and inactive data going to S3 storage.]
 
 === Performance tier in AWS
 
@@ -31,9 +31,9 @@ The performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Thro
 
 === Capacity tier in AWS
 
-By default, Cloud Volumes ONTAP tiers cold data to the S3 _Standard_ storage class. Standard is ideal for frequently accessed data stored across multiple Availability Zones.
+By default, Cloud Volumes ONTAP tiers inactive data to the S3 _Standard_ storage class. Standard is ideal for frequently accessed data stored across multiple Availability Zones.
 
-If you do not plan to access the cold data, you can reduce your storage costs by changing a system's tiering level to either of the following, after you deploy Cloud Volumes ONTAP:
+If you do not plan to access the inactive data, you can reduce your storage costs by changing a system's tiering level to either of the following, after you deploy Cloud Volumes ONTAP:
 
 Standard-Infrequent Access:: For infrequently accessed data stored across multiple Availability Zones.
 
@@ -41,7 +41,7 @@ One Zone-Infrequent Access:: For infrequently accessed data stored in a single A
 
 The access costs are higher if you do access the data, so you must take that into consideration before you change the tiering level. For more details about S3 storage classes, refer to https://aws.amazon.com/s3/storage-classes[AWS documentation^].
 
-When you change the tiering level, cold data starts in the Standard storage class and moves to the storage class that you selected, if the data is not accessed after 30 days. For details about changing the tiering level, see link:task_tiering.html[Tiering cold data to low-cost object storage].
+When you change the tiering level, inactive data starts in the Standard storage class and moves to the storage class that you selected, if the data is not accessed after 30 days. For details about changing the tiering level, see link:task_tiering.html[Tiering inactive data to low-cost object storage].
 
 The tiering level is system wide--it is not per volume.
 
@@ -49,9 +49,9 @@ NOTE: A Cloud Volumes ONTAP working environment uses an S3 bucket for all tiered
 
 == How data tiering works in Microsoft Azure
 
-When you enable data tiering in Azure, Cloud Volumes ONTAP uses Azure managed disks as a performance tier for hot data and Azure Blob storage as a capacity tier for cold data:
+When you enable data tiering in Azure, Cloud Volumes ONTAP uses Azure managed disks as a performance tier for hot data and Azure Blob storage as a capacity tier for inactive data:
 
-image:diagram_storage_tiering_azure.png[This is a conceptual image that shows hot data going to Azure managed disks and cold data going to Azure Blob storage.]
+image:diagram_storage_tiering_azure.png[This is a conceptual image that shows hot data going to Azure managed disks and inactive data going to Azure Blob storage.]
 
 === Performance tier in Azure
 
@@ -59,13 +59,13 @@ The performance tier can be either Premium Storage (SSD) or Standard Storage (HD
 
 === Capacity tier in Azure
 
-By default, Cloud Volumes ONTAP tiers cold data to the Azure _hot_ storage tier, which is ideal for frequently accessed data.
+By default, Cloud Volumes ONTAP tiers inactive data to the Azure _hot_ storage tier, which is ideal for frequently accessed data.
 
-If you do not plan to access the cold data, you can reduce your storage costs by changing a system's tiering level to the Azure _cool_ storage tier after you deploy Cloud Volumes ONTAP. The cool tier is ideal for infrequently accessed data that will reside in the tier for at least 30 days.
+If you do not plan to access the inactive data, you can reduce your storage costs by changing a system's tiering level to the Azure _cool_ storage tier after you deploy Cloud Volumes ONTAP. The cool tier is ideal for infrequently accessed data that will reside in the tier for at least 30 days.
 
 The access costs are higher if you do access the data, so you must take that into consideration before you change the tiering level. For more details about Azure Blob storage tiers, refer to https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers[Azure documentation^].
 
-When you change the tiering level, cold data starts in the hot storage tier and moves to the cool storage tier, if the data is not accessed after 30 days. For details about changing the tiering level, see link:task_tiering.html[Tiering cold data to low-cost object storage].
+When you change the tiering level, inactive data starts in the hot storage tier and moves to the cool storage tier, if the data is not accessed after 30 days. For details about changing the tiering level, see link:task_tiering.html[Tiering inactive data to low-cost object storage].
 
 The tiering level is system wide--it is not per volume.
 
@@ -99,4 +99,4 @@ None:: Keeps data of a volume in the performance tier, preventing it from being 
 
 == Setting up data tiering
 
-For instructions and a list of supported configurations, see link:task_tiering.html[Tiering cold data to low-cost object storage].
+For instructions and a list of supported configurations, see link:task_tiering.html[Tiering inactive data to low-cost object storage].
