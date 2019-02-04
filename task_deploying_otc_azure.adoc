@@ -77,7 +77,7 @@ NOTE: If a newer Release Candidate, General Availability, or patch release is av
 +
 Credentials are required for BYOL instances. For details, see link:concept_storage_management.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account].
 
-. On the Underlying Storage Resources page, choose a disk type and select a disk size.
+. On the Underlying Storage Resources page, choose settings for the initial aggregate: a disk type, a size for each disk, and whether data tiering should be enabled.
 +
 The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
 +
