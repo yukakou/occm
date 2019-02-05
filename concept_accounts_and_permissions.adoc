@@ -21,7 +21,7 @@ You can deploy all of your Cloud Volumes ONTAP systems in the initial AWS accoun
 
 === The initial AWS account
 
-When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS account that has permissions to launch the Cloud Manager instance. The required permissions are listed in the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service.json[Cloud Central policy for AWS^].
+When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS account that has permissions to launch the Cloud Manager instance. The required permissions are listed in the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service.json[Cloud Central policy for AWS^]. link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[Review how Cloud Manager uses the permissions].
 
 When Cloud Central launches the Cloud Manager instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP in that AWS account.
 
@@ -49,7 +49,7 @@ You can deploy all of your Cloud Volumes ONTAP systems in the initial Azure acco
 
 === The initial Azure account
 
-When you deploy Cloud Manager from NetApp Cloud Central, you need to use an Azure account that has permissions to deploy the Cloud Manager virtual machine. The required permissions are listed in the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[Cloud Central policy for Azure^].
+When you deploy Cloud Manager from NetApp Cloud Central, you need to use an Azure account that has permissions to deploy the Cloud Manager virtual machine. The required permissions are listed in the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[Cloud Central policy for Azure^]. link:reference_permissions.html#what-cloud-manager-does-with-azure-permissions[Review how Cloud Manager uses the permissions].
 
 When Cloud Central deploys the Cloud Manager virtual machine in Azure, it enables a Managed Service Identity on the Cloud Manager virtual machine, creates a custom role, and assigns it to the virtual machine. The role provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP in that Azure subscription.
 
