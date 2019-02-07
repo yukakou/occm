@@ -90,41 +90,71 @@ NOTE: The source IP address is the Cloud Manager host.
 
 The security group for Cloud Volumes ONTAP requires both inbound and outbound rules.
 
-=== Inbound rules for Cloud Volumes ONTAP
+=== Inbound rules for single node systems
 
-The source for inbound rules in the predefined security group is 0.0.0.0/0.
-
-[cols="10,10,80",width=100%,options="header"]
+[cols="8,13,8,8,13,13,8,27",options="header"]
 |===
 
-| Protocol
+| Priority
+| Name
 | Port
-| Purpose
+| Protocol
+| Source
+| Destination
+| Action
+| Description
 
-| All ICMP | All | Pinging the instance
-| HTTP | 80 |	HTTP access to the System Manager web console using the IP address of the cluster management LIF
-| HTTPS |	443 |	HTTPS access to the System Manager web console using the IP address of the cluster management LIF
-| SSH |	22 | SSH access to the IP address of the cluster management LIF or a node management LIF
-| TCP |	111 |	Remote procedure call for NFS
-| TCP |	139 | NetBIOS service session for CIFS
-| TCP |	161-162 |	Simple network management protocol
-| TCP |	445 |	Microsoft SMB/CIFS over TCP with NetBIOS framing
-| TCP |	635 |	NFS mount
-| TCP |	749 |	Kerberos
-| TCP |	2049 |	NFS server daemon
-| TCP |	3260 |	iSCSI access through the iSCSI data LIF
-| TCP |	4045 |	NFS lock daemon
-| TCP | 4046 | Network status monitor for NFS
-| TCP |	10000 |	Backup using NDMP
-| TCP |	11104 |	Management of intercluster communication sessions for SnapMirror
-| TCP | 11105 | SnapMirror data transfer using intercluster LIFs
-| UDP |	111 | Remote procedure call for NFS
-| UDP |	161-162 |	Simple network management protocol
-| UDP |	635 |	NFS mount
-| UDP |	2049 | NFS server daemon
-| UDP |	4045 | NFS lock daemon
-| UDP | 4046 | Network status monitor for NFS
-| UDP | 4049 | NFS rquotad protocol
+| 1000 | inbound_ssh | 22 | TCP | Any | Any | Allow | SSH access to the IP address of the cluster management LIF or a node management LIF
+| 1001 | inbound_http | 80  | TCP | Any | Any | Allow | HTTP access to the System Manager web console using the IP address of the cluster management LIF
+| 1002 | inbound_111_tcp | 111 | TCP | Any | Any | Allow | Remote procedure call for NFS
+| 1003 | inbound_111_udp | 111 | UDP | Any | Any | Allow | Remote procedure call for NFS
+| 1004 | inbound_139 | 139 | TCP | Any | Any | Allow | NetBIOS service session for CIFS
+| 1005 | inbound_161-162 _tcp | 161-162 | TCP | Any | Any | Allow | Simple network management protocol
+| 1006 | inbound_161-162 _udp | 161-162 | UDP | Any | Any | Allow | Simple network management protocol
+| 1007 | inbound_443 | 443 | TCP | Any | Any | Allow | HTTPS access to the System Manager web console using the IP address of the cluster management LIF
+| 1008 | inbound_445 | 445 | TCP | Any | Any | Allow | Microsoft SMB/CIFS over TCP with NetBIOS framing
+| 1009 | inbound_635_tcp | 635 | TCP | Any | Any | Allow | NFS mount
+| 1010 | inbound_635_udp | 635 | TCP | Any | Any | Allow | NFS mount
+| 1011 | inbound_749 | 749 | TCP | Any | Any | Allow | Kerberos
+| 1012 | inbound_2049_tcp | 2049 | TCP | Any | Any | Allow | NFS server daemon
+| 1013 | inbound_2049_udp | 2049 | UDP | Any | Any | Allow | NFS server daemon
+| 1014 | inbound_3260 | 3260 | TCP | Any | Any | Allow | iSCSI access through the iSCSI data LIF
+| 1015 | inbound_4045-4046_tcp | 4045-4046 | TCP | Any | Any | Allow | NFS lock daemon and network status monitor
+| 1016 | inbound_4045-4046_udp | 4045-4046 | UDP | Any | Any | Allow | NFS lock daemon and network status monitor
+| 1017 | inbound_10000 | 10000 | TCP | Any | Any | Allow | Backup using NDMP
+| 1018 | inbound_11104-11105 | 11104-11105 | TCP | Any | Any | Allow | SnapMirror data transfer
+| 3000 | inbound_deny _all_tcp | Any | TCP | Any | Any | Deny | Block all other TCP inbound traffic
+| 3001 | inbound_deny _all_udp | Any | UDP | Any | Any | Deny | Block all other UDP inbound traffic
+| 65000 | AllowVnetInBound | Any | Any | VirtualNetwork | VirtualNetwork | Allow | Inbound traffic from within the VNet
+| 65001 | AllowAzureLoad BalancerInBound  | Any | Any | AzureLoadBalancer | Any | Allow | Data traffic from the Azure Standard Load Balancer
+| 65500 | DenyAllInBound | Any | Any | Any | Any | Deny | Block all other inbound traffic
+
+|===
+
+=== Inbound rules for HA systems
+
+NOTE: HA systems have less inbound rules than single node systems because inbound data traffic goes through the Azure Standard Load Balancer. Because of this, traffic from the Load Balancer should be open, as shown in the "AllowAzureLoadBalancerInBound" rule.
+
+[cols="8,13,8,8,13,13,8,27",options="header"]
+|===
+
+| Priority
+| Name
+| Port
+| Protocol
+| Source
+| Destination
+| Action
+| Description
+
+| 100 | inbound_443 | 443 | Any | Any | Any | Allow | HTTPS access to the System Manager web console using the IP address of the cluster management LIF
+| 101 | inbound_111_tcp | 111 | Any | Any | Any | Allow | Remote procedure call for NFS
+| 102 | inbound_2049_tcp | 2049 | Any | Any | Any | Allow | NFS server daemon
+| 111 | inbound_ssh | 22 | Any | Any | Any | Allow | SSH access to the IP address of the cluster management LIF or a node management LIF
+| 121 | inbound_53 | 53 | Any | Any | Any | Allow | DNS and CIFS
+| 65000 | AllowVnetInBound | Any | Any | VirtualNetwork | VirtualNetwork | Allow | Inbound traffic from within the VNet
+| 65001 | AllowAzureLoad BalancerInBound | Any | Any | AzureLoadBalancer | Any | Allow | Data traffic from the Azure Standard Load Balancer
+| 65500 | DenyAllInBound | Any | Any | Any | Any | Deny | Block all other inbound traffic
 
 |===
 
@@ -143,7 +173,6 @@ The predefined security group for Cloud Volumes ONTAP includes the following out
 | Port
 | Purpose
 
-| All ICMP |	All |	All outbound traffic
 | All TCP |	All |	All outbound traffic
 | All UDP |	All |	All outbound traffic
 
