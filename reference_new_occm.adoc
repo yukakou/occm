@@ -27,6 +27,7 @@ Cloud Manager 3.6.3 includes the following enhancements.
 * <<Support for new AWS regions>>
 * <<Ability to disable data tiering on the initial aggregate>>
 * <<EC2 instance type now t3.medium for Cloud Manager>>
+* <<Postponement of scheduled shutdowns during data transfers>>
 
 === 368 TB capacity limit for all Premium and BYOL configurations
 
@@ -60,6 +61,10 @@ image:screenshot_s3_tiering_initial_aggr.gif[A screenshot that shows the S3 Tier
 === EC2 instance type now t3.medium for Cloud Manager
 
 The instance type for Cloud Manager is now t3.medium when deploying Cloud Manager in AWS from NetApp Cloud Central or from the AWS Marketplace. This change enables support in the latest AWS regions. The instance type was previously t2.medium.
+
+=== Postponement of scheduled shutdowns during data transfers
+
+If you scheduled an automatic shutdown of your Cloud Volumes ONTAP system, Cloud Manager now postpones the shutdown if an active data transfer is in progress. Cloud Manager shuts down the system after the transfer is complete.
 
 == Cloud Manager 3.6.2 (2 Jan 2019)
 
