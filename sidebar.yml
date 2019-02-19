@@ -45,8 +45,6 @@ entries:
         url: /concept_security.html
       - title: Performance
         url: /concept_performance.html
-      - title: Cloud Storage Automation
-        url: /concept_storage_automation.html
   - title: Getting started
     entries:
       - title: Deployment overview
@@ -107,7 +105,7 @@ entries:
     entries:
       - title: Creating volumes, aggregates, and LUNs
         url: /task_provisioning_storage.html
-      - title: Tiering cold data to object storage
+      - title: Tiering inactive data to object storage
         url: /task_tiering.html
       - title: Using Cloud Volumes ONTAP as persistent storage
         url: /task_connecting_kubernetes.html
