@@ -27,6 +27,10 @@ Download JSON files that include the permissions that Cloud Manager needs to per
 +
 Read an overview of the APIs, examples of how to use them, and an API reference.
 
+* Training for Cloud Volumes ONTAP
+** https://learningcenter.netapp.com/LC?ObjectType=WBT&ObjectID=00368390[Cloud Volumes ONTAP Fundamentals^]
+** https://learningcenter.netapp.com/LC?ObjectType=WBT&ObjectID=00369436[Cloud Volumes ONTAP Deployment and Management for Azure^]
+
 * Technical reports
 ** https://www.netapp.com/us/media/tr-4383.pdf[NetApp Technical Report 4383: Performance Characterization of Cloud Volumes ONTAP in Amazon Web Services with Application Workloads^]
 ** https://www.netapp.com/us/media/tr-4671.pdf[NetApp Technical Report 4671: Performance Characterization of Cloud Volumes ONTAP in Azure with Application Workloads^]

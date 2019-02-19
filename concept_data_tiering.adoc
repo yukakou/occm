@@ -33,11 +33,13 @@ The performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Thro
 
 By default, Cloud Volumes ONTAP tiers inactive data to the S3 _Standard_ storage class. Standard is ideal for frequently accessed data stored across multiple Availability Zones.
 
-If you do not plan to access the inactive data, you can reduce your storage costs by changing a system's tiering level to either of the following, after you deploy Cloud Volumes ONTAP:
+If you do not plan to access the inactive data, you can reduce your storage costs by changing a system's tiering level to one of the following, after you deploy Cloud Volumes ONTAP:
 
-Standard-Infrequent Access:: For infrequently accessed data stored across multiple Availability Zones.
+Intelligent Tiering:: Optimizes storage costs by moving data between two tiers as data access patterns change. One tier is for frequent access and the other is for infrequent access.
 
 One Zone-Infrequent Access:: For infrequently accessed data stored in a single Availability Zone.
+
+Standard-Infrequent Access:: For infrequently accessed data stored across multiple Availability Zones.
 
 The access costs are higher if you do access the data, so you must take that into consideration before you change the tiering level. For more details about S3 storage classes, refer to https://aws.amazon.com/s3/storage-classes[AWS documentation^].
 

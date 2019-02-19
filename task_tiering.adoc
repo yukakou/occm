@@ -117,7 +117,11 @@ When you enable data tiering, Cloud Volumes ONTAP tiers inactive data to the S3 
 
 The tiering level is system wide—​it is not per volume.
 
-In AWS, you can change the tiering level so inactive data moves to the  _Standard-Infrequent Access_ storage class or to the _One Zone-Infrequent Access_ storage class after 30 days of inactivity.
+In AWS, you can change the tiering level so inactive data moves to one of the following storage classes after 30 days of inactivity:
+
+* Intelligent Tiering
+* Standard-Infrequent Access
+* One Zone-Infrequent Access
 
 In Azure, you can change the tiering level so inactive data moves to the  _cool_ storage tier after 30 days of inactivity.
 

@@ -77,7 +77,7 @@ image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting bet
 
 .What about Marketplace deployments and on-prem deployments?
 ****
-The sections above describe the recommended deployment method from NetApp Cloud Central. You can also deploy Cloud Manager from the AWS or Azure Marketplaces and you can install Cloud Manager on-premises.
+The sections above describe the recommended deployment method from NetApp Cloud Central. You can also deploy Cloud Manager from the link:task_launching_aws_mktp.html[AWS Marketplace], the link:task_launching_azure_mktp.html[Azure Marketplace], and you can link:task_installing_linux.html[install Cloud Manager on-premises].
 
 If you use either of the Marketplaces, permissions are provided in the same way. You just need to manually create and set up the IAM role or Managed Service Identity for Cloud Manager, and then provide permissions for any additional accounts.
 
