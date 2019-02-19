@@ -46,7 +46,9 @@ If the MySQL service is down, then the occm service is down too.
 ** 7Zip
 ** AWSCLI
 ** Java
+** Kubectl
 ** MySQL
+** Tridentctl
 ** Wget
 
 == Default configuration for Cloud Volumes ONTAP
