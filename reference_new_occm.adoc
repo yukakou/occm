@@ -23,11 +23,17 @@ link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 
 
 Cloud Manager 3.6.3 includes the following enhancements.
 
+* <<Support for Cloud Volumes ONTAP 9.5 GA>>
 * <<368 TB capacity limit for all Premium and BYOL configurations>>
 * <<Support for new AWS regions>>
+* <<Support for S3 Intelligent-Tiering>>
 * <<Ability to disable data tiering on the initial aggregate>>
 * <<EC2 instance type now t3.medium for Cloud Manager>>
 * <<Postponement of scheduled shutdowns during data transfers>>
+
+=== Support for Cloud Volumes ONTAP 9.5 GA
+
+Cloud Manager now supports the General Availability (GA) release of Cloud Volumes ONTAP 9.5. This includes support for M5 and R5 instances in AWS. For more details about the 9.5 release, see the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_95.html[Cloud Volumes ONTAP 9.5 Release Notes^].
 
 === 368 TB capacity limit for all Premium and BYOL configurations
 
@@ -50,6 +56,14 @@ This is in addition to support for the AWS GovCloud (US-West) region.
 
 https://cloud.netapp.com/cloud-volumes-global-regions[See the full list of supported regions^].
 
+=== Support for S3 Intelligent-Tiering
+
+When you enable data tiering in AWS, Cloud Volumes ONTAP tiers inactive data to the S3 Standard storage class by default. You can now change the tiering level to the _Intelligent Tiering_ storage class. This storage class optimizes storage costs by moving data between two tiers as data access patterns change. One tier is for frequent access and the other is for infrequent access.
+
+Just like in previous releases, you can also use the Standard-Infrequent Access tier and the One Zone-Infrequent Access tier.
+
+link:concept_data_tiering.html[Learn more about data tiering] and http://localhost:4001/occm/us-en/task_tiering.html#changing-the-tiering-level[learn how to change the storage class].
+
 === Ability to disable data tiering on the initial aggregate
 
 In previous releases, Cloud Manager automatically enabled data tiering on the initial Cloud Volumes ONTAP aggregate. You can now choose to disable data tiering on this initial aggregate. (You can enable or disable data tiering on subsequent aggregates, as well.)
@@ -60,7 +74,7 @@ image:screenshot_s3_tiering_initial_aggr.gif[A screenshot that shows the S3 Tier
 
 === EC2 instance type now t3.medium for Cloud Manager
 
-The instance type for Cloud Manager is now t3.medium when deploying Cloud Manager in AWS from NetApp Cloud Central or from the AWS Marketplace. This change enables support in the latest AWS regions. The instance type was previously t2.medium.
+The instance type for Cloud Manager is now t3.medium when deploying Cloud Manager in AWS from NetApp Cloud Central or from the AWS Marketplace. This change enables support in the latest AWS regions and reduces instance costs. The instance type was previously t2.medium.
 
 === Postponement of scheduled shutdowns during data transfers
 
@@ -137,7 +151,7 @@ Cloud Manager 3.6.1 includes new features and enhancements.
 
 === Support for Cloud Volumes ONTAP 9.5 in Azure
 
-Cloud Manager now supports the Cloud Volumes ONTAP 9.5 release in Microsoft Azure, which includes a  preview of high-availability (HA) pairs. You can request a preview license for an Azure HA pair by contacting us at ng-Cloud-Volume-ONTAP-preview@netapp.com.
+Cloud Manager now supports the Cloud Volumes ONTAP 9.5 release in Microsoft Azure, which includes a preview of high-availability (HA) pairs. You can request a preview license for an Azure HA pair by contacting us at ng-Cloud-Volume-ONTAP-preview@netapp.com.
 
 For more details about the 9.5 release, see the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_95.html[Cloud Volumes ONTAP 9.5 Release Notes^].
 
