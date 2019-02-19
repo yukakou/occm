@@ -62,9 +62,9 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 +
 NOTE: If AWS keys were not specified for your Cloud Manager account, you are prompted to enter them after you click Continue. You need to enter them before you can proceed.
 
-. On the Location page, enter the network information that you recorded in the AWS worksheet and then click *Continue*.
+. On the Location & Connectivity page, enter the network information that you recorded in the AWS worksheet and then click *Continue*.
 +
-The following image shows the Location page filled out:
+The following image shows the Location & Connectivity page filled out:
 +
 image:screenshot_cot_vpc.gif[Screen shot: Shows the VPC page filled out for a new Cloud Volumes ONTAP instance.]
 
@@ -236,7 +236,7 @@ NOTE: If AWS keys were not specified for your Cloud Manager account, you are pro
 +
 For an overview of the deployment models, see link:concept_ha.html[Cloud Volumes ONTAP HA for AWS].
 
-. On the Location page, enter the network information that you recorded in the AWS worksheet and then click *Continue*.
+. On the Region & VPC page, enter the network information that you recorded in the AWS worksheet and then click *Continue*.
 +
 The following image shows the Location page filled out for a multiple AZ configuration:
 +
