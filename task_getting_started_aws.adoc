@@ -14,7 +14,7 @@ summary: You can get started with Cloud Volumes ONTAP in AWS by completing a few
 :imagesdir: ./media/
 
 [.lead]
-You can get started with Cloud Volumes ONTAP in AWS by completing a few quick steps.
+You can get started with Cloud Volumes ONTAP in AWS from NetApp Cloud Central.
 
 === image:number1.png[Number 1] Set up your networking
 
@@ -65,3 +65,4 @@ video::au5qQDiPuzo[youtube, width=848, height=480]
 * link:task_adding_cloud_accounts.html[Adding Cloud Provider Accounts to Cloud Manager]
 * link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[What Cloud Manager does with AWS permissions]
 * link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
+* link:task_launching_aws_mktp.html[Launching Cloud Manager from the AWS Marketplace]
