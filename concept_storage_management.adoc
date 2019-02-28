@@ -68,7 +68,7 @@ The Cloud Manager Admin can choose whether Cloud Manager notifies you of storage
 
 === Automatic capacity management
 
-If the Cloud Manager Admin set the Capacity Management Mode to automatic, Cloud Manager automatically purchases new disks for Cloud Volumes ONTAP instances when more capacity is needed, deletes unused collections of disks (aggregates), and moves volumes between aggregates, as needed.
+If the Cloud Manager Admin set the Capacity Management Mode to automatic, Cloud Manager automatically purchases new disks for Cloud Volumes ONTAP instances when more capacity is needed, deletes unused collections of disks (aggregates), moves volumes between aggregates when needed, and attempts to unfail disks.
 
 The following examples illustrate how this mode works:
 
