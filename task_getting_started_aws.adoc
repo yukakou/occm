@@ -38,7 +38,7 @@ Subscribing from https://aws.amazon.com/marketplace/search/results?page=1&search
 When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS account that has permissions to deploy the instance.
 
 [role="quick-margin-list"]
-.. Go to the AWS IAM console and create a policy by copying and pasting the contents of the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service.json[NetApp-provided JSON file^].
+.. Go to the AWS IAM console and create a policy by copying and pasting the contents of the https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Central policy for AWS^].
 
 .. Attach the policy to the IAM user.
 

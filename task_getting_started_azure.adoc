@@ -30,7 +30,7 @@ This step is important because Cloud Manager cannot deploy Cloud Volumes ONTAP w
 When you deploy Cloud Manager from NetApp Cloud Central, you need to use an Azure account that has permissions to deploy the Cloud Manager virtual machine.
 
 [role="quick-margin-list"]
-.. Download the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[NetApp-provided JSON file^].
+.. Download the https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Central policy for Azure^].
 
 .. Modify the JSON file by adding your Azure subscription ID to the "AssignableScopes" field.
 
