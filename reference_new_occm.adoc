@@ -19,6 +19,36 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Cloud Manager 3.6.4 (3 Mar 2019)
+
+Cloud Manager 3.6.4 includes the following enhancements.
+
+* <<AWS-managed encryption with a key from another account>>
+* <<Recovery of failed disks>>
+* <<Azure storage accounts enabled for HTTPS when data tiering to Blob containers>>
+
+=== AWS-managed encryption with a key from another account
+
+When launching a Cloud Volumes ONTAP system in AWS, you can now enable http://docs.aws.amazon.com/kms/latest/developerguide/overview.html[AWS-managed encryption^] using a Customer Master Key (CMK) from another AWS user account.
+
+The following images show how to select the option when creating a new working environment:
+
+image:screenshot_aws_encryption_cmk.gif[image]
+
+link:concept_security.html[Learn more about supported encryption technologies].
+
+=== Recovery of failed disks
+
+Cloud Manager now tries to recover failed disks from Cloud Volumes ONTAP systems. Successful attempts are noted in email notification reports. Here's a sample notification:
+
+image:screenshot_notification_failed_disk.png[A screenshot that shows a message from the daily notification report. The message states that Cloud Manager successfully recovered a failed disk.]
+
+TIP: You can enable notification reports by editing your user account.
+
+=== Azure storage accounts enabled for HTTPS when data tiering to Blob containers
+
+When you set up a Cloud Volumes ONTAP system to tier inactive data to an Azure Blob container, Cloud Manager creates an Azure storage account for that container. Starting in this release, Cloud Manager now enables new storage accounts with secure transfer (HTTPS). Existing storage accounts continue to use HTTP.
+
 == Cloud Manager 3.6.3 (4 Feb 2019)
 
 Cloud Manager 3.6.3 includes the following enhancements.
@@ -222,13 +252,6 @@ image:screenshot_cost.gif[Screen shot: Shows the costs per month for a Cloud Vol
 === Support for new Azure regions
 
 You can now deploy Cloud Manager and Cloud Volumes ONTAP in the France Central region.
-
-//You can now deploy Cloud Manager and Cloud Volumes ONTAP in the following Azure regions:
-
-//* Australia Central
-//* Australia Central 2
-//* France South
-//* France Central
 
 == Cloud Manager 3.6 (4 Nov 2018)
 
