@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_setting_up_kms.html
-keywords: encryption, kms, key management service, cmk
+keywords: encryption, kms, key management service, cmk, customer master key, master key, key
 summary: If you want to use Amazon encryption with Cloud Volumes ONTAP, then you must set up the AWS Key Management Service.
 ---
 
@@ -17,10 +17,18 @@ If you want to use Amazon encryption with Cloud Volumes ONTAP, then you must set
 
 .Steps
 
-. Ensure that an active CMK exists in your account.
+. Ensure that an active Customer Master Key (CMK) exists in your account or in another AWS account.
 +
 The CMK can be an AWS-managed CMK or a customer-managed CMK.
++
+https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys[AWS Documentation: Customer Master Keys (CMKs)^]
 
 . Add the IAM role associated with the Cloud Manager instance to the list of key users for a CMK.
 +
 This gives Cloud Manager permissions to use the CMK with Cloud Volumes ONTAP.
++
+https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html[AWS Documentation: Editing Keys&]
+
+. If the CMK is in an AWS account separate from the account where you plan to deploy Cloud Volumes ONTAP, then you need to obtain the ARN of that key.
++
+You'll need to provide the ARN to Cloud Manager when you create the Cloud Volumes ONTAP system.
