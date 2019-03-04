@@ -58,7 +58,7 @@ Cloud Manager 3.6.3 includes the following enhancements.
 * <<Support for new AWS regions>>
 * <<Support for S3 Intelligent-Tiering>>
 * <<Ability to disable data tiering on the initial aggregate>>
-* <<EC2 instance type now t3.medium for Cloud Manager>>
+* <<Recommended EC2 instance type now t3.medium for Cloud Manager>>
 * <<Postponement of scheduled shutdowns during data transfers>>
 
 === Support for Cloud Volumes ONTAP 9.5 GA
@@ -102,9 +102,9 @@ This new option is available when choosing the underlying storage resources. The
 
 image:screenshot_s3_tiering_initial_aggr.gif[A screenshot that shows the S3 Tiering Edit option when choosing an underlying disk.]
 
-=== EC2 instance type now t3.medium for Cloud Manager
+=== Recommended EC2 instance type now t3.medium for Cloud Manager
 
-The instance type for Cloud Manager is now t3.medium when deploying Cloud Manager in AWS from NetApp Cloud Central or from the AWS Marketplace. This change enables support in the latest AWS regions and reduces instance costs. The instance type was previously t2.medium.
+The instance type for Cloud Manager is now t3.medium when deploying Cloud Manager in AWS from NetApp Cloud Central. It is also the recommended instance type in the AWS Marketplace. This change enables support in the latest AWS regions and reduces instance costs. The recommended instance type was previously t2.medium, which is still supported.
 
 === Postponement of scheduled shutdowns during data transfers
 
