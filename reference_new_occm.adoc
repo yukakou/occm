@@ -92,7 +92,7 @@ When you enable data tiering in AWS, Cloud Volumes ONTAP tiers inactive data to 
 
 Just like in previous releases, you can also use the Standard-Infrequent Access tier and the One Zone-Infrequent Access tier.
 
-link:concept_data_tiering.html[Learn more about data tiering] and http://localhost:4001/occm/us-en/task_tiering.html#changing-the-tiering-level[learn how to change the storage class].
+link:concept_data_tiering.html[Learn more about data tiering] and link:task_tiering.html#changing-the-tiering-level[learn how to change the storage class].
 
 === Ability to disable data tiering on the initial aggregate
 
