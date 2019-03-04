@@ -16,7 +16,7 @@ summary: If you install Cloud Manager on your own host, then you must verify sup
 If you install Cloud Manager on your own host, then you must verify support for your configuration, which includes operating system requirements, port requirements, and so on.
 
 Supported AWS EC2 instance types::
-t3.medium or m4.large
+t3.medium (recommended), t2.medium, and m4.large
 
 Supported Azure VM sizes::
 A2 or D2_v2
