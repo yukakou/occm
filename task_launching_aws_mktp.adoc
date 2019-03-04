@@ -40,7 +40,7 @@ https://mysupport.netapp.com/cloudontap/iampolicies[NetApp OnCommand Cloud Manag
 
 . On the Custom Launch tab, click *Launch with EC2 Console* for your region, and then make your selections:
 
-.. Choose the t3.medium or m4.large instance type.
+.. Depending on region availability, choose the t3.medium (recommended), t2.medium, or m4.large instance type.
 
 .. Select a VPC, subnet, IAM role, and other configuration options that meet your requirements.
 
