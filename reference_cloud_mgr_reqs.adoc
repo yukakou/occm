@@ -19,7 +19,7 @@ Supported AWS EC2 instance types::
 t3.medium (recommended), t2.medium, and m4.large
 
 Supported Azure VM sizes::
-A2 or D2_v2
+A2, D2 v2, or D2 v3 (based on availability)
 
 Supported operating systems::
 * CentOS 7.2
