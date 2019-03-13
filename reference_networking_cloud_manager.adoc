@@ -165,9 +165,11 @@ If you deploy Cloud Manager in AWS, the easiest way to provide access is by allo
 \https://cdn.auth0.com
 \https://netapp-cloud-account.auth0.com
 \https://services.cloud.netapp.com
-\https://widget.intercom.io
 
 | Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
+
+| \https://widget.intercom.io
+| For in-product chat that enables you to talk to NetApp cloud experts.
 
 |===
 
