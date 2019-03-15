@@ -69,6 +69,8 @@ entries:
             url: /reference_networking_cloud_manager.html
           - title: Cloud Volumes ONTAP for AWS
             url: /reference_networking_aws.html
+          - title: Setting up an AWS transit gateway
+            url: /task_setting_up_transit_gateway.html
           - title: Cloud Volumes ONTAP for Azure
             url: /reference_networking_azure.html
       - title: Additional deployment options
