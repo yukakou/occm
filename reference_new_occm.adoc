@@ -19,6 +19,12 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Cloud Manager 3.6.4 update (18 Mar 2019)
+
+Cloud Manager was updated to support the 9.5 P1 patch release for Cloud Volumes ONTAP. With this patch release, HA pairs in Azure are now Generally Available (GA).
+
+See the https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_95.html[Cloud Volumes ONTAP 9.5 Release Notes] for additional details, including important information about Azure region support for HA pairs.
+
 == Cloud Manager 3.6.4 (3 Mar 2019)
 
 Cloud Manager 3.6.4 includes the following enhancements.
