@@ -5,7 +5,7 @@ keywords: high availability, HA, concepts, understanding, overview, takeover, gi
 summary: A Cloud Volumes ONTAP high availability (HA) pair provides enterprise reliability and continuous operations in case of failures in your cloud environment. In Azure, storage is shared between the two nodes.
 ---
 
-= High-availability pairs in Azure (Preview)
+= High-availability pairs in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,8 +14,6 @@ summary: A Cloud Volumes ONTAP high availability (HA) pair provides enterprise r
 
 [.lead]
 A Cloud Volumes ONTAP high availability (HA) pair provides enterprise reliability and continuous operations in case of failures in your cloud environment. In Azure, storage is shared between the two nodes.
-
-NOTE: HA pairs in Azure are available as a preview. You can request a preview license by contacting us at ng-Cloud-Volume-ONTAP-preview@netapp.com.
 
 == HA components
 
@@ -69,6 +67,8 @@ The following limitations affect Cloud Volumes ONTAP HA pairs in Azure:
 * HA pairs are supported with Cloud Volumes ONTAP Standard, Premium, and BYOL. Explore is not supported.
 * Data tiering is not supported.
 * NFSv4 is not supported. NFSv3 is supported.
-* HA pairs are not supported in US Gov regions and in Germany regions.
+* HA pairs are not supported in some regions.
++
+https://cloud.netapp.com/cloud-volumes-global-regions[See the list of supported Azure regions^].
 
 link:task_deploying_otc_azure.html[Learn how to deploy an HA system in Azure].
