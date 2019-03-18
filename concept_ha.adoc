@@ -51,9 +51,9 @@ Deploying an HA configuration in multiple Availability Zones (AZs) ensures high 
 
 === NFS and CIFS data access for clients within the VPC
 
-When an HA configuration is spread across multiple Availability Zones, three floating IP addresses are required for NAS data access from within the VPC. The floating IP addresses, which must be outside of the CIDR blocks for all VPCs in the region, can migrate between nodes when failures occur.
+When an HA configuration is spread across multiple Availability Zones, floating IP addresses are required for NAS data access from within the VPC. The floating IP addresses, which must be outside of the CIDR blocks for all VPCs in the region, can migrate between nodes when failures occur.
 
-These floating IP addresses are not natively accessible to clients that are outside of the VPC.
+These floating IP addresses are not natively accessible to clients that are outside of the VPC, unless you link:task_setting_up_transit_gateway.html[set up an AWS transit gateway] after you deploy the HA system.
 
 You should review requirements for floating IP addresses and route tables before you deploy an HA configuration across multiple Availability Zones. You must specify the floating IP addresses when you deploy the configuration.
 
