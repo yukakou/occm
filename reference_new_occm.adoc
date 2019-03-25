@@ -19,6 +19,66 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Cloud Manager 3.6.5 (?? Apr 2019)
+
+Cloud Manager 3.6.5 includes the following enhancements.
+
+* <<Kubernetes enhancements>>
+* <<NetApp Support Site accounts are now managed at the system level>>
+* <<Azure resource groups are now locked>>
+* <<NFS 4 and NFS 4.1 are now enabled by default>>
+* <<New API to delete ONTAP Snapshot copies>>
+
+=== Kubernetes enhancements
+
+We made a few enhancements that make it easier for you to use Cloud Volumes ONTAP as persistent storage for containers:
+
+* You can now add multiple Kubernetes clusters to Cloud Manager.
++
+This enables you to connect different clusters to different Cloud Volumes ONTAP systems and multiple clusters to the same Cloud Volumes ONTAP system.
+
+* When you connect a cluster, you can now set Cloud Volumes ONTAP as the default storage class for the Kubernetes cluster.
++
+When a user creates a persistent volume, the Kubernetes cluster can use Cloud Volumes ONTAP as the backend storage by default.
++
+image:screenshot_storage_class.gif[This screenshot shows the "Set as default storage class" option that is available when connecting a Kubernetes cluster to a Cloud Volumes ONTAP system.]
+
+* The version of NetApp Trident that Cloud Manager installs was updated to the latest version.
+
+link:task_connecting_kubernetes.html[Learn more about using Cloud Volumes ONTAP as persistent storage for Kubernetes].
+
+=== NetApp Support Site accounts are now managed at the system level
+
+It's now easier to manage NetApp Support Site accounts in Cloud Manager.
+
+In previous releases, you needed to link a NetApp Support Site account to a specific tenant. The accounts are now managed at the Cloud Manager system level in the same place that you manage cloud provider accounts. This change gives you the flexibility to choose between multiple NetApp Support Site accounts when registering your Cloud Volumes ONTAP systems.
+
+image:screenshot_accounts.gif[A screenshot that shows the add a new account option available from the Account Settings page.]
+
+When you create a new working environment, you simply select the NetApp Support Site account to register the Cloud Volumes ONTAP system with:
+
+image:screenshot_accounts_select_nss.gif[A screenshot that shows the option to select a NetApp Support Site account from the create a working environment wizard.]
+
+When Cloud Manager updates to 3.6.5, it automatically adds NetApp Support Site accounts for you, if you had previously linked tenants with an account.
+
+=== Azure resource groups are now locked
+
+Cloud Manager now locks Cloud Volumes ONTAP resource groups in Azure when it creates them. Locking resource groups prevents users from accidentally deleting or modifying critical resources.
+
+=== NFS 4 and NFS 4.1 are now enabled by default
+
+Cloud Manager now enables the NFS 4 and NFS 4.1 protocols on every new Cloud Volumes ONTAP system that it creates. This change saves you time because you no longer need to manually enable those protocols yourself.
+
+=== New API to delete ONTAP Snapshot copies
+
+You can now delete Snapshot copies of read-write volumes by using a Cloud Manager API call.
+
+Here's an example of the API call for an HA system in AWS:
+
+image:screenshot_delete_snapshot_api.gif[A screenshot that shows the DELETE API call for Cloud Manager: /aws/ha/volumes/{workingEnvironmentId}/{svmName}/{volumeName}/snapshot]
+
+Similar API calls are available for single-node systems in AWS and for single-node and HA systems in Azure.
+
 == Cloud Manager 3.6.4 update (18 Mar 2019)
 
 Cloud Manager was updated to support the 9.5 P1 patch release for Cloud Volumes ONTAP. With this patch release, HA pairs in Azure are now Generally Available (GA).
