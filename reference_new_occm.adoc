@@ -19,7 +19,7 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
-== Cloud Manager 3.6.5 (?? Apr 2019)
+== Cloud Manager 3.6.5 (1 Apr 2019)
 
 Cloud Manager 3.6.5 includes the following enhancements.
 
