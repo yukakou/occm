@@ -45,7 +45,7 @@ image:screenshot_storage_class.gif[This screenshot shows the "Set as default sto
 
 * The version of NetApp Trident that Cloud Manager installs was updated to the latest version.
 
-link:task_connecting_kubernetes.html[Learn more about using Cloud Volumes ONTAP as persistent storage for Kubernetes].
+link:task_connecting_kubernetes.html[Learn how to use Cloud Volumes ONTAP as persistent storage for Kubernetes].
 
 === NetApp Support Site accounts are now managed at the system level
 
@@ -60,6 +60,8 @@ When you create a new working environment, you simply select the NetApp Support 
 image:screenshot_accounts_select_nss.gif[A screenshot that shows the option to select a NetApp Support Site account from the create a working environment wizard.]
 
 When Cloud Manager updates to 3.6.5, it automatically adds NetApp Support Site accounts for you, if you had previously linked tenants with an account.
+
+link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts to Cloud Manager].
 
 === Azure resource groups are now locked
 
