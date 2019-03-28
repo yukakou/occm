@@ -107,10 +107,6 @@ If you want to move between a pay-as-you-go subscription and a BYOL subscription
 link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
 link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]
 
-. If you chose a pay-as-you-go license and the tenant does not have a NetApp Support Site account assigned to it, link:task_registering.html[manually register the systems with NetApp].
-+
-Support from NetApp is included with Cloud Volumes ONTAP. To activate support, you must first register the system with NetApp.
-
 . link:task_replicating_data.html[Set up one-time data replication] between the systems for each volume that you must replicate.
 
 . Terminate the Cloud Volumes ONTAP system that you no longer need by link:task_deleting_working_env.html[deleting the original working environment].

@@ -1,0 +1,43 @@
+---
+sidebar: sidebar
+permalink: task_adding_nss_accounts.html
+keywords: adding, creating, netapp support site account, nss
+summary: Cloud Manager enables you to add additional Cloud Central users to Cloud Manager and to isolate working environments by tenants.
+---
+
+= Adding NetApp Support Site accounts to Cloud Manager
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Manager prompts you for a NetApp Support Site account when you create a working environment because it uses the account to manage licenses for Cloud Volumes ONTAP BYOL systems, to register pay-as-you-go instances for support, and to upgrade Cloud Volumes ONTAP software.
+
+link:concept_licensing.html[Learn how Cloud Manager manages license files].
+
+.Steps
+
+. If you don't have a NetApp Support Site account yet, http://now.netapp.com/newuser/[register for one^].
+
+. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *Account Settings*.
+
+. Click *Add New Account* and select *NetApp Support Site*.
+
+. Specify a name for the account and then enter the user name and password.
++
+* The account must be a customer-level account (not a guest or temp account).
+* If you plan to deploy BYOL systems:
+** The account must be authorized to access the serial numbers of the BYOL systems.
+** If you purchased a secure BYOL subscription, then a secure NSS account is required.
+
+. Click *Create Account.*
+
+.What's next?
+
+Users can now select the account when creating new Cloud Volumes ONTAP systems and when registering existing systems.
+
+* link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
+* link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]
+* link:task_registering.html[Registering pay-as-you-go systems]

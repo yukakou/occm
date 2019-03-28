@@ -23,7 +23,7 @@ link:reference_new_occm.html#support-for-cloud-volumes-ontap-9-5-in-azure[See th
 
 * You should have chose a configuration and obtained Azure networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
 
-* To deploy a BYOL system, you need the 20-digit serial number (license key) and credentials for a NetApp Support Site account, if the tenant is not already linked with an account.
+* To deploy a BYOL system, you need the 20-digit serial number (license key) for each node.
 
 .About this task
 
@@ -61,9 +61,11 @@ For information about tags, refer to https://azure.microsoft.com/documentation/a
 
 . On the Location page, select a location and security group, select the checkbox to confirm network connectivity, and then click *Continue*.
 
-. On the BYOL License page, specify whether you have a license for this Cloud Volumes ONTAP system.
+. On the License and Support Site Account page, specify whether you want to use pay-as-you-go or BYOL, and then specify a NetApp Support Site account.
 +
 To understand how licenses work, see link:concept_licensing.html[Licensing].
++
+A NetApp Support Site Account is optional for pay-as-you-go, but required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
 
 . On the Preconfigured Packages page, select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +
@@ -76,10 +78,6 @@ If your needs change after you launch the system, you can modify the license or 
 NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.5 RC1 and 9.5 GA is available. The update does not occur from one release to another—for example, from 9.4 to 9.5.
 
 . On the Azure Marketplace page, follow the steps if Cloud Manager could not enable programmatic deployments of Cloud Volumes ONTAP.
-
-. If the NetApp Support Site credentials page is displayed, enter your NetApp Support Site credentials.
-+
-Credentials are required for BYOL instances. For details, see link:concept_storage_management.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account].
 
 . On the Underlying Storage Resources page, choose settings for the initial aggregate: a disk type, a size for each disk, and whether data tiering should be enabled.
 +
@@ -168,10 +166,6 @@ If you experience any issues deploying the Cloud Volumes ONTAP system, review th
 For additional help, go to https://mysupport.netapp.com/cloudontap[NetApp Cloud Volumes ONTAP Support^].
 
 .After you finish
-
-* If you deployed a pay-as-you-go system and the tenant is not linked to a NetApp Support Site account, manually register the system with NetApp to enable support. For instructions, see link:task_registering.html[Registering Cloud Volumes ONTAP].
-+
-Support from NetApp is included with your Cloud Volumes ONTAP system. To activate support, you must first register the system with NetApp.
 
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 

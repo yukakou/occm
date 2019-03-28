@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_registering.html
 keywords: Cloud Volumes ONTAP, register, registering, paygo, pay-as-you-go, registration, instance id, serial number, account id, support
-summary: Support from NetApp is included with Cloud Volumes ONTAP Explore, Standard, and Premium systems, but you must first activate support by registering the systems with NetApp, if you have not set up automatic registration.
+summary: Support from NetApp is included with Cloud Volumes ONTAP Explore, Standard, and Premium systems, but you must first activate support by registering the systems with NetApp.
 ---
 
 = Registering pay-as-you-go systems
@@ -13,36 +13,22 @@ summary: Support from NetApp is included with Cloud Volumes ONTAP Explore, Stand
 :imagesdir: ./media/
 
 [.lead]
-Support from NetApp is included with Cloud Volumes ONTAP Explore, Standard, and Premium systems, but you must first activate support by registering the systems with NetApp, if you have not set up automatic registration.
-
-.Before you begin
-
-The host from which you are logged in to Cloud Manager must have internet access. If it does not, you can register from another location by going to https://register.netapp.com/[NetApp Cloud Volumes ONTAP Registration^].
-
-.About this task
-
-If a tenant is linked to a NetApp Support Site account, Cloud Manager automatically registers the system with that account. However, if the tenant is not linked to an account, then you should register systems with NetApp after you launch them.
-
-For instructions, see link:task_setting_up_users_tenants.html#linking-tenants-to-a-netapp-support-site-account[Linking tenants to a NetApp Support Site account].
+Support from NetApp is included with Cloud Volumes ONTAP Explore, Standard, and Premium systems, but you must first activate support by registering the systems with NetApp.
 
 .Steps
+
+. If you have not yet added your NetApp Support Site account to Cloud Manager, go to *Account Settings* and add it now.
++
+link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
 
 . On the Working Environments page, double-click the name of the system that you want to register.
 
 . Click the menu icon and then click *Support registration*:
 +
 image:screenshot_menu_registration.gif[Screen shot: Shows the Support registration option selected in the menu icon for a Cloud Volumes ONTAP system.]
-+
-The information that you need to register an instance is displayed:
 
-* Instance ID
-* Serial number
-* Account ID
+. Select a NetApp Support Site account and click *Register*.
 
-. To automatically register future instances in the tenant, click the link to enter your NetApp Support Site credentials.
+.Result
 
-. To register this instance with NetApp support, click the link and then click *Register to NetApp support*.
-+
-Following this link automatically completes the instance ID, serial number, and account ID in the registration form.
-
-. Follow the instructions to register your Cloud Volumes ONTAP system.
+Cloud Manager registers the system with NetApp.
