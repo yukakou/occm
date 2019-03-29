@@ -25,6 +25,7 @@ Cloud Manager 3.6.5 includes the following enhancements.
 
 * <<Kubernetes enhancements>>
 * <<NetApp Support Site accounts are now managed at the system level>>
+* <<AWS transit gateways can enable access to floating IP addresses>>
 * <<Azure resource groups are now locked>>
 * <<NFS 4 and NFS 4.1 are now enabled by default>>
 * <<New API to delete ONTAP Snapshot copies>>
@@ -39,9 +40,13 @@ This enables you to connect different clusters to different Cloud Volumes ONTAP 
 
 * When you connect a cluster, you can now set Cloud Volumes ONTAP as the default storage class for the Kubernetes cluster.
 +
-When a user creates a persistent volume, the Kubernetes cluster can use Cloud Volumes ONTAP as the backend storage by default.
+When a user creates a persistent volume, the Kubernetes cluster can use Cloud Volumes ONTAP as the backend storage by default:
 +
 image:screenshot_storage_class.gif[This screenshot shows the "Set as default storage class" option that is available when connecting a Kubernetes cluster to a Cloud Volumes ONTAP system.]
+
+* We changed how Cloud Manager names the Kubernetes storage classes so they are more easily identifiable:
+** *netapp-file*: for binding a Persistent Volume to a single-node Cloud Volumes ONTAP system
+** *netapp-file-redundant*: for binding a Persistent Volume to a Cloud Volumes ONTAP HA pair
 
 * The version of NetApp Trident that Cloud Manager installs was updated to the latest version.
 
@@ -62,6 +67,14 @@ image:screenshot_accounts_select_nss.gif[A screenshot that shows the option to s
 When Cloud Manager updates to 3.6.5, it automatically adds NetApp Support Site accounts for you, if you had previously linked tenants with an account.
 
 link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts to Cloud Manager].
+
+=== AWS transit gateways can enable access to floating IP addresses
+
+An HA pair in multiple AWS Availability Zones uses _floating IP addresses_ for NAS data access and for management interfaces. Until now, those floating IP addresses haven't been accessible from outside the VPC where the HA pair resides.
+
+We verified that you can use an https://aws.amazon.com/transit-gateway/[AWS transit gateway^] to enable access to the floating IP addresses from outside the VPC. That means NetApp management tools and NAS clients that are outside the VPC can access the floating IPs and take advantage of automatic failover.
+
+link:task_setting_up_transit_gateway.html[Learn how to set up an AWS transit gateway for HA pairs in multiple AZs].
 
 === Azure resource groups are now locked
 
