@@ -21,6 +21,22 @@ Cloud Manager updates the costs when you refresh the page. You should refer to A
 
 .Step
 
+. Verify that Cloud Manager can obtain cost information from AWS:
+
+.. Ensure that the IAM policy that provides Cloud Manager with permissions includes the following actions:
++
+[source,json]
+"ce:GetReservationUtilization",
+"ce:GetDimensionValues",
+"ce:GetCostAndUsage",
+"ce:GetTags"
++
+These actions are included in the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^]. New systems deployed from NetApp Cloud Central automatically include these permissions.
+
+.. https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html[Activate the *WorkingEnvironmentId* tag^].
++
+To track your AWS costs, Cloud Manager assigns a cost allocation tag to Cloud Volumes ONTAP instances. After you create your first working environment, activate the *WorkingEnvironmentId* tag. User-defined tags don't appear on AWS billing reports until you activate them in the Billing and Cost Management console.
+
 . On the Working Environments page, select a Cloud Volumes ONTAP working environment and then click *Cost*.
 +
 The Cost page displays costs for the current and previous months and shows your annual NetApp savings, if you enabled NetApp's cost-saving features on volumes.
