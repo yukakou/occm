@@ -28,7 +28,7 @@ Cloud Manager 3.6.5 includes the following enhancements.
 * <<AWS transit gateways can enable access to floating IP addresses>>
 * <<Azure resource groups are now locked>>
 * <<NFS 4 and NFS 4.1 are now enabled by default>>
-* <<New API to delete ONTAP Snapshot copies>>
+* <<A new API to delete ONTAP Snapshot copies>>
 
 === Kubernetes enhancements
 
@@ -84,7 +84,7 @@ Cloud Manager now locks Cloud Volumes ONTAP resource groups in Azure when it cre
 
 Cloud Manager now enables the NFS 4 and NFS 4.1 protocols on every new Cloud Volumes ONTAP system that it creates. This change saves you time because you no longer need to manually enable those protocols yourself.
 
-=== New API to delete ONTAP Snapshot copies
+=== A new API to delete ONTAP Snapshot copies
 
 You can now delete Snapshot copies of read-write volumes by using a Cloud Manager API call.
 
