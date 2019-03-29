@@ -65,7 +65,7 @@ Availability Zones::
 This HA deployment model uses multiple AZs to ensure high availability of your data. You should use a dedicated AZ for each Cloud Volumes ONTAP instance and the mediator instance, which provides a communication channel between the HA pair.
 
 Floating IP addresses for NAS data access::
-HA configurations in multiple AZs use floating IP addresses for NAS client access from within the VPC. These IP addresses can migrate between nodes when failures occur. They are not natively accessible to clients that are outside of the VPC, unless you link:task_setting_up_transit_gateway.html[set up an AWS transit gateway] after you deploy the HA system.
+HA configurations in multiple AZs use floating IP addresses for NAS client access. These IP addresses can migrate between nodes when failures occur. They are not natively accessible to clients that are outside of the VPC, unless you link:task_setting_up_transit_gateway.html[set up an AWS transit gateway].
 +
 You must specify three floating IP addresses that are outside of the CIDR blocks for all VPCs in the AWS region in which you deploy the HA configuration. You can think of the floating IP addresses as a logical subnet that is outside of the VPCs in your region.
 +
@@ -83,7 +83,7 @@ Floating IP address for SVM management::
 If you use SnapDrive for Windows or SnapCenter with an HA pair, a floating IP address is also required for the SVM management LIF. Cloud Manager prompts you to specify the IP address when you launch the HA pair. If you did not specify the IP address, you can create the SVM Management LIF later. For details, see link:task_setting_up_ontap_cloud.html[Setting up Cloud Volumes ONTAP].
 
 Transit gateway to enable floating IP access from outside the VPC::
-After you deploy an HA system in multiple AZs, link:task_setting_up_transit_gateway.html[set up an AWS transit gateway] to enable access to an HA pair's floating IP addresses from outside the VPC where the HA pair resides.
+link:task_setting_up_transit_gateway.html[Set up an AWS transit gateway] to enable access to an HA pair's floating IP addresses from outside the VPC where the HA pair resides.
 
 Route tables::
 After you specify the floating IP addresses in Cloud Manager, you must select the route tables that should include routes to the floating IP addresses. This enables client access to the HA pair.
