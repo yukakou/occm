@@ -28,7 +28,7 @@ Cloud Manager 3.6.5 includes the following enhancements.
 * <<AWS transit gateways can enable access to floating IP addresses>>
 * <<Azure resource groups are now locked>>
 * <<NFS 4 and NFS 4.1 are now enabled by default>>
-* <<A new API to delete ONTAP Snapshot copies>>
+* <<A new API enables you to delete ONTAP Snapshot copies>>
 
 === Kubernetes enhancements
 
@@ -84,7 +84,7 @@ Cloud Manager now locks Cloud Volumes ONTAP resource groups in Azure when it cre
 
 Cloud Manager now enables the NFS 4 and NFS 4.1 protocols on every new Cloud Volumes ONTAP system that it creates. This change saves you time because you no longer need to manually enable those protocols yourself.
 
-=== A new API to delete ONTAP Snapshot copies
+=== A new API enables you to delete ONTAP Snapshot copies
 
 You can now delete Snapshot copies of read-write volumes by using a Cloud Manager API call.
 
@@ -93,6 +93,8 @@ Here's an example of the API call for an HA system in AWS:
 image:screenshot_delete_snapshot_api.gif[A screenshot that shows the DELETE API call for Cloud Manager: /aws/ha/volumes/{workingEnvironmentId}/{svmName}/{volumeName}/snapshot]
 
 Similar API calls are available for single-node systems in AWS and for single-node and HA systems in Azure.
+
+link:api.html[OnCommand Cloud Manager API Developer Guide^]
 
 == Cloud Manager 3.6.4 update (18 Mar 2019)
 
@@ -202,7 +204,7 @@ Cloud Manager 3.6.2 includes new features and enhancements.
 
 === AWS spread placement group for Cloud Volumes ONTAP HA in a single AZ
 
-When you deploy Cloud Volumes ONTAP HA in a single AWS Availability Zone, Cloud Manager now creates an https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html[AWS spread placement group^] and launches the two HA nodes and the mediator in that placement group. The placement group reduces the risk of simultaneous failures by spreading the instances across distinct underlying hardware.
+When you deploy Cloud Volumes ONTAP HA in a single AWS Availability Zone, Cloud Manager now creates an https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html[AWS spread placement group^] and launches the two HA nodes in that placement group. The placement group reduces the risk of simultaneous failures by spreading the instances across distinct underlying hardware.
 
 NOTE: This feature improves redundancy from a compute perspective and not from disk failure perspective.
 
