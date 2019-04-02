@@ -5,7 +5,7 @@ keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam p
 summary: If you want to deploy Cloud Volumes ONTAP in different cloud accounts, then you need to provide the required permissions to those accounts and then add the details to Cloud Manager.
 ---
 
-= Adding Cloud Provider Accounts to Cloud Manager
+= Adding cloud provider accounts to Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,7 +15,7 @@ summary: If you want to deploy Cloud Volumes ONTAP in different cloud accounts, 
 [.lead]
 If you want to deploy Cloud Volumes ONTAP in different cloud accounts, then you need to provide the required permissions to those accounts and then add the details to Cloud Manager.
 
-When you deploy Cloud Manager from Cloud Central, Cloud Manager automatically adds a link:concept_accounts_and_permissions.html[Cloud Provider Account] for the account in which you deployed Cloud Manager. An initial Cloud Provider Account is not added if you manually installed the Cloud Manager software on an existing system.
+When you deploy Cloud Manager from Cloud Central, Cloud Manager automatically adds a link:concept_accounts_and_permissions.html[cloud provider account] for the account in which you deployed Cloud Manager. An initial cloud provider account is not added if you manually installed the Cloud Manager software on an existing system.
 
 //The [[aws]] anchor below is used to link from the GUI to this section. I could have linked to the actual section title, but that would have made it hard to tweak the title in the future.
 == Setting up and adding AWS accounts to Cloud Manager [[aws]]
@@ -87,19 +87,19 @@ After you provide an AWS account with the required permissions, you can add the 
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *Cloud Provider Accounts*.
+. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *Account Settings*.
 
-. Select *AWS*.
+. Click *Add New Account* and select *AWS*.
 
 . Choose whether you want to provide AWS keys or the ARN of a trusted IAM role.
 
-. Confirm that the policy requirements have been met and then click *Add Account*.
+. Confirm that the policy requirements have been met and then click *Create Account*.
 
 .Result
 
 You can now switch to another account from the Details and Credentials page when creating a new working environment:
 
-image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting between Cloud Provider Accounts after clicking Switch Account in the Details & Credentials page.]
+image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
 
 //The [[azure]] anchor below is used to link from the GUI to this section. I could have linked to the actual section title, but that would have made it hard to tweak the title in the future.
 == Setting up and adding Azure accounts to Cloud Manager [[azure]]
@@ -202,11 +202,11 @@ image:screenshot_azure_ad_api.gif[Shows the API to select in Microsoft Azure whe
 
 .. Copy the key value.
 +
-You need to enter the key value when you add a Cloud Provider Account to Cloud Manager.
+You need to enter the key value when you add a cloud provider account to Cloud Manager.
 
 .. Click *Properties* and then copy the application ID for the service principal.
 +
-Similar to the key value, you need to enter the application ID in Cloud Manager when you add a Cloud Provider Account to Cloud Manager.
+Similar to the key value, you need to enter the application ID in Cloud Manager when you add a cloud provider account to Cloud Manager.
 +
 image:screenshot_azure_ad_app_id.gif[Shows the application ID for an Azure Active Directory service principal.]
 
@@ -218,11 +218,11 @@ image:screenshot_azure_ad_app_id.gif[Shows the application ID for an Azure Activ
 +
 image:screenshot_azure_ad_id.gif[Shows the Active Directory properties in the Azure portal and the Directory ID that you need to copy.]
 +
-Just like the application ID and application key, you must enter the Active Directory tenant ID when you add a Cloud Provider Account to Cloud Manager.
+Just like the application ID and application key, you must enter the Active Directory tenant ID when you add a cloud provider account to Cloud Manager.
 
 .Result
 
-You should now have an Active Directory service principal and you should have copied the application ID, the application key, and the Active Directory tenant ID. You need to enter this information in Cloud Manager when you add a Cloud Provider Account.
+You should now have an Active Directory service principal and you should have copied the application ID, the application key, and the Active Directory tenant ID. You need to enter this information in Cloud Manager when you add a cloud provider account.
 
 ==== Assigning the Cloud Manager Operator role to the service principal
 
@@ -256,19 +256,19 @@ After you provide an Azure account with the required permissions, you can add th
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *Cloud Provider Accounts*.
+. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *Account Settings*.
 
-. Select *Azure*.
+. Click *Add New Account* and select *Microsoft Azure*.
 
 . Enter information about the Azure Active Directory service principal that grants the required permissions.
 
-. Confirm that the policy requirements have been met and then click *Add Account*.
+. Confirm that the policy requirements have been met and then click *Create Account*.
 
 .Result
 
 You can now switch to another account from the Details and Credentials page when creating a new working environment:
 
-image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between Cloud Provider Accounts after clicking Switch Account in the Details & Credentials page.]
+image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
 
 == Associating additional Azure subscriptions with a Managed Service Identity
 
@@ -276,7 +276,7 @@ Cloud Manager enables you to choose the Azure account and subscription in which 
 
 .About this task
 
-A Managed Service Identity is the initial link:concept_accounts_and_permissions.html[Cloud Provider Account] when you deploy Cloud Manager from NetApp Cloud Central. When you deployed Cloud Manager, Cloud Central created the OnCommand Cloud Manager Operator role and assigned it to the Cloud Manager virtual machine.
+A Managed Service Identity is the initial link:concept_accounts_and_permissions.html[cloud provider account] when you deploy Cloud Manager from NetApp Cloud Central. When you deployed Cloud Manager, Cloud Central created the OnCommand Cloud Manager Operator role and assigned it to the Cloud Manager virtual machine.
 
 .Steps
 

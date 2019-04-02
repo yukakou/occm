@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_storage_management.html
-keywords: tenants, provisioning, volume view, working environments, capacity management, storage provisioning, netapp support site, manual, automatic, advanced allocation, aggregates, thin provisioning, free space, mode, tenants, isolate, isolation, cloud manager admin, admin, tenant admin, working environment admin, support registration, registration, volume view, register, paygo, license, upgrade
+keywords: tenants, provisioning, volume view, working environments, capacity management, storage provisioning, manual, automatic, advanced allocation, aggregates, thin provisioning, free space, mode, tenants, isolate, isolation, cloud manager admin, admin, tenant admin, working environment admin, volume view, paygo, license, upgrade
 summary: Cloud Manager makes storage provisioning easy by purchasing the AWS and Azure storage that you need to provision volumes for Cloud Volumes ONTAP.
 ---
 
@@ -125,18 +125,6 @@ If your organization has departments that operate independently, it is best to h
 For example, you might create three tenants for three separate departments. You would then create a Tenant Admin for each tenant. Within each tenant would be one or more Working Environment Admins who manage working environments. The following image depicts this scenario:
 
 image:diagram_users_and_tenants.png[This illustration shows a Cloud Manager Admin, three Tenant Admins, and three tenants that include several working environments and the working environment admins who manage them.]
-
-=== Why you should link a tenant to your NetApp Support Site account
-
-Cloud Manager prompts you to enter NetApp Support Site credentials for a tenant because it uses the credentials to manage licenses for Cloud Volumes ONTAP BYOL systems, to register pay-as-you-go instances for support, and to upgrade Cloud Volumes ONTAP software.
-
-Watch the following video for more information about providing Cloud Manager with your NetApp Support Site credentials.
-
-video::_8s16fS_L1Y[youtube, width=848, height=480]
-
-For step-by-step instructions and requirements for NetApp Support Site accounts, refer to link:task_setting_up_users_tenants.html#linking-tenants-to-a-netapp-support-site-account[Linking tenants to a NetApp Support Site account].
-
-For more information about how Cloud Manager manages license files, refer to link:concept_licensing.html[Licensing].
 
 == Simplified storage management using the Volume View
 

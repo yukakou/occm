@@ -55,8 +55,10 @@ entries:
         url: /task_getting_started_azure.html
       - title: Setting up Cloud Manager
         entries:
-          - title: Adding Cloud Provider Accounts
+          - title: Adding cloud provider accounts
             url: /task_adding_cloud_accounts.html
+          - title: Adding NetApp Support Site accounts
+            url: /task_adding_nss_accounts.html
           - title: Installing an HTTPS certificate
             url: /task_installing_https_cert.html
           - title: Setting up users and tenants

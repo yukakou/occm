@@ -23,7 +23,7 @@ If you want to launch Cloud Volumes ONTAP in AWS, you need to create a new worki
 
 * You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
 
-* If you want to launch a BYOL system, you must have the 20-digit serial number (license key) and you must have credentials for a NetApp Support Site account, if the tenant is not already linked with an account.
+* If you want to launch a BYOL system, you must have the 20-digit serial number (license key).
 
 * If you want to use CIFS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
 
@@ -76,9 +76,11 @@ link:task_setting_up_kms.html[Learn how to set up the AWS KMS for Cloud Volumes 
 +
 link:concept_security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
 
-. On the BYOL License page, specify whether you have a license for this Cloud Volumes ONTAP system.
+. On the License and Support Site Account page, specify whether you want to use pay-as-you-go or BYOL, and then specify a NetApp Support Site account.
 +
 To understand how licenses work, see link:concept_licensing.html[Licensing].
++
+A NetApp Support Site Account is optional for pay-as-you-go, but required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
 
 . On the Preconfigured Packages page, select one of the packages to quickly launch Cloud Volumes ONTAP, or click *Create my own configuration*.
 +
@@ -93,10 +95,6 @@ If you prefer to use your own policy, it must meet http://mysupport.netapp.com/c
 If your needs change after you launch the instance, you can modify the license or instance type later.
 +
 NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.4 RC1 and 9.4 GA is available. The update does not occur from one release to another—for example, from 9.3 to 9.4.
-
-. If the NetApp Support Site credentials page is displayed, enter your NetApp Support Site credentials.
-+
-Credentials are required for BYOL instances. For details, see link:concept_storage_management.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account].
 
 . On the Underlying Storage Resources page, choose settings for the initial aggregate: a disk type, a size for each disk, and whether S3 tiering should be enabled.
 +
@@ -182,10 +180,6 @@ For additional help, go to https://mysupport.netapp.com/cloudontap[NetApp Cloud 
 
 .After you finish
 
-* If you launched a pay-as-you-go instance and the tenant is not linked to a NetApp Support Site account, manually register the instance with NetApp to enable support. For instructions, see link:task_registering.html[Registering Cloud Volumes ONTAP].
-+
-Support from NetApp is included with your Cloud Volumes ONTAP system. To activate support, you must first register the instance with NetApp.
-
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
 * If you want to apply quotas to volumes, use System Manager or the CLI.
@@ -200,7 +194,7 @@ If you want to launch a Cloud Volumes ONTAP HA pair in AWS, you need to create a
 
 * You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
 
-* If you purchased BYOL licenses, you must have a 20-digit serial number (license key) for each node, and you must have credentials for a NetApp Support Site account if the tenant is not already associated with an account.
+* If you purchased BYOL licenses, you must have a 20-digit serial number (license key) for each node.
 
 * If you want to use CIFS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
 
@@ -262,9 +256,11 @@ link:task_setting_up_kms.html[Learn how to set up the AWS KMS for Cloud Volumes 
 +
 link:concept_security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
 
-. On the BYOL License page, specify whether you have a license for this Cloud Volumes ONTAP system.
+. On the License and Support Site Account page, specify whether you want to use pay-as-you-go or BYOL, and then specify a NetApp Support Site account.
 +
 To understand how licenses work, see link:concept_licensing.html[Licensing].
++
+A NetApp Support Site Account is optional for pay-as-you-go, but required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
 
 . On the Preconfigured Packages page, select one of the packages to quickly launch a Cloud Volumes ONTAP system, or click *Create my own configuration*.
 +
@@ -279,10 +275,6 @@ If you prefer to use your own policy, it must meet http://mysupport.netapp.com/c
 If your needs change after you launch the instances, you can modify the license or instance type later.
 +
 NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.4 RC1 and 9.4 GA is available. The update does not occur from one release to another—for example, from 9.3 to 9.4.
-
-. If the NetApp Support Site credentials page is displayed, enter your NetApp Support Site credentials.
-+
-Credentials are required for BYOL instances. For details, see link:concept_storage_management.html#why-you-should-link-a-tenant-to-your-netapp-support-site-account[Why you should link a tenant to your NetApp Support Site account].
 
 . On the Underlying Storage Resources page, choose settings for the initial aggregate: a disk type, a size for each disk, and whether S3 tiering should be enabled.
 +
@@ -365,10 +357,6 @@ If you experience any issues launching the HA pair, review the failure message. 
 For additional help, go to https://mysupport.netapp.com/cloudontap[NetApp Cloud Volumes ONTAP Support^].
 
 .After you finish
-
-* If you launched a pay-as-you-go instance and the tenant is not linked to a NetApp Support Site account, manually register the instance with NetApp to enable support. For instructions, see link:task_registering.html[Registering Cloud Volumes ONTAP].
-+
-Support from NetApp is included with your Cloud Volumes ONTAP system. To activate support, you must first register the instance with NetApp.
 
 * If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
 
