@@ -56,8 +56,8 @@ image:screenshot_kubernetes_connect.gif[sdf]
 Request and manage Persistent Volumes using native Kubernetes interfaces and constructs. Cloud Manager creates two Kubernetes storage classes that you can use when provisioning Persistent Volumes:
 
 [role="quick-margin-list"]
-* *netapp-file*: for binding a Persistent Volume to single-node Cloud Volumes ONTAP systems
-* *netapp-file-redundant*: for binding a Persistent Volume to Cloud Volumes ONTAP HA pairs
+* *netapp-file*: for binding Persistent Volumes to single-node Cloud Volumes ONTAP systems
+* *netapp-file-redundant*: for binding Persistent Volumes to Cloud Volumes ONTAP HA pairs
 
 [role="quick-margin-para"]
 Cloud Manager configures Trident to use the following provisioning options by default:
