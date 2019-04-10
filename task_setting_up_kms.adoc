@@ -27,7 +27,7 @@ https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys[
 +
 This gives Cloud Manager permissions to use the CMK with Cloud Volumes ONTAP.
 +
-https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html[AWS Documentation: Editing Keys&]
+https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html[AWS Documentation: Editing Keys^]
 
 . If the CMK is in an AWS account separate from the account where you plan to deploy Cloud Volumes ONTAP, then you need to obtain the ARN of that key.
 +
