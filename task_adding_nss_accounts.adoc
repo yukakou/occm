@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_adding_nss_accounts.html
 keywords: adding, creating, netapp support site account, nss
-summary: Cloud Manager enables you to add additional Cloud Central users to Cloud Manager and to isolate working environments by tenants.
+summary: Cloud Manager prompts you for a NetApp Support Site account when you create a working environment because it uses the account to manage licenses for Cloud Volumes ONTAP BYOL systems, to register pay-as-you-go instances for support, and to upgrade Cloud Volumes ONTAP software.
 ---
 
 = Adding NetApp Support Site accounts to Cloud Manager
