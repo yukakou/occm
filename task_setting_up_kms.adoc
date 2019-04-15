@@ -31,9 +31,11 @@ https://docs.aws.amazon.com/kms/latest/developerguide/editing-keys.html[AWS Docu
 
 . If the CMK is in a different AWS account, complete the following steps:
 
-.. Go to the KMS console from the account where the CMK resides and select the key.
+.. Go to the KMS console from the account where the CMK resides.
 
-.. Copy the ARN of the key.
+.. Select the key.
+
+.. In the *General configuration* pane, copy the ARN of the key.
 +
 You'll need to provide the ARN to Cloud Manager when you create the Cloud Volumes ONTAP system.
 
