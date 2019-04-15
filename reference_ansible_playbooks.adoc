@@ -1,0 +1,20 @@
+---
+sidebar: sidebar
+permalink: reference_ansible_playbooks.html
+keywords: ansible, playbook, automation
+summary: Ansible can help you automate the deployment and management of Cloud Manager and Cloud Volumes ONTAP. We have developed a few sample playbooks that you can use to get started.
+---
+
+= Ansible playbooks for Cloud Manager
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Ansible can help you automate the deployment and management of Cloud Manager and Cloud Volumes ONTAP. We have developed a few sample playbooks that you can use to get started.
+
+For example, you can use the sample playbooks to deploy Cloud Manager and Cloud Volumes ONTAP, create an aggregate, and create a volume. Modify the samples for your environment or create new playbooks based on the samples.
+
+https://github.com/edarzi/cloud-manager-automation-samples/tree/master/ansible[View the sample Ansible playbooks^].
