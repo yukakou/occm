@@ -46,6 +46,10 @@ Transitioning Cloud Volumes ONTAP to an earlier release in the same release fami
 
 Before performing an upgrade or downgrade, you must verify that your systems are ready and make any required configuration changes.
 
+=== Reviewing version requirements
+
+The version of ONTAP that you can upgrade or downgrade to varies based on the version of ONTAP currently running on your system. To understand version requirements, refer to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-dot-upgrade/GUID-AC0EB781-583F-4C90-A4C4-BC7B14CEFD39.html[ONTAP 9 Documentation: Cluster update requirements^].
+
 === Suspending SnapMirror transfers
 
 If a Cloud Volumes ONTAP system has active SnapMirror relationships, it is best to suspend transfers before you update the Cloud Volumes ONTAP software. Suspending the transfers prevents SnapMirror failures. You must suspend the transfers from the destination system.
