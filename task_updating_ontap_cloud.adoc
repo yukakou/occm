@@ -24,8 +24,9 @@ image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available no
 
 You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system.
 
-NOTE: Upgrades of HA pairs are nondisruptive--HA pairs continue to serve data during the upgrade process. Downtime is required for single node systems.
+NOTE: Upgrades of HA pairs are nondisruptive--HA pairs continue to serve data during the upgrade process.
 Cloud Manager might upgrade the HA mediator as part of this process.
+Downtime is required for single node systems.
 
 === Advanced options for software updates
 
