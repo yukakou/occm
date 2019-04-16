@@ -26,6 +26,7 @@ You can start the upgrade process from this notification, which automates the pr
 
 NOTE: Upgrades of HA pairs are nondisruptive--HA pairs continue to serve data during the upgrade process.
 Cloud Manager might upgrade the HA mediator as part of this process.
+Downtime is required for single node systems.
 
 === Advanced options for software updates
 
@@ -95,7 +96,7 @@ Cloud Manager operations such as volume or aggregate creation must not be in pro
 
 .About this task
 
-The upgrade process takes up to 25 minutes for a single Cloud Volumes ONTAP system and up to 90 minutes for an HA pair. Upgrades of HA pairs are nondisruptive. HA pairs continue to serve data during the upgrade process.
+The upgrade process takes up to 25 minutes for a single Cloud Volumes ONTAP system and up to 90 minutes for an HA pair. Upgrades of HA pairs are nondisruptive. HA pairs continue to serve data during the upgrade process. Downtime is required for single node systems.
 
 .Steps
 
@@ -129,7 +130,7 @@ You can place the Cloud Volumes ONTAP software image on an HTTP or FTP server an
 
 .About this task
 
-This upgrade or downgrade process takes up to 25 minutes for a single Cloud Volumes ONTAP system and up to 90 minutes for an HA pair. Upgrades and downgrades of HA pairs are nondisruptive. HA pairs continue to serve data during the process.
+This upgrade or downgrade process takes up to 25 minutes for a single Cloud Volumes ONTAP system and up to 90 minutes for an HA pair. Upgrades and downgrades of HA pairs are nondisruptive. HA pairs continue to serve data during the process. Downtime is required for single node systems.
 
 .Steps
 
