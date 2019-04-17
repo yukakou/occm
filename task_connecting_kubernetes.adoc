@@ -67,7 +67,7 @@ Cloud Manager configures Trident to use the following provisioning options by de
 * Accessible Snapshot directory
 
 [role="quick-margin-para"]
-https://netapp-trident.readthedocs.io/en/stable-v18.10/kubernetes/deploying.html#provision-your-first-volume[Learn more about provisioning your first volume with Trident for Kubernetes^]
+https://netapp-trident.readthedocs.io/[Learn more about provisioning your first volume with Trident for Kubernetes^]
 
 .What are the trident_trident volumes?
 ****
