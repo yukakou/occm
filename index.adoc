@@ -30,7 +30,8 @@ OnCommand Cloud Manager enables you to deploy and manage NetApp Cloud Volumes ON
 
 == Automate with APIs
 
-link:api.html[OnCommand Cloud Manager API Developer Guide^]
+* link:api.html[API Developer Guide^]
+* link:reference_infrastructure_as_code.html[Automation samples]
 
 == Learn about Cloud Manager and Cloud Volumes ONTAP
 

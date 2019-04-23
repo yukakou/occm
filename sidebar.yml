@@ -169,6 +169,12 @@ entries:
         url: /task_renewing_cert.html
       - title: Uninstalling Cloud Manager
         url: /task_uninstalling.html
+  - title: APIs and automation
+    entries:
+      - title: API Developer Guide
+        url: https://docs.netapp.com/us-en/occm/api.html
+      - title: Automation samples
+        url: /reference_infrastructure_as_code.html
   - title: Reference
     entries:
       - title: FAQ for Cloud Central integration
@@ -181,8 +187,6 @@ entries:
         url: /reference_security_groups.html
       - title: Security group rules for Azure
         url: /reference_security_groups_azure.html
-      - title: REST APIs
-        url: /reference_apis.html
       - title: Permissions
         url: /reference_permissions.html
       - title: Default configurations
