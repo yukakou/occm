@@ -61,7 +61,10 @@ cognito-identity.us-east-1.amazonaws.com
 
 | \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
 
-| \https://mysupport.netapp.com | Communication with NetApp AutoSupport.
+|
+\https://support.netapp.com/aods/asupmessage
+support.netapp.com/asupprod/post/1.0/postAsup
+| Communication with NetApp AutoSupport.
 |
 \https://support.netapp.com/svcgw
 \https://support.netapp.com/ServiceGW/entitlement

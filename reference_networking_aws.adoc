@@ -26,7 +26,10 @@ The following requirements must be met in AWS.
 Outbound internet access for Cloud Volumes ONTAP nodes::
 Cloud Volumes ONTAP nodes require outbound internet access to send messages to NetApp AutoSupport, which proactively monitors the health of your storage.
 +
-Routing and firewall policies must allow AWS HTTP/HTTPS traffic to mysupport.netapp.com.
+Routing and firewall policies must allow AWS HTTP/HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
++
+* \https://support.netapp.com/aods/asupmessage
+* support.netapp.com/asupprod/post/1.0/postAsup
 +
 If you have a NAT instance, you must define an inbound security group rule that allows HTTPS traffic from the private subnet to the internet.
 

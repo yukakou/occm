@@ -22,7 +22,10 @@ Looking for the list of endpoints to which Cloud Manager requires access? They'r
 Outbound internet access for Cloud Volumes ONTAP::
 Cloud Volumes ONTAP requires outbound internet access to send messages to NetApp AutoSupport, which proactively monitors the health of your storage.
 +
-Routing and firewall policies must allow Azure HTTP/HTTPS traffic to mysupport.netapp.com so Cloud Volumes ONTAP can send AutoSupport messages.
+Routing and firewall policies must allow AWS HTTP/HTTPS traffic to the following endpoints so Cloud Volumes ONTAP can send AutoSupport messages:
++
+* \https://support.netapp.com/aods/asupmessage
+* support.netapp.com/asupprod/post/1.0/postAsup
 
 Security groups::
 You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].
