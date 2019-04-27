@@ -19,6 +19,52 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Cloud Manager 3.6.6 (1 May 2019)
+
+* <<Support for 6 TB disks in AWS>>
+* <<Support for new disk sizes with single node systems in Azure>>
+* <<Support for Standard SSDs with single node systems in Azure>>
+* <<Automatic discovery of Kubernetes clusters created with the NetApp Kubernetes Service>>
+* <<Integration with the NetApp Cloud Backup Service>>
+
+=== Support for 6 TB disks in AWS
+
+You can now choose an EBS disk size of 6 TB with Cloud Volumes ONTAP for AWS. With the recent https://aws.amazon.com/about-aws/whats-new/2018/12/amazon-ebs-increases-performance-of-general-purpose-ssd-gp2-volumes/[increased performance of General Purpose SSDs^], a 6 TB disk is now the best choice for maximum performance.
+
+This change is supported with Cloud Volumes ONTAP 9.5, 9.4, and 9.3.
+
+=== Support for new disk sizes with single node systems in Azure
+
+You can now use 8 TB, 16 TB, and 32 TB disks with single node systems in Azure. The increased disks sizes enable you to reach up to 368 TB of system capacity with disks alone.
+
+This change is supported with Cloud Volumes ONTAP 9.5, 9.4, and 9.3.
+
+=== Support for Standard SSDs with single node systems in Azure
+
+Standard SSD Managed Disks are now supported with single node systems in Azure. These disks provide a level of performance in between Premium SSDs and Standard HDDs.
+
+This change is supported with Cloud Volumes ONTAP 9.5, 9.4, and 9.3.
+
+https://azure.microsoft.com/en-us/blog/announcing-general-availability-of-standard-ssd-disks-for-azure-virtual-machine-workloads/[Learn more about Standard SSDs^].
+
+=== Automatic discovery of Kubernetes clusters created with the NetApp Kubernetes Service
+
+Cloud Manager can now automatically discover the Kubernetes clusters that you deploy using the NetApp Kubernetes Service. This enables you to connect the Kubernetes clusters to your Cloud Volumes ONTAP systems so you can use them as persistent storage for your containers.
+
+The following image shows an automatically discovered Kubernetes cluster. The "Go to NKS" link brings you directly to the NetApp Kubernetes Service.
+
+image:screenshot_kubernetes_nks.gif[This screenshot shows a Kubernetes cluster in Cloud Manager's Kubernetes Clusters page.]
+
+link:task_connecting_kubernetes.html[Learn how to connect your working environments to Kubernetes clusters].
+
+=== Cloud Volumes ONTAP integration with the NetApp Cloud Backup Service
+
+The NetApp Cloud Backup Service for Cloud Volumes ONTAP delivers fully-managed backup and restore capabilities for protection and long-term archive of your cloud data. You can integrate the Cloud Backup Service with Cloud Volumes ONTAP for AWS. https://cloud.netapp.com/cloud-backup-service[Learn more about the Cloud Backup Service^].
+
+To get started, install and configure the backup agent and then run commands to start backup and restore operations.
+
+link:task_setting_up_cbs.html[Learn how to integrate Cloud Backup Service with Cloud Volumes ONTAP].
+
 == Cloud Manager 3.6.5 (2 Apr 2019)
 
 Cloud Manager 3.6.5 includes the following enhancements.
