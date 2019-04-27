@@ -76,6 +76,8 @@ HA systems use Premium page blobs. Meanwhile, single node systems can use two ty
 
 * _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
 
+* _Standard SSD Managed Disks_ provide consistent performance for workloads that require low IOPS.
+
 * _Standard HDD Managed Disks_ are a good choice if you don't need high IOPS and want to reduce your costs.
 +
 For additional details about the use cases for these disks, see https://azure.microsoft.com/documentation/articles/storage-introduction/[Microsoft Azure Documentation: Introduction to Microsoft Azure Storage^].

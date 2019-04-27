@@ -52,13 +52,15 @@ https://docs.netapp.com/cloud-volumes-ontap/us-en/reference_storage_limits_95.ht
 In Azure, an aggregate can contain up to 12 disks. The disk type and maximum disk size depends on whether you use a single node system or an HA pair:
 
 Single node systems::
-Single node systems can use two types of Azure Managed Disks:
+Single node systems can use three types of Azure Managed Disks:
 
 * _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
 
+* _Standard SSD Managed Disks_ provide consistent performance for workloads that require low IOPS.
+
 * _Standard HDD Managed Disks_ are a good choice if you don't need high IOPS and want to reduce your costs.
 +
-Both disk types have a maximum disk size of 4 TB.
+Each managed disk type has a maximum disk size of 32 TB.
 +
 You can pair a managed disk with Azure Blob storage for link:concept_data_tiering.html[data tiering].
 

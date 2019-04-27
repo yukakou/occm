@@ -37,7 +37,7 @@ You can enable data tiering when using specific configurations and features:
 
 * In AWS, the performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Throughput Optimized HDDs.
 
-* In Azure, the performance tier can be either Premium SSD managed disks or Standard HDD managed disks.
+* In Azure, the performance tier can be Premium SSD managed disks, Standard SSD managed disks, or Standard HDD managed disks.
 
 * Data tiering is supported with encryption technologies.
 
