@@ -135,16 +135,6 @@ entries:
         url: /task_replicating_data.html
       - title: Syncing data to AWS S3
         url: /task_syncing_s3.html
-  - title: Protecting and replicating data
-    entries:
-      - title: Discovering and managing ONTAP clusters
-        url: /task_discovering_ontap.html
-      - title: Replicating data to and from the cloud
-        url: /task_replicating_data.html
-      - title: Syncing data to AWS S3
-        url: /task_syncing_s3.html
-      - title: Backing up and restoring data with the Cloud Backup Service
-        url: /task_setting_up_cbs.html
   - title: Administering Cloud Volumes ONTAP
     entries:
       - title: Connecting to Cloud Volumes ONTAP
