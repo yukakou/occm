@@ -85,9 +85,9 @@ entries:
             url: /task_launching_aws_mktp.html
           - title: Deploying Cloud Manager from the Azure Marketplace
             url: /task_launching_azure_mktp.html
-          - title: Intalling Cloud Manager in Azure Gov
+          - title: Deploying Cloud Manager in an Azure Gov region
             url: /task_installing_azure_gov.html
-          - title: Installing Cloud Manager in Azure Germany
+          - title: Deploying Cloud Manager in the Azure Germany region
             url: /task_installing_azure_germany.html
   - title: Deploying Cloud Volumes ONTAP
     entries:

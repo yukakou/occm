@@ -14,7 +14,7 @@ summary: You can get started with Cloud Volumes ONTAP in Azure by completing a f
 :imagesdir: ./media/
 
 [.lead]
-You can get started with Cloud Volumes ONTAP in Azure from NetApp Cloud Central. Separate instructions are available to deploy Cloud Manager in link:task_installing_azure_gov.html[US Gov regions] and in link:task_installing_azure_germany.html[Azure Germany regions].
+You can get started with Cloud Volumes ONTAP in Azure from NetApp Cloud Central. Separate instructions are available to deploy Cloud Manager in link:task_installing_azure_gov.html[Azure US Government regions] and in link:task_installing_azure_germany.html[Azure Germany regions].
 
 === image:number1.png[Number 1] Set up your networking
 
