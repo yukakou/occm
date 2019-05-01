@@ -83,6 +83,8 @@ The listed DNS servers must contain the service location records (SRV) needed to
 | Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
+
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the link:api.html[Cloud Manager API Developer Guide^] for details.
 |===
 
 . On the Usage Profile, Disk Type, and Tiering Policy page, choose whether you want to enable storage efficiency features, choose a disk type, and edit the S3 tiering policy, if needed.
