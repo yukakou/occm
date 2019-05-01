@@ -25,7 +25,7 @@ link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 
 * <<Support for new disk sizes with single node systems in Azure>>
 * <<Support for Standard SSDs with single node systems in Azure>>
 * <<Automatic discovery of Kubernetes clusters created with the NetApp Kubernetes Service>>
-* <<Integration with the NetApp Cloud Backup Service>>
+* <<Ability to configure an NTP server>>
 
 === Support for 6 TB disks in AWS
 
@@ -35,7 +35,7 @@ This change is supported with Cloud Volumes ONTAP 9.5, 9.4, and 9.3.
 
 === Support for new disk sizes with single node systems in Azure
 
-You can now use 8 TB, 16 TB, and 32 TB disks with single node systems in Azure. The increased disks sizes enable you to reach up to 368 TB of system capacity with disks alone.
+You can now use 8 TB, 16 TB, and 32 TB disks with single node systems in Azure. The increased disk sizes enable you to reach up to 368 TB of system capacity with disks alone when using the Premium or BYOL licenses.
 
 This change is supported with Cloud Volumes ONTAP 9.5, 9.4, and 9.3.
 
@@ -57,13 +57,21 @@ image:screenshot_kubernetes_nks.gif[This screenshot shows a Kubernetes cluster i
 
 link:task_connecting_kubernetes.html[Learn how to connect your working environments to Kubernetes clusters].
 
-=== Cloud Volumes ONTAP integration with the NetApp Cloud Backup Service
+=== Ability to configure an NTP server
 
-The NetApp Cloud Backup Service for Cloud Volumes ONTAP delivers fully-managed backup and restore capabilities for protection and long-term archive of your cloud data. You can integrate the Cloud Backup Service with Cloud Volumes ONTAP for AWS. https://cloud.netapp.com/cloud-backup-service[Learn more about the Cloud Backup Service^].
+You can now configure Cloud Volumes ONTAP to use a Network Time Protocol (NTP) server. Specifying an NTP server synchronizes the time between the systems in your network, which can help prevent issues due to time differences.
 
-To get started, install and configure the backup agent and then run commands to start backup and restore operations.
+Specify an NTP server using the Cloud Manager API or from the user interface when you set up a CIFS server:
 
-link:task_setting_up_cbs.html[Learn how to integrate Cloud Backup Service with Cloud Volumes ONTAP].
+* The link:api.html[Cloud Manager APIs^] enable you to specify any address for the NTP server. Here's the API for a single-node system in AWS:
++
+image:screenshot_ntp_server_api.gif[A screenshot of the Swagger interface that shows the NTP API call.]
+
+* When configuring a CIFS server, the Cloud Manager user interface enables you to specify an NTP server that uses the Active Directory domain. If you need to use a different address, then you should use the API.
++
+The following image shows the NTP Server field, which is available when setting up CIFS.
++
+image:screenshot_configure_cifs.gif[A screenshot that shows the CIFS Setup screen, which includes the NTP Server field.]
 
 == Cloud Manager 3.6.5 (2 Apr 2019)
 
