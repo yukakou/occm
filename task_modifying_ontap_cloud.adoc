@@ -32,7 +32,7 @@ image:screenshot_license_generator.gif[Screen shot: Shows an example of the NetA
 
 . Choose whether you want to receive the serialnumber.NLF JSON file through email or direct download.
 
-. In Cloud Manager, select the Cloud Volumes ONTAP BYOL working environment.
+. In Cloud Manager, open the Cloud Volumes ONTAP BYOL working environment.
 
 . Click the menu icon and then click *License*.
 +
