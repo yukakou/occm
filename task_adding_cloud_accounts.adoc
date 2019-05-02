@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_adding_cloud_accounts.html
-keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam policy, iam user, access keys, arn, cloud provider accounts, aws, cloud provider profile, microsoft, azure, permissions, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, managed service identity, iam, operator, role, virtual machine
+keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam policy, iam user, access keys, arn, cloud provider accounts, aws, cloud provider profile, microsoft, azure, permissions, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, managed identity, iam, operator, role, virtual machine
 summary: If you want to deploy Cloud Volumes ONTAP in different cloud accounts, then you need to provide the required permissions to those accounts and then add the details to Cloud Manager.
 ---
 
@@ -270,13 +270,13 @@ You can now switch to another account from the Details and Credentials page when
 
 image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
 
-== Associating additional Azure subscriptions with a Managed Service Identity
+== Associating additional Azure subscriptions with a managed identity
 
-Cloud Manager enables you to choose the Azure account and subscription in which you want to deploy Cloud Volumes ONTAP. You can't select a different Azure subscription for the Managed Service Identity profile unless you associate the Managed Service Identity with those subscriptions.
+Cloud Manager enables you to choose the Azure account and subscription in which you want to deploy Cloud Volumes ONTAP. You can't select a different Azure subscription for the managed identity profile unless you associate the https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[managed identity^] with those subscriptions.
 
 .About this task
 
-A Managed Service Identity is the initial link:concept_accounts_and_permissions.html[cloud provider account] when you deploy Cloud Manager from NetApp Cloud Central. When you deployed Cloud Manager, Cloud Central created the OnCommand Cloud Manager Operator role and assigned it to the Cloud Manager virtual machine.
+A managed identity is the initial link:concept_accounts_and_permissions.html[cloud provider account] when you deploy Cloud Manager from NetApp Cloud Central. When you deployed Cloud Manager, Cloud Central created the OnCommand Cloud Manager Operator role and assigned it to the Cloud Manager virtual machine.
 
 .Steps
 
@@ -286,9 +286,11 @@ A Managed Service Identity is the initial link:concept_accounts_and_permissions.
 
 . Click *Access control (IAM)*.
 
-. Click *Add* and then add the permissions:
+.. Click *Add* > *Add role assignment* and then add the permissions:
 
 * Select the *OnCommand Cloud Manager Operator* role.
++
+NOTE: OnCommand Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
 
 * Assign access to a *Virtual Machine*.
 
@@ -302,6 +304,6 @@ A Managed Service Identity is the initial link:concept_accounts_and_permissions.
 
 .Result
 
-When you create a new working environment, you should now have the ability to select from multiple Azure subscriptions for the Managed Service Identity profile.
+When you create a new working environment, you should now have the ability to select from multiple Azure subscriptions for the managed identity profile.
 
 image:screenshot_accounts_switch_azure_subscription.gif[A screenshot that shows the ability to select multiple Azure subscriptions when selecting a Microsoft Azure Provider Account.]
