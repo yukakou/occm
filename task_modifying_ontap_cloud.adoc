@@ -34,7 +34,9 @@ image:screenshot_license_generator.gif[Screen shot: Shows an example of the NetA
 
 . In Cloud Manager, select the Cloud Volumes ONTAP BYOL working environment.
 
-. In the Storage pane, click the menu icon, and then click *License*.
+. Click the menu icon and then click *License*.
++
+image:screenshot_menu_license.gif[A screenshot that shows menu icon in a working environment. The License option enables you to upload a license file.]
 
 . Click *Upload License File*.
 
