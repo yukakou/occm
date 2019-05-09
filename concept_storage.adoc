@@ -27,7 +27,9 @@ TIP: The total amount of storage purchased from AWS or Azure is the _raw capacit
 
 == AWS storage
 
-In AWS, an aggregate can contain up to 6 disks, with a maximum disk size of 16 TB. The underlying EBS disk type can be either General Purpose SSD, Provisioned IOPS SSD, Throughput Optimized HDD, or Cold HDD. You can also pair an EBS disk with Amazon S3 for link:concept_data_tiering.html[data tiering].
+In AWS, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 16 TB.
+
+The underlying EBS disk type can be either General Purpose SSD, Provisioned IOPS SSD, Throughput Optimized HDD, or Cold HDD. You can also pair an EBS disk with Amazon S3 for link:concept_data_tiering.html[data tiering].
 
 At a high level, the differences between EBS disk types are as follows:
 
@@ -49,7 +51,7 @@ https://docs.netapp.com/cloud-volumes-ontap/us-en/reference_storage_limits_95.ht
 
 == Azure storage
 
-In Azure, an aggregate can contain up to 12 disks. The disk type and maximum disk size depends on whether you use a single node system or an HA pair:
+In Azure, an aggregate can contain up to 12 disks that are all the same size. The disk type and maximum disk size depends on whether you use a single node system or an HA pair:
 
 Single node systems::
 Single node systems can use three types of Azure Managed Disks:
