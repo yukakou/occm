@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_deployment_overview.html
-keywords: installation, installing, install, setting up, set up, setup, deploy, deployment
+keywords: installation, installing, install, setting up, set up, setup, deploy, deployment, c2s, commerical cloud services, ic, intelligence community
 summary: Before you get started, you might want to better understand your options for deploying OnCommand Cloud Manager and Cloud Volumes ONTAP.
 ---
 
@@ -35,6 +35,8 @@ How you deploy Cloud Manager depends on which location you choose:
 
 | AWS | link:task_getting_started_aws.html[Deploy Cloud Manager from NetApp Cloud Central]
 
+| AWS C2S | link:media/c2s.pdf[Deploy Cloud Manager from the AWS Intelligence Community Marketplace^]
+
 | Azure generally available region | link:task_getting_started_azure.html[Deploy Cloud Manager from NetApp Cloud Central]
 
 | Azure Government | link:task_installing_azure_gov.html[Deploy Cloud Manager from the Azure US Government Marketplace]
@@ -49,7 +51,7 @@ How you deploy Cloud Manager depends on which location you choose:
 
 == Cloud Manager setup
 
-You might want to perform additional setup after you install Cloud Manager, such as adding additional AWS accounts, installing an HTTPS certificate, and more.
+You might want to perform additional setup after you install Cloud Manager, such as adding additional cloud provider accounts, installing an HTTPS certificate, and more.
 
 * link:task_adding_cloud_accounts.html[Adding Cloud Provider Accounts to Cloud Manager]
 * link:task_installing_https_cert.html[Installing an HTTPS certificate]

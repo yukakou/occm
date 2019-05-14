@@ -19,6 +19,12 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Support for the AWS C2S Environment (2 May 2019)
+
+Cloud Volumes ONTAP 9.5 and Cloud Manager 3.6.4 are now available to the U.S. Intelligence Community (IC) through the AWS Commercial Cloud Services (C2S) environment. You can deploy HA pairs and single node systems in C2S.
+
+link:media/c2s.pdf[Quick Start Guide for the AWS Commercial Cloud Services Environment^]
+
 == Cloud Manager 3.6.6 (1 May 2019)
 
 * <<Support for 6 TB disks in AWS>>
