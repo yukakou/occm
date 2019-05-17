@@ -172,7 +172,7 @@ You must have the appropriate permissions in Azure to create an Active Directory
 +
 image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Azure.]
 
-. In the menu, click *App registrations*.
+. In the menu, click *App registrations (Legacy)*.
 
 . Create the service principal:
 
