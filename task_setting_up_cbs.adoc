@@ -49,7 +49,7 @@ Two VPC interface endpoints are required to communicate with the Cloud Backup Se
 
 . Run the following command to create a VPC interface endpoint to the backup service:
 +
-`aws --region <region> cloudformation create-stack --stack-name <stack-name> --template-body \file://vpc_endpont.json --parameters ParameterKey=VPCId,ParameterValue=<vpc-id> ParameterKey=SubnetId,ParameterValue=<subnet-id> ParameterKey=ServiceCbs,ParameterValue=com.amazonaws.vpce.us-east-2.vpce-svc-08431eb3daaa09a3c ParameterK`
+`aws --region <region> cloudformation create-stack --stack-name <stack-name> --template-body \file://vpc_endpont.json --parameters ParameterKey=VPCId,ParameterValue=<vpc-id> ParameterKey=SubnetId,ParameterValue=<subnet-id> ParameterKey=ServiceCbs,ParameterValue=com.amazonaws.vpce.us-east-2.vpce-svc-08431eb3daaa09a3c`
 +
 * The _region_, _VPC ID_, and _subnet ID_ should correspond to the network location where your Cloud Volumes ONTAP systems are deployed. You can list multiple subnets if your systems are deployed across different subnets.
 * The _stack name_ can be any string that identifies the purpose of the CFT.
@@ -57,7 +57,7 @@ Two VPC interface endpoints are required to communicate with the Cloud Backup Se
 
 . Now run the following command to create a VPC interface endpoint to the restore service:
 +
-`aws --region <region> cloudformation create-stack --stack-name <stack-name> --template-body \file://vpc_endpont.json --parameters ParameterKey=VPCId,ParameterValue=<vpc-id> ParameterKey=SubnetId,ParameterValue=<subnet-id> ParameterKey=ServiceCbs,ParameterValue=com.amazonaws.vpce.us-east-2.vpce-svc-0b88382c75c97e1f5 ParameterK`
+`aws --region <region> cloudformation create-stack --stack-name <stack-name> --template-body \file://vpc_endpont.json --parameters ParameterKey=VPCId,ParameterValue=<vpc-id> ParameterKey=SubnetId,ParameterValue=<subnet-id> ParameterKey=ServiceCbs,ParameterValue=com.amazonaws.vpce.us-east-2.vpce-svc-0b88382c75c97e1f5`
 +
 The only difference between this command and the previous command is the value of the _ServiceCbs_ parameter, which now identifies the endpoint of the restore service.
 
