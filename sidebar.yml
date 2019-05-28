@@ -1,5 +1,5 @@
 entries:
-  - title: Cloud Manager 3.6 docs
+  - title: Cloud Manager 3.7 docs
     url: /index.html
   - title: Release notes
     entries:
@@ -19,7 +19,9 @@ entries:
         url: /concept_overview.html
       - title: NetApp Cloud Central
         url: /concept_cloud_central.html
-      - title: Accounts and permissions
+      - title: Cloud Central accounts
+        url: /concept_cloud_central_accounts.html
+      - title: Cloud provider accounts
         url: /concept_accounts_and_permissions.html
       - title: Storage
         entries:
@@ -121,14 +123,6 @@ entries:
         url: /task_encrypting_volumes.html
       - title: Managing existing storage
         url: /task_managing_storage.html
-      - title: Provisioning NFS volumes from the Volume View
-        entries:
-          - title: Changing to the Volume View
-            url: /task_changing_volume_view.html
-          - title: Creating and mounting NFS volumes
-            url: /task_provisioning_volume_view.html
-          - title: Managing NFS volumes
-            url: /task_managing_volume_view.html
   - title: Replicating and protecting data
     entries:
       - title: Discovering and managing ONTAP clusters
