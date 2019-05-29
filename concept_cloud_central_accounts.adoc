@@ -57,15 +57,15 @@ You can use a service connector with more than one NetApp cloud data service. Fo
 
 The following example shows an account that uses two workspaces to create isolated environments for Cloud Volumes ONTAP systems. For example, one workspace might be for a staging environment, while the other is for a production environment.
 
-NOTE: The Service Connector and Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
+NOTE: Cloud Manager and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
 
 image:diagram_cloud_central_accounts_one.png[A diagram that shows a single Cloud Central account that contains two workspaces. Each workspace is associated with the same service connector and each has their own workspace admin.]
 
 Here's another example that shows the highest level of multi-tenancy by using two separate Cloud Central accounts. For example, a service provider might use Cloud Manager in one Cloud Central account to provide services for their customers, while using another account to provide disaster recovery for one of their business units.
 
-Note that account 2 includes two separate service connectors. This might happen if you have systems in separate regions or in separate cloud providers.
+Note that account 2 includes two separate Cloud Manager systems (service connectors). This might happen if you have systems in separate regions or in separate cloud providers.
 
-NOTE: Again, the Service Connector and Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
+NOTE: Again, Cloud Manager and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
 
 image:diagram_cloud_central_accounts_two.png[A diagram that shows two Cloud Central accounts, each with several workspaces and their associated workspace admins.]
 
