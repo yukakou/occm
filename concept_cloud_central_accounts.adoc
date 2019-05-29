@@ -15,6 +15,8 @@ summary:
 [.lead]
 Each Cloud Manager system is associated with a _NetApp Cloud Central account_. A Cloud Central account is a container for the _workspaces_ in which users deploy Cloud Volumes ONTAP systems.
 
+A Cloud Central account enables multi-tenancy. Multiple users can use a single instance of Cloud Manager software to deploy and manage Cloud Volumes ONTAP systems in isolated environments called workspaces. These workspaces are invisible to other users, unless they are shared.
+
 You can create as many Cloud Central accounts as you need for your business. You might have one, or a few. For example, you might have two Cloud Manager systems, each deployed in separate Cloud Central accounts to serve different business needs.
 
 When you deploy Cloud Manager, you select the Cloud Central account to associate with the system:
@@ -27,7 +29,7 @@ image:screenshot_account_settings.gif[A screenshot that shows the Account Settin
 
 == Users, workspaces, and service connectors
 
-The Account Settings widget in Cloud Manager enables you to manage your Cloud Central account. If you just created your account, then you'll start from scratch. But if you've already set up an account, then you'll see _all_ the users, workspaces, and service connectors that are associated with the account.
+The Account Settings widget in Cloud Manager enables Account Admins to manage a Cloud Central account. If you just created your account, then you'll start from scratch. But if you've already set up an account, then you'll see _all_ the users, workspaces, and service connectors that are associated with the account.
 
 Users::
 These are NetApp Cloud Central users that you associate with your Cloud Central account. Associating a user with an account and one or more workspaces in that account enables those users to create and manage working environments in Cloud Manager.
@@ -47,7 +49,9 @@ A working environment represents a storage system:
 * An ONTAP cluster in a NetApp Private Storage configuration
 
 Service connectors::
-!!! Need help here. How does the Service Connector relate to Cloud Manager?
+A service connector resides in your network and enables communication with NetApp cloud data services. For Cloud Manager, the service connector is the Cloud Manager system itself.
++
+You can use a service connector with more than one NetApp cloud data service. For example, you can use the same service connector with Cloud Manager and Cloud Tiering. Deploy a Cloud Manager system and select its service connector in Cloud Tiering when you set up cold data from ONTAP clusters to object storage.
 
 == Examples
 
