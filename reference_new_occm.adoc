@@ -23,9 +23,7 @@ link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 
 == Cloud Manager 3.7 (4 June 2019)
 
 * <<NetApp Cloud Central accounts>>
-* <<Connections to Kubernetes clusters>>
 * <<Backup and restore with the Cloud Backup Service>>
-* <<Deprecation of the Volume View>>
 
 === NetApp Cloud Central accounts
 
@@ -41,14 +39,6 @@ link:concept_cloud_central_accounts.html[Learn more about NetApp Cloud Central a
 
 Some time after you upgrade to Cloud Manager 3.7, NetApp will choose specific Cloud Manager systems to integrate with Cloud Central accounts. During this process, NetApp creates an account, assigns new roles to each user, creates workspaces, and places existing working environments in those workspaces. There's no disruption to your Cloud Volumes ONTAP systems. If you have questions, refer to link:concept_cloud_accounts.html#faq-for-integrating-existing-systems-with-netapp-cloud-accounts[this FAQ].
 
-=== Connections to Kubernetes clusters
-
-It's now easier to connect your Kubernetes clusters to Cloud Volumes ONTAP systems. You can connect them directly from the Kubernetes Clusters page:
-
-<Insert screenshot here. Ishai said there is a bug preventing NKS connections, so no screenshot yet.>
-
-//image:screenshot_kubernetes_connect.gif[A screenshot that shows Kubernetes clusters that were added to Cloud Manager and the Connect to Cloud Volumes ONTAP button.]
-
 === Backup and restore with the Cloud Backup Service
 
 The NetApp Cloud Backup Service for Cloud Volumes ONTAP delivers fully-managed backup and restore capabilities for protection and long-term archive of your cloud data. You can integrate the Cloud Backup Service with Cloud Volumes ONTAP for AWS. Backups created by the service are stored in AWS S3 object storage.
@@ -56,7 +46,3 @@ The NetApp Cloud Backup Service for Cloud Volumes ONTAP delivers fully-managed b
 https://cloud.netapp.com/cloud-backup-service[Learn more about the Cloud Backup Service^].
 
 To get started, link:task_setting_up_cbs.html[install and configure the backup agent and then start backup and restore operations]. If you need help, we encourage you to contact us by using the chat icon in Cloud Manager.
-
-=== Deprecation of the Volume View
-
-In previous releases, Cloud Manager provided a separate management view for AWS storage called the _Volume View_. This view is no longer supported. The _Storage System View_ is the default and only view.
