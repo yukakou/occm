@@ -13,17 +13,23 @@ summary:
 :imagesdir: ./media/
 
 [.lead]
-Each Cloud Manager system is associated with a _NetApp Cloud Central account_. A Cloud Central account is a container for the _workspaces_ in which users deploy Cloud Volumes ONTAP systems.
+Each Cloud Manager system is associated with a _NetApp Cloud Central account_. A Cloud Central account is a container for your Cloud Manager systems and the _workspaces_ in which users deploy Cloud Volumes ONTAP.
 
-A Cloud Central account enables multi-tenancy. Multiple users can use a single instance of Cloud Manager software to deploy and manage Cloud Volumes ONTAP systems in isolated environments called workspaces. These workspaces are invisible to other users, unless they are shared.
+A Cloud Central account enables multi-tenancy:
 
-You can create as many Cloud Central accounts as you need for your business. You might have one, or a few. For example, you might have two Cloud Manager systems, each deployed in separate Cloud Central accounts to serve different business needs.
+* A single Cloud Central account can include multiple Cloud Manager systems that serve different business needs.
++
+Because users are associated with the Cloud Central account, there's no need to configure users for each individual Cloud Manager system.
+
+* Within each Cloud Manager system, multiple users can deploy and manage Cloud Volumes ONTAP systems in isolated environments called workspaces.
++
+These workspaces are invisible to other users, unless they are shared.
 
 When you deploy Cloud Manager, you select the Cloud Central account to associate with the system:
 
 image:screenshot_account_selection.gif[A screenshot of the Cloud Manager setup wizard that prompts you for the Cloud Central account in which you want to create Cloud Manager.]
 
-You can then modify the settings for this account by managing users, workspaces, and service connectors:
+Account Admins can then modify the settings for this account by managing users, workspaces, and service connectors:
 
 image:screenshot_account_settings.gif[A screenshot that shows the Account Settings widget from which you can manage users, workspaces, and service connectors.]
 
