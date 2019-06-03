@@ -22,8 +22,13 @@ link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.7 (4 June 2019)
 
+* <<Support for upcoming Cloud Volumes ONTAP 9.6 release>>
 * <<NetApp Cloud Central accounts>>
 * <<Backup and restore with the Cloud Backup Service>>
+
+=== Support for upcoming Cloud Volumes ONTAP 9.6 release
+
+Cloud Manager 3.7 includes support for the upcoming Cloud Volumes ONTAP 9.6 release. This release includes a private preview of Cloud Volumes ONTAP in Google Cloud Platform. We'll update the release notes when 9.6 is available.
 
 === NetApp Cloud Central accounts
 
