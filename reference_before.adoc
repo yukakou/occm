@@ -16,18 +16,17 @@ summary: Before you use Cloud Manager to create and manage Cloud Volumes ONTAP s
 
 Before you use Cloud Manager to create and manage Cloud Volumes ONTAP systems, your Cloud Manager administrator should have prepared networking and installed and set up Cloud Manager.
 
-Your administrator should have followed instructions to get up and running link:task_getting_started_aws.html[in AWS] or link:task_getting_started_azure.html[in Azure], and optionally link:task_adding_cloud_accounts.html[set up Cloud Manager].
+Your administrator should have followed instructions to get up and running in AWS or in Azure, and optionally set up Cloud Manager.
 
 The following conditions should exist before you start deploying Cloud Volumes ONTAP:
 
-* AWS and Azure networking requirements were met for Cloud Manager and Cloud Volumes ONTAP.
-
-* Cloud Manager has permissions to perform operations in AWS and Azure on your behalf.
-
+* Networking requirements were met for Cloud Manager and Cloud Volumes ONTAP.
+* Cloud Manager has permissions to perform operations in your chosen cloud provider.
 * Each Cloud Volumes ONTAP product that users will deploy was subscribed to from the AWS Marketplace.
-
 * Cloud Manager was installed.
 
-* (Optional) Additional tenants were defined.
+.Related links
 
-* (Optional) Additional user accounts were created, which can include Tenant Admins and Working Environment Admins.
+* link:task_getting_started_aws.html[Getting started in AWS]
+* link:task_getting_started_azure.html[Getting started in Azure]
+* link:task_setting_up_cloud_manager.html[Setting up Cloud Manager]
