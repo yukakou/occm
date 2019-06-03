@@ -32,17 +32,17 @@ Cloud Manager 3.7 includes support for the upcoming Cloud Volumes ONTAP 9.6 rele
 
 === NetApp Cloud Central accounts
 
-We've enhanced how you manage your cloud resources. Each Cloud Manager system is now associated with a _NetApp Cloud Central account_. A Cloud Central account provides the highest level of multi-tenancy for Cloud Manager and is planned for other NetApp cloud data services in the future.
+We've enhanced how you manage your cloud resources. Each Cloud Manager system is now associated with a _NetApp Cloud Central account_.  The account enables multi-tenancy and is planned for other NetApp cloud data services in the future.
 
-In Cloud Manager, a Cloud Central account is a container for the _workspaces_ in which users deploy Cloud Volumes ONTAP systems. A workspace is similar to what was previously called a tenant.
+In Cloud Manager, a Cloud Central account is a container for your Cloud Manager systems and the _workspaces_ in which users deploy Cloud Volumes ONTAP.
 
-You can create as many Cloud Central accounts as you need for your business. You might have one, or a few. For example, you might have two Cloud Manager systems, each deployed in separate Cloud Central accounts to serve different business needs.
-
-link:concept_cloud_central_accounts.html[Learn more about NetApp Cloud Central accounts and workspaces].
+link:concept_cloud_central_accounts.html[Learn how Cloud Central accounts enable multi-tenancy].
 
 ==== Integrating your system with Cloud Central accounts
 
-Some time after you upgrade to Cloud Manager 3.7, NetApp will choose specific Cloud Manager systems to integrate with Cloud Central accounts. During this process, NetApp creates an account, assigns new roles to each user, creates workspaces, and places existing working environments in those workspaces. There's no disruption to your Cloud Volumes ONTAP systems. If you have questions, refer to link:concept_cloud_accounts.html#faq-for-integrating-existing-systems-with-netapp-cloud-accounts[this FAQ].
+Some time after you upgrade to Cloud Manager 3.7, NetApp will choose specific Cloud Manager systems to integrate with Cloud Central accounts. During this process, NetApp creates an account, assigns new roles to each user, creates workspaces, and places existing working environments in those workspaces. There's no disruption to your Cloud Volumes ONTAP systems.
+
+link:concept_cloud_central_accounts.html#faq[If you have questions, refer to this FAQ].
 
 === Backup and restore with the Cloud Backup Service
 
