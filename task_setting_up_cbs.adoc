@@ -23,7 +23,7 @@ To get started, install and configure the backup agent and then run commands to 
 
 Before you get started, send us your AWS account ID so that we can enable your account to use the Cloud Backup Service.
 
-.Steps
+.Step
 
 . Send an email to ng-cloud-volume-ontap-preview@netapp.com that includes your AWS account ID.
 
@@ -65,7 +65,7 @@ Two VPC interface endpoints are required to communicate with the Cloud Backup Se
 
 . Run the following command to create a VPC interface endpoint to the backup service:
 +
-`aws --region <region> cloudformation create-stack --stack-name <stack-name> --template-body \file://vpc_endpont.json --parameters ParameterKey=VPCId,ParameterValue=<vpc-id> ParameterKey=ServiceCbs,ParameterValue=<service-endpoint>`
+`aws --region <region> cloudformation create-stack --stack-name <stack-name> --template-body \file://vpc_endpoint.json --parameters ParameterKey=VPCId,ParameterValue=<vpc-id> ParameterKey=ServiceCbs,ParameterValue=<service-endpoint>`
 +
 * The _region_ and _VPC ID_ should correspond to the network location where your Cloud Volumes ONTAP systems are deployed.
 * The _stack name_ can be any string that identifies the purpose of the CFT.
@@ -76,7 +76,7 @@ Two VPC interface endpoints are required to communicate with the Cloud Backup Se
 
 . Now run the following command to create a VPC interface endpoint to the restore service:
 +
-`aws --region <region> cloudformation create-stack --stack-name <stack-name> --template-body \file://vpc_endpont.json --parameters ParameterKey=VPCId,ParameterValue=<vpc-id> ParameterKey=ServiceCbs,ParameterValue=<service-endpoint>`
+`aws --region <region> cloudformation create-stack --stack-name <stack-name> --template-body \file://vpc_endpoint.json --parameters ParameterKey=VPCId,ParameterValue=<vpc-id> ParameterKey=ServiceCbs,ParameterValue=<service-endpoint>`
 +
 The only difference between this command and the previous command is the value of the _service endpoint_. The _service endpoint_ must point to the restore service endpoint in the eu-west-1 region or the us-east-1 region:
 
