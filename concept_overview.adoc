@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_overview.html
 keywords: overview, concepts, features, use case
-summary: OnCommand Cloud Manager enables you to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage, and to easily replicate data across hybrid clouds built on NetApp.
+summary: Cloud Manager enables you to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage, and to easily replicate data across hybrid clouds built on NetApp.
 ---
 
 = Cloud Manager and Cloud Volumes ONTAP overview
@@ -12,7 +12,7 @@ summary: OnCommand Cloud Manager enables you to deploy Cloud Volumes ONTAP, whic
 :linkattrs:
 :imagesdir: ./media/
 
-OnCommand Cloud Manager enables you to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage, and to easily replicate data across hybrid clouds built on NetApp.
+Cloud Manager enables you to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage, and to easily replicate data across hybrid clouds built on NetApp.
 
 == Cloud Manager
 

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_deployment_overview.html
 keywords: installation, installing, install, setting up, set up, setup, deploy, deployment, c2s, commerical cloud services, ic, intelligence community
-summary: Before you get started, you might want to better understand your options for deploying OnCommand Cloud Manager and Cloud Volumes ONTAP.
+summary: Before you get started, you might want to better understand your options for deploying Cloud Manager and Cloud Volumes ONTAP.
 ---
 
 = Deployment overview
@@ -14,7 +14,7 @@ summary: Before you get started, you might want to better understand your option
 :imagesdir: ./media/
 
 [.lead]
-Before you get started, you might want to better understand your options for deploying OnCommand Cloud Manager and Cloud Volumes ONTAP.
+Before you get started, you might want to better understand your options for deploying Cloud Manager and Cloud Volumes ONTAP.
 
 == Cloud Manager installation
 
