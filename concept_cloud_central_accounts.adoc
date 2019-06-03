@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_central_accounts.html
-keywords:
-summary:
+keywords: accounts, workspaces, service connector, users, cloud central, admin, account admin, workspace admin
+summary: Each Cloud Manager system is associated with a NetApp Cloud Central account. A Cloud Central account is a container for your Cloud Manager systems and the workspaces in which users deploy Cloud Volumes ONTAP.
 ---
 
 = Cloud Central accounts
@@ -55,9 +55,9 @@ A working environment represents a storage system:
 * An ONTAP cluster in a NetApp Private Storage configuration
 
 Service connectors::
-A service connector resides in your network and enables communication with NetApp cloud data services. For Cloud Manager, the service connector is the Cloud Manager system itself.
+A service connector is part of Cloud Manager. It runs much of the Cloud Manager software (like the user interface), except for a few Cloud Central services that it connects to (auth0 and Cloud Central accounts). The service connector runs on the virtual machine instance that was deployed in your cloud provider, or on an on-prem host that you configured.
 +
-You can use a service connector with more than one NetApp cloud data service. For example, you can use the same service connector with Cloud Manager and Cloud Tiering. Deploy a Cloud Manager system and select its service connector in Cloud Tiering when you set up cold data from ONTAP clusters to object storage.
+You can use a service connector with more than one NetApp cloud data service. For example, if you already have a service connector for Cloud Manager, you can select it when you set up the Cloud Tiering service.
 
 == Examples
 
@@ -69,13 +69,14 @@ image:diagram_cloud_central_accounts_one.png[A diagram that shows a single Cloud
 
 Here's another example that shows the highest level of multi-tenancy by using two separate Cloud Central accounts. For example, a service provider might use Cloud Manager in one Cloud Central account to provide services for their customers, while using another account to provide disaster recovery for one of their business units.
 
-Note that account 2 includes two separate Cloud Manager systems (service connectors). This might happen if you have systems in separate regions or in separate cloud providers.
+Note that account 2 includes two separate service connectors. This might happen if you have systems in separate regions or in separate cloud providers.
 
 NOTE: Again, Cloud Manager and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
 
 image:diagram_cloud_central_accounts_two.png[A diagram that shows two Cloud Central accounts, each with several workspaces and their associated workspace admins.]
 
-== FAQ for integrating existing systems with Cloud Central accounts
+[[faq]]
+== FAQ for integration with Cloud Central accounts
 
 Some time after you upgrade to Cloud Manager 3.7, NetApp will choose specific Cloud Manager systems to integrate with Cloud Central accounts. This FAQ can answer questions that you might have about the process.
 
@@ -106,7 +107,7 @@ NetApp does the following during the integration process:
 
 . Places your working environments in those workspaces.
 
-. Associates the Service Connector with all workspaces.
+. Associates the service connector with all workspaces.
 
 === Does it matter where I installed my Cloud Manager system?
 
