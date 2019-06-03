@@ -19,6 +19,22 @@ https://cloud.netapp.com/cloud-backup-service[Learn more about the Cloud Backup 
 
 To get started, install and configure the backup agent and then run commands to start backup and restore operations. If you need help, we encourage you to contact us by using the chat icon in Cloud Manager.
 
+== Contacting NetApp to use the Cloud Backup Service
+
+Before you get started, send us your AWS account ID so that we can enable your account to use the Cloud Backup Service.
+
+.Steps
+
+. Send an email to ng-cloud-volume-ontap-preview@netapp.com that includes your AWS account ID.
+
+== Verifying your AWS permissions
+
+To complete the steps on this page, your AWS account must have the following permissions:
+
+ec2:DescribeVpcEndpoints
+ec2:CreateVpcEndpoint
+ec2:ModifyVpcEndpoint
+
 == Installing and configuring the Cloud Backup Service agent
 
 We recommend that you install the backup agent on the Cloud Manager instance. An internet connection is required to download the agent package and a connection to Cloud Volumes ONTAP systems is required for backup and restore operations. The Cloud Manager instance should meet both of those requirements.
@@ -33,7 +49,7 @@ Download the agent package from an S3 bucket and uncompress the files to a direc
 
 . Download the agent for the Cloud Backup Service:
 +
-`wget https://s3.us-east-2.amazonaws.com/cbs-package-bucket/packages/cvo-cbs-agent-0.1.tgz`
+`wget https://s3.us-east-2.amazonaws.com/cbs-package-bucket/packages/cvo-cbs-agent-0.7.tar.gz`
 
 . Untar the compressed files into another existing directory:
 +
@@ -49,17 +65,45 @@ Two VPC interface endpoints are required to communicate with the Cloud Backup Se
 
 . Run the following command to create a VPC interface endpoint to the backup service:
 +
-`aws --region <region> cloudformation create-stack --stack-name <stack-name> --template-body \file://vpc_endpont.json --parameters ParameterKey=VPCId,ParameterValue=<vpc-id> ParameterKey=SubnetId,ParameterValue=<subnet-id> ParameterKey=ServiceCbs,ParameterValue=com.amazonaws.vpce.us-east-2.vpce-svc-08431eb3daaa09a3c`
+`aws --region <region> cloudformation create-stack --stack-name <stack-name> --template-body \file://vpc_endpont.json --parameters ParameterKey=VPCId,ParameterValue=<vpc-id> ParameterKey=ServiceCbs,ParameterValue=<service-endpoint>`
 +
-* The _region_, _VPC ID_, and _subnet ID_ should correspond to the network location where your Cloud Volumes ONTAP systems are deployed. You can list multiple subnets if your systems are deployed across different subnets.
+* The _region_ and _VPC ID_ should correspond to the network location where your Cloud Volumes ONTAP systems are deployed.
 * The _stack name_ can be any string that identifies the purpose of the CFT.
 * The _template body_ specifies the location of the Cloud Formation Template that was included in the agent package that you downloaded and uncompressed to a directory.
+* The _service endpoint_ must point to the backup service endpoint in the eu-west-1 region or the us-east-1 region:
+** eu-west-1: com.amazonaws.vpce.eu-west-1.vpce-svc-0cd9f6bf5706d5ec9
+** us-east-1: com.amazonaws.vpce.us-east-1.vpce-svc-046e3104ac8604f7e
 
 . Now run the following command to create a VPC interface endpoint to the restore service:
 +
-`aws --region <region> cloudformation create-stack --stack-name <stack-name> --template-body \file://vpc_endpont.json --parameters ParameterKey=VPCId,ParameterValue=<vpc-id> ParameterKey=SubnetId,ParameterValue=<subnet-id> ParameterKey=ServiceCbs,ParameterValue=com.amazonaws.vpce.us-east-2.vpce-svc-0b88382c75c97e1f5`
+`aws --region <region> cloudformation create-stack --stack-name <stack-name> --template-body \file://vpc_endpont.json --parameters ParameterKey=VPCId,ParameterValue=<vpc-id> ParameterKey=ServiceCbs,ParameterValue=<service-endpoint>`
 +
-The only difference between this command and the previous command is the value of the _ServiceCbs_ parameter, which now identifies the endpoint of the restore service.
+The only difference between this command and the previous command is the value of the _service endpoint_. The _service endpoint_ must point to the restore service endpoint in the eu-west-1 region or the us-east-1 region:
+
+** eu-west-1: com.amazonaws.vpce.eu-west-1.vpce-svc-04dd86976846bc84b
+** us-east-1: com.amazonaws.vpce.us-east-1.vpce-svc-0343dd25489869199
+
+=== Configuring the subnets for the VPC interface endpoints
+
+The VPC interface endpoints that you just created must be added to the subnets where the Cloud Volumes ONTAP systems reside.
+
+.Steps
+
+. Go to the AWS Console, select the VPC service, and click *Endpoints*.
+
+. Select the VPC interface endpoint for the backup service.
+
+. Click the *Subnets* tab and click *Manage Subnets*.
++
+image:screenshot_aws_endpoint_ip_manage.gif[A screenshot of the AWS VPC Console that shows the Manage Subnets button in the Subnets tab after you select and endpoint.]
+
+. Choose the subnets where the Cloud Volumes ONTAP systems reside and click *Modify Subnets*.
+
+. From the Subnets tab, copy the private IP address of the subnet where the Cloud Volumes ONTAP system resides.
++
+You'll need this IP address later when you configure the Cloud Backup Service agent by modifying the  _config.json_ file.
+
+. Repeat these steps for the restore service endpoint.
 
 === Generating a user token for authentication
 
@@ -90,7 +134,7 @@ GET /occm/system/support-services
 [source,json]
 "audience": "https://cloudmanager.cloud.netapp.com",
 +
-https://youtu.be/qXz4TSOAibo[YouTube video: Using Rest APIs with Federated Access with OnCommand Cloud Manager^]
+https://youtu.be/qXz4TSOAibo[YouTube video: Using Rest APIs with Federated Access with Cloud Manager^]
 
 . After you receive the token, copy the value into the _user_token.json_ file by overwriting the existing value.
 +
@@ -117,7 +161,7 @@ If you update this configuration file after you start the agent, you'll need to 
           "LRSE_BACKUP_IP": "<ENI private IP for backup>",
           "LRSE_RESTORE_IP": "<ENI private IP for restore>",
           "CBS_ENDPOINT_IP" : "<ENI private IP for backup>",
-          "CBS_ENDPOINT_PORT" : "8888",
+          "CBS_ENDPOINT_PORT" : "8088",
           "SNAPMIRROR_POLICY_TRIES": 8,
           "SNAPMIRROR_RETRY_COUNT": 10,
           "SNAPMIRROR_POLL_INTERVAL":30
