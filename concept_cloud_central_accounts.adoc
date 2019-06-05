@@ -33,6 +33,8 @@ Account Admins can then modify the settings for this account by managing users, 
 
 image:screenshot_account_settings.gif[A screenshot that shows the Account Settings widget from which you can manage users, workspaces, and service connectors.]
 
+NOTE: Cloud Manager needs access to _\https://cloudmanager.cloud.netapp.com_ in order to connect to the Cloud Central account service. Open this URL on your ﬁrewall to ensure that Cloud Manager can contact the service.
+
 == Users, workspaces, and service connectors
 
 The Account Settings widget in Cloud Manager enables Account Admins to manage a Cloud Central account. If you just created your account, then you'll start from scratch. But if you've already set up an account, then you'll see _all_ the users, workspaces, and service connectors that are associated with the account.

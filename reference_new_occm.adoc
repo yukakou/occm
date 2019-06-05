@@ -20,7 +20,7 @@ link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
-== Cloud Manager 3.7 (4 June 2019)
+== Cloud Manager 3.7 (5 June 2019)
 
 * <<Support for upcoming Cloud Volumes ONTAP 9.6 release>>
 * <<NetApp Cloud Central accounts>>
@@ -28,15 +28,17 @@ link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 
 
 === Support for upcoming Cloud Volumes ONTAP 9.6 release
 
-Cloud Manager 3.7 includes support for the upcoming Cloud Volumes ONTAP 9.6 release. This release includes a private preview of Cloud Volumes ONTAP in Google Cloud Platform. We'll update the release notes when 9.6 is available.
+Cloud Manager 3.7 includes support for the upcoming Cloud Volumes ONTAP 9.6 release. The 9.6 release includes a private preview of Cloud Volumes ONTAP in Google Cloud Platform. We'll update the release notes when 9.6 is available.
 
 === NetApp Cloud Central accounts
 
-We've enhanced how you manage your cloud resources. Each Cloud Manager system is now associated with a _NetApp Cloud Central account_.  The account enables multi-tenancy and is planned for other NetApp cloud data services in the future.
+We've enhanced how you manage your cloud resources. Each Cloud Manager system will be associated with a _NetApp Cloud Central account_. The account enables multi-tenancy and is planned for other NetApp cloud data services in the future.
 
 In Cloud Manager, a Cloud Central account is a container for your Cloud Manager systems and the _workspaces_ in which users deploy Cloud Volumes ONTAP.
 
 link:concept_cloud_central_accounts.html[Learn how Cloud Central accounts enable multi-tenancy].
+
+NOTE: Cloud Manager needs access to _\https://cloudmanager.cloud.netapp.com_ in order to connect to the Cloud Central account service. Open this URL on your ﬁrewall to ensure that Cloud Manager can contact the service.
 
 ==== Integrating your system with Cloud Central accounts
 
