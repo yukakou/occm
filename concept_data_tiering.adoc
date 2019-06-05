@@ -57,7 +57,7 @@ image:diagram_storage_tiering_azure.png[This is a conceptual image that shows ho
 
 === Performance tier in Azure
 
-The performance tier can be either Premium Storage (SSD) or Standard Storage (HDD).
+The performance tier can be either SSDs or HDDs.
 
 === Capacity tier in Azure
 

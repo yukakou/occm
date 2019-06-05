@@ -41,8 +41,6 @@ Each Cloud Manager user account is assigned a role that defines permissions.
 
 | Setup Kubernetes | Yes | No | No
 
-| Switch between the Storage System View and the Volume View |	Yes |	No |	No
-
 | Modify settings |	Yes |	No |	No
 
 | View and manage the Support Dashboard |	Yes |	No |	No

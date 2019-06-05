@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_limitations.html
-keywords: limitations, active directory, ad, iscsi, key managers, ip address, volume view, govcloud, cloud manager, Cloud Volumes ONTAP
+keywords: limitations, active directory, ad, iscsi, key managers, ip address, govcloud, cloud manager, Cloud Volumes ONTAP
 summary: Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 ---
 
@@ -28,14 +28,6 @@ Starting with version 3.4, new installations of Cloud Manager do not support usi
 * Cloud Manager must be deployed in the AWS GovCloud (US) region if you want to launch Cloud Volumes ONTAP instances in the AWS GovCloud (US) region.
 
 * When deployed in the AWS GovCloud (US) region, Cloud Manager cannot discover ONTAP clusters in a NetApp Private Storage for Microsoft Azure configuration or a NetApp Private Storage for SoftLayer configuration.
-
-== Volume View limitations
-
-* The Volume View is not supported in the AWS GovCloud (US) region, in the AWS Commercial Cloud Services environment, and in Microsoft Azure.
-
-* The Volume View enables you to create NFS volumes only.
-
-* Cloud Manager does not launch Cloud Volumes ONTAP BYOL instances in the Volume View.
 
 == Cloud Manager does not set up iSCSI volumes
 

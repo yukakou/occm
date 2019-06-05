@@ -14,7 +14,7 @@ summary: It is best to launch Cloud Manager in AWS using NetApp Cloud Central, b
 
 [.lead]
 
-It is best to launch Cloud Manager in AWS using https://cloud.netapp.com[NetApp Cloud Central^], but you can launch it from the AWS Marketplace, if needed.
+It's best to launch Cloud Manager in AWS using https://cloud.netapp.com[NetApp Cloud Central^], but you can launch it from the AWS Marketplace, if needed.
 
 TIP: If you launch Cloud Manager from the AWS Marketplace, Cloud Manager is still integrated with NetApp Cloud Central. link:concept_cloud_central.html[Learn more about the integration].
 
@@ -28,7 +28,7 @@ The following steps describe how to launch the instance from the EC2 Console bec
 
 .. Download the Cloud Manager IAM policy from the following location:
 +
-https://mysupport.netapp.com/cloudontap/iampolicies[NetApp OnCommand Cloud Manager: AWS and Azure Policies^]
+https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS and Azure Policies^]
 
 .. From the IAM console, create your own policy by copying and pasting the text from the Cloud Manager IAM policy.
 

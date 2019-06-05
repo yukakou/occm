@@ -18,13 +18,31 @@ You can reduce storage costs in AWS and Azure by combining an SSD or HDD perform
 
 To set up data tiering, you simply need to do the following:
 
-image:diagram_tiering.gif[A diagram that shows the workflow for enabling tiering: choose a supported configuration, ensure that connectivity is available between tiers, and then choose a tiering policy when creating, modifying, or replicating a volume.]
+==== image:number1.png[Number 1] Choose a supported configuration
+
+[role="quick-margin-para"]
+Most configurations are supported. If you have a Cloud Volumes ONTAP Standard, Premium, or BYOL system running the most recent version, then you should be good to go. link:task_tiering.html#configurations-that-support-data-tiering[Learn more].
+
+==== image:number2.png[Number 2] Ensure that connectivity is available between Cloud Volumes ONTAP and object storage
+
+[role="quick-margin-list"]
+* For AWS, you'll need a VPC Endpoint to S3. link:task_tiering.html#requirements-for-tiering-data-in-aws[Learn more].
+* For Azure, you won't need to do anything as long as Cloud Manager has the required permissions. link:task_tiering.html#requirements-for-tiering-data-in-microsoft-azure[Learn more].
+
+==== image:number3.png[Number 3] Choose a tiering policy when creating, modifying, or replicating a volume
+
+[role="quick-margin-para"]
+Cloud Manager prompts you to choose a tiering policy when you create, modify, or replicate a volume.
+
+[role="quick-margin-list"]
+* link:task_tiering.html#tiering-data-from-read-write-volumes[Tiering data on read-write volumes]
+* link:task_tiering.html#tiering-data-from-data-protection-volumes[Tiering data on data protection volumes]
 
 [NOTE]
 .What's not required for data tiering
 ====
-* You do not need to install a feature license to enable data tiering.
-* You do not need to create the capacity tier (either an S3 bucket or an Azure Blob container). Cloud Manager does that for you.
+* You don't need to install a feature license to enable data tiering.
+* You don't need to create the capacity tier (either an S3 bucket or an Azure Blob container). Cloud Manager does that for you.
 ====
 
 == Configurations that support data tiering
@@ -61,7 +79,7 @@ You do not need to set up a connection between the performance tier and the capa
 
 These permissions are included in the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy].
 
-== Tiering data on read-write volumes
+== Tiering data from read-write volumes
 
 Cloud Volumes ONTAP can tier inactive data on read-write volumes to cost-effective object storage, freeing up the performance tier for hot data.
 
@@ -93,7 +111,7 @@ Cloud Manager creates a new aggregate for the volume if a data tiering-enabled a
 +
 TIP: If you prefer to create aggregates yourself, you can enable data tiering on aggregates when you create them.
 
-== Tiering data on data protection volumes
+== Tiering data from data protection volumes
 
 Cloud Volumes ONTAP can tier data from a data protection volume to a capacity tier. If you activate the destination volume, the data gradually moves to the performance tier as it is read.
 

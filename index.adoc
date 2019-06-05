@@ -11,7 +11,7 @@ summary: Welcome to the documentation portal for Cloud Manager and Cloud Volumes
 :linkattrs:
 :imagesdir: ./media/
 
-OnCommand Cloud Manager enables you to deploy and manage NetApp Cloud Volumes ONTAP, which is a data management solution that provides protection, visibility, and control for your cloud-based workloads.
+Cloud Manager enables you to deploy and manage NetApp Cloud Volumes ONTAP, which is a data management solution that provides protection, visibility, and control for your cloud-based workloads.
 
 == Discover what's new
 

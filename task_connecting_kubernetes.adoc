@@ -39,7 +39,7 @@ For each Kubernetes cluster, the Cloud Manager Admin needs to upload a configura
 Click *Kubernetes Clusters > Discover > Upload File* and select the kubeconfig file.
 
 [role="quick-margin-para"]
-image:screenshot_kubernetes_setup.gif[sdf]
+image:screenshot_kubernetes_setup.gif[A screenshot that shows the Kubernetes clusters tab with a Discover button and then the screen where you click Upload File to upload the kubeconfig file.]
 
 === image:number3.png[Number 3] Connect your working environments to Kubernetes clusters
 
@@ -50,7 +50,7 @@ From the working environment, click the Kubernetes icon and follow the prompts. 
 You have the option to set the NetApp storage class as the default storage class for the Kubernetes cluster. When a user creates a persistent volume, the Kubernetes cluster can use connected Cloud Volumes ONTAP systems as the backend storage by default.
 
 [role="quick-margin-para"]
-image:screenshot_kubernetes_connect.gif[sdf]
+image:screenshot_kubernetes_connect.gif[A screenshot that shows the Kubernetes icon inside and Cloud Volumes ONTAP working environment and the subsequent page that enables you to select a Kubernetes cluster and then click Connect.]
 
 === image:number4.png[Number 4] Start provisioning Persistent Volumes
 
