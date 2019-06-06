@@ -23,7 +23,7 @@ To set up data tiering, you simply need to do the following:
 [role="quick-margin-para"]
 Most configurations are supported. If you have a Cloud Volumes ONTAP Standard, Premium, or BYOL system running the most recent version, then you should be good to go. link:task_tiering.html#configurations-that-support-data-tiering[Learn more].
 
-==== image:number2.png[Number 2] Ensure that connectivity is available between Cloud Volumes ONTAP and object storage
+==== image:number2.png[Number 2] Ensure connectivity between Cloud Volumes ONTAP and object storage
 
 [role="quick-margin-list"]
 * For AWS, you'll need a VPC Endpoint to S3. link:task_tiering.html#requirements-for-tiering-data-in-aws[Learn more].

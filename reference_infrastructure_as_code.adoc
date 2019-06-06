@@ -3,6 +3,7 @@ sidebar: sidebar
 permalink: reference_infrastructure_as_code.html
 keywords: ansible, playbook, automation
 summary: DevOps teams use a variety of tools to automate the setup of new environments, which allows them to treat infrastructure as code. Two such tools are Ansible and Terraform. We have developed Ansible and Terraform samples that DevOps team can use with Cloud Manager to automate and integrate Cloud Volumes ONTAP with infrastructure as code.
+translate: false
 ---
 
 = Automation samples for infrastructure as code

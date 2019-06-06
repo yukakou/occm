@@ -3,6 +3,7 @@ sidebar: sidebar
 permalink: reference_security_groups_azure.html
 keywords: security group, security groups, rules, ports, azure, inbound, outbound, rules
 summary: Cloud Manager creates Azure security groups that include the inbound and outbound rules that Cloud Manager and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you need to use your own.
+translate: false
 ---
 
 = Security group rules for Azure

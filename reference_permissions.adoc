@@ -3,6 +3,7 @@ sidebar: sidebar
 permalink: reference_permissions.html
 keywords: permissions, actions, API, aws, azure, json
 summary: Cloud Manager requires permissions to perform actions in AWS and Azure on your behalf. These permissions are included in the policies provided by NetApp. You might want to understand what Cloud Manager does with these permissions.
+translate: false
 ---
 
 = AWS and Azure permissions for Cloud Manager
