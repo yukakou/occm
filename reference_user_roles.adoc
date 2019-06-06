@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_user_roles.html
-keywords: user, role, task, permission, permissions, tasks, roles, admin, cloud manager admin, admin, tenant admin, working environment admin
+keywords: user, role, task, permission, permissions, tasks, roles, admin, Account Admin, Workspace Admin
 summary: Each Cloud Manager user account is assigned a role that defines permissions.
 translate: false
 ---
@@ -16,45 +16,40 @@ translate: false
 [.lead]
 Each Cloud Manager user account is assigned a role that defines permissions.
 
-[cols=4*,options="header",cols="25,25,25,25"]
+[cols=3*,options="header",cols="34,33,33"]
 |===
 
 | Task
-| Cloud Manager Admin
-| Tenant Admin
-| Working Environment Admin
+| Account Admin
+| Workspace Admin
 
-| Manage tenants |	Yes |	No |	No
+| Manage working environments |	Yes |	Yes, for associated workspaces
 
-| Manage working environments |	Yes |	Yes, for the assigned tenant |	Yes, for assigned working environments
+| View data replication status |	Yes |	Yes, for associated workspaces
 
-| Integrate a working environment with Cloud Sync |	Yes |	Yes |	No
+| View the timeline |	Yes |	Yes, for associated workspaces
 
-| View data replication status |	Yes |	Yes, for the assigned tenant | Yes, for assigned working environments
+| Delete working environments | Yes | No
 
-| View the timeline |	Yes |	Yes |	Yes
+| Connect Kubernetes clusters to Cloud Volumes ONTAP | Yes | No
 
-| Create and delete user accounts |	Yes |	Yes, for the assigned tenant |	No
+| Receive the Cloud Volumes ONTAP report | Yes | No
 
-| Modify user accounts |	Yes |	Yes, for the assigned tenant |	Yes, for their own account
+| Manage Cloud Central accounts |	Yes |	No
 
-| Manage account settings | Yes | No | No
+| Manage cloud provider accounts | Yes | No
 
-| Setup Kubernetes | Yes | No | No
+| Modify Cloud Manager settings |	Yes |	No
 
-| Modify settings |	Yes |	No |	No
+| View and manage the Support Dashboard |	Yes |	No
 
-| View and manage the Support Dashboard |	Yes |	No |	No
+| Back up and restore Cloud Manager |	Yes |	No
 
-| Back up and restore Cloud Manager |	Yes |	No |	No
+| Remove a working environment |	Yes |	No
 
-| Remove a working environment |	Yes |	No |	No
+| Update Cloud Manager |	Yes |	No
 
-| Update Cloud Manager |	Yes |	No |	No
+| Install an HTTPS certificate |	Yes |	No
 
-| Install an HTTPS certificate |	Yes |	No |	No
-
-| Set up Active Directory |	Yes |	No |	No
-
-| Enable the Cloud Storage Automation Report | Yes | No | No
+| Set up Active Directory |	Yes |	No
 |===

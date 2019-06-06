@@ -33,7 +33,7 @@ Cloud Manager installs Trident on a Kubernetes cluster when you connect a workin
 === image:number2.png[Number 2] Upload Kubernetes configuration files to Cloud Manager
 
 [role="quick-margin-para"]
-For each Kubernetes cluster, the Cloud Manager Admin needs to upload a configuration file (kubeconfig) that is in YAML format. After you upload the file, Cloud Manager verifies connectivity to the cluster and saves an encrypted copy of the kubeconfig file.
+For each Kubernetes cluster, the Account Admin needs to upload a configuration file (kubeconfig) that is in YAML format. After you upload the file, Cloud Manager verifies connectivity to the cluster and saves an encrypted copy of the kubeconfig file.
 
 [role="quick-margin-para"]
 Click *Kubernetes Clusters > Discover > Upload File* and select the kubeconfig file.

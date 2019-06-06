@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_removing.html
 keywords: working environments, removing, remove, rediscover
-summary: The Cloud Manager Admin can remove a Cloud Volumes ONTAP working environment to move it to another system or to troubleshoot discovery issues.
+summary: The Account Admin can remove a Cloud Volumes ONTAP working environment to move it to another system or to troubleshoot discovery issues.
 ---
 
 = Removing Cloud Volumes ONTAP working environments
@@ -14,7 +14,7 @@ summary: The Cloud Manager Admin can remove a Cloud Volumes ONTAP working enviro
 
 [.lead]
 
-The Cloud Manager Admin can remove a Cloud Volumes ONTAP working environment to move it to another system or to troubleshoot discovery issues.
+The Account Admin can remove a Cloud Volumes ONTAP working environment to move it to another system or to troubleshoot discovery issues.
 
 .About this task
 

@@ -35,7 +35,7 @@ When you create a volume, Cloud Manager does one of three things:
 
 Cloud Manager determines where to place a new volume by looking at several factors: an aggregate's maximum size, whether thin provisioning is enabled, and free space thresholds for aggregates.
 
-TIP: The Cloud Manager Admin can modify free space thresholds from the *Settings* page.
+TIP: The Account Admin can modify free space thresholds from the *Settings* page.
 
 ==== Disk size selection for aggregates in AWS
 

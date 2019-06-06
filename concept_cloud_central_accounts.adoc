@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_central_accounts.html
-keywords: accounts, workspaces, service connector, users, cloud central, admin, account admin, workspace admin
+keywords: accounts, workspaces, service connector, users, cloud central, admin, Account Admin, Workspace Admin
 summary: Each Cloud Manager system is associated with a NetApp Cloud Central account. A Cloud Central account is a container for your Cloud Manager systems and the workspaces in which users deploy Cloud Volumes ONTAP.
 ---
 
@@ -44,11 +44,11 @@ These are NetApp Cloud Central users that you associate with your Cloud Central 
 +
 When you associate a user, you assign them a role:
 +
-* _Account admin_: Can perform any action in Cloud Manager.
-* _Workspace admin_: Can create and manage resources in the assigned workspace.
+* _Account Admin_: Can perform any action in Cloud Manager.
+* _Workspace Admin_: Can create and manage resources in the assigned workspace.
 
 Workspaces::
-In Cloud Manager, a workspace isolates any number of _working environments_ from other working environments. Workspace admins can't access the working environments in a workspace unless the Account admin associates the admin with that workspace.
+In Cloud Manager, a workspace isolates any number of _working environments_ from other working environments. Workspace Admins can't access the working environments in a workspace unless the Account Admin associates the admin with that workspace.
 +
 A working environment represents a storage system:
 +
@@ -67,7 +67,7 @@ The following example shows an account that uses two workspaces to create isolat
 
 NOTE: Cloud Manager and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
 
-image:diagram_cloud_central_accounts_one.png[A diagram that shows a single Cloud Central account that contains two workspaces. Each workspace is associated with the same service connector and each has their own workspace admin.]
+image:diagram_cloud_central_accounts_one.png[A diagram that shows a single Cloud Central account that contains two workspaces. Each workspace is associated with the same service connector and each has their own Workspace Admin.]
 
 Here's another example that shows the highest level of multi-tenancy by using two separate Cloud Central accounts. For example, a service provider might use Cloud Manager in one Cloud Central account to provide services for their customers, while using another account to provide disaster recovery for one of their business units.
 
@@ -75,7 +75,7 @@ Note that account 2 includes two separate service connectors. This might happen 
 
 NOTE: Again, Cloud Manager and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
 
-image:diagram_cloud_central_accounts_two.png[A diagram that shows two Cloud Central accounts, each with several workspaces and their associated workspace admins.]
+image:diagram_cloud_central_accounts_two.png[A diagram that shows two Cloud Central accounts, each with several workspaces and their associated Workspace Admins.]
 
 [[faq]]
 == FAQ for integration with Cloud Central accounts

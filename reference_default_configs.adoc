@@ -87,7 +87,7 @@ The following table lists the volume attributes that Cloud Manager sets differen
 | Maximum autosize
 a| 1,000 percent
 
-NOTE: The Cloud Manager Admin can modify this value from the Settings page.
+NOTE: The Account Admin can modify this value from the Settings page.
 
 | Security style |	NTFS for CIFS volumes
 UNIX for NFS volumes
