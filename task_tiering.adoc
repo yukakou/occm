@@ -49,9 +49,13 @@ Cloud Manager prompts you to choose a tiering policy when you create, modify, or
 
 You can enable data tiering when using specific configurations and features:
 
-* Data tiering is supported with Cloud Volumes ONTAP Standard, Premium, and BYOL, starting with version 9.2 in AWS and version 9.4 in Microsoft Azure.
-** Data tiering is not supported with HA pairs in Microsoft Azure.
-** Data tiering is not supported in Azure with the DS3_v2 virtual machine type.
+* Data tiering is supported with Cloud Volumes ONTAP Standard, Premium, and BYOL, starting with the following versions:
+** Version 9.2 in AWS
+** Version 9.4 in Azure with single node systems
+** Version 9.6 in Azure with HA pairs
+** Version 9.6 in GCP
++
+NOTE: Data tiering is not supported in Azure with the DS3_v2 virtual machine type.
 
 * In AWS, the performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Throughput Optimized HDDs.
 
