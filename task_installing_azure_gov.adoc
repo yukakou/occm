@@ -44,10 +44,14 @@ Azure deploys the virtual machine with the specified settings. The virtual machi
 . Open a web browser from a host that has a connection to the Cloud Manager virtual machine and enter the following URL:
 +
 http://_ipaddress_:80
-+
-When you log in, Cloud Manager automatically adds your user account as the administrator for this system.
 
-. After you log in, enter a name for the Cloud Manager system.
+. After you log in, set up Cloud Manager:
+.. Specify the Cloud Central account to associate with this Cloud Manager system.
++
+link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts].
+.. Enter a name for the system.
++
+image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Cloud Manager screen that enables you to select a Cloud Central account and name the Cloud Manager system.]
 
 .Result
 

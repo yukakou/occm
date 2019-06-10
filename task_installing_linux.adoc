@@ -83,11 +83,15 @@ _ipaddress_ can be localhost, a private IP address, or a public IP address, depe
 +
 _port_ is required if you changed the default HTTP (80) or HTTPS (443) ports. For example, if the HTTPS port was changed to 8443, you would enter https://_ipaddress_:8443
 
-. Sign up for a NetApp Cloud Central account or log in if you already have one.
+. Sign up at NetApp Cloud Central or log in.
 
-. When you sign up or log in, Cloud Manager automatically adds your user account as the administrator for this system.
-
-. After you log in, enter a name for this Cloud Manager system.
+. After you log in, set up Cloud Manager:
+.. Specify the Cloud Central account to associate with this Cloud Manager system.
++
+link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts].
+.. Enter a name for the system.
++
+image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Cloud Manager screen that enables you to select a Cloud Central account and name the Cloud Manager system.]
 
 .After you finish
 
