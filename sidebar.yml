@@ -157,8 +157,6 @@ entries:
         url: /task_updating_cloud_manager.html
       - title: Managing the Cloud Central account
         url: /task_managing_cloud_central_accounts.html
-      - title: Backing up and restoring
-        url: /task_backing_up_restoring.html
       - title: Removing working environments
         url: /task_removing.html
       - title: Configuring proxy settings
