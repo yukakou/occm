@@ -57,13 +57,7 @@ If any tasks are in progress, wait for them to finish before you proceed to the 
 
 . On the Cloud Manager Software Update page, click *Update* next to the version that you want.
 
-. Complete the confirmation dialog box, and then click *OK*:
-
-.. Keep the option to download a backup because you can use it to restore your Cloud Manager configuration, if necessary.
-
-.. Read the terms and conditions, and then select the *I read and approve the terms and conditions (EULA)* check box.
-
-. When prompted, save the Cloud Manager backup.
+. Complete the confirmation dialog box, and then click *OK*.
 
 .Result
 
@@ -85,15 +79,9 @@ The patch update typically takes a few minutes. Cloud Manager will not be availa
 +
 image:screenshot_patch.gif[Screen shot: Shows the link to update Cloud Manager with a patch.]
 
-. Complete the confirmation dialog box and then click *OK*:
-
-.. Keep the option to download a backup enabled because you can use it to restore your Cloud Manager configuration, if necessary.
-
-.. Read the terms and conditions and then select the *I read and approve the terms and conditions (EULA)* check box.
+. Complete the confirmation dialog box and then click *OK*.
 
 . Select the patch that you were provided.
-
-. When prompted, save the Cloud Manager backup.
 
 .Result
 

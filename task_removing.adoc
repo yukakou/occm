@@ -22,7 +22,7 @@ Removing a Cloud Volumes ONTAP working environment removes it from Cloud Manager
 
 Removing a working environment from Cloud Manager enables you to do the following:
 
-* Rediscover it in another tenant
+* Rediscover it in another workspace
 * Rediscover it from another Cloud Manager system
 * Rediscover it if you had problems during the initial discovery
 
