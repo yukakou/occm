@@ -43,9 +43,7 @@ Each Cloud Manager user account is assigned a role that defines permissions.
 
 | View and manage the Support Dashboard |	Yes |	No
 
-| Back up and restore Cloud Manager |	Yes |	No
-
-| Remove a working environment |	Yes |	No
+| Remove working environments from Cloud Manager |	Yes |	No
 
 | Update Cloud Manager |	Yes |	No
 
