@@ -17,6 +17,8 @@ The NetApp Cloud Backup Service for Cloud Volumes ONTAP delivers fully-managed b
 
 https://cloud.netapp.com/cloud-backup-service[Learn more about the Cloud Backup Service^].
 
+The Cloud Backup Service is supported with Cloud Volumes ONTAP 9.4 and later.
+
 To get started, install and configure the backup agent and then run commands to start backup and restore operations. If you need help, we encourage you to contact us by using the chat icon in Cloud Manager.
 
 == Contacting NetApp to use the Cloud Backup Service

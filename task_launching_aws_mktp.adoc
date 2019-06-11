@@ -51,11 +51,21 @@ https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS an
 .. Specify the required connection methods for the Cloud Manager instance: SSH, HTTP, and HTTPS.
 
 .. Click *Launch*.
++
+AWS launches the software with the specified settings. The Cloud Manager instance and software should be running in approximately five minutes.
+
+. Open a web browser from a host that has a connection to the Cloud Manager virtual machine and enter the following URL:
++
+http://_ipaddress_:80
+
+. After you log in, set up Cloud Manager:
+.. Specify the Cloud Central account to associate with this Cloud Manager system.
++
+link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts].
+.. Enter a name for the system.
++
+image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Cloud Manager screen that enables you to select a Cloud Central account and name the Cloud Manager system.]
 
 .Result
 
-AWS launches the software with the specified settings. The Cloud Manager instance and software should be running in approximately five minutes.
-
-.After you finish
-
-Log in to Cloud Manager by entering the public IP address or private IP address in a web browser and then complete the Setup wizard.
+Cloud Manager is now installed and set up.

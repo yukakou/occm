@@ -164,7 +164,7 @@ After you set up data replication between two systems, you can manage the data r
 
 .Steps
 
-. On the Working Environments page, view the replication status for all assigned working environments in the tenant or for a specific working environment:
+. On the Working Environments page, view the replication status for all working environments in the workspace or for a specific working environment:
 +
 [cols=2*,options="header",cols="15,85"]
 |===
@@ -172,7 +172,7 @@ After you set up data replication between two systems, you can manage the data r
 | Option
 | Action
 
-| All assigned working environments in the tenant
+| All working environments in the workspace
 a| Click Replication Status from the navigation bar.
 
 image:screenshot_replication_nav.gif[Screen shot: Shows the Replication Status tab.]

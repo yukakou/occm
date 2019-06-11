@@ -25,7 +25,7 @@ image:screenshot_sync_to_s3.gif[Screen shot: Shows a conceptual image of volumes
 
 If you want to perform advanced Cloud Sync actions, go directly to the Cloud Sync service. From there, you can perform actions such as syncing from S3 to an NFS server, choosing different S3 buckets for volumes, and modifying schedules.
 
-NOTE: The sync to S3 feature is available for Cloud Manager Admins and Tenant Admins only.
+NOTE: The sync to S3 feature is available for Account Admins only.
 
 === 14-day free trial
 

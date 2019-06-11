@@ -57,14 +57,14 @@ entries:
         url: /task_getting_started_azure.html
       - title: Setting up Cloud Manager
         entries:
+          - title: Setting up the Cloud Central account
+            url: /task_setting_up_cloud_central_accounts.html
           - title: Adding cloud provider accounts
             url: /task_adding_cloud_accounts.html
           - title: Adding NetApp Support Site accounts
             url: /task_adding_nss_accounts.html
           - title: Installing an HTTPS certificate
             url: /task_installing_https_cert.html
-          - title: Setting up users and tenants
-            url: /task_setting_up_users_tenants.html
           - title: Setting up the AWS KMS
             url: /task_setting_up_kms.html
       - title: Networking requirements
@@ -155,12 +155,10 @@ entries:
     entries:
       - title: Updating Cloud Manager
         url: /task_updating_cloud_manager.html
-      - title: Backing up and restoring
-        url: /task_backing_up_restoring.html
+      - title: Managing the Cloud Central account
+        url: /task_managing_cloud_central_accounts.html
       - title: Removing working environments
         url: /task_removing.html
-      - title: Editing user accounts
-        url: /task_editing_users.html
       - title: Configuring proxy settings
         url: /task_configuring_proxy.html
       - title: Renewing the HTTPS certificate
