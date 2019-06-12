@@ -160,7 +160,7 @@ The Cloud Manager host
 
 a| You must enter the host's IP address from a web browser to load the Cloud Manager console.
 
-Depending on your connectivity to AWS, you can use the private IP or a public IP assigned to the host:
+Depending on your connectivity to your cloud provider, you can use the private IP or a public IP assigned to the host:
 
 - A private IP works if you have a VPN and direct connect access to your virtual network
 - A public IP works in any networking scenario
