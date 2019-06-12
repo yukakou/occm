@@ -59,7 +59,7 @@ cognito-identity.us-east-1.amazonaws.com
 
 | kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
 
-| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts. 
+| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
 
 | \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
 
@@ -160,10 +160,12 @@ The Cloud Manager host
 
 a| You must enter the host's IP address from a web browser to load the Cloud Manager console.
 
-If you deploy Cloud Manager in AWS, the easiest way to provide access is by allocating a public IP address. However, if you want to use a private IP address instead, users can access the console through either of the following:
+Depending on your connectivity to AWS, you can utilize a private IP or public IP:
 
-** A jump host in the VPC that has a connection to Cloud Manager
-** A host in your network that has a VPN connection to the private IP address
+- A private IP works if you have a VPN and Direct Connect access to your VPC
+- A public IP assigned to the host works in any networked scenario
+
+In any case, you should secure your security group by allowing access from only authorized IPs or subnets.
 
 |
 \https://auth0.com
