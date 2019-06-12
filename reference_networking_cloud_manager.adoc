@@ -160,12 +160,12 @@ The Cloud Manager host
 
 a| You must enter the host's IP address from a web browser to load the Cloud Manager console.
 
-Depending on your connectivity to AWS, you can utilize a private IP or public IP:
+Depending on your connectivity to AWS, you can use the private IP or a public IP assigned to the host:
 
-- A private IP works if you have a VPN and Direct Connect access to your VPC
-- A public IP assigned to the host works in any networked scenario
+- A private IP works if you have a VPN and direct connect access to your virtual network
+- A public IP works in any networking scenario
 
-In any case, you should secure your security group by allowing access from only authorized IPs or subnets.
+In any case, you should secure network access by ensuring that security group rules allow access from only authorized IPs or subnets.
 
 |
 \https://auth0.com
