@@ -16,13 +16,13 @@ Cloud Manager enables you to deploy and manage NetApp Cloud Volumes ONTAP, which
 == Discover what's new
 
 * link:reference_new_occm.html[What's new in Cloud Manager]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_95.html[What's new in Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_96.html[What's new in Cloud Volumes ONTAP^]
 
 == Get started
 
 * link:task_getting_started_aws.html[Get started in AWS]
 * link:task_getting_started_azure.html[Get started in Azure]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_95.html[Find supported configurations for Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html[Find supported configurations for Cloud Volumes ONTAP^]
 * link:reference_networking_cloud_manager.html[Review detailed networking requirements for Cloud Manager]
 * link:reference_networking_aws.html[Review detailed networking requirements for Cloud Volumes ONTAP for AWS]
 * link:reference_networking_azure.html[Review detailed networking requirements for Cloud Volumes ONTAP for Azure]

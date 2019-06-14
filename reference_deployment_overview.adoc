@@ -60,11 +60,13 @@ You might want to perform additional setup after you install Cloud Manager, such
 
 == Cloud Volumes ONTAP deployment
 
-After you get Cloud Manager up and running, you can start deploying Cloud Volumes ONTAP in AWS and in Microsoft Azure.
+After you get Cloud Manager up and running, you can start deploying Cloud Volumes ONTAP in your cloud provider.
 
 link:task_getting_started_aws.html[Getting started in AWS] and link:task_getting_started_azure.html[Getting started in Azure] provide instructions for getting Cloud Volumes ONTAP up and running quickly. For additional help, refer to the following:
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_95.html[Supported configurations for Cloud Volumes ONTAP 9.5^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_96.html[Supported configurations for Cloud Volumes ONTAP 9.6 in AWS^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_96.html[Supported configurations for Cloud Volumes ONTAP 9.6 in Azure^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_96.html[Supported configurations for Cloud Volumes ONTAP 9.6 in GCP^]
 * link:task_planning_your_config.html[Planning your configuration]
 * link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
 * link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]
