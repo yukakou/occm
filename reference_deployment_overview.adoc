@@ -25,6 +25,8 @@ Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. You
 * IBM Cloud
 * In your own network
 
+NOTE: A private preview of Cloud Volumes ONTAP is available in Google Cloud Platform. To join the private preview, send a request to ng-Cloud-Volume-ONTAP-preview@netapp.com.
+
 How you deploy Cloud Manager depends on which location you choose:
 
 [cols=2*,options="header",cols="35,65"]
