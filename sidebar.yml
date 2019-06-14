@@ -55,6 +55,8 @@ entries:
         url: /task_getting_started_aws.html
       - title: Getting started in Azure
         url: /task_getting_started_azure.html
+      - title: Getting started in GCP
+        url: /task_getting_started_gcp.html
       - title: Setting up Cloud Manager
         entries:
           - title: Adding cloud provider accounts
