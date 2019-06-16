@@ -13,7 +13,7 @@ summary: You can discover and add existing Cloud Volumes ONTAP systems to Cloud 
 :imagesdir: ./media/
 
 [.lead]
-You can discover and add existing Cloud Volumes ONTAP systems to Cloud Manager. You might do this if your Cloud Manager system became unusable and you launched a new system, but you could not restore all Cloud Volumes ONTAP systems from a recent Cloud Manager backup.
+You can discover and add existing Cloud Volumes ONTAP systems to Cloud Manager. You might do this if you deployed a new Cloud Manager system.
 
 .Before you begin
 
@@ -33,4 +33,4 @@ image:screenshot_discover_otc.gif[Screen shot: Shows the Cloud Volumes ONTAP ico
 
 .Result
 
-Cloud Manager adds the Cloud Volumes ONTAP instances to the tenant.
+Cloud Manager adds the Cloud Volumes ONTAP instances to the workspace.

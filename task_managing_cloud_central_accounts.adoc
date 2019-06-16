@@ -1,0 +1,119 @@
+---
+sidebar: sidebar
+permalink: task_managing_cloud_central_accounts.html
+keywords: account settings, workspaces, service connector, account admin, workspace admin, users, associate, disassociate
+summary: After you perform initial setup, you might need to later manage users, workspaces, and service connectors.
+---
+
+= Managing the Cloud Central account
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+link:task_setting_up_cloud_central_accounts.html[After you perform initial setup], you might need to later manage users, workspaces, and service connectors.
+
+link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
+
+== Associating users with the Cloud Central account
+
+Associate Cloud Central users with the Cloud Central account so those users can create and manage working environments in Cloud Manager.
+
+.Steps
+
+. If the user has not already done so, ask the user to go to https://cloud.netapp.com[NetApp Cloud Central^] and create an account.
+
+. In Cloud Manager, click *Account Settings*.
+
+. In the Users pane, click *Associate User*.
+
+. Enter the user's email address and click *Next*.
+
+. Select a role for the user:
++
+* *Account Admin*: Can perform any action in Cloud Manager.
+* *Workspace Admin*: Can create and manage resources in assigned workspaces.
+
+. If you selected Workspace Admin, select one or more workspaces to associate with that user.
++
+image:screenshot_associate_user.gif[A screenshot that shows how to associate a user by selecting a role and the associated workspaces.]
+
+. Click *Associate User*.
+
+.Result
+
+The user should receive an email from NetApp Cloud Central titled "Account Association." The email includes the information needed to access Cloud Manager.
+
+== Disassociating users from a Cloud Central account
+
+Disassociating a user makes it so they can no longer access the resources in a Cloud Central account.
+
+.Steps
+
+. Click *Account Settings*.
+
+. Click the action menu in the row that corresponds to the user.
++
+image:screenshot_associate_user_workspace.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Click *Disassociate User* and click *Disassociate* to confirm.
+
+.Result
+
+The user can no longer access the resources in this Cloud Central account.
+
+== Managing a Workspace Admin's workspaces
+
+You can associate and disassociate Workspace Admins with workspaces at any time. Associating the user enables them to create and view the working environments in that workspace.
+
+.Steps
+
+. Click *Account Settings*.
+
+. Click the action menu in the row that corresponds to the user.
++
+image:screenshot_associate_user_workspace.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Click *Manage Workspaces*.
+
+. Select the workspaces to associate with the user and click *Apply*.
+
+.Result
+
+The user can now access those workspaces from Cloud Manager, as long as the service connector was also associated with the workspaces.
+
+== Managing workspaces
+
+Manage your workspaces by creating, renaming, and deleting them. Note that you can't delete a workspace if it contains any resources. It must be empty.
+
+.Steps
+
+. Click *Account Settings*.
+
+. Click *Workspaces*.
+
+. Choose one of the following options:
++
+* Click *Add New Workspace* to create a new workspace.
+* Click *Rename* to rename the workspace.
+* Click *Delete* to delete the workspace.
+
+== Managing a service connector's workspaces
+
+You need to associate the service connector with workspaces so Workspace Admins can access those workspaces from Cloud Manager.
+
+If you only have Account Admins, then associating the service connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
+
+link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and service connectors].
+
+.Steps
+
+. Click *Account Settings*.
+
+. Click *Service Connector*.
+
+. Click *Manage Workspaces* for the service connector that you want to associate.
+
+. Select the workspaces to associate with the service connector and click *Apply*.

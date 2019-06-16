@@ -55,9 +55,9 @@ How you deploy Cloud Manager depends on which location you choose:
 
 You might want to perform additional setup after you install Cloud Manager, such as adding additional cloud provider accounts, installing an HTTPS certificate, and more.
 
+* link:task_setting_up_cloud_central_accounts.html[Setting up your Cloud Central account]
 * link:task_adding_cloud_accounts.html[Adding Cloud Provider Accounts to Cloud Manager]
 * link:task_installing_https_cert.html[Installing an HTTPS certificate]
-* link:task_setting_up_users_tenants.html[Setting up users and tenants]
 * link:task_setting_up_kms.html[Setting up the AWS KMS]
 
 == Cloud Volumes ONTAP deployment
