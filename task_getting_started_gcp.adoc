@@ -1,0 +1,21 @@
+---
+pagenav: false
+sidebar: sidebar
+permalink: task_getting_started_gcp.html
+keywords: google cloud platform, gcp
+summary: You can get started with Cloud Volumes ONTAP in Google Cloud Platform by completing a few quick steps.
+---
+
+= Getting started with Cloud Volumes ONTAP in Google Cloud Platform
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+A private preview of Cloud Volumes ONTAP is available in Google Cloud Platform. To join the private preview, send a request to ng-Cloud-Volume-ONTAP-preview@netapp.com.
+
+.Related link
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_96.html[Supported configurations for Cloud Volumes ONTAP 9.6 in Google Cloud Platform^]

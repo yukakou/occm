@@ -20,6 +20,12 @@ link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Cloud Manager 3.7 update (16 June 2019)
+
+Cloud Volumes ONTAP 9.6 is now available in AWS, Azure, and in Google Cloud Platform as a private preview. To join the private preview, send a request to ng-Cloud-Volume-ONTAP-preview@netapp.com.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_96.html[See what's new in Cloud Volumes ONTAP 9.6^]
+
 == Cloud Manager 3.7 (5 June 2019)
 
 * <<Support for upcoming Cloud Volumes ONTAP 9.6 release>>

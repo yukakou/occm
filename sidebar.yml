@@ -55,6 +55,8 @@ entries:
         url: /task_getting_started_aws.html
       - title: Getting started in Azure
         url: /task_getting_started_azure.html
+      - title: Getting started in GCP
+        url: /task_getting_started_gcp.html
       - title: Setting up Cloud Manager
         entries:
           - title: Setting up the Cloud Central account
@@ -176,7 +178,7 @@ entries:
       - title: FAQ for Cloud Central integration
         url: /reference_integration_faq.html
       - title: Supported configurations for Cloud Volumes ONTAP
-        url: https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_supported_configs_95.html
+        url: https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html
       - title: Supported regions
         url: https://cloud.netapp.com/cloud-volumes-global-regions
       - title: Security group rules for AWS
