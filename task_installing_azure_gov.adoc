@@ -23,6 +23,15 @@ Cloud Manager is available as an image in the Azure US Government Marketplace.
 
 .Steps
 
+. Ensure that the Azure Government Marketplace is enabled in your subscription:
+..	Log into the portal as an Enterprise Administrator.
+..	Navigate to *Manage*.
+..	Under *Enrollment Details*, click the pencil icon next to *Azure Marketplace*.
+..	Select *Enabled*.
+..	Click *Save*.
++
+https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-manage-marketplace[Microsoft Azure Documentation: Azure Government Marketplace^]
+
 . Search for OnCommand Cloud Manager in the Azure US Government portal.
 
 . Click *Create* and follow the steps to configure the virtual machine.
