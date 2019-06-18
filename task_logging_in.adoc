@@ -19,12 +19,12 @@ You can log in to Cloud Manager from any web browser that has a connection to th
 
 . Open a web browser and log in to https://cloud.netapp.com[NetApp Cloud Central^].
 +
-This step should automatically direct you to the Fabric View. If it doesn't, then click *My Services*.
+This step should automatically direct you to the Fabric View. If it doesn't, then click *Fabric View*.
 
 . Select the Cloud Manager system that you want to access.
 +
-TIP: If you do not see any systems listed, make sure that the Cloud Manager administrator added your NetApp Cloud Central account to the system.
+TIP: If you don't see any systems listed, make sure that the Account Admin added you to the Cloud Central Account associated with the Cloud Manager system.
 
-. Log in to Cloud Manager using your NetApp Cloud Central account.
+. Log in to Cloud Manager using your NetApp Cloud Central credentials.
 +
 image:screenshot_login.gif[The log in screen for Cloud Manager.]

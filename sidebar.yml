@@ -25,7 +25,7 @@ entries:
         url: /concept_accounts_and_permissions.html
       - title: Storage
         entries:
-          - title: Overview
+          - title: Disks and aggregates
             url: /concept_storage.html
           - title: Data tiering
             url: /concept_data_tiering.html
