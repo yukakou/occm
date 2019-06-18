@@ -22,8 +22,9 @@ Cloud Volumes ONTAP supports the following encryption technologies:
 * NetApp Volume Encryption (starting with Cloud Volumes ONTAP 9.5)
 * AWS Key Management Service
 * Azure Storage Service Encryption
+* Google Cloud Platform default encryption
 
-You can use NetApp Volume Encryption with native AWS and Azure encryption, which encrypt data at the hypervisor level.
+You can use NetApp Volume Encryption with native AWS, Azure, or GCP encryption, which encrypt data at the hypervisor level.
 
 === NetApp Volume Encryption
 
@@ -44,6 +45,10 @@ If you want to use this encryption option, then you must ensure that the AWS KMS
 https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] for data at rest is enabled by default for Cloud Volumes ONTAP data in Azure. No setup is required.
 
 NOTE: Customer-managed keys are not supported with Cloud Volumes ONTAP.
+
+=== Google Cloud Platform default encryption
+
+https://cloud.google.com/security/encryption-at-rest/[Google Cloud Platform data-at-rest encryption^] is enabled by default for Cloud Volumes ONTAP. No setup is required.
 
 == ONTAP virus scanning
 

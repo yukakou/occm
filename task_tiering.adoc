@@ -14,7 +14,7 @@ summary: You can reduce storage costs in AWS and Azure by combining an SSD or HD
 
 [.lead]
 
-You can reduce storage costs in AWS and Azure by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. For a high-level overview, see link:concept_data_tiering.html[Data tiering overview].
+You can reduce storage costs by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. For a high-level overview, see link:concept_data_tiering.html[Data tiering overview].
 
 To set up data tiering, you simply need to do the following:
 
@@ -42,7 +42,7 @@ Cloud Manager prompts you to choose a tiering policy when you create, modify, or
 .What's not required for data tiering
 ====
 * You don't need to install a feature license to enable data tiering.
-* You don't need to create the capacity tier (either an S3 bucket or an Azure Blob container). Cloud Manager does that for you.
+* You don't need to create the capacity tier (an S3 bucket, Azure Blob container, or GCP bucket). Cloud Manager does that for you.
 ====
 
 == Configurations that support data tiering
@@ -60,6 +60,8 @@ NOTE: Data tiering is not supported in Azure with the DS3_v2 virtual machine typ
 * In AWS, the performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Throughput Optimized HDDs.
 
 * In Azure, the performance tier can be Premium SSD managed disks, Standard SSD managed disks, or Standard HDD managed disks.
+
+* In GCP, the performance tier can be either SSDs or HDDs (standard disks).
 
 * Data tiering is supported with encryption technologies.
 
@@ -131,7 +133,7 @@ image:screenshot_replication_tiering.gif[Screenshot that shows the S3 tiering op
 +
 For help with replicating data, see link:task_replicating_data.html[Replicating data to and from the cloud].
 
-== Changing the tiering level
+== Changing the tiering level in AWS or Azure
 
 When you enable data tiering, Cloud Volumes ONTAP tiers inactive data to the S3 _Standard_ storage class in AWS or to the _hot_ storage tier in Azure. After you deploy Cloud Volumes ONTAP, you can reduce your storage costs by changing the tiering level for inactive data that has not been accessed for 30 days. The access costs are higher if you do access the data, so you must take that into consideration before you change the tiering level.
 
@@ -146,6 +148,8 @@ In AWS, you can change the tiering level so inactive data moves to one of the fo
 * One Zone-Infrequent Access
 
 In Azure, you can change the tiering level so inactive data moves to the  _cool_ storage tier after 30 days of inactivity.
+
+NOTE: No other GCP storage classes are supported at this time.
 
 For more information about how tiering levels work, see link:concept_data_tiering.html[Data tiering overview].
 
