@@ -114,19 +114,26 @@ In an HA pair, both Cloud Volumes ONTAP nodes replicate its root disk to the par
 
 * For HA pairs, one EBS volume for the Mediator instance, which is approximately 8 GB
 
-=== Azure
+=== Azure (single node)
 
-* One Premium Storage SSD disk for Cloud Volumes ONTAP boot data, which is approximately 8.4 GB
+* Two Premium SSD disks:
+** One 90 GB disk for the boot volume
+** One 140 GB disk for the root volume
 
-* One Premium Storage SSD disk for Cloud Volumes ONTAP root data, which is approximately 140 GB
+* One Azure snapshot for each boot disk and root disk
 
+=== Azure (HA pairs)
+
+*	Two 90 GB Premium SSD disks for the boot volume (one per node)
+* Two 140 GB Premium Storage page blobs for the root volume (one per node)
+* Two 128 GB Standard HDD disks for saving cores (one per node)
 * One Azure snapshot for each boot disk and root disk
 
 === Where the disks reside
 
-Cloud Manager lays out the storage from AWS and Azure as follows:
+Cloud Manager lays out the storage as follows:
 
-* Boot data resides on a disk attached to the EC2 instance or Azure virtual machine.
+* Boot data resides on a disk attached to the instance or virtual machine.
 +
 This disk, which contains the boot image, is not available to Cloud Volumes ONTAP.
 

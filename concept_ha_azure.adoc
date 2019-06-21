@@ -29,12 +29,20 @@ The load balancer manages incoming traffic to the Cloud Volumes ONTAP HA pair.
 Availability Set::
 The Availability Set ensures that the nodes are in different fault and update domains.
 
-Storage::
+Disks::
 Customer data resides on Premium Storage page blobs. Each node has access to the other node's storage.
-Additional storage is also required for boot and root data:
+Additional storage is also required for boot, root, and core data:
 +
-* A node's boot data resides on a Premium SSD Managed Disk.
-* A node's root data resides on a Premium Storage page blob.
+*	Two 90 GB Premium SSD disks for the boot volume (one per node)
+* Two 140 GB Premium Storage page blobs for the root volume (one per node)
+* Two 128 GB Standard HDD disks for saving cores (one per node)
+
+Storage accounts::
+* One storage account is required for managed disks.
+* One or more storage accounts are required for the Premium Storage page blobs, as the disk capacity limit per storage account is reached.
++
+https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-targets[Azure documentation: Azure Storage scalability and performance targets for storage accounts^].
+* One storage account is required for data tiering to Azure Blob storage.
 
 == RPO and RTO
 
