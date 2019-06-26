@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_managing_cloud_central_accounts.html
-keywords: account settings, workspaces, service connector, account admin, workspace admin, users, associate, disassociate
+keywords: account settings, workspaces, service connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, remove user, remove users, remove, delete, account, user account, user accounts
 summary: After you perform initial setup, you might need to later manage users, workspaces, and service connectors.
 ---
 
-= Managing the Cloud Central account
+= Managing workspaces and users in the Cloud Central account
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -17,7 +17,7 @@ link:task_setting_up_cloud_central_accounts.html[After you perform initial setup
 
 link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
 
-== Associating users with the Cloud Central account
+== Adding users
 
 Associate Cloud Central users with the Cloud Central account so those users can create and manage working environments in Cloud Manager.
 
@@ -46,7 +46,7 @@ image:screenshot_associate_user.gif[A screenshot that shows how to associate a u
 
 The user should receive an email from NetApp Cloud Central titled "Account Association." The email includes the information needed to access Cloud Manager.
 
-== Disassociating users from a Cloud Central account
+== Removing users
 
 Disassociating a user makes it so they can no longer access the resources in a Cloud Central account.
 
