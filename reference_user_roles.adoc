@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: reference_user_roles.html
-keywords: user, role, task, permission, permissions, tasks, roles, admin, Account Admin, Workspace Admin
-summary: Each Cloud Manager user account is assigned a role that defines permissions.
+keywords: user, users, roles, role, task, permission, permissions, tasks, admin, Account Admin, Workspace Admin
+summary: The Account Admin and Workspace Admin roles provide specific permissions to users.
 translate: false
 ---
 
@@ -14,7 +14,7 @@ translate: false
 :imagesdir: ./media/
 
 [.lead]
-Each Cloud Manager user is assigned a role that defines permissions.
+The Account Admin and Workspace Admin roles provide specific permissions to users.
 
 [cols=3*,options="header",cols="34,33,33"]
 |===

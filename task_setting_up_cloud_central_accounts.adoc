@@ -13,7 +13,7 @@ summary: Set up your Cloud Central account so users can access Cloud Manager and
 :imagesdir: ./media/
 
 [.lead]
-Each Cloud Manager system is associated with a _NetApp Cloud Central account_. Set up the Cloud Central account associated with your Cloud Manager system so users can access Cloud Manager and deploy Cloud Volumes ONTAP systems in workspaces.
+Each Cloud Manager system is associated with a _NetApp Cloud Central account_. Set up the Cloud Central account associated with your Cloud Manager system so a user can access Cloud Manager and deploy Cloud Volumes ONTAP systems in workspaces.
 
 The account is maintained in Cloud Central, so any changes that you make are available to other Cloud Manager systems and to other NetApp cloud data services. link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
 
