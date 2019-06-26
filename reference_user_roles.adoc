@@ -6,7 +6,7 @@ summary: Each Cloud Manager user account is assigned a role that defines permiss
 translate: false
 ---
 
-= User roles
+= Roles
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,7 +14,7 @@ translate: false
 :imagesdir: ./media/
 
 [.lead]
-Each Cloud Manager user account is assigned a role that defines permissions.
+Each Cloud Manager user is assigned a role that defines permissions.
 
 [cols=3*,options="header",cols="34,33,33"]
 |===
