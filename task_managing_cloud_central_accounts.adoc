@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_managing_cloud_central_accounts.html
-keywords: account settings, workspaces, service connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, remove user, remove users, remove, delete, account, user account, user accounts
+keywords: account settings, workspaces, service connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, service connector, manage service connector, manage workspace, associate service connector
 summary: After you perform initial setup, you might need to later manage users, workspaces, and service connectors.
 ---
 

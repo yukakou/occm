@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_setting_up_cloud_central_accounts.html
-keywords: account settings, workspaces, service connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, account, user account, user accounts
+keywords: account settings, workspaces, service connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, account, user account, user accounts, create workspace, add workspace, setup workspace, workspace, service connector, manage service connector, manage workspace, associate service connector
 summary: Set up your Cloud Central account so users can access Cloud Manager and deploy Cloud Volumes ONTAP systems in workspaces.
 ---
 
