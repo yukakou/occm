@@ -51,3 +51,8 @@ Each Cloud Manager user account is assigned a role that defines permissions.
 
 | Set up Active Directory |	Yes |	No
 |===
+
+.Related links
+
+* link:task_setting_up_cloud_central_accounts.html[Setting up workspaces and users in the Cloud Central account]
+* link:task_managing_cloud_central_accounts.html[Managing workspaces and users in the Cloud Central account]
