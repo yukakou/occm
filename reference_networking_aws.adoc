@@ -56,7 +56,7 @@ If you want to provision CIFS storage, you must set up DNS and Active Directory 
 +
 The DNS server must provide name resolution services for the Active Directory environment. You can configure DHCP option sets to use the default EC2 DNS server, which must not be the DNS server used by the Active Directory environment.
 +
-For instructions, refer to https://s3.amazonaws.com/quickstart-reference/microsoft/activedirectory/latest/doc/Microsoft_Active_Directory_Quick_Start.pdf[AWS Documentation: Active Directory Domain Services on the AWS Cloud Quick Start Reference Deployment^].
+For instructions, refer to https://docs.aws.amazon.com/quickstart/latest/active-directory-ds/welcome.html[AWS Documentation: Active Directory Domain Services on the AWS Cloud: Quick Start Reference Deployment^].
 
 == AWS networking requirements for Cloud Volumes ONTAP HA in multiple AZs
 
