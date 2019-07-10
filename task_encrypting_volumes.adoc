@@ -18,9 +18,18 @@ NetApp Volume Encryption (NVE) is a software-based technology for encrypting dat
 
 .About this task
 
-At this time, Cloud Volumes ONTAP supports NetApp Volume Encryption with an external key management server. An Onboard Key Manager is not supported.
+* Starting with Cloud Manager 3.7.1, a NetApp Volume Encryption license is automatically installed on each Cloud Volumes ONTAP system that is registered with NetApp Support.
++
+** link:task_adding_nss_accounts.html[Adding NetApp Support Site accounts to Cloud Manager]
+** link:task_registering.html[Registering pay-as-you-go systems]
++
+NOTE: Cloud Manager does not install the NVE license on systems that reside in the China region.
 
-You need to set up NetApp Volume Encryption from the ONTAP CLI. You can then use either the CLI or System Manager to enable encryption on specific volumes. Cloud Manager does not support NetApp Volume Encryption from its user interface and from its APIs.
+* At this time, Cloud Volumes ONTAP supports NetApp Volume Encryption with an external key management server. An Onboard Key Manager is not supported.
+
+* You need to set up NetApp Volume Encryption from the ONTAP CLI.
++
+You can then use either the CLI or System Manager to enable encryption on specific volumes. Cloud Manager does not support NetApp Volume Encryption from its user interface and from its APIs.
 
 link:concept_security.html[Learn more about supported encryption technologies].
 
@@ -31,10 +40,6 @@ link:concept_security.html[Learn more about supported encryption technologies].
 TIP: Search for the *Key Managers* solution.
 
 . link:task_connecting_to_otc.html[Connect to the Cloud Volumes ONTAP CLI^].
-
-. Install a NetApp Volume Encryption license on the Cloud Volumes ONTAP system.
-+
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-F5F371C0-7713-4A16-B5BF-A3514A97960D.html[ONTAP 9 NetApp Encryption Power Guide: Installing the license^]
 
 . Install SSL certificates and connect to the external key management servers.
 +
