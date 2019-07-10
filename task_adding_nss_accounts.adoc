@@ -23,7 +23,9 @@ video::V2fLTyztqYQ[youtube, width=848, height=480]
 
 . If you don't have a NetApp Support Site account yet, http://now.netapp.com/newuser/[register for one^].
 
-. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *Account Settings*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Provider & Support Accounts*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
 . Click *Add New Account* and select *NetApp Support Site*.
 

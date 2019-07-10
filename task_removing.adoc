@@ -28,7 +28,9 @@ Removing a working environment from Cloud Manager enables you to do the followin
 
 .Steps
 
-. In the upper-right corner of the Cloud Manager console, click the task drop-down list, and then select *Tools*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Tools*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
 . From the Tools page, click *Launch*.
 

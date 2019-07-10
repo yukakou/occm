@@ -17,7 +17,7 @@ You should renew the Cloud Manager HTTPS certificate before it expires to ensure
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *HTTPS Setup*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *HTTPS Setup*.
 +
 Details about the Cloud Manager certificate displays, including the expiration date.
 

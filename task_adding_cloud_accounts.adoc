@@ -87,7 +87,9 @@ After you provide an AWS account with the required permissions, you can add the 
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *Account Settings*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Provider & Support Accounts*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
 . Click *Add New Account* and select *AWS*.
 
@@ -256,7 +258,9 @@ After you provide an Azure account with the required permissions, you can add th
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *Account Settings*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Provider & Support Accounts*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
 . Click *Add New Account* and select *Microsoft Azure*.
 

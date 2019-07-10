@@ -17,7 +17,9 @@ By default, Cloud Manager uses a self-signed certificate for HTTPS access to the
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *HTTPS Setup*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *HTTPS Setup*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
 . In the HTTPS Setup page, install a certificate by generating a certificate signing request (CSR) or by installing your own CA-signed certificate:
 +
