@@ -34,21 +34,11 @@ The default "mgmt" firewall policy allows inbound HTTPS access from all IP addre
 
 .Steps
 
-. On the Working Environments page, click *Add Working Environment*.
+. On the Working Environments page, click *Discover a system* and select *ONTAP Cluster*.
 
-. Under *Discover*, select one of the icons to discover an ONTAP cluster.
+. On the *ONTAP Cluster Details* page, enter the cluster management IP address, the password for the admin user account, and the location of the cluster.
 +
-The following icon enables you to discover an on-premises cluster or a NetApp Private Storage configuration:
-+
-image:screenshot_discover_ontap_onprem.gif[Shows the ONTAP icon for discovering an on-premises ONTAP cluster.]
-+
-The following icon enables you to discover ONTAP in the IBM Cloud:
-+
-image:screenshot_discover_ontap_ibm.gif[Shows the ONTAP icon for discovering ONTAP in the IBM Cloud.]
-
-. On the *ONTAP Cluster Details* page, enter the cluster management IP address and the password for the admin user account.
-+
-If you selected the first icon, you must also choose the working environment type: either an on-premises cluster or a NetApp Private Storage configuration.
+image:screenshot_discover_ontap.gif[A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password, and on premises selected as the cluster location.]
 
 . On the Details page, enter a name and description for the working environment, and then click *Go*.
 

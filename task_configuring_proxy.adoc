@@ -23,7 +23,9 @@ When you configure Cloud Manager to use a proxy server, Cloud Manager, Cloud Vol
 
 .Steps
 
-. In the upper-right corner of the Cloud Manager console, click the task drop-down list, and then select *Settings*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Manager Settings*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
 . Under HTTP Proxy, enter the server using the syntax http://_address:port_, specify a user name and password if basic authentication is required for the server, and then click *Save*.
 +

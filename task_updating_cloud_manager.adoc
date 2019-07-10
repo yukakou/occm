@@ -73,7 +73,9 @@ The patch update typically takes a few minutes. Cloud Manager will not be availa
 
 .Steps
 
-. In the upper-right hand corner of the Cloud Manager console, click the task drop-down list, and then select *Update*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Software Update*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
 . Click the link to update Cloud Manager with the supplied patch.
 +
