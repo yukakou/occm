@@ -27,10 +27,13 @@ TIP: The total amount of storage purchased from AWS or Azure is the _raw capacit
 
 == AWS storage
 
+In AWS, Cloud Volumes ONTAP uses EBS storage for user data and local NVMe storage as Flash Cache on some EC2 instance types.
+
+EBS storage::
 In AWS, an aggregate can contain up to 6 disks that are all the same size. The maximum disk size is 16 TB.
-
++
 The underlying EBS disk type can be either General Purpose SSD, Provisioned IOPS SSD, Throughput Optimized HDD, or Cold HDD. You can pair an EBS disk with Amazon S3 to link:concept_data_tiering.html[tier inactive data to low-cost object storage].
-
++
 At a high level, the differences between EBS disk types are as follows:
 
 * _General Purpose SSD_ disks balance cost and performance for a broad range of workloads. Performance is defined in terms of IOPS.
@@ -40,8 +43,11 @@ At a high level, the differences between EBS disk types are as follows:
 * _Throughput Optimized HDD_ disks are for frequently accessed workloads that require fast and consistent throughput at a lower price.
 
 * _Cold HDD_ disks are meant for backups, or infrequently accessed data, because the performance is very low. Like Throughput Optimized HDD disks, performance is defined in terms of throughput.
-
++
 NOTE: Cold HDD disks are not supported with HA configurations and with data tiering.
+
+Local NVMe storage::
+Some EC2 instance types include local NVMe storage, which Cloud Volumes ONTAP uses as link:task_enabling_flash_cache.html[Flash Cache].
 
 *Related links*
 
@@ -50,6 +56,8 @@ NOTE: Cold HDD disks are not supported with HA configurations and with data tier
 * link:task_planning_your_config.html#sizing-your-system-in-aws[Learn how to choose disk types and disk sizes for your systems in AWS]
 
 * https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_96.html[Review storage limits for Cloud Volumes ONTAP in AWS^]
+
+* http://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_96.html[Review supported configurations for Cloud Volumes ONTAP in AWS^]
 
 == Azure storage
 
