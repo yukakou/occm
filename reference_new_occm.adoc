@@ -20,6 +20,10 @@ link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Update on backing up and restoring (15 July 2019)
+
+Starting with the 3.7.1 release, Cloud Manager no longer supports downloading a backup and using it to restore your Cloud Manager configuration. link:task_restoring.html[You need to follow these steps to restore Cloud Manager].
+
 == Cloud Manager 3.7.1 (1 July 2019)
 
 * This release primarily includes bug fixes.
