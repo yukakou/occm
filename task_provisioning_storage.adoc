@@ -81,6 +81,7 @@ The listed DNS servers must contain the service location records (SRV) needed to
 | CIFS server NetBIOS name | A CIFS server name that is unique in the AD domain.
 
 | Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONTAP, you should enter *OU=Computers,OU=corp* in this field.
 
 | DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
 
