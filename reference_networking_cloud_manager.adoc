@@ -70,7 +70,9 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 |
 \https://support.netapp.com/svcgw
 \https://support.netapp.com/ServiceGW/entitlement
-| Communication with NetApp for licensing and support registration.
+| Communication with NetApp for system licensing and support registration.
+
+| \https://ipa-signer.cloudmanager.netapp.com | Enables Cloud Manager to generate licenses (for example, a FlexCache license for Cloud Volumes ONTAP)
 
 |
 \https://packages.cloud.google.com/yum
@@ -130,7 +132,9 @@ Cloud Manager requires outbound internet access to contact the following endpoin
 |
 \https://support.netapp.com/svcgw
 \https://support.netapp.com/ServiceGW/entitlement
-| Communication with NetApp for licensing and support registration.
+| Communication with NetApp for system licensing and support registration.
+
+| \https://ipa-signer.cloudmanager.netapp.com | Enables Cloud Manager to generate licenses (for example, a FlexCache license for Cloud Volumes ONTAP)
 
 |
 \https://packages.cloud.google.com/yum
