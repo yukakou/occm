@@ -20,6 +20,44 @@ link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Cloud Manager 3.7.2 (5 Aug 2019)
+
+* <<FlexCache licenses>>
+* <<Kubernetes storage classes for iSCSI>>
+* <<Management of inodes>>
+* <<Support for the Hong Kong region in AWS>>
+* <<Support for the Australia Central regions in Azure>>
+
+=== FlexCache licenses
+
+Cloud Manager now generates a FlexCache license for all new Cloud Volumes ONTAP systems. The license includes a 500 GB usage limit.
+
+To generate the license, Cloud Manager needs to access \https://ipa-signer.cloudmanager.netapp.com. Make sure that this URL is accessible from your firewall.
+
+=== Kubernetes storage classes for iSCSI
+
+When you connect Cloud Volumes ONTAP to a Kubernetes cluster, Cloud Manager now creates two additional Kubernetes storage classes that you can use with iSCSI Persistent Volumes:
+
+* *netapp-file-san*: For binding iSCSI Persistent Volumes to single-node Cloud Volumes ONTAP systems
+* *netapp-file-redundant-san*: For binding iSCSI Persistent Volumes to Cloud Volumes ONTAP HA pairs
+
+=== Management of inodes
+
+Cloud Manager now monitors the number of inodes on a volume and increases the maximum number when needed.  The number of files a volume can contain is determined by how many inodes it has.
+
+=== Support for the Hong Kong region in AWS
+
+Cloud Manager and Cloud Volumes ONTAP are now supported in the Asia Pacific (Hong Kong) region in AWS.
+
+=== Support for the Australia Central regions in Azure
+
+Cloud Manager and Cloud Volumes ONTAP are now supported in the following Azure regions:
+
+* Australia Central
+* Australia Central 2
+
+https://cloud.netapp.com/cloud-volumes-global-regions[See the full list of supported regions^].
+
 == Update on backing up and restoring (15 July 2019)
 
 Starting with the 3.7.1 release, Cloud Manager no longer supports downloading a backup and using it to restore your Cloud Manager configuration. link:task_restoring.html[You need to follow these steps to restore Cloud Manager].
