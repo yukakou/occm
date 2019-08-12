@@ -1,0 +1,30 @@
+---
+sidebar: sidebar
+permalink: task_finding_system_id.html
+keywords: system id, id, cloud manager system id
+summary: To help you get started, your NetApp representative might ask you for the system ID that identifies your Cloud Manager system. The ID is typically used for licensing and troubleshooting purposes.
+---
+
+= Finding your Cloud Manager system ID
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+To help you get started, your NetApp representative might ask you for your Cloud Manager system ID. The ID is typically used for licensing and troubleshooting purposes.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+
+. Click *Support Dashboard*.
++
+Your system ID appears in the top right.
++
+*Example*
++
+image:screenshot_system_id.gif[A screenshot that shows the System ID for Cloud Manager that appears in the Support Dashboard.]
