@@ -24,9 +24,9 @@ Cloud Manager enables you to deploy and manage NetApp Cloud Volumes ONTAP, which
 * link:task_getting_started_azure.html[Get started in Azure]
 * link:task_getting_started_gcp.html[Get started in Google Cloud Platform]
 * https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html[Find supported configurations for Cloud Volumes ONTAP^]
-* link:reference_networking_cloud_manager.html[Review detailed networking requirements for Cloud Manager]
-* link:reference_networking_aws.html[Review detailed networking requirements for Cloud Volumes ONTAP for AWS]
-* link:reference_networking_azure.html[Review detailed networking requirements for Cloud Volumes ONTAP for Azure]
+* link:reference_networking_cloud_manager.html[Review networking requirements for Cloud Manager]
+* link:reference_networking_aws.html[Review networking requirements for Cloud Volumes ONTAP for AWS]
+* link:reference_networking_azure.html[Review networking requirements for Cloud Volumes ONTAP for Azure]
 * link:task_planning_your_config.html[Plan your Cloud Volumes ONTAP configuration]
 
 == Automate with APIs
