@@ -129,7 +129,7 @@ image:diagram_azure_authentication.png[Conceptual image that shows Cloud Manager
 
 . <<Adding Windows Azure Service Management API permissions,Add Windows Azure Service Management API permissions>>.
 
-. <<Getting the application ID and tenant ID,Get the application ID and tenant ID>>.
+. <<Getting the application ID and directory ID,Get the application ID and directory ID>>.
 
 . <<Creating a client secret,Create a client secret>>.
 
@@ -232,7 +232,7 @@ image:screenshot_azure_service_mgmt_apis.gif[A screenshot of the Azure portal th
 +
 image:screenshot_azure_service_mgmt_apis_add.gif[A screenshot of the Azure portal that shows adding the Azure Service Management APIs.]
 
-==== Getting the application ID and tenant ID
+==== Getting the application ID and directory ID
 
 When you add the Azure account to Cloud Manager, you need to provide the application ID and tenant ID for the application. Cloud Manager uses the IDs to programmatically sign in.
 
