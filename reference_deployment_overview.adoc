@@ -22,28 +22,42 @@ Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. You
 
 * Amazon Web Services (AWS)
 * Microsoft Azure
+* Google Cloud Platform
++
+Cloud Manager must be in Google Cloud Platform when deploying Cloud Volumes ONTAP in GCP.
 * IBM Cloud
 * In your own network
-
-NOTE: A private preview of Cloud Volumes ONTAP is available in Google Cloud Platform. To join the private preview, send a request to ng-Cloud-Volume-ONTAP-preview@netapp.com.
 
 How you deploy Cloud Manager depends on which location you choose:
 
 [cols=2*,options="header",cols="35,65"]
 |===
 
-| Location
+| Location for Cloud Manager
 | How to deploy Cloud Manager
 
-| AWS | link:task_getting_started_aws.html[Deploy Cloud Manager from NetApp Cloud Central]
+| AWS |
+
+link:task_getting_started_aws.html[Deploy Cloud Manager from NetApp Cloud Central]
+
+A secondary option is to deploy from link:task_launching_aws_mktp.html[the AWS Marketplace]
 
 | AWS C2S | link:media/c2s.pdf[Deploy Cloud Manager from the AWS Intelligence Community Marketplace^]
 
-| Azure generally available region | link:task_getting_started_azure.html[Deploy Cloud Manager from NetApp Cloud Central]
+| Azure generally available region |
+
+link:task_getting_started_azure.html[Deploy Cloud Manager from NetApp Cloud Central]
+
+A secondary option is to deploy from link:task_launching_azure_mktp.html[the Azure Marketplace]
 
 | Azure Government | link:task_installing_azure_gov.html[Deploy Cloud Manager from the Azure US Government Marketplace]
 
 | Azure Germany | link:task_installing_azure_germany.html[Download and install the software on a Linux host]
+
+| Google Cloud Platform
+a| link:task_getting_started_gcp.html[Deploy Cloud Manager from NetApp Cloud Central]
+
+NOTE: You can't deploy Cloud Manager in Google Cloud from the GCP Marketplace
 
 | IBM Cloud | link:task_installing_linux.html[Download and install the software on a Linux host]
 
@@ -56,7 +70,9 @@ How you deploy Cloud Manager depends on which location you choose:
 You might want to perform additional setup after you install Cloud Manager, such as adding additional cloud provider accounts, installing an HTTPS certificate, and more.
 
 * link:task_setting_up_cloud_central_accounts.html[Setting up your Cloud Central account]
-* link:task_adding_cloud_accounts.html[Adding cloud provider accounts to Cloud Manager]
+* link:task_adding_aws_accounts.html[Adding AWS accounts to Cloud Manager]
+* link:task_adding_azure_accounts.html[Adding Azure accounts to Cloud Manager]
+* link:task_adding_gcp_accounts.html[Adding GCP accounts to Cloud Manager]
 * link:task_installing_https_cert.html[Installing an HTTPS certificate]
 * link:task_setting_up_kms.html[Setting up the AWS KMS]
 
@@ -64,7 +80,7 @@ You might want to perform additional setup after you install Cloud Manager, such
 
 After you get Cloud Manager up and running, you can start deploying Cloud Volumes ONTAP in your cloud provider.
 
-link:task_getting_started_aws.html[Getting started in AWS] and link:task_getting_started_azure.html[Getting started in Azure] provide instructions for getting Cloud Volumes ONTAP up and running quickly. For additional help, refer to the following:
+link:task_getting_started_aws.html[Getting started in AWS], link:task_getting_started_azure.html[Getting started in Azure], and link:task_getting_started_gcp.html[Getting started in GCP] provide instructions for getting Cloud Volumes ONTAP up and running quickly. For additional help, refer to the following:
 
 * https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_96.html[Supported configurations for Cloud Volumes ONTAP 9.6 in AWS^]
 * https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_96.html[Supported configurations for Cloud Volumes ONTAP 9.6 in Azure^]
@@ -72,3 +88,4 @@ link:task_getting_started_aws.html[Getting started in AWS] and link:task_getting
 * link:task_planning_your_config.html[Planning your configuration]
 * link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
 * link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure]
+* link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP]

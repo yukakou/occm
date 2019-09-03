@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_storage_management.html
 keywords: provisioning, capacity management, storage provisioning, manual, automatic, advanced allocation, aggregates, thin provisioning, free space, mode
-summary: Cloud Manager makes storage provisioning easy by purchasing the AWS and Azure storage that you need to provision volumes for Cloud Volumes ONTAP.
+summary: Cloud Manager provides simplified and advanced management of Cloud Volumes ONTAP storage.
 ---
 
 = Storage management

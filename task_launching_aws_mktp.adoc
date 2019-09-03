@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_launching_aws_mktp.html
-keywords: install, installation, installing, marketplace, aws, launch, launching, ec2 console
+keywords: install, installation, installing, marketplace, aws, launch, launching, ec2 console, iam role
 summary: It is best to launch Cloud Manager in AWS using NetApp Cloud Central, but you can launch it from the AWS Marketplace, if needed.
 ---
 
@@ -20,7 +20,7 @@ TIP: If you launch Cloud Manager from the AWS Marketplace, Cloud Manager is stil
 
 .About this task
 
-The following steps describe how to launch the instance from the EC2 Console because the console enables you to attach an IAM role to the Cloud Manager instance. This is not possible using the 1-Click option.
+The following steps describe how to launch the instance from the EC2 Console because the console enables you to attach an IAM role to the Cloud Manager instance. This is not possible using the *Launch from Website* action.
 
 .Steps
 
@@ -34,23 +34,29 @@ https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS an
 
 .. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
 
-. Go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[Cloud Manager page on the AWS Marketplace^].
+. Now go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[Cloud Manager page on the AWS Marketplace^] to deploy Cloud Manager from an AMI.
 
-. Click *Continue*.
+. On the Marketplace page, click *Continue to Subscribe* and then click *Continue to Configuration*.
 
-. On the Custom Launch tab, click *Launch with EC2 Console* for your region, and then make your selections:
+. Change any of the default options and click *Continue to Launch*.
 
-.. Depending on region availability, choose the t3.medium (recommended), t2.medium, or m4.large instance type.
+. Under *Choose Action*, select *Launch through EC2* and then click *Launch*.
 
-.. Select a VPC, subnet, IAM role, and other configuration options that meet your requirements.
+. Follow the prompts to configure and deploy the instance:
 
-.. Keep the default storage options.
+* *Choose Instance Type*: Depending on region availability, choose the t3.medium (recommended), t2.medium, or m4.large instance type.
 
-.. Enter tags for the instance, if desired.
+* *Configure Instance*: Select a VPC and subnet, the IAM role that you created in step 1, and other configuration options that meet your requirements.
++
+image:screenshot_aws_iam_role.gif[A screenshot that shows fields on the Configure Instance page in AWS. The IAM role that you should have created in step 1 is selected.]
 
-.. Specify the required connection methods for the Cloud Manager instance: SSH, HTTP, and HTTPS.
+* *Add Storage*: Keep the default storage options.
 
-.. Click *Launch*.
+* *Add Tags*: Enter tags for the instance, if desired.
+
+* *Configure Security Group*: Specify the required connection methods for the Cloud Manager instance: SSH, HTTP, and HTTPS.
+
+* *Review*: Review your selections and click *Launch*.
 +
 AWS launches the software with the specified settings. The Cloud Manager instance and software should be running in approximately five minutes.
 

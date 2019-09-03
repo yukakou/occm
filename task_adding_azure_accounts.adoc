@@ -1,0 +1,241 @@
+---
+sidebar: sidebar
+permalink: task_adding_azure_accounts.html
+keywords: permissions, microsoft, azure, permissions, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, managed identity, iam, operator, role, virtual machine
+summary: If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions to those accounts and then add details about the accounts to Cloud Manager.
+---
+
+= Setting up and adding Azure accounts to Cloud Manager
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions to those accounts and then add details about the accounts to Cloud Manager.
+
+NOTE: When you deploy Cloud Manager from Cloud Central, Cloud Manager automatically adds the Azure account in which you deployed Cloud Manager. An initial account is not added if you manually installed the Cloud Manager software on an existing system. link:concept_accounts_azure.html[Learn about Azure accounts and permissions].
+
+== Granting Azure permissions using a service principal
+
+Cloud Manager needs permissions to perform actions in Azure. You can grant the required permissions to an Azure account by creating and setting up a service principal in Azure Active Directory and by obtaining the Azure credentials that Cloud Manager needs.
+
+.About this task
+
+The following image depicts how Cloud Manager obtains permissions to perform operations in Azure. A service principal object, which is tied to one or more Azure subscriptions, represents Cloud Manager in Azure Active Directory and is assigned to a custom role that allows the required permissions.
+
+image:diagram_azure_authentication.png[Conceptual image that shows Cloud Manager obtaining authentication and authorization from Azure Active Directory before it can make an API call. In Active Directory, the Cloud Manager Operator role defines permissions. It is tied to one or more Azure subscriptions and a service principal object that represents the Cloud Manger application.]
+
+.Steps
+
+. <<Creating an Azure Active Directory application,Create an Azure Active Directory application>>.
+
+. <<Assigning the application to a role,Assign the application to a role>>.
+
+. <<Adding Windows Azure Service Management API permissions,Add Windows Azure Service Management API permissions>>.
+
+. <<Getting the application ID and directory ID,Get the application ID and directory ID>>.
+
+. <<Creating a client secret,Create a client secret>>.
+
+=== Creating an Azure Active Directory application
+
+Create an Azure Active Directory (AD) application and service principal that Cloud Manager can use for role-based access control.
+
+.Before you begin
+
+You must have the right permissions in Azure to create an Active Directory application and to assign the application to a role. For details, refer to https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions/[Microsoft Azure Documentation: Required permissions^].
+
+.Steps
+. From the Azure portal, open the *Azure Active Directory* service.
++
+image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Azure.]
+
+. In the menu, click *App registrations*.
+
+. Click *New registration*.
+
+. Specify details about the application:
+
+* *Name*: Enter a name for the application.
+* *Account type*: Select an account type (any will work with Cloud Manager).
+* *Redirect URI*: Select *Web* and then enter any URL—for example, \https://url
+
+. Click *Register*.
+
+.Result
+
+You've created the AD application and service principal.
+
+=== Assigning the application to a role
+
+You must bind the service principal to one or more Azure subscriptions and assign it the custom "OnCommand Cloud Manager Operator" role so Cloud Manager has permissions in Azure.
+
+.Steps
+
+. Create a custom role:
+
+.. Download the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Azure policy^].
+
+.. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
++
+You should add the ID for each Azure subscription from which users will create Cloud Volumes ONTAP systems.
++
+*Example*
++
+[source,json]
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+"/subscriptions/54b91999-b3e6-4599-908e-416e0zzzzzzz",
+"/subscriptions/398e471c-3b42-4ae7-9b59-ce5bbzzzzzzz"
+
+.. Use the JSON file to create a custom role in Azure.
++
+The following example shows how to create a custom role using the Azure CLI 2.0:
++
+*az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.6.1.json*
++
+You should now have a custom role called _OnCommand Cloud Manager Operator_.
+
+. Assign the application to the role:
+
+.. From the Azure portal, open the *Subscriptions* service.
+
+.. Select the subscription.
+
+.. Click *Access control (IAM) > Add > Add role assignment*.
+
+.. Select the *OnCommand Cloud Manager Operator* role.
+
+.. Keep *Azure AD user, group, or service principal* selected.
+
+.. Search for the name of the application (you can't find it in the list by scrolling).
++
+image:screenshot_azure_service_principal_role.gif[A screenshot that shows the Add role assignment form in the Azure portal.]
+
+.. Select the application and click *Save*.
++
+The service principal for Cloud Manager now has the required Azure permissions for that subscription.
++
+If you want to deploy Cloud Volumes ONTAP from multiple Azure subscriptions, then you must bind the service principal to each of those subscriptions. Cloud Manager enables you to select the subscription that you want to use when deploying Cloud Volumes ONTAP.
+
+=== Adding Windows Azure Service Management API permissions
+
+The service principal must have "Windows Azure Service Management API" permissions.
+
+.Steps
+
+. In the *Azure Active Directory* service, click *App registrations* and select the application.
+
+. Click *API permissions > Add a permission*.
+
+. Under *Microsoft APIs*, select *Azure Service Management*.
++
+image:screenshot_azure_service_mgmt_apis.gif[A screenshot of the Azure portal that shows the Azure Service Management API permissions.]
+
+. Click *Access Azure Service Management as organization users* and then click *Add permissions*.
++
+image:screenshot_azure_service_mgmt_apis_add.gif[A screenshot of the Azure portal that shows adding the Azure Service Management APIs.]
+
+=== Getting the application ID and directory ID
+
+When you add the Azure account to Cloud Manager, you need to provide the application (client) ID and the directory (tenant) ID for the application. Cloud Manager uses the IDs to programmatically sign in.
+
+.Steps
+
+. In the *Azure Active Directory* service, click *App registrations* and select the application.
+
+. Copy the *Application (client) ID* and the *Directory (tenant) ID*.
++
+image:screenshot_azure_app_ids.gif[A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory.]
+
+=== Creating a client secret
+
+You need to create a client secret and then provide Cloud Manager with the value of the secret so Cloud Manager can use it to authenticate with Azure AD.
+
+NOTE: When you add the account to Cloud Manager, Cloud Manager refers to the client secret as the Application Key.
+
+.Steps
+
+. Open the *Azure Active Directory* service.
+
+. Click *App registrations* and select your application.
+
+. Click *Certificates & secrets > New client secret*.
+
+. Provide a description of the secret and a duration.
+
+. Click *Add*.
+
+. Copy the value of the client secret.
++
+image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that shows a client secret for the Azure AD service principal.]
+
+.Result
+
+Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in Cloud Manager when you add an Azure account.
+
+== Adding Azure accounts to Cloud Manager
+
+After you provide an Azure account with the required permissions, you can add the account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Provider & Support Accounts*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+
+. Click *Add New Account* and select *Microsoft Azure*.
+
+. Enter information about the Azure Active Directory service principal that grants the required permissions:
++
+* Application ID: See <<Getting the application ID and directory ID>>.
+* Tenant ID (or Directory ID): See <<Getting the application ID and directory ID>>.
+* Application Key (the client secret): See <<Creating a client secret>>.
+
+. Confirm that the policy requirements have been met and then click *Create Account*.
+
+.Result
+
+You can now switch to another account from the Details and Credentials page when creating a new working environment:
+
+image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
+
+== Associating additional Azure subscriptions with a managed identity
+
+Cloud Manager enables you to choose the Azure account and subscription in which you want to deploy Cloud Volumes ONTAP. You can't select a different Azure subscription for the managed identity profile unless you associate the https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[managed identity^] with those subscriptions.
+
+.About this task
+
+A managed identity is link:concept_accounts_azure.html[the initial Azure account] when you deploy Cloud Manager from NetApp Cloud Central. When you deployed Cloud Manager, Cloud Central created the OnCommand Cloud Manager Operator role and assigned it to the Cloud Manager virtual machine.
+
+.Steps
+
+. Log in to the Azure portal.
+
+. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
+
+. Click *Access control (IAM)*.
+
+.. Click *Add* > *Add role assignment* and then add the permissions:
+
+* Select the *OnCommand Cloud Manager Operator* role.
++
+NOTE: OnCommand Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
+
+* Assign access to a *Virtual Machine*.
+
+* Select the subscription in which the Cloud Manager virtual machine was created.
+
+* Select the Cloud Manager virtual machine.
+
+* Click *Save*.
+
+. Repeat these steps for additional subscriptions.
+
+.Result
+
+When you create a new working environment, you should now have the ability to select from multiple Azure subscriptions for the managed identity profile.
+
+image:screenshot_accounts_switch_azure_subscription.gif[A screenshot that shows the ability to select multiple Azure subscriptions when selecting a Microsoft Azure Provider Account.]

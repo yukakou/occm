@@ -1,0 +1,53 @@
+---
+sidebar: sidebar
+permalink: concept_accounts_azure.html
+keywords: cloud provider accounts, azure, azure accounts, service principal, multiple accounts, permissions, policy, policies, subscriptions
+summary: Cloud Manager enables you to choose the Azure account in which you want to deploy a Cloud Volumes ONTAP system. You can deploy all of your Cloud Volumes ONTAP systems in the initial Azure account, or you can set up additional accounts.
+---
+
+= Azure accounts and permissions
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Manager enables you to choose the Azure account in which you want to deploy a Cloud Volumes ONTAP system. You can deploy all of your Cloud Volumes ONTAP systems in the initial Azure account, or you can set up additional accounts.
+
+== The initial Azure account
+
+When you deploy Cloud Manager from NetApp Cloud Central, you need to use an Azure account that has permissions to deploy the Cloud Manager virtual machine. The required permissions are listed in the https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Central policy for Azure^].
+
+When Cloud Central deploys the Cloud Manager virtual machine in Azure, it enables a https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[system-assigned managed identity^] on the Cloud Manager virtual machine, creates a custom role, and assigns it to the virtual machine. The role provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP in that Azure subscription. link:reference_permissions.html#what-cloud-manager-does-with-azure-permissions[Review how Cloud Manager uses the permissions].
+
+image:diagram_permissions_initial_azure.png[A conceptual image that shows Cloud Central deploying Cloud Manager in an Azure account and subscription. A system-assigned managed identity is enabled and a custom role is assigned to the Cloud Manager virtual machine.]
+
+Cloud Manager selects this cloud provider account by default when you create a new working environment:
+
+image:screenshot_accounts_select_azure.gif[A screenshot that shows the Switch Account option in the Details & Credentials page.]
+
+== Additional Azure subscriptions for the initial account
+
+The managed identity is associated with the subscription in which you launched Cloud Manager. If you want to select a different Azure subscription, then you need to link:task_adding_azure_accounts.html#associating-additional-azure-subscriptions-with-a-managed-identity[associate the managed identity with those subscriptions].
+
+== Additional Azure accounts
+
+If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you must grant the required permissions by link:task_adding_azure_accounts.html[creating and setting up a service principal in Azure Active Directory] for each Azure account. The following image shows two additional accounts, each set up with a service principal and custom role that provides permissions:
+
+image:diagram_permissions_multiple_azure.png[A conceptual image that shows the initial Azure account, which receives permissions through a custom role and managed identity, and two additional accounts that receive permissions through a custom role and service principal.]
+
+You would then link:task_adding_azure_accounts.html#adding-azure-accounts-to-cloud-manager[add the cloud provider accounts to Cloud Manager] by providing details about the AD service principal.
+
+After you add another account, you can switch to it when creating a new working environment:
+
+image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
+
+.What about Marketplace deployments and on-prem deployments?
+****
+The sections above describe the recommended deployment method from NetApp Cloud Central. You can also deploy Cloud Manager in Azure from the link:task_launching_azure_mktp.html[Azure Marketplace], and you can link:task_installing_linux.html[install Cloud Manager on-premises].
+
+If you use the Marketplace, permissions are provided in the same way. You just need to manually create and set up the managed identity for Cloud Manager, and then provide permissions for any additional accounts.
+
+For on-premises deployments, you can't set up a managed identity for the Cloud Manager system, but you can provide permissions just like you would for additional accounts.
+****

@@ -1,12 +1,12 @@
 ---
 sidebar: sidebar
 permalink: reference_permissions.html
-keywords: permissions, actions, API, aws, azure, json
-summary: Cloud Manager requires permissions to perform actions in AWS and Azure on your behalf. These permissions are included in the policies provided by NetApp. You might want to understand what Cloud Manager does with these permissions.
+keywords: permissions, actions, API, aws, azure, json, gcp, aws permissions, azure permissions, gcp permissions
+summary: Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in the policies provided by NetApp. You might want to understand what Cloud Manager does with these permissions.
 translate: false
 ---
 
-= AWS and Azure permissions for Cloud Manager
+= How Cloud Manager uses cloud provider permissions
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,7 +14,7 @@ translate: false
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager requires permissions to perform actions in AWS and Azure on your behalf. These permissions are included in https://mysupport.netapp.com/info/web/ECMP11022837.html[the policies provided by NetApp^]. You might want to understand what Cloud Manager does with these permissions.
+Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in https://mysupport.netapp.com/info/web/ECMP11022837.html[the policies provided by NetApp^]. You might want to understand what Cloud Manager does with these permissions.
 
 == What Cloud Manager does with AWS permissions
 
@@ -328,4 +328,177 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 | Manages failover for HA pairs.
 
+|===
+
+== What Cloud Manager does with GCP permissions
+
+The Cloud Manager policy for GCP includes the permissions that Cloud Manager needs to deploy and manage Cloud Volumes ONTAP.
+
+[cols=2*,options="header",cols="50,50"]
+|===
+
+| Actions
+| Purpose
+
+|
+- compute.disks.create
+- compute.disks.createSnapshot
+- compute.disks.delete
+- compute.disks.get
+- compute.disks.list
+- compute.disks.setLabels
+- compute.disks.use
+
+| To create and manage disks for Cloud Volumes ONTAP.
+
+|
+- compute.firewalls.create
+- compute.firewalls.delete
+- compute.firewalls.get
+- compute.firewalls.list
+
+| To create firewall rules for Cloud Volumes ONTAP.
+
+|
+- compute.globalOperations.get
+
+| To get the status of operations.
+
+|
+- compute.images.get
+- compute.images.getFromFamily
+- compute.images.list
+- compute.images.useReadOnly
+
+| To get images for VM instances.
+
+|
+- compute.instances.attachDisk
+- compute.instances.detachDisk
+
+| To attach and detach disks to Cloud Volumes ONTAP.
+
+|
+- compute.instances.create
+- compute.instances.delete
+
+| To create and delete Cloud Volumes ONTAP VM instances.
+
+|
+- compute.instances.get
+
+| To list VM instances.
+
+|
+- compute.instances.getSerialPortOutput
+
+| To get console logs.
+
+|
+- compute.instances.list
+
+| To retrieve the list of instances in a zone.
+
+|
+- compute.instances.setDeletionProtection
+
+| To set deletion protection on the instance.
+
+|
+- compute.instances.setLabels
+
+| To add labels.
+
+|
+- compute.instances.setMachineType
+
+| To change the machine type for Cloud Volumes ONTAP.
+
+|
+- compute.instances.setMetadata
+
+| To add metadata.
+
+|
+- compute.instances.setTags
+
+| To add tags for firewall rules.
+
+|
+- compute.instances.start
+- compute.instances.stop
+- compute.instances.updateDisplayDevice
+
+| To start and stop Cloud Volumes ONTAP.
+
+|
+- compute.machineTypes.get
+
+| To get the numbers of cores to check qoutas.
+
+|
+- compute.projects.get
+
+| To support multi-projects.
+
+|
+- compute.snapshots.create
+- compute.snapshots.delete
+- compute.snapshots.get
+- compute.snapshots.list
+- compute.snapshots.setLabels
+
+| To create and manage persistent disk snapshots.
+
+|
+- compute.networks.get
+- compute.networks.list
+- compute.regions.get
+- compute.regions.list
+- compute.subnetworks.get
+- compute.subnetworks.list
+- compute.zoneOperations.get
+- compute.zones.get
+- compute.zones.list
+
+| To get the networking information needed to create a new Cloud Volumes ONTAP virtual machine instance.
+
+|
+- deploymentmanager.compositeTypes.get
+- deploymentmanager.compositeTypes.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- deploymentmanager.manifests.list
+- deploymentmanager.operations.get
+- deploymentmanager.operations.list
+- deploymentmanager.resources.get
+- deploymentmanager.resources.list
+- deploymentmanager.typeProviders.get
+- deploymentmanager.typeProviders.list
+- deploymentmanager.types.get
+- deploymentmanager.types.list
+
+| To deploy the Cloud Volumes ONTAP virtual machine instance using Google Cloud Deployment Manager.
+
+|
+-	logging.logEntries.list
+-	logging.privateLogEntries.list
+
+| To get stack log drives.
+
+|
+- resourcemanager.projects.get
+
+| To support multi-projects.
+
+|
+- storage.buckets.create
+- storage.buckets.delete
+- storage.buckets.get
+- storage.buckets.list
+
+| To create and manage a Google Cloud Storage bucket for data tiering.
 |===
