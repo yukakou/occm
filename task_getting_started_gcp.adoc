@@ -16,6 +16,11 @@ summary: Get started with Cloud Volumes ONTAP in GCP from NetApp Cloud Central.
 [.lead]
 Get started with Cloud Volumes ONTAP in GCP by setting up GCP and then deploying Cloud Manager software from NetApp Cloud Central.
 
+Note the following before you get started:
+
+* Cloud Manager must be installed in Google Cloud Platform in order to deploy Cloud Volumes ONTAP in GCP.
+* The only way to deploy Cloud Manager in GCP is from NetApp Cloud Central.
+
 === image:number1.png[Number 1] Set up your networking
 
 [role="quick-margin-para"]
