@@ -21,11 +21,11 @@ Details about how Cloud Manager and Cloud Volumes ONTAP are configured by defaul
 
 If you need to troubleshoot Cloud Manager or your Linux host, it might help to understand how Cloud Manager is configured.
 
-* If you deployed Cloud Manager from NetApp Cloud Central (or directly from the AWS Marketplace or Azure Marketplace), note the following:
+* If you deployed Cloud Manager from NetApp Cloud Central (or directly from a cloud provider's marketplace), note the following:
 
 ** In AWS, the user name for the EC2 Linux instance is ec2-user.
 
-** For both AWS and Azure, the operating system for the Cloud Manager image is Red Hat Enterprise Linux 7.4 (HVM).
+** The operating system for the Cloud Manager image is Red Hat Enterprise Linux 7.4 (HVM).
 +
 The operating system does not include a GUI. You must use a terminal to access the system.
 
@@ -56,7 +56,7 @@ If the MySQL service is down, then the occm service is down too.
 
 Understanding how Cloud Volumes ONTAP is configured by default can help you set up and administer your systems, especially if you are familiar with ONTAP because the default setup for Cloud Volumes ONTAP is different than ONTAP.
 
-* Cloud Volumes ONTAP is available as a single-node system and as an HA pair in both AWS and Azure.
+* Cloud Volumes ONTAP is available as a single-node system in AWS, Azure, and GCP, and as an HA pair in AWS and Azure.
 
 * Cloud Manager creates one data-serving SVM when it deploys Cloud Volumes ONTAP. While you can create another data-serving SVM from System Manager or the CLI, using multiple data-serving SVMs is not supported.
 
@@ -104,9 +104,9 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 
 === AWS
 
-* One Provisioned IOPS SSD disk for Cloud Volumes ONTAP boot data, which is approximately 45 GB and 1,250 PIOPS
+* One Provisioned IOPS SSD disk for boot data, which is approximately 45 GB and 1,250 PIOPS
 
-* One General Purpose SSD disk for Cloud Volumes ONTAP root data, which is approximately 140 GB
+* One General Purpose SSD disk for root data, which is approximately 140 GB
 
 * One EBS snapshot for each boot disk and root disk
 +
@@ -128,6 +128,14 @@ In an HA pair, both Cloud Volumes ONTAP nodes replicate its root disk to the par
 * Two 140 GB Premium Storage page blobs for the root volume (one per node)
 * Two 128 GB Standard HDD disks for saving cores (one per node)
 * One Azure snapshot for each boot disk and root disk
+
+=== GCP
+
+* One 10 GB Standard persistent disk for boot data
+* One 64 GB Standard persistent disk for root data
+* One 500 GB Standard persistent disk for NVRAM
+* One 216 GB Standard persistent disk for saving cores
+* One GCP snapshot each for the boot disk and root disk
 
 === Where the disks reside
 

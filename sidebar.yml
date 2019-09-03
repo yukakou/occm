@@ -22,7 +22,13 @@ entries:
       - title: Cloud Central accounts
         url: /concept_cloud_central_accounts.html
       - title: Cloud provider accounts
-        url: /concept_accounts_and_permissions.html
+        entries:
+          - title: AWS accounts
+            url: /concept_accounts_aws.html
+          - title: Azure accounts
+            url: /concept_accounts_azure.html
+          - title: GCP accounts
+            url: /concept_accounts_gcp.html
       - title: Storage
         entries:
           - title: Disks and aggregates
@@ -61,8 +67,12 @@ entries:
         entries:
           - title: Setting up the Cloud Central account
             url: /task_setting_up_cloud_central_accounts.html
-          - title: Adding cloud provider accounts
-            url: /task_adding_cloud_accounts.html
+          - title: Adding AWS accounts
+            url: /task_adding_aws_accounts.html
+          - title: Adding Azure accounts
+            url: /task_adding_azure_accounts.html
+          - title: Adding GCP accounts
+            url: /task_adding_gcp_accounts.html
           - title: Adding NetApp Support Site accounts
             url: /task_adding_nss_accounts.html
           - title: Installing an HTTPS certificate
@@ -79,6 +89,8 @@ entries:
             url: /task_setting_up_transit_gateway.html
           - title: Cloud Volumes ONTAP for Azure
             url: /reference_networking_azure.html
+          - title: Cloud Volumes ONTAP for GCP
+            url: /reference_networking_gcp.html
       - title: Additional deployment options
         entries:
           - title: Cloud Manager host requirements
@@ -111,6 +123,8 @@ entries:
         url: /task_deploying_otc_aws.html
       - title: Launching Cloud Volumes ONTAP in Azure
         url: /task_deploying_otc_azure.html
+      - title: Launching Cloud Volumes ONTAP in GCP
+        url: /task_deploying_gcp.html
       - title: Registering pay-as-you-go systems
         url: /task_registering.html
       - title: Setting up Cloud Volumes ONTAP
@@ -133,7 +147,7 @@ entries:
         url: /task_discovering_ontap.html
       - title: Replicating data to and from the cloud
         url: /task_replicating_data.html
-      - title: Syncing data to AWS S3
+      - title: Syncing data to Amazon S3
         url: /task_syncing_s3.html
       - title: Backing up data using the Cloud Backup Service in AWS
         url: /task_setting_up_cbs.html
@@ -189,6 +203,8 @@ entries:
         url: /reference_security_groups.html
       - title: Security group rules for Azure
         url: /reference_security_groups_azure.html
+      - title: Firewall rules for GCP
+        url: /reference_firewall_rules_gcp.html
       - title: Permissions
         url: /reference_permissions.html
       - title: Default configurations

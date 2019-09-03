@@ -18,11 +18,11 @@ You can get help and find more information about Cloud Manager and Cloud Volumes
 
 * https://www.youtube.com/playlist?list=PLdXI3bZJEw7lnoRo8FBKsX1zHbK8AQOoT[Videos for Cloud Manager and Cloud Volumes ONTAP^]
 +
-Watch videos that show you how to deploy and manage Cloud Volumes ONTAP in AWS and Azure and how to replicate data across your hybrid cloud.
+Watch videos that show you how to deploy and manage Cloud Volumes ONTAP and how to replicate data across your hybrid cloud.
 
 * http://mysupport.netapp.com/cloudontap/support/iampolicies[Policies for Cloud Manager^]
 +
-Download JSON files that include the permissions that Cloud Manager needs to perform actions in AWS and Azure.
+Download JSON files that include the permissions that Cloud Manager needs to perform actions in a cloud provider.
 
 * link:api.html[Cloud Manager API Developer Guide^]
 +
