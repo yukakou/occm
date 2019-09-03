@@ -20,6 +20,13 @@ link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== General Availability of Cloud Volumes ONTAP in GCP (3 Sept 2019)
+
+Cloud Volumes ONTAP is now generally available in Google Cloud Platform (GCP) when you bring your own license (BYOL). A pay-as-you-go promotion is also available. The promotion offers free licenses for an unlimited number of systems and will expire at the end of September 2019.
+
+* link:task_getting_started_gcp.html[Learn how to get started in GCP]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_96.html[View supported configurations^]
+
 == Cloud Manager 3.7.2 (5 Aug 2019)
 
 * <<FlexCache licenses>>
