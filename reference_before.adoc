@@ -19,7 +19,9 @@ The following conditions should exist before you start deploying Cloud Volumes O
 
 * Networking requirements were met for Cloud Manager and Cloud Volumes ONTAP.
 * Cloud Manager has permissions to perform operations in your chosen cloud provider.
-* Each Cloud Volumes ONTAP product that users will deploy was subscribed to from the AWS Marketplace.
+* For AWS, you subscribed to the appropriate AWS Marketplace page:
+** If you want to deploy a PAYGO system, or enable an add-on feature: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[The Cloud Manager (for Cloud Volumes ONTAP) page^].
+** If you want to deploy a BYOL system: https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=cloud+volumes+ontap+byol[The single node or HA page in the AWS Marketplace^].
 * Cloud Manager was installed.
 
 .Related links
