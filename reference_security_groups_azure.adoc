@@ -115,7 +115,7 @@ The security group for Cloud Volumes ONTAP requires both inbound and outbound ru
 | 1007 | inbound_443 | 443 | TCP | Any | Any | Allow | HTTPS access to the System Manager web console using the IP address of the cluster management LIF
 | 1008 | inbound_445 | 445 | TCP | Any | Any | Allow | Microsoft SMB/CIFS over TCP with NetBIOS framing
 | 1009 | inbound_635_tcp | 635 | TCP | Any | Any | Allow | NFS mount
-| 1010 | inbound_635_udp | 635 | TCP | Any | Any | Allow | NFS mount
+| 1010 | inbound_635_udp | 635 | UDP | Any | Any | Allow | NFS mount
 | 1011 | inbound_749 | 749 | TCP | Any | Any | Allow | Kerberos
 | 1012 | inbound_2049_tcp | 2049 | TCP | Any | Any | Allow | NFS server daemon
 | 1013 | inbound_2049_udp | 2049 | UDP | Any | Any | Allow | NFS server daemon

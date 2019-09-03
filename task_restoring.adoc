@@ -29,8 +29,8 @@ This step gets Cloud Manager ready so you can create additional Cloud Volumes ON
 +
 It's important to complete this step if you used AWS keys to deploy an existing Cloud Volumes ONTAP system that you want to discover on this new Cloud Manager system. Cloud Manager needs the AWS keys to properly discover and manage Cloud Volumes ONTAP.
 +
-* link:task_adding_cloud_accounts.html#adding-aws-accounts-to-cloud-manager[Adding AWS accounts to Cloud Manager]
-* link:task_adding_cloud_accounts.html#adding-azure-accounts-to-cloud-manager[Adding Azure accounts to Cloud Manager]
+* link:task_adding_aws_accounts.html[Adding AWS accounts to Cloud Manager]
+* link:task_adding_azure_accounts.html[Adding Azure accounts to Cloud Manager]
 * link:task_adding_nss_accounts.html[Adding NetApp Support Site accounts to Cloud Manager]
 
 . Rediscover your working environments: Cloud Volumes ONTAP systems, on-premises clusters, and NetApp Private Storage for Cloud configurations.

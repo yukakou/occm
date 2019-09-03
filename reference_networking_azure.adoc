@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference_networking_azure.html
 keywords: networking, network, requirements, connection, connections, vnet, security group, security groups, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, blob, service endpoint
-summary: You must set up your Azure networking so Cloud Volumes ONTAP systems can operate properly.
+summary: Set up your Azure networking so Cloud Volumes ONTAP systems can operate properly.
 ---
 
 = Networking requirements for Cloud Volumes ONTAP in Azure
@@ -13,7 +13,7 @@ summary: You must set up your Azure networking so Cloud Volumes ONTAP systems ca
 :imagesdir: ./media/
 
 [.lead]
-You must set up your Azure networking so Cloud Volumes ONTAP systems can operate properly.
+Set up your Azure networking so Cloud Volumes ONTAP systems can operate properly.
 
 ****
 Looking for the list of endpoints to which Cloud Manager requires access? They're now maintained in a single location. link:reference_networking_cloud_manager.html[Click here for details].
