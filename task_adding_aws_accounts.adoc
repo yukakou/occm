@@ -1,0 +1,101 @@
+---
+sidebar: sidebar
+permalink: task_adding_aws_accounts.html
+keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam policy, iam user, access keys, arn, cloud provider accounts, aws, cloud provider profile, json, iam
+summary: If you want to deploy Cloud Volumes ONTAP in different AWS accounts, then you need to provide the required permissions to those accounts and then add the details to Cloud Manager. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
+---
+
+= Setting up and adding AWS accounts to Cloud Manager
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+If you want to deploy Cloud Volumes ONTAP in different AWS accounts, then you need to provide the required permissions and add the details to Cloud Manager. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
+
+NOTE: When you deploy Cloud Manager from Cloud Central, Cloud Manager automatically adds the AWS account in which you deployed Cloud Manager. An initial account is not added if you manually installed the Cloud Manager software on an existing system. link:concept_accounts_aws.html[Learn about AWS accounts and permissions].
+
+*Choices*
+
+* <<Granting permissions by providing AWS keys>>
+* <<Granting permissions by assuming IAM roles in other accounts>>
+
+== Granting permissions by providing AWS keys
+
+If you want to provide Cloud Manager with AWS keys for an IAM user, then you need to grant the required permissions to that user. The Cloud Manager IAM policy defines the AWS actions and resources that Cloud Manager is allowed to use.
+
+.Steps
+
+. Download the Cloud Manager IAM policy from the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Policies page^].
+
+. From the IAM console, create your own policy by copying and pasting the text from the Cloud Manager IAM policy.
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS Documentation: Creating IAM Policies^]
+
+. Attach the policy to an IAM role or an IAM user.
++
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html[AWS Documentation: Creating IAM Roles^]
+* https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html[AWS Documentation: Adding and Removing IAM Policies^]
+
+.Result
+
+The account now has the required permissions. <<Adding AWS accounts to Cloud Manager,You can now add it to Cloud Manager>>.
+
+== Granting permissions by assuming IAM roles in other accounts
+
+You can set up a trust relationship between the source AWS account in which you deployed the Cloud Manager instance and other AWS accounts by using IAM roles. You would then provide Cloud Manager with the ARN of the IAM roles from the trusted accounts.
+
+.Steps
+
+. Go to the target account where you want to deploy Cloud Volumes ONTAP and create an IAM role by selecting *Another AWS account*.
++
+Be sure to do the following:
+
+* Enter the ID of the account where the Cloud Manager instance resides.
+* Attach the Cloud Manager IAM policy, which is available from the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Policies page^].
++
+image:screenshot_iam_create_role.gif[A screenshot that shows the Create role page in the AWS IAM Console. Under Select type of trusted entity, Another AWS account is selected.]
+
+. Go to the source account where the Cloud Manager instance resides and select the IAM role that is attached to the instance.
+.. Click *Trust Relationships > Edit trust relationship*.
+.. Add the "sts:AssumeRole" action and the ARN of the role that you created in the target account.
++
+*Example*
++
+[source,json]
+{
+ "Version": "2012-10-17",
+ "Statement": {
+   "Effect": "Allow",
+   "Action": "sts:AssumeRole",
+   "Resource": "arn:aws:iam::ACCOUNT-B-ID:role/ACCOUNT-B-ROLENAME"
+}
+}
+
+.Result
+
+The account now has the required permissions. <<Adding AWS accounts to Cloud Manager,You can now add it to Cloud Manager>>.
+
+== Adding AWS accounts to Cloud Manager
+
+After you provide an AWS account with the required permissions, you can add the account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Provider & Support Accounts*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+
+. Click *Add New Account* and select *AWS*.
+
+. Choose whether you want to provide AWS keys or the ARN of a trusted IAM role.
+
+. Confirm that the policy requirements have been met and then click *Create Account*.
+
+.Result
+
+You can now switch to another account from the Details and Credentials page when creating a new working environment:
+
+image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
