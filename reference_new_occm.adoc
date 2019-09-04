@@ -24,17 +24,10 @@ link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 
 
 Cloud Manager 3.7.3 includes the following enhancements.
 
-* <<General Availability of Cloud Volumes ONTAP in Google Cloud Platform>>
 * <<New subscription required in the AWS Marketplace>>
+* <<Backup to S3>>
 * <<Discovery and management of Cloud Volumes Service for AWS>>
 * <<Support for AWS GovCloud (US-East)>>
-
-=== General Availability of Cloud Volumes ONTAP in Google Cloud Platform
-
-Cloud Volumes ONTAP is now generally available in GCP when you bring your own license (BYOL). A pay-as-you-go promotion is also available. The promotion offers free licenses for an unlimited number of systems and will expire at the end of September 2019.
-
-* link:task_getting_started_gcp.html[Learn how to get started in GCP]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_96.html[View supported configurations^]
 
 === New subscription required in the AWS Marketplace
 
@@ -43,6 +36,22 @@ https://aws.amazon.com/marketplace/pp/B07QX2QLXX[A new subscription is available
 Starting with version 9.6, this new subscription method replaces the two existing AWS Marketplace subscriptions for Cloud Volumes ONTAP PAYGO to which you previously subscribed. You still need subscriptions through the https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=cloud+volumes+ontap+byol[existing AWS Marketplace pages when deploying Cloud Volumes ONTAP BYOL^].
 
 link:reference_aws_marketplace.html[Learn more about each AWS Marketplace page].
+
+=== Backup to S3
+
+Cloud Manager now enables you to back up data from Cloud Volumes ONTAP to Amazon S3.
+
+Backup to S3 is an add-on feature for Cloud Volumes ONTAP that delivers fully-managed backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in S3 object storage, independent of volume Snapshot copies used for near-term recovery or cloning. The feature is powered by NetApp's Cloud Backup Service.
+
+link:task_backup_to_s3.html[Learn how to get started].
+
+This feature requires an update to the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^]. The following VPC endpoint permissions are now required:
+
+[source,json]
+"ec2:DescribeVpcEndpoints",
+"ec2:CreateVpcEndpoint",
+"ec2:ModifyVpcEndpoint",
+"ec2:DeleteVpcEndpoints"
 
 === Discovery and management of Cloud Volumes Service for AWS
 
