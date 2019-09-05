@@ -43,7 +43,17 @@ A few steps are required if you want to tier cold data from Cloud Volumes ONTAP 
 +
 You'll need to link:task_adding_gcp_accounts.html[add the keys to Cloud Manager during setup] so it can use the keys to manage a Cloud Storage bucket for data tiering.
 
-=== image:number3.png[Number 3] Set up GCP permissions
+=== image:number3.png[Number 3] Enable Google Cloud APIs
+
+[role="quick-margin-para"]
+https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the following Google Cloud APIs in your project^]. These APIs are required to deploy Cloud Manager and Cloud Volumes ONTAP.
+
+[role="quick-margin-list"]
+* Cloud Deployment Manager V2 API
+* Compute Engine API
+* Stackdriver Logging API
+
+=== image:number4.png[Number 4] Set up GCP permissions
 
 [role="quick-margin-para"]
 Make sure that two sets of permissions are in place:
@@ -55,13 +65,13 @@ Make sure that two sets of permissions are in place:
 +
 * https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role[Create a custom role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.7.3_GCP.yaml[Cloud Manager policy for GCP^].
 +
-This policy is different than the policy in step 3a.
+This policy is different than the policy in step 4a.
 
 * https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a GCP service account, apply the custom role that you just created, and grant users access to the service account^].
 +
 You'll associate this service account with the Cloud Manager VM instance in the next step.
 
-=== image:number4.png[Number 4] Launch Cloud Manager from NetApp Cloud Central
+=== image:number5.png[Number 5] Launch Cloud Manager from NetApp Cloud Central
 
 [role="quick-margin-para"]
 Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance in GCP from https://cloud.netapp.com[Cloud Central^]. Cloud Manager must be installed in GCP from Cloud Central before you can deploy Cloud Volumes ONTAP.
@@ -69,7 +79,7 @@ Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It 
 [role="quick-margin-para"]
 NOTE: In this step, a Google form prompts you to log in to your Google account. You'll see a notification from Google that the Cloud Central site is unverified. NetApp is currently working closely with Google to finalize the verification process. Additional information pertaining to the NetApp privacy policies and terms of service can be accessed at: https://www.netapp.com/us/legal/privacypolicy/index.aspx and https://www.netapp.com/us/how-to-buy/stc.aspx.
 
-=== image:number5.png[Number 5] Launch Cloud Volumes ONTAP using Cloud Manager
+=== image:number6.png[Number 6] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]
 Once Cloud Manager is ready, just click Create, select the type of system that you would like to deploy, and complete the steps in the wizard. After 25 minutes, your first Cloud Volumes ONTAP system should be up and running.
