@@ -104,21 +104,20 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 
 === AWS
 
-* One Provisioned IOPS SSD disk for boot data, which is approximately 45 GB and 1,250 PIOPS
-
-* One General Purpose SSD disk for root data, which is approximately 140 GB
+* Two General Purpose SSD disks:
+** One 140 GB disk for root data (one per node)
+** 9.6 and later: One 86 GB disk for boot data (one per node)
+** 9.5 and earlier: One 45 GB disk for boot data (one per node)
 
 * One EBS snapshot for each boot disk and root disk
-+
-In an HA pair, both Cloud Volumes ONTAP nodes replicate its root disk to the partner node.
 
 * For HA pairs, one EBS volume for the Mediator instance, which is approximately 8 GB
 
 === Azure (single node)
 
 * Two Premium SSD disks:
-** One 90 GB disk for the boot volume
-** One 140 GB disk for the root volume
+** One 90 GB disk for boot data
+** One 140 GB disk for root data
 
 * One Azure snapshot for each boot disk and root disk
 
