@@ -97,6 +97,6 @@ image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Clo
 
 Set up permissions for your AWS and Azure accounts so Cloud Manager can deploy Cloud Volumes ONTAP:
 
-* If you want to deploy Cloud Volumes ONTAP in AWS, link:task_adding_cloud_accounts.html[set up an AWS account and then add it to Cloud Manager].
+* If you want to deploy Cloud Volumes ONTAP in AWS, link:task_adding_aws_accounts.html[set up an AWS account and then add it to Cloud Manager].
 
-* If you want to deploy Cloud Volumes ONTAP in Azure, link:task_adding_cloud_accounts.html#setting-up-and-adding-azure-accounts-to-cloud-manager[set up an Azure account and then add it to Cloud Manager].
+* If you want to deploy Cloud Volumes ONTAP in Azure, link:task_adding_azure_accounts.html[set up an Azure account and then add it to Cloud Manager].

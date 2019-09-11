@@ -151,6 +151,8 @@ entries:
         url: /task_syncing_s3.html
       - title: Backing up data using the Cloud Backup Service in AWS
         url: /task_setting_up_cbs.html
+  - title: Managing Cloud Volumes for AWS
+    url: /task_manage_cvs_aws.html
   - title: Administering Cloud Volumes ONTAP
     entries:
       - title: Connecting to Cloud Volumes ONTAP
@@ -205,6 +207,8 @@ entries:
         url: /reference_security_groups_azure.html
       - title: Firewall rules for GCP
         url: /reference_firewall_rules_gcp.html
+      - title: AWS Marketplace pages
+        url: /reference_aws_marketplace.html
       - title: Permissions
         url: /reference_permissions.html
       - title: Default configurations

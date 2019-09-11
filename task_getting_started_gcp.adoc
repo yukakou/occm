@@ -76,6 +76,9 @@ You'll associate this service account with the Cloud Manager VM instance in the 
 [role="quick-margin-para"]
 Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance in GCP from https://cloud.netapp.com[Cloud Central^]. Cloud Manager must be installed in GCP from Cloud Central before you can deploy Cloud Volumes ONTAP.
 
+[role="quick-margin-para"]
+When you choose GCP as the cloud provider, you're prompted by Google to log in to your account and to grant permissions. Clicking "Allow" grants access to the compute APIs needed to deploy Cloud Manager.
+
 === image:number6.png[Number 6] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]

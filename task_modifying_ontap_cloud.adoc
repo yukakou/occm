@@ -116,6 +116,20 @@ link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP]
 
 . Terminate the Cloud Volumes ONTAP system that you no longer need by link:task_deleting_working_env.html[deleting the original working environment].
 
+== Changing your AWS Marketplace subscription
+
+Change the AWS Marketplace subscription for your Cloud Volumes ONTAP system if you want to change the AWS account from which you get charged.
+
+.Steps
+
+. If you haven't already done so, add a new subscription from https://aws.amazon.com/marketplace/pp/B07QX2QLXX[the Cloud Manager offering in the AWS Marketplace^].
+
+. From the working environment in Cloud Manager, click the menu icon, and then click *Marketplace Subscription*.
+
+. Select a subscription from the drop-down list.
+
+. Click *Save*.
+
 == Modifying the storage virtual machine name
 
 Cloud Manager automatically names the storage virtual machine (SVM) for Cloud Volumes ONTAP. You can modify the name of the SVM if you have strict naming standards. For example, you might want it to match how you name the SVMs for your ONTAP clusters.

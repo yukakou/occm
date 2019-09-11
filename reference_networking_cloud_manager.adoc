@@ -153,7 +153,7 @@ Third-party locations are subject to change.
 |===
 
 === Endpoints to manage Cloud Volumes ONTAP in GCP
-Cloud Manager requires outbound internet access to contact the following endpoints when deploying and managing Cloud Volumes ONTAP in Microsoft Azure:
+Cloud Manager requires outbound internet access to contact the following endpoints when deploying and managing Cloud Volumes ONTAP in GCP:
 
 [cols="43,57",options="header"]
 |===

@@ -68,7 +68,7 @@ Cloud Manager is now installed and set up. You must grant Azure permissions befo
 
 == Granting Azure permissions to Cloud Manager using a managed identity
 
-The easiest way to provide permissions is by enabling a https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[managed identity^] on the Cloud Manager virtual machine and then by assigning the required permissions to the virtual machine. If preferred, an alternative way is to link:task_adding_cloud_accounts.html#granting-azure-permissions-using-a-service-principal[grant Azure permissions using a service principal].
+The easiest way to provide permissions is by enabling a https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[managed identity^] on the Cloud Manager virtual machine and then by assigning the required permissions to the virtual machine. If preferred, an alternative way is to link:task_adding_azure_accounts.html[grant Azure permissions using a service principal].
 
 .Steps
 
