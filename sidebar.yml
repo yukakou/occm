@@ -147,10 +147,10 @@ entries:
         url: /task_discovering_ontap.html
       - title: Replicating data to and from the cloud
         url: /task_replicating_data.html
-      - title: Backing up to Amazon S3
-        url: /task_backup_to_s3.html
       - title: Syncing data to Amazon S3
         url: /task_syncing_s3.html
+      - title: Backing up data using the Cloud Backup Service in AWS
+        url: /task_setting_up_cbs.html
   - title: Managing Cloud Volumes for AWS
     url: /task_manage_cvs_aws.html
   - title: Administering Cloud Volumes ONTAP
