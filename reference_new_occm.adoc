@@ -20,21 +20,19 @@ link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
-== Cloud Manager 3.7.3 (3 Sept 2019)
+== Cloud Manager 3.7.3 (11 Sept 2019)
 
 Cloud Manager 3.7.3 includes the following enhancements.
 
-* <<General Availability of Cloud Volumes ONTAP in Google Cloud Platform>>
-* <<New subscription required in the AWS Marketplace>>
 * <<Discovery and management of Cloud Volumes Service for AWS>>
+* <<New subscription required in the AWS Marketplace>>
 * <<Support for AWS GovCloud (US-East)>>
 
-=== General Availability of Cloud Volumes ONTAP in Google Cloud Platform
+=== Discovery and management of Cloud Volumes Service for AWS
 
-Cloud Volumes ONTAP is now generally available in GCP when you bring your own license (BYOL). A pay-as-you-go promotion is also available. The promotion offers free licenses for an unlimited number of systems and will expire at the end of September 2019.
+Cloud Manager now enables you to discover the cloud volumes in your https://cloud.netapp.com/cloud-volumes-service-for-aws[Cloud Volumes Service for AWS^] subscription. After discovery, you can add additional cloud volumes directly from Cloud Manager. This enhancement provides a single pane of glass from which you can manage your NetApp cloud storage.
 
-* link:task_getting_started_gcp.html[Learn how to get started in GCP]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_96.html[View supported configurations^]
+link:task_manage_cvs_aws.html[Learn how to get started].
 
 === New subscription required in the AWS Marketplace
 
@@ -44,15 +42,16 @@ Starting with version 9.6, this new subscription method replaces the two existin
 
 link:reference_aws_marketplace.html[Learn more about each AWS Marketplace page].
 
-=== Discovery and management of Cloud Volumes Service for AWS
-
-Cloud Manager now enables you to discover the cloud volumes in your https://cloud.netapp.com/cloud-volumes-service-for-aws[Cloud Volumes Service for AWS^] subscription. After discovery, you can add additional cloud volumes directly from Cloud Manager. This enhancement provides a single pane of glass from which you can manage your NetApp cloud storage.
-
-link:task_manage_cvs_aws.html[Learn how to get started].
-
 === Support for AWS GovCloud (US-East)
 
 Cloud Manager and Cloud Volumes ONTAP are now supported in the AWS GovCloud (US-East) region.
+
+== General Availability of Cloud Volumes ONTAP in GCP (3 Sept 2019)
+
+Cloud Volumes ONTAP is now generally available in Google Cloud Platform (GCP) when you bring your own license (BYOL). A pay-as-you-go promotion is also available. The promotion offers free licenses for an unlimited number of systems and will expire at the end of September 2019.
+
+* link:task_getting_started_gcp.html[Learn how to get started in GCP]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_96.html[View supported configurations^]
 
 == Cloud Manager 3.7.2 (5 Aug 2019)
 
