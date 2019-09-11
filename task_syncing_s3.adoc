@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_syncing_s3.html
 keywords: sync, data, s3, cloud sync, bucket, service, sync to s3, volume sync
-summary: You can sync data from ONTAP volumes to an AWS S3 bucket by integrating a working environment with NetApp Cloud Sync. You can then use the synced data as a secondary copy or for data processing using AWS services like EMR and Redshift.
+summary: You can sync data from ONTAP volumes to an Amazon S3 bucket by integrating a working environment with NetApp Cloud Sync. You can then use the synced data as a secondary copy or for data processing using AWS services like EMR and Redshift.
 ---
 
-= Syncing data to AWS S3
+= Syncing data to Amazon S3
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: You can sync data from ONTAP volumes to an AWS S3 bucket by integrating
 :imagesdir: ./media/
 
 [.lead]
-You can sync data from ONTAP volumes to an AWS S3 bucket by integrating a working environment with https://www.netapp.com/us/cloud/data-sync-saas-product-details[NetApp Cloud Sync^]. You can then use the synced data as a secondary copy or for data processing using AWS services like EMR and Redshift.
+You can sync data from ONTAP volumes to an Amazon S3 bucket by integrating a working environment with https://www.netapp.com/us/cloud/data-sync-saas-product-details[NetApp Cloud Sync^]. You can then use the synced data as a secondary copy or for data processing using AWS services like EMR and Redshift.
 
 == How the sync to S3 feature works
 
@@ -40,7 +40,7 @@ Use the following options for any support related to the Cloud Manager sync to S
 
 == Integrating a working environment with the Cloud Sync service
 
-If you want to sync volumes to AWS S3 directly from Cloud Manager, then you must integrate the working environment with the Cloud Sync service.
+If you want to sync volumes to Amazon S3 directly from Cloud Manager, then you must integrate the working environment with the Cloud Sync service.
 
 video::3hOtLs70_xE[youtube, width=848, height=480]
 
