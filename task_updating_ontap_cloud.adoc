@@ -156,7 +156,7 @@ You can place the Cloud Volumes ONTAP software image on an HTTP or FTP server an
 
 . Set up an HTTP server or FTP server that can host the Cloud Volumes ONTAP software image.
 
-. If you have a VPN connection to the VPC, you can place the Cloud Volumes ONTAP software image on an HTTP server or FTP server in your own network. Otherwise, you must place the file on an HTTP server or FTP server in AWS.
+. If you have a VPN connection to the virtual network, you can place the Cloud Volumes ONTAP software image on an HTTP server or FTP server in your own network. Otherwise, you must place the file on an HTTP server or FTP server in the cloud.
 
 . If you use your own security group for Cloud Volumes ONTAP, ensure that the outbound rules allow HTTP or FTP connections so Cloud Volumes ONTAP can access the software image.
 +
