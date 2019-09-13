@@ -98,3 +98,7 @@ The disk type can be either _Zonal SSD persistent disks_ or _Zonal standard pers
 * https://cloud.google.com/compute/docs/disks/[Google Cloud Platform documentation: Storage Options^]
 
 * https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_gcp_96.html[Review storage limits for Cloud Volumes ONTAP in GCP^]
+
+== RAID type
+
+The RAID type for each Cloud Volumes ONTAP aggregate is RAID0 (striping). No other RAID types are supported. Cloud Volumes ONTAP relies on the cloud provider for disk availability and durability.
