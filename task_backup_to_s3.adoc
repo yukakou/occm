@@ -19,7 +19,7 @@ When you enable Backup to S3, the Cloud Backup Service performs a full backup of
 
 https://cloud.netapp.com/cloud-backup-service[Go to NetApp Cloud Central for pricing details^].
 
-IMPORTANT: You must use Cloud Manager for all backup and restore operations. Any actions taken directly from ONTAP or from Amazon S3 results in an unsupported configuration.
+Note that you must use Cloud Manager for all backup and restore operations. Any actions taken directly from ONTAP or from Amazon S3 results in an unsupported configuration.
 
 == Quick start
 
