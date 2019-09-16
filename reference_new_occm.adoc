@@ -20,6 +20,22 @@ link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Cloud Manager 3.7.3 update (15 Sept 2019)
+
+Cloud Manager now enables you to back up data from Cloud Volumes ONTAP to Amazon S3.
+
+Backup to S3 is an add-on feature for Cloud Volumes ONTAP that delivers fully-managed backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in S3 object storage, independent of volume Snapshot copies used for near-term recovery or cloning. The feature is powered by NetApp's Cloud Backup Service.
+
+link:task_backup_to_s3.html[Learn how to get started].
+
+This feature requires an update to the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^]. The following VPC endpoint permissions are now required:
+
+[source,json]
+"ec2:DescribeVpcEndpoints",
+"ec2:CreateVpcEndpoint",
+"ec2:ModifyVpcEndpoint",
+"ec2:DeleteVpcEndpoints"
+
 == Cloud Manager 3.7.3 (11 Sept 2019)
 
 Cloud Manager 3.7.3 includes the following enhancements.
@@ -145,4 +161,6 @@ The NetApp Cloud Backup Service for Cloud Volumes ONTAP delivers fully-managed b
 
 https://cloud.netapp.com/cloud-backup-service[Learn more about the Cloud Backup Service^].
 
-To get started, link:task_setting_up_cbs.html[install and configure the backup agent and then start backup and restore operations]. If you need help, we encourage you to contact us by using the chat icon in Cloud Manager.
+To get started, install and configure the backup agent and then start backup and restore operations. If you need help, we encourage you to contact us by using the chat icon in Cloud Manager.
+
+NOTE: This manual process is no longer supported. The Backup to S3 feature was integrated into Cloud Manager in the 3.7.3 release.
