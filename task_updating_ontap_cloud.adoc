@@ -47,6 +47,7 @@ Before performing an upgrade or downgrade, you must verify that your systems are
 
 * <<Planning for downtime>>
 * <<Reviewing version requirements>>
+* <<Verifying that automatic giveback is still enabled>>
 * <<Suspending SnapMirror transfers>>
 * <<Verifying that aggregates are online>>
 
@@ -61,6 +62,12 @@ Upgrades of HA pairs are nondisruptive. A nondisruptive upgrade upgrades both no
 The version of ONTAP that you can upgrade or downgrade to varies based on the version of ONTAP currently running on your system.
 
 To understand version requirements, refer to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-dot-upgrade/GUID-AC0EB781-583F-4C90-A4C4-BC7B14CEFD39.html[ONTAP 9 Documentation: Cluster update requirements^].
+
+=== Verifying that automatic giveback is still enabled
+
+Automatic giveback must be enabled on a Cloud Volumes ONTAP HA pair (this is the default setting). If it isn't, then the operation will fail.
+
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D01-49A5-BEFD-D529713EC1FA.html[ONTAP 9 Documentation: Commands for configuring automatic giveback^]
 
 === Suspending SnapMirror transfers
 

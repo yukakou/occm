@@ -52,6 +52,10 @@ You can choose from several instance or machine types when you launch Cloud Volu
 
 .About this task
 
+* Automatic giveback must be enabled on a Cloud Volumes ONTAP HA pair (this is the default setting). If it isn't, then the operation will fail.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D01-49A5-BEFD-D529713EC1FA.html[ONTAP 9 Documentation: Commands for configuring automatic giveback^]
+
 * The operation restarts Cloud Volumes ONTAP.
 +
 For single node systems, I/O is interrupted.

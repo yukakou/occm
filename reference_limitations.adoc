@@ -15,6 +15,10 @@ summary: Known limitations identify platforms, devices, or functions that are no
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
+== Cloud Manager should remain running at all times
+
+Cloud Manager is a key component in the billing and health of Cloud Volumes ONTAP. If Cloud Manager is powered down, Cloud Volumes ONTAP systems will shut down after losing communication with Cloud Manager for longer than 4 days.
+
 == Shared Linux hosts are not supported
 
 Cloud Manager is not supported on a host that is shared with other applications. The host must be a dedicated host.
