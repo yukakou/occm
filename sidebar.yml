@@ -107,6 +107,8 @@ entries:
             url: /task_installing_azure_germany.html
           - title: Getting started in the AWS C2S environment
             url: https://docs.netapp.com/us-en/occm/media/c2s.pdf
+      - title: Keeping Cloud Manager running
+        url: /concept_keep_up.html
   - title: Deploying Cloud Volumes ONTAP
     entries:
       - title: Before you begin
