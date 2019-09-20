@@ -37,9 +37,12 @@ A few steps are required if you want to tier cold data from Cloud Volumes ONTAP 
 [role="quick-margin-list"]
 .. https://cloud.google.com/vpc/docs/configure-private-google-access[Configure the Cloud Volumes ONTAP subnet for Private Google Access^].
 
-.. https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role[Create a service account that has the Storage Admin role^].
+.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a service account that has the predefined Storage Admin role^].
 
-.. Go to your https://console.cloud.google.com/storage/settings[GCP Storage Settings^], enable interoperability access, and create access keys for the service account that you just created.
+.. Go to your https://console.cloud.google.com/storage/settings[GCP Storage Settings^] and create access keys for the service account:
++
+* Select a project, and click *Interoperability*. If you haven’t already done so, click *Enable interoperability access*.
+* Under *Access keys for service accounts*, click *Create a key for a service account*, select the service account that you just created, and click *Create Key*.
 +
 You'll need to link:task_adding_gcp_accounts.html[add the keys to Cloud Manager during setup] so it can use the keys to manage a Cloud Storage bucket for data tiering.
 
@@ -60,12 +63,14 @@ Make sure that two sets of permissions are in place:
 
 [role="quick-margin-list"]
 .. Ensure that the GCP user who deploys Cloud Manager from NetApp Cloud Central has the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[NetApp Cloud Central policy for GCP^].
++
+https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[You can create a custom role using this YAML file^] and then attach it to your user. You'll need to use the gcloud command line to create the custom role.
 
 .. Set up a service account that has the permissions that Cloud Manager needs to create and manage Cloud Volumes ONTAP systems on your behalf. This service account is different from the service account that's used for data tiering.
 +
-* https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role[Create a custom role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.7.3_GCP.yaml[Cloud Manager policy for GCP^].
+* https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a custom role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.7.3_GCP.yaml[Cloud Manager policy for GCP^]. Again, you'll need to use the gcloud command line.
 +
-This policy is different than the policy in step 4a.
+The permissions contained in this YAML file are different than the permissions in step 4a.
 
 * https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a GCP service account, apply the custom role that you just created, and grant users access to the service account^].
 +
