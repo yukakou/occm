@@ -43,6 +43,6 @@ When you create a volume in Cloud Manager using the Storage System View, you can
 
 == Storage Virtual Machine (SVM) limitation
 
-Cloud Volumes ONTAP supports one data-serving SVM and one or more SVMs used for disaster recovery.
+Cloud Volumes ONTAP supports one data-serving SVM and one or more SVMs used for disaster recovery. The one data-serving SVM spans the entire Cloud Volumes ONTAP system (HA pair or single node).
 
 Cloud Manager does not provide any setup or orchestration support for SVM disaster recovery. It also does not support storage-related tasks on any additional SVMs. You must use System Manager or the CLI for SVM disaster recovery.
