@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_additional_info.html
-keywords: community, forums, help, support, videos, policies, json, api, ontap, release notes, bugs, limitations, known issues, permissions, apis, flexcache
+keywords: community, forums, help, support, videos, policies, json, api, ontap, release notes, bugs, limitations, known issues, permissions, apis, flexcache, common vulnerabilities and exposures, cve, security
 summary: You can get help and find more information about Cloud Manager and Cloud Volumes ONTAP through various resources, including videos, forums, and support.
 translate: false
 ---
@@ -38,6 +38,8 @@ Read an overview of the APIs, examples of how to use them, and an API reference.
 ** https://www.netapp.com/us/media/tr-4671.pdf[NetApp Technical Report 4671: Performance Characterization of Cloud Volumes ONTAP in Azure with Application Workloads^]
 
 * SVM disaster recovery
++
+SVM disaster recovery is the asynchronous mirroring of SVM data and configuration from a source SVM to a destination SVM. You can quickly activate a destination SVM for data access if the source SVM is no longer available.
 
 ** https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[Cloud Volumes ONTAP 9 SVM Disaster Recovery Preparation Express Guide^]
 +
@@ -50,6 +52,10 @@ Describes how to quickly activate a destination SVM after a disaster, and then r
 * http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-fc-mgmt/home.html[FlexCache Volumes for Faster Data Access Power Guide^]
 +
 Describes how to create and manage FlexCache volumes in the same cluster or different cluster as the origin volume for accelerating data access.es how to quickly activate a destination SVM after a disaster, and then reactivate the source SVM.
+
+* https://security.netapp.com/advisory/[Security advisories^]
++
+Identify known vulnerabilities (CVEs) for NetApp products, including ONTAP. Note that you can remediate security vulnerabilities for Cloud Volumes ONTAP by following ONTAP documentation.
 
 * http://docs.netapp.com/ontap-9/index.jsp[ONTAP 9 Documentation Center^]
 +
