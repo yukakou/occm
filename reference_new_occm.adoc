@@ -20,6 +20,64 @@ link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Cloud Manager 3.7.4 (6 Oct 2019)
+
+Cloud Manager 3.7.4 includes the following enhancements.
+
+* <<Support for Azure NetApp Files>>
+* <<Cloud Volumes ONTAP for GCP enhancements>>
+* <<Backup to S3 enhancement>>
+* <<Encryption of boot and root disks in AWS>>
+* <<Support for the AWS Bahrain region>>
+* <<Support for the Azure UAE North region>>
+
+=== Support for Azure NetApp Files
+
+You can now view and create NFS volumes for Azure NetApp Files directly from Cloud Manager. This enhancement continues our goal to help you manage your cloud storage from a single interface.
+
+link:task_manage_anf.html[Learn how to get started].
+
+=== Cloud Volumes ONTAP for GCP enhancements
+
+Cloud Manager 3.7.4 enables the following enhancements to Cloud Volumes ONTAP for Google Cloud Platform:
+
+* Shared VPC is now supported.
++
+Shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up networking in the host project and deploy Cloud Manager and Cloud Volumes ONTAP in a service project. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
+
+* Multiple Google Cloud projects are now supported.
++
+Cloud Volumes ONTAP no longer needs to be in the same project as Cloud Manager. You can now choose a different project when you create a working environment.
++
+image:screenshot_gcp_project.gif[A screenshot that shows the project selection option from the Working Environment wizard.]
+
+* Customer-managed encryption keys are now supported when using Cloud Manager APIs.
++
+While Google Cloud Storage always encrypts your data before it's written to disk, you can use Cloud Manager APIs to create a Cloud Volumes ONTAP system that uses _customer-managed encryption keys_. These are keys that you generate and manage in GCP using the Cloud Key Management Service.
++
+Learn how to use the APIs.
+
+=== Backup to S3 enhancement
+
+You can now delete the backups for existing volumes. Previously, you could only delete the backups for volumes that had been deleted.
+
+link:task_backup_to_s3.html[Learn more about Backup to S3].
+
+=== Encryption of boot and root disks in AWS
+
+When you enable data encryption using the AWS Key Management Service (KMS), the boot and root disks for Cloud Volumes ONTAP are now encrypted, as well. This includes the boot disk for the mediator instance in an HA pair. The disks are encrypted using the CMK that you select when you create the working environment.
+
+NOTE: Boot and root disks are always encrypted in Azure and Google Cloud Platform because encryption is enabled by default in those cloud providers.
+
+=== Support for the AWS Bahrain region
+
+Cloud Manager and Cloud Volumes ONTAP are now supported in the AWS Middle East (Bahrain) region.
+
+=== Support for the Azure UAE North region
+
+Cloud Manager and Cloud Volumes ONTAP are now supported in the Azure UAE North region.
+https://cloud.netapp.com/cloud-volumes-global-regions[View all supported regions^].
+
 == Cloud Manager 3.7.3 update (15 Sept 2019)
 
 Cloud Manager now enables you to back up data from Cloud Volumes ONTAP to Amazon S3.
