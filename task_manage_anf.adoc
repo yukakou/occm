@@ -19,16 +19,16 @@ View and create NFS volumes for https://cloud.netapp.com/azure-netapp-files[Azur
 
 Your configuration needs to meet a few requirements before you can manage volumes for Azure NetApp Files from Cloud Manager.
 
-. Azure NetApp Files must be setup by completing the following from the Azure portal:
+. Azure NetApp Files must be set up by completing the following from the Azure portal:
 
 * https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register[Register for Azure NetApp Files^]
 * https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account[Create a NetApp account^]
 * https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool[Set up a capacity pool^]
 * https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet[Delegate a subnet to Azure NetApp Files^]
 
-. Cloud Manager must be setup as follows:
+. Cloud Manager must be set up as follows:
 
-* Cloud Manager must be running in Azure, in the account where Azure NetApp Files was setup.
+* Cloud Manager must be running in Azure, in the account where Azure NetApp Files was set up.
 
 * The Cloud Manager virtual machine must receive permissions through a https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[managed identity^].
 +
@@ -45,7 +45,7 @@ If you deployed Cloud Manager from the Azure Marketplace, then you should have f
 "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/read",
 "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete"
 
-When your configuation is setup, Cloud Manager automatically displays Azure NetApp Files on the Working Environments page:
+When your configuration is set up, Cloud Manager automatically displays Azure NetApp Files on the Working Environments page:
 
 image:screenshot_anf_cloud.gif[A screenshot of an Azure NetApp Files cloud on the Working Environments page.]
 
