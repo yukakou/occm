@@ -27,7 +27,7 @@ You can launch a single node Cloud Volumes ONTAP system in GCP by creating a wor
 
 . *Define Your Working Environment*: Click *Continue*.
 
-. *Details & Credentials*: Specify a cluster name, optionally add labels, and then specify credentials.
+. *Details & Credentials*: Select a project, specify a cluster name, optionally add labels, and then specify credentials.
 +
 The following table describes fields for which you might need guidance:
 +
@@ -36,9 +36,15 @@ The following table describes fields for which you might need guidance:
 | Field
 | Description
 
+| Google Cloud Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where Cloud Manager resides.
+
+If you don't see any additional projects in the drop-down list, then you haven't yet associated the Cloud Manager service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You'll need to repeat this step for each project.
+
+NOTE: This is the service account that you set up for Cloud Manager, link:task_getting_started_gcp.html#service-account[as described in step 4b on this page].
+
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
-| Labels |	Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.
+| Add Labels |	Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.
 
 You can add up to four labels from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four labels when creating a working environment.
 
