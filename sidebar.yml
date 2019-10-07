@@ -53,39 +53,39 @@ entries:
         url: /concept_security.html
       - title: Performance
         url: /concept_performance.html
-  - title: Getting started
+  - title: Get started
     entries:
       - title: Deployment overview
         url: /reference_deployment_overview.html
-      - title: Getting started in AWS
+      - title: Get started in AWS
         url: /task_getting_started_aws.html
-      - title: Getting started in Azure
+      - title: Get started in Azure
         url: /task_getting_started_azure.html
-      - title: Getting started in GCP
+      - title: Get started in GCP
         url: /task_getting_started_gcp.html
-      - title: Setting up Cloud Manager
+      - title: Set up Cloud Manager
         entries:
-          - title: Setting up the Cloud Central account
+          - title: Set up the Cloud Central account
             url: /task_setting_up_cloud_central_accounts.html
-          - title: Adding AWS accounts
+          - title: Add AWS accounts
             url: /task_adding_aws_accounts.html
-          - title: Adding Azure accounts
+          - title: Add Azure accounts
             url: /task_adding_azure_accounts.html
-          - title: Adding GCP accounts
+          - title: Add GCP accounts
             url: /task_adding_gcp_accounts.html
-          - title: Adding NetApp Support Site accounts
+          - title: Add NetApp Support Site accounts
             url: /task_adding_nss_accounts.html
-          - title: Installing an HTTPS certificate
+          - title: Install an HTTPS certificate
             url: /task_installing_https_cert.html
-          - title: Setting up the AWS KMS
+          - title: Set up the AWS KMS
             url: /task_setting_up_kms.html
-      - title: Networking requirements
+      - title: Network requirements
         entries:
           - title: Cloud Manager
             url: /reference_networking_cloud_manager.html
           - title: Cloud Volumes ONTAP for AWS
             url: /reference_networking_aws.html
-          - title: Setting up an AWS transit gateway
+          - title: Set up an AWS transit gateway
             url: /task_setting_up_transit_gateway.html
           - title: Cloud Volumes ONTAP for Azure
             url: /reference_networking_azure.html
@@ -95,100 +95,104 @@ entries:
         entries:
           - title: Cloud Manager host requirements
             url: /reference_cloud_mgr_reqs.html
-          - title: Installing Cloud Manager on a Linux host
+          - title: Install Cloud Manager on Linux
             url: /task_installing_linux.html
-          - title: Deploying Cloud Manager from the AWS Marketplace
+          - title: Deploy Cloud Manager from the AWS Marketplace
             url: /task_launching_aws_mktp.html
-          - title: Deploying Cloud Manager from the Azure Marketplace
+          - title: Deploy Cloud Manager from the Azure Marketplace
             url: /task_launching_azure_mktp.html
-          - title: Deploying Cloud Manager in an Azure Gov region
+          - title: Deploy Cloud Manager in an Azure Gov region
             url: /task_installing_azure_gov.html
-          - title: Deploying Cloud Manager in the Azure Germany region
+          - title: Deploy Cloud Manager in the Azure Germany region
             url: /task_installing_azure_germany.html
-          - title: Getting started in the AWS C2S environment
+          - title: Get started in AWS C2S
             url: https://docs.netapp.com/us-en/occm/media/c2s.pdf
-      - title: Keeping Cloud Manager running
+      - title: Keep Cloud Manager running
         url: /concept_keep_up.html
-  - title: Deploying Cloud Volumes ONTAP
+  - title: Deploy Cloud Volumes ONTAP
     entries:
       - title: Before you begin
         url: /reference_before.html
-      - title: Logging in to Cloud Manager
+      - title: Log in to Cloud Manager
         url: /task_logging_in.html
-      - title: Planning your configuration
+      - title: Plan your configuration
         url: /task_planning_your_config.html
-      - title: Finding your system ID
+      - title: Find your system ID
         url: /task_finding_system_id.html
-      - title: Enabling Flash Cache on Cloud Volumes ONTAP in AWS
+      - title: Enable Flash Cache in AWS
         url: /task_enabling_flash_cache.html
-      - title: Launching Cloud Volumes ONTAP in AWS
+      - title: Launch Cloud Volumes ONTAP in AWS
         url: /task_deploying_otc_aws.html
-      - title: Launching Cloud Volumes ONTAP in Azure
+      - title: Launch Cloud Volumes ONTAP in Azure
         url: /task_deploying_otc_azure.html
-      - title: Launching Cloud Volumes ONTAP in GCP
+      - title: Launch Cloud Volumes ONTAP in GCP
         url: /task_deploying_gcp.html
-      - title: Registering pay-as-you-go systems
+      - title: Register pay-as-you-go systems
         url: /task_registering.html
-      - title: Setting up Cloud Volumes ONTAP
+      - title: Set up Cloud Volumes ONTAP
         url: /task_setting_up_ontap_cloud.html
-  - title: Provisioning storage
+  - title: Provision storage
     entries:
-      - title: Creating volumes, aggregates, and LUNs
+      - title: Create volumes, aggregates, and LUNs
         url: /task_provisioning_storage.html
-      - title: Tiering inactive data to object storage
+      - title: Tier inactive data to object storage
         url: /task_tiering.html
-      - title: Using Cloud Volumes ONTAP as persistent storage
+      - title: Use Cloud Volumes ONTAP as persistent storage
         url: /task_connecting_kubernetes.html
-      - title: Encrypting volumes with NetApp Volume Encryption
+      - title: Encrypt volumes with NetApp Volume Encryption
         url: /task_encrypting_volumes.html
-      - title: Managing existing storage
+      - title: Manage existing storage
         url: /task_managing_storage.html
-  - title: Replicating and protecting data
+  - title: Replicate and protect data
     entries:
-      - title: Discovering and managing ONTAP clusters
+      - title: Discover and manage ONTAP clusters
         url: /task_discovering_ontap.html
-      - title: Replicating data to and from the cloud
+      - title: Replicate data to and from the cloud
         url: /task_replicating_data.html
-      - title: Backing up to Amazon S3
+      - title: Back up to Amazon S3
         url: /task_backup_to_s3.html
-      - title: Syncing data to Amazon S3
+      - title: Sync data to Amazon S3
         url: /task_syncing_s3.html
-  - title: Managing Cloud Volumes for AWS
-    url: /task_manage_cvs_aws.html
-  - title: Administering Cloud Volumes ONTAP
+  - title: Administer Cloud Volumes ONTAP
     entries:
-      - title: Connecting to Cloud Volumes ONTAP
+      - title: Connect to Cloud Volumes ONTAP
         url: /task_connecting_to_otc.html
-      - title: Updating software
+      - title: Update software
         url: /task_updating_ontap_cloud.html
-      - title: Modifying system configurations
+      - title: Modify system configurations
         url: /task_modifying_ontap_cloud.html
-      - title: Stopping and starting systems
+      - title: Stop and start systems
         url: /task_managing_state.html
-      - title: Monitoring AWS costs
+      - title: Monitor AWS costs
         url: /task_monitoring_costs.html
-      - title: Improving ransomware protection
+      - title: Improve ransomware protection
         url: /task_protecting_ransomware.html
-      - title: Adding existing systems
+      - title: Add existing systems
         url: /task_adding_ontap_cloud.html
-      - title: Deleting systems
+      - title: Delete systems
         url: /task_deleting_working_env.html
-  - title: Administering Cloud Manager
+  - title: Administer Cloud Manager
     entries:
-      - title: Updating Cloud Manager
+      - title: Update Cloud Manager
         url: /task_updating_cloud_manager.html
-      - title: Managing the Cloud Central account
+      - title: Manage the Cloud Central account
         url: /task_managing_cloud_central_accounts.html
-      - title: Removing working environments
+      - title: Remove working environments
         url: /task_removing.html
-      - title: Configuring proxy settings
+      - title: Configure proxy settings
         url: /task_configuring_proxy.html
-      - title: Renewing the HTTPS certificate
+      - title: Renew the HTTPS certificate
         url: /task_renewing_cert.html
-      - title: Restoring Cloud Manager
+      - title: Restore Cloud Manager
         url: /task_restoring.html
-      - title: Uninstalling Cloud Manager
+      - title: Uninstall Cloud Manager
         url: /task_uninstalling.html
+  - title: Provision volumes for file services
+    entries:
+      - title: Azure NetApp Files
+        url: /task_manage_anf.html
+      - title: Cloud Volumes Service for AWS
+        url: /task_manage_cvs_aws.html
   - title: APIs and automation
     entries:
       - title: API Developer Guide

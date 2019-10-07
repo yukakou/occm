@@ -50,6 +50,10 @@ NOTE: Customer-managed keys are not supported with Cloud Volumes ONTAP.
 
 https://cloud.google.com/security/encryption-at-rest/[Google Cloud Platform data-at-rest encryption^] is enabled by default for Cloud Volumes ONTAP. No setup is required.
 
+While Google Cloud Storage always encrypts your data before it's written to disk, you can use Cloud Manager APIs to create a Cloud Volumes ONTAP system that uses _customer-managed encryption keys_. These are keys that you generate and manage in GCP using the Cloud Key Management Service.
+
+Refer to the link:api.html[API Developer Guide^] for details about using the "GcpEncryption" parameters.
+
 == ONTAP virus scanning
 
 You can use integrated antivirus functionality on ONTAP systems to protect data from being compromised by viruses or other malicious code.

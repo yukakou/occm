@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: concept_accounts_gcp.html
-keywords: cloud provider accounts, gcp, gcp accounts, google cloud platform, google accounts, google cloud platform accounts, permissions, tiering, data tiering, account for data tiering, account for tiering
-summary: Cloud Manager deploys Cloud Volumes ONTAP in the same GCP account and project in which Cloud Manager is running by using permissions from a service account. You can't deploy Cloud Volumes ONTAP in different accounts or projects. GCP accounts that you add to Cloud Manager are used to enable data tiering.
+keywords: cloud provider accounts, gcp, gcp accounts, google cloud platform, google accounts, google cloud platform accounts, permissions, tiering, data tiering, account for data tiering, account for tiering, project, projects, add project, select new project, gcp project, google project, google cloud project
+summary: You use a Google Cloud account to deploy Cloud Manager in a project. You can then deploy Cloud Volumes ONTAP in the same project or a different project. Google Cloud accounts that you add to Cloud Manager are used to enable data tiering.
 ---
 
-= GCP accounts and permissions
+= Google Cloud projects, permissions, and accounts
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,29 +13,38 @@ summary: Cloud Manager deploys Cloud Volumes ONTAP in the same GCP account and p
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager deploys Cloud Volumes ONTAP in the same GCP account and project in which Cloud Manager is running by using permissions from a service account. You can't deploy Cloud Volumes ONTAP in different accounts or projects. GCP accounts that you add to Cloud Manager are used to enable data tiering.
+A service account provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP systems in the same project as Cloud Manager, or in different projects. Google Cloud accounts that you add to Cloud Manager are used to enable data tiering.
 
-== GCP account and permissions for Cloud Manager
+== Project and permissions for Cloud Manager
 
-To deploy Cloud Volumes ONTAP in Google Cloud Platform, you must first deploy Cloud Manager in a GCP account and project. Cloud Manager can't be running on your premises, or in a different cloud provider.
+Before you can deploy Cloud Volumes ONTAP in Google Cloud, you must first deploy Cloud Manager in a Google Cloud project. Cloud Manager can't be running on your premises, or in a different cloud provider.
 
-Two sets of permissions must be in place when you deploy Cloud Manager from NetApp Cloud Central:
+Two sets of permissions must be in place before you deploy Cloud Manager from https://cloud.netapp.com[NetApp Cloud Central^]:
 
-. You need to deploy Cloud Manager using a GCP account that has permissions to launch the Cloud Manager VM instance in GCP.
+. You need to deploy Cloud Manager using a Google account that has permissions to launch the Cloud Manager VM instance from Cloud Central.
 
-. When deploying Cloud Manager, you are prompted to specify a https://cloud.google.com/iam/docs/service-accounts[GCP service account^] for the VM instance. Cloud Manager uses the service account to create and manage Cloud Volumes ONTAP systems on your behalf. Permissions are provided by attaching a custom role to the service account.
+. When deploying Cloud Manager, you are prompted to select a https://cloud.google.com/iam/docs/service-accounts[service account^] for the VM instance. Cloud Manager gets permissions from the service account to create and manage Cloud Volumes ONTAP systems on your behalf. Permissions are provided by attaching a custom role to the service account.
 
-For instructions, see link:task_getting_started_gcp.html[Getting started in GCP].
+We have set up two YAML files that include the required permissions for the user and the service account. link:task_getting_started_gcp.html[Learn how to use the YAML files to set up permissions].
 
-== GCP account for Cloud Volumes ONTAP
+The following image depicts the permission requirements described in numbers 1 and 2 above:
 
-After you deploy Cloud Manager in GCP, all Cloud Volumes ONTAP systems are deployed in the same GCP account and project in which Cloud Manager is running.
+image:diagram_permissions_gcp.png[explanation]
 
-== GCP account for data tiering
+== Project for Cloud Volumes ONTAP
 
-Adding a Google Cloud Platform account to Cloud Manager is required to enable data tiering on a Cloud Volumes ONTAP system. Data tiering automatically tiers cold data to low-cost object storage, enabling you to reclaim space on your primary storage and shrink secondary storage.
+Cloud Volumes ONTAP can reside in the same project as Cloud Manager, or in a different project. To deploy Cloud Volumes ONTAP in a different project, you need to first add the Cloud Manager service account and role to that project.
 
-After you add a GCP account, you can then enable data tiering on individual volumes when you create, modify, or replicate them.
+* link:task_getting_started_gcp.html#service-account[Learn how to set up the Cloud Manager service account (see step 4)].
+* link:task_deploying_gcp.html[Learn how to deploy Cloud Volumes ONTAP in GCP and select a project].
 
-* link:task_adding_gcp_accounts.html[Setting up and adding GCP accounts to Cloud Manager]
-* link:task_tiering.html[Tiering inactive data to low-cost object storage]
+== Account for data tiering
+
+Adding a Google Cloud account to Cloud Manager is required to enable data tiering on a Cloud Volumes ONTAP system. Data tiering automatically tiers cold data to low-cost object storage, enabling you to reclaim space on your primary storage and shrink secondary storage.
+
+When you add the account, you need to provide Cloud Manager with a storage access key for a service account that has Storage Admin permissions. Cloud Manager uses the access keys to set up and manage a Cloud Storage bucket for data tiering.
+
+After you add a Google Cloud account, you can then enable data tiering on individual volumes when you create, modify, or replicate them.
+
+* link:task_adding_gcp_accounts.html[Learn how to set up and add GCP accounts to Cloud Manager].
+* link:task_tiering.html[Learn how to tier inactive data to low-cost object storage].
