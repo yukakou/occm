@@ -149,3 +149,9 @@ This disk, which contains the boot image, is not available to Cloud Volumes ONTA
 * The storage virtual machine (SVM) root volume resides in aggr1.
 
 * Data volumes also reside in aggr1.
+
+=== Encryption
+
+Boot and root disks are always encrypted in Azure and Google Cloud Platform because encryption is enabled by default in those cloud providers.
+
+When you enable data encryption in AWS using the Key Management Service (KMS), the boot and root disks for Cloud Volumes ONTAP are encrypted, as well. This includes the boot disk for the mediator instance in an HA pair. The disks are encrypted using the CMK that you select when you create the working environment.
