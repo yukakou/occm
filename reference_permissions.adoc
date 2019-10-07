@@ -501,4 +501,12 @@ The Cloud Manager policy for GCP includes the permissions that Cloud Manager nee
 - storage.buckets.list
 
 | To create and manage a Google Cloud Storage bucket for data tiering.
+
+|
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+
+| To use customer-managed encryption keys from the Cloud Key Management Service with Cloud Volumes ONTAP.
 |===
