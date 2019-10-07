@@ -37,25 +37,48 @@ You can now view and create NFS volumes for Azure NetApp Files directly from Clo
 
 link:task_manage_anf.html[Learn how to get started].
 
+This feature requires new permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.7.4.json[Cloud Manager policy for Azure^].
+
+[source,json]
+"Microsoft.NetApp/netAppAccounts/read",
+"Microsoft.NetApp/netAppAccounts/capacityPools/read",
+"Microsoft.NetApp/netAppAccounts/capacityPools/volumes/write",
+"Microsoft.NetApp/netAppAccounts/capacityPools/volumes/read",
+"Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete"
+
 === Cloud Volumes ONTAP for GCP enhancements
 
 Cloud Manager 3.7.4 enables the following enhancements to Cloud Volumes ONTAP for Google Cloud Platform:
 
-* Shared VPC is now supported.
+Pay-as-you-go subscriptions in the GCP Marketplace::
+You can now pay for Cloud Volumes ONTAP as you go by subscribing to Cloud Volumes ONTAP in the Google Cloud Platform Marketplace.
 +
-Shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up networking in the host project and deploy Cloud Manager and Cloud Volumes ONTAP in a service project. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
+https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?q=NetApp&id=8108721b-10e5-48be-88ed-387031dae492[Google Cloud Platform Marketplace: Cloud Manager for Cloud Volumes ONTAP^]
 
-* Multiple Google Cloud projects are now supported.
+Shared VPC::
+Cloud Manager and Cloud Volumes ONTAP are now supported in a Google Cloud Platform shared VPC.
 +
-Cloud Volumes ONTAP no longer needs to be in the same project as Cloud Manager. You can now choose a different project when you create a working environment.
+Shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up Shared VPC networks in the _host project_ and deploy the Cloud Manager and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
+
+Multiple Google Cloud projects::
+Cloud Volumes ONTAP no longer needs to be in the same project as Cloud Manager. Add the Cloud Manager service account and role to additional projects and then you can choose from those projects you deploy Cloud Volumes ONTAP.
 +
 image:screenshot_gcp_project.gif[A screenshot that shows the project selection option from the Working Environment wizard.]
++
+For more details about setting up the Cloud Manager service account, link:task_getting_started_gcp.html#service-account[see step 4b on this page].
 
-* Customer-managed encryption keys are now supported when using Cloud Manager APIs.
+Customer-managed encryption keys when using Cloud Manager APIs::
+While Google Cloud Storage always encrypts your data before it's written to disk, you can use Cloud Manager APIs to create a new Cloud Volumes ONTAP system that uses _customer-managed encryption keys_. These are keys that you generate and manage in GCP using the Cloud Key Management Service.
 +
-While Google Cloud Storage always encrypts your data before it's written to disk, you can use Cloud Manager APIs to create a Cloud Volumes ONTAP system that uses _customer-managed encryption keys_. These are keys that you generate and manage in GCP using the Cloud Key Management Service.
+Refer to the link:api.html[API Developer Guide^] for details about using the "GcpEncryption" parameters.
 +
-Learn how to use the APIs.
+This feature requires new permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.7.4_GCP.yaml[Cloud Manager policy for GCP^]:
++
+[source,yaml]
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
 
 === Backup to S3 enhancement
 
@@ -76,11 +99,14 @@ Cloud Manager and Cloud Volumes ONTAP are now supported in the AWS Middle East (
 === Support for the Azure UAE North region
 
 Cloud Manager and Cloud Volumes ONTAP are now supported in the Azure UAE North region.
+
 https://cloud.netapp.com/cloud-volumes-global-regions[View all supported regions^].
 
 == Cloud Manager 3.7.3 update (15 Sept 2019)
 
 Cloud Manager now enables you to back up data from Cloud Volumes ONTAP to Amazon S3.
+
+=== Backup to S3
 
 Backup to S3 is an add-on feature for Cloud Volumes ONTAP that delivers fully-managed backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in S3 object storage, independent of volume Snapshot copies used for near-term recovery or cloning. The feature is powered by NetApp's Cloud Backup Service.
 
