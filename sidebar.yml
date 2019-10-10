@@ -147,7 +147,7 @@ entries:
     entries:
       - title: Discover and manage ONTAP clusters
         url: /task_discovering_ontap.html
-      - title: Replicate data to and from the cloud
+      - title: Replicate data between systems
         url: /task_replicating_data.html
       - title: Back up to Amazon S3
         url: /task_backup_to_s3.html

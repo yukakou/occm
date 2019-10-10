@@ -39,6 +39,8 @@ a|
 .. Select a volume, and then click *Edit*.
 .. Modify the volume's Snapshot policy, NFS access control list, or share permissions, and then click *Update*.
 
+NOTE: If you need custom Snapshot policies, you can create them by using System Manager.
+
 | Clone a volume
 a|
 .. Select a volume, and then click *Clone*.
@@ -244,7 +246,7 @@ You can follow the steps in this task to correct the following Action Required m
 
 . Drag and drop the source working environment on the target working environment to perform a one-time data replication of the volume.
 +
-For details, see link:task_replicating_data.html#replicating-data-between-systems[Replicating data between systems].
+For details, see link:task_replicating_data.html[Replicating data between systems].
 
 . Go to the Replication Status page, and then break the SnapMirror relationship to convert the replicated volume from a data protection volume to a read/write volume.
 +

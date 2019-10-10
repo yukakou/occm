@@ -53,7 +53,7 @@ Cloud Manager 3.7.4 enables the following enhancements to Cloud Volumes ONTAP fo
 Pay-as-you-go subscriptions in the GCP Marketplace::
 You can now pay for Cloud Volumes ONTAP as you go by subscribing to Cloud Volumes ONTAP in the Google Cloud Platform Marketplace.
 +
-https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?q=NetApp&id=8108721b-10e5-48be-88ed-387031dae492[Google Cloud Platform Marketplace: Cloud Manager for Cloud Volumes ONTAP^]
+https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager[Google Cloud Platform Marketplace: Cloud Manager for Cloud Volumes ONTAP^]
 
 Shared VPC::
 Cloud Manager and Cloud Volumes ONTAP are now supported in a Google Cloud Platform shared VPC.

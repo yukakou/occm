@@ -80,7 +80,12 @@ The permissions contained in this YAML file are different than the permissions i
 
 * If you want to deploy Cloud Volumes ONTAP in other projects, go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You'll need to repeat this step for each project.
 
-=== image:number5.png[Number 5] Launch Cloud Manager from NetApp Cloud Central
+=== image:number5.png[Number 5] Subscribe from the GCP Marketplace
+
+[role="quick-margin-para"]
+https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager[Subscribe to Cloud Volumes ONTAP from the GCP Marketplace^] to ensure that there’s no disruption of service after your free trial ends. You’ll be charged from this subscription for every Cloud Volumes ONTAP PAYGO system that you create.
+
+=== image:number6.png[Number 6] Launch Cloud Manager from NetApp Cloud Central
 
 [role="quick-margin-para"]
 Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance in GCP from https://cloud.netapp.com[Cloud Central^]. Cloud Manager must be installed in GCP from Cloud Central before you can deploy Cloud Volumes ONTAP.
@@ -88,7 +93,7 @@ Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It 
 [role="quick-margin-para"]
 When you choose GCP as the cloud provider, you're prompted by Google to log in to your account and to grant permissions. Clicking "Allow" grants access to the compute APIs needed to deploy Cloud Manager.
 
-=== image:number6.png[Number 6] Launch Cloud Volumes ONTAP using Cloud Manager
+=== image:number7.png[Number 7] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]
 Once Cloud Manager is ready, just click Create, select the type of system that you would like to deploy, and complete the steps in the wizard. After 25 minutes, your first Cloud Volumes ONTAP system should be up and running.
