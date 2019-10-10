@@ -39,6 +39,8 @@ a|
 .. Select a volume, and then click *Edit*.
 .. Modify the volume's Snapshot policy, NFS access control list, or share permissions, and then click *Update*.
 
+NOTE: If you need custom Snapshot policies, you can create them by using System Manager.
+
 | Clone a volume
 a|
 .. Select a volume, and then click *Clone*.
