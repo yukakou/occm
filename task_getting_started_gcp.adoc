@@ -53,6 +53,7 @@ https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the foll
 
 [role="quick-margin-list"]
 * Cloud Deployment Manager V2 API
+* Cloud Resource Manager API
 * Compute Engine API
 * Stackdriver Logging API
 
