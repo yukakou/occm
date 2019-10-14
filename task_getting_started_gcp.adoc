@@ -6,7 +6,7 @@ keywords: google cloud platform, gcp, deploy cloud manager, launch cloud manager
 summary: Get started with Cloud Volumes ONTAP in GCP from NetApp Cloud Central.
 ---
 
-= Getting started with Cloud Volumes ONTAP in Google Cloud
+= Getting started with Cloud Volumes ONTAP in Google Cloud Platform
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -29,7 +29,7 @@ Enable outbound internet access from the target VPC so Cloud Manager and Cloud V
 [role="quick-margin-para"]
 This step is important because Cloud Manager can't deploy Cloud Volumes ONTAP without outbound internet access. If you need to limit outbound connectivity, refer to the list of endpoints for link:reference_networking_cloud_manager.html#outbound-internet-access[Cloud Manager] and link:reference_networking_gcp.html[Cloud Volumes ONTAP].
 
-=== image:number2.png[Number 2] Set up Google Cloud for data tiering
+=== image:number2.png[Number 2] Set up GCP for data tiering
 
 [role="quick-margin-para"]
 A few steps are required if you want to tier cold data from Cloud Volumes ONTAP to low-cost object storage (a Google Cloud Storage bucket):
@@ -58,7 +58,7 @@ https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the foll
 * Stackdriver Logging API
 
 [[service-account]]
-=== image:number4.png[Number 4] Set up Google Cloud permissions and projects
+=== image:number4.png[Number 4] Set up GCP permissions and projects
 
 [role="quick-margin-para"]
 Make sure that two sets of permissions are in place:
@@ -68,9 +68,9 @@ Make sure that two sets of permissions are in place:
 +
 https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[You can create a custom role using the YAML file^] and then attach it to the user. You'll need to use the gcloud command line to create the role.
 
-.. Set up a service account that has the permissions that Cloud Manager needs to create and manage Cloud Volumes ONTAP systems.
+.. Set up a service account that has the permissions that Cloud Manager needs to create and manage Cloud Volumes ONTAP systems in projects.
 +
-You'll associate this service account with the Cloud Manager VM instance in step 5. This service account is different from the service account that's used for data tiering.
+You'll associate this service account with the Cloud Manager VM in step 5. This service account is different from the service account that's used for data tiering.
 +
 * https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.7.4_GCP.yaml[Cloud Manager policy for GCP^]. Again, you'll need to use the gcloud command line.
 +
@@ -78,7 +78,7 @@ The permissions contained in this YAML file are different than the permissions i
 
 * https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a GCP service account and apply the custom role that you just created^].
 
-* If you want to deploy Cloud Volumes ONTAP in other projects, go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You'll need to repeat this step for each project.
+* If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
 
 === image:number5.png[Number 5] Subscribe from the GCP Marketplace
 

@@ -23,9 +23,15 @@ You can launch a single node Cloud Volumes ONTAP system in GCP by creating a wor
 
 .Steps
 
-. On the Working Environments page, click *Create Cloud Volumes ONTAP* and follow the prompts.
+. [[subscribe]]On the Working Environments page, click *Create Cloud Volumes ONTAP* and follow the prompts.
 
 . *Define Your Working Environment*: Click *Continue*.
+
+. *Subscribe to Cloud Volumes ONTAP*: If you're prompted, subscribe to Cloud Volumes ONTAP in the GCP Marketplace.
++
+The following video shows the subscription process:
++
+video::video_subscribing_gcp.mp4[width=848, height=480]
 
 . *Details & Credentials*: Select a project, specify a cluster name, optionally add labels, and then specify credentials.
 +
