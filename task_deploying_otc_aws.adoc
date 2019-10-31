@@ -84,6 +84,8 @@ image:screenshot_cot_vpc.gif[Screen shot: Shows the VPC page filled out for a ne
 +
 For AWS-managed encryption, you can choose a different Customer Master Key (CMK) from your account or another AWS account.
 +
+TIP: You can't change the AWS data encryption method after you create a Cloud Volumes ONTAP system.
++
 link:task_setting_up_kms.html[Learn how to set up the AWS KMS for Cloud Volumes ONTAP].
 +
 link:concept_security.html#encryption-of-data-at-rest[Learn more about supported encryption technologies].
@@ -271,6 +273,8 @@ If you have more than one route table, it is very important to select the correc
 . *Data Encryption*: Choose no data encryption or AWS-managed encryption.
 +
 For AWS-managed encryption, you can choose a different Customer Master Key (CMK) from your account or another AWS account.
++
+TIP: You can't change the AWS data encryption method after you create a Cloud Volumes ONTAP system.
 +
 link:task_setting_up_kms.html[Learn how to set up the AWS KMS for Cloud Volumes ONTAP].
 +
