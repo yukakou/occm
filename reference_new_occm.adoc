@@ -70,7 +70,7 @@ For more details about setting up the Cloud Manager service account, link:task_g
 Customer-managed encryption keys when using Cloud Manager APIs::
 While Google Cloud Storage always encrypts your data before it's written to disk, you can use Cloud Manager APIs to create a new Cloud Volumes ONTAP system that uses _customer-managed encryption keys_. These are keys that you generate and manage in GCP using the Cloud Key Management Service.
 +
-Refer to the link:api.html[API Developer Guide^] for details about using the "GcpEncryption" parameters.
+Refer to the link:api.html#_creating_systems_in_gcp[API Developer Guide^] for details about using the "GcpEncryption" parameters.
 +
 This feature requires new permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.7.4_GCP.yaml[Cloud Manager policy for GCP^]:
 +
