@@ -30,9 +30,11 @@ Supported operating systems::
 * CentOS 7.2
 * CentOS 7.3
 * CentOS 7.4
+* CentOS 7.5
 * Red Hat Enterprise Linux 7.2
 * Red Hat Enterprise Linux 7.3
 * Red Hat Enterprise Linux 7.4
+* Red Hat Enterprise Linux 7.5
 +
 The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Cloud Manager installation.
 +
