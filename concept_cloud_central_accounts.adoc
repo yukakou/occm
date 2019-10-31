@@ -13,7 +13,7 @@ summary: Each Cloud Manager system is associated with a NetApp Cloud Central acc
 :imagesdir: ./media/
 
 [.lead]
-Each Cloud Manager system is associated with a _NetApp Cloud Central account_. A Cloud Central account is a container for your Cloud Manager systems and the _workspaces_ in which users deploy Cloud Volumes ONTAP.
+Each Cloud Manager system is associated with a _NetApp Cloud Central account_. A Cloud Central account provides multi-tenancy and enables you to organize users and resources in isolated workspaces.
 
 A Cloud Central account enables multi-tenancy:
 
