@@ -28,14 +28,18 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Verify support for your configuration
 
 [role="quick-margin-para"]
-You need the following:
+Verify the following:
 
 [role="quick-margin-list"]
-* Cloud Volumes ONTAP 9.4 or later running in a supported AWS region: N. Virginia, Oregon, Ireland, Frankfurt, and Sydney
-* A subscription to the new https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace offering^]
-* TCP port 5010 open for outbound traffic on the security group for Cloud Volumes ONTAP
-* Room for Cloud Manager to allocate up to two interface VPC endpoints in the VPC (the AWS limit per VPC is 20)
-* The VPC endpoint permissions listed in the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^]:
+* Cloud Volumes ONTAP 9.4 or later is running in a supported AWS region: N. Virginia, Oregon, Ireland, Frankfurt, or Sydney
+* You have subscribed to the new https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace offering^]
+* TCP port 5010 is open for outbound traffic on the security group for Cloud Volumes ONTAP (it's open by default)
+* TCP port 8088 is open for outbound traffic on the security group for Cloud Manager (it's open by default)
+* The following endpoint is accessible from Cloud Manager:
++
+\https://w86yt021u5.execute-api.us-east-1.amazonaws.com/production/whitelist
+* There's room for Cloud Manager to allocate up to two interface VPC endpoints in the VPC (the AWS limit per VPC is 20)
+* Cloud Manager has permission to use the VPC endpoint permissions listed in the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^]:
 +
 [source,json]
 "ec2:DescribeVpcEndpoints",
@@ -96,8 +100,17 @@ The IAM role that provides Cloud Manager with permissions must include the follo
 AWS subscription requirement::
 Starting with the 3.7.3 release, a new Cloud Manager subscription is available in the AWS Marketplace. This subscription enables deployments of Cloud Volumes ONTAP 9.6 PAYGO systems and the Backup to S3 feature. You need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to this new Cloud Manager subscription^] before you enable Backup to S3. Billing for the Backup to S3 feature is done through this subscription.
 
-Port requirement::
-TCP port 5010 must be open for outbound traffic from Cloud Volumes ONTAP to the Cloud Backup Service. The port is already open if you chose the predefined security group. But if you used your own, then you'll need to open this port.
+Port requirements::
+* TCP port 5010 must be open for outbound traffic from Cloud Volumes ONTAP to the Cloud Backup Service.
+* TCP port 8088 must be open for outbound traffic on the security group for Cloud Manager.
++
+These ports are already open if you used the predefined security groups. But if you used your own, then you'll need to open these ports.
+
+Outbound internet access::
+Ensure that the following endpoint is accessible from Cloud Manager:
+\https://w86yt021u5.execute-api.us-east-1.amazonaws.com/production/whitelist
++
+Cloud Manager contacts this endpoint to add your AWS account ID to the list of allowed users for the Cloud Backup Service.
 
 Interface VPC endpoints::
 When you enable the Backup to S3 feature, Cloud Manager creates an interface VPC endpoint in the VPC where Cloud Volumes ONTAP is running. This _backup endpoint_ connects to the NetApp VPC where the Cloud Backup Service is running. If you restore a volume, Cloud Manager creates an additional interface VPC endpoint--the _restore endpoint_.
