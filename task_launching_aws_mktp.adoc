@@ -28,7 +28,7 @@ The following steps describe how to launch the instance from the EC2 Console bec
 
 .. Download the Cloud Manager IAM policy from the following location:
 +
-https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS and Azure Policies^]
+https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
 
 .. From the IAM console, create your own policy by copying and pasting the text from the Cloud Manager IAM policy.
 
@@ -46,7 +46,9 @@ https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS an
 
 . Follow the prompts to configure and deploy the instance:
 
-* *Choose Instance Type*: Depending on region availability, choose the t3.medium (recommended), t2.medium, or m4.large instance type.
+* *Choose Instance Type*: Depending on region availability, choose one of the supported instance types (t3.medium  is recommended).
++
+link:reference_cloud_mgr_reqs.html[Review the list of supported instance types].
 
 * *Configure Instance*: Select a VPC and subnet, the IAM role that you created in step 1, and other configuration options that meet your requirements.
 +

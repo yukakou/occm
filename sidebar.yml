@@ -137,7 +137,7 @@ entries:
         url: /task_provisioning_storage.html
       - title: Tier inactive data to object storage
         url: /task_tiering.html
-      - title: Use Cloud Volumes ONTAP as persistent storage
+      - title: Use ONTAP as persistent storage
         url: /task_connecting_kubernetes.html
       - title: Encrypt volumes with NetApp Volume Encryption
         url: /task_encrypting_volumes.html
