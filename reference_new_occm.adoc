@@ -20,6 +20,47 @@ link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Cloud Manager 3.7.5 (3 Dec 2019)
+
+Cloud Manager 3.7.5 includes the following enhancements.
+
+* <<High write speed for Cloud Volumes ONTAP in GCP>>
+* <<On-prem ONTAP clusters as persistent storage for Kubernetes>>
+* <<Latest Trident version for Kubernetes>>
+* <<Support for Azure general-purpose v2 storage accounts>>
+* <<Prefixes in Azure storage account names using APIs>>
+
+=== High write speed for Cloud Volumes ONTAP in GCP
+
+You can now enable high write speed on new and existing Cloud Volumes ONTAP systems in Google Cloud Platform. High write speed is a good choice if fast write performance is required for your workload.
+
+* link:task_planning_your_config.html#choosing-a-write-speed[Learn how to choose a write speed]
+* link:task_modifying_ontap_cloud.html#changing-write-speed-to-normal-or-high[Learn how to change write speed on existing systems]
+
+=== On-prem ONTAP clusters as persistent storage for Kubernetes
+
+Cloud Manager now enables you to use on-premises ONTAP clusters as persistent storage for containers. Similar to Cloud Volumes ONTAP, Cloud Manager automates the deployment of NetApp Trident and the connects ONTAP to Kubernetes clusters.
+
+After adding a Kubernetes cluster to Cloud Manager, you can connect it to your on-premises ONTAP clusters from the Working Environments page:
+
+image:screenshot_kubernetes_connect_onprem.gif[A screenshot of the Working Environments page, an on-premises ONTAP system, and the Connect button for Kubernetes. This button is available after you select the working environment.]
+
+link:task_connecting_kubernetes.html[Learn how to get started].
+
+=== Latest Trident version for Kubernetes
+
+Cloud Manager now installs a more recent version of Trident (version 19.07.1) when you connect a working environment to a Kubernetes cluster.
+
+=== Support for Azure general-purpose v2 storage accounts
+
+When you deploy new Cloud Volumes ONTAP systems in Azure, the storage accounts that Cloud Manager creates are now general-purpose v2 storage accounts.
+
+=== Prefixes in Azure storage account names using APIs
+
+You can now add a prefix to the names of the Azure storage accounts that Cloud Manager creates for Cloud Volumes ONTAP. Just use the _storageAccountPrefix_ parameter when you deploy a new Cloud Volumes ONTAP system in Azure.
+
+link:api.html[See the API Developer Guide for more details about using APIs].
+
 == Cloud Manager 3.7.4 (6 Oct 2019)
 
 Cloud Manager 3.7.4 includes the following enhancements.
