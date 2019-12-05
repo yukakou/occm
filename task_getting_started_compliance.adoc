@@ -1,0 +1,204 @@
+---
+sidebar: sidebar
+permalink: task_getting_started_compliance.html
+keywords: cloud compliance, get started, enable cloud compliance, cifs credentials, smb credentials, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance
+summary: Complete a few steps to get started with Cloud Compliance on Cloud Volumes ONTAP systems in AWS or Azure.
+---
+
+= Getting started with Cloud Compliance for Cloud Volumes ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Complete a few steps to get started with Cloud Compliance for Cloud Volumes ONTAP in AWS or Azure.
+
+== Quick start
+
+Get started quickly by following these steps or scroll down to the remaining sections for full details.
+
+==== image:number1.png[Number 1] Verify that your configuration can meet the requirements
+
+[role="quick-margin-list"]
+* Ensure that the Cloud Compliance instance will have outbound internet access.
++
+Cloud Manager deploys the instance in the same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
+
+* Ensure that users can access the Cloud Manager interface from a host that has a direction connection to AWS or Azure, or from a host that's inside the same network as the Cloud Compliance instance (the instance will have a private IP address).
+
+* Ensure that you can keep the Cloud Compliance instance running.
+
+==== image:number2.png[Number 2] Enable Cloud Compliance on Cloud Volumes ONTAP
+
+[role="quick-margin-list"]
+* New working environments: Be sure to keep Cloud Compliance enabled when you create the working environment (it's enabled by default).
+
+* Existing working environments: Click *Compliance*, optionally edit the list of working environments, and click *Show Compliance Dashboard*.
+
+==== image:number3.png[Number 3] Ensure access to volumes
+
+[role="quick-margin-para"]
+Now that Cloud Compliance is enabled, ensure that it can access volumes.
+
+[role="quick-margin-list"]
+* The Cloud Compliance instance needs a network connection to each Cloud Volumes ONTAP subnet.
+* Security groups for Cloud Volumes ONTAP must allow inbound connections from the Cloud Compliance instance.
+* Volume export policies must allow access from the Cloud Compliance instance.
+* Cloud Compliance needs Active Directory credentials to scan CIFS volumes.
++
+Click *Compliance* > *CIFS Scan Status* > *Edit CIFS Credentials* and provide the credentials. The credentials can be read-only, but providing admin credentials ensures that Cloud Compliance can read data that requires elevated permissions.
+
+==== image:number4.png[Number 4] Ensure connectivity between Cloud Manager and Cloud Compliance
+
+[role="quick-margin-list"]
+* The security group for Cloud Manager must allow outbound traffic over port 80 to the Cloud Compliance instance.
+
+* If Cloud Manager doesn’t use a proxy server to access the internet in AWS, the security group for Cloud Manager must allow inbound traffic over TCP port 3128 from the Cloud Compliance instance.
+
+== Reviewing prerequisites
+
+Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Compliance. You'll need to ensure connectivity between components after you enable Cloud Compliance. That's covered below.
+
+Enable outbound internet access::
+Cloud Compliance requires outbound internet access. If your virtual network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints:
++
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+
+| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
+
+| \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
+
+|
+\https://cloud-compliance-support-netapp.s3.us-west-1.amazonaws.com
+\https://hub.docker.com
+| Provides access to software images, manifests, and templates.
+
+| \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
+
+|
+\https://cognito-idp.us-east-1.amazonaws.com
+\https://cognito-identity.us-east-1.amazonaws.com
+| Enables Cloud Compliance to access and download manifests and templates, and to send logs and metrics.
+
+|===
+
+Verify web browser connectivity to Cloud Compliance::
+The Cloud Compliance instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to AWS or Azure (for example, a VPN), or from a host that's inside the same network as the Cloud Compliance instance.
++
+TIP: If you're accessing Cloud Manager from a public IP address, then your web browser probably isn't running on a host inside the network.
+
+Keep Cloud Compliance running::
+The Cloud Compliance instance needs to stay on to continuously scan your data.
+
+== Enabling Cloud Compliance on a new working environment
+
+Cloud Compliance is enabled by default in the working environment wizard. Be sure to keep the option enabled.
+
+.Steps
+
+. Click *Create Cloud Volumes ONTAP*.
+
+. Select Amazon Web Services or Microsoft Azure as the cloud provider and then choose a single node or HA system.
+
+. Fill out the Details & Credentials page.
+
+. On the Services page, leave Cloud Compliance enabled and click *Continue*.
++
+image:screenshot_cloud_compliance.gif[A screenshot that shows the Services page in the working environment wizard.]
+
+. Complete the pages in the wizard to deploy the system.
++
+For help, see link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS] and link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure].
+
+.Result
+
+Cloud Compliance is enabled on the Cloud Volumes ONTAP system. If this the first time that you enabled Cloud Compliance, Cloud Manager deploys the Cloud Compliance instance in your cloud provider. As soon as the instance is available, it starts scanning data as its written to each volume that you create.
+
+== Enabling Cloud Compliance on existing working environments
+
+Enable Cloud Compliance on your existing Cloud Volumes ONTAP systems from the *Compliance* tab in Cloud Manager.
+
+Another option is to enable Cloud Compliance from the *Working Environments* tab by selecting each working environment individually. That'll take you longer to complete, unless you have just one system.
+
+.Steps for multiple working environments
+
+. At the top of Cloud Manager, click *Compliance*.
+
+. If you want to enable Cloud Compliance on specific working environments, click the edit icon.
++
+Otherwise, Cloud Manager is set to enable Cloud Compliance on all working environments to which you have access.
++
+image:screenshot_show_compliance_dashboard.gif[A screenshot of the Compliance tab that shows the icon to click when choosing which working environments to scan.]
+
+. Click *Show Compliance Dashboard*.
+
+.Steps for a single working environment
+
+. At the top of Cloud Manager, click *Working Environments*.
+
+. Select a working environment.
+
+. In the pane on the right, click *Enable Compliance*.
++
+image:screenshot_enable_compliance.gif[A screenshot that shows the Enable Compliance icon which is available in the Working Environments tab after you select a working environment.]
+
+.Result
+
+If this the first time that you enabled Cloud Compliance, Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
+
+Cloud Compliance starts scanning the data on each working environment. Data will be available in the Compliance dashboard as soon as Cloud Compliance finishes the initial scans. The time that it takes depends on the amount of data--it could be a few minutes or hours.
+
+== Verifying that Cloud Compliance has access to volumes
+
+Make sure that Cloud Compliance can access volumes on Cloud Volumes ONTAP by checking your networking, security groups, and export policies. You'll need to provide Cloud Compliance with CIFS credentials so it can access CIFS volumes.
+
+.Steps
+
+. Make sure that there's a network connection between the Cloud Compliance instance and each Cloud Volumes ONTAP subnet.
++
+Cloud Manager deploys the Cloud Compliance instance in the same VPC or VNet as the first Cloud Volumes ONTAP system in the request. So this step is important if some Cloud Volumes ONTAP systems are in different subnets or virtual networks.
+
+. Ensure that the security group for Cloud Volumes ONTAP allows inbound traffic from the Cloud Compliance instance.
++
+You can either open the security group for traffic from the IP address of the Cloud Compliance instance, or you can open the security group for all traffic from inside the virtual network.
+
+. Ensure that volume export policies include the IP address of the Cloud Compliance instance so it can access the data on each volume.
+
+. If you use CIFS, provide Cloud Compliance with Active Directory credentials so it can scan CIFS volumes.
+
+.. At the top of Cloud Manager, click *Compliance*.
+
+.. In the top right, click *CIFS Scan Status*.
++
+image:screenshot_cifs_credentials.gif[A screenshot of the Compliance tab that shows the CIFS Scan Status button that's available in the top right of the content pane.]
+
+.. For each Cloud Volumes ONTAP system, click *Edit CIFS Credentials* and enter the user name and password that Cloud Compliance needs to access CIFS volumes on the system.
++
+The credentials can be read-only, but providing admin credentials ensures that Cloud Compliance can read any data that requires elevated permissions. The credentials are stored on the Cloud Compliance instance.
++
+After you enter the credentials, you should see a message that all CIFS volumes were authenticated successfully.
++
+image:screenshot_cifs_status.gif[A screenshot that shows the CIFS Scan Status page and one Cloud Volumes ONTAP system for which CIFS credentials were successfully provided.]
+
+== Verifying that Cloud Manager can access Cloud Compliance
+
+Ensure connectivity between Cloud Manager and Cloud Compliance so you can view the compliance insights that Cloud Compliance found.
+
+.Steps
+
+. Make sure that the security group for Cloud Manager allows outbound traffic over port 80 to the Cloud Compliance instance.
++
+This connection enables you to view information in the Compliance tab.
+
+. In AWS, open an additional port if Cloud Manager doesn't use a proxy server to access the internet.
++
+In this type of configuration, the security group for Cloud Manager must allow inbound traffic over TCP port 3128 from the Cloud Compliance instance.
++
+This is required because the Cloud Compliance instance uses Cloud Manager as a proxy to access the internet.
++
+NOTE: This port is open by default on all new Cloud Manager instances, starting with version 3.7.5. It's not open on Cloud Manager instances created prior to that version.

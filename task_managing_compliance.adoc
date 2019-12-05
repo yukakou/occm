@@ -1,0 +1,40 @@
+---
+sidebar: sidebar
+permalink: task_managing_compliance.html
+keywords: remove, delete, stop, stop scans, stop scanning, cloud compliance, stop cloud compliance, delete cloud compliance, terminate, deactivate, deactivating cloud compliance
+summary: If you need to, you can stop Cloud Compliance from scanning one or more working environments. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your Cloud Volumes ONTAP systems.
+---
+
+= Disabling Cloud Compliance
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+If you need to, you can stop Cloud Compliance from scanning one or more working environments. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your Cloud Volumes ONTAP systems.
+
+== Deactivating compliance scans for a working environment
+
+When you deactivate scans, Cloud Compliance no longer scans the data on the system and it removes the indexed compliance insights from the Cloud Compliance instance (the data from the working environment itself isn't deleted).
+
+.Steps
+
+. At the top of Cloud Manager, click *Working Environments*.
+
+. Select the working environment.
+
+. In the right panel, click the action icon for the Cloud Compliance service and select *Deactivate scan*.
++
+image:screenshot_deactivate_compliance_scan.png[A screenshot of the action icon where you can select Deactivate scan. This option is available after you select a working environment from the Working Environments page.]
+
+== Deleting the Cloud Compliance instance
+
+You can delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with Cloud Volumes ONTAP. Deleting the instance also deletes the associated disks where the indexed data resides.
+
+.Step
+
+. Go to your cloud provider's console and delete the Cloud Compliance instance.
++
+The instance is named _CloudCompliance_ with a generated hash (UUID) concatenated to it. For example: _CloudCompliance-16bb6564-38ad-4080-9a92-36f5fd2f71c7_
