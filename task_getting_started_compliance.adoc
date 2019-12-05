@@ -26,7 +26,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 +
 Cloud Manager deploys the instance in the same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
 
-* Ensure that users can access the Cloud Manager interface from a host that has a direction connection to AWS or Azure, or from a host that's inside the same network as the Cloud Compliance instance (the instance will have a private IP address).
+* Ensure that users can access the Cloud Manager interface from a host that has a direct connection to AWS or Azure, or from a host that's inside the same network as the Cloud Compliance instance (the instance will have a private IP address).
 
 * Ensure that you can keep the Cloud Compliance instance running.
 
@@ -55,7 +55,7 @@ Click *Compliance* > *CIFS Scan Status* > *Edit CIFS Credentials* and provide th
 [role="quick-margin-list"]
 * The security group for Cloud Manager must allow outbound traffic over port 80 to the Cloud Compliance instance.
 
-* If Cloud Manager doesn’t use a proxy server to access the internet in AWS, the security group for Cloud Manager must allow inbound traffic over TCP port 3128 from the Cloud Compliance instance.
+* If your AWS network doesn’t use a NAT or proxy for internet access, then the security group for Cloud Manager must allow inbound traffic over TCP port 3128 from the Cloud Compliance instance.
 
 == Reviewing prerequisites
 
@@ -195,9 +195,7 @@ Ensure connectivity between Cloud Manager and Cloud Compliance so you can view t
 +
 This connection enables you to view information in the Compliance tab.
 
-. In AWS, open an additional port if Cloud Manager doesn't use a proxy server to access the internet.
-+
-In this type of configuration, the security group for Cloud Manager must allow inbound traffic over TCP port 3128 from the Cloud Compliance instance.
+. If your AWS network doesn’t use a NAT or proxy for internet access, modify the security group for Cloud Manager to allow inbound traffic over TCP port 3128 from the Cloud Compliance instance.
 +
 This is required because the Cloud Compliance instance uses Cloud Manager as a proxy to access the internet.
 +
