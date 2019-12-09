@@ -1,0 +1,72 @@
+---
+sidebar: sidebar
+permalink: task_generating_compliance_reports.html
+keywords: report, privacy, risk, privacy risk assessment, compliance status, severity, compliance, privacy risk, data subjects, privacy
+summary: The Privacy Risk Assessment Report provides an overview of your organization's privacy risk status. Generate the report and send it to other groups in your organization, including executives, compliance teams, and legal teams.
+---
+
+= Viewing the Privacy Risk Assessment Report
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Privacy Risk Assessment Report provides an overview of your organization’s privacy risk status, as required by privacy regulations such as GDPR and CCPA.
+
+NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Compliance identifies. You should always validate the information by reviewing the data.
+
+The report includes the following information:
+
+Compliance status:: A severity score (see below for more details) and the distribution of data, whether it's non-sensitive, personal, or sensitive personal.
+
+Assessment overview:: A breakdown of the types of personal data found, as well as the categories of data.
+
+Data subjects in this assessment:: The number of people by location for which national identifiers were found.
+
+== Generating the Privacy Risk Assessment Report
+
+Go to the Compliance tab to generate the report.
+
+.Steps
+
+. At the top of Cloud Manager, click *Compliance*.
+
+. Under *Reports*, click the download icon next to *Privacy Risk Assessment*.
++
+image:screenshot_privacy_risk_assessment.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click Privacy Risk Assessment.]
+
+.Result
+
+Cloud Compliance generates a PDF report that you can review and send to other groups as needed.
+
+== Severity score
+
+Cloud Compliance calculates the severity score for the Privacy Risk Assessment Report on the basis of three variables:
+
+* The percentage of personal data out of all data.
+* The percentage of sensitive personal data out of all data.
+* The percentage of files that include data subjects, determined by national identifiers such as national IDs, Social Security numbers, and tax ID numbers.
+
+The logic used to determine the score is as follows:
+
+[cols=2*,options="header",cols="29,71"]
+|===
+
+| Severity score
+| Logic
+
+| 0 | All three variables are exactly 0%
+| 1 |	One of the variables are larger than 0%
+| 2 |	One of the variables are larger than 3%
+| 3 |	Two of the variables are larger than 3%
+| 4 |	Three of the variables are larger than 3%
+| 5 |	One of the variables are larger 6%
+| 6 |	Two of the variables are larger 6%
+| 7 |	Three of the variables are larger 6%
+| 8 |	One of the variables are larger 15%
+| 9 |	Two of the variables are larger 15%
+| 10 | Three of the variables are larger 15%
+
+|===

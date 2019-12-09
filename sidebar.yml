@@ -153,6 +153,22 @@ entries:
         url: /task_backup_to_s3.html
       - title: Sync data to Amazon S3
         url: /task_syncing_s3.html
+  - title: Gain insight into data privacy
+    entries:
+      - title: Learn about Cloud Compliance
+        url: /concept_cloud_compliance.html
+      - title: Get started
+        url: /task_getting_started_compliance.html
+      - title: Gain visibility and control of data
+        url: /task_controlling_private_data.html
+      - title: Generate reports
+        url: /task_generating_compliance_reports.html
+      - title: Respond to a DSAR
+        url: /task_responding_to_dsar.html
+      - title: Disable Cloud Compliance
+        url: /task_managing_compliance.html
+      - title: FAQ
+        url: /faq_cloud_compliance.html
   - title: Administer Cloud Volumes ONTAP
     entries:
       - title: Connect to Cloud Volumes ONTAP
