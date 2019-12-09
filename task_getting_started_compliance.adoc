@@ -45,7 +45,7 @@ Now that Cloud Compliance is enabled, ensure that it can access volumes.
 [role="quick-margin-list"]
 * The Cloud Compliance instance needs a network connection to each Cloud Volumes ONTAP subnet.
 * Security groups for Cloud Volumes ONTAP must allow inbound connections from the Cloud Compliance instance.
-* Volume export policies must allow access from the Cloud Compliance instance.
+* NFS Volume export policies must allow access from the Cloud Compliance instance.
 * Cloud Compliance needs Active Directory credentials to scan CIFS volumes.
 +
 Click *Compliance* > *CIFS Scan Status* > *Edit CIFS Credentials* and provide the credentials. The credentials can be read-only, but providing admin credentials ensures that Cloud Compliance can read data that requires elevated permissions.
@@ -167,7 +167,7 @@ Cloud Manager deploys the Cloud Compliance instance in the same VPC or VNet as t
 +
 You can either open the security group for traffic from the IP address of the Cloud Compliance instance, or you can open the security group for all traffic from inside the virtual network.
 
-. Ensure that volume export policies include the IP address of the Cloud Compliance instance so it can access the data on each volume.
+. Ensure that NFS volume export policies include the IP address of the Cloud Compliance instance so it can access the data on each volume.
 
 . If you use CIFS, provide Cloud Compliance with Active Directory credentials so it can scan CIFS volumes.
 

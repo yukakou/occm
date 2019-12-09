@@ -78,7 +78,7 @@ The personal data found in files can be general personal data or national identi
 
 == Sensitive personal data
 
-Cloud Compliance automatically identifies special types of sensitive personal information, as defined by privacy regulations such as articles 9 and 10 of the GDPR. For example, information regarding a person's health, ethnic origin, or sexual orientation. <<Types of sensitive personal data,See the full list>>.
+Cloud Compliance automatically identifies special types of sensitive personal information, as defined by privacy regulations such as https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN#d1e2051-1-1[articles 9 and 10 of the GDPR^]. For example, information regarding a person's health, ethnic origin, or sexual orientation. <<Types of sensitive personal data,See the full list>>.
 
 Cloud Compliance uses artificial intelligence (AI), natural language processing (NLP), machine learning (ML), and cognitive computing (CC) to understand the meaning of the content that it scans in order to extract entities and categorize it accordingly.
 
@@ -205,7 +205,7 @@ Cloud Compliance is in a Controlled Availability release and we are constantly i
 | Categories | 90%-97% | 60%-80%
 |===
 
-== What's included in each file list (CSV file)
+== What’s included in each file list report (CSV file)
 
 The dashboard enables you to download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list (support for more will be added later).
 

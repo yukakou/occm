@@ -31,7 +31,7 @@ After the search is complete, you can then download the list of files or a Data 
 
 Search for the data subject's full name or known identifier and then download a file list report or DSAR report.
 
-NOTE: Only English is supported when searching for data subjects. Support for more languages will be added later.
+NOTE: Only English is supported when searching for the names of data subjects. Support for more languages will be added later.
 
 .Steps
 
