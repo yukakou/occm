@@ -53,7 +53,7 @@ Cloud Manager now installs a more recent version of Trident (version 19.07.1) wh
 
 === Support for Azure general-purpose v2 storage accounts
 
-When you deploy new Cloud Volumes ONTAP systems in Azure, the storage accounts that Cloud Manager creates are now general-purpose v2 storage accounts.
+When you deploy new Cloud Volumes ONTAP systems in Azure, the storage accounts that Cloud Manager creates for diagnostics and data tiering are now general-purpose v2 storage accounts.
 
 === Prefixes in Azure storage account names using APIs
 
