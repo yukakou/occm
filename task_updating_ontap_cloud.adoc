@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_updating_ontap_cloud.html
 keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image
-summary: Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release or to downgrade Cloud Volumes ONTAP to an earlier release.
+summary: Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release or to downgrade Cloud Volumes ONTAP to an earlier release. You should prepare Cloud Volumes ONTAP systems before you upgrade or downgrade the software.
 ---
 
 = Updating Cloud Volumes ONTAP software
@@ -25,9 +25,9 @@ Cloud Manager displays a notification in Cloud Volumes ONTAP working environment
 
 image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available notification which displays in the Working Environments page after you select a working environment.]
 
-You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system. For details, see <<Upgrading Cloud Volumes ONTAP to the latest version>>.
+You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system. For details, see <<Upgrading Cloud Volumes ONTAP from Cloud Manager notifications>>.
 
-NOTE: For HA systems, Cloud Manager might upgrade the HA mediator as part of the upgrade process.
+NOTE: For HA systems in AWS, Cloud Manager might upgrade the HA mediator as part of the upgrade process.
 
 === Advanced options for software updates
 
@@ -59,7 +59,7 @@ Before performing an upgrade or downgrade, you must verify that your systems are
 
 When you upgrade a single-node system, the upgrade process takes the system offline for up to 25 minutes, during which I/O is interrupted.
 
-Upgrades of HA pairs are nondisruptive. A nondisruptive upgrade upgrades both nodes in an HA pair concurrently while maintaining service to clients.
+Upgrading an HA pair is nondisruptive and I/O is uninterrupted. During this nondisruptive upgrade process, each node is upgraded in tandem to continue serving I/O to clients.
 
 === Reviewing version requirements
 
@@ -113,19 +113,13 @@ image:screenshot_aggr_state.gif[Screen shot: Shows the State field when you view
 
 .. Select the aggregate, and then click *More Actions > Status > Online*.
 
-== Upgrading Cloud Volumes ONTAP to the latest version
+== Upgrading Cloud Volumes ONTAP from Cloud Manager notifications
 
-You can upgrade to the latest version of Cloud Volumes ONTAP directly from Cloud Manager. Cloud Manager notifies you when a new version is available.
+Cloud Manager notifies you when a new version of Cloud Volumes ONTAP is available. Click the notification to start the upgrade process.
 
 .Before you begin
 
 Cloud Manager operations such as volume or aggregate creation must not be in progress for the Cloud Volumes ONTAP system.
-
-.About this task
-
-* When you upgrade a single-node system, the upgrade process takes the system offline for up to 25 minutes, during which I/O is interrupted.
-
-* Upgrades of HA pairs are nondisruptive. A nondisruptive upgrade upgrades both nodes in an HA pair concurrently while maintaining service to clients.
 
 .Steps
 
@@ -156,12 +150,6 @@ If you suspended SnapMirror transfers, use System Manager to resume the transfer
 == Upgrading or downgrading Cloud Volumes ONTAP by using an HTTP or FTP server
 
 You can place the Cloud Volumes ONTAP software image on an HTTP or FTP server and then initiate the software update from Cloud Manager. You might use this option if Cloud Manager cannot access the S3 bucket to upgrade the software or if you want to downgrade the software.
-
-.About this task
-
-* When you upgrade a single-node system, the upgrade process takes the system offline for up to 25 minutes, during which I/O is interrupted.
-
-* Upgrades of HA pairs are nondisruptive. A nondisruptive upgrade upgrades both nodes in an HA pair concurrently while maintaining service to clients.
 
 .Steps
 
@@ -199,7 +187,7 @@ Each Cloud Volumes ONTAP system can hold two software images: the current image 
 
 .About this task
 
-This downgrade process is available for single Cloud Volumes ONTAP systems only. It is not available for HA pairs. The process takes the Cloud Volumes ONTAP system offline for up to 25 minutes.
+This downgrade process is available for single Cloud Volumes ONTAP systems only. It is not available for HA pairs.
 
 .Steps
 
