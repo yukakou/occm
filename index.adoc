@@ -16,7 +16,7 @@ Cloud Manager enables you to deploy and manage NetApp Cloud Volumes ONTAP, which
 == Discover what's new
 
 * link:reference_new_occm.html[What's new in Cloud Manager]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_96.html[What's new in Cloud Volumes ONTAP^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_97.html[What's new in Cloud Volumes ONTAP^]
 
 == Get started
 
