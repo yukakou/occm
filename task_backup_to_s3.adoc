@@ -98,7 +98,7 @@ The IAM role that provides Cloud Manager with permissions must include the follo
 "ec2:DeleteVpcEndpoints"
 
 AWS subscription requirement::
-Starting with the 3.7.3 release, a new Cloud Manager subscription is available in the AWS Marketplace. This subscription enables deployments of Cloud Volumes ONTAP 9.6 PAYGO systems and the Backup to S3 feature. You need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to this new Cloud Manager subscription^] before you enable Backup to S3. Billing for the Backup to S3 feature is done through this subscription.
+Starting with the 3.7.3 release, a new Cloud Manager subscription is available in the AWS Marketplace. This subscription enables deployments of Cloud Volumes ONTAP 9.6 and later PAYGO systems and the Backup to S3 feature. You need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to this new Cloud Manager subscription^] before you enable Backup to S3. Billing for the Backup to S3 feature is done through this subscription.
 
 Port requirements::
 * TCP port 5010 must be open for outbound traffic from Cloud Volumes ONTAP to the Cloud Backup Service.
