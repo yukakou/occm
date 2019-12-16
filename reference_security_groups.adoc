@@ -34,6 +34,7 @@ The source for inbound rules in the predefined security group is 0.0.0.0/0.
 | SSH | 22 | Provides SSH access to the Cloud Manager host
 | HTTP | 80 |	Provides HTTP access from client web browsers to the Cloud Manager web console
 | HTTPS |	443 |	Provides HTTPS access from client web browsers to the Cloud Manager web console
+| TCP | 3128 | Provides the Cloud Compliance instance with internet access, if your AWS network doesn’t use a NAT or proxy
 
 |===
 
@@ -85,6 +86,7 @@ NOTE: The source IP address is the Cloud Manager host.
 .2+| API calls | TCP	| 3000 | ONTAP cluster management LIF | API calls to ONTAP
 | TCP | 8088 | Cloud Backup Service | API calls to the Cloud Backup Service
 | DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
+| Cloud Compliance | HTTP | 80 | Cloud Compliance instance | Cloud Compliance for Cloud Volumes ONTAP
 |===
 
 == Rules for Cloud Volumes ONTAP

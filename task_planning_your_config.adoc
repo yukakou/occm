@@ -19,17 +19,17 @@ When you deploy Cloud Volumes ONTAP, you can choose a preconfigured system that 
 
 Cloud Volumes ONTAP is available in two pricing options: pay-as-you-go and Bring Your Own License (BYOL). For pay-as-you-go, you can choose from three licenses: Explore, Standard, or Premium. Each license provides different capacity and compute options.
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_96.html[Supported configurations for Cloud Volumes ONTAP 9.6 in AWS^]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_96.html[Supported configurations for Cloud Volumes ONTAP 9.6 in Azure^]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_96.html[Supported configurations for Cloud Volumes ONTAP 9.6 in GCP^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_97.html[Supported configurations for Cloud Volumes ONTAP 9.7 in AWS^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_97.html[Supported configurations for Cloud Volumes ONTAP 9.7 in Azure^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_97.html[Supported configurations for Cloud Volumes ONTAP 9.7 in GCP^]
 
 == Understanding storage limits
 
 The raw capacity limit for a Cloud Volumes ONTAP system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_96.html[Storage limits for Cloud Volumes ONTAP 9.6 in AWS]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_azure_96.html[Storage limits for Cloud Volumes ONTAP 9.6 in Azure]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_gcp_96.html[Storage limits for Cloud Volumes ONTAP 9.6 in GCP]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_97.html[Storage limits for Cloud Volumes ONTAP 9.7 in AWS]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_azure_97.html[Storage limits for Cloud Volumes ONTAP 9.7 in Azure]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_gcp_97.html[Storage limits for Cloud Volumes ONTAP 9.7 in GCP]
 
 == Choosing a write speed
 

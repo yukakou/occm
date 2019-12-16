@@ -25,7 +25,7 @@ In all cases, remember that you can't launch Cloud Volumes ONTAP in AWS from the
 | AWS Marketplace page to use
 | More information
 
-| Enable deployment of Cloud Volumes ONTAP 9.6 PAYGO
+| Enable deployment of Cloud Volumes ONTAP PAYGO for versions 9.6 and later
 .2+| https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager (for Cloud Volumes ONTAP)^]
 .2+| This AWS Marketplace page enables charging for the PAYGO version of Cloud Volumes ONTAP 9.6 and later. It also enables charging for Cloud Volumes ONTAP add-on features.
 

@@ -20,6 +20,27 @@ link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html[What's new in 3.4^]
 
+== Cloud Manager 3.7.5 update (16 Dec 2019)
+
+This update includes the following enhancements:
+
+* <<Cloud Volumes ONTAP 9.7>>
+* <<Cloud Compliance for Cloud Volumes ONTAP>>
+
+=== Cloud Volumes ONTAP 9.7
+
+Cloud Volumes ONTAP 9.7 is now available in AWS, Azure, and Google Cloud Platform.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_97.html[See what's new in Cloud Volumes ONTAP 9.7^].
+
+=== Cloud Compliance for Cloud Volumes ONTAP
+
+Cloud Compliance is a data privacy and compliance service for Cloud Volumes ONTAP in AWS and Azure. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data across Cloud Volumes ONTAP systems.
+
+Cloud Compliance is currently available as a Controlled Availability release.
+
+link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
+
 == Cloud Manager 3.7.5 (3 Dec 2019)
 
 Cloud Manager 3.7.5 includes the following enhancements.

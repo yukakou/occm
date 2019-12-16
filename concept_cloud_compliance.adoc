@@ -15,7 +15,7 @@ summary: Cloud Compliance is a data privacy and compliance service for Cloud Vol
 [.lead]
 Cloud Compliance is a data privacy and compliance service for Cloud Volumes ONTAP in AWS and Azure. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data across Cloud Volumes ONTAP systems.
 
-Cloud Compliance will be available as a Controlled Availability release on 16 December, 2019.
+Cloud Compliance is currently available as a Controlled Availability release.
 
 https://cloud.netapp.com/cloud-compliance[Learn about the use cases for Cloud Compliance^].
 

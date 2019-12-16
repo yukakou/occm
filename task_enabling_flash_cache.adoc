@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_enabling_flash_cache.html
-keywords: cloud volumes ontap, aws, ec2, flash cache, read-intensive, read, random, databases, email, file services, c5d.4xlarge, c5d.9xlarge, r5d.2xlarge, compression, performance
-summary: Some EC2 instance types include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache. Flash Cache speeds access to data through real-time intelligent caching of recently read user data and NetApp metadata. It is effective for random read-intensive workloads, including databases, email, and file services.
+keywords: cloud volumes ontap, aws, ec2, flash cache, read-intensive, read, random, databases, email, file services, c5d.4xlarge, c5d.9xlarge, r5d.2xlarge, compression, performance, azure, nvme, standard, l8s, vm type, virtual machine
+summary: Some Cloud Volumes ONTAP configurations in AWS and Azure include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache for better performance.
 ---
 
-= Enabling Flash Cache on Cloud Volumes ONTAP in AWS
+= Enabling Flash Cache on Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,18 +13,42 @@ summary: Some EC2 instance types include local NVMe storage, which Cloud Volumes
 :imagesdir: ./media/
 
 [.lead]
-Some EC2 instance types include local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_. Flash Cache speeds access to data through real-time intelligent caching of recently read user data and NetApp metadata. It is effective for random read-intensive workloads, including databases, email, and file services.
+Some Cloud Volumes ONTAP configurations in AWS and Azure include local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_ for better performance.
 
-NOTE: Cache rewarming after a reboot is not supported with Cloud Volumes ONTAP.
+== What's Flash Cache?
+
+Flash Cache speeds access to data through real-time intelligent caching of recently read user data and NetApp metadata. It is effective for random read-intensive workloads, including databases, email, and file services.
+
+== Limitations
+
+* Compression must be disabled on all volumes to take advantage of the Flash Cache performance improvements.
+
+* Cache rewarming after a reboot is not supported with Cloud Volumes ONTAP.
+
+== Enabling Flash Cache on Cloud Volumes ONTAP in AWS
+
+Flash Cache is supported with Cloud Volumes ONTAP Premium and BYOL in AWS.
 
 .Steps
 
-. Select one of the following EC2 instance types, which are available with the Premium and BYOL licenses:
+. Select one of the following EC2 instance types with a new or existing Cloud Volumes ONTAP Premium or BYOL system:
 
 * c5d.4xlarge
 * c5d.9xlarge
 * r5d.2xlarge
 
-. Disable compression on all volumes.
+. Disable compression on all volumes to take advantage of the Flash Cache performance improvements.
 +
-Compression must be disabled on all volumes to take advantage of the Flash Cache performance improvements. You can choose no storage efficiency when creating a volume from Cloud Manager, or you can create a volume and then http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html[disable data compression by using the CLI^].
+Choose no storage efficiency when creating a volume from Cloud Manager, or create a volume and then http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html[disable data compression by using the CLI^].
+
+== Enabling Flash Cache on Cloud Volumes ONTAP in Azure
+
+Flash Cache is supported with Cloud Volumes ONTAP BYOL on single node systems.
+
+.Steps
+
+. Select the Standard_L8s_v2 VM type with a single node Cloud Volumes ONTAP BYOL system in Azure.
+
+. Disable compression on all volumes to take advantage of the Flash Cache performance improvements.
++
+Choose no storage efficiency when creating a volume from Cloud Manager, or create a volume and then http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html[disable data compression by using the CLI^].

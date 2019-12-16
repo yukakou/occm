@@ -34,7 +34,7 @@ https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS, A
 
 .. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
 
-. https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Subscribe from the AWS Marketplace^] to ensure that there's no disruption of service after your free trial of Cloud Volumes ONTAP ends. You'll be charged from this subscription for every Cloud Volumes ONTAP 9.6 PAYGO system that you create and each add-on feature that you enable.
+. https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Subscribe from the AWS Marketplace^] to ensure that there's no disruption of service after your free trial of Cloud Volumes ONTAP ends. You'll be charged from this subscription for every Cloud Volumes ONTAP 9.6 and later PAYGO system that you create and each add-on feature that you enable.
 
 . Now go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[Cloud Manager page on the AWS Marketplace^] to deploy Cloud Manager from an AMI.
 

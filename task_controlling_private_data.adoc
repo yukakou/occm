@@ -165,6 +165,14 @@ Services::
 Support::
 *	Complaints and Tickets
 
+Other::
+* Archive Files
+* Audio
+* CAD Files
+* Code
+* Executables
+* Images
+
 == File types
 
 Cloud Compliance takes the data that it scanned and breaks it down by file type. Cloud Compliance can display all file types found in the scans.
