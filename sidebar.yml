@@ -119,7 +119,7 @@ entries:
         url: /task_planning_your_config.html
       - title: Find your system ID
         url: /task_finding_system_id.html
-      - title: Enable Flash Cache in AWS
+      - title: Enable Flash Cache
         url: /task_enabling_flash_cache.html
       - title: Launch Cloud Volumes ONTAP in AWS
         url: /task_deploying_otc_aws.html
