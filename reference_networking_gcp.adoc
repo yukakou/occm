@@ -36,6 +36,13 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
 
+Number of IP addresses::
+Cloud Manager allocates 5 IP addresses to Cloud Volumes ONTAP in GCP.
++
+Note that Cloud Manager doesn't create an SVM management LIF for Cloud Volumes ONTAP in GCP.
++
+TIP: A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
+
 Firewall rules::
 You don't need to create firewall rules because Cloud Manager does that for you. If you need to use your own, refer to link:reference_firewall_rules_gcp.html[GCP firewall rules].
 

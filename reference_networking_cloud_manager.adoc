@@ -63,7 +63,7 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 
 | \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
 
-| \https://w86yt021u5.execute-api.us-east-1.amazonaws.com/production/whitelist | Used to add your AWS account ID to the list of allowed users for the Cloud Backup Service.
+| \https://w86yt021u5.execute-api.us-east-1.amazonaws.com/production/whitelist | Used to add your AWS account ID to the list of allowed users for Backup to S3.
 
 |
 \https://support.netapp.com/aods/asupmessage

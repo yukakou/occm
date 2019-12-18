@@ -17,11 +17,21 @@ You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA 
 
 == Subscribing from the AWS Marketplace
 
+Subscribe from the AWS Marketplace to pay for Cloud Volumes ONTAP as you go or so you can deploy Cloud Volumes ONTAP BYOL.
+
+=== Subscribing for PAYGO
+
 https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Subscribe from the AWS Marketplace^] to ensure that there's no disruption of service after your free trial of Cloud Volumes ONTAP ends. You'll be charged from this subscription for every Cloud Volumes ONTAP 9.6 and later PAYGO system that you create and each add-on feature that you enable.
 
 The following video shows the subscription process:
 
 video::video_subscribing_aws.mp4[width=848, height=480]
+
+TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, AWS shows subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS account, each IAM user needs to associate themselves with the subscription. If you see the message shown below, click the *click here* link to go to Cloud Central and complete the process.
+
+image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription page for Cloud Manager for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not.]
+
+=== Subscribing for BYOL
 
 If you're launching Cloud Volumes ONTAP by bringing your own license (BYOL), https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=cloud+volumes+ontap+byol[then you'll need to subscribe to that offering in the AWS Marketplace^].
 

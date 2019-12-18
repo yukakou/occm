@@ -112,6 +112,12 @@ link:task_managing_compliance.html[Learn more].
 
 NOTE: To completely remove the Cloud Compliance instance, you can manually remove the Cloud Compliance instance from your cloud provider's portal.
 
+== What happens if data tiering is enabled on Cloud Volumes ONTAP?
+
+You might want to enable Cloud Compliance on a Cloud Volumes ONTAP system that tiers cold data to object storage. If data tiering is enabled, Cloud Compliance scans all of the data--data that's on disks and cold data tiered to object storage.
+
+The compliance scan doesn't heat up the cold data--it stays cold and tiered to object storage.
+
 == Can I use Cloud Compliance to scan on-premise ONTAP storage?
 
 No. Cloud Compliance is currently available as part of Cloud Manager and supports Cloud Volumes ONTAP. We're planning to support Cloud Compliance with additional cloud offerings such as Cloud Volumes Service and Azure NetApp Files. 

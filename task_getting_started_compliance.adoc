@@ -53,7 +53,7 @@ Click *Compliance* > *CIFS Scan Status* > *Edit CIFS Credentials* and provide th
 ==== image:number4.png[Number 4] Ensure connectivity between Cloud Manager and Cloud Compliance
 
 [role="quick-margin-list"]
-* The security group for Cloud Manager must allow outbound traffic over port 80 to the Cloud Compliance instance.
+* The security group for Cloud Manager must allow inbound and outbound traffic over port 80 to and from the Cloud Compliance instance.
 
 * If your AWS network doesn’t use a NAT or proxy for internet access, then the security group for Cloud Manager must allow inbound traffic over TCP port 3128 from the Cloud Compliance instance.
 
@@ -191,7 +191,7 @@ Ensure connectivity between Cloud Manager and Cloud Compliance so you can view t
 
 .Steps
 
-. Make sure that the security group for Cloud Manager allows outbound traffic over port 80 to the Cloud Compliance instance.
+. Make sure that the security group for Cloud Manager allows inbound and outbound traffic over port 80 to and from the Cloud Compliance instance.
 +
 This connection enables you to view information in the Compliance tab.
 

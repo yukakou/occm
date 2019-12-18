@@ -15,10 +15,6 @@ summary: Set up your AWS networking so Cloud Volumes ONTAP systems can operate p
 [.lead]
 Set up your AWS networking so Cloud Volumes ONTAP systems can operate properly.
 
-****
-Looking for the list of endpoints to which Cloud Manager requires access? They're now maintained in a single location. link:reference_networking_cloud_manager.html[Click here for details].
-****
-
 == General AWS networking requirements for Cloud Volumes ONTAP
 
 The following requirements must be met in AWS.
@@ -37,6 +33,17 @@ Outbound internet access for the HA mediator::
 The HA mediator instance must have an outbound connection to the AWS EC2 service so it can assist with storage failover. To provide the connection, you can add a public IP address, specify a proxy server, or use a manual option.
 +
 The manual option can be a NAT gateway or an interface VPC endpoint from the target subnet to the AWS EC2 service. For details about VPC endpoints, refer to http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html[AWS Documentation: Interface VPC Endpoints (AWS PrivateLink)^].
+
+Number of IP addresses::
+Cloud Manager allocates the following number of IP addresses to Cloud Volumes ONTAP in AWS:
+
+* Single node: 6 IP addresses
+* HA pairs in single AZs: 15 addresses
+* HA pairs in multiple AZs: 15 or 16 IP addresses
++
+Note that Cloud Manager creates an SVM management LIF on single node systems, but not on HA pairs in a single AZ. You can choose whether to create an SVM management LIF on HA pairs in multiple AZs.
++
+TIP: A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
 
 Security groups::
 You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference_security_groups.html[Security group rules].
