@@ -170,7 +170,7 @@ Cloud Manager now enables you to back up data from Cloud Volumes ONTAP to Amazon
 
 === Backup to S3
 
-Backup to S3 is an add-on feature for Cloud Volumes ONTAP that delivers fully-managed backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in S3 object storage, independent of volume Snapshot copies used for near-term recovery or cloning. The feature is powered by NetApp's Cloud Backup Service.
+Backup to S3 is an add-on service for Cloud Volumes ONTAP that delivers fully-managed backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in S3 object storage, independent of volume Snapshot copies used for near-term recovery or cloning.
 
 link:task_backup_to_s3.html[Learn how to get started].
 
