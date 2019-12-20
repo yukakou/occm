@@ -47,11 +47,9 @@ Associate Cloud Central users with the Cloud Central account so those users can 
 
 . In Cloud Manager, click *Account Settings*.
 
-. In the Users pane, click *Associate User*.
+. In the Users tab, click *Associate User*.
 
-. Enter the user's email address and click *Next*.
-
-. Select a role for the user:
+. Enter the user's email address and select a role for the user:
 +
 * *Account Admin*: Can perform any action in Cloud Manager.
 * *Workspace Admin*: Can create and manage resources in assigned workspaces.

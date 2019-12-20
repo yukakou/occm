@@ -19,6 +19,4 @@ Cloud Manager’s integration with NetApp Cloud Central provides several benefit
 
 With centralized user authentication, you can use the same set of credentials across Cloud Manager systems and between Cloud Manager and other data services, such as Cloud Sync. It’s also easy to reset your password if you forgot it.
 
-The following video provides an overview of NetApp Cloud Central:
-
-video::xKRsIfiy-54[youtube, width=848, height=480]
+image:screenshot_cloud_central.gif[A screenshot that shows the Fabric View in Cloud Central.]

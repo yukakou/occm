@@ -26,7 +26,7 @@ Cloud Manager automatically updates at 12:00 midnight if no operations are runni
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the task drop-down list, and then select *Settings*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Manager Settings*.
 
 . Select the checkbox under Automatic Cloud Manager Updates and then click *Save*.
 

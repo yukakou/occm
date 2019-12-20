@@ -21,7 +21,7 @@ You must know the password for the Cloud Volumes ONTAP admin user account.
 
 .Steps
 
-. On the Working Environments page, click *Discover a system* and select *Cloud Volumes ONTAP*.
+. On the Working Environments page, click *Discover* and select *Cloud Volumes ONTAP*.
 
 . Select the cloud provider in which the system resides.
 

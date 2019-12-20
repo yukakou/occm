@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: reference_default_configs.html
-keywords: linux, user name, operating system, installation files, installation folder, folder, log, logs, service, mysql, packages, linux,  svm, LIF, LIFs, configuration backups, attributes, autosize, security style, space guarantee, unix permissions, NTFS, UNIX, boot, root, disks, aggr0, aggr1, svm, svms, storage virtual machine, LIF failover, failover, attributes, volume attributes, boot disk, root disk
+keywords: linux, user name, operating system, installation files, installation folder, folder, log, logs, service, mysql, packages, linux,  svm, LIF, LIFs, configuration backups, attributes, autosize, security style, space guarantee, unix permissions, NTFS, UNIX, boot, root, disks, aggr0, aggr1, svm, svms, storage virtual machine, LIF failover, failover, attributes, volume attributes, boot disk, root disk, licenses, feature licenses, default licenses, ontap licenses, ontap features
 summary: Details about how Cloud Manager and Cloud Volumes ONTAP are configured by default can help you administer the systems.
 translate: false
 ---
@@ -14,7 +14,6 @@ translate: false
 :imagesdir: ./media/
 
 [.lead]
-
 Details about how Cloud Manager and Cloud Volumes ONTAP are configured by default can help you administer the systems.
 
 == Default configuration for Cloud Manager on Linux
@@ -58,11 +57,23 @@ Understanding how Cloud Volumes ONTAP is configured by default can help you set 
 
 * Cloud Volumes ONTAP is available as a single-node system in AWS, Azure, and GCP, and as an HA pair in AWS and Azure.
 
-* Cloud Manager creates one data-serving SVM when it deploys Cloud Volumes ONTAP. While you can create another data-serving SVM from System Manager or the CLI, using multiple data-serving SVMs is not supported.
+* Cloud Manager creates one data-serving SVM when it deploys Cloud Volumes ONTAP. Using multiple data-serving SVMs is not supported.
+
+* Cloud Manager automatically installs the following ONTAP feature licenses on Cloud Volumes ONTAP:
+** CIFS
+** FlexCache
+** FlexClone
+** iSCSI
+** NetApp Volume Encryption (only for BYOL or registered PAYGO systems)
+** NFS
+** SnapMirror
+** SnapRestore
+** SnapVault
 
 * Several network interfaces are created by default:
 ** A cluster management LIF
 ** An intercluster LIF
+** An SVM management LIF on HA systems in Azure, single node systems in AWS, and optionally on HA systems in multiple AWS Availability Zones
 ** A node management LIF
 ** An iSCSI data LIF
 ** A CIFS and NFS data LIF
@@ -70,8 +81,8 @@ Understanding how Cloud Volumes ONTAP is configured by default can help you set 
 NOTE: LIF failover is disabled by default for Cloud Volumes ONTAP due to EC2 requirements. Migrating a LIF to a different port breaks the external mapping between IP addresses and network interfaces on the instance, making the LIF inaccessible.
 
 * Cloud Volumes ONTAP sends configuration backups to Cloud Manager using HTTPS.
-
-* When logged in to Cloud Manager, the backups are accessible from https://ipaddress/occm/offboxconfig/
++
+When logged in to Cloud Manager, the backups are accessible from https://ipaddress/occm/offboxconfig/
 
 * Cloud Manager sets a few volume attributes differently than other management tools (System Manager or the CLI, for example).
 +
