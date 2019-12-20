@@ -162,6 +162,6 @@ For more information about how tiering levels work, see link:concept_data_tierin
 
 .Steps
 
-. From the working environment, click the menu icon and then click *Tiering Level*.
+. From the working environment, click the menu icon and then click *S3 Storage Classes* or *Blob Storage Tiering*.
 
 . Choose the tiering level and then click *Save*.
