@@ -36,26 +36,33 @@ How you deploy Cloud Manager depends on which location you choose:
 | Location for Cloud Manager
 | How to deploy Cloud Manager
 
-| AWS |
+| AWS a|
 
-link:task_getting_started_aws.html[Deploy Cloud Manager from NetApp Cloud Central]
+. link:task_getting_started_aws.html[Deploy Cloud Manager from NetApp Cloud Central] (recommended)
 
-A secondary option is to deploy from link:task_launching_aws_mktp.html[the AWS Marketplace]
+. link:task_launching_aws_mktp.html[Deploy from the AWS Marketplace]
+
+. link:task_installing_linux.html[Download and install the software on a Linux host]
 
 | AWS C2S | link:media/c2s.pdf[Deploy Cloud Manager from the AWS Intelligence Community Marketplace^]
 
-| Azure generally available region |
+| Azure generally available region a|
 
-link:task_getting_started_azure.html[Deploy Cloud Manager from NetApp Cloud Central]
+. link:task_getting_started_azure.html[Deploy Cloud Manager from NetApp Cloud Central] (recommended)
 
-A secondary option is to deploy from link:task_launching_azure_mktp.html[the Azure Marketplace]
+. link:task_launching_azure_mktp.html[Deploy from the Azure Marketplace]
+
+. link:task_installing_linux.html[Download and install the software on a Linux host]
 
 | Azure Government | link:task_installing_azure_gov.html[Deploy Cloud Manager from the Azure US Government Marketplace]
 
 | Azure Germany | link:task_installing_azure_germany.html[Download and install the software on a Linux host]
 
-| Google Cloud Platform
-a| link:task_getting_started_gcp.html[Deploy Cloud Manager from NetApp Cloud Central]
+| Google Cloud Platform a|
+
+. link:task_getting_started_gcp.html[Deploy Cloud Manager from NetApp Cloud Central] (recommended)
+
+. link:task_installing_linux.html[Download and install the software on a Linux host]
 
 NOTE: You can't deploy Cloud Manager in Google Cloud from the GCP Marketplace
 

@@ -16,10 +16,7 @@ summary: Get started with Cloud Volumes ONTAP by setting up GCP and then deployi
 [.lead]
 Get started with Cloud Volumes ONTAP by setting up GCP and then deploying Cloud Manager software from NetApp Cloud Central.
 
-Note the following before you get started:
-
-* Cloud Manager must be installed in Google Cloud Platform in order to deploy Cloud Volumes ONTAP in GCP.
-* The only way to deploy Cloud Manager in GCP is from NetApp Cloud Central.
+Cloud Manager must be installed in Google Cloud Platform in order to deploy Cloud Volumes ONTAP in GCP.
 
 === image:number1.png[Number 1] Set up your networking
 
@@ -88,7 +85,7 @@ https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-m
 === image:number6.png[Number 6] Launch Cloud Manager from NetApp Cloud Central
 
 [role="quick-margin-para"]
-Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance in GCP from https://cloud.netapp.com[Cloud Central^]. Cloud Manager must be installed in GCP from Cloud Central before you can deploy Cloud Volumes ONTAP.
+Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance in GCP from https://cloud.netapp.com[Cloud Central^].
 
 [role="quick-margin-para"]
 When you choose GCP as the cloud provider, you're prompted by Google to log in to your account and to grant permissions. Clicking "Allow" grants access to the compute APIs needed to deploy Cloud Manager.
@@ -111,3 +108,4 @@ video::EuBzgFYCQrA[youtube, width=848, height=480]
 * link:task_adding_gcp_accounts.html[Adding GCP accounts to Cloud Manager]
 * link:reference_permissions.html#what-cloud-manager-does-with-gcp-permissions[What Cloud Manager does with GCP permissions]
 * link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP]
+* link:task_installing_linux.html[Downloading and installing the Cloud Manager software on a Linux host]

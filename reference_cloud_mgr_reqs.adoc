@@ -15,7 +15,7 @@ summary: If you install Cloud Manager on your own host, then you must verify sup
 [.lead]
 If you install Cloud Manager on your own host, then you must verify support for your configuration, which includes operating system requirements, port requirements, and so on.
 
-NOTE: If you want to deploy Cloud Volumes ONTAP in GCP, then you must deploy Cloud Manager in GCP from NetApp Cloud Central. link:task_getting_started_gcp.html[Learn how].
+NOTE: You can install Cloud Manager on your own host in GCP, but not in your on-premises network. Cloud Manager must be installed in GCP in order to deploy Cloud Volumes ONTAP in GCP.
 
 A dedicated host is required::
 Cloud Manager is not supported on a host that is shared with other applications. The host must be a dedicated host.
@@ -31,6 +31,9 @@ Supported AWS EC2 instance types::
 
 Supported Azure VM sizes::
 A2, D2 v2, or D2 v3 (based on availability)
+
+Supported GCP machine types::
+A machine type with at least 2 vCPUs and 4 GB of memory.
 
 Supported operating systems::
 * CentOS 7.2
