@@ -86,8 +86,8 @@ For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/U
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
 +
-* link:task_backup_to_s3.html[Learn more about Backup to S3].
 * link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
+* link:task_backup_to_s3.html[Learn more about Backup to S3].
 
 . *Location & Connectivity*: Enter the network information that you recorded in the AWS worksheet.
 +
@@ -123,15 +123,20 @@ If you prefer to use your own policy, it must meet http://mysupport.netapp.com/c
 +
 If your needs change after you launch the instance, you can modify the license or instance type later.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.4 RC1 and 9.4 GA is available. The update does not occur from one release to another—for example, from 9.3 to 9.4.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.6 RC1 and 9.6 GA is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
 
-. *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type, a size for each disk, and whether S3 tiering should be enabled.
+. *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type, a size for each disk, and whether data tiering should be enabled.
 +
-The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
+Note the following:
 +
-The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
+* The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
+* The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
 For help choosing a disk type and size, see link:task_planning_your_config.html#sizing-your-system-in-aws[Sizing your system in AWS].
+* You can choose a specific volume tiering policy when you create or edit a volume.
+* If you disable data tiering, you can enable it on subsequent aggregates.
++
+link:concept_data_tiering.html[Learn how data tiering works].
 
 . *Write Speed & WORM*: Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
 +
@@ -188,7 +193,7 @@ If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONT
 | NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the link:api.html[Cloud Manager API Developer Guide^] for details.
 |===
 
-. *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and edit the S3 tiering policy, if needed.
+. *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and edit the volume tiering policy, if needed.
 +
 For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_data_tiering.html[Data tiering overview].
 
@@ -318,15 +323,20 @@ If you prefer to use your own policy, it must meet http://mysupport.netapp.com/c
 +
 If your needs change after you launch the instances, you can modify the license or instance type later.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.4 RC1 and 9.4 GA is available. The update does not occur from one release to another—for example, from 9.3 to 9.4.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.6 RC1 and 9.6 GA is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
 
-. *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type, a size for each disk, and whether S3 tiering should be enabled.
+. *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type, a size for each disk, and whether data tiering should be enabled.
 +
-The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
+Note the following:
 +
-The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
+* The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
+* The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
 For help choosing a disk type and size, see link:task_planning_your_config.html#sizing-your-system-in-aws[Sizing your system in AWS].
+* You can choose a specific volume tiering policy when you create or edit a volume.
+* If you disable data tiering, you can enable it on subsequent aggregates.
++
+link:concept_data_tiering.html[Learn how data tiering works].
 
 . *WORM*: Activate write once, read many (WORM) storage, if desired.
 +
@@ -381,7 +391,7 @@ If you configure AWS Managed Microsoft AD as the AD server for Cloud Volumes ONT
 | NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the link:api.html[Cloud Manager API Developer Guide^] for details.
 |===
 
-. *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and edit the S3 tiering policy, if needed.
+. *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and edit the volume tiering policy, if needed.
 +
 For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_data_tiering.html[Data tiering overview].
 
