@@ -5,7 +5,7 @@ keywords: permissions, gcp, data tiering, tiering, setup, requirements, account 
 summary: Adding a Google Cloud Platform account to Cloud Manager is required to enable data tiering on a Cloud Volumes ONTAP system. Data tiering automatically tiers cold data to low-cost object storage, enabling you to reclaim space on your primary storage and shrink secondary storage.
 ---
 
-= Setting up and adding GCP accounts to Cloud Manager
+= Setting up and adding GCP accounts for data tiering with 9.6
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,9 @@ summary: Adding a Google Cloud Platform account to Cloud Manager is required to 
 :imagesdir: ./media/
 
 [.lead]
-If you want to enable link:concept_data_tiering.html[data tiering] on a Cloud Volumes ONTAP system, you need to provide Cloud Manager with a storage access key for a service account that has Storage Admin permissions. Cloud Manager uses the access keys to set up and manage a Cloud Storage bucket for data tiering.
+If you want to enable link:concept_data_tiering.html[data tiering] on a Cloud Volumes ONTAP 9.6 system, you need to provide Cloud Manager with a storage access key for a service account that has Storage Admin permissions. Cloud Manager uses the access keys to set up and manage a Cloud Storage bucket for data tiering.
+
+TIP: If you want to use data tiering with Cloud Volumes ONTAP 9.7, then follow step 3 in link:task_getting_started_gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud Platform].
 
 == Setting up a service account and access keys for Google Cloud Storage
 
@@ -65,6 +67,6 @@ The keys enable Cloud Manager to set up a Cloud Storage bucket for data tiering.
 
 .What's next?
 
-You can now enable data tiering on individual volumes when you create, modify, or replicate them. For details, see link:task_tiering.html[Tiering inactive data to low-cost object storage].
+You can now enable data tiering on individual volumes on a Cloud Volumes ONTAP 9.6 system when you create, modify, or replicate them. For details, see link:task_tiering.html[Tiering inactive data to low-cost object storage].
 
 But before you do, be sure that the subnet in which Cloud Volumes ONTAP resides is configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].

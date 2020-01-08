@@ -13,7 +13,6 @@ summary: You can reduce storage costs by combining an SSD or HDD performance tie
 :imagesdir: ./media/
 
 [.lead]
-
 You can reduce storage costs by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. For a high-level overview, see link:concept_data_tiering.html[Data tiering overview].
 
 To set up data tiering, you simply need to do the following:
@@ -28,7 +27,7 @@ Most configurations are supported. If you have a Cloud Volumes ONTAP Standard, P
 [role="quick-margin-list"]
 * For AWS, you'll need a VPC Endpoint to S3. <<Requirements for tiering data in AWS,Learn more>>.
 * For Azure, you won't need to do anything as long as Cloud Manager has the required permissions. <<Requirements for tiering data in Microsoft Azure,Learn more>>.
-* For GCP, you need to add a GCP account to Cloud Manager and configure the subnet for Private Google Access. <<Requirements for tiering data in Google Cloud Platform,Learn more>>.
+* For GCP, you need to configure the subnet for Private Google Access and set up a service account. <<Requirements for tiering data in Google Cloud Platform,Learn more>>.
 
 ==== image:number3.png[Number 3] Choose a tiering policy when creating, modifying, or replicating a volume
 
@@ -88,9 +87,13 @@ The permissions are included in the latest https://mysupport.netapp.com/cloudont
 
 == Requirements to tier cold data to a Google Cloud Storage bucket
 
-* You need to add a Google Cloud Platform account to Cloud Manager by entering storage access keys for a service account. The keys enable Cloud Manager to set up a Cloud Storage bucket for data tiering. For instructions, see link:task_adding_gcp_accounts.html[Setting up and adding GCP accounts to Cloud Manager].
-
 * The subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud Documentation: Configuring Private Google Access^].
+
+* Cloud Volumes ONTAP 9.7: You need to create a service account that has the predefined Storage Admin role. You'll need to select this service account when you create a Cloud Volumes ONTAP working environment. For more details, see step 3 in link:task_getting_started_gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud Platform].
++
+If you don't enable data tiering and select a service account when you create the Cloud Volumes ONTAP 9.7 system, then you'll need to turn off the system and add the service account to Cloud Volumes ONTAP from the GCP console.
+
+* Cloud Volumes ONTAP 9.6: You need to add a Google Cloud Platform account to Cloud Manager by entering storage access keys for a service account. The keys enable Cloud Manager to set up a Cloud Storage bucket for data tiering. For instructions, see link:task_adding_gcp_accounts.html[Setting up and adding GCP accounts for data tiering with 9.6].
 
 == Tiering data from read-write volumes
 
@@ -140,28 +143,16 @@ image:screenshot_replication_tiering.gif[Screenshot that shows the S3 tiering op
 +
 For help with replicating data, see link:task_replicating_data.html[Replicating data to and from the cloud].
 
-== Changing the tiering level in AWS or Azure
+== Changing the storage class for tiered data
 
-When you enable data tiering, Cloud Volumes ONTAP tiers inactive data to the S3 _Standard_ storage class in AWS or to the _hot_ storage tier in Azure. After you deploy Cloud Volumes ONTAP, you can reduce your storage costs by changing the tiering level for inactive data that has not been accessed for 30 days. The access costs are higher if you do access the data, so you must take that into consideration before you change the tiering level.
+After you deploy Cloud Volumes ONTAP, you can reduce your storage costs by changing the storage class for inactive data that hasn't been accessed for 30 days. The access costs are higher if you do access the data, so you must take that into consideration before you change the storage class.
 
-NOTE: You can't change the tiering level in GCP because only the _Regional_ storage class is supported at this time.
+The storage class for tiered data is system wide—​it's not per volume.
 
-.About this task
-
-The tiering level is system wide—​it is not per volume.
-
-In AWS, you can change the tiering level so inactive data moves to one of the following storage classes after 30 days of inactivity:
-
-* Intelligent Tiering
-* Standard-Infrequent Access
-* One Zone-Infrequent Access
-
-In Azure, you can change the tiering level so inactive data moves to the  _cool_ storage tier after 30 days of inactivity.
-
-For more information about how tiering levels work, see link:concept_data_tiering.html[Data tiering overview].
+For information about supported storage classes, see link:concept_data_tiering.html[Data tiering overview].
 
 .Steps
 
-. From the working environment, click the menu icon and then click *S3 Storage Classes* or *Blob Storage Tiering*.
+. From the working environment, click the menu icon and then click *Storage Classes* or *Blob Storage Tiering*.
 
-. Choose the tiering level and then click *Save*.
+. Choose a storage class and then click *Save*.
