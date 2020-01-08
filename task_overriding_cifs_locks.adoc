@@ -1,0 +1,32 @@
+---
+sidebar: sidebar
+permalink: task_overriding_cifs_locks.html
+keywords: CIFS locks, azure maintenance, maintenance events, cifs sessions, storage failover
+summary: The Account Admin can enable a setting in Cloud Manager that prevents issues with Cloud Volumes ONTAP storage failover during Azure maintenance events. When you enable this setting, Cloud Volumes ONTAP vetoes CIFS locks and resets active CIFS sessions.
+---
+
+= Overriding CIFS locks for Cloud Volumes ONTAP HA in Azure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The Account Admin can enable a setting in Cloud Manager that prevents issues with Cloud Volumes ONTAP storage failover during Azure maintenance events. When you enable this setting, Cloud Volumes ONTAP vetoes CIFS locks and resets active CIFS sessions.
+
+.About this task
+
+Microsoft Azure schedules periodic maintenance events on its virtual machines. When a maintenance event occurs on a node in a Cloud Volumes ONTAP HA pair, the HA pair initiates storage takeover. If there are active CIFS sessions during this maintenance event, the locks on CIFS files can prevent storage failover.
+
+If you enable this setting, Cloud Volumes ONTAP will veto the locks and reset the active CIFS sessions. As a result, the HA pair can complete storage failover during these maintenance events.
+
+IMPORTANT: This process might be disruptive to CIFS clients. Data that is not committed from CIFS clients could be lost.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Manager Settings*.
++
+image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
+
+. Under *HA CIFS Locks*, select the checkbox and click *Save*.
