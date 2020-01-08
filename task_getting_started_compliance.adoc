@@ -200,3 +200,69 @@ This connection enables you to view information in the Compliance tab.
 This is required because the Cloud Compliance instance uses Cloud Manager as a proxy to access the internet.
 +
 NOTE: This port is open by default on all new Cloud Manager instances, starting with version 3.7.5. It's not open on Cloud Manager instances created prior to that version.
+
+== Troubleshooting errors
+
+If Cloud Manager fails to enable Cloud Compliance, the Compliance dashboard won't display in the Compliance tab. The tab will look like it did before you tried to enable Cloud Compliance.
+
+If this happens, view deployment errors in the Timeline to investigate and correct the error. The following sections describe the most common errors.
+
+=== vCPU quota limit in Azure
+
+The timeline might display an error if the vCPU quota limit was reached in Azure.
+
+Example error in the timeline::
+
+"The template deployment 'cloud-compliance-1576642249048-deployment' is not valid according to the validation procedure. The tracking id is 'f8c662ec-f556-423e-9e43-c4a6ea3c7424'. See inner errors for details. Code: InvalidTemplateDeployment Details: The operation couldn't be completed as it results in exceeding quota limit of standardDSv3Family Cores. Maximum allowed: 10, Current in use: 0, Additional requested: 16. Read more about quota limits at \https://aka.ms/AzurePerVMQuotaLimits. Submit a request for Quota increase using the link \https://aka.ms/ProdportalCRP/?#create/Microsoft.Support/Parameters/%7B%22subId%22:%22bc48045a-c34b-4ad6-8367-6b1fc0d5e955%22,%22pesId%22:%2206bfd9d3-516b-d5c6-5802-169c800dec89%22,%22supportTopicId%22:%22e12e3d1d-7fa0-af33-c6d0-3c50df9658a3%22%7D."
+
+What caused the error::
+
+The vCPU quota limit was reached, so Azure wouldn't allow creation of the Cloud Compliance instance.
+
+How to fix the error::
+
+Increase the vCPU quota limit in Azure.
++
+https://docs.microsoft.com/en-us/azure/azure-supportability/per-vm-quota-requests[Azure documentation: Increase limits by VM series^]
+
+=== vCPU limit in AWS
+
+The timeline might display an error if the vCPU limit was reached in AWS.
+
+Example error in the timeline::
+
+"You have requested more vCPU capacity than your current vCPU limit of 32 allows for the instance bucket that the specified instance type belongs to. Please visit \http://aws.amazon.com/contact-us/ec2-request to request an adjustment to this limit. (Service: AmazonEC2; Status Code: 400; Error Code: VcpuLimitExceeded; Request ID: 3d6a659f-289b-449e-82e9-e3f18e49d69a)"
+
+What caused the error::
+
+The vCPU limit was reached, so AWS wouldn't allow creation of the Cloud Compliance instance.
+
+How to fix the error::
+
+Increase the vCPU limit in AWS.
++
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html[AWS documentation: Amazon EC2 Service Limits^]
+
+=== Timeout error
+
+The timeline might display a timeout error if the right connections aren't available.
+
+Example error in the timeline::
+
+"Timed out"
+
+What caused the error::
+
+It's either that Cloud Compliance and Cloud Manager can't communicate with each other or that Cloud Compliance can't access the internet.
+
+How to fix the error::
+
+Verify the following, while remembering that Cloud Compliance is deployed in the same location as the first Cloud Volumes ONTAP system in the request.
++
+. Ensure connectivity between Cloud Manager and Cloud Compliance.
++
+The security group for Cloud Manager must allow inbound and outbound traffic over port 80 to and from the Cloud Compliance instance.
+. Ensure that Cloud Compliance can access the internet in one of the following ways:
+..	*Proxy*: If you have defined a proxy through Cloud Manager settings, ensure that the Cloud Compliance instance can reach the proxy server.
+..	*Direct connection through Cloud Manager*: If you don’t use a proxy, ensure that the security group for Cloud Manager allows inbound traffic over TCP port 3128 from the Cloud Compliance instance.
+..	*NAT*: Ensure that the subnet for the Cloud Compliance instance is defined under a NAT Gateway.
