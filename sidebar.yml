@@ -1,5 +1,5 @@
 entries:
-  - title: Cloud Manager 3.7 docs
+  - title: Cloud Manager 3.8 docs
     url: /index.html
   - title: Release notes
     entries:
@@ -71,7 +71,7 @@ entries:
             url: /task_adding_aws_accounts.html
           - title: Add Azure accounts
             url: /task_adding_azure_accounts.html
-          - title: Add GCP accounts
+          - title: Add GCP accounts (9.6 only)
             url: /task_adding_gcp_accounts.html
           - title: Add NetApp Support Site accounts
             url: /task_adding_nss_accounts.html
@@ -199,6 +199,8 @@ entries:
         url: /task_configuring_proxy.html
       - title: Renew the HTTPS certificate
         url: /task_renewing_cert.html
+      - title: Override CIFS locks in Azure
+        url: /task_overriding_cifs_locks.html
       - title: Restore Cloud Manager
         url: /task_restoring.html
       - title: Uninstall Cloud Manager

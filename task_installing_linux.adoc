@@ -38,8 +38,8 @@ If you receive a message that installing the awscli failed, you can safely ignor
 . Review networking requirements:
 
 * link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager]
-* link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP for AWS]
-* link:reference_networking_azure.html[Networking requirements for Cloud Volumes ONTAP for Azure]
+* link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS]
+* link:reference_networking_azure.html[Networking requirements for Cloud Volumes ONTAP in Azure]
 * link:reference_networking_gcp.html[Networking requirements for Cloud Volumes ONTAP in GCP]
 
 . Review link:reference_cloud_mgr_reqs.html[Cloud Manager host requirements].

@@ -499,6 +499,7 @@ The Cloud Manager policy for GCP includes the permissions that Cloud Manager nee
 - storage.buckets.delete
 - storage.buckets.get
 - storage.buckets.list
+- storage.buckets.update
 
 | To create and manage a Google Cloud Storage bucket for data tiering.
 
@@ -509,4 +510,12 @@ The Cloud Manager policy for GCP includes the permissions that Cloud Manager nee
 - cloudkms.keyRings.list
 
 | To use customer-managed encryption keys from the Cloud Key Management Service with Cloud Volumes ONTAP.
+
+|
+- compute.instances.setServiceAccount
+- iam.serviceAccounts.getIamPolicy
+- iam.serviceAccounts.list
+
+| To set a service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket.
+
 |===

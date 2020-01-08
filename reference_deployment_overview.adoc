@@ -79,7 +79,6 @@ You might want to perform additional setup after you install Cloud Manager, such
 * link:task_setting_up_cloud_central_accounts.html[Setting up your Cloud Central account]
 * link:task_adding_aws_accounts.html[Adding AWS accounts to Cloud Manager]
 * link:task_adding_azure_accounts.html[Adding Azure accounts to Cloud Manager]
-* link:task_adding_gcp_accounts.html[Adding GCP accounts to Cloud Manager]
 * link:task_installing_https_cert.html[Installing an HTTPS certificate]
 * link:task_setting_up_kms.html[Setting up the AWS KMS]
 

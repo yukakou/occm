@@ -35,12 +35,14 @@ image:diagram_permissions_gcp.png[explanation]
 
 Cloud Volumes ONTAP can reside in the same project as Cloud Manager, or in a different project. To deploy Cloud Volumes ONTAP in a different project, you need to first add the Cloud Manager service account and role to that project.
 
-* link:task_getting_started_gcp.html#service-account[Learn how to set up the Cloud Manager service account (see step 4)].
+* link:task_getting_started_gcp.html#service-account[Learn how to set up the Cloud Manager service account (see step 2)].
 * link:task_deploying_gcp.html[Learn how to deploy Cloud Volumes ONTAP in GCP and select a project].
 
 == Account for data tiering
 
-Adding a Google Cloud account to Cloud Manager is required to enable data tiering on a Cloud Volumes ONTAP system. Data tiering automatically tiers cold data to low-cost object storage, enabling you to reclaim space on your primary storage and shrink secondary storage.
+TIP: Cloud Manager requires a GCP account for Cloud Volumes ONTAP 9.6, but not for 9.7 and later. If you want to use data tiering with Cloud Volumes ONTAP 9.7, then follow step 3 in link:task_getting_started_gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud Platform].
+
+Adding a Google Cloud account to Cloud Manager is required to enable data tiering on a Cloud Volumes ONTAP 9.6 system. Data tiering automatically tiers cold data to low-cost object storage, enabling you to reclaim space on your primary storage and shrink secondary storage.
 
 When you add the account, you need to provide Cloud Manager with a storage access key for a service account that has Storage Admin permissions. Cloud Manager uses the access keys to set up and manage a Cloud Storage bucket for data tiering.
 

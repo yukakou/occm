@@ -79,23 +79,34 @@ If you choose one of the packages, you only need to specify a volume and then re
 +
 If your needs change after you launch the system, you can modify the license or virtual machine type later.
 +
-NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.5 RC1 and 9.5 GA is available. The update does not occur from one release to another—for example, from 9.4 to 9.5.
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.6 RC1 and 9.6 GA is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
 
 . *Subscribe from the Azure Marketplace*: Follow the steps if Cloud Manager could not enable programmatic deployments of Cloud Volumes ONTAP.
 
 . *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type, a size for each disk, and whether data tiering to Blob storage should be enabled.
 +
-The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
+Note the following:
 +
-The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
+* The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
+* The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
 +
 For help choosing a disk type and size, see link:task_planning_your_config.html#sizing-your-system-in-azure[Sizing your system in Azure].
+* You can choose a specific volume tiering policy when you create or edit a volume.
+* If you disable data tiering, you can enable it on subsequent aggregates.
++
+link:concept_data_tiering.html[Learn more about data tiering].
 
-. *Write Speed & WORM*: Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
+. *Write Speed & WORM* (single node systems only): Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
 +
 NOTE: Choosing a write speed is supported with single node systems only.
 +
 link:task_planning_your_config.html#choosing-a-write-speed[Learn more about write speed].
++
+link:concept_worm.html[Learn more about WORM storage].
+
+. *Secure Communication to Storage & WORM* (HA only): Choose whether to enable an HTTPS connection to Azure storage accounts, and activate write once, read many (WORM) storage, if desired.
++
+The HTTPS connection is from a Cloud Volumes ONTAP 9.7 HA pair to Azure storage accounts. Note that enabling this option can impact write performance. You can't change the setting after you create the working environment.
 +
 link:concept_worm.html[Learn more about WORM storage].
 
@@ -150,7 +161,7 @@ https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-o
 | NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the link:api.html[Cloud Manager API Developer Guide^] for details.
 |===
 
-. *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the tiering policy, if needed.
+. *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
 +
 For more information, see link:task_planning_your_config.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_data_tiering.html[Data tiering overview].
 
