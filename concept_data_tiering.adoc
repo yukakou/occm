@@ -19,11 +19,11 @@ image:diagram_data_tiering.png[This is a conceptual image that shows hot data go
 
 Cloud Volumes ONTAP supports data tiering in AWS, Azure, and Google Cloud Platform. Data tiering is powered by FabricPool technology.
 
-NOTE: You do not need to install a feature license to enable data tiering (FabricPool).
+NOTE: You don't need to install a feature license to enable data tiering (FabricPool).
 
 == Data tiering in AWS
 
-When you enable data tiering in AWS, Cloud Volumes ONTAP uses EBS as a performance tier for hot data and AWS S3 as a capacity tier for inactive data. Changing a system's tiering level enables you to choose a different S3 storage class.
+When you enable data tiering in AWS, Cloud Volumes ONTAP uses EBS as a performance tier for hot data and AWS S3 as a capacity tier for inactive data.
 
 Performance tier:: The performance tier can be General Purpose SSDs, Provisioned IOPS SSDs, or Throughput Optimized HDDs.
 
@@ -31,17 +31,17 @@ Capacity tier:: A Cloud Volumes ONTAP system tiers inactive data to a single S3 
 +
 NOTE: Cloud Manager creates a single S3 bucket for each working environment and names it fabric-pool-_cluster unique identifier_. A different S3 bucket is not created for each volume.
 
-Tiering levels:: If you don't plan to access the inactive data, you can reduce your storage costs by changing a system's tiering level to one of the following: _Intelligent Tiering_, _One-Zone Infrequent Access_, or _Standard-Infrequent Access_. When you change the tiering level, inactive data starts in the Standard storage class and moves to the storage class that you selected, if the data is not accessed after 30 days.
+Storage classes:: The default storage class for tiered data in AWS is _Standard_. If you don't plan to access the inactive data, you can reduce your storage costs by changing the storage class to one of the following: _Intelligent Tiering_, _One-Zone Infrequent Access_, or _Standard-Infrequent Access_. When you change the storage class, inactive data starts in the Standard storage class and moves to the storage class that you selected, if the data is not accessed after 30 days.
 +
-The access costs are higher if you do access the data, so take that into consideration before you change the tiering level. https://aws.amazon.com/s3/storage-classes[Learn more about Amazon S3 storage classes^].
+The access costs are higher if you do access the data, so take that into consideration before you change the storage class. https://aws.amazon.com/s3/storage-classes[Learn more about Amazon S3 storage classes^].
 +
-Changing the tiering level is possible after you create the system. For details, see link:task_tiering.html[Tiering inactive data to low-cost object storage].
+You can select a storage class when you create the working environment and you can change it any time after. For details about changing the storage class, see link:task_tiering.html[Tiering inactive data to low-cost object storage].
 +
-The tiering level is system wide--it is not per volume.
+The storage class for data tiering is system wide--it's not per volume.
 
 == Data tiering in Azure
 
-When you enable data tiering in Azure, Cloud Volumes ONTAP uses Azure managed disks as a performance tier for hot data and Azure Blob storage as a capacity tier for inactive data. Changing a system's tiering level enables you to choose a different Azure storage tier.
+When you enable data tiering in Azure, Cloud Volumes ONTAP uses Azure managed disks as a performance tier for hot data and Azure Blob storage as a capacity tier for inactive data.
 
 Performance tier:: The performance tier can be either SSDs or HDDs.
 
@@ -49,13 +49,13 @@ Capacity tier:: A Cloud Volumes ONTAP system tiers inactive data to a single Blo
 +
 NOTE: Cloud Manager creates a new storage account with a single container for each Cloud Volumes ONTAP working environment. The name of the storage account is random. A different container is not created for each volume.
 
-Tiering levels:: If you don't plan to access the inactive data, you can reduce your storage costs by changing a system's tiering level to the Azure _cool_ storage tier. When you change the tiering level, inactive data starts in the hot storage tier and moves to the cool storage tier, if the data is not accessed after 30 days.
+Storage access tiers:: The default storage access tier for tiered data in Azure is the _hot_ tier. If you don't plan to access the inactive data, you can reduce your storage costs by changing to the _cool_ storage tier. When you change the storage tier, inactive data starts in the hot storage tier and moves to the cool storage tier, if the data is not accessed after 30 days.
 +
-The access costs are higher if you do access the data, so take that into consideration before you change the tiering level. https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers[Learn more about Azure Blob storage access tiers^].
+The access costs are higher if you do access the data, so take that into consideration before you change the storage tier. https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers[Learn more about Azure Blob storage access tiers^].
 +
-Changing the tiering level is possible after you create the system. For details, see link:task_tiering.html[Tiering inactive data to low-cost object storage].
+You can select a storage tier when you create the working environment and you can change it any time after. For details about changing the storage tier, see link:task_tiering.html[Tiering inactive data to low-cost object storage].
 +
-The tiering level is system wide--it is not per volume.
+The storage access tier for data tiering is system wide--it's not per volume.
 
 == Data tiering in GCP
 
@@ -67,7 +67,13 @@ Capacity tier:: A Cloud Volumes ONTAP system tiers inactive data to a single Goo
 +
 NOTE: Cloud Manager creates a single bucket for each working environment and names it fabric-pool-_cluster unique identifier_. A different bucket is not created for each volume.
 
-Tiering levels:: No other GCP storage classes are supported at this time.
+Storage classes:: The default storage class for tiered data is the _Standard Storage_ class. If the data is infrequently accessed, you can reduce your storage costs by changing to _Nearline Storage_ or _Coldline Storage_.
++
+The access costs are higher if you do access the data, so take that into consideration before you change the storage class. https://cloud.google.com/storage/docs/storage-classes[Learn more about storage classes for Google Cloud Storage^].
++
+You can select a storage tier when you create the working environment and you can change it any time after. For details about changing the storage class, see link:task_tiering.html[Tiering inactive data to low-cost object storage].
++
+The storage class for data tiering is system wide--it's not per volume.
 
 == Data tiering and capacity limits
 
