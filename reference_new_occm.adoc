@@ -60,6 +60,10 @@ link:task_tiering.html#changing-the-storage-class-for-tiered-data[Learn how to c
 * *Data tiering using a service account*
 +
 Starting with the 9.7 release, Cloud Manager now sets a service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. This change provides more security and requires less setup. For step-by-step instructions when deploying a new system, link:task_getting_started_gcp.html[see step 3 on this page].
++
+The following image shows the Working Environment wizard where you can select a storage class and service account:
++
+image:screenshot_data_tiering_gcp.gif[]
 
 Cloud Manager requires the following GCP permissions for these enhancements, as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.8.0_GCP.yaml[Cloud Manager policy for GCP^].
 
