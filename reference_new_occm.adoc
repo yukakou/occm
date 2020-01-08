@@ -20,7 +20,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
-== Cloud Manager 3.8 (5 Jan 2020)
+== Cloud Manager 3.8 (8 Jan 2020)
 
 * <<HA enhancements in Azure>>
 * <<Data tiering enhancements in GCP>>
