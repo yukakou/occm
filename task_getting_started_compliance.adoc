@@ -24,7 +24,9 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-list"]
 * Ensure that the Cloud Compliance instance will have outbound internet access.
 +
-Cloud Manager deploys the instance in the same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
+Cloud Manager deploys the instance in the same VPC or VNet in which the Cloud Manager instance is running.
++
+NOTE: If Cloud Manager is installed on-prem, it deploys the Cloud Compliance instance in same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
 
 * Ensure that users can access the Cloud Manager interface from a host that has a direct connection to AWS or Azure, or from a host that's inside the same network as the Cloud Compliance instance (the instance will have a private IP address).
 
@@ -160,8 +162,6 @@ Make sure that Cloud Compliance can access volumes on Cloud Volumes ONTAP by che
 .Steps
 
 . Make sure that there's a network connection between the Cloud Compliance instance and each Cloud Volumes ONTAP subnet.
-+
-Cloud Manager deploys the Cloud Compliance instance in the same VPC or VNet as the first Cloud Volumes ONTAP system in the request. So this step is important if some Cloud Volumes ONTAP systems are in different subnets or virtual networks.
 
 . Ensure that the security group for Cloud Volumes ONTAP allows inbound traffic from the Cloud Compliance instance.
 +
@@ -257,7 +257,9 @@ It's either that Cloud Compliance and Cloud Manager can't communicate with each 
 
 How to fix the error::
 
-Verify the following, while remembering that Cloud Compliance is deployed in the same location as the first Cloud Volumes ONTAP system in the request.
+Verify the following, while remembering that the Cloud Compliance instance gets deployed in the same location as Cloud Manager.
++
+NOTE: If Cloud Manager is installed on-prem, it deploys the Cloud Compliance instance in same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
 +
 . Ensure connectivity between Cloud Manager and Cloud Compliance.
 +
