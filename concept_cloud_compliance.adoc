@@ -41,7 +41,7 @@ At a high-level, Cloud Compliance works like this:
 
 == The Cloud Compliance instance
 
-When you enable Cloud Compliance on one or more Cloud Volumes ONTAP systems, Cloud Manager deploys a Cloud Compliance instance in the same VPC or VNet as Cloud Manager.
+When you enable Cloud Compliance on one or more Cloud Volumes ONTAP systems, Cloud Manager deploys a Cloud Compliance instance in the same subnet as Cloud Manager.
 
 NOTE: If Cloud Manager is installed on-prem, it deploys the Cloud Compliance instance in same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
 

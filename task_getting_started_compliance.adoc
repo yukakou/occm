@@ -24,7 +24,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-list"]
 * Ensure that the Cloud Compliance instance will have outbound internet access.
 +
-Cloud Manager deploys the instance in the same VPC or VNet in which the Cloud Manager instance is running.
+Cloud Manager deploys the instance in the same subnet in which the Cloud Manager instance is running.
 +
 NOTE: If Cloud Manager is installed on-prem, it deploys the Cloud Compliance instance in same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
 
@@ -257,7 +257,7 @@ It's either that Cloud Compliance and Cloud Manager can't communicate with each 
 
 How to fix the error::
 
-Verify the following, while remembering that the Cloud Compliance instance gets deployed in the same location as Cloud Manager.
+Verify the following, while remembering that the Cloud Compliance instance gets deployed in the same subnet as Cloud Manager.
 +
 NOTE: If Cloud Manager is installed on-prem, it deploys the Cloud Compliance instance in same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
 +

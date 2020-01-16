@@ -40,10 +40,14 @@ Supported operating systems::
 * CentOS 7.3
 * CentOS 7.4
 * CentOS 7.5
+* CentOS 7.6
+* CentOS 7.7
 * Red Hat Enterprise Linux 7.2
 * Red Hat Enterprise Linux 7.3
 * Red Hat Enterprise Linux 7.4
 * Red Hat Enterprise Linux 7.5
+* Red Hat Enterprise Linux 7.6
+* Red Hat Enterprise Linux 7.7
 +
 The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Cloud Manager installation.
 +
@@ -56,7 +60,7 @@ CPU:: 2.27 GHz or higher with two cores
 
 RAM:: 4 GB
 
-Free disk space:: 50 GB
+Free disk space in /opt:: 100 GB
 
 Outbound internet access::
 Outbound internet access is required when installing Cloud Manager and when using Cloud Manager to deploy Cloud Volumes ONTAP. For a list of endpoints, see link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager].
