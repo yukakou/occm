@@ -60,9 +60,9 @@ link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works].
 
 == How much does Cloud Compliance cost?
 
-Cloud Compliance is offered as part of Cloud Volumes ONTAP and doesn’t require any additional costs. Additional costs might be required in the future for customized capabilities.
+Cloud Compliance is offered as part of Cloud Volumes ONTAP. There are no additional charges from NetApp. Additional costs might be required in the future for customized capabilities.
 
-NOTE: Cloud Compliance requires deployment of an instance in your cloud provider, for which you'll be charged by your cloud provider.
+You will incur costs from your cloud provider for an instance and possibly for data transfer costs. link:concept_cloud_compliance.html#cost[Learn more].
 
 == How often does Cloud Compliance scan my data?
 
