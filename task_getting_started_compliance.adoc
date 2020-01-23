@@ -22,15 +22,17 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Verify that your configuration can meet the requirements
 
 [role="quick-margin-list"]
-* Ensure that the Cloud Compliance instance will have outbound internet access.
+* The Cloud Compliance instance needs outbound internet access.
 +
-Cloud Manager deploys the instance in the same subnet in which the Cloud Manager instance is running.
-+
-NOTE: If Cloud Manager is installed on-prem, it deploys the Cloud Compliance instance in same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
+Cloud Manager deploys the instance in the same subnet in which Cloud Manager is running. If Cloud Manager is on-prem, it deploys Cloud Compliance in same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
 
-* Ensure that users can access the Cloud Manager interface from a host that has a direct connection to AWS or Azure, or from a host that's inside the same network as the Cloud Compliance instance (the instance will have a private IP address).
+* Users need to access the Cloud Manager interface from a host that has a direct connection to AWS or Azure, or from a host that's inside the same network as the Cloud Compliance instance (the instance will have a private IP address).
 
-* Ensure that you can keep the Cloud Compliance instance running.
+* Cloud Manager needs permissions to deploy resources and create security groups. https://mysupport.netapp.com/info/web/ECMP11022837.html[Check the latest Cloud Manager policy^].
+
+* 16 vCPUs are required for the Cloud Compliance instance. Ensure that you haven't reached your cloud provider's vCPU limit in Cloud Manager's region for _On-Demand Standard instances_ (AWS) or _Standard DSv3 Family_ (Azure).
+
+* The Cloud Compliance instance needs to remain running so it can scan volumes.
 
 ==== image:number2.png[Number 2] Enable Cloud Compliance on Cloud Volumes ONTAP
 
@@ -94,7 +96,20 @@ The Cloud Compliance instance uses a private IP address to ensure that the index
 +
 TIP: If you're accessing Cloud Manager from a public IP address, then your web browser probably isn't running on a host inside the network.
 
-Keep Cloud Compliance running::
+Ensure that Cloud Manager has the required permissions::
+Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Compliance instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/info/web/ECMP11022837.html[the policies provided by NetApp^].
+
+Check your vCPU limits::
+Ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running.
++
+In AWS, the instance family is _On-Demand Standard instances_. In Azure, the instance family is _Standard DSv3 Family_.
++
+For more details on vCPU limits, see the following:
++
+* https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html[AWS documentation: Amazon EC2 Service Limits^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quotas[Azure documentation: Virtual machine vCPU quotas^]
+
+Ensure that you can keep Cloud Compliance running::
 The Cloud Compliance instance needs to stay on to continuously scan your data.
 
 == Enabling Cloud Compliance on a new working environment
