@@ -29,7 +29,12 @@ Cloud Compliance provides several tools that can help you with your compliance e
 
 == Cost
 
-Cloud Compliance is an add-on service for Cloud Volumes ONTAP provided by NetApp at no extra cost. Activating Cloud Compliance requires deploying a cloud instance, which you will be charged for by your cloud provider. There are no charges for data ingress or egress because data doesn't flow outside of the network.
+Cloud Compliance is an add-on service provided by NetApp at no extra cost. Activating Cloud Compliance requires deploying a cloud instance, which you will be charged for by your cloud provider.
+
+Data transfer costs depend on your setup. If Cloud Compliance and Cloud Volumes ONTAP are in the same Availability Zone and region, then there are no data transfer costs. But if Cloud Volumes ONTAP is in a _different_ Availability Zone or region, then you'll be charged by your cloud provider for data transfer costs. See these links for more details:
+
+* https://aws.amazon.com/ec2/pricing/on-demand/[AWS: Amazon EC2 Pricing^]
+* https://azure.microsoft.com/en-us/pricing/details/bandwidth/[Microsoft Azure: Bandwidth Pricing Details^]
 
 == How Cloud Compliance works
 
