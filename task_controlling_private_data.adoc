@@ -193,7 +193,7 @@ Reviewing your file types can help you control your sensitive data because you m
 +
 image:screenshot_file_types.gif[A screenshot of the file types dialog box where you can click the download button next to a file type. The result is a CSV file with details about the files.]
 
-== Filtering data in reports
+== Filtering data on the dashboard
 
 Filter the contents of the Cloud Compliance dashboard to see compliance data for specific working environments.
 
