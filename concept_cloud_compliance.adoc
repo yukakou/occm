@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_compliance.html
-keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, scans, scanning
-summary: Cloud Compliance is a data privacy and compliance service for Cloud Volumes ONTAP in AWS and Azure. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data across your Cloud Volumes ONTAP systems.
+keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, scans, scanning, azure netapp files, cloud volumes ontap
+summary: Cloud Compliance is a data privacy and compliance service for Azure NetApp Files and Cloud Volumes ONTAP in AWS and Azure. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data.
 ---
 
 = Learn about Cloud Compliance
@@ -13,7 +13,7 @@ summary: Cloud Compliance is a data privacy and compliance service for Cloud Vol
 :imagesdir: ./media/
 
 [.lead]
-Cloud Compliance is a data privacy and compliance service for Cloud Volumes ONTAP in AWS and Azure. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data across Cloud Volumes ONTAP systems.
+Cloud Compliance is a data privacy and compliance service for Azure NetApp Files and Cloud Volumes ONTAP. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data.
 
 Cloud Compliance is currently available as a Controlled Availability release.
 
@@ -27,21 +27,35 @@ Cloud Compliance provides several tools that can help you with your compliance e
 * Identify a wide scope of sensitive information as required by GDPR, CCPA, PCI, and HIPAA privacy regulations
 * Respond to Data Subject Access Requests (DSAR)
 
+== Supported working environments
+
+Cloud Compliance can scan data from the following types of working environments:
+
+* Cloud Volumes ONTAP in AWS and Azure
+* Azure NetApp Files
++
+For Azure NetApp Files, Cloud Compliance can scan volumes that are in the same region as Cloud Manager. When you activate compliance scans on an Azure NetApp Files working environment, Cloud Compliance scans _all_ of the volumes in the region.
+
 == Cost
 
-Cloud Compliance is an add-on service for Cloud Volumes ONTAP provided by NetApp at no extra cost. Activating Cloud Compliance requires deploying a cloud instance, which you will be charged for by your cloud provider. There are no charges for data ingress or egress because data doesn't flow outside of the network.
+Cloud Compliance is an add-on service provided by NetApp at no extra cost. Activating Cloud Compliance requires deploying a cloud instance, which you will be charged for by your cloud provider.
+
+Data transfer costs depend on your setup. If Cloud Compliance and Cloud Volumes ONTAP are in the same Availability Zone and region, then there are no data transfer costs. But if Cloud Volumes ONTAP is in a _different_ Availability Zone or region, then you'll be charged by your cloud provider for data transfer costs. See these links for more details:
+
+* https://aws.amazon.com/ec2/pricing/on-demand/[AWS: Amazon EC2 Pricing^]
+* https://azure.microsoft.com/en-us/pricing/details/bandwidth/[Microsoft Azure: Bandwidth Pricing Details^]
 
 == How Cloud Compliance works
 
 At a high-level, Cloud Compliance works like this:
 
-. You enable Cloud Compliance on one or more Cloud Volumes ONTAP systems.
+. You enable Cloud Compliance on one or more working environments.
 . Cloud Compliance scans the data using an AI learning process.
 . In Cloud Manager, you click *Compliance* and use the provided dashboard and reporting tools to help you in your compliance efforts.
 
 == The Cloud Compliance instance
 
-When you enable Cloud Compliance on one or more Cloud Volumes ONTAP systems, Cloud Manager deploys a Cloud Compliance instance in the same VPC or VNet as Cloud Manager.
+When you enable Cloud Compliance, Cloud Manager deploys a Cloud Compliance instance in the subnet as Cloud Manager.
 
 NOTE: If Cloud Manager is installed on-prem, it deploys the Cloud Compliance instance in same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
 
@@ -61,13 +75,13 @@ In regions where m5.4xlarge isn't available, Cloud Compliance runs on an m4.4xla
 
 * Upgrades of Cloud Compliance software is automated--you don't need to worry about it.
 
-TIP: The instance should remain running at all times because Cloud Compliance continuously scans the data on Cloud Volumes ONTAP systems.
+TIP: The instance should remain running at all times because Cloud Compliance continuously scans the data on volumes.
 
 == How scans work
 
 After you enable Cloud Compliance, it immediately starts scanning your data to identify personal and sensitive data.
 
-Cloud Compliance connects to Cloud Volumes ONTAP like any other client by mounting NFS and CIFS volumes. NFS volumes are automatically accessed as read-only, while you need to provide Active Directory credentials to scan CIFS volumes.
+Cloud Compliance connects to the data like any other client by mounting NFS and CIFS volumes. NFS volumes are automatically accessed as read-only, while you need to provide Active Directory credentials to scan CIFS volumes.
 
 Cloud Compliance scans the unstructured data on each volume for a range of personal information. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, and data categories.
 
@@ -96,7 +110,7 @@ Cloud Compliance uses AI to extract natural persons’ names from documents. lin
 
 Cloud Manager deploys the Cloud Compliance instance with a private IP address and a security group that enables inbound HTTP connections from Cloud Manager. This connection enables you to access the Cloud Compliance dashboard from the Cloud Manager interface.
 
-Outbound rules are completely open. The instance connects to Cloud Volumes ONTAP systems and to the internet through a proxy from Cloud Manager. Internet access is needed to upgrade the Cloud Compliance software and to send usage metrics.
+Outbound rules are completely open. The instance connects the internet through a proxy from Cloud Manager. Internet access is needed to upgrade the Cloud Compliance software and to send usage metrics.
 
 If you have strict networking requirements, link:task_getting_started_compliance.html#reviewing-prerequisites[learn about the endpoints that Cloud Compliance contacts].
 

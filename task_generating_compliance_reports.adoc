@@ -70,3 +70,15 @@ The logic used to determine the score is as follows:
 | 10 | Three of the variables are larger 15%
 
 |===
+
+== Filtering data in reports
+
+Filter the contents of the Cloud Compliance dashboard to see compliance data for specific working environments.
+
+When you filter the dashboard, Cloud Compliance scopes the compliance data and reports to just those working environments that you selected.
+
+.Steps
+
+. Click the filter drop-down, select the working environments that you'd like to view data for, and click *View*.
++
+image:screenshot_cloud_compliance_filter.gif[]
