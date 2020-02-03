@@ -23,11 +23,11 @@ video::V2fLTyztqYQ[youtube, width=848, height=480]
 
 . If you don't have a NetApp Support Site account yet, http://now.netapp.com/newuser/[register for one^].
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Provider & Support Accounts*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
-. Click *Add New Account* and select *NetApp Support Site*.
+. Click *Add Credentials* and select *NetApp Support Site*.
 
 . Specify a name for the account and then enter the user name and password.
 +

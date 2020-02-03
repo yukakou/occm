@@ -53,11 +53,11 @@ Now that you have an access key for a service account, you can add it to Cloud M
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Provider & Support Accounts*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
-. Click *Add New Account* and select *GCP*.
+. Click *Add Credentials* and select *Google Cloud*.
 
 . Enter the access key and secret for the service account.
 +

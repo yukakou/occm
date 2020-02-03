@@ -13,7 +13,7 @@ summary: If you want to deploy Cloud Volumes ONTAP in different Azure accounts, 
 :imagesdir: ./media/
 
 [.lead]
-If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions to those accounts and then add details about the accounts to Cloud Manager.
+If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions to those accounts and then add the account credentials to Cloud Manager.
 
 NOTE: When you deploy Cloud Manager from Cloud Central, Cloud Manager automatically adds the Azure account in which you deployed Cloud Manager. An initial account is not added if you manually installed the Cloud Manager software on an existing system. link:concept_accounts_azure.html[Learn about Azure accounts and permissions].
 
@@ -177,29 +177,29 @@ image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that s
 
 Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in Cloud Manager when you add an Azure account.
 
-== Adding Azure accounts to Cloud Manager
+== Adding Azure credentials to Cloud Manager
 
-After you provide an Azure account with the required permissions, you can add the account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.
+After you provide an Azure account with the required permissions, you can add the credentials for that account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Provider & Support Accounts*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
-. Click *Add New Account* and select *Microsoft Azure*.
+. Click *Add Credentials* and select *Microsoft Azure*.
 
 . Enter information about the Azure Active Directory service principal that grants the required permissions:
 +
-* Application ID: See <<Getting the application ID and directory ID>>.
-* Tenant ID (or Directory ID): See <<Getting the application ID and directory ID>>.
-* Application Key (the client secret): See <<Creating a client secret>>.
+* Application (client) ID: See <<Getting the application ID and directory ID>>.
+* Directory (tenant) ID: See <<Getting the application ID and directory ID>>.
+* Client Secret: See <<Creating a client secret>>.
 
 . Confirm that the policy requirements have been met and then click *Create Account*.
 
 .Result
 
-You can now switch to another account from the Details and Credentials page when creating a new working environment:
+You can now switch to different set of credentials from the Details and Credentials page when creating a new working environment:
 
 image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
 
