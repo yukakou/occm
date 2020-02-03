@@ -78,7 +78,7 @@ The following examples illustrate how this mode works:
 +
 If Cloud Manager creates a new aggregate for the volume, it chooses a disk size that accommodates the size of that volume.
 +
-Note that free space is now available on the original aggregate. Existing volumes or new volumes can use that space. The space cannot be returned to AWS or Azure in this scenario.
+Note that free space is now available on the original aggregate. Existing volumes or new volumes can use that space. The space can't be returned to AWS, Azure, or GCP in this scenario.
 
 * If an aggregate contains no volumes for more than 12 hours, Cloud Manager deletes it.
 
