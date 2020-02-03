@@ -24,7 +24,10 @@ If you need to troubleshoot Cloud Manager or your Linux host, it might help to u
 
 ** In AWS, the user name for the EC2 Linux instance is ec2-user.
 
-** The operating system for the Cloud Manager image is Red Hat Enterprise Linux 7.4 (HVM).
+** The operating system for the Cloud Manager image is as follows:
+*** Cloud Central: Red Hat Enterprise Linux 7.6 (HVM)
+*** AWS Marketplace: Red Hat Enterprise Linux 7.5 (HVM)
+*** Azure Marketplace: Red Hat Enterprise Linux 7.6 (HVM)
 +
 The operating system does not include a GUI. You must use a terminal to access the system.
 
