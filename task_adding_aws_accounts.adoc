@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_adding_aws_accounts.html
-keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam policy, iam user, access keys, arn, cloud provider accounts, aws, cloud provider profile, json, iam
+keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam policy, iam user, access keys, arn, cloud provider accounts, aws, cloud provider profile, json, iam, credentials, adding credentials, add credentials
 summary: If you want to deploy Cloud Volumes ONTAP in different AWS accounts, then you need to provide the required permissions to those accounts and then add the details to Cloud Manager. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
 ---
 
-= Setting up and adding AWS accounts to Cloud Manager
+= Adding AWS credentials and subscriptions in Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,9 +13,11 @@ summary: If you want to deploy Cloud Volumes ONTAP in different AWS accounts, th
 :imagesdir: ./media/
 
 [.lead]
-If you want to deploy Cloud Volumes ONTAP in different AWS accounts, then you need to provide the required permissions and add the details to Cloud Manager. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
+When you create a Cloud Volumes ONTAP system, you need to select the AWS credentials and subscription to use with that system. If you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page.
 
-NOTE: When you deploy Cloud Manager from Cloud Central, Cloud Manager automatically adds the AWS account in which you deployed Cloud Manager. An initial account is not added if you manually installed the Cloud Manager software on an existing system. link:concept_accounts_aws.html[Learn about AWS accounts and permissions].
+Before you add AWS credentials to Cloud Manager, you need to provide the required permissions to that account. The permissions enable Cloud Manager to deploy and manage Cloud Volumes ONTAP in that AWS account. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
+
+NOTE: When you deployed Cloud Manager from Cloud Central, Cloud Manager automatically added AWS credentials for the account in which you deployed Cloud Manager. This initial account is not added if you manually installed the Cloud Manager software on an existing system. link:concept_accounts_aws.html[Learn about AWS accounts and permissions].
 
 *Choices*
 
@@ -41,7 +43,7 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[AWS
 
 .Result
 
-The account now has the required permissions. <<Adding AWS accounts to Cloud Manager,You can now add it to Cloud Manager>>.
+The account now has the required permissions. <<Adding AWS credentials to Cloud Manager,You can now add it to Cloud Manager>>.
 
 == Granting permissions by assuming IAM roles in other accounts
 
@@ -76,26 +78,46 @@ image:screenshot_iam_create_role.gif[A screenshot that shows the Create role pag
 
 .Result
 
-The account now has the required permissions. <<Adding AWS accounts to Cloud Manager,You can now add it to Cloud Manager>>.
+The account now has the required permissions. <<Adding AWS credentials to Cloud Manager,You can now add it to Cloud Manager>>.
 
-== Adding AWS accounts to Cloud Manager
+== Adding AWS credentials to Cloud Manager
 
-After you provide an AWS account with the required permissions, you can add the account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.
+After you provide an AWS account with the required permissions, you can add the credentials for that account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.
 
 .Steps
 
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Provider & Support Accounts*.
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 +
 image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in the upper right of the Cloud Manager console.]
 
-. Click *Add New Account* and select *AWS*.
+. Click *Add Credentials* and select *AWS*.
 
-. Choose whether you want to provide AWS keys or the ARN of a trusted IAM role.
+. Provide AWS keys or the ARN of a trusted IAM role.
 
-. Confirm that the policy requirements have been met and then click *Create Account*.
+. Confirm that the policy requirements have been met and click *Continue*.
+
+. Choose the pay-as-you-go subscription that you want to associate with the credentials.
++
+To create a pay-as-you-go Cloud Volumes ONTAP system, AWS credentials must be associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace.
+
+. Click *Go*.
 
 .Result
 
-You can now switch to another account from the Details and Credentials page when creating a new working environment:
+You can now switch to a different set of credentials from the Details and Credentials page when creating a new working environment:
 
 image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
+
+== Assigning an AWS subscription to credentials
+
+If you haven't yet added an AWS subscription to a set of AWS credentials, you can do so any time from the Credentials page. To create a pay-as-you-go Cloud Volumes ONTAP system, AWS credentials must be associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+
+. From the menu, click *Add Subscription*.
++
+image:screenshot_aws_add_subscription.gif[A screenshot of the Credentials page where you can add a subscription to AWS credentials from the menu.]
+
+. Follow the prompts to add the subscription.

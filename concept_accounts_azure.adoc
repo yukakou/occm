@@ -37,7 +37,7 @@ If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you 
 
 image:diagram_permissions_multiple_azure.png[A conceptual image that shows the initial Azure account, which receives permissions through a custom role and managed identity, and two additional accounts that receive permissions through a custom role and service principal.]
 
-You would then link:task_adding_azure_accounts.html#adding-azure-accounts-to-cloud-manager[add the cloud provider accounts to Cloud Manager] by providing details about the AD service principal.
+You would then link:task_adding_azure_accounts.html#adding-azure-accounts-to-cloud-manager[add the account credentials to Cloud Manager] by providing details about the AD service principal.
 
 After you add another account, you can switch to it when creating a new working environment:
 

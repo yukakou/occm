@@ -33,7 +33,7 @@ If you want to launch Cloud Volumes ONTAP in different AWS accounts, then you ca
 
 image:diagram_permissions_multiple_aws.png[A conceptual image that shows two additional accounts. Each has an IAM policy, one is attached to IAM user and the other is attached to an IAM role.]
 
-You would then link:task_adding_aws_accounts.html#adding-aws-accounts-to-cloud-manager[add the cloud provider accounts to Cloud Manager] by specifying the Amazon Resource Name (ARN) of the IAM role, or the AWS keys for the IAM user.
+You would then link:task_adding_aws_accounts.html#adding-aws-accounts-to-cloud-manager[add the account credentials to Cloud Manager] by specifying the Amazon Resource Name (ARN) of the IAM role, or the AWS keys for the IAM user.
 
 After you add another account, you can switch to it when creating a new working environment:
 

@@ -49,6 +49,7 @@ The personal data found in files can be general personal data or national identi
 .27+| National Identifiers
 | Belgian ID (Numero National) | Yes
 | Bulgarian ID (Unified Civil Number) | Yes
+| California Driver's License | Yes
 | Cyprus Tax Identification Number (TIC) | Yes
 | Danish Tax Identification Number (CPR) | Yes
 | Estonian ID (Isikukood) | Yes
@@ -166,12 +167,15 @@ Support::
 *	Complaints and Tickets
 
 Other::
+* Application Data
 * Archive Files
 * Audio
 * CAD Files
 * Code
+* Database and index files
 * Executables
 * Images
+* Logs
 
 == File types
 
@@ -188,6 +192,18 @@ Reviewing your file types can help you control your sensitive data because you m
 . Download the details for one of the top 4 file types directly from the main screen, or click *View All* and then download the list for any of the file types.
 +
 image:screenshot_file_types.gif[A screenshot of the file types dialog box where you can click the download button next to a file type. The result is a CSV file with details about the files.]
+
+== Filtering data on the dashboard
+
+Filter the contents of the Cloud Compliance dashboard to see compliance data for specific working environments.
+
+When you filter the dashboard, Cloud Compliance scopes the compliance data and reports to just those working environments that you selected.
+
+.Steps
+
+. Click the filter drop-down, select the working environments that you'd like to view data for, and click *View*.
++
+image:screenshot_cloud_compliance_filter.gif[]
 
 == Accuracy of information found
 

@@ -67,7 +67,7 @@ Capacity tier:: A Cloud Volumes ONTAP system tiers inactive data to a single Goo
 +
 NOTE: Cloud Manager creates a single bucket for each working environment and names it fabric-pool-_cluster unique identifier_. A different bucket is not created for each volume.
 
-Storage classes:: The default storage class for tiered data is the _Standard Storage_ class. If the data is infrequently accessed, you can reduce your storage costs by changing to _Nearline Storage_ or _Coldline Storage_.
+Storage classes:: The default storage class for tiered data is the _Standard Storage_ class. If the data is infrequently accessed, you can reduce your storage costs by changing to _Nearline Storage_ or _Coldline Storage_. When you change the storage class, inactive data starts in the Standard Storage class and moves to the storage class that you selected, if the data is not accessed after 30 days.
 +
 The access costs are higher if you do access the data, so take that into consideration before you change the storage class. https://cloud.google.com/storage/docs/storage-classes[Learn more about storage classes for Google Cloud Storage^].
 +

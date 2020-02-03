@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_compliance.html
 keywords: remove, delete, stop, stop scans, stop scanning, cloud compliance, stop cloud compliance, delete cloud compliance, terminate, deactivate, deactivating cloud compliance
-summary: If you need to, you can stop Cloud Compliance from scanning one or more working environments. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your Cloud Volumes ONTAP systems.
+summary: If you need to, you can stop Cloud Compliance from scanning one or more working environments. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your working environments.
 ---
 
 = Disabling Cloud Compliance
@@ -13,7 +13,7 @@ summary: If you need to, you can stop Cloud Compliance from scanning one or more
 :imagesdir: ./media/
 
 [.lead]
-If you need to, you can stop Cloud Compliance from scanning one or more working environments. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your Cloud Volumes ONTAP systems.
+If you need to, you can stop Cloud Compliance from scanning one or more working environments. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your working environments.
 
 == Deactivating compliance scans for a working environment
 
@@ -31,7 +31,7 @@ image:screenshot_deactivate_compliance_scan.png[A screenshot of the action icon 
 
 == Deleting the Cloud Compliance instance
 
-You can delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with Cloud Volumes ONTAP. Deleting the instance also deletes the associated disks where the indexed data resides.
+You can delete the Cloud Compliance instance if you no longer want to use Cloud Compliance. Deleting the instance also deletes the associated disks where the indexed data resides.
 
 .Step
 
