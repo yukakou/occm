@@ -61,8 +61,8 @@ Be sure to do the following:
 image:screenshot_iam_create_role.gif[A screenshot that shows the Create role page in the AWS IAM Console. Under Select type of trusted entity, Another AWS account is selected.]
 
 . Go to the source account where the Cloud Manager instance resides and select the IAM role that is attached to the instance.
-.. Click *Trust Relationships > Edit trust relationship*.
-.. Add the "sts:AssumeRole" action and the ARN of the role that you created in the target account.
+.. Click *Attach policies* and then click *Create policy*.
+.. Create a policy that includes the "sts:AssumeRole" action and the ARN of the role that you created in the target account.
 +
 *Example*
 +
