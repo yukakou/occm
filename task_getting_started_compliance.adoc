@@ -88,7 +88,7 @@ For more details on vCPU limits, see the following:
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quotas[Azure documentation: Virtual machine vCPU quotas^]
 
 Set up discovery of Azure NetApp Files::
-To scan volumes for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration].
+Before you can scan volumes for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration].
 
 Ensure that Cloud Manager can access Cloud Compliance::
 Ensure connectivity between Cloud Manager and the Cloud Compliance instance:
@@ -203,4 +203,8 @@ After you enter the credentials, you should see a message that all CIFS volumes 
 +
 image:screenshot_cifs_status.gif[A screenshot that shows the CIFS Scan Status page and one Cloud Volumes ONTAP system for which CIFS credentials were successfully provided.]
 
-. On the *Scan Status* page, review the scan status for each CIFS and NFS volume to identify any errors that you can correct.
+. On the *Scan Status* page, click *View Details* to review the scan status for each CIFS and NFS volume and correct any errors.
++
+For example, the following image shows three volumes that Cloud Compliance can't scan due to network connectivity issues between the Cloud Compliance instance and the volumes.
++
+image:screenshot_compliance_volume_details.gif[A screenshot of the View Details page in the scan status. This screenshot shows three volumes that aren't being scanned because of network connectivity between Cloud Compliance and the volumes.]
