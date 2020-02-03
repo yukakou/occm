@@ -20,6 +20,73 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager 3.8.1 (2 Feb 2020)
+
+* <<Cloud Compliance enhancements>>
+* <<Enhancements to accounts and subscriptions>>
+* <<Timeline enhancements>>
+
+=== Cloud Compliance enhancements
+
+The following enhancements are now available for Cloud Compliance.
+
+* *Support for Azure NetApp Files*
++
+We're pleased to announce that Cloud Compliance can now scan Azure NetApp Files to identify personal and sensitive data that resides on volumes.
++
+link:task_getting_started_compliance.html[Learn how to get started].
+
+* *Scan status*
++
+Cloud Compliance now shows you a scan status for each CIFS and NFS volume, including error messages that you can use to correct any issues.
++
+image:screenshot_cloud_compliance_status.gif[]
+
+* *Filter dashboard by working environment*
++
+You can now filter the contents of the Cloud Compliance dashboard to see compliance data for specific working environments.
++
+image:screenshot_cloud_compliance_filter.gif[]
+
+* *New personal data type*
++
+Cloud Compliance can now identify a California Driver's License when scanning data.
+
+* *Support for additional categories*
++
+Three additional categories are supported: Application data, logs, and database and index files.
++
+link:task_controlling_private_data.html#categories[Learn more about categories].
+
+=== Enhancements to accounts and subscriptions
+
+We've made it easier to select an AWS account or GCP project and an associated marketplace subscription for a pay-as-you-go Cloud Volumes ONTAP system. These enhancements help to ensure that you're paying from the right account or project.
+
+For example, when you create a system in AWS, click *Edit Credentials* if you don't want to use the default account and subscription:
+
+image:screenshot_accounts_select_aws.gif[A screenshot of the Details & Credentials page in the working environment wizard that shows the Edit Credentials button.]
+
+From there, you can choose the account credentials that you want to use and the associated AWS marketplace subscription. You can even add a marketplace subscription, if you need to.
+
+image:screenshot_accounts_aws.gif[A screenshot of the Edit Account and Add Subscription dialog box. This dialog box enables you to choose a subscription and associate the credentials with a subscription.]
+
+And if you manage multiple AWS subscriptions, you can assign each one of them to different AWS credentials from the Credentials page in the settings:
+
+image:screenshot_aws_add_subscription.gif[A screenshot of the Credentials page where you can add a subscription to AWS credentials from the menu.]
+
+link:task_adding_aws_accounts.html[Learn how to manage AWS credentials in Cloud Manager].
+
+=== Timeline enhancements
+
+The Timeline was enhanced to provide you with more information about the NetApp cloud services that you use.
+
+* The Timeline now shows actions for all Cloud Manager systems within the same Cloud Central account
+* You can now find information more easily by filtering, searching, and adding and removing columns
+* You can now download the timeline data in CSV format
+* In the future, the Timeline will show actions for each NetApp cloud service that you use (but you can filter the information down to a single service)
+
+image:screenshot_timeline.gif[A screenshot of the Timeline that appears in Cloud Manager. The Timeline shows details about the actions that have taken place in Cloud Manager.]
+
 == Cloud Manager 3.8 (8 Jan 2020)
 
 * <<HA enhancements in Azure>>
