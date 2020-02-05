@@ -49,7 +49,7 @@ Click *Compliance* > *Scan Status* > *Edit CIFS Credentials* and provide the cre
 Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Compliance. You'll need to ensure connectivity to volumes after you enable Cloud Compliance. That's covered below.
 
 Enable outbound internet access::
-Cloud Compliance requires outbound internet access. If your virtual network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints:
+Cloud Compliance requires outbound internet access. If your virtual network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. Note that Cloud Manager deploys the Cloud Compliance instance in the same subnet as Cloud Manager.
 +
 [cols="43,57",options="header"]
 |===
@@ -87,9 +87,6 @@ For more details on vCPU limits, see the following:
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html[AWS documentation: Amazon EC2 Service Limits^]
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quotas[Azure documentation: Virtual machine vCPU quotas^]
 
-Set up discovery of Azure NetApp Files::
-Before you can scan volumes for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration].
-
 Ensure that Cloud Manager can access Cloud Compliance::
 Ensure connectivity between Cloud Manager and the Cloud Compliance instance:
 
@@ -103,18 +100,8 @@ This is required because the Cloud Compliance instance uses Cloud Manager as a p
 +
 NOTE: This port is open by default on all new Cloud Manager instances, starting with version 3.7.5. It's not open on Cloud Manager instances created prior to that.
 
-Ensure that Cloud Manager has the required permissions::
-Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Compliance instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/info/web/ECMP11022837.html[the policies provided by NetApp^].
-
-Check your vCPU limits::
-Ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running.
-+
-In AWS, the instance family is _On-Demand Standard instances_. In Azure, the instance family is _Standard DSv3 Family_.
-+
-For more details on vCPU limits, see the following:
-+
-* https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html[AWS documentation: Amazon EC2 Service Limits^]
-* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quotas[Azure documentation: Virtual machine vCPU quotas^]
+Set up discovery of Azure NetApp Files::
+Before you can scan volumes for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration].
 
 Ensure that you can keep Cloud Compliance running::
 The Cloud Compliance instance needs to stay on to continuously scan your data.
