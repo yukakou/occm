@@ -118,10 +118,10 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 
 === AWS
 
-* Two General Purpose SSD disks:
-** One 140 GB disk for root data (one per node)
-** 9.6 and later: One 86 GB disk for boot data (one per node)
-** 9.5 and earlier: One 45 GB disk for boot data (one per node)
+* Two General Purpose SSD disks per node for boot and root data:
+**	9.7: 160 GB for boot data and 220 GB for root data
+**	9.6: 86 GB for boot data and 140 GB for root data
+**	9.5: 45 GB for boot data and 140 GB for root data
 
 * One EBS snapshot for each boot disk and root disk
 
