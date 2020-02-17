@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_backup_to_s3.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, back up volumes, backup to s3, restore volumes, vpc endpoint, billing, cost
-summary: Backup to S3 is an add-on service for Cloud Volumes ONTAP that delivers fully-managed backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an S3 bucket in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
+summary: Backup to S3 is an add-on service for Cloud Volumes ONTAP that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an S3 bucket in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
 = Backing up data to Amazon S3
@@ -13,7 +13,7 @@ summary: Backup to S3 is an add-on service for Cloud Volumes ONTAP that delivers
 :imagesdir: ./media/
 
 [.lead]
-Backup to S3 is an add-on service for Cloud Volumes ONTAP that delivers fully-managed backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an S3 bucket in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
+Backup to S3 is an add-on service for Cloud Volumes ONTAP that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an S3 bucket in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
 
 When you enable Backup to S3, the service performs a full backup of your data. All additional backups are incremental, which means that only changed blocks and new blocks are backed up. You can set the backup schedule to daily, or weekly, or monthly.
 
