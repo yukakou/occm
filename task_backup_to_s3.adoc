@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_backup_to_s3.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, back up volumes, backup to s3, restore volumes, vpc endpoint, billing, cost
-summary: Backup to S3 is an add-on feature for Cloud Volumes ONTAP that delivers fully-managed backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in S3 object storage, independent of volume Snapshot copies used for near-term recovery or cloning.
+summary: Backup to S3 is an add-on service for Cloud Volumes ONTAP that delivers fully-managed backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an S3 bucket in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
 = Backing up data to Amazon S3
@@ -13,11 +13,11 @@ summary: Backup to S3 is an add-on feature for Cloud Volumes ONTAP that delivers
 :imagesdir: ./media/
 
 [.lead]
-Backup to S3 is an add-on feature for Cloud Volumes ONTAP that delivers fully-managed backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in S3 object storage, independent of volume Snapshot copies used for near-term recovery or cloning.
+Backup to S3 is an add-on service for Cloud Volumes ONTAP that delivers fully-managed backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an S3 bucket in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
 
-When you enable Backup to S3, the service performs a full backup of your data. All additional backups are incremental, which means that only changed blocks and new blocks are backed up.
+When you enable Backup to S3, the service performs a full backup of your data. All additional backups are incremental, which means that only changed blocks and new blocks are backed up. You can set the backup schedule to daily, or weekly, or monthly.
 
-https://cloud.netapp.com/cloud-backup-service[Go to NetApp Cloud Central for pricing details^].
+https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
 
 Note that you must use Cloud Manager for all backup and restore operations. Any actions taken directly from ONTAP or from Amazon S3 results in an unsupported configuration.
 
@@ -27,30 +27,16 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 ==== image:number1.png[Number 1] Verify support for your configuration
 
-[role="quick-margin-para"]
-Verify the following:
-
 [role="quick-margin-list"]
-* Cloud Volumes ONTAP 9.4 or later is running in a supported AWS region: N. Virginia, Oregon, Ireland, Frankfurt, or Sydney
-* You have subscribed to the new https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace offering^]
-* TCP port 5010 is open for outbound traffic on the security group for Cloud Volumes ONTAP (it's open by default)
-* TCP port 8088 is open for outbound traffic on the security group for Cloud Manager (it's open by default)
-* The following endpoint is accessible from Cloud Manager:
-+
-\https://w86yt021u5.execute-api.us-east-1.amazonaws.com/production/whitelist
-* There's room for Cloud Manager to allocate up to two interface VPC endpoints in the VPC (the AWS limit per VPC is 20)
-* Cloud Manager has permission to use the VPC endpoint permissions listed in the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^]:
-+
-[source,json]
-"ec2:DescribeVpcEndpoints",
-"ec2:CreateVpcEndpoint",
-"ec2:ModifyVpcEndpoint",
-"ec2:DeleteVpcEndpoints"
+* You're running Cloud Volumes ONTAP 9.6 or later in AWS.
+* You have subscribed to the new https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace offering^].
+* The IAM role that provides Cloud Manager with permissions includes S3 permissions from the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^].
+* Cloud Volumes ONTAP has a connection to S3 through a VPC Endpoint.
 
 ==== image:number2.png[Number 2] Enable Backup to S3 on your new or existing system
 
 [role="quick-margin-list"]
-* New systems: The Backup to S3 feature is enabled by default in the working environment wizard. Be sure to keep the option enabled.
+* New systems: Backup to S3 is enabled by default in the working environment wizard. Be sure to keep the option enabled.
 
 * Existing systems: Open the working environment, click the backup settings icon and enable backups.
 +
@@ -59,7 +45,7 @@ image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to S3 
 ==== image:number3.png[Number 3] If needed, modify the backup policy
 
 [role="quick-margin-para"]
-The default policy backs up volumes every day and retains 30 backup copies of each volume. If needed, you can change the number of backup copies to retain.
+The default policy backs up volumes every day and retains 30 backup copies of each volume. Change to weekly or monthly backups or change the number of backup copies to retain.
 
 [role="quick-margin-para"]
 image:screenshot_backup_to_s3_settings.gif[A screenshot that shows the Backup to S3 settings where you can enable or disable the feature and then choose your backup retention.]
@@ -77,51 +63,51 @@ image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon 
 Read the following requirements to make sure that you have a supported configuration before you start backing up volumes to S3.
 
 Supported ONTAP versions::
-Backup to S3 is supported with Cloud Volume ONTAP 9.4 and later.
+Cloud Volumes ONTAP 9.6 and later.
 
 Supported AWS regions::
-Backup to S3 is supported with Cloud Volumes ONTAP in the following AWS regions:
-
-* US East (N. Virginia)
-* US West (Oregon)
-* EU (Ireland)
-* EU (Frankfurt)
-* Asia Pacific (Sydney)
-
-AWS permissions required::
-The IAM role that provides Cloud Manager with permissions must include the following:
-+
-[source,json]
-"ec2:DescribeVpcEndpoints",
-"ec2:CreateVpcEndpoint",
-"ec2:ModifyVpcEndpoint",
-"ec2:DeleteVpcEndpoints"
+Backup to S3 is supported in all AWS regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
 
 AWS subscription requirement::
-Starting with the 3.7.3 release, a new Cloud Manager subscription is available in the AWS Marketplace. This subscription enables deployments of Cloud Volumes ONTAP 9.6 and later PAYGO systems and the Backup to S3 feature. You need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to this new Cloud Manager subscription^] before you enable Backup to S3. Billing for the Backup to S3 feature is done through this subscription.
+Starting with the 3.7.3 release, a new Cloud Manager subscription is available in the AWS Marketplace. This subscription enables deployments of Cloud Volumes ONTAP 9.6 and later (PAYGO) and Backup to S3. You need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to this new Cloud Manager subscription^] before you enable Backup to S3. Billing for Backup to S3 is done through this subscription.
 
-Port requirements::
-* TCP port 5010 must be open for outbound traffic from Cloud Volumes ONTAP to the backup service.
-* TCP port 8088 must be open for outbound traffic on the security group for Cloud Manager.
+AWS permissions required::
+The IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^].
 +
-These ports are already open if you used the predefined security groups. But if you used your own, then you'll need to open these ports.
-
-Outbound internet access::
-Ensure that the following endpoint is accessible from Cloud Manager:
-\https://w86yt021u5.execute-api.us-east-1.amazonaws.com/production/whitelist
+Here are the specific permissions from the policy:
 +
-Cloud Manager contacts this endpoint to add your AWS account ID to the list of allowed users for Backup to S3.
+[source,json]
+{
+            "Sid": "backupPolicy",
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteBucket",
+                "s3:GetLifecycleConfiguration",
+                "s3:PutLifecycleConfiguration",
+                "s3:PutBucketTagging",
+                "s3:ListBucketVersions",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketTagging",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": [
+                "arn:aws:s3:::netapp-backup-*"
+            ]
+        },
 
-Interface VPC endpoints::
-When you enable the Backup to S3 feature, Cloud Manager creates an interface VPC endpoint in the VPC where Cloud Volumes ONTAP is running. This _backup endpoint_ connects to the NetApp VPC where Backup to S3 is running. If you restore a volume, Cloud Manager creates an additional interface VPC endpoint--the _restore endpoint_.
+
+VPC Endpoint to S3::
+Ensure that Cloud Volumes ONTAP has a connection to S3 through a VPC Endpoint to the S3 service. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
 +
-Any additional Cloud Volumes ONTAP systems in the VPC use these two VPC endpoints.
+When you create the VPC Endpoint, be sure to select the region, VPC, and route table that corresponds to the Cloud Volumes ONTAP instance. You must also modify the security group to add an outbound HTTPS rule that enables traffic to the S3 endpoint. Otherwise, Cloud Volumes ONTAP cannot connect to the S3 service.
 +
-https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-endpoints[The default limit for interface VPC endpoints is 20 per VPC^]. Make sure that your VPC hasn't reached the limit before you enable the feature.
+If you experience any issues, see https://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/[AWS Support Knowledge Center: Why can’t I connect to an S3 bucket using a gateway VPC endpoint?^]
 
-== Enabling backups to S3 on a new system
+== Enabling Backup to S3 on a new system
 
-The Backup to S3 feature is enabled by default in the working environment wizard. Be sure to keep the option enabled.
+Backup to S3 is enabled by default in the working environment wizard. Be sure to keep the option enabled.
 
 .Steps
 
@@ -131,7 +117,7 @@ The Backup to S3 feature is enabled by default in the working environment wizard
 
 . Fill out the Details & Credentials page.
 
-. On the Backup to S3 page, leave the feature enabled and click *Continue*.
+. On the Services page, leave the service enabled and click *Continue*.
 +
 image:screenshot_backup_to_s3.gif[Shows the Backup to S3 option in the working environment wizard.]
 
@@ -139,11 +125,11 @@ image:screenshot_backup_to_s3.gif[Shows the Backup to S3 option in the working e
 
 .Result
 
-The Backup to S3 feature is enabled on the system and backs up volumes every day and retains 30 backup copies. <<Changing the backup retention,Learn how to modify backup retention>>.
+Backup to S3 is enabled on the system and backs up volumes every day and retains 30 backup copies. <<Changing the backup retention,Learn how to modify backup retention>>.
 
-== Enabling backups to S3 on an existing system
+== Enabling Backup to S3 on an existing system
 
-You can enable backups to S3 on an existing Cloud Volumes ONTAP system, as long as you are running a supported configuration. For details, see <<Requirements>>.
+Enable Backup to S3 at any time directly from the working environment.
 
 .Steps
 
@@ -161,11 +147,15 @@ image:screenshot_backup_to_s3_settings.gif[A screenshot that shows the Backup to
 
 .Result
 
-The Backup to S3 feature starts taking the initial backups of each volume.
+Backup to S3 starts taking the initial backups of each volume.
 
-== Changing the backup retention
+== Changing the schedule and backup retention
 
-The default policy backs up volumes every day and retains 30 backup copies of each volume. You can change the number of backup copies to retain.
+The default policy backs up volumes every day and retains 30 backup copies of each volume. You can change to weekly or monthly backups and you can change the number of backup copies to retain.
+
+A combination of daily, weekly, and monthly isn’t supported. You can choose daily, or weekly, or monthly.
+
+TIP: Changing the backup policy affects all future backups. It doesn't affect any previous backups that were created.
 
 .Steps
 
@@ -175,13 +165,13 @@ The default policy backs up volumes every day and retains 30 backup copies of ea
 +
 image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to S3 icon which is available after you open a working environment.]
 
-. Change the backup retention and then click *Save*.
+. Change the schedule and backup retention and then click *Save*.
 +
 image:screenshot_backup_to_s3_settings.gif[A screenshot that shows the Backup to S3 settings where you can enable or disable the feature and then choose backup retention.]
 
 == Restoring a volume
 
-When you restore data from a backup, Cloud Manager performs a full volume restore to a _new_ volume. You can restore the data to the same working environment or to a different working environment.
+When you restore data from a backup, Cloud Manager performs a full volume restore to a _new_ volume. You can restore the data to the same working environment or to a different working environment that's located in the same AWS account as the source working environment.
 
 .Steps
 
@@ -203,25 +193,9 @@ image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon 
 +
 image:screenshot_backup_to_s3_restore_options.gif[A screenshot that shows the restore options: a working environment to restore to, the name of the volume, and the volume info.]
 
-== Deleting backups
+== Disabling Backup to S3
 
-All backups are retained in S3 until you delete them from Cloud Manager. Backups are not deleted when you delete a volume or when you delete the Cloud Volumes ONTAP system.
-
-.Steps
-
-. At the top of Cloud Manager, click *Backup & Restore*.
-
-. Select a volume.
-
-. Find the backup that you want to delete and click the delete icon.
-+
-image:screenshot_backup_to_s3_delete_icon.gif[A screenshot of the delete icon for a backup after you select a volume.]
-
-. Confirm that you want to delete the backup.
-
-== Disabling backups to S3
-
-Disabling backups to S3 disables backups of each volume on the system. Any existing backups will not be deleted.
+Disabling Backup to S3 disables backups of each volume on the system. Any existing backups will not be deleted.
 
 .Steps
 
@@ -235,19 +209,43 @@ image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to S3 
 
 == How Backup to S3 works
 
-The following sections provide more information about the Backup to S3 feature.
+The following sections provide more information about Backup to S3.
 
 === Where backups reside
 
-Backup copies are stored in a NetApp-owned S3 bucket, in the same region where the Cloud Volumes ONTAP system is located.
+Backup copies are stored in an S3 bucket that Cloud Manager creates in your AWS account. The bucket is in the same region where the Cloud Volumes ONTAP system is located. There's one S3 bucket per Cloud Volumes ONTAP system.
+
+Cloud Manager names the bucket as follows: netapp-backup-_clusteruuid_
+
+Be sure not to delete this bucket.
+
+=== All supported volumes are backed up
+
+When you enable Backup to S3, all supported volumes are the system are backed up to S3.
+
+Backup to S3 can back up read-write volumes and data protection volumes.
 
 === Backups are incremental
 
 After the initial full backup of your data, all additional backups are incremental, which means that only changed blocks and new blocks are backed up.
 
+=== The backup policy is system wide
+
+The schedule and number of backups to retain are defined at the system level. The setting affects all volumes on the system.
+
+=== The backup schedule is daily, _or_ weekly, _or_ monthly
+
+You can choose daily, or weekly, or monthly backups of all volumes. A combination of these backup frequency options isn’t supported.
+
 === Backups are taken at midnight
 
-Daily backups start just after midnight each day. At this time, you can't schedule backup operations at a user specified time.
+* Daily backups start just after midnight each day.
+
+* Weekly backups start just after midnight on Sunday mornings.
+
+* Monthly backups start just after midnight on the first of each month.
+
+At this time, you can’t schedule backup operations at a user specified time.
 
 === Backup copies are associated with your Cloud Central account
 
@@ -255,39 +253,18 @@ Backup copies are associated with the link:concept_cloud_central_accounts.html[C
 
 If you have multiple Cloud Manager systems in the same Cloud Central account, each Cloud Manager system will display the same list of backups. That includes the backups associated with Cloud Volumes ONTAP instances from other Cloud Manager systems.
 
-=== The backup policy is system wide
-
-The number of backups to retain are defined at the system level. You can't set a different policy for each volume on the system.
-
-=== Security
-
-Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
-
-Data travels across secured Direct Connect links to the service, and is protected at rest by AES 256-bit encryption. The encrypted data is then written to cloud using HTTPS TLS 1.2 connections. Data also travels to Amazon S3 only through secure VPC endpoint connections, so no traffic is sent across the internet.
-
-Each user is assigned a tenant key, in addition to an overall encryption key owned by the service. This requirement is similar to needing a pair of keys to open a customer safe in a bank. All keys, as cloud credentials, are stored securely by the service and are restricted to only certain NetApp personnel responsible for maintaining the service.
-
 === Limitations
 
-* If you use any of the following instance types, a Cloud Volumes ONTAP system can back up a maximum of 20 volumes to S3:
-
-**	m4.xlarge
-**	m5.xlarge
-**	r4.xlarge
-**	r5.xlarge
+* At this time, deleting backups is not supported from Cloud Manager.
++
+You should not delete the backups directly from S3.
 
 * Volumes that you create outside of Cloud Manager aren't automatically backed up to S3.
 +
 For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up.
 +
-If you want to backup these volumes, you would need to disable Backup to S3 and then enable it again.
+If you want to back up these volumes, you would need to disable Backup to S3 and then enable it again.
 
-* When you restore data from a backup, Cloud Manager performs a full volume restore to a _new_ volume. This new volume isn’t automatically backed up to S3.
-+
-If you want to backup volumes created from a restore operation, you would need to disable Backup to S3 and then enable it again.
-
-* You can back up volumes that are 50 TB in size or less.
-
-* Backup to S3 can maintain up to 245 total backups of a volume.
+* Backup to S3 can maintain up to 1,019 total backups of a volume.
 
 * WORM storage is not supported on a Cloud Volumes ONTAP system when backup to S3 is enabled.

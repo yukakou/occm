@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_enabling_flash_cache.html
-keywords: cloud volumes ontap, aws, ec2, flash cache, read-intensive, read, random, databases, email, file services, c5d.4xlarge, c5d.9xlarge, r5d.2xlarge, compression, performance, azure, nvme, standard, l8s, vm type, virtual machine
+keywords: cloud volumes ontap, aws, ec2, flash cache, read-intensive, read, random, databases, email, file services, c5d.4xlarge, c5d.9xlarge, r5d.2xlarge, compression, performance, azure, nvme, standard, l8s, vm type, virtual machine, m5d.8xlarge, m5d.12xlarge, c5d.18xlarge
 summary: Some Cloud Volumes ONTAP configurations in AWS and Azure include local NVMe storage, which Cloud Volumes ONTAP uses as Flash Cache for better performance.
 ---
 
@@ -35,6 +35,9 @@ Flash Cache is supported with Cloud Volumes ONTAP Premium and BYOL in AWS.
 
 * c5d.4xlarge
 * c5d.9xlarge
+* c5d.18xlarge
+* m5d.8xlarge
+* m5d.12xlarge
 * r5d.2xlarge
 
 . Disable compression on all volumes to take advantage of the Flash Cache performance improvements.

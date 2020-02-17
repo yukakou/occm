@@ -20,6 +20,33 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager 3.8.1 update (16 Feb 2020)
+
+We released a few enhancements to Cloud Manager 3.8.1.
+
+=== Backup to S3 enhancements
+
+* Backup copies are now stored in an S3 bucket that Cloud Manager creates in your AWS account, with one bucket per Cloud Volumes ONTAP working environment.
+
+* In addition to read-write volumes, you can now back up data protection volumes.
+
+* Backup to S3 is now supported in all AWS regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
+
+* You can set the backup schedule to daily, weekly, or monthly.
+
+* Cloud Manager no longer needs to set up interface VPC endpoints to the Backup to S3 service.
+
+Additional S3 permissions are required for these enhancements. The IAM role that provides Cloud Manager with permissions must include permissions from the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^].
+
+link:task_backup_to_s3.html[Learn more about Backup to S3].
+
+=== AWS updates
+
+We’ve introduced support for new EC2 instances and a change in the number of supported data disks for Cloud Volumes ONTAP 9.6 and 9.7. Check out the changes in the Cloud Volumes ONTAP Release Notes.
+
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_97.html[Cloud Volumes ONTAP 9.7 Release Notes^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_96.html[Cloud Volumes ONTAP 9.6 Release Notes^]
+
 == Cloud Manager 3.8.1 (2 Feb 2020)
 
 * <<Cloud Compliance enhancements>>

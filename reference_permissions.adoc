@@ -187,6 +187,20 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 | "ec2:DescribeReservedInstancesOfferings"
 | Cloud Manager uses the permission as part of Cloud Compliance deployment to choose which instance type to use.
 
+|
+"s3:DeleteBucket",
+"s3:GetLifecycleConfiguration",
+"s3:PutLifecycleConfiguration",
+"s3:PutBucketTagging",
+"s3:ListBucketVersions",
+"s3:GetObject",
+"s3:ListBucket",
+"s3:ListAllMyBuckets",
+"s3:GetBucketTagging",
+"s3:GetBucketLocation"
+
+| Cloud Manager uses these permissions when you enable the Backup to S3 service.
+
 |===
 
 == What Cloud Manager does with Azure permissions
