@@ -1,0 +1,137 @@
+---
+sidebar: sidebar
+permalink: task_scanning_s3.html
+keywords: cloud compliance, get started, enable cloud compliance, cifs credentials, smb credentials, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, amazon s3, aws s3
+summary: Complete a few steps to get started with Cloud Compliance for Amazon S3.
+---
+
+= Getting started with Cloud Compliance for Amazon S3
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Complete a few steps to get started with Cloud Compliance for Amazon S3.
+
+== Reviewing prerequisites
+
+Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Compliance.
+
+The first three prerequisites are specific to scanning S3 buckets.
+
+[[policy-requirements]]
+Ensure that Cloud Manager is in the same account as your S3 buckets::
+Cloud Manager must be running in the AWS account that has the S3 buckets that you want to scan. Cloud Manager automatically discovers the S3 buckets and displays them in an Amazon S3 working environment.
++
+<include a screenshot>
+
+Set up an IAM role for the Cloud Compliance instance::
+Cloud Compliance needs permissions to connect to the S3 buckets in your account and to scan them. Set up an IAM role that includes the permissions listed below. Cloud Manager prompts you to select this IAM role when you enable Cloud Compliance on the Amazon S3 working environment.
++
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:Get*",
+                "s3:List*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+NOTE: The AWS-managed policy _AmazonS3ReadOnlyAccess_ includes these required permissions.
+
+Provide connectivity from Cloud Compliance to Amazon S3::
+Cloud Compliance needs a connection to Amazon S3. The best way to provide that connection is through a VPC Endpoint to the S3 service. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
++
+When you create the VPC Endpoint, be sure to select the region, VPC, and route table that corresponds to the Cloud Compliance instance. You must also modify the security group to add an outbound HTTPS rule that enables traffic to the S3 endpoint. Otherwise, Cloud Compliance can't connect to the S3 service.
++
+If you experience any issues, see https://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/[AWS Support Knowledge Center: Why can’t I connect to an S3 bucket using a gateway VPC endpoint?^]
++
+An alternative is to provide the connection by using a NAT Gateway.
++
+NOTE: You can't use a proxy to get to S3 over the internet.
+
+The remaining prerequisites apply to Cloud Compliance in general, whether you're scanning Amazon S3, Cloud Volumes ONTAP, or Azure NetApp Files.
+
+Enable outbound internet access::
+Cloud Compliance requires outbound internet access. If your virtual network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. Note that Cloud Manager deploys the Cloud Compliance instance in the same subnet as Cloud Manager.
++
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+
+| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
+
+| \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
+
+|
+\https://cloud-compliance-support-netapp.s3.us-west-1.amazonaws.com
+\https://hub.docker.com
+| Provides access to software images, manifests, and templates.
+
+| \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
+
+|
+\https://cognito-idp.us-east-1.amazonaws.com
+\https://cognito-identity.us-east-1.amazonaws.com
+| Enables Cloud Compliance to access and download manifests and templates, and to send logs and metrics.
+
+|===
+
+Ensure that Cloud Manager has the required permissions::
+Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Compliance instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/info/web/ECMP11022837.html[the policies provided by NetApp^].
+
+Check your vCPU limits::
+Ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running.
++
+In AWS, the instance family is _On-Demand Standard instances_. In Azure, the instance family is _Standard DSv3 Family_.
++
+For more details on vCPU limits, see the following:
++
+* https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html[AWS documentation: Amazon EC2 Service Limits^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quotas[Azure documentation: Virtual machine vCPU quotas^]
+
+Ensure that Cloud Manager can access Cloud Compliance::
+Ensure connectivity between Cloud Manager and the Cloud Compliance instance:
+
+* The security group for Cloud Manager must allow inbound and outbound traffic over port 80 to and from the Cloud Compliance instance.
++
+This connection enables deployment of the Cloud Compliance instance and enables you to view information in the Compliance tab.
+
+* If your AWS network doesn’t use a NAT or proxy for internet access, modify the security group for Cloud Manager to allow inbound traffic over TCP port 3128 from the Cloud Compliance instance.
++
+This is required because the Cloud Compliance instance uses Cloud Manager as a proxy to access the internet.
++
+NOTE: This port is open by default on all new Cloud Manager instances, starting with version 3.7.5. It's not open on Cloud Manager instances created prior to that.
+
+Ensure that you can keep Cloud Compliance running::
+The Cloud Compliance instance needs to stay on to continuously scan your data.
+
+Ensure web browser connectivity to Cloud Compliance::
+After Cloud Compliance is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Cloud Compliance instance.
++
+The Cloud Compliance instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to AWS or Azure (for example, a VPN), or from a host that's inside the same network as the Cloud Compliance instance.
++
+TIP: If you're accessing Cloud Manager from a public IP address, then your web browser probably isn't running on a host inside the network.
+
+== Enabling Cloud Compliance
+
+Cloud Compliance is enabled by default in the Cloud Volumes ONTAP working environment wizard. Be sure to keep the option enabled.
+
+.Steps
+
+. At the top of Cloud Manager, click *Working Environments*.
+
+. Select a working environment.
+
+. In the pane on the right, click *Enable Compliance*.
+
+. Do this and do that...
