@@ -27,7 +27,7 @@ Version requirements::
 You should verify that the source and destination volumes are running compatible ONTAP versions before replicating data. For details, see the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-dap/home.html[Data Protection Power Guide^].
 
 Requirements specific to Cloud Volumes ONTAP::
-* The instance's security group must include the required inbound and outbound rules: specifically, rules for ICMP and ports 10000, 11104, and 11105.
+* The instance's security group must include the required inbound and outbound rules: specifically, rules for ICMP and ports 11104 and 11105.
 +
 These rules are included in the predefined security group.
 
