@@ -161,8 +161,13 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "s3:PutLifecycleConfiguration",
 "s3:PutBucketTagging",
 "s3:ListBucketVersions",
+"s3:GetBucketPolicyStatus",
+"s3:GetBucketPublicAccessBlock",
+"s3:GetBucketAcl",
+"s3:GetBucketPolicy",
+"s3:PutBucketPublicAccessBlock"
 
-| Manages the S3 bucket that a Cloud Volumes ONTAP system uses as a capacity tier.
+| Manages the S3 bucket that a Cloud Volumes ONTAP system uses as a capacity tier for data tiering.
 
 |
 "kms:List*",
@@ -198,6 +203,11 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 "s3:ListAllMyBuckets",
 "s3:GetBucketTagging",
 "s3:GetBucketLocation"
+"s3:GetBucketPolicyStatus",
+"s3:GetBucketPublicAccessBlock",
+"s3:GetBucketAcl",
+"s3:GetBucketPolicy",
+"s3:PutBucketPublicAccessBlock"
 
 | Cloud Manager uses these permissions when you enable the Backup to S3 service.
 

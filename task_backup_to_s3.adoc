@@ -90,7 +90,12 @@ Here are the specific permissions from the policy:
                 "s3:ListBucket",
                 "s3:ListAllMyBuckets",
                 "s3:GetBucketTagging",
-                "s3:GetBucketLocation"
+                "s3:GetBucketLocation",
+                "s3:GetBucketPolicyStatus",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetBucketAcl",
+                "s3:GetBucketPolicy",
+                "s3:PutBucketPublicAccessBlock"
             ],
             "Resource": [
                 "arn:aws:s3:::netapp-backup-*"
@@ -218,6 +223,10 @@ Backup copies are stored in an S3 bucket that Cloud Manager creates in your AWS 
 Cloud Manager names the bucket as follows: netapp-backup-_clusteruuid_
 
 Be sure not to delete this bucket.
+
+=== S3 storage class
+
+Each backup is associated with the S3 Standard storage class.
 
 === All supported volumes are backed up
 
