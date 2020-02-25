@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_scanning_s3.html
-keywords: cloud compliance, get started, enable cloud compliance, cifs credentials, smb credentials, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, amazon s3, aws s3
+keywords: cloud compliance, get started, enable cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, amazon s3, aws s3
 summary: Complete a few steps to get started with Cloud Compliance for Amazon S3.
 ---
 
@@ -24,11 +24,9 @@ The first three prerequisites are specific to scanning S3 buckets.
 [[policy-requirements]]
 Ensure that Cloud Manager is in the same account as your S3 buckets::
 Cloud Manager must be running in the AWS account that has the S3 buckets that you want to scan. Cloud Manager automatically discovers the S3 buckets and displays them in an Amazon S3 working environment.
-+
-<include a screenshot>
 
 Set up an IAM role for the Cloud Compliance instance::
-Cloud Compliance needs permissions to connect to the S3 buckets in your account and to scan them. Set up an IAM role that includes the permissions listed below. Cloud Manager prompts you to select this IAM role when you enable Cloud Compliance on the Amazon S3 working environment.
+Cloud Compliance needs permissions to connect to the S3 buckets in your account and to scan them. Set up an IAM role that includes the permissions listed below. Cloud Manager prompts you to select an IAM role when you enable Cloud Compliance on the Amazon S3 working environment.
 +
 [source,json]
 {
@@ -121,17 +119,3 @@ After Cloud Compliance is enabled, ensure that users access the Cloud Manager in
 The Cloud Compliance instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to AWS or Azure (for example, a VPN), or from a host that's inside the same network as the Cloud Compliance instance.
 +
 TIP: If you're accessing Cloud Manager from a public IP address, then your web browser probably isn't running on a host inside the network.
-
-== Enabling Cloud Compliance
-
-Cloud Compliance is enabled by default in the Cloud Volumes ONTAP working environment wizard. Be sure to keep the option enabled.
-
-.Steps
-
-. At the top of Cloud Manager, click *Working Environments*.
-
-. Select a working environment.
-
-. In the pane on the right, click *Enable Compliance*.
-
-. Do this and do that...
