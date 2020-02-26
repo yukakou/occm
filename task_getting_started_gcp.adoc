@@ -57,10 +57,10 @@ Two requirements must be met to tier cold data from Cloud Volumes ONTAP 9.7 to l
 
 [role="quick-margin-list"]
 .. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Set up a service account for data tiering^].
-* Assign the predefined Storage Admin role to the tiering service account.
-* Grant the Cloud Manager service account with access to this tiering service account by providing the _Service Account User_ role.
+* Assign the predefined _Storage Admin_ role to the tiering service account.
+* Add the Cloud Manager service account as a _Service Account User_ to the tiering service account.
 +
-You can provide the user role in step 3 of the wizard when you create the tiering service account, or https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_user_for_a_service_account[grant the role after the service account was created^].
+You can provide the user role https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[in step 3 of the wizard when you create the tiering service account], or https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_user_for_a_service_account[grant the role after the service account was created^].
 +
 You'll need to select the tiering service account later when you create a Cloud Volumes ONTAP working environment. This tiering service account is different from the Cloud Manager service account that you created in step 2.
 
