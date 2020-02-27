@@ -32,6 +32,9 @@ Cloud Compliance provides several tools that can help you with your compliance e
 Cloud Compliance can scan data from the following types of working environments:
 
 * Cloud Volumes ONTAP in AWS and Azure
+* Amazon S3
++
+Cloud Compliance can scan the Amazon S3 buckets that are in the same AWS account in which Cloud Manager is installed.
 * Azure NetApp Files
 +
 For Azure NetApp Files, Cloud Compliance can scan volumes that are in the same region as Cloud Manager. When you activate compliance scans on an Azure NetApp Files working environment, Cloud Compliance scans _all_ of the volumes in the region.

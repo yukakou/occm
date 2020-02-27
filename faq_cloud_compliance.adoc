@@ -18,7 +18,7 @@ This FAQ can help if you’re just looking for a quick answer to a question.
 
 == What is Cloud Compliance?
 
-Cloud Compliance is a new NetApp cloud offering. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data across your Azure NetApp Files configurations and Cloud Volumes ONTAP systems hosted in AWS or Azure.
+Cloud Compliance is a new NetApp cloud offering. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data across your Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS or Azure, and Amazon S3 buckets.
 
 Cloud Compliance provides pre-defined parameters (such as sensitive information types and categories) to address new data compliance regulations for data privacy and sensitivity, such as GDPR, CCPA, and more.
 
@@ -40,7 +40,9 @@ https://cloud.netapp.com/cloud-compliance[Learn more about the use cases for Clo
 
 == What types of data can be scanned with Cloud Compliance?
 
-Cloud Compliance supports scanning of unstructured data over NFS and CIFS protocols. Currently Cloud Compliance scans data managed by Cloud Volumes ONTAP and Azure NetApp Files.
+Cloud Compliance supports scanning of unstructured data over NFS and CIFS protocols that are managed by Cloud Volumes ONTAP and Azure NetApp Files.
+
+Cloud Compliance can also scan data stored on Amazon S3 buckets.
 
 link:concept_cloud_compliance.html#how-scans-work[Learn how scans work].
 
@@ -79,6 +81,8 @@ The following reports are available for Cloud Compliance:
 Privacy Risk Assessment report:: Provides privacy insights from your data and a privacy risk score. link:task_generating_compliance_reports.html[Learn more].
 
 Data Subject Access Request report:: Enables you to extract a report of all files that contain information regarding a data subject’s specific name or personal identifier. link:task_responding_to_dsar.html[Learn more].
+
+PCI DSS report:: Helps you identify the distribution of credit card information across your files.
 
 Reports on a specific information type:: Reports are available that include details about the identified files that contain personal data and sensitive personal data. You can also see files broken down by category and file type. link:task_controlling_private_data.html[Learn more].
 
