@@ -20,6 +20,54 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager 3.8.2 (1 Mar 2020)
+
+* <<Amazon S3 working environments>>
+* <<Cloud Compliance enhancements>>
+* <<NFS version for volumes>>
+
+=== Amazon S3 working environments
+
+Cloud Manager now automatically discovers information about the Amazon S3 buckets that reside in the AWS account where it's installed. This enables you to easily see details about your S3 buckets, including the region, access level, storage class, and whether the bucket is used with Cloud Volumes ONTAP for backups or data tiering. And you can scan the S3 buckets with Cloud Compliance, as described down below.
+
+image:screenshot_amazon_s3.gif[A screenshot that shows the details of an Amazon S3 working environment: the total number of buckets and total number of regions, the number of buckets with active services, and then a table that shows details about each S3 bucket.]
+
+=== Cloud Compliance enhancements
+
+The following enhancements are now available for Cloud Compliance.
+
+* *Support for Amazon S3*
++
+Cloud Compliance can now scan your Amazon S3 buckets to identify the personal and sensitive data that resides in S3 object storage.
++
+link:task_scanning_s3.html[Learn how to get started].
+
+* *Investigation page*
++
+A new Investigation page is now available for each type of personal file, sensitive personal file, category, and file type. The page shows details about the affected files and enables you to sort by the files that include the most personal data, sensitive personal data, and names of data subjects. This page replaces the CSV report that was previously available.
++
+Here's a sample:
++
+image:screenshot_compliance_investigation.gif[A screenshot of the investigation page.]
++
+link:task_controlling_private_data.html[Learn more about the Investigation page].
+
+* *PCI DSS Report*
++
+A new Payment Card Industry Data Security Standard (PCI DSS) Report is now available. This report can help you identify the distribution of credit card information across your files. You can view how many files contain credit card information, whether the working environments are protected by encryption or ransomware protection, retention details, and more.
++
+link:task_generating_compliance_reports.html[Learn more about the PCI DSS report].
+
+* *New sensitive personal data type*
++
+Cloud Compliance can now find ICD-10-CM Medical Codes, which are used in the medical and health industry.
+
+=== NFS version for volumes
+
+You can now select the NFS version to enable on a volume when you create or edit a volume for Cloud Volumes ONTAP.
+
+image:screenshot_nfs_version.gif[A screenshot that shows the volume details screen where you can enable NFSv3, NFSv4, or both.]
+
 == Cloud Manager 3.8.1 update (16 Feb 2020)
 
 We released a few enhancements to Cloud Manager 3.8.1.
