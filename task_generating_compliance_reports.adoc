@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_generating_compliance_reports.html
-keywords: report, privacy, risk, privacy risk assessment, compliance status, severity, compliance, privacy risk, data subjects, privacy
-summary: The Privacy Risk Assessment Report provides an overview of your organization's privacy risk status. Generate the report and send it to other groups in your organization, including executives, compliance teams, and legal teams.
+keywords: report, privacy, risk, privacy risk assessment, compliance status, severity, compliance, privacy risk, data subjects, privacy, credit cards, pci dss
+summary: Cloud Compliance provides reports that you can use to better understand the status of your organization's data privacy program.
 ---
 
-= Viewing the Privacy Risk Assessment Report
+= Viewing compliance reports
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,13 @@ summary: The Privacy Risk Assessment Report provides an overview of your organiz
 :imagesdir: ./media/
 
 [.lead]
-The Privacy Risk Assessment Report provides an overview of your organization’s privacy risk status, as required by privacy regulations such as GDPR and CCPA.
+Cloud Compliance provides reports that you can use to better understand the status of your organization's data privacy program.
 
 NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Compliance identifies. You should always validate the information by reviewing the data.
 
-The report includes the following information:
+== Privacy Risk Assessment Report
+
+The Privacy Risk Assessment Report provides an overview of your organization’s privacy risk status, as required by privacy regulations such as GDPR and CCPA. The report includes the following information:
 
 Compliance status:: A severity score (see below for more details) and the distribution of data, whether it's non-sensitive, personal, or sensitive personal.
 
@@ -25,7 +27,7 @@ Assessment overview:: A breakdown of the types of personal data found, as well a
 
 Data subjects in this assessment:: The number of people by location for which national identifiers were found.
 
-== Generating the Privacy Risk Assessment Report
+=== Generating the Privacy Risk Assessment Report
 
 Go to the Compliance tab to generate the report.
 
@@ -41,7 +43,7 @@ image:screenshot_privacy_risk_assessment.gif[A screen shot of the Compliance tab
 
 Cloud Compliance generates a PDF report that you can review and send to other groups as needed.
 
-== Severity score
+=== Severity score
 
 Cloud Compliance calculates the severity score for the Privacy Risk Assessment Report on the basis of three variables:
 
@@ -70,6 +72,36 @@ The logic used to determine the score is as follows:
 | 10 | Three of the variables are larger 15%
 
 |===
+
+== PCI DSS Report
+
+The Payment Card Industry Data Security Standard (PCI DSS) Report can help you identify the distribution of credit card information across your files. The report includes the following information:
+
+Overview:: How many files contain credit card information and in which working environments.
+
+Encryption:: The percentage of files containing credit card information that are on encrypted or unencrypted working environments. This information is specific to Cloud Volumes ONTAP.
+
+Ransomware Protection:: The percentage of files containing credit card information that are on working environments that do or don't have ransomware protection enabled. This information is specific to Cloud Volumes ONTAP.
+
+Retention:: The timeframe in which the files were last modified, which is helpful because you shouldn't keep credit card information for longer than you need to process it.
+
+Distribution of Credit Card Information:: The working environments where the credit card information was found and whether encryption and ransomware protection are enabled.
+
+=== Generating the PCI DSS Report
+
+Go to the Compliance tab to generate the report.
+
+.Steps
+
+. At the top of Cloud Manager, click *Compliance*.
+
+. Under *Reports*, click the download icon next to *PCI DSS Report*.
++
+image:screenshot_pci_dss.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click Privacy Risk Assessment.]
+
+.Result
+
+Cloud Compliance generates a PDF report that you can review and send to other groups as needed.
 
 == Filtering data in reports
 
