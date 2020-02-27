@@ -46,8 +46,8 @@ Here's an example that shows a search for the name _john doe_:
 image:screenshot_dsar_search.gif[A screenshot that shows a search for the name "John Doe" for a DSAR.]
 
 . Choose one of the available options:
-* *Download File List Report*: A list of the files that contain information on the data subject.
-+
-NOTE: If there are more than 10,000 results, only the top 10,000 appear in the report (support for more will be added later).
-
 * *Download DSAR Report*: A formal response to the access request that you can send to the data subject. This report contains automatically-generated information based on data that Cloud Compliance found on the data subject and is designed to be used as a template. You should complete the form and review it internally before sending it to the data subject.
+
+* *Investigate Results*: A page that enables you to investigate the data by searching, sorting, expanding details for a specific file, and by downloading the file list.
++
+NOTE: If there are more than 10,000 results, only the top 10,000 appear in the file list.
