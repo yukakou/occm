@@ -107,52 +107,80 @@ entries:
             url: /task_installing_azure_germany.html
           - title: Get started in AWS C2S
             url: https://docs.netapp.com/us-en/occm/media/c2s.pdf
-      - title: Keep Cloud Manager running
-        url: /concept_keep_up.html
-  - title: Deploy Cloud Volumes ONTAP
-    entries:
-      - title: Before you begin
-        url: /reference_before.html
       - title: Log in to Cloud Manager
         url: /task_logging_in.html
-      - title: Plan your configuration
-        url: /task_planning_your_config.html
-      - title: Find your system ID
-        url: /task_finding_system_id.html
-      - title: Enable Flash Cache
-        url: /task_enabling_flash_cache.html
-      - title: Launch Cloud Volumes ONTAP in AWS
-        url: /task_deploying_otc_aws.html
-      - title: Launch Cloud Volumes ONTAP in Azure
-        url: /task_deploying_otc_azure.html
-      - title: Launch Cloud Volumes ONTAP in GCP
-        url: /task_deploying_gcp.html
-      - title: Register pay-as-you-go systems
-        url: /task_registering.html
-      - title: Set up Cloud Volumes ONTAP
-        url: /task_setting_up_ontap_cloud.html
-  - title: Provision storage
+      - title: Keep Cloud Manager running
+        url: /concept_keep_up.html
+  - title: Manage Cloud Volumes ONTAP
     entries:
-      - title: Create volumes, aggregates, and LUNs
-        url: /task_provisioning_storage.html
-      - title: Tier inactive data to object storage
-        url: /task_tiering.html
-      - title: Use ONTAP as persistent storage
-        url: /task_connecting_kubernetes.html
-      - title: Encrypt volumes with NetApp Volume Encryption
-        url: /task_encrypting_volumes.html
-      - title: Manage existing storage
-        url: /task_managing_storage.html
-  - title: Replicate and protect data
+      - title: Deploy Cloud Volumes ONTAP
+        entries:
+          - title: Before you begin
+            url: /reference_before.html
+          - title: Plan your configuration
+            url: /task_planning_your_config.html
+          - title: Find your system ID
+            url: /task_finding_system_id.html
+          - title: Enable Flash Cache
+            url: /task_enabling_flash_cache.html
+          - title: Launch a system in AWS
+            url: /task_deploying_otc_aws.html
+          - title: Launch a system in Azure
+            url: /task_deploying_otc_azure.html
+          - title: Launch a system in GCP
+            url: /task_deploying_gcp.html
+          - title: Register pay-as-you-go systems
+            url: /task_registering.html
+          - title: Set up Cloud Volumes ONTAP
+            url: /task_setting_up_ontap_cloud.html
+      - title: Provision storage
+        entries:
+          - title: Create volumes, aggregates, and LUNs
+            url: /task_provisioning_storage.html
+          - title: Tier inactive data to object storage
+            url: /task_tiering.html
+          - title: Use ONTAP as persistent storage
+            url: /task_connecting_kubernetes.html
+          - title: Encrypt volumes with NetApp Volume Encryption
+            url: /task_encrypting_volumes.html
+          - title: Manage existing storage
+            url: /task_managing_storage.html
+      - title: Replicate and protect data
+        entries:
+          - title: Replicate data between systems
+            url: /task_replicating_data.html
+          - title: Back up to Amazon S3
+            url: /task_backup_to_s3.html
+          - title: Sync data to Amazon S3
+            url: /task_syncing_s3.html
+      - title: Administer Cloud Volumes ONTAP
+        entries:
+          - title: Connect to Cloud Volumes ONTAP
+            url: /task_connecting_to_otc.html
+          - title: Update software
+            url: /task_updating_ontap_cloud.html
+          - title: Modify system configurations
+            url: /task_modifying_ontap_cloud.html
+          - title: Stop and start systems
+            url: /task_managing_state.html
+          - title: Monitor AWS costs
+            url: /task_monitoring_costs.html
+          - title: Improve ransomware protection
+            url: /task_protecting_ransomware.html
+          - title: Add existing systems
+            url: /task_adding_ontap_cloud.html
+          - title: Delete systems
+            url: /task_deleting_working_env.html
+  - title: Manage on-prem ONTAP clusters
+    url: /task_discovering_ontap.html
+  - title: Provision volumes for file services
     entries:
-      - title: Discover and manage ONTAP clusters
-        url: /task_discovering_ontap.html
-      - title: Replicate data between systems
-        url: /task_replicating_data.html
-      - title: Back up to Amazon S3
-        url: /task_backup_to_s3.html
-      - title: Sync data to Amazon S3
-        url: /task_syncing_s3.html
+      - title: Azure NetApp Files
+        url: /task_manage_anf.html
+      - title: Cloud Volumes Service for AWS
+        url: /task_manage_cvs_aws.html
+  - title: View Amazon S3 buckets
+    url: /task_viewing_amazon_s3.html
   - title: Gain insight into data privacy
     entries:
       - title: Learn about Cloud Compliance
@@ -173,24 +201,6 @@ entries:
         url: /task_managing_compliance.html
       - title: FAQ
         url: /faq_cloud_compliance.html
-  - title: Administer Cloud Volumes ONTAP
-    entries:
-      - title: Connect to Cloud Volumes ONTAP
-        url: /task_connecting_to_otc.html
-      - title: Update software
-        url: /task_updating_ontap_cloud.html
-      - title: Modify system configurations
-        url: /task_modifying_ontap_cloud.html
-      - title: Stop and start systems
-        url: /task_managing_state.html
-      - title: Monitor AWS costs
-        url: /task_monitoring_costs.html
-      - title: Improve ransomware protection
-        url: /task_protecting_ransomware.html
-      - title: Add existing systems
-        url: /task_adding_ontap_cloud.html
-      - title: Delete systems
-        url: /task_deleting_working_env.html
   - title: Administer Cloud Manager
     entries:
       - title: Update Cloud Manager
@@ -209,12 +219,6 @@ entries:
         url: /task_restoring.html
       - title: Uninstall Cloud Manager
         url: /task_uninstalling.html
-  - title: Provision volumes for file services
-    entries:
-      - title: Azure NetApp Files
-        url: /task_manage_anf.html
-      - title: Cloud Volumes Service for AWS
-        url: /task_manage_cvs_aws.html
   - title: APIs and automation
     entries:
       - title: API Developer Guide
@@ -223,8 +227,6 @@ entries:
         url: /reference_infrastructure_as_code.html
   - title: Reference
     entries:
-      - title: FAQ for Cloud Central integration
-        url: /reference_integration_faq.html
       - title: Supported configurations for Cloud Volumes ONTAP
         url: https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html
       - title: Supported regions
