@@ -83,3 +83,15 @@ Some of the fields in this page are self-explanatory. The following table descri
 
 | Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
 |===
+
+== Replicating data
+
+You can replicate data between Cloud Volumes ONTAP systems and ONTAP clusters by choosing a one-time data replication, which can help you move data to and from the cloud, or a recurring schedule, which can help with disaster recovery or long-term retention.
+
+link:task_replicating_data.html[Click here for more details].
+
+== Use ONTAP as persistent storage
+
+Cloud Manager can automate the deployment of NetApp Trident on Kubernetes clusters so you can use ONTAP as persistent storage for containers.
+
+link:task_connecting_kubernetes.html[Click here for more details].
