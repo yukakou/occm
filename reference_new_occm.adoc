@@ -38,7 +38,7 @@ The following enhancements are now available for Cloud Compliance.
 
 * *Support for Amazon S3*
 +
-Cloud Compliance can now scan your Amazon S3 buckets to identify the personal and sensitive data that resides in S3 object storage.
+Cloud Compliance can now scan your Amazon S3 buckets to identify the personal and sensitive data that resides in S3 object storage. Cloud Compliance can scan any bucket in the account, regardless if it was created for a NetApp solution.
 +
 link:task_scanning_s3.html[Learn how to get started].
 

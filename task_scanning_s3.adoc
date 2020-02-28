@@ -13,7 +13,7 @@ summary: Complete a few steps to get started with Cloud Compliance for Amazon S3
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started with Cloud Compliance for Amazon S3.
+Cloud Compliance can scan your Amazon S3 buckets to identify the personal and sensitive data that resides in S3 object storage. Cloud Compliance can scan any bucket in the account, regardless if it was created for a NetApp solution.
 
 == Quick start
 
