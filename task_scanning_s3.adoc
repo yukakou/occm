@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_scanning_s3.html
-keywords: cloud compliance, get started, enable cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, amazon s3, aws s3
+keywords: cloud compliance, amazon s3, s3 buckets, amazon s3 buckets, scan s3 buckets, scan amazon s3 buckets, enable compliance s3, enable compliance on s3, s3 working environment
 summary: Complete a few steps to get started with Cloud Compliance for Amazon S3.
 ---
 
@@ -40,7 +40,7 @@ Review the following prerequisites to make sure that you have a supported config
 
 === Requirements specific to S3
 
-The first three prerequisites are specific to scanning S3 buckets.
+The first three requirements are specific to scanning S3 buckets.
 
 [[policy-requirements]]
 Ensure that Cloud Manager is in the same account as your S3 buckets::
@@ -79,7 +79,7 @@ NOTE: You can't use a proxy to get to S3 over the internet.
 
 === General requirements
 
-The remaining prerequisites apply to Cloud Compliance in general, whether you're scanning Amazon S3, Cloud Volumes ONTAP, or Azure NetApp Files. If you've already enabled Cloud Compliance for Cloud Volumes ONTAP or Azure NetApp Files, then you can skip these.
+The remaining requirements apply to Cloud Compliance in general, whether you're scanning Amazon S3, Cloud Volumes ONTAP, or Azure NetApp Files. If you've already enabled Cloud Compliance for Cloud Volumes ONTAP or Azure NetApp Files, then you can skip these.
 
 Enable outbound internet access::
 Cloud Compliance requires outbound internet access. If your virtual network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. Note that Cloud Manager deploys the Cloud Compliance instance in the same subnet as Cloud Manager.

@@ -28,7 +28,7 @@ link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 
 
 === Amazon S3 working environments
 
-Cloud Manager now automatically discovers information about the Amazon S3 buckets that reside in the AWS account where it's installed. This enables you to easily see details about your S3 buckets, including the region, access level, storage class, and whether the bucket is used with Cloud Volumes ONTAP for backups or data tiering. And you can scan the S3 buckets with Cloud Compliance, as described down below.
+Cloud Manager now automatically discovers information about the Amazon S3 buckets that reside in the AWS account where it's installed. This enables you to easily see details about your S3 buckets, including the region, access level, storage class, and whether the bucket is used with Cloud Volumes ONTAP for backups or data tiering. And you can scan the S3 buckets with Cloud Compliance, as described below.
 
 image:screenshot_amazon_s3.gif[A screenshot that shows the details of an Amazon S3 working environment: the total number of buckets and total number of regions, the number of buckets with active services, and then a table that shows details about each S3 bucket.]
 
