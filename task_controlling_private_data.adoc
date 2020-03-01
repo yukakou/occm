@@ -27,9 +27,17 @@ For some types of personal data, Cloud Compliance uses _proximity validation_ to
 
 . At the top of Cloud Manager, click *Compliance*.
 
-. Download the details for one of the top 2 file types directly from the main screen, or click *View All* and then download the list for any of the personal data types that were found.
+. To investigate the details for all personal data, click the icon next to the personal data percentage.
 +
-image:screenshot_personal_files.gif[A screenshot of the personal files dialog box where you can click the download button next to a personal data type. The result is a CSV file with details about the files.]
+image:screenshot_compliance_personal.gif[]
+
+. To investigate the details for a specific type of personal data, click *View All* and then click the *Investigate Results* icon for a specific type of personal data.
++
+image:screenshot_personal_files.gif[A screenshot of the personal files dialog box where you can click the Investigate Results icon next to a personal data type.]
+
+. Investigate the data by searching, sorting, expanding details for a specific file, or by downloading the file list.
++
+image:screenshot_compliance_investigation_page.gif[]
 
 === Types of personal data
 
@@ -51,7 +59,7 @@ The personal data found in files can be general personal data or national identi
 | Bulgarian ID (Unified Civil Number) | Yes
 | California Driver's License | Yes
 | Cyprus Tax Identification Number (TIC) | Yes
-| Danish Tax Identification Number (CPR) | Yes
+| Danish ID (CPR) | Yes
 | Estonian ID (Isikukood) | Yes
 | Finnish ID (henkilötunnus) | Yes
 | French Tax Identification Number (SPI) | Yes
@@ -60,19 +68,19 @@ The personal data found in files can be general personal data or national identi
 | Irish ID (PPS) | Yes
 | Israeli ID | Yes
 | Italian ID (Codice Fiscale) | Yes
-| Latvian Tax Identification Number | Yes
+| Latvian ID | Yes
 | Lithuanian ID (Asmens kodas) | Yes
 | Luxembourg ID | Yes
-| Malta ID | Yes
+| Maltese ID Card Number | Yes
 | Netherlands ID (BSN) | Yes
 | Polish Tax Identification Number | Yes
-| Portuguese Tax Identification Number (NIF) | Yes
-| Romanian Tax Identification Number | Yes
-| Slovakian Tax Identification Number | Yes
+| Portuguese ID (NIF) | Yes
+| Romanian ID (CNP) | Yes
+| Slovak Tax Identification Number | Yes
 | Slovenian Tax Identification Number | Yes
 | South African ID | Yes
-| Spanish Tax Identification Number | Yes
-| Swedish Tax Identification Number | Yes
+| Spanish ID (DNI) | Yes
+| Swedish ID (personnummer) | Yes
 | U.K. National Insurance Number (NINO) | Yes
 | USA Social Security Number (SSN) | Yes
 |===
@@ -93,9 +101,15 @@ NOTE: Only English is supported when scanning for sensitive personal data. Suppo
 
 . At the top of Cloud Manager, click *Compliance*.
 
-. Download the details for one of the top 2 file types directly from the main screen, or click *View All* and then download the list for any of the sensitive personal data types that were found.
+. To investigate the details for all sensitive personal data, click the icon next to the sensitive personal data percentage.
 +
-image:screenshot_sensitive_personal_files.gif[A screenshot of the sensitive personal files dialog box where you can click the download button next to a personal data type. The result is a CSV file with details about the files.]
+image:screenshot_compliance_sensitive_personal.gif[]
+
+. To investigate the details for a specific type of sensitive personal data, click *View All* and then click the *Investigate Results* icon for a specific type of sensitive personal data.
++
+image:screenshot_sensitive_personal_files.gif[A screenshot of the sensitive personal files dialog box where you can click the Investigate Results icon next to a personal data type.]
+
+. Investigate the data by searching, sorting, expanding details for a specific file, or by downloading the file list.
 
 === Types of sensitive personal data
 
@@ -104,6 +118,7 @@ The sensitive personal data that Cloud Compliance can find in files includes the
 Criminal Procedures Reference::	Data concerning a natural person’s criminal convictions and offenses.
 Ethnicity Reference::	Data concerning a natural person’s racial or ethnic origin.
 Health Reference:: Data concerning a natural person’s health.
+ICD-10-CM Medical Codes:: Codes used in the medical and health industry.
 Philosophical Beliefs Reference::	Data concerning a natural person’s philosophical beliefs.
 Religious Beliefs Reference::	Data concerning a natural person’s religious beliefs.
 Sex Life or Orientation Reference::	Data concerning a natural person’s sex life or sexual orientation.
@@ -112,7 +127,7 @@ Sex Life or Orientation Reference::	Data concerning a natural person’s sex lif
 
 Cloud Compliance takes the data that it scanned and divides it into different types of categories. Categories are topics based on AI analysis of the content and metadata of each file. <<Types of categories,See the list of categories>>.
 
-Categories can help you understand what's happening with your data by showing you the type of information that you have. For example, a category like resumes or employee contracts can include sensitive data. When you download the CSV report, you might find that employee contracts are stored in an unsecure location. You can then correct that issue.
+Categories can help you understand what's happening with your data by showing you the type of information that you have. For example, a category like resumes or employee contracts can include sensitive data. When you investigate the results, you might find that employee contracts are stored in an unsecure location. You can then correct that issue.
 
 NOTE: Only English is supported for categories. Support for more languages will be added later.
 
@@ -122,9 +137,11 @@ NOTE: Only English is supported for categories. Support for more languages will 
 
 . At the top of Cloud Manager, click *Compliance*.
 
-. Download the details for one of the top 4 file types directly from the main screen, or click *View All* and then download the list for any of the categories.
+. Click the *Investigate Results* icon for one of the top 4 categories directly from the main screen, or click *View All* and then click the icon for any of the categories.
 +
-image:screenshot_categories.gif[A screenshot of the categories dialog box where you can click the download button next to a category. The result is a CSV file with details about the files in that category.]
+image:screenshot_categories.gif[A screenshot of the categories dialog box where you can click the Investigate Results icon next to a category.]
+
+. Investigate the data by searching, sorting, expanding details for a specific file, or by downloading the file list.
 
 === Types of categories
 
@@ -189,9 +206,11 @@ Reviewing your file types can help you control your sensitive data because you m
 
 . At the top of Cloud Manager, click *Compliance*.
 
-. Download the details for one of the top 4 file types directly from the main screen, or click *View All* and then download the list for any of the file types.
+. Click the *Investigate Results* icon for one of the top 4 file types directly from the main screen, or click *View All* and then click the icon for any of the file types.
 +
-image:screenshot_file_types.gif[A screenshot of the file types dialog box where you can click the download button next to a file type. The result is a CSV file with details about the files.]
+image:screenshot_file_types.gif[A screenshot of the file types dialog box where you can click the Investigate Results icon next to a file type.]
+
+. Investigate the data by searching, sorting, expanding details for a specific file, or by downloading the file list.
 
 == Filtering data on the dashboard
 
@@ -231,13 +250,15 @@ Cloud Compliance is in a Controlled Availability release and we are constantly i
 
 == What’s included in each file list report (CSV file)
 
-The dashboard enables you to download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list (support for more will be added later).
+Each Investigation page enables you to download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list.
 
 Each file list includes the following information:
 
 * File name
 * Location type
-* Location
+* Working environment
+* Storage repository
+* Protocol
 * File path
 * File type
 * Category
@@ -245,4 +266,4 @@ Each file list includes the following information:
 * Sensitive personal information
 * Deletion detection date
 +
-A deletion detection date identifies the date that the file was deleted or moved. This enables you to identify when sensitive files have been moved. Deleted files aren't part of the file number count that appears in the dashboard. The files only appear in the CSV reports.
+A deletion detection date identifies the date that the file was deleted or moved. This enables you to identify when sensitive files have been moved. Deleted files aren't part of the file number count that appears in the dashboard or on the Investigation page. The files only appear in the CSV reports.

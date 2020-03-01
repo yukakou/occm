@@ -114,20 +114,7 @@ You should skip this step if you want to use iSCSI. Cloud Manager enables you to
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
-[cols=2*,options="header",cols="25,75"]
-|===
-| Field
-| Description
-
-| Size |	The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
-
-| Access control (for NFS only) |	An export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.
-
-| Permissions and Users / Groups (for CIFS only) |	These fields enable you to control the level of access to a share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
-
-| Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
-
-|===
+include::/_include/create_volume.adoc[]
 +
 The following image shows the Volume page filled out for the CIFS protocol:
 +
