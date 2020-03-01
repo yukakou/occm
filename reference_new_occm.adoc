@@ -25,6 +25,7 @@ link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 
 * <<Amazon S3 working environments>>
 * <<Cloud Compliance enhancements>>
 * <<NFS version for volumes>>
+* <<Support for Azure US Gov regions>>
 
 === Amazon S3 working environments
 
@@ -67,6 +68,12 @@ Cloud Compliance can now find ICD-10-CM Medical Codes, which are used in the med
 You can now select the NFS version to enable on a volume when you create or edit a volume for Cloud Volumes ONTAP.
 
 image:screenshot_nfs_version.gif[A screenshot that shows the volume details screen where you can enable NFSv3, NFSv4, or both.]
+
+=== Support for Azure US Gov regions
+
+Cloud Volumes ONTAP HA pairs are now supported in Azure US Gov regions.
+
+https://cloud.netapp.com/cloud-volumes-global-regions[See the list of supported Azure regions^].
 
 == Cloud Manager 3.8.1 update (16 Feb 2020)
 
