@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_scanning_s3.html
 keywords: cloud compliance, amazon s3, s3 buckets, amazon s3 buckets, scan s3 buckets, scan amazon s3 buckets, enable compliance s3, enable compliance on s3, s3 working environment
-summary: Complete a few steps to get started with Cloud Compliance for Amazon S3.
+summary: Cloud Compliance can scan your Amazon S3 buckets to identify the personal and sensitive data that resides in S3 object storage. Cloud Compliance can scan any bucket in the account, regardless if it was created for a NetApp solution.
 ---
 
 = Getting started with Cloud Compliance for Amazon S3
@@ -15,21 +15,33 @@ summary: Complete a few steps to get started with Cloud Compliance for Amazon S3
 [.lead]
 Cloud Compliance can scan your Amazon S3 buckets to identify the personal and sensitive data that resides in S3 object storage. Cloud Compliance can scan any bucket in the account, regardless if it was created for a NetApp solution.
 
+== Pricing
+
+Cloud Compliance for Amazon S3 is offered for no cost at this time. We'll notify you 30 days before the free trial is about to end. Pricing will be published at a later date.
+
 == Quick start
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Review prerequisites
+==== image:number1.png[Number 1] Deploy Cloud Manager in AWS
 
 [role="quick-margin-para"]
-Ensure that your cloud environment can meet the prerequisites, which includes deploying Cloud Manager in the same account as your S3 buckets, preparing an IAM role, setting up connectivity from Cloud Compliance to S3, and more. <<Reviewing prerequisites,See the complete list>>.
+If you haven't already done so, log in to https://cloud.netapp.com[Cloud Central] and deploy Cloud Manager in AWS.
 
-==== image:number2.png[Number 2] Enable Cloud Compliance
+[role="quick-margin-para"]
+Cloud Manager must be running in the AWS account that has the S3 buckets that you want to scan. Cloud Manager automatically discovers the S3 buckets and displays them in an Amazon S3 working environment.
+
+==== image:number2.png[Number 2] Set up your cloud environment
+
+[role="quick-margin-para"]
+Ensure that your cloud environment can meet the requirements for Cloud Compliance, which includes preparing an IAM role, setting up connectivity from Cloud Compliance to S3, and more. <<Reviewing prerequisites,See the complete list>>.
+
+==== image:number3.png[Number 3] Enable Cloud Compliance
 
 [role="quick-margin-para"]
 Select the Amazon S3 working environment, click *Enable Compliance*, and select an IAM role that includes the required permissions.
 
-==== image:number3.png[Number 3] Configure buckets
+==== image:number4.png[Number 4] Configure buckets
 
 [role="quick-margin-para"]
 Select the buckets that you'd like to scan and Cloud Compliance will start scanning them.
