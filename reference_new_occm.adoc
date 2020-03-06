@@ -89,7 +89,9 @@ We released a few enhancements to Cloud Manager 3.8.1.
 
 * You can set the backup schedule to daily, weekly, or monthly.
 
-* Cloud Manager no longer needs to set up interface VPC endpoints to the Backup to S3 service.
+* Cloud Manager no longer needs to set up _private links_ to the Backup to S3 service.
++
+NOTE: Cloud Volumes ONTAP does need a connection to S3 through a VPC Endpoint to the Amazon S3 service. link:task_backup_to_s3.html#requirements[Learn more about the requirements].
 
 Additional S3 permissions are required for these enhancements. The IAM role that provides Cloud Manager with permissions must include permissions from the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^].
 
