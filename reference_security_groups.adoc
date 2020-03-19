@@ -172,7 +172,7 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 | UDP | 137 | Node management LIF | Active Directory forest | NetBIOS name service
 | UDP | 138 | Node management LIF | Active Directory forest | NetBIOS datagram service
 | TCP | 139 | Node management LIF | Active Directory forest | NetBIOS service session
-| TCP | 389 | Node management LIF | Active Directory forest | LDAP
+| TCP & UDP | 389  | Node management LIF | Active Directory forest | LDAP
 | TCP | 445 | Node management LIF | Active Directory forest | Microsoft SMB/CIFS over TCP with NetBIOS framing
 | TCP | 464 | Node management LIF | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
 | UDP | 464 | Node management LIF | Active Directory forest | Kerberos key administration
@@ -181,7 +181,7 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 | UDP | 137 | Data LIF (NFS, CIFS) | Active Directory forest | NetBIOS name service
 | UDP | 138 | Data LIF (NFS, CIFS) | Active Directory forest | NetBIOS datagram service
 | TCP | 139 | Data LIF (NFS, CIFS) | Active Directory forest | NetBIOS service session
-| TCP | 389 | Data LIF (NFS, CIFS) | Active Directory forest | LDAP
+| TCP & UDP | 389 | Data LIF (NFS, CIFS) | Active Directory forest | LDAP
 | TCP | 445 | Data LIF (NFS, CIFS) | Active Directory forest | Microsoft SMB/CIFS over TCP with NetBIOS framing
 | TCP | 464 | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
 | UDP | 464 | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos key administration
