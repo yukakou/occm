@@ -214,7 +214,7 @@ image:screenshot_file_types.gif[A screenshot of the file types dialog box where 
 
 === Types of files
 
-Cloud Compliance scans files for categories and metadata insights and displays all file types in the file types section of the dashboard.
+Cloud Compliance scans all files for category and metadata insights and displays all file types in the file types section of the dashboard.
 
 But when Cloud Compliance detects Personal Identifiable Information (PII), or when it performs a DSAR search, only the following file formats are supported:
 .PDF, .DOCX, .DOC, .PPTX, .XLS, .XLSX, .CSV, .TXT, .RTF, and .JSON.
