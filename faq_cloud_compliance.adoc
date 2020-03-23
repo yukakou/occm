@@ -100,6 +100,13 @@ link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works].
 
 Scan performance can vary based on the network bandwidth and the average file size in your cloud environment.
 
+== Which file types are supported?
+
+Cloud Compliance scans all files for categories and metadata insights and displays all file types in the file types section of the dashboard.
+
+But when Cloud Compliance detects Personal Identifiable Information (PII), or when it performs a DSAR search, only the following file formats are supported:
+.PDF, .DOCX, .DOC, .PPTX, .XLS, .XLSX, .CSV, .TXT, .RTF, and .JSON.
+
 == How do I enable Cloud Compliance?
 
 You can enable Cloud Compliance when you create a new working environment. You can enable it on existing working environments from the *Compliance* tab (on first activation only) or by selecting a specific working environment.
