@@ -63,6 +63,12 @@ Cloud Compliance requires outbound internet access. If your virtual network uses
 |
 \https://cloud-compliance-support-netapp.s3.us-west-1.amazonaws.com
 \https://hub.docker.com
+\https://auth.docker.io
+\https://registry-1.docker.io
+\https://index.docker.io/
+\https://dseasb33srnrn.cloudfront.net/
+\https://production.cloudflare.docker.com/
+
 | Provides access to software images, manifests, and templates.
 
 | \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
