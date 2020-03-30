@@ -93,7 +93,7 @@ We released a few enhancements to Cloud Manager 3.8.1.
 +
 NOTE: Cloud Volumes ONTAP does need a connection to S3 through a VPC Endpoint to the Amazon S3 service. link:task_backup_to_s3.html#requirements[Learn more about the requirements].
 
-Additional S3 permissions are required for these enhancements. The IAM role that provides Cloud Manager with permissions must include permissions from the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^].
+Additional S3 permissions are required for these enhancements. The IAM role that provides Cloud Manager with permissions must include permissions from the latest https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager policy^].
 
 link:task_backup_to_s3.html[Learn more about Backup to S3].
 

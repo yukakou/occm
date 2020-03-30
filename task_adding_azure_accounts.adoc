@@ -76,7 +76,7 @@ You must bind the service principal to one or more Azure subscriptions and assig
 
 . Create a custom role:
 
-.. Download the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Azure policy^].
+.. Download the https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager Azure policy^].
 
 .. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
 +
