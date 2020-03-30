@@ -19,7 +19,7 @@ You can launch a single node system or an HA pair in Azure by creating a Cloud V
 
 * Make sure that your Azure account has the required permissions, especially if you upgraded from a previous release and are deploying an HA system for the first time.
 +
-The latest permissions are in the https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Central policy for Azure^].
+The latest permissions are in the https://mysupport.netapp.com/info/web/ECMP11022837.html[NetApp Cloud Central policy for Azure^].
 
 * You should have chose a configuration and obtained Azure networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
 

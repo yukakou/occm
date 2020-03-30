@@ -17,7 +17,7 @@ Cloud Manager enables you to choose the AWS account in which you want to deploy 
 
 == The initial AWS account
 
-When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS account that has permissions to launch the Cloud Manager instance. The required permissions are listed in the https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Central policy for AWS^].
+When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS account that has permissions to launch the Cloud Manager instance. The required permissions are listed in the https://mysupport.netapp.com/info/web/ECMP11022837.html[NetApp Cloud Central policy for AWS^].
 
 When Cloud Central launches the Cloud Manager instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP in that AWS account. link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[Review how Cloud Manager uses the permissions].
 
