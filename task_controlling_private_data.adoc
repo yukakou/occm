@@ -56,6 +56,7 @@ The personal data found in files can be general personal data or national identi
 
 .27+| National Identifiers
 | Belgian ID (Numero National) | Yes
+| Brazilian ID (CPF) | Yes
 | Bulgarian ID (Unified Civil Number) | Yes
 | California Driver's License | Yes
 | Cyprus Tax Identification Number (TIC) | Yes
@@ -183,22 +184,31 @@ Services::
 Support::
 *	Complaints and Tickets
 
-Other::
+Metadata categories::
 * Application Data
 * Archive Files
 * Audio
+* Business Application Data
 * CAD Files
 * Code
 * Database and index files
+* Design Files
+* Email Application Data
 * Executables
+* Financial Application Data
+* Health Application Data
 * Images
 * Logs
+* Miscellaneous Documents
+* Miscellaneous Presentations
+* Miscellaneous Spreadsheets
+* Videos
 
 == File types
 
-Cloud Compliance takes the data that it scanned and breaks it down by file type. Cloud Compliance can display all file types found in the scans.
+Cloud Compliance takes the data that it scanned and breaks it down by file type. Reviewing your file types can help you control your sensitive data because you might find that certain file types are not stored correctly.
 
-Reviewing your file types can help you control your sensitive data because you might find that certain file types are not stored correctly. For example, you might be storing CAD files that include very sensitive information about your organization. If they are unsecured, you can take control of the sensitive data by restricting permissions or moving the files to another location.
+For example, you might be storing CAD files that include very sensitive information about your organization. If they are unsecured, you can take control of the sensitive data by restricting permissions or moving the files to another location.
 
 === Viewing file types
 
@@ -211,6 +221,13 @@ Reviewing your file types can help you control your sensitive data because you m
 image:screenshot_file_types.gif[A screenshot of the file types dialog box where you can click the Investigate Results icon next to a file type.]
 
 . Investigate the data by searching, sorting, expanding details for a specific file, or by downloading the file list.
+
+=== Types of files
+
+Cloud Compliance scans all files for category and metadata insights and displays all file types in the file types section of the dashboard.
+
+But when Cloud Compliance detects Personal Identifiable Information (PII), or when it performs a DSAR search, only the following file formats are supported:
+.PDF, .DOCX, .DOC, .PPTX, .XLS, .XLSX, .CSV, .TXT, .RTF, and .JSON.
 
 == Filtering data on the dashboard
 
