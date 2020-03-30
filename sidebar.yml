@@ -151,8 +151,6 @@ entries:
             url: /task_replicating_data.html
           - title: Back up to Amazon S3
             url: /task_backup_to_s3.html
-          - title: Sync data to Amazon S3
-            url: /task_syncing_s3.html
       - title: Administer Cloud Volumes ONTAP
         entries:
           - title: Connect to Cloud Volumes ONTAP
