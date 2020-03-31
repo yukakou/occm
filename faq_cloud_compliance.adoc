@@ -62,9 +62,11 @@ link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works].
 
 == How much does Cloud Compliance cost?
 
-Cloud Compliance is offered as part of Cloud Volumes ONTAP and Azure NetApp Files. There are no additional charges from NetApp. Additional costs might be required in the future for customized capabilities.
+The cost depends on the type of working environment that you're scanning.
 
-You will incur costs from your cloud provider for an instance and possibly for data transfer costs. link:concept_cloud_compliance.html#cost[Learn more].
+* Cloud Compliance is offered as part of Cloud Volumes ONTAP and Azure NetApp Files. There are no additional charges from NetApp, but you will incur costs from your cloud provider. link:concept_cloud_compliance.html#cost[Learn more].
+
+* You need to pay to scan your Amazon S3 buckets. https://cloud.netapp.com/cloud-compliance#pricing[Learn about pricing^].
 
 == How often does Cloud Compliance scan my data?
 

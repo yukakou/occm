@@ -17,9 +17,9 @@ Cloud Compliance can scan your Amazon S3 buckets to identify the personal and se
 
 == Pricing
 
-https://cloud.netapp.com/???[Learn about Cloud Compliance for Amazon S3 pricing^].
+You need to pay to scan your Amazon S3 buckets. https://cloud.netapp.com/cloud-compliance#pricing[Learn about pricing^].
 
-A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends. link:.html[Learn how to subscribe].
+A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends. <<Subscribing from the AWS Marketplace,Learn how to subscribe>>.
 
 == Quick start
 
@@ -171,6 +171,7 @@ The Cloud Compliance instance uses a private IP address to ensure that the index
 +
 TIP: If you're accessing Cloud Manager from a public IP address, then your web browser probably isn't running on a host inside the network.
 
+[[subscribing-to-aws-marketplace]]
 == Subscribing from the AWS Marketplace
 
 A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends.
