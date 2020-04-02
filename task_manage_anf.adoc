@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_manage_anf.html
-keywords: azure netapp files, create volumes, delete volumes, create nfs volumes, delete nfs volumes, netapp account, capacity pool, create capacity pool, azure netapp files permissions, azure permissions, mount path, get mount path, find mount path, mount volume
-summary: View and create NFS volumes for Azure NetApp Files directly from Cloud Manager.
+keywords: azure netapp files, create volumes, delete volumes, create nfs volumes, delete nfs volumes, netapp account, capacity pool, create capacity pool, azure netapp files permissions, azure permissions, mount path, get mount path, find mount path, mount volume, cloud compliance, cloud sync, migrate, migration, sync data, data sync, sync anf, cloud sync anf
+summary: Cloud Manager enables you to manage volumes for Azure NetApp Files directly from its interface. You can view volumes, create NFS volumes, migrate data to Azure NetApp Files from an NFS or SMB server, and scan Azure NetApp Files using Cloud Compliance.
 ---
 
 = Managing volumes for Azure NetApp Files
@@ -13,7 +13,7 @@ summary: View and create NFS volumes for Azure NetApp Files directly from Cloud 
 :imagesdir: ./media/
 
 [.lead]
-View and create NFS volumes for https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^] directly from Cloud Manager.
+Cloud Manager enables you to manage volumes for https://cloud.netapp.com/azure-netapp-files[Azure NetApp Files^] directly from its interface. You can view volumes, create NFS volumes, migrate data to Azure NetApp Files from an NFS or SMB server, and scan Azure NetApp Files using Cloud Compliance.
 
 == Setting up your configuration
 
@@ -49,11 +49,11 @@ When your configuration is set up, Cloud Manager automatically displays Azure Ne
 
 image:screenshot_anf_cloud.gif[A screenshot of an Azure NetApp Files cloud on the Working Environments page.]
 
-== Provisioning storage
+== Provisioning volumes
 
-Cloud Manager enables you to create and delete volumes for Azure NetApp Files.
+Manage volumes for Azure NetApp Files directly from Cloud Manager.
 
-=== Creating volumes
+=== Creating NFS volumes
 
 Cloud Manager enables you to create NFSv3 volumes for Azure NetApp Files.
 
@@ -114,9 +114,9 @@ image:screenshot_anf_volume_menu.gif[A screenshot that shows a volume and the me
 
 . Confirm that you want to delete the volume.
 
-== Syncing data to Azure NetApp Files
+== Migrating data to Azure NetApp Files
 
-You can migrate NFS or SMB data to Azure NetApp Files directly from Cloud Manager. Just select the working environment and click *Sync*. Data syncs are powered by NetApp's Cloud Sync service.
+You can migrate NFS or SMB data to Azure NetApp Files directly from Cloud Manager. Just select the working environment and click *Sync*. Data migrations are powered by NetApp's Cloud Sync service.
 
 === Overview
 
@@ -124,11 +124,9 @@ Cloud Sync is NetApp's service for rapid and secure data synchronization. Cloud 
 
 image:https://docs.netapp.com/us-en/cloudsync/media/diagram_cloud_sync_overview.gif[Conceptual image that shows data flowing from a source to a target. The data broker software acts as a mediator and polls the Cloud Sync service for tasks.]
 
-At this time, Cloud Sync's integration with Cloud Manager enables you to sync data from a source NFS or SMB server to Azure NetApp Files. Azure NetApp Files is supported as a target only.
+At this time, Cloud Sync's integration with Cloud Manager enables you to migrate data from a source NFS or SMB server to Azure NetApp Files through a one-time copy. Azure NetApp Files is supported as a target only. The target must be a volume that uses the https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[Ultra service level^]. No other service levels are supported.
 
-When you create a sync relationship for Azure NetApp Files, you need to deploy a data broker in Azure. The NetApp data broker software syncs data from a source to a target (this is called a _sync relationship_). You can use a single data broker for multiple sync relationships.
-
-After the initial copy, the service syncs any changed data based on the schedule that you set.
+When you set up a data sync to Azure NetApp Files, you need to deploy a data broker in Azure. The NetApp data broker software syncs data from a source to a target (this is called a _sync relationship_). You can use a single data broker for multiple sync relationships.
 
 === Cost
 
@@ -163,9 +161,11 @@ If you need to limit outbound connectivity, https://docs.netapp.com/us-en/clouds
 +
 The desired version must be enabled on the server.
 
-=== Creating a sync relationship
+=== Migrating data
 
-When you create a sync relationship, the Cloud Sync service copies files from the source to the target. After the initial copy, the service syncs any changed data every 24 hours.
+When you create a sync relationship, the Cloud Sync service copies files from the source to the target volume. The schedule for the sync relationship is a one-time copy--there are no additional syncs in the schedule. You can sync the data again by <<Managing sync relationships,managing the relationship>>.
+
+The target volume in Azure NetApp Files must be a volume that uses the https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[Ultra service level^]. No other service levels are supported.
 
 .Steps
 
@@ -173,8 +173,7 @@ When you create a sync relationship, the Cloud Sync service copies files from th
 
 . Click *Sync Data*.
 +
-image:screenshot_.gif[]
-!!! Add a screenshot here.
+image:screenshot_sync_anf.gif[A screenshot that shows the Sync Data option that appears on the right side of the screen after you select an Azure NetApp Files working environment.]
 
 . Click *Log in to Azure*.
 +
@@ -186,37 +185,37 @@ This is the subscription that includes the volume to which you want to sync the 
 
 . Select a volume and click *Continue*.
 +
-While you can select an SMB or NFS volume, the remaining steps describe what happens if you select an SMB volume.
+This is the volume to which the data will be tiered.
++
+The target volume must be a volume that uses the https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[Ultra service level^]. No other service levels are supported.
 
-. Enter Active Directory credentials for the SMB volume and click *Continue*.
+. If you selected an SMB volume, enter Active Directory credentials for the volume and click *Continue*.
 
 . Follow the steps in the Sync Data Wizard.
 +
 .. *Data Broker*: Select an existing data broker or provide information to deploy a new data broker and click *Continue*.
 +
-image:screenshot_data_broker_azure.gif[]
-+
-!!! Add a screenshot here.
+image:screenshot_data_broker_azure.gif[A screenshot that shows the Data Broker page filled out with details needed to deploy the data broker in Azure.]
 +
 Keep the page open until the deployment is complete. It can take up to 5 minutes to deploy a new data broker.
 
-.. *Target Shares*: Select the share to which you want to sync the data and then click *Continue*.
+.. *Target Shares/Directories*: Select the share or directory to which you want to sync the data and then click *Continue*.
 
-.. *SMB Server*: Now you need to provide details about the source server that contains the data. Select an SMB version, enter the IP address of the source server, specify the SMB credentials, and then choose whether to copy Access Control Lists (ACLs) to the target.
+.. *SMB/NFS Server*: Now you need to provide details about the source server that contains the data that you want to migrate. Select an existing SMB or NFS server that you previously entered, or enter information about a new source server and click *Continue*.
 
-.. *Shares*: Select the source share that you want to sync.
+.. *Shares/Directories*: Select the source share or directory that you want to sync to Azure NetApp Files.
 
 .. *Review*: Review details about the sync relationship and then click *Sync*.
 +
-image:screenshot_.gif[]
-+
-!!! Add a screenshot here.
+image:screenshot_cloud_sync_review.gif[A screenshot that shows the review screen, which shows you data going from your source server and directory to your target.]
 
 .. Click *View in Dashboard* to view details about the sync relationship.
 
 === Managing sync relationships
 
-A few actions are available from within Cloud Manager to manage your sync relationships. You can go to the Cloud Sync service to access additional actions, such as managing sync settings or accelerating performance.
+A few actions are available from within Cloud Manager to manage your existing sync relationships. You can immediately sync the data again and you can delete relationships.
+
+If needed, you can click a link to go directly to the Cloud Sync service where you can access additional actions, such as managing sync settings or accelerating performance.
 
 .Steps
 
@@ -226,29 +225,27 @@ A few actions are available from within Cloud Manager to manage your sync relati
 
 . Select one of the available options.
 +
-image:screenshot_.gif[]
-+
-!!! Add a screenshot here.
+image:screenshot_cloud_sync_menu.gif[]
 
 . If you want to access additional options, click *View in Cloud Sync*.
 +
-image:screenshot_.gif[]
-+
-!!! Add a screenshot here.
+image:screenshot_view_cloud_sync.gif[A screenshot that shows the View in Cloud Sync link that's available in the top right of the Sync page.]
 +
 The Cloud Sync service opens in another browser tab. If you can't see your sync relationships, then make sure that you're viewing the right Cloud Central account. https://docs.netapp.com/us-en/cloudsync/concept_accounts.html[Learn more about accounts^].
 
+== Scanning volumes for data privacy compliance
+
+Using Artificial Intelligence (AI) driven technology, Cloud Compliance can help you understand data context and identify sensitive data that resides in your Azure NetApp Files accounts. link:concept_cloud_compliance.html[Learn more].
+
 == Getting help
 
-Use the Cloud Manager chat for general service questions.
+For technical support issues associated with Azure NetApp Files, use the Azure portal to log a support request to Microsoft. Select your associated Microsoft subscription and select the *Azure NetApp Files* service name under *Storage*. Provide the remaining information required to create your Microsoft support request.
 
-For technical support issues associated with Azure NetApp Files, use the Azure portal to log a support request to Microsoft. Select your associated Microsoft subscription and select the *Azure NetApp Files* service name under *Storage.* Provide the remaining information required to create your Microsoft support request.
-
-Cloud Manager provides a local AutoSupport download under the *Support Dashboard* menu option. This 7z file contains an Azure debug file to show inbound and outbound communication to your Azure NetApp Files account.
+For issues related to Cloud Sync and Azure NetApp Files, you can start with NetApp using your Cloud Sync serial number directly from the Cloud Sync service. You will need to access the Cloud Sync service through the link in Cloud Manager. https://docs.netapp.com/us-en/cloudsync/reference_additional_info.html[View the process to enable Cloud Sync support^].
 
 == Limitations
 
-* Cloud Manager doesn't support SMB volumes.
+* Cloud Manager can create NFSv3 volumes for Azure NetApp Files. It doesn't support creating SMB volumes.
 
 * Cloud Manager doesn't enable you to manage capacity pools or volume snapshots.
 
