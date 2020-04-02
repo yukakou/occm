@@ -25,9 +25,9 @@ Most configurations are supported. If you have a Cloud Volumes ONTAP Standard, P
 ==== image:number2.png[Number 2] Ensure connectivity between Cloud Volumes ONTAP and object storage
 
 [role="quick-margin-list"]
-* For AWS, you'll need a VPC Endpoint to S3. <<Requirements for tiering data in AWS,Learn more>>.
-* For Azure, you won't need to do anything as long as Cloud Manager has the required permissions. <<Requirements for tiering data in Microsoft Azure,Learn more>>.
-* For GCP, you need to configure the subnet for Private Google Access and set up a service account. <<Requirements for tiering data in Google Cloud Platform,Learn more>>.
+* For AWS, you'll need a VPC Endpoint to S3. <<Requirements to tier cold data to AWS S3,Learn more>>.
+* For Azure, you won't need to do anything as long as Cloud Manager has the required permissions. <<Requirements to tier cold data to Azure Blob storage,Learn more>>.
+* For GCP, you need to configure the subnet for Private Google Access and set up a service account. <<Requirements to tier cold data to a Google Cloud Storage bucket,Learn more>>.
 
 ==== image:number3.png[Number 3] Choose a tiering policy when creating, modifying, or replicating a volume
 
