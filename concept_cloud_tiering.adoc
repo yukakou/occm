@@ -1,0 +1,106 @@
+---
+sidebar: sidebar
+permalink: concept_cloud_tiering.html
+keywords: cloud tiering, overview, conceptual, value, features, cost, charging, service connector
+summary: Cloud Tiering is a NetApp-managed service that can reduce your on-premises storage costs by automatically tiering inactive data to object storage in the cloud. This enables you to extend your data center to the public cloud without changing your application layer.
+---
+
+= Learn about Cloud Tiering
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+NetApp's Cloud Tiering service extends your data center to the public cloud by automatically tiering inactive data from ONTAP clusters to object storage. This frees valuable space on the cluster for more workloads, without making changes to the application layer. Cloud Tiering can reduce costs in your data center and enables a switch from a CAPEX model to an OPEX model.
+
+The Cloud Tiering service leverages the capabilities of _FabricPool_. FabricPool is a NetApp Data Fabric technology that enables automated tiering of data to low-cost object storage. Active data remains on high-performance SSDs, while inactive data is tiered to low-cost object storage while preserving ONTAP data efficiencies.
+
+== Features
+
+Cloud Tiering offers automation, monitoring, reports, and a common management interface:
+
+* Automation makes it easier to set up and manage data tiering from ONTAP clusters to the cloud
+* A single pane of glass removes the need to independently manage FabricPool across several clusters
+* Reports show the amount of active and inactive data on each cluster
+* A tiering health status helps you identify and correct issues as they occur
+
+For more details about the value that Cloud Tiering provides, https://cloud.netapp.com/cloud-tiering[check out the Cloud Tiering page on NetApp Cloud Central^].
+
+NOTE: While Cloud Tiering can significantly reduce storage footprints, it is not a backup solution.
+
+== Supported object storage providers
+
+You can tier inactive data from an ONTAP cluster to Amazon S3, Microsoft Azure Blob storage, or Google Cloud Storage.
+
+== Cost
+
+Pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP tiering license called _FabricPool_, or a combination of both. A 30-day free trial is available for your first cluster if you don’t have a license. https://docs.netapp.com/us-en/cloud-tiering/concept_licensing.html[Learn how licensing works^].
+
+== Cloud Tiering integration with Cloud Manager
+
+The Cloud Tiering service is available from https://cloud.netapp.com[NetApp Cloud Central^] as a standalone service. But it's also integrated into Cloud Manager to make it easier for you to manage your hybrid cloud storage from a single interface. The integration with Cloud Manager also reduces complexity because there's no need to deploy the NetApp Service Connector because it's part of Cloud Manager.
+
+If you switch between Cloud Manager and https://tiering.cloud.netapp.com/[the interface for Cloud Tiering^], you'll see the same set of clusters. Think of it as the same application presented through different interfaces.
+
+== How Cloud Tiering works
+
+Cloud Tiering is a NetApp-managed service that uses FabricPool technology to automatically tier inactive (cold) data from your on-premises ONTAP clusters to object storage in the cloud. Connections to ONTAP take place from Cloud Manager.
+
+The following image shows the relationship between each component:
+
+image:diagram_cloud_tiering.png[An architecture image that shows the Cloud Tiering service with a connection to the Service Connector in your cloud provider, the Service Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage in your cloud provider. Active data resides in the ONTAP cluster, while inactive data resides in object storage.]
+
+At a high level, Cloud Tiering works like this:
+
+. You discover your on-prem cluster from Cloud Manager.
+. You set up tiering by providing details about your object storage, including the bucket/container and a storage class or access tier.
+. Cloud Manager configures ONTAP to use the object storage provider and discovers the amount of active and inactive data on the cluster.
+. You choose the volumes to tier and the tiering policy to apply to those volumes.
+. ONTAP starts tiering inactive data to the object store, as soon as the data has reached the thresholds to be considered inactive (see <<Volume tiering policies>>).
+
+=== Object storage
+
+Each ONTAP cluster tiers inactive data to a single object store. When you set up data tiering, you have the choice to add a new bucket/container or to select an existing bucket/container, along with a storage class or access tier.
+
+* link:reference_aws_support.html[Learn about supported S3 storage classes]
+* link:reference_azure_support.html[Learn about supported Azure Blob access tiers]
+* link:reference_google_support.html[Learn about supported Google Cloud storage classes]
+
+=== Volume tiering policies
+
+When you select the volumes that you want to tier, you choose a _volume tiering policy_ to apply to each volume. A tiering policy determines when or whether the user data blocks of a volume are moved to the cloud.
+
+No tiering policy:: Keeps the data on a volume in the performance tier, preventing it from being moved to the cloud.
+
+Cold snapshots (Snapshot only):: ONTAP tiers cold Snapshot blocks in the volume that are not shared with the active file system to object storage. If read, cold data blocks on the cloud tier become hot and are moved to the performance tier.
++
+Data is tiered only after an aggregate has reached 50% capacity and when the data has reached the cooling period, which is approximately 2 days.
++
+NOTE: Writes from the cloud tier to the performance tier are disabled if performance tier capacity is greater than 70%. If this occurs, blocks are accessed directly from the cloud tier.
+
+Cold user data (Auto):: ONTAP tiers all cold blocks in the volume (not including metadata) to object storage. The cold data includes not just Snapshot copies but also cold user data from the active file system.
++
+If read by random reads, cold data blocks on the cloud tier become hot and are moved to the performance tier. If read by sequential reads, such as those associated with index and antivirus scans, cold data blocks on the cloud tier stay cold and are not written to the performance tier.
++
+Data is tiered only after an aggregate has reached 50% capacity and when the data has reached the cooling period, which is approximately 31 days. The cooling period is the time that user data in a volume must remain inactive for the data to be considered "cold" and moved to the object store.
++
+NOTE: Writes from the cloud tier to the performance tier are disabled if performance tier capacity is greater than 70%. If this occurs, blocks are accessed directly from the cloud tier.
+
+All user data (All):: All data (not including metadata) is _immediately_ moved to the cloud tier. There is no need to wait 48 hours for new blocks in a volume to become cold. Note that blocks located in the volume prior to the All policy being set require 48 hours to become cold.
++
+If read, cold data blocks on the cloud tier stay cold and are not written back to the performance tier. This policy is available starting with ONTAP 9.6.
++
+Take the following into consideration before you choose this tiering policy:
++
+* Tiering data immediately reduces storage efficiencies (inline only).
+* You should use this policy only if you are confident that cold data on the volume will not change.
+* Object storage is not transactional and will result in significant fragmentation if subjected to change.
+* Consider the impact of SnapMirror transfers before assigning the All tiering policy to source volumes in data protection relationships.
++
+Because data is tiered immediately, SnapMirror will read data from the cloud tier rather than the performance tier. This will result in slower SnapMirror operations--possibly slowing other SnapMirror operations later in queue—even if they are using different tiering policies.
+
+All DP user data (Backup):: All data on a data protection volume (not including metadata) is immediately moved to the cloud tier. If read, cold data blocks on the cloud tier stay cold and are not written back to the performance tier (starting with ONTAP 9.4).
++
+NOTE: This policy is available for ONTAP 9.5 or earlier. It was replaced with the *All* tiering policy starting with ONTAP 9.6.
