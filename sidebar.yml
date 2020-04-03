@@ -169,8 +169,36 @@ entries:
             url: /task_adding_ontap_cloud.html
           - title: Delete systems
             url: /task_deleting_working_env.html
-  - title: Manage on-prem ONTAP clusters
-    url: /task_discovering_ontap.html
+  - title: Manage ONTAP clusters
+    entries:
+      - title: Discover ONTAP clusters
+        url: /task_discovering_ontap.html
+      - title: Manage ONTAP volumes
+        url: /task_provisioning_onprem.html
+      - title: Tier on-prem data to the cloud
+        entries:
+          - title: Learn about Cloud Tiering
+            url: /concept_cloud_tiering.html
+          - title: Tier data to Amazon S3
+            url: /task_tiering_onprem_aws.html
+          - title: Tier data to Azure Blob storage
+            url: /task_tiering_onprem_azure.html
+          - title: Tier data to Google Cloud Storage
+            url: /task_tiering_onprem_gcp.html
+          - title: Licensing
+            url: /task_licensing_cloud_tiering.html
+          - title: Manage data tiering
+            url: /task_managing_tiering.html
+          - title: FAQ
+            url: /faq_cloud_tiering.html
+          - title: Reference
+            entries:
+              - title: Supported Amazon S3 storage classes and regions
+                url: /reference_aws_support.html
+              - title: Supported Azure access tiers and regions
+                url: /reference_azure_support.html
+              - title: Supported Google Cloud storage classes and regions
+                url: /reference_google_support.html
   - title: Provision volumes for file services
     entries:
       - title: Azure NetApp Files
@@ -189,6 +217,8 @@ entries:
             url: /task_getting_started_compliance.html
           - title: Amazon S3
             url: /task_scanning_s3.html
+          - title: On-premises ONTAP data
+            url: /task_scanning_onprem.html
       - title: Gain visibility and control of data
         url: /task_controlling_private_data.html
       - title: Generate reports
