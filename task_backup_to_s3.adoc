@@ -204,9 +204,9 @@ All backups are retained in S3 until you delete them from Cloud Manager. Backups
 
 At this time, you must use an API to delete a backup.
 
-.Steps
+image:screenshot_s3_backups_delete.gif[A screenshot of the delete backup API: /cbs/backups/delete]
 
-. 
+For more details about APIs, see the https://docs.netapp.com/us-en/occm/api.html[API Developer Guide^].
 
 == Disabling Backup to S3
 
@@ -238,7 +238,7 @@ NOTE: Cloud Manager enables the https://docs.aws.amazon.com/AmazonS3/latest/dev/
 
 === S3 storage class
 
-Each backup is associated with the S3 Standard storage class.
+Backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
 
 === All supported volumes are backed up
 
