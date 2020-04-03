@@ -174,7 +174,7 @@ entries:
       - title: Discover ONTAP clusters
         url: /task_discovering_ontap.html
       - title: Manage ONTAP volumes
-        url: /task_provisioning_onprem.html
+        url: /task_provisioning_ontap.html
       - title: Tier on-prem data to the cloud
         entries:
           - title: Learn about Cloud Tiering
