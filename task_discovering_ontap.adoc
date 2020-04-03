@@ -1,22 +1,18 @@
 ---
 sidebar: sidebar
 permalink: task_discovering_ontap.html
-keywords: ontap, cluster, discover, manage, provision, provisioning, volumes, add, adding, discovering, fas, aff
-summary: Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering these clusters enables you to easily replicate data across your hybrid cloud environment directly from Cloud Manager.
+keywords: ontap, cluster, discover, manage, discovering, fas, aff, discover onprem, discover aff cluster, discover cluster, add cluster
+summary: Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering an ONTAP cluster enables you to provision storage, replicate data, and tier cold data from an on-prem cluster to the cloud.
 ---
 
-= Discovering and managing ONTAP clusters
+= Discovering ONTAP clusters
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
-Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering these clusters enables you to easily replicate data across your hybrid cloud environment directly from Cloud Manager.
-
-== Discovering ONTAP clusters
-
-Discovering an ONTAP cluster in Cloud Manager enables you to provision storage and replicate data across your hybrid cloud.
+Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering an ONTAP cluster enables you to provision storage, replicate data, and tier cold data from an on-prem cluster to the cloud.
 
 .Before you begin
 
@@ -44,54 +40,4 @@ image:screenshot_discover_ontap.gif[A screenshot that shows an example of the ON
 
 .Result
 
-Cloud Manager discovers the cluster. You can now create volumes, replicate data to and from the cluster, and launch OnCommand System Manager to perform advanced tasks.
-
-== Provisioning volumes on ONTAP clusters
-
-Cloud Manager enables you to provision NFS and CIFS volumes on ONTAP clusters.
-
-.Before you begin
-
-NFS or CIFS must be set up on the cluster. You can set up NFS and CIFS using System Manager or the CLI.
-
-.About this task
-
-You can create volumes on existing aggregates. You cannot create new aggregates from Cloud Manager.
-
-.Steps
-
-. On the Working Environments page, double-click the name of the ONTAP cluster on which you want to provision volumes.
-
-. Click *Add New Volume*.
-
-. On the Create New Volume page, enter details for the volume, and then click *Create*.
-+
-Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
-+
-[cols=2*,options="header",cols="2,6"]
-|===
-| Field
-| Description
-
-| Size | The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
-
-| Access control (for NFS only) | An export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.
-
-| Permissions and Users / Groups (for CIFS only) | These fields enable you to control the level of access to a share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
-
-| Usage Profile | Usage profiles define the NetApp storage efficiency features that are enabled for a volume.
-
-| Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
-|===
-
-== Replicating data
-
-You can replicate data between Cloud Volumes ONTAP systems and ONTAP clusters by choosing a one-time data replication, which can help you move data to and from the cloud, or a recurring schedule, which can help with disaster recovery or long-term retention.
-
-link:task_replicating_data.html[Click here for more details].
-
-== Use ONTAP as persistent storage
-
-Cloud Manager can automate the deployment of NetApp Trident on Kubernetes clusters so you can use ONTAP as persistent storage for containers.
-
-link:task_connecting_kubernetes.html[Click here for more details].
+Cloud Manager discovers the cluster. You can now create volumes, replicate data to and from the cluster, and launch OnCommand System Manager to perform advanced tasks.``
