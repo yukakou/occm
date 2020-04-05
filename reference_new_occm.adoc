@@ -20,6 +20,68 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager 3.8.3 (5 Apr 2020)
+
+* <<Cloud Tiering integration>>
+* <<Data migration to Azure NetApp Files>>
+* <<Cloud Compliance enhancements>>
+* <<Backup to S3 enhancements>>
+* <<iSCSI volumes using APIs>>
+
+=== Cloud Tiering integration
+
+NetApp's Cloud Tiering service is now available from within Cloud Manager. Cloud Tiering enables you to tier data from an on-premises ONTAP cluster to lower-cost object storage in the cloud. This frees up high-performance storage space on the cluster for more workloads.
+
+link:concept_cloud_tiering.html[Learn more].
+
+=== Data migration to Azure NetApp Files
+
+You can now migrate NFS or SMB data to Azure NetApp Files directly from Cloud Manager. Data syncs are powered by NetApp's Cloud Sync service.
+
+link:task_manage_anf.html#migrating-data-to-azure-netapp-files[Learn how to migrate data to Azure NetApp Files].
+
+=== Cloud Compliance enhancements
+
+The following enhancements are now available for Cloud Compliance.
+
+* *30-day free trial for Amazon S3*
++
+A 30-day free trial is now available to scan Amazon S3 data with Cloud Compliance. If you previously enabled Cloud Compliance on Amazon S3, your 30-day free trial is active starting today (5 Apr 2020).
++
+A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends. link:task_scanning_s3.html#subscribing-to-aws-marketplace[Learn how to subscribe].
++
+https://cloud.netapp.com/cloud-compliance#pricing[Learn about pricing to scan Amazon S3].
+
+* *New personal data type*
++
+Cloud Compliance can now find a new national identifier in files: Brazilian ID (CPF).
++
+link:task_controlling_private_data.html#personal-data[Learn more about personal data types].
+
+* *Support for additional metadata categories*
++
+Cloud Compliance can now categorize your data into nine additional metadata categories. link:task_controlling_private_data.html#types-of-categories[See the full list of supported metadata categories].
+
+=== Backup to S3 enhancements
+
+The following enhancements are now available for the Backup to S3 service.
+
+* *S3 lifecycle policy for backups*
++
+Backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
+
+* *Deleting backups*
++
+You can now delete backups using a Cloud Manager API. link:task_backup_to_s3.html#deleting-backups[Learn more].
+
+* *Block public access*
++
+Cloud Manager now enables the https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html[Amazon S3 Block Public Access feature^] on the S3 bucket where backups are stored.
+
+=== iSCSI volumes using APIs
+
+The Cloud Manager APIs now enable you to create iSCSI volumes. link:api.html#_provisioning_iscsi_volumes[View an example here^].
+
 == Cloud Manager 3.8.2 (1 Mar 2020)
 
 * <<Amazon S3 working environments>>

@@ -13,11 +13,9 @@ summary: You can provision additional NFS and CIFS storage for your Cloud Volume
 :imagesdir: ./media/
 
 [.lead]
-You can provision additional NFS and CIFS storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates. If you need to create iSCSI storage, you should do so from System Manager.
+You can provision additional storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates.
 
 IMPORTANT: All disks and aggregates must be created and deleted directly from Cloud Manager. You should not perform these actions from another management tool. Doing so can impact system stability, hamper the ability to add disks in the future, and potentially generate redundant cloud provider fees.
-
-image:workflow_storage_provisioning.png[This illustration shows the steps to provision storage for Cloud Volumes ONTAP: if using NFS, create volumes in Cloud Manager and if using CIFS or iSCSI, create aggregates in Cloud Manager and then provision storage in System Manager.]
 
 == Creating FlexVol volumes
 
@@ -144,7 +142,11 @@ For help with disk type and disk size, see link:task_planning_your_config.html[P
 
 == Provisioning iSCSI LUNs
 
-If you want to create iSCSI LUNs, you need to do so from System Manager.
+Create iSCSI LUNs by using a Cloud Manager API or by going to System Manager.
+
+If you want to use the Cloud Manager APIs, link:api.html#_provisioning_iscsi_volumes[view an example here^].
+
+If you want to use System Manager, follow the steps below.
 
 .Before you begin
 

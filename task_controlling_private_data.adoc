@@ -56,6 +56,7 @@ The personal data found in files can be general personal data or national identi
 
 .27+| National Identifiers
 | Belgian ID (Numero National) | Yes
+| Brazilian ID (CPF) | Yes
 | Bulgarian ID (Unified Civil Number) | Yes
 | California Driver's License | Yes
 | Cyprus Tax Identification Number (TIC) | Yes
@@ -183,16 +184,25 @@ Services::
 Support::
 *	Complaints and Tickets
 
-Other::
+Metadata categories::
 * Application Data
 * Archive Files
 * Audio
+* Business Application Data
 * CAD Files
 * Code
 * Database and index files
+* Design Files
+* Email Application Data
 * Executables
+* Financial Application Data
+* Health Application Data
 * Images
 * Logs
+* Miscellaneous Documents
+* Miscellaneous Presentations
+* Miscellaneous Spreadsheets
+* Videos
 
 == File types
 

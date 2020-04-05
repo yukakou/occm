@@ -1,0 +1,28 @@
+---
+sidebar: sidebar
+permalink: task_licensing_cloud_tiering.html
+keywords: subscribe, trial, marketplace, subscription, paygo, pay, pay as you go, aws, tiering, cloud tiering
+summary: Pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP tiering license called FabricPool, or a combination of both.
+---
+
+= Set up licensing for Cloud Tiering
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP tiering license called _FabricPool_, or a combination of both. https://docs.netapp.com/us-en/cloud-tiering/concept_licensing.html[Learn how licensing works^].
+
+If a FabricPool license is already installed on your cluster, then you’re all set—there’s nothing else that you need to do. If you’d like to purchase a FabricPool license, https://docs.netapp.com/us-en/cloud-tiering/task_licensing.html#adding-a-tiering-license-to-ontap[learn how to get one and install it on the cluster^].
+
+If you want to pay-as-you-go, then you’ll need to set up licensing directly from the Cloud Tiering service, which is accessible from Cloud Central. Licensing for Cloud Tiering isn’t available through Cloud Manager at this time.
+
+.Steps to set up a PAYGO subscription
+
+. Log in to https://cloud.netapp.com/home[NetApp Cloud Central^].
+
+. From the Fabric View, click *Go to Cloud Tiering*.
+
+. Now that you’re in the Cloud Tiering service, https://docs.netapp.com/us-en/cloud-tiering/task_licensing.html[follow the steps in the Cloud Tiering documentation^] to subscribe from your cloud provider’s marketplace.

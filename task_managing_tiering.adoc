@@ -1,0 +1,84 @@
+---
+sidebar: sidebar
+permalink: task_managing_tiering.html
+keywords: discover, volumes, report, hot, cold, inactive, active, capacity, used capacity, savings, health, failed
+summary: Now that you've discovered and tiered data from your first ONTAP cluster, you can tier data from additional volumes, discover additional clusters, and more.
+---
+
+= Managing data tiering from your clusters
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Now that you've set up data tiering from your ONTAP clusters, you can tier data from additional volumes, change a volume's tiering policy, and more.
+
+== Tiering data from additional volumes
+
+Set up data tiering for additional volumes at any time--for example, after creating a new volume.
+
+.Steps
+
+. At the top of Cloud Manager, click *Tiering*.
+
+. From the *Cluster Dashboard*, click *Tier Volumes* for the cluster.
+
+. Choose a tiering policy for each volume and click *Continue*.
++
+link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
++
+image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_volumes_select.gif[A screenshot that shows volumes selected in the Select Source Volumes page.]
++
+TIP: You don't need to configure the object storage because it was already configured when you initially set up tiering for the cluster. ONTAP will tier inactive data from these volumes to the same object store.
+
+== Changing a volume's tiering policy
+
+Changing the tiering policy for a volume changes how ONTAP tiers cold data to object storage. The change starts from the moment that you change the policy--it changes only the subsequent tiering behavior for the volume.
+
+.Steps
+
+. At the top of Cloud Manager, click *Tiering*.
+
+. From the *Cluster Dashboard*, click *Tier Volumes* for the cluster.
+
+. Choose a tiering policy for each volume and click *Continue*.
++
+link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
+
+== Reviewing tiering info for a cluster
+
+You might want to see how much data is in the cloud tier and how much data is on disks. Or, you might want to see the amount of hot and cold data on the cluster's disks. Cloud Tiering provides this information for each cluster.
+
+.Steps
+
+. At the top of Cloud Manager, click *Tiering*.
+
+. From the *Cluster Dashboard*, click *More info* for a cluster.
++
+image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_more_info.gif[A screenshot that shows the More info button, which is available on the Cluster Dashboard for each cluster.]
+
+. Review details about the cluster.
++
+Here's an example:
++
+image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_cluster_info.gif[A screenshot that shows the cluster report, which details total used capacity, cluster used capacity, cluster information, and object storage information.]
+
+== Fixing operational health
+
+Failures can happen. When they do, Cloud Tiering displays a "Failed" operational health status on the Cluster Dashboard. The health reflects the status of the ONTAP system and Cloud Manager.
+
+.Steps
+
+. Identify any clusters that have an operational health of "Failed."
++
+image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_tiering_health.gif[A screenshot that shows a Failed tiering health status for a cluster.]
+
+. Hover over the image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_info_icon.gif[A screenshot of the i icon that shows the failure reason] icon to see the failure reason.
+
+. Correct the issue:
+
+.. Verify that the ONTAP cluster is operational and that it has an inbound and outbound connection to your object storage provider.
+
+.. Verify that Cloud Manager has outbound connections to the Cloud Tiering service, to the object store, and to the ONTAP clusters that it discovers.

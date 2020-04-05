@@ -41,12 +41,22 @@ For Azure NetApp Files, Cloud Compliance can scan volumes that are in the same r
 
 == Cost
 
-Cloud Compliance is an add-on service provided by NetApp at no extra cost. Activating Cloud Compliance requires deploying a cloud instance, which you will be charged for by your cloud provider.
+The cost to use Cloud Compliance depends on the type of working environment that you're scanning.
+
+=== Cloud Volumes ONTAP and Azure NetApp Files
+
+Cloud Compliance is an add-on service provided by NetApp at no extra cost. Activating Cloud Compliance requires deploying a cloud instance, which results in charges from your cloud provider.
 
 Data transfer costs depend on your setup. If Cloud Compliance and Cloud Volumes ONTAP are in the same Availability Zone and region, then there are no data transfer costs. But if Cloud Volumes ONTAP is in a _different_ Availability Zone or region, then you'll be charged by your cloud provider for data transfer costs. See these links for more details:
 
 * https://aws.amazon.com/ec2/pricing/on-demand/[AWS: Amazon EC2 Pricing^]
 * https://azure.microsoft.com/en-us/pricing/details/bandwidth/[Microsoft Azure: Bandwidth Pricing Details^]
+
+=== Amazon S3
+
+You need to pay to scan your Amazon S3 buckets. https://cloud.netapp.com/cloud-compliance#pricing[Learn about pricing^].
+
+A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends. link:task_scanning_s3#subscribing-to-aws-marketplace[Learn how to subscribe].
 
 == How Cloud Compliance works
 

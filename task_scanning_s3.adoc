@@ -17,7 +17,9 @@ Cloud Compliance can scan your Amazon S3 buckets to identify the personal and se
 
 == Pricing
 
-Cloud Compliance for Amazon S3 is offered for no cost at this time. We'll notify you 30 days before the free trial is about to end. Pricing will be published at a later date.
+You need to pay to scan your Amazon S3 buckets. https://cloud.netapp.com/cloud-compliance#pricing[Learn about pricing^].
+
+A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends. <<Subscribing from the AWS Marketplace,Learn how to subscribe>>.
 
 == Quick start
 
@@ -36,12 +38,20 @@ Cloud Manager must be running in the AWS account that has the S3 buckets that yo
 [role="quick-margin-para"]
 Ensure that your cloud environment can meet the requirements for Cloud Compliance, which includes preparing an IAM role, setting up connectivity from Cloud Compliance to S3, and more. <<Reviewing prerequisites,See the complete list>>.
 
-==== image:number3.png[Number 3] Enable Cloud Compliance
+==== image:number3.png[Number 3] Subscribe from the AWS Marketplace
+
+[role="quick-margin-para"]
+A subscription to the AWS Marketplace is required to scan Amazon S3 after the 30-day free trial ends.
+
+[role="quick-margin-para"]
+Click *Settings > Credentials* and click *Add Subscription* for the Instance Profile.
+
+==== image:number4.png[Number 4] Enable Cloud Compliance
 
 [role="quick-margin-para"]
 Select the Amazon S3 working environment, click *Enable Compliance*, and select an IAM role that includes the required permissions.
 
-==== image:number4.png[Number 4] Configure buckets
+==== image:number5.png[Number 5] Configure buckets
 
 [role="quick-margin-para"]
 Select the buckets that you'd like to scan and Cloud Compliance will start scanning them.
@@ -160,6 +170,31 @@ After Cloud Compliance is enabled, ensure that users access the Cloud Manager in
 The Cloud Compliance instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to AWS or Azure (for example, a VPN), or from a host that's inside the same network as the Cloud Compliance instance.
 +
 TIP: If you're accessing Cloud Manager from a public IP address, then your web browser probably isn't running on a host inside the network.
+
+[[subscribing-to-aws-marketplace]]
+== Subscribing from the AWS Marketplace
+
+A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends.
+
+These steps must be completed by a user who has the _Account Admin_ role.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
++
+image:screenshot_settings_icon.gif[]
+
+. Hover over the credentials for the AWS Instance Profile and click the action menu.
++
+The subscription must be added to the Instance Profile. Charging won't work otherwise.
+
+. Click *Add Subscription*.
++
+image:screenshot_add_subscription.gif[]
+
+. Click *Add Subscription*, click *Continue*, and follow the steps.
++
+video::video_subscribing_aws.mp4[width=848, height=480]
 
 == Enabling Cloud Compliance
 

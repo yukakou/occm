@@ -198,6 +198,16 @@ image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon 
 +
 image:screenshot_backup_to_s3_restore_options.gif[A screenshot that shows the restore options: a working environment to restore to, the name of the volume, and the volume info.]
 
+== Deleting backups
+
+All backups are retained in S3 until you delete them from Cloud Manager. Backups are not deleted when you delete a volume or when you delete the Cloud Volumes ONTAP system.
+
+At this time, you must use an API to delete a backup.
+
+image:screenshot_s3_backups_delete.gif[A screenshot of the delete backup API: /cbs/backups/delete]
+
+For more details about APIs, see the https://docs.netapp.com/us-en/occm/api.html[API Developer Guide^].
+
 == Disabling Backup to S3
 
 Disabling Backup to S3 disables backups of each volume on the system. Any existing backups will not be deleted.
@@ -224,9 +234,11 @@ Cloud Manager names the bucket as follows: netapp-backup-_clusteruuid_
 
 Be sure not to delete this bucket.
 
+NOTE: Cloud Manager enables the https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html[Amazon S3 Block Public Access feature^] on the S3 bucket.
+
 === S3 storage class
 
-Each backup is associated with the S3 Standard storage class.
+Backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
 
 === All supported volumes are backed up
 
