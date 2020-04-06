@@ -40,7 +40,7 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 
 .. Set up a service account that has the permissions that Cloud Manager needs to create and manage Cloud Volumes ONTAP systems in projects.
 +
-You'll associate this service account with the Cloud Manager VM in step 6.
+You'll associate this service account with the Cloud Manager VM in step 5.
 +
 * https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.8.0_GCP.yaml[Cloud Manager policy for GCP^]. Again, you'll need to use the gcloud command line.
 +
@@ -76,16 +76,11 @@ https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the foll
 
 [role="quick-margin-list"]
 * Cloud Deployment Manager V2 API
-* Cloud Resource Manager API
 * Cloud Logging API
+* Cloud Resource Manager API
 * Compute Engine API
 
-=== image:number5.png[Number 5] Subscribe from the GCP Marketplace
-
-[role="quick-margin-para"]
-https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager[Subscribe to Cloud Volumes ONTAP from the GCP Marketplace^] to ensure that there’s no disruption of service after your free trial ends. You’ll be charged from this subscription for every Cloud Volumes ONTAP PAYGO system that you create.
-
-=== image:number6.png[Number 6] Launch Cloud Manager from NetApp Cloud Central
+=== image:number5.png[Number 5] Launch Cloud Manager from NetApp Cloud Central
 
 [role="quick-margin-para"]
 Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance in GCP from https://cloud.netapp.com[Cloud Central^].
@@ -93,7 +88,7 @@ Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It 
 [role="quick-margin-para"]
 When you choose GCP as the cloud provider, you're prompted by Google to log in to your account and to grant permissions. Clicking "Allow" grants access to the compute APIs needed to deploy Cloud Manager.
 
-=== image:number7.png[Number 7] Launch Cloud Volumes ONTAP using Cloud Manager
+=== image:number6.png[Number 6] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]
 Once Cloud Manager is ready, just click Create, select the type of system that you would like to deploy, and complete the steps in the wizard. After 25 minutes, your first Cloud Volumes ONTAP system should be up and running.
