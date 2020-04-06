@@ -179,6 +179,7 @@ Sales::
 Services::
 *	RFI
 *	RFP
+* SOW
 *	Training
 
 Support::

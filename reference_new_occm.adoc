@@ -50,7 +50,7 @@ A 30-day free trial is now available to scan Amazon S3 data with Cloud Complianc
 +
 A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends. link:task_scanning_s3.html#subscribing-to-aws-marketplace[Learn how to subscribe].
 +
-https://cloud.netapp.com/cloud-compliance#pricing[Learn about pricing to scan Amazon S3].
+https://cloud.netapp.com/cloud-compliance#pricing[Learn about pricing to scan Amazon S3^].
 
 * *New personal data type*
 +
