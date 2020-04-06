@@ -15,28 +15,6 @@ summary: You can launch Cloud Volumes ONTAP instances in a single-system configu
 [.lead]
 You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA pair in AWS.
 
-== Subscribing from the AWS Marketplace
-
-Subscribe from the AWS Marketplace to pay for Cloud Volumes ONTAP as you go or so you can deploy Cloud Volumes ONTAP BYOL.
-
-=== Subscribing for PAYGO
-
-https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Subscribe from the AWS Marketplace^] to ensure that there's no disruption of service after your free trial of Cloud Volumes ONTAP ends. You'll be charged from this subscription for every Cloud Volumes ONTAP 9.6 and later PAYGO system that you create and each add-on feature that you enable.
-
-The following video shows the subscription process:
-
-video::video_subscribing_aws.mp4[width=848, height=480]
-
-TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, AWS shows subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS account, each IAM user needs to associate themselves with the subscription. If you see the message shown below, click the *click here* link to go to Cloud Central and complete the process.
-
-image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription page for Cloud Manager for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not.]
-
-=== Subscribing for BYOL
-
-If you're launching Cloud Volumes ONTAP by bringing your own license (BYOL), https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=cloud+volumes+ontap+byol[then you'll need to subscribe to that offering in the AWS Marketplace^].
-
-link:reference_aws_marketplace.html[Learn more about each AWS Marketplace page].
-
 == Launching a single-node Cloud Volumes ONTAP system in AWS
 
 If you want to launch Cloud Volumes ONTAP in AWS, you need to create a new working environment in Cloud Manager.
@@ -68,14 +46,6 @@ Some of the fields in this page are self-explanatory. The following table descri
 | Field
 | Description
 
-| Edit Credentials | Choose the AWS credentials and marketplace subscription to use with this Cloud Volumes ONTAP system.
-
-To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select AWS credentials that are associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace.
-
-Click *Add Subscription* to associate the selected credentials with a subscription.
-
-link:task_adding_aws_accounts.html[Learn how to add additional AWS credentials to Cloud Manager].
-
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
 | Add tags | AWS tags are metadata for your AWS resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP instance and each AWS resource associated with the instance.
@@ -84,9 +54,24 @@ You can add up to four tags from the user interface when creating a working envi
 
 For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
 
-| Credentials | These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
+| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
+
+| Edit Credentials | Choose the AWS credentials and marketplace subscription to use with this Cloud Volumes ONTAP system.
+
+Click *Add Subscription* to associate the selected credentials with a subscription.
+
+To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select AWS credentials that are associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace. You'll be charged from this subscription for every Cloud Volumes ONTAP 9.6 and later PAYGO system that you create and each add-on feature that you enable.
+
+link:task_adding_aws_accounts.html[Learn how to add additional AWS credentials to Cloud Manager].
 
 |===
++
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your AWS credentials:
++
+video::video_subscribing_aws.mp4[width=848, height=480]
++
+TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, AWS shows subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS account, each IAM user needs to associate themselves with the subscription. If you see the message shown below, click the *click here* link to go to Cloud Central and complete the process.
+image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription page for Cloud Manager for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not.]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
 +
@@ -245,14 +230,6 @@ Some of the fields in this page are self-explanatory. The following table descri
 | Field
 | Description
 
-| Edit Credentials | Choose the AWS credentials and marketplace subscription to use with this Cloud Volumes ONTAP system.
-
-To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select AWS credentials that are associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace.
-
-Click *Add Subscription* to associate the selected credentials with a subscription.
-
-link:task_adding_aws_accounts.html[Learn how to add additional AWS credentials to Cloud Manager].
-
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Amazon EC2 instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
 | Add tags | AWS tags are metadata for your AWS resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP instance and each AWS resource associated with the instance.
@@ -261,9 +238,24 @@ You can add up to four tags from the user interface when creating a working envi
 
 For information about tags, refer to https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html[AWS Documentation: Tagging your Amazon EC2 Resources^].
 
-| Credentials | These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
+| User name and password | These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
+
+| Edit Credentials | Choose the AWS credentials and marketplace subscription to use with this Cloud Volumes ONTAP system.
+
+Click *Add Subscription* to associate the selected credentials with a subscription.
+
+To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select AWS credentials that are associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace. You'll be charged from this subscription for every Cloud Volumes ONTAP 9.6 and later PAYGO system that you create and each add-on feature that you enable.
+
+link:task_adding_aws_accounts.html[Learn how to add additional AWS credentials to Cloud Manager].
 
 |===
++
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your AWS credentials:
++
+video::video_subscribing_aws.mp4[width=848, height=480]
++
+TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, AWS shows subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS account, each IAM user needs to associate themselves with the subscription. If you see the message shown below, click the *click here* link to go to Cloud Central and complete the process.
+image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription page for Cloud Manager for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not.]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
 +

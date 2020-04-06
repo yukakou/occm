@@ -37,20 +37,12 @@ When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS 
 
 .. Attach the policy to the IAM user.
 
-=== image:number3.png[Number 3] Subscribe from the AWS Marketplace
-
-[role="quick-margin-para"]
-https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Subscribe to Cloud Manager from the AWS Marketplace^] to ensure that there's no disruption of service after your free trial of Cloud Volumes ONTAP ends. You'll be charged from this subscription for every Cloud Volumes ONTAP PAYGO system that you create and each add-on feature that you enable.
-
-[role="quick-margin-para"]
-If you're launching Cloud Volumes ONTAP by bringing your own license (BYOL), https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=cloud+volumes+ontap+byol[then you'll need to subscribe to that offering in the AWS Marketplace^].
-
-=== image:number4.png[Number 4] Launch Cloud Manager from NetApp Cloud Central
+=== image:number3.png[Number 3] Launch Cloud Manager from NetApp Cloud Central
 
 [role="quick-margin-para"]
 Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance from https://cloud.netapp.com[Cloud Central^].
 
-=== image:number5.png[Number 5] Launch Cloud Volumes ONTAP using Cloud Manager
+=== image:number4.png[Number 4] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]
 Once Cloud Manager is ready, just click Create, select the type of system that you would like to launch, and complete the steps in the wizard. After 25 minutes, your first Cloud Volumes ONTAP system should be up and running.

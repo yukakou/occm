@@ -23,15 +23,9 @@ You can launch a single node Cloud Volumes ONTAP system in GCP by creating a wor
 
 .Steps
 
-. [[subscribe]]On the Working Environments page, click *Create Cloud Volumes ONTAP* and follow the prompts.
+. On the Working Environments page, click *Create Cloud Volumes ONTAP* and follow the prompts.
 
 . *Define Your Working Environment*: Click *Continue*.
-
-. *Subscribe to Cloud Volumes ONTAP*: If you're prompted, subscribe to Cloud Volumes ONTAP in the GCP Marketplace.
-+
-The following video shows the subscription process:
-+
-video::video_subscribing_gcp.mp4[width=848, height=480]
 
 . *Details & Credentials*: Select a project, specify a cluster name, optionally add labels, and then specify credentials.
 +
@@ -42,16 +36,6 @@ The following table describes fields for which you might need guidance:
 | Field
 | Description
 
-| Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where Cloud Manager resides.
-
-If you don't see any additional projects in the drop-down list, then you haven't yet associated the Cloud Manager service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You'll need to repeat this step for each project.
-
-NOTE: This is the service account that you set up for Cloud Manager, link:task_getting_started_gcp.html#service-account[as described in step 2b on this page].
-
-To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP project that's associated with a subscription to Cloud Volumes ONTAP from the GCP Marketplace.
-
-Click *Add Subscription* to associate the selected credentials with a subscription.
-
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
 
 | Add Labels |	Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.
@@ -60,8 +44,24 @@ You can add up to four labels from the user interface when creating a working en
 
 For information about labels, refer to https://cloud.google.com/compute/docs/labeling-resources[Google Cloud Documentation: Labeling Resources^].
 
-| Credentials |	These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI.
+| User name and password |	These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI.
+
+| Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where Cloud Manager resides.
+
+If you don't see any additional projects in the drop-down list, then you haven't yet associated the Cloud Manager service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You'll need to repeat this step for each project.
+
+NOTE: This is the service account that you set up for Cloud Manager, link:task_getting_started_gcp.html#service-account[as described in step 2b on this page].
+
+Click *Add Subscription* to associate the selected credentials with a subscription.
+
+To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP project that's associated with a subscription to Cloud Volumes ONTAP from the GCP Marketplace.
+
 |===
++
+[[subscribe]]
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project:
++
+video::video_subscribing_gcp.mp4[width=848, height=480]
 
 . *Location & Connectivity*: Select a location, choose a firewall policy, and select the checkbox to confirm network connectivity to Google Cloud storage for data tiering.
 +
