@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_encrypting_volumes.html
-keywords: encrypt, encryption, data, volumes, netapp volume encryption, volume encryption, nve, key managers, kmip, key management servers, license, ssl certificates
-summary: NetApp Volume Encryption is a software-based technology for encrypting data at rest one volume at a time. Data, Snapshot copies, and metadata are encrypted. Access to the data is given by a unique XTS-AES-256 key, one per volume.
+keywords: encrypt, encryption, data, volumes, netapp volume encryption, volume encryption, nve, key managers, kmip, key management servers, license, ssl certificates, nae, netapp aggregate encryption
+summary: Cloud Volumes ONTAP supports both NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE) with an external key manager. NVE and NAE are enabled by default if you set up an external key manager.
 ---
 
-= Encrypting volumes with NetApp Volume Encryption
+= Encrypting volumes with NetApp encryption solutions
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -14,24 +14,20 @@ summary: NetApp Volume Encryption is a software-based technology for encrypting 
 :imagesdir: ./media/
 
 [.lead]
-NetApp Volume Encryption (NVE) is a software-based technology for encrypting data at rest one volume at a time. Data, Snapshot copies, and metadata are encrypted. Access to the data is given by a unique XTS-AES-256 key, one per volume.
+Cloud Volumes ONTAP supports both NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE) with an external key manager. NVE and NAE are software-based solutions that enable (FIPS) 140-2–compliant data-at-rest encryption of volumes. link:concept_security.html[Learn more about these encryption solutions].
 
-.About this task
+Starting with ONTAP 9.7, NVE and NAE are automatically enabled when you set up an external key manager. Brand new aggregates will have NetApp Aggregate Encryption (NAE) enabled by default. Brand new volumes that are not part of an NAE aggregate will have NetApp Volume Encryption (NVE) enabled by default.
 
-* Starting with Cloud Manager 3.7.1, a NetApp Volume Encryption license is automatically installed on each Cloud Volumes ONTAP system that is registered with NetApp Support.
-+
-** link:task_adding_nss_accounts.html[Adding NetApp Support Site accounts to Cloud Manager]
-** link:task_registering.html[Registering pay-as-you-go systems]
-+
-NOTE: Cloud Manager does not install the NVE license on systems that reside in the China region.
+Cloud Volumes ONTAP doesn't support onboard key management.
 
-* At this time, Cloud Volumes ONTAP supports NetApp Volume Encryption with an external key management server. An Onboard Key Manager is not supported.
+.What you'll need
 
-* You need to set up NetApp Volume Encryption from the ONTAP CLI.
-+
-You can then use either the CLI or System Manager to enable encryption on specific volumes. Cloud Manager does not support NetApp Volume Encryption from its user interface and from its APIs.
+Your Cloud Volumes ONTAP system should be registered with NetApp support. Starting with Cloud Manager 3.7.1, a NetApp Volume Encryption license is automatically installed on each Cloud Volumes ONTAP system that is registered with NetApp Support.
 
-link:concept_security.html[Learn more about supported encryption technologies].
+* link:task_adding_nss_accounts.html[Adding NetApp Support Site accounts to Cloud Manager]
+* link:task_registering.html[Registering pay-as-you-go systems]
+
+NOTE: Cloud Manager doesn't install the NVE license on systems that reside in the China region.
 
 .Steps
 
@@ -44,20 +40,3 @@ TIP: Search for the *Key Managers* solution.
 . Install SSL certificates and connect to the external key management servers.
 +
 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-DD718B42-038D-4009-84FF-20BBD6530BC2.html[ONTAP 9 NetApp Encryption Power Guide: Configuring external key management^]
-
-. Create a new encrypted volume or convert an existing unencrypted volume using either the CLI or System Manager.
-+
-* CLI:
-** For new volumes, use the *volume create* command with the -encrypt parameter.
-+
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-A5D3FDEF-CA10-4A54-9E17-DB9E9954082E.html[ONTAP 9 NetApp Encryption Power Guide: Enabling encryption on a new volume^]
-** For existing volumes, use the *volume encryption conversion start* command.
-+
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-1468CE48-A0D9-4D45-BF78-A11C26724051.html[ONTAP 9 NetApp Encryption Power Guide: Enabling encryption on an existing volume with the volume encryption conversion start command^]
-* System Manager:
-** For new volumes, click *Storage > Volumes > Create > Create FlexVol* and then select *Encrypted*.
-+
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-950/GUID-3FA865E2-AE14-40A9-BF76-A2D7EB44D387.html[ONTAP 9 Cluster Management using System Manager: Creating FlexVol volumes^]
-** For existing volumes, select the volume, click *Edit*, and then select *Encrypted*.
-+
-http://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-950/GUID-906E88E4-8CE9-465F-8AC7-0C089080B2C5.html[ONTAP 9 Cluster Management using System Manager: Editing volume properties^]
