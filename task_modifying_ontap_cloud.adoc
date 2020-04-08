@@ -136,17 +136,13 @@ Change the AWS Marketplace subscription for your Cloud Volumes ONTAP system if y
 
 == Changing write speed to normal or high
 
-The default write speed for Cloud Volumes ONTAP is normal. You can change to high write speed if fast write performance is required for your workload. Before you change the write speed, you should link:task_planning_your_config.html#choosing-a-write-speed[understand the differences between the normal and high settings].
+Cloud Manager enables you to choose a write speed setting for single node Cloud Volumes ONTAP systems. The default write speed is normal. You can change to high write speed if fast write performance is required for your workload. Before you change the write speed, you should link:task_planning_your_config.html#choosing-a-write-speed[understand the differences between the normal and high settings].
 
 .About this task
 
 * Ensure that operations such as volume or aggregate creation are not in progress.
 
-* Be aware that this change restarts Cloud Volumes ONTAP.
-+
-For single node systems, I/O is interrupted.
-+
-For HA pairs, the change is nondisruptive. HA pairs continue to serve data.
+* Be aware that this change restarts Cloud Volumes ONTAP, which means I/O is interrupted.
 
 .Steps
 
