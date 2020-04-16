@@ -171,9 +171,11 @@ Cloud Manager uses an AWS account to make API calls to several AWS services, inc
 
 |
 "kms:List*",
-"kms:Describe*"
+"kms:ReEncrypt*",
+"kms:Describe*",
+"kms:CreateGrant",
 
-| Obtains information about keys from the AWS Key Management Service.
+| Enables data encryption of Cloud Volumes ONTAP using the AWS Key Management Service (KMS).
 
 |
 "ce:GetReservationUtilization",
