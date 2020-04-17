@@ -16,7 +16,7 @@ summary: Cloud Volumes ONTAP supports both NetApp Volume Encryption (NVE) and Ne
 [.lead]
 Cloud Volumes ONTAP supports both NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE) with an external key manager. NVE and NAE are software-based solutions that enable (FIPS) 140-2–compliant data-at-rest encryption of volumes. link:concept_security.html[Learn more about these encryption solutions].
 
-Starting with ONTAP 9.7, NVE and NAE are automatically enabled when you set up an external key manager. Brand new aggregates will have NetApp Aggregate Encryption (NAE) enabled by default. Brand new volumes that are not part of an NAE aggregate will have NetApp Volume Encryption (NVE) enabled by default.
+Starting with Cloud Volumes ONTAP 9.7, new aggregates will have NAE enabled by default after you set up an external key manager. New volumes that aren't part of an NAE aggregate will have NVE enabled by default (for example, if you have existing aggregates that were created before setting up an external key manager).
 
 Cloud Volumes ONTAP doesn't support onboard key management.
 
