@@ -21,19 +21,13 @@ A dedicated host is required::
 Cloud Manager is not supported on a host that is shared with other applications. The host must be a dedicated host.
 
 Supported AWS EC2 instance types::
-* t2.medium
-* t3.medium (recommended)
-* m4.large
-* m5.xlarge
-* m5.2xlarge
-* m5.4xlarge
-* m5.8xlarge
+An instance type with at least 4 vCPUs and 7 GB of RAM. We recommend t3.xlarge.
 
 Supported Azure VM sizes::
-A2, D2 v2, or D2 v3 (based on availability)
+A VM with at least 4 vCPUs and 7 GB of RAM. We recommend DS3 v2.
 
 Supported GCP machine types::
-A machine type with at least 2 vCPUs and 4 GB of memory.
+A machine type with at least 4 vCPUs and 7 GB of RAM.
 
 Supported operating systems::
 * CentOS 7.2

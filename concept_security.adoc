@@ -19,20 +19,27 @@ Cloud Volumes ONTAP supports data encryption and provides protection against vir
 
 Cloud Volumes ONTAP supports the following encryption technologies:
 
-* NetApp Volume Encryption (starting with Cloud Volumes ONTAP 9.5)
+* NetApp encryption solutions (NVE and NAE)
 * AWS Key Management Service
 * Azure Storage Service Encryption
 * Google Cloud Platform default encryption
 
-You can use NetApp Volume Encryption with native AWS, Azure, or GCP encryption, which encrypt data at the hypervisor level.
+You can use NetApp encryption solutions with native encryption from AWS, Azure, or GCP, which encrypt data at the hypervisor level. Doing so would provide double encryption, which might be desired for very sensitive data. When the encrypted data is accessed, it’s unencrypted twice—once at the hypervisor-level (using keys from the cloud provider) and then again using NetApp encryption solutions (using keys from an external key manager).
 
-=== NetApp Volume Encryption
+=== NetApp encryption solutions (NVE and NAE)
 
-NetApp Volume Encryption (NVE) is a software-based technology for encrypting data at rest one volume at a time. Data, Snapshot copies, and metadata are encrypted. Access to the data is given by a unique XTS-AES-256 key, one per volume.
+Cloud Volumes ONTAP supports both NetApp Volume Encryption (NVE) and NetApp Aggregate Encryption (NAE) with an external key manager. NVE and NAE are software-based solutions that enable (FIPS) 140-2–compliant data-at-rest encryption of volumes.
 
-Cloud Volumes ONTAP supports NetApp Volume Encryption with an external key management server. An Onboard Key Manager is not supported. You can find the supported key managers in the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] under the *Key Managers* solution.
+* NVE encrypts data at rest one volume a time. Each data volume has its own unique encryption key.
+* NAE is an extension of NVE--it encrypts data for each volume, and the volumes share a key across the aggregate. NAE also allows common blocks across all volumes in the aggregate to be deduplicated.
 
-You can enable NetApp Volume Encryption on a new or existing volume by using the CLI or System Manager. Cloud Manager does not support NetApp Volume Encryption. For instructions, see link:task_encrypting_volumes.html[Encrypting volumes with NetApp Volume Encryption].
+Both NVE and NAE use AES 256-bit encryption.
+
+https://www.netapp.com/us/media/ds-3899.pdf[Learn more about NetApp Volume Encryption and NetApp Aggregate Encryption^].
+
+Starting with Cloud Volumes ONTAP 9.7, new aggregates will have NetApp Aggregate Encryption (NAE) enabled by default after you set up an external key manager. New volumes that aren't part of an NAE aggregate will have NetApp Volume Encryption (NVE) enabled by default (for example, if you have existing aggregates that were created before setting up an external key manager).
+
+Setting up a supported key manager is the only required step. For set up instructions, see link:task_encrypting_volumes.html[Encrypting volumes with NetApp encryption solutions].
 
 === AWS Key Management Service
 

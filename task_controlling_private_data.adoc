@@ -35,7 +35,7 @@ image:screenshot_compliance_personal.gif[]
 +
 image:screenshot_personal_files.gif[A screenshot of the personal files dialog box where you can click the Investigate Results icon next to a personal data type.]
 
-. Investigate the data by searching, sorting, expanding details for a specific file, or by downloading the file list.
+. Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
 +
 image:screenshot_compliance_investigation_page.gif[]
 
@@ -110,7 +110,7 @@ image:screenshot_compliance_sensitive_personal.gif[]
 +
 image:screenshot_sensitive_personal_files.gif[A screenshot of the sensitive personal files dialog box where you can click the Investigate Results icon next to a personal data type.]
 
-. Investigate the data by searching, sorting, expanding details for a specific file, or by downloading the file list.
+. Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
 
 === Types of sensitive personal data
 
@@ -142,7 +142,7 @@ NOTE: Only English is supported for categories. Support for more languages will 
 +
 image:screenshot_categories.gif[A screenshot of the categories dialog box where you can click the Investigate Results icon next to a category.]
 
-. Investigate the data by searching, sorting, expanding details for a specific file, or by downloading the file list.
+. Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
 
 === Types of categories
 
@@ -221,7 +221,7 @@ For example, you might be storing CAD files that include very sensitive informat
 +
 image:screenshot_file_types.gif[A screenshot of the file types dialog box where you can click the Investigate Results icon next to a file type.]
 
-. Investigate the data by searching, sorting, expanding details for a specific file, or by downloading the file list.
+. Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
 
 === Types of files
 

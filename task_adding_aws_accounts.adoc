@@ -96,7 +96,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 . Confirm that the policy requirements have been met and click *Continue*.
 
-. Choose the pay-as-you-go subscription that you want to associate with the credentials.
+. Choose the pay-as-you-go subscription that you want to associate with the credentials, or click *Add Subscription* if you don't have one yet.
 +
 To create a pay-as-you-go Cloud Volumes ONTAP system, AWS credentials must be associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace.
 
@@ -116,8 +116,12 @@ If you haven't yet added an AWS subscription to a set of AWS credentials, you ca
 
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 
+. Hover over a set of credentials and click the action menu.
+
 . From the menu, click *Add Subscription*.
 +
 image:screenshot_aws_add_subscription.gif[A screenshot of the Credentials page where you can add a subscription to AWS credentials from the menu.]
 
-. Follow the prompts to add the subscription.
+. Click *Add Subscription*, click *Continue*, and follow the steps.
++
+video::video_subscribing_aws.mp4[width=848, height=480]

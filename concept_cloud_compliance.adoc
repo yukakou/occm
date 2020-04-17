@@ -78,7 +78,7 @@ Note the following about the instance:
 
 * In Azure, Cloud Compliance runs on a Standard_D16s_v3 VM with a 512 GB disk.
 
-* In AWS, Cloud Compliance runs on an m5.4xlarge instance with a 500 GB io1 disk.
+* In AWS, Cloud Compliance runs on an m5.4xlarge instance with a 500 GB GP2 disk.
 +
 In regions where m5.4xlarge isn't available, Cloud Compliance runs on an m4.4xlarge instance instead.
 
