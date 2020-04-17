@@ -182,15 +182,21 @@ These steps must be completed by a user who has the _Account Admin_ role.
 
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 +
-image:screenshot_settings_icon.gif[]
+image:screenshot_settings_icon.gif[A screenshot of Cloud Manager's top right banner where you can select the Settings icon.]
 
-. Hover over the credentials for the AWS Instance Profile and click the action menu.
+. Find the credentials for the AWS Instance Profile.
 +
 The subscription must be added to the Instance Profile. Charging won't work otherwise.
++
+If you already have a subscription, then you're all set--there's nothing else that you need to do.
++
+image:screenshot_profile_subscription.gif[A screenshot from the Credentials page that shows the AWS Instance Profile with an active subscription.]
+
+. If you don't have a subscription yet, hover over the credentials and click the action menu.
 
 . Click *Add Subscription*.
 +
-image:screenshot_add_subscription.gif[]
+image:screenshot_add_subscription.gif[A screenshot of the menu in the Credentials page. It shows a button to add a subscription to the credentials.]
 
 . Click *Add Subscription*, click *Continue*, and follow the steps.
 +
