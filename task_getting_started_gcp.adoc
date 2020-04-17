@@ -79,6 +79,7 @@ https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the foll
 * Cloud Logging API
 * Cloud Resource Manager API
 * Compute Engine API
+* Identity and Access Management (IAM) API
 
 === image:number5.png[Number 5] Launch Cloud Manager from NetApp Cloud Central
 
