@@ -36,7 +36,7 @@ Note the following as you configure the VM:
 
 * Cloud Manager can perform optimally with either HDD or SSD disks.
 
-* Choose one of the recommended virtual machine sizes: A2, D2 v2, or D2 v3 (based on availability).
+* Choose a VM size that has at least 4 vCPUs and 7 GB of RAM. We recommend DS3 v2.
 
 * For the network security group, Cloud Manager requires inbound connections using SSH, HTTP, and HTTPS.
 +
