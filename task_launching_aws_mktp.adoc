@@ -44,7 +44,7 @@ https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS, A
 
 . Follow the prompts to configure and deploy the instance:
 
-* *Choose Instance Type*: Depending on region availability, choose one of the supported instance types (t3.medium  is recommended).
+* *Choose Instance Type*: Depending on region availability, choose one of the supported instance types (t3.xlarge is recommended).
 +
 link:reference_cloud_mgr_reqs.html[Review the list of supported instance types].
 
