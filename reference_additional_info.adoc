@@ -16,6 +16,10 @@ translate: false
 [.lead]
 You can get help and find more information about Cloud Manager and Cloud Volumes ONTAP through various resources, including videos, forums, and support.
 
+* https://mysupport.netapp.com/cloudontap[NetApp Cloud Volumes ONTAP Support^]
++
+Access support resources to get help and troubleshoot issues with Cloud Volumes ONTAP.
+
 * https://www.youtube.com/playlist?list=PLdXI3bZJEw7lnoRo8FBKsX1zHbK8AQOoT[Videos for Cloud Manager and Cloud Volumes ONTAP^]
 +
 Watch videos that show you how to deploy and manage Cloud Volumes ONTAP and how to replicate data across your hybrid cloud.
@@ -61,10 +65,6 @@ Identify known vulnerabilities (CVEs) for NetApp products, including ONTAP. Note
 * http://docs.netapp.com/ontap-9/index.jsp[ONTAP 9 Documentation Center^]
 +
 Access product documentation for ONTAP, which can help you as you use Cloud Volumes ONTAP.
-
-* https://mysupport.netapp.com/cloudontap[NetApp Cloud Volumes ONTAP Support^]
-+
-Access support resources to get help and troubleshoot issues with Cloud Volumes ONTAP.
 
 * https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS[NetApp Community: Cloud Data Services^]
 +
