@@ -74,7 +74,7 @@ When you deployed Cloud Manager in Azure, you should have enabled a https://docs
 
 . Create a custom role using the Cloud Manager policy:
 
-.. Download the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Azure policy^].
+.. Download the https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager Azure policy^].
 
 .. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
 +
