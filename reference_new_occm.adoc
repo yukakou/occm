@@ -145,15 +145,11 @@ We released a few enhancements to Cloud Manager 3.8.1.
 
 * Backup copies are now stored in an S3 bucket that Cloud Manager creates in your AWS account, with one bucket per Cloud Volumes ONTAP working environment.
 
-* In addition to read-write volumes, you can now back up data protection volumes.
-
 * Backup to S3 is now supported in all AWS regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
 
 * You can set the backup schedule to daily, weekly, or monthly.
 
 * Cloud Manager no longer needs to set up _private links_ to the Backup to S3 service.
-+
-NOTE: Cloud Volumes ONTAP does need a connection to S3 through a VPC Endpoint to the Amazon S3 service. link:task_backup_to_s3.html#requirements[Learn more about the requirements].
 
 Additional S3 permissions are required for these enhancements. The IAM role that provides Cloud Manager with permissions must include permissions from the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^].
 
