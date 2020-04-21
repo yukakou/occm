@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_backup_to_s3.html
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, back up volumes, backup to s3, restore volumes, vpc endpoint, billing, cost
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, back up volumes, backup to s3, restore volumes, billing, cost
 summary: Backup to S3 is an add-on service for Cloud Volumes ONTAP that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an S3 bucket in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
@@ -31,7 +31,6 @@ Get started quickly by following these steps or scroll down to the remaining sec
 * You're running Cloud Volumes ONTAP 9.6 or later in AWS.
 * You have subscribed to the new https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace offering^].
 * The IAM role that provides Cloud Manager with permissions includes S3 permissions from the latest https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager policy^].
-* Cloud Volumes ONTAP has a connection to S3 through a VPC Endpoint.
 
 ==== image:number2.png[Number 2] Enable Backup to S3 on your new or existing system
 
@@ -102,13 +101,6 @@ Here are the specific permissions from the policy:
             ]
         },
 
-
-VPC Endpoint to S3::
-Ensure that Cloud Volumes ONTAP has a connection to S3 through a VPC Endpoint to the S3 service. For instructions, see https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint[AWS Documentation: Creating a Gateway Endpoint^].
-+
-When you create the VPC Endpoint, be sure to select the region, VPC, and route table that corresponds to the Cloud Volumes ONTAP instance. You must also modify the security group to add an outbound HTTPS rule that enables traffic to the S3 endpoint. Otherwise, Cloud Volumes ONTAP cannot connect to the S3 service.
-+
-If you experience any issues, see https://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/[AWS Support Knowledge Center: Why can’t I connect to an S3 bucket using a gateway VPC endpoint?^]
 
 == Enabling Backup to S3 on a new system
 
@@ -242,9 +234,9 @@ Backups start in the _Standard_ storage class and transition to the _Standard-In
 
 === All supported volumes are backed up
 
-When you enable Backup to S3, all supported volumes are the system are backed up to S3.
+When you enable Backup to S3, all supported volumes on the system are backed up to S3.
 
-Backup to S3 can back up read-write volumes and data protection volumes.
+Backup to S3 can back up read-write volumes only.
 
 === Backups are incremental
 
