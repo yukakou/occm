@@ -1,0 +1,109 @@
+---
+sidebar: sidebar
+permalink: concept_backup_to_cloud.html
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, back up volumes, Backup to Cloud, restore volumes, billing, cost
+summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an S3 bucket in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
+---
+
+= Learn about Backup to Cloud
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Backup to Cloud is an add-on service for Cloud Volumes ONTAP that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+
+Backup to Cloud is powered by the https://cloud.netapp.com/cloud-backup-service[Cloud Backup Service^].
+
+NOTE: You must use Cloud Manager for all backup and restore operations. Any actions taken directly from ONTAP or from your cloud provider results in an unsupported configuration.
+
+== Features
+
+* Back up independent copies of your data volumes to low-cost object storage in the cloud.
++
+Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
+* Restore data from a specific point in time.
+* Restore the data to the source Cloud Volumes ONTAP system or to a different system.
+
+== Supported object storage providers
+
+Backup to Cloud is supported with the following types of working environments:
+
+* Cloud Volumes ONTAP in AWS
+* Cloud Volumes ONTAP in Azure
+
+== Cost
+
+* AWS: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
+
+* Azure: A 30-day free trial is available at this time. Pricing details will be available soon.
+
+== How Backup to Cloud works
+
+When you enable Backup to Cloud, the service performs a full backup of your data. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up.
+
+=== Where backups reside
+
+Backup copies are stored in an S3 bucket or Azure Blob container that Cloud Manager creates in your cloud account. The object store is created in the same region where the Cloud Volumes ONTAP system is located. There's one object store per Cloud Volumes ONTAP system.
+
+Cloud Manager names the object store as follows: netapp-backup-_clusteruuid_
+
+Be sure not to delete this object store.
+
+Notes:
+
+* In AWS, Cloud Manager enables the https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html[Amazon S3 Block Public Access feature^] on the S3 bucket.
+
+* In Azure, Cloud Manager creates a new resource group with a storage account for the Blob container.
+
+=== Supported S3 storage classes
+
+In Amazon S3, backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
+
+=== Supported Azure Blob access tiers
+
+In Azure, each backup is associated with the _cold_ access tier.
+
+=== Backup settings are system wide
+
+When you enable Backup to Cloud, _all_ supported volumes on the system are backed up to the cloud.
+
+The schedule and number of backups to retain are defined at the system level. The backup settings affect all volumes on the system.
+
+=== The schedule is daily, _or_ weekly, _or_ monthly
+
+You can choose daily, or weekly, or monthly backups of all volumes. A combination of these backup frequency options isn’t supported.
+
+=== Backups are taken at midnight
+
+* Daily backups start just after midnight each day.
+
+* Weekly backups start just after midnight on Sunday mornings.
+
+* Monthly backups start just after midnight on the first of each month.
+
+At this time, you can’t schedule backup operations at a user specified time.
+
+=== Backup copies are associated with your Cloud Central account
+
+Backup copies are associated with the link:concept_cloud_central_accounts.html[Cloud Central account] in which Cloud Manager resides.
+
+If you have multiple Cloud Manager systems in the same Cloud Central account, each Cloud Manager system will display the same list of backups. That includes the backups associated with Cloud Volumes ONTAP instances from other Cloud Manager systems.
+
+=== Supported volumes
+
+Backup to Cloud supports read-write volumes only.
+
+== Limitations
+
+* Volumes that you create outside of Cloud Manager aren't automatically backed up.
++
+For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up.
++
+If you want to back up these volumes, you would need to disable Backup to Cloud and then enable it again.
+
+* Backup to Cloud can maintain up to 1,019 total backups of a volume.
+
+* WORM storage is not supported on a Cloud Volumes ONTAP system when Backup to Cloud is enabled.

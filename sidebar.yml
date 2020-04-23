@@ -145,12 +145,20 @@ entries:
             url: /task_encrypting_volumes.html
           - title: Manage existing storage
             url: /task_managing_storage.html
-      - title: Replicate and protect data
+      - title: Replicate data
+        url: /task_replicating_data.html
+      - title: Backup to Cloud
         entries:
-          - title: Replicate data between systems
-            url: /task_replicating_data.html
-          - title: Back up to Amazon S3
-            url: /task_backup_to_s3.html
+          - title: Learn about Backup to Cloud
+            url: /concept_backup_to_cloud.html
+          - title: Get started
+            entries:
+              - title: Back up to Amazon S3
+                url: /task_backup_to_s3.html
+              - title: Back up to Azure Blob storage
+                url: /task_backup_to_azure.html
+          - title: Manage backups and restore data
+            url: /task_managing_backups.html
       - title: Administer Cloud Volumes ONTAP
         entries:
           - title: Connect to Cloud Volumes ONTAP
