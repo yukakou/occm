@@ -1,5 +1,4 @@
 ---
-pagenav: false
 sidebar: sidebar
 permalink: task_getting_started_gcp.html
 keywords: google cloud platform, gcp, deploy cloud manager, launch cloud manager, create cloud manager, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, storage access key, gcp role, role, iam role, permissions, gcp permissions
@@ -18,7 +17,7 @@ Get started with Cloud Volumes ONTAP by setting up GCP and then deploying Cloud 
 
 Cloud Manager must be installed in Google Cloud Platform in order to deploy Cloud Volumes ONTAP in GCP.
 
-=== image:number1.png[Number 1] Set up your networking
+==== image:number1.png[Number 1] Set up your networking
 
 [role="quick-margin-para"]
 Enable outbound internet access from the target VPC so Cloud Manager and Cloud Volumes ONTAP can contact several endpoints.
@@ -28,7 +27,7 @@ This step is important because Cloud Manager can't deploy Cloud Volumes ONTAP wi
 
 [[service-account]]
 
-=== image:number2.png[Number 2] Set up GCP permissions and projects
+==== image:number2.png[Number 2] Set up GCP permissions and projects
 
 [role="quick-margin-para"]
 Make sure that two sets of permissions are in place:
@@ -50,7 +49,7 @@ The permissions contained in this YAML file are different than the permissions i
 
 * If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
 
-=== image:number3.png[Number 3] Set up GCP for data tiering
+==== image:number3.png[Number 3] Set up GCP for data tiering
 
 [role="quick-margin-para"]
 Two requirements must be met to tier cold data from Cloud Volumes ONTAP 9.7 to low-cost object storage (a Google Cloud Storage bucket):
@@ -69,7 +68,7 @@ You'll need to select the tiering service account later when you create a Cloud 
 [role="quick-margin-para"]
 If you want to use data tiering with Cloud Volumes ONTAP 9.6, link:task_adding_gcp_accounts.html[then follow these steps].
 
-=== image:number4.png[Number 4] Enable Google Cloud APIs
+==== image:number4.png[Number 4] Enable Google Cloud APIs
 
 [role="quick-margin-para"]
 https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the following Google Cloud APIs in your project^]. These APIs are required to deploy Cloud Manager and Cloud Volumes ONTAP.
@@ -81,7 +80,7 @@ https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the foll
 * Compute Engine API
 * Identity and Access Management (IAM) API
 
-=== image:number5.png[Number 5] Launch Cloud Manager from NetApp Cloud Central
+==== image:number5.png[Number 5] Launch Cloud Manager from NetApp Cloud Central
 
 [role="quick-margin-para"]
 Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance in GCP from https://cloud.netapp.com[Cloud Central^].
@@ -89,7 +88,7 @@ Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It 
 [role="quick-margin-para"]
 When you choose GCP as the cloud provider, you're prompted by Google to log in to your account and to grant permissions. Clicking "Allow" grants access to the compute APIs needed to deploy Cloud Manager.
 
-=== image:number6.png[Number 6] Launch Cloud Volumes ONTAP using Cloud Manager
+==== image:number6.png[Number 6] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]
 Once Cloud Manager is ready, just click Create, select the type of system that you would like to deploy, and complete the steps in the wizard. After 25 minutes, your first Cloud Volumes ONTAP system should be up and running.
