@@ -1,5 +1,4 @@
 ---
-pagenav: false
 sidebar: sidebar
 permalink: task_connecting_kubernetes.html
 keywords: kubernetes, persistent volumes, containers, persistent storage, kubeconfig, trident, kubernetes cluster, storage classes, classes, cvo-single, cvo-ha, thick provisioning, trident_trident, connect, disconnect, provision
@@ -18,9 +17,7 @@ Cloud Manager can automate the deployment of https://netapp-trident.readthedocs.
 
 Before you complete these steps, you need to link:reference_before.html[create a Cloud Volumes ONTAP system] or link:task_discovering_ontap.html[discover an on-premises ONTAP cluster] from Cloud Manager.
 
-If you deploy Kubernetes clusters using the https://cloud.netapp.com/kubernetes-service[NetApp Kubernetes Service^], Cloud Manager can automatically discover the clusters from your NetApp Cloud Central account. If that's the case, skip the first two steps and start with step 3.
-
-=== image:number1.png[Number 1] Verify network connectivity
+==== image:number1.png[Number 1] Verify network connectivity
 
 [role="quick-margin-list"]
 .. A network connection must be available between Cloud Manager and the Kubernetes clusters, and from the Kubernetes clusters to ONTAP systems.
@@ -32,7 +29,7 @@ If you deploy Kubernetes clusters using the https://cloud.netapp.com/kubernetes-
 +
 Cloud Manager installs Trident on a Kubernetes cluster when you connect a working environment to the cluster.
 
-=== image:number2.png[Number 2] Upload Kubernetes configuration files to Cloud Manager
+==== image:number2.png[Number 2] Upload Kubernetes configuration files to Cloud Manager
 
 [role="quick-margin-para"]
 For each Kubernetes cluster, the Account Admin needs to upload a configuration file (kubeconfig) that is in YAML format. After you upload the file, Cloud Manager verifies connectivity to the cluster and saves an encrypted copy of the kubeconfig file.
@@ -43,7 +40,7 @@ Click *Kubernetes Clusters > Discover > Upload File* and select the kubeconfig f
 [role="quick-margin-para"]
 image:screenshot_kubernetes_setup.gif[A screenshot that shows the Kubernetes clusters tab with a Discover button and then the screen where you click Upload File to upload the kubeconfig file.]
 
-=== image:number3.png[Number 3] Connect your working environments to Kubernetes clusters
+==== image:number3.png[Number 3] Connect your working environments to Kubernetes clusters
 
 [role="quick-margin-para"]
 From the working environment, click the Kubernetes icon and follow the prompts. You can connect different clusters to different ONTAP systems and multiple clusters to the same ONTAP system.
@@ -54,7 +51,7 @@ You have the option to set the NetApp storage class as the default storage class
 [role="quick-margin-para"]
 image:screenshot_kubernetes_connect.gif[A screenshot that shows the Kubernetes icon inside and Cloud Volumes ONTAP working environment and the subsequent page that enables you to select a Kubernetes cluster and then click Connect.]
 
-=== image:number4.png[Number 4] Start provisioning Persistent Volumes
+==== image:number4.png[Number 4] Start provisioning Persistent Volumes
 
 [role="quick-margin-para"]
 Request and manage Persistent Volumes using native Kubernetes interfaces and constructs. Cloud Manager creates four Kubernetes storage classes that you can use when provisioning Persistent Volumes:
