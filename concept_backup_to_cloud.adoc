@@ -36,9 +36,11 @@ Backup to Cloud is supported with the following types of working environments:
 
 == Cost
 
-* AWS: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
+You'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on used capacity (before storage efficiencies).
 
-* Azure: A 30-day free trial is available at this time. Pricing details will be available soon.
+* AWS: A 30-day free trial is available. https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
+
+* Azure: A 30-day free trial is available. Pricing details will be available soon.
 
 == How Backup to Cloud works
 
@@ -95,6 +97,8 @@ If you have multiple Cloud Manager systems in the same Cloud Central account, ea
 === Supported volumes
 
 Backup to Cloud supports read-write volumes only.
+
+FlexGroup volumes and data protection volumes aren't supported.
 
 == Limitations
 
