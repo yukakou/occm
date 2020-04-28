@@ -59,9 +59,10 @@ For information about tags, refer to https://azure.microsoft.com/documentation/a
 | Credentials |	These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
 |===
 
-. *Services*: Keep Cloud Compliance enabled or disable it if you don't want to use it with this Cloud Volumes ONTAP system.
+. *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
-link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
+* link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
+* link:concept_backup_to_cloud.html[Learn more about Backup to Cloud].
 
 . *Location & Connectivity*: Select a location and security group and select the checkbox to confirm network connectivity between Cloud Manager and the target location.
 
