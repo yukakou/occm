@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_adding_azure_accounts.html
 keywords: permissions, microsoft, azure, permissions, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, managed identity, iam, operator, role, virtual machine
-summary: If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions to those accounts and then add details about the accounts to Cloud Manager.
+summary: There are two ways to manage Azure accounts in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
 ---
 
 = Setting up and adding Azure accounts to Cloud Manager
@@ -13,7 +13,7 @@ summary: If you want to deploy Cloud Volumes ONTAP in different Azure accounts, 
 :imagesdir: ./media/
 
 [.lead]
-If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions to those accounts and then add the account credentials to Cloud Manager.
+There are two ways to manage Azure accounts in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
 
 NOTE: When you deploy Cloud Manager from Cloud Central, Cloud Manager automatically adds the Azure account in which you deployed Cloud Manager. An initial account is not added if you manually installed the Cloud Manager software on an existing system. link:concept_accounts_azure.html[Learn about Azure accounts and permissions].
 
