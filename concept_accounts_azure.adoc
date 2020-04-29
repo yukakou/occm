@@ -35,13 +35,13 @@ The managed identity is associated with the subscription in which you launched C
 
 If you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you must grant the required permissions by link:task_adding_azure_accounts.html[creating and setting up a service principal in Azure Active Directory] for each Azure account. The following image shows two additional accounts, each set up with a service principal and custom role that provides permissions:
 
-image:diagram_permissions_multiple_azure.png[A conceptual image that shows the initial Azure account, which receives permissions through a custom role and managed identity, and two additional accounts that receive permissions through a custom role and service principal.]
+image:diagram_permissions_multiple_azure.png["A conceptual image that shows the initial Azure account, which receives permissions through a custom role and managed identity, and two additional accounts that receive permissions through a custom role and service principal."]
 
 You would then link:task_adding_azure_accounts.html#adding-azure-accounts-to-cloud-manager[add the account credentials to Cloud Manager] by providing details about the AD service principal.
 
 After you add another account, you can switch to it when creating a new working environment:
 
-image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
+image:screenshot_accounts_switch_azure.gif["A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page."]
 
 .What about Marketplace deployments and on-prem deployments?
 ****

@@ -216,7 +216,7 @@ A Backup policy includes rules that specify which labeled Snapshot copies to rep
 
 For example, a Backup policy that includes the labels "daily" and "weekly" results in replication of Snapshot copies that include only those labels. No other Snapshot copies are replicated, as shown in the following image:
 
-image:diagram_replication_snapvault_policy.png[This illustration shows a Snapshot policy, a source volume, the Snapshot copies created from the Snapshot policy, and then replication of those Snapshot copies to a destination volume based on a Backup policy, which specifies replication of Snapshot copies with the "daily" and "weekly" labels.^]
+image:diagram_replication_snapvault_policy.png["This illustration shows a Snapshot policy, a source volume, the Snapshot copies created from the Snapshot policy, and then replication of those Snapshot copies to a destination volume based on a Backup policy, which specifies replication of Snapshot copies with the "daily" and "weekly" labels."]
 
 ==== Default policies and custom policies
 

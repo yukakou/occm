@@ -139,7 +139,7 @@ You might skip this step if you want to create a volume for iSCSI. Cloud Manager
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
-include::/_include/create_volume.adoc[]
+include::_include/create_volume.adoc[]
 +
 The following image shows the Volume page filled out for the CIFS protocol:
 +
@@ -335,7 +335,7 @@ You might skip this step if you want to create a volume for iSCSI. Cloud Manager
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
-include::/_include/create_volume.adoc[]
+include::_include/create_volume.adoc[]
 +
 The following image shows the Volume page filled out for the CIFS protocol:
 +

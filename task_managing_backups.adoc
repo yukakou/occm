@@ -57,7 +57,7 @@ image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon 
 
 . Click *Restore*.
 +
-image:screenshot_backup_to_s3_restore_options.gif[A screenshot that shows the restore options: a working environment to restore to, the name of the volume, and the volume info.]
+image:screenshot_backup_to_s3_restore_options.gif["A screenshot that shows the restore options: a working environment to restore to, the name of the volume, and the volume info."]
 
 == Deleting backups
 
