@@ -20,6 +20,22 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager 3.8.4 (3 May 2020)
+
+Cloud Manager 3.8.4 includes the following improvement.
+
+=== Backup to Cloud enhancements
+
+The following enhancements are now available for Backup to Cloud (previously called _Backup to S3_ for AWS):
+
+* *Backing up to Azure Blob storage*
++
+Backup to Cloud is now available for Cloud Volumes ONTAP in Azure. Backup to Cloud provides backup and restore capabilities for protection, and long-term archive of your cloud data. link:concept_backup_to_cloud.html[Learn more].
+
+* *Deleting backups*
++
+You can now delete all backups for a specific volume directly from the Cloud Manager interface. link:task_managing_backups.html#deleting-backups[Learn more].
+
 == Cloud Manager 3.8.3 (5 Apr 2020)
 
 * <<Cloud Tiering integration>>
@@ -93,7 +109,7 @@ The Cloud Manager APIs now enable you to create iSCSI volumes. link:api.html#_pr
 
 Cloud Manager now automatically discovers information about the Amazon S3 buckets that reside in the AWS account where it's installed. This enables you to easily see details about your S3 buckets, including the region, access level, storage class, and whether the bucket is used with Cloud Volumes ONTAP for backups or data tiering. And you can scan the S3 buckets with Cloud Compliance, as described below.
 
-image:screenshot_amazon_s3.gif[A screenshot that shows the details of an Amazon S3 working environment: the total number of buckets and total number of regions, the number of buckets with active services, and then a table that shows details about each S3 bucket.]
+image:screenshot_amazon_s3.gif["A screenshot that shows the details of an Amazon S3 working environment: the total number of buckets and total number of regions, the number of buckets with active services, and then a table that shows details about each S3 bucket."]
 
 === Cloud Compliance enhancements
 
@@ -129,7 +145,7 @@ Cloud Compliance can now find ICD-10-CM Medical Codes, which are used in the med
 
 You can now select the NFS version to enable on a volume when you create or edit a volume for Cloud Volumes ONTAP.
 
-image:screenshot_nfs_version.gif[A screenshot that shows the volume details screen where you can enable NFSv3, NFSv4, or both.]
+image:screenshot_nfs_version.gif["A screenshot that shows the volume details screen where you can enable NFSv3, NFSv4, or both."]
 
 === Support for Azure US Gov regions
 
