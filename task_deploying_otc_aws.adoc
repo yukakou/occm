@@ -73,10 +73,10 @@ video::video_subscribing_aws.mp4[width=848, height=480]
 TIP: If multiple IAM users work in the same AWS account, then each user needs to subscribe. After the first user subscribes, the AWS Marketplace informs subsequent users that they're already subscribed, as shown in the image below. While a subscription is in place for the AWS _account_, each IAM user needs to associate themselves with that subscription. If you see the message shown below, click the *click here* link to go to Cloud Central and complete the process.
 image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription page for Cloud Manager for Cloud Volumes ONTAP when the AWS account already has a subscription, but a particular IAM user might not."]
 
-. *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
+. *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
 * link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
-* link:task_backup_to_s3.html[Learn more about Backup to S3].
+* link:concept_backup_to_cloud.html[Learn more about Backup to Cloud].
 
 . *Location & Connectivity*: Enter the network information that you recorded in the AWS worksheet.
 +
@@ -139,7 +139,7 @@ You might skip this step if you want to create a volume for iSCSI. Cloud Manager
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
-include::/_include/create_volume.adoc[]
+include::_include/create_volume.adoc[]
 +
 The following image shows the Volume page filled out for the CIFS protocol:
 +
@@ -335,7 +335,7 @@ You might skip this step if you want to create a volume for iSCSI. Cloud Manager
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
-include::/_include/create_volume.adoc[]
+include::_include/create_volume.adoc[]
 +
 The following image shows the Volume page filled out for the CIFS protocol:
 +

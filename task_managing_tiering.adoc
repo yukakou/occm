@@ -57,13 +57,13 @@ You might want to see how much data is in the cloud tier and how much data is on
 
 . From the *Cluster Dashboard*, click *More info* for a cluster.
 +
-image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_more_info.gif[A screenshot that shows the More info button, which is available on the Cluster Dashboard for each cluster.]
+image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_more_info.gif["A screenshot that shows the More info button, which is available on the Cluster Dashboard for each cluster."]
 
 . Review details about the cluster.
 +
 Here's an example:
 +
-image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_cluster_info.gif[A screenshot that shows the cluster report, which details total used capacity, cluster used capacity, cluster information, and object storage information.]
+image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_cluster_info.gif["A screenshot that shows the cluster report, which details total used capacity, cluster used capacity, cluster information, and object storage information."]
 
 == Fixing operational health
 

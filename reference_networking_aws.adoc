@@ -114,7 +114,7 @@ To use NetApp management tools with HA configurations that are in multiple AZs, 
 
 The following image shows an optimal HA configuration in AWS operating as an active-passive configuration:
 
-image:diagram_ha_networking.png[Conceptual image showing components in a Cloud Volumes ONTAP HA architecture: two Cloud Volumes ONTAP nodes and a mediator instance, each in separate availability zones.]
+image:diagram_ha_networking.png["Conceptual image showing components in a Cloud Volumes ONTAP HA architecture: two Cloud Volumes ONTAP nodes and a mediator instance, each in separate availability zones."]
 
 == Sample VPC configurations
 
@@ -134,7 +134,7 @@ For more details about this scenario, refer to http://docs.aws.amazon.com/Amazon
 
 The following graphic shows Cloud Manager running in a public subnet and single node systems running in a private subnet:
 
-image:diagram_vpc_public_and_private.png[This illustration shows Cloud Manager and a NAT instance running in a public subnet, and Cloud Volumes ONTAP instances and a NetApp Support instance running in a private subnet.]
+image:diagram_vpc_public_and_private.png["This illustration shows Cloud Manager and a NAT instance running in a public subnet, and Cloud Volumes ONTAP instances and a NetApp Support instance running in a private subnet."]
 
 === A VPC with a private subnet and a VPN connection to your network
 

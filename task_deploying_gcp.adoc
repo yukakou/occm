@@ -114,7 +114,7 @@ You should skip this step if you want to use iSCSI. Cloud Manager enables you to
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
-include::/_include/create_volume.adoc[]
+include::_include/create_volume.adoc[]
 +
 The following image shows the Volume page filled out for the CIFS protocol:
 +

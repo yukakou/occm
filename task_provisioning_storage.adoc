@@ -47,7 +47,7 @@ a|
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
-include::/_include/create_volume.adoc[]
+include::_include/create_volume.adoc[]
 
 . If you chose the CIFS protocol and the CIFS server has not been set up, specify details for the server in the Create a CIFS Server dialog box, and then click *Save and continue*:
 +

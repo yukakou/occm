@@ -35,7 +35,7 @@ To get started, you need to discover the cloud volumes in an AWS region. You can
 
 . Select *Cloud Volumes Service for AWS*.
 +
-image:screenshot_discover.gif[A screenshot that shows the Discover page in Cloud Manager, which enables you to discover an ONTAP cluster, Cloud Volumes ONTAP system, or the cloud volumes in a Cloud Volumes Service for AWS subscription.]
+image:screenshot_discover.gif["A screenshot that shows the Discover page in Cloud Manager, which enables you to discover an ONTAP cluster, Cloud Volumes ONTAP system, or the cloud volumes in a Cloud Volumes Service for AWS subscription."]
 
 . Provide information about your Cloud Volumes Service subscription:
 
@@ -43,7 +43,7 @@ image:screenshot_discover.gif[A screenshot that shows the Discover page in Cloud
 .. Enter the Cloud Volumes API key and secret key. https://docs.netapp.com/us-en/cloud_volumes/aws/reference_cloud_volume_apis.html#finding-the-api-url-api-key-and-secret-key[For instructions, refer to Cloud Volumes Service for AWS documentation^].
 .. Click *Go*.
 +
-image:screenshot_cvs_aws_details.gif[A screenshot of the Cloud Volumes Service Details page which enables you to discover your configuration. It contains three fields: AWS region, access key, and secret key.]
+image:screenshot_cvs_aws_details.gif["A screenshot of the Cloud Volumes Service Details page which enables you to discover your configuration. It contains three fields: AWS region, access key, and secret key."]
 
 .Result
 
@@ -108,7 +108,7 @@ Delete the cloud volumes that you no longer need.
 
 . Hover over the volume and click the menu. Click *Delete*.
 +
-image:screenshot_cvs_aws_menu.gif[A screenshot that shows a volume, the menu that's available in the top right, and two options: info and delete.]
+image:screenshot_cvs_aws_menu.gif["A screenshot that shows a volume, the menu that's available in the top right, and two options: info and delete."]
 
 . Confirm that you want to delete the volume.
 

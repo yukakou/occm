@@ -42,7 +42,7 @@ Now that Cloud Compliance is enabled, ensure that it can access volumes.
 * NFS Volume export policies must allow access from the Cloud Compliance instance.
 * Cloud Compliance needs Active Directory credentials to scan CIFS volumes.
 +
-Click *Compliance* > *Scan Status* > *Edit CIFS Credentials* and provide the credentials. The credentials can be read-only, but providing admin credentials ensures that Cloud Compliance can read data that requires elevated permissions.
+Click *Compliance* > *Scan Configuration* > *Edit CIFS Credentials* and provide the credentials. The credentials can be read-only, but providing admin credentials ensures that Cloud Compliance can read data that requires elevated permissions.
 
 == Reviewing prerequisites
 
@@ -197,7 +197,7 @@ You can either open the security group for traffic from the IP address of the Cl
 
 .. At the top of Cloud Manager, click *Compliance*.
 
-.. In the top right, click *Scan Status*.
+.. In the top right, click *Scan Configuration*.
 +
 image:screenshot_cifs_credentials.gif[A screenshot of the Compliance tab that shows the Scan Status button that's available in the top right of the content pane.]
 
@@ -207,10 +207,10 @@ The credentials can be read-only, but providing admin credentials ensures that C
 +
 After you enter the credentials, you should see a message that all CIFS volumes were authenticated successfully.
 +
-image:screenshot_cifs_status.gif[A screenshot that shows the CIFS Scan Status page and one Cloud Volumes ONTAP system for which CIFS credentials were successfully provided.]
+image:screenshot_cifs_status.gif[A screenshot that shows the Scan Configuration page and one Cloud Volumes ONTAP system for which CIFS credentials were successfully provided.]
 
-. On the *Scan Status* page, click *View Details* to review the scan status for each CIFS and NFS volume and correct any errors.
+. On the *Scan Configuration* page, click *View Details* to review the status for each CIFS and NFS volume and correct any errors.
 +
 For example, the following image shows three volumes that Cloud Compliance can't scan due to network connectivity issues between the Cloud Compliance instance and the volumes.
 +
-image:screenshot_compliance_volume_details.gif[A screenshot of the View Details page in the scan status. This screenshot shows three volumes that aren't being scanned because of network connectivity between Cloud Compliance and the volumes.]
+image:screenshot_compliance_volume_details.gif[A screenshot of the View Details page in the scan configuration. This screenshot shows three volumes that aren't being scanned because of network connectivity between Cloud Compliance and the volumes.]
