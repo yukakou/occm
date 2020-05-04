@@ -1,4 +1,5 @@
 ---
+sidebar: sidebar
 permalink: task_getting_started_aws.html
 keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, tiering, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, iam policy, ec2 console, ami, mediator, connectivity, internet, outbound, endpoint, connection, networks, replicating, ec2 service, policies, attach, iam user, access key, secret key, keys, sign up, cloud manager, cloud volumes ontap, cloud ontap, create
 summary: You can get started with Cloud Volumes ONTAP in AWS by completing a few quick steps.
@@ -35,13 +36,11 @@ When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS 
 
 .. Attach the policy to the IAM user.
 
-[discrete]
 ==== image:number3.png[Number 3] Launch Cloud Manager from NetApp Cloud Central
 
 [role="quick-margin-para"]
 Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance from https://cloud.netapp.com[Cloud Central^].
 
-[discrete]
 ==== image:number4.png[Number 4] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]
