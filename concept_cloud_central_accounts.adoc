@@ -31,7 +31,7 @@ image:screenshot_account_selection.gif[A screenshot of the Cloud Manager setup w
 
 Account Admins can then modify the settings for this account by managing users, workspaces, and service connectors:
 
-image:screenshot_account_settings.gif[A screenshot that shows the Account Settings widget from which you can manage users, workspaces, and service connectors.]
+image:screenshot_account_settings.gif["A screenshot that shows the Account Settings widget from which you can manage users, workspaces, and service connectors."]
 
 For step-by-step instructions, see link:task_setting_up_cloud_central_accounts.html[Setting up the Cloud Central account].
 
@@ -77,7 +77,7 @@ Note that account 2 includes two separate service connectors. This might happen 
 
 NOTE: Again, Cloud Manager and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
 
-image:diagram_cloud_central_accounts_two.png[A diagram that shows two Cloud Central accounts, each with several workspaces and their associated Workspace Admins.]
+image:diagram_cloud_central_accounts_two.png["A diagram that shows two Cloud Central accounts, each with several workspaces and their associated Workspace Admins."]
 
 [[faq]]
 == FAQ for integration with Cloud Central accounts
