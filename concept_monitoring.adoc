@@ -18,7 +18,7 @@ By leveraging NetApp's Cloud Insights service, Cloud Manager gives you insights 
 == Features
 
 * Automatically monitor all volumes without configuring anything
-* View volume performance data such as IOPS, throughput, and latency
+* View volume performance data in terms of IOPS, throughput, and latency
 * Use the data to prevent performance issues from impacting your users and apps
 
 == Supported object storage providers
@@ -47,7 +47,7 @@ image:diagram_cloud_insights.png["A conceptual diagram that shows Cloud Manager,
 
 === The Acquisition Unit
 
-An _Acquisition Unit_ collects data from Cloud Volumes ONTAP and sends it to the Cloud Insights tenant. Cloud Manager then queries that data and presents it to you.
+An _Acquisition Unit_ collects performance data from Cloud Volumes ONTAP and sends it to the Cloud Insights tenant. Cloud Manager then queries that data and presents it to you.
 
 When you enable Monitoring, Cloud Manager deploys an Acquisition Unit in the same subnet as Cloud Manager.
 
@@ -66,4 +66,10 @@ Cloud Manager sets up a _tenant_ for you when you enable Monitoring. A Cloud Ins
 
 The Monitoring tab in Cloud Manager provides basic performance data for your volumes. You can go to the Cloud Insights interface to perform more in-depth monitoring of your Cloud Volumes ONTAP systems.
 
-Cloud Manager subscribes you to the Cloud Insights Basic Edition, which determines which features are available from the Cloud Insights interface. You can upgrade to the Standard or Premium edition at any time. https://docs.netapp.com/us-en/cloudinsights/concept_subscribing_to_cloud_insights.html[Learn more about Cloud Insights editions^].
+=== Free trial and subscription
+
+Cloud Manager enables a 30-day free trial of Cloud Insights to provide performance data within Cloud Manager and to explore all the features that Cloud Insights Standard Edition has to offer.
+
+You need to subscribe before the free trial ends to continue seeing performance data within Cloud Manager and Cloud Insights.
+
+https://docs.netapp.com/us-en/cloudinsights/concept_subscribing_to_cloud_insights.html[Learn how to subscribe to Cloud Insights^].
