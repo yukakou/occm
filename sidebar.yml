@@ -159,6 +159,12 @@ entries:
                 url: /task_backup_to_azure.html
           - title: Manage backups and restore data
             url: /task_managing_backups.html
+      - title: Monitor performance
+        entries:
+          - title: Learn about Monitoring
+            url: /concept_monitoring.html
+          - title: Get started
+            url: /task_getting_started_monitoring.html
       - title: Administer Cloud Volumes ONTAP
         entries:
           - title: Connect to Cloud Volumes ONTAP
