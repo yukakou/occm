@@ -20,6 +20,14 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager 3.8.4 update (10 May 2020)
+
+We released an enhancement to Cloud Manager 3.8.4.
+
+=== Cloud Insights integration
+
+By leveraging NetApp’s Cloud Insights service, Cloud Manager gives you insights into the health and performance of your Cloud Volumes ONTAP instances and helps you troubleshoot and optimize the performance of your cloud storage environment. link:concept_monitoring.html[Learn more].
+
 == Cloud Manager 3.8.4 (3 May 2020)
 
 Cloud Manager 3.8.4 includes the following improvement.
