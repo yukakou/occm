@@ -57,7 +57,7 @@ Cloud Insights requirement::
 
 You must be a new Cloud Insights customer. Monitoring isn't supported if you already have a Cloud Insights tenant.
 
-Firewall or proxy rules::
+Networking for the Acquisition Unit::
 
 The Acquisition Unit uses 2-way/mutual authentication to connect to the Cloud Insights server. The client certificate must be passed to the Cloud Insights server to be authenticated. To accomplish this, the proxy must be set up to forward the http request to the Cloud Insights server without decrypting the data.
 +
@@ -72,6 +72,18 @@ For example:
  https://cg0c586a-ee05-45rb-a5ac-333b5ae7718d7.c01.cloudinsights.netapp.com
 +
 Contact us through the in-product chat if you need help identifying your Cloud Insights domain and tenant ID.
+
+Networking for Cloud Manager::
+
+Similar to the Acquisition Unit, Cloud Manager must have outbound connectivity to the Cloud Insights tenant. But the endpoint that Cloud Manager contacts is slightly different. It contacts the tenant host URL using the shortened tenant ID:
++
+ https://<your-short-tenant-ID>.<Cloud Insights Domain>
++
+For example:
++
+ https://abcd12345.c01.cloudinsights.netapp.com
++
+Again, you can contact us through the in-product chat if you need help identifying the tenant host URL.
 
 == Enabling monitoring on a new system
 
