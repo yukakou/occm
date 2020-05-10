@@ -77,6 +77,7 @@ image:screenshot_aws_marketplace.gif["A screenshot that shows the subscription p
 +
 * link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
 * link:concept_backup_to_cloud.html[Learn more about Backup to Cloud].
+* link:concept_monitoring.html[Learn more about Monitoring].
 
 . *Location & Connectivity*: Enter the network information that you recorded in the AWS worksheet.
 +
@@ -261,6 +262,7 @@ image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription pa
 +
 * link:task_backup_to_s3.html[Learn more about Backup to S3].
 * link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
+* link:concept_monitoring.html[Learn more about Monitoring].
 
 . *HA Deployment Models*: Choose an HA configuration.
 +

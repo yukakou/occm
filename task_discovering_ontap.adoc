@@ -34,7 +34,7 @@ The default "mgmt" firewall policy allows inbound HTTPS access from all IP addre
 
 . On the *ONTAP Cluster Details* page, enter the cluster management IP address, the password for the admin user account, and the location of the cluster.
 +
-image:screenshot_discover_ontap.gif[A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password, and on premises selected as the cluster location.]
+image:screenshot_discover_ontap.gif["A screenshot that shows an example of the ONTAP Cluster Details page: the cluster management IP address, user name and password, and on premises selected as the cluster location."]
 
 . On the Details page, enter a name and description for the working environment, and then click *Go*.
 

@@ -52,9 +52,15 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 
 | \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
 
+| \https://repo.cloud.support.netapp.com | Used to download Cloud Manager dependencies.
+
+| \http://repo.mysql.com/ | Used to download MySQL.
+
 |
 \https://cognito-idp.us-east-1.amazonaws.com
 \https://cognito-identity.us-east-1.amazonaws.com
+\https://sts.amazonaws.com
+\https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
 | Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
 
 | \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
@@ -123,10 +129,15 @@ Cloud Manager requires outbound internet access to contact the following endpoin
 
 | \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
 
+| \https://repo.cloud.support.netapp.com | Used to download Cloud Manager dependencies.
+
+| \http://repo.mysql.com/ | Used to download MySQL.
+
 |
 \https://cognito-idp.us-east-1.amazonaws.com
 \https://cognito-identity.us-east-1.amazonaws.com
 \https://sts.amazonaws.com
+\https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
 | Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
 
 | \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
@@ -149,6 +160,8 @@ Cloud Manager requires outbound internet access to contact the following endpoin
 \https://packages.cloud.google.com/yum
 \https://github.com/NetApp/trident/releases/download/
 | Required to connect Cloud Volumes ONTAP systems with a Kubernetes cluster. The endpoints enable installation of NetApp Trident.
+
+| *.blob.core.windows.net | Required for HA pairs when using a proxy.
 
 a| Various third-party locations, for example:
 
@@ -177,10 +190,15 @@ Cloud Manager requires outbound internet access to contact the following endpoin
 
 | \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
 
+| \https://repo.cloud.support.netapp.com | Used to download Cloud Manager dependencies.
+
+| \http://repo.mysql.com/ | Used to download MySQL.
+
 |
 \https://cognito-idp.us-east-1.amazonaws.com
 \https://cognito-identity.us-east-1.amazonaws.com
 \https://sts.amazonaws.com
+\https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
 | Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
 
 | \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.

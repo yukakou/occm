@@ -198,11 +198,11 @@ Each system includes a default Mirror and Backup policy, which works well for ma
 
 The following images show the difference between the Mirror and Backup policies. A Mirror policy mirrors the Snapshot copies available on the source volume.
 
-image:diagram_replication_snapmirror.png[This illustration shows Snapshot copies on a source volume and a Mirror destination volume that mirrors the source volume.^]
+image:diagram_replication_snapmirror.png[This illustration shows Snapshot copies on a source volume and a Mirror destination volume that mirrors the source volume.]
 
 A Backup policy typically retains Snapshot copies longer than they are retained on the source volume:
 
-image:diagram_replication_snapvault.png[This illustration shows Snapshot copies on a source volume and a Backup destination volume that includes more Snapshot copies because SnapVault retains Snapshot copies for long-term retention.^]
+image:diagram_replication_snapvault.png[This illustration shows Snapshot copies on a source volume and a Backup destination volume that includes more Snapshot copies because SnapVault retains Snapshot copies for long-term retention.]
 
 === How Backup policies work
 
