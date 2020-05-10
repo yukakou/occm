@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_monitoring.html
-keywords:
+keywords: concepts, how cloud insights works, how monitoring works, features, monitoring features, cloud insights features, cost, monitoring
 summary: By leveraging NetApp's Cloud Insights service, Cloud Manager gives you insights into the health and performance of all of your Cloud Volumes ONTAP instances and helps you troubleshoot and optimize the performance of your cloud storage environment.
 ---
 
@@ -36,7 +36,7 @@ At a high-level, Cloud Insights integration with Cloud Manager works like this:
 1. You enable the Monitoring service on Cloud Volumes ONTAP.
 2. Cloud Manager configures your environment. It does the following:
 	a. Enables a 30-day free trial.
-	b. Creates a Cloud Insights tenant and associates all users in your Cloud Central account to the tenant.
+	b. Creates a Cloud Insights tenant (also called _environment_) and associates all users in your Cloud Central account to the tenant.
 	c. Deploys an Acquisition Unit in your VPC.
 	d. Connects the Acquisition Unit to Cloud Volumes ONTAP and to the Cloud Insights tenant.
 3. In Cloud Manager, you click Monitoring and use the performance data to troubleshoot and optimize performance.

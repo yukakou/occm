@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_getting_started_monitoring.html
-keywords:
+keywords: monitoring, cloud insights, tenant, acquisition unit, iops, throughput, latency, performance, cloud volumes ontap performance, volume performance
 summary: Complete a few steps to get started monitoring Cloud Volumes ONTAP performance.
 ---
 
@@ -46,19 +46,18 @@ Subscribe before your 30-day free trial ends to continue seeing performance data
 Read the following requirements to make sure that you have a supported configuration.
 
 Supported Cloud Manager versions::
-
 You need a new installation of Cloud Manager 3.8.4 or later. A new installation is needed because a new infrastructure is required to enable the Monitoring service. This infrastructure is available starting with new installations of Cloud Manager 3.8.4.
 
 Supported Cloud Volumes ONTAP versions::
-
 Any version of Cloud Volumes ONTAP in AWS.
 
 Cloud Insights requirement::
-
 You must be a new Cloud Insights customer. Monitoring isn't supported if you already have a Cloud Insights tenant.
 
-Networking for the Acquisition Unit::
+Email address for Cloud Central::
+The email address for your Cloud Central user account should be your business email address. Free email domains like gmail and hotmail aren’t supported when creating a Cloud Insights tenant.
 
+Networking for the Acquisition Unit::
 The Acquisition Unit uses 2-way/mutual authentication to connect to the Cloud Insights server. The client certificate must be passed to the Cloud Insights server to be authenticated. To accomplish this, the proxy must be set up to forward the http request to the Cloud Insights server without decrypting the data.
 +
 The Acquisition Unit uses the following two endpoints to communicate with Cloud Insights. If you have a firewall between the Acquisition Unit server and Cloud Insights, you need these endpoints when configuring firewall rules:
@@ -74,7 +73,6 @@ For example:
 Contact us through the in-product chat if you need help identifying your Cloud Insights domain and tenant ID.
 
 Networking for Cloud Manager::
-
 Similar to the Acquisition Unit, Cloud Manager must have outbound connectivity to the Cloud Insights tenant. But the endpoint that Cloud Manager contacts is slightly different. It contacts the tenant host URL using the shortened tenant ID:
 +
  https://<your-short-tenant-ID>.<Cloud Insights Domain>
