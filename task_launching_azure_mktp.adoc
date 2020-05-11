@@ -26,7 +26,7 @@ You need to install and set up Cloud Manager so you can use it to launch Cloud V
 
 .Steps
 
-. https://azure.microsoft.com/en-us/marketplace/partners/netapp/netapp-oncommand-cloud-manager/[Go to the Azure Marketplace page for Cloud Manager^].
+. https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-oncommand-cloud-manager[Go to the Azure Marketplace page for Cloud Manager^].
 
 . Click *Get it now* and then click *Continue*.
 
