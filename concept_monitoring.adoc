@@ -17,17 +17,17 @@ By leveraging NetApp's Cloud Insights service, Cloud Manager gives you insights 
 
 == Features
 
-* Automatically monitor all volumes without configuring anything
+* Automatically monitor all volumes
 * View volume performance data in terms of IOPS, throughput, and latency
-* Use the data to prevent performance issues from impacting your users and apps
+* Identify performance issues to minimize impact on your users and apps
 
-== Supported object storage providers
+== Supported cloud providers
 
 The Monitoring service is supported with Cloud Volumes ONTAP for AWS.
 
 == Cost
 
-Monitoring is currently available as a Preview. Activation is free, but it requires deploying a cloud instance, which results in charges from your cloud provider.
+Monitoring is currently available as a Preview. Activation is free, but Cloud Manager launches a virtual machine in your VPC to facilitate monitoring. This VM results in charges from your cloud provider.
 
 == How Cloud Insights works with Cloud Manager
 
@@ -35,9 +35,9 @@ At a high-level, Cloud Insights integration with Cloud Manager works like this:
 
 1. You enable the Monitoring service on Cloud Volumes ONTAP.
 2. Cloud Manager configures your environment. It does the following:
-	a. Enables a 30-day free trial.
-	b. Creates a Cloud Insights tenant (also called _environment_) and associates all users in your Cloud Central account to the tenant.
-	c. Deploys an Acquisition Unit in your VPC.
+	a. Creates a Cloud Insights tenant (also called _environment_) and associates all users in your Cloud Central account to the tenant.
+	b. Enables a 30-day free trial of Cloud Insights.
+	c. Deploys a virtual machine in your VPC called an Acquisition Unit, which facilitates monitoring of volumes (this is the VM mentioned in the Cost section above).
 	d. Connects the Acquisition Unit to Cloud Volumes ONTAP and to the Cloud Insights tenant.
 3. In Cloud Manager, you click Monitoring and use the performance data to troubleshoot and optimize performance.
 
@@ -47,9 +47,9 @@ image:diagram_cloud_insights.png["A conceptual diagram that shows Cloud Manager,
 
 === The Acquisition Unit
 
-An _Acquisition Unit_ collects performance data from Cloud Volumes ONTAP and sends it to the Cloud Insights tenant. Cloud Manager then queries that data and presents it to you.
-
 When you enable Monitoring, Cloud Manager deploys an Acquisition Unit in the same subnet as Cloud Manager.
+
+An _Acquisition Unit_ collects performance data from Cloud Volumes ONTAP and sends it to the Cloud Insights tenant. Cloud Manager then queries that data and presents it to you.
 
 Note the following about the Acquisition Unit instance:
 
@@ -60,11 +60,11 @@ Note the following about the Acquisition Unit instance:
 
 === Cloud Insights tenant
 
-Cloud Manager sets up a _tenant_ for you when you enable Monitoring. A Cloud Insights tenant enables you to access the performance data that the Acquisition Unit collects. The tenant is a virtual machine that runs in a NetApp account.
+Cloud Manager sets up a _tenant_ for you when you enable Monitoring. A Cloud Insights tenant enables you to access the performance data that the Acquisition Unit collects. The tenant is a secure data partition within the NetApp Cloud Insights service.
 
-=== Cloud Insights interface
+=== Cloud Insights web interface
 
-The Monitoring tab in Cloud Manager provides basic performance data for your volumes. You can go to the Cloud Insights interface to perform more in-depth monitoring of your Cloud Volumes ONTAP systems.
+The Monitoring tab in Cloud Manager provides basic performance data for your volumes. You can go to the Cloud Insights web interface from your browser to perform more in-depth monitoring and to configure alerts for your Cloud Volumes ONTAP systems.
 
 === Free trial and subscription
 
