@@ -56,7 +56,7 @@ Data transfer costs depend on your setup. If Cloud Compliance and Cloud Volumes 
 
 You need to pay to scan your Amazon S3 buckets. https://cloud.netapp.com/cloud-compliance#pricing[Learn about pricing^].
 
-A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends. link:task_scanning_s3#subscribing-to-aws-marketplace[Learn how to subscribe].
+A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends. link:task_scanning_s3.html#subscribing-to-aws-marketplace[Learn how to subscribe].
 
 == How Cloud Compliance works
 
