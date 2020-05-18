@@ -175,7 +175,7 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 | TCP | 464 | Node management LIF | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
 | UDP | 464 | Node management LIF | Active Directory forest | Kerberos key administration
 | TCP | 749 | Node management LIF | Active Directory forest | Kerberos V change & set Password (RPCSEC_GSS)
-| TCP | 88 | Data LIF (NFS, CIFS) | Active Directory forest | Kerberos V authentication
+| TCP | 88 | Data LIF (NFS, CIFS, iSCSI) | Active Directory forest | Kerberos V authentication
 | UDP | 137 | Data LIF (NFS, CIFS) | Active Directory forest | NetBIOS name service
 | UDP | 138 | Data LIF (NFS, CIFS) | Active Directory forest | NetBIOS datagram service
 | TCP | 139 | Data LIF (NFS, CIFS) | Active Directory forest | NetBIOS service session
