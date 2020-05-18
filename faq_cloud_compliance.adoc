@@ -96,6 +96,8 @@ Reports on a specific information type:: Reports are available that include deta
 +
 In regions where m5.4xlarge isn't available, Cloud Compliance runs on an m4.4xlarge instance instead.
 
+NOTE: Changing or resizing the instance/VM type isn't supported. You need to use the default size that's provided.
+
 link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works].
 
 == Does scan performance vary?

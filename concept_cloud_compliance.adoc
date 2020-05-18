@@ -56,7 +56,7 @@ Data transfer costs depend on your setup. If Cloud Compliance and Cloud Volumes 
 
 You need to pay to scan your Amazon S3 buckets. https://cloud.netapp.com/cloud-compliance#pricing[Learn about pricing^].
 
-A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends. link:task_scanning_s3#subscribing-to-aws-marketplace[Learn how to subscribe].
+A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends. link:task_scanning_s3.html#subscribing-to-aws-marketplace[Learn how to subscribe].
 
 == How Cloud Compliance works
 
@@ -81,6 +81,8 @@ Note the following about the instance:
 * In AWS, Cloud Compliance runs on an m5.4xlarge instance with a 500 GB GP2 disk.
 +
 In regions where m5.4xlarge isn't available, Cloud Compliance runs on an m4.4xlarge instance instead.
++
+NOTE: Changing or resizing the instance/VM type isn't supported. You need to use the default size that's provided.
 
 * The instance is named _CloudCompliance_ with a generated hash (UUID) concatenated to it. For example: _CloudCompliance-16bb6564-38ad-4080-9a92-36f5fd2f71c7_
 
