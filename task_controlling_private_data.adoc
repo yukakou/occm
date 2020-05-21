@@ -54,8 +54,7 @@ The personal data found in files can be general personal data or national identi
 | IBAN number (International Bank Account Number) | No
 | IP address | Yes
 
-.27+| National Identifiers
-| Belgian ID (Numero National) | Yes
+.29+| National Identifiers | Belgian ID (Numero National) | Yes
 | Brazilian ID (CPF) | Yes
 | Bulgarian ID (Unified Civil Number) | Yes
 | California Driver's License | Yes
@@ -82,7 +81,7 @@ The personal data found in files can be general personal data or national identi
 | South African ID | Yes
 | Spanish ID (DNI) | Yes
 | Swedish ID (personnummer) | Yes
-| U.K. National Insurance Number (NINO) | Yes
+| U.K. ID (NINO) | Yes
 | USA Social Security Number (SSN) | Yes
 |===
 
@@ -128,7 +127,7 @@ Sex Life or Orientation Reference::	Data concerning a natural person’s sex lif
 
 Cloud Compliance takes the data that it scanned and divides it into different types of categories. Categories are topics based on AI analysis of the content and metadata of each file. <<Types of categories,See the list of categories>>.
 
-Categories can help you understand what's happening with your data by showing you the type of information that you have. For example, a category like resumes or employee contracts can include sensitive data. When you investigate the results, you might find that employee contracts are stored in an unsecure location. You can then correct that issue.
+Categories can help you understand what's happening with your data by showing you the types of information that you have. For example, a category like resumes or employee contracts can include sensitive data. When you investigate the results, you might find that employee contracts are stored in an insecure location. You can then correct that issue.
 
 NOTE: Only English is supported for categories. Support for more languages will be added later.
 
@@ -155,15 +154,15 @@ Finance::
 *	Quarterly Reports
 
 HR::
-*	Background Check
+*	Background Checks
 *	Compensation Plans
 *	Employee Contracts
-*	Employee Review
+*	Employee Reviews
 *	Health
 *	Resumes
 
 Legal::
-*	NDA
+*	NDAs
 *	Vendor-Customer contracts
 
 Marketing::
@@ -207,7 +206,7 @@ Metadata categories::
 
 == File types
 
-Cloud Compliance takes the data that it scanned and breaks it down by file type. Reviewing your file types can help you control your sensitive data because you might find that certain file types are not stored correctly.
+Cloud Compliance takes the data that it scanned and breaks it down by file type. Reviewing your file types can help you control your sensitive data because you might find that certain file types are not stored correctly. <<Types of files,See the list of file types>>.
 
 For example, you might be storing CAD files that include very sensitive information about your organization. If they are unsecured, you can take control of the sensitive data by restricting permissions or moving the files to another location.
 
@@ -268,7 +267,7 @@ Cloud Compliance is in a Controlled Availability release and we are constantly i
 
 == What’s included in each file list report (CSV file)
 
-Each Investigation page enables you to download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list.
+From each Investigation page you can download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list.
 
 Each file list includes the following information:
 

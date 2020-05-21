@@ -101,7 +101,7 @@ NOTE: You can't use a proxy to get to S3 over the internet.
 
 === General requirements
 
-The remaining requirements apply to Cloud Compliance in general, whether you're scanning Amazon S3, Cloud Volumes ONTAP, or Azure NetApp Files. If you've already enabled Cloud Compliance for Cloud Volumes ONTAP or Azure NetApp Files, then you can skip these.
+The requirements in this section apply to Cloud Compliance in general, whether you're scanning Amazon S3, Cloud Volumes ONTAP, or Azure NetApp Files. If you've already enabled Cloud Compliance (for Cloud Volumes ONTAP or Azure NetApp Files), then you can skip these requirements and <<Subscribing from the AWS Marketplace,Subscribe from the AWS Marketplace>>.
 
 Enable outbound internet access::
 Cloud Compliance requires outbound internet access. If your virtual network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. Note that Cloud Manager deploys the Cloud Compliance instance in the same subnet as Cloud Manager.
@@ -240,10 +240,10 @@ After Cloud Manager enables Cloud Compliance on Amazon S3, the next step is to c
 +
 image:screenshot_s3_configure_buckets.gif[]
 
-. Select the buckets that you want to scan.
+. Enable compliance on the buckets that you want to scan.
 +
 image:screenshot_s3_select_buckets.gif[]
 
 .Result
 
-Cloud Compliance starts scanning the S3 buckets that you selected. If there are any errors, they'll appear in the Status column, alongside the required action to fix the error.
+Cloud Compliance starts scanning the S3 buckets that you enabled. If there are any errors, they'll appear in the Status column, alongside the required action to fix the error.

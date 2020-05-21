@@ -137,6 +137,8 @@ The compliance scan doesn't heat up the cold data--it stays cold and tiered to o
 
 No. Cloud Compliance is currently available as part of Cloud Manager and supports Cloud Volumes ONTAP and Azure NetApp Files. We're planning to support Cloud Compliance with additional cloud offerings such as Cloud Volumes Service. 
 
+link:task_scanning_onprem.html[Learn more].
+
 == Can Cloud Compliance send notifications to my organization?
 
 No, but you can download status reports that you can share internally in your organization.
