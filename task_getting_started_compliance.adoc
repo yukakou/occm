@@ -141,7 +141,9 @@ For help, see link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in 
 
 .Result
 
-Cloud Compliance is enabled on the Cloud Volumes ONTAP system. If this the first time that you enabled Cloud Compliance, Cloud Manager deploys the Cloud Compliance instance in your cloud provider. As soon as the instance is available, it starts scanning data as its written to each volume that you create.
+Cloud Compliance is enabled on the Cloud Volumes ONTAP system. If this is the first time that you enabled Cloud Compliance, Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
+
+As soon as the instance is available, Cloud Compliance starts scanning the data in the working environment. Results will be available in the Compliance dashboard as soon as Cloud Compliance finishes the initial scans.
 
 == Enabling Cloud Compliance on existing working environments
 
@@ -175,7 +177,7 @@ image:screenshot_enable_compliance.gif[A screenshot that shows the Enable Compli
 
 If this the first time that you enabled Cloud Compliance, Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
 
-Cloud Compliance starts scanning the data on each working environment. Data will be available in the Compliance dashboard as soon as Cloud Compliance finishes the initial scans. The time that it takes depends on the amount of data--it could be a few minutes or hours.
+As soon as the instance is available, Cloud Compliance starts scanning the data on each working environment. Results will be available in the Compliance dashboard as soon as Cloud Compliance finishes the initial scans. The time that it takes depends on the amount of data--it could be a few minutes or hours.
 
 == Verifying that Cloud Compliance has access to volumes
 
@@ -211,6 +213,6 @@ image:screenshot_cifs_status.gif[A screenshot that shows the Scan Configuration 
 
 . On the *Scan Configuration* page, click *View Details* to review the status for each CIFS and NFS volume and correct any errors.
 +
-For example, the following image shows three volumes that Cloud Compliance can't scan due to network connectivity issues between the Cloud Compliance instance and the volumes.
+For example, the following image shows three volumes; one of which Cloud Compliance can't scan due to network connectivity issues between the Cloud Compliance instance and the volume.
 +
-image:screenshot_compliance_volume_details.gif[A screenshot of the View Details page in the scan configuration. This screenshot shows three volumes that aren't being scanned because of network connectivity between Cloud Compliance and the volumes.]
+image:screenshot_compliance_volume_details.gif[A screenshot of the View Details page in the scan configuration. This screenshot shows three volumes; one of which isn't being scanned because of network connectivity between Cloud Compliance and the volume.]
