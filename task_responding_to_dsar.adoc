@@ -25,7 +25,7 @@ Privacy regulations such as the European GDPR grant data subjects (such as custo
 
 When you perform a data subject search, Cloud Compliance finds all of the files that has that person's name or identifier in it. Cloud Compliance checks the latest pre-indexed data for the name or identifier. It doesn't initiate a new scan.
 
-After the search is complete, you can then download the list of files or a Data Subject Access Request report. The report aggregates insights from the data and puts it into legal terms that you can send back to the person.
+After the search is complete, you can then download the list of files for a Data Subject Access Request report. The report aggregates insights from the data and puts it into legal terms that you can send back to the person.
 
 == Searching for data subjects and downloading reports
 

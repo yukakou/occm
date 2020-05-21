@@ -125,7 +125,7 @@ Cloud Compliance uses AI to extract natural persons’ names from documents. lin
 
 Cloud Manager deploys the Cloud Compliance instance with a private IP address and a security group that enables inbound HTTP connections from Cloud Manager. This connection enables you to access the Cloud Compliance dashboard from the Cloud Manager interface.
 
-Outbound rules are completely open. The instance connects the internet through a proxy from Cloud Manager. Internet access is needed to upgrade the Cloud Compliance software and to send usage metrics.
+Outbound rules are completely open. The instance connects to the internet through a proxy from Cloud Manager. Internet access is needed to upgrade the Cloud Compliance software and to send usage metrics.
 
 If you have strict networking requirements, link:task_getting_started_compliance.html#reviewing-prerequisites[learn about the endpoints that Cloud Compliance contacts].
 
