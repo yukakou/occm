@@ -63,6 +63,8 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 \https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
 | Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
 
+| \https://cloudmanagerinfraprod.azurecr.io | Access to software images of container components for an infrastructure that's running Docker and provides a solution for service integrations with Cloud Manager.
+
 | \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
 
 | \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
@@ -140,6 +142,8 @@ Cloud Manager requires outbound internet access to contact the following endpoin
 \https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
 | Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
 
+| \https://cloudmanagerinfraprod.azurecr.io | Access to software images of container components for an infrastructure that's running Docker and provides a solution for service integrations with Cloud Manager.
+
 | \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
 
 | \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
@@ -200,6 +204,8 @@ Cloud Manager requires outbound internet access to contact the following endpoin
 \https://sts.amazonaws.com
 \https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
 | Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
+
+| \https://cloudmanagerinfraprod.azurecr.io | Access to software images of container components for an infrastructure that's running Docker and provides a solution for service integrations with Cloud Manager.
 
 | \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
 
