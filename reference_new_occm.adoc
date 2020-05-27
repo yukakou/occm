@@ -20,6 +20,44 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager 3.8.5 (31 May 2020)
+
+* <<New subscription required in the Azure Marketplace>>
+* <<Backup to Cloud enhancements>>
+* <<Cloud Compliance enhancements>>
+
+=== New subscription required in the Azure Marketplace
+
+A new subscription is available in the Azure Marketplace. This one-time subscription is required to deploy Cloud Volumes ONTAP 9.7 PAYGO (except for your 30-day free trial system). The subscription also enables us to offer add-on features for Cloud Volumes ONTAP PAYGO and BYOL. You’ll be charged from this subscription for every Cloud Volumes ONTAP PAYGO system that you create and each add-on feature that you enable.
+
+Cloud Manager will prompt you to subscribe to this offering when you deploy a new Cloud Volumes ONTAP system (9.7 P1 or later).
+
+image:screenshot_azure_marketplace_subscription.gif[]
+
+=== Backup to Cloud enhancements
+
+The following enhancements are now available for Backup to Cloud.
+
+* Data protection (DP) volumes can now be backed up and restored.
+
+* In Azure, you can now create a new resource group or select an existing resource group instead of having Cloud Manager create one for you. The resource group can't be changed after you enable Backup to Cloud.
+
+* In AWS, you can back up volumes to an S3 bucket that resides on a different AWS account than your Cloud Volumes ONTAP instance.
+
+* If you frequently use the same settings for backup schedule and retention, you can now create the backup policy once and reuse that policy in other Cloud Volumes ONTAP instances in Cloud Manager.
+
+=== Cloud Compliance enhancements
+
+The following enhancements are available for Cloud Compliance.
+
+* You can now scan S3 buckets that are in a different AWS account than the Cloud Compliance instance. You just need to create a role on that new account so the existing Cloud Compliance instance can connect to those buckets.
++
+If you configured Cloud Compliance before release 3.8.5, you will need to modify the existing IAM role for the Cloud Compliance instance to use this functionality.
+
+* You can now filter the contents of the investigation page to display only the results you want to see. Filters include working environment, category, private data, file type, and more.
++
+image:screenshot_compliance_filters.gif[]
+
 == Cloud Manager 3.8.4 update (10 May 2020)
 
 We released an enhancement to Cloud Manager 3.8.4.
