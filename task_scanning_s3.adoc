@@ -62,11 +62,9 @@ Review the following prerequisites to make sure that you have a supported config
 
 === Requirements specific to S3
 
-The first three requirements are specific to scanning S3 buckets.
+The first two requirements are specific to scanning S3 buckets.
 
 [[policy-requirements]]
-Ensure that Cloud Manager is in the same account as your S3 buckets::
-When Cloud Manager is running in the AWS account that has the S3 buckets you want to scan, it automatically discovers the S3 buckets and displays them in an Amazon S3 working environment. Later, you can configure Cloud Compliance to <<Scanning buckets from additional AWS accounts,scan S3 buckets that are in different AWS accounts>>.
 
 Set up an IAM role for the Cloud Compliance instance::
 Cloud Compliance needs permissions to connect to the S3 buckets in your account and to scan them. Set up an IAM role that includes the permissions listed below. Cloud Manager prompts you to select an IAM role when you enable Cloud Compliance on the Amazon S3 working environment.
@@ -234,7 +232,7 @@ image:screenshot_s3_compliance_iam_role.gif[]
 
 . Click *Enable Compliance*.
 
-TIP: You can also enable compliance scans for a working environment from the Scan Configuration page by clicking the image:screenshot_gallery_options.gif[] icon and selecting *Deactivate Compliance*.
+TIP: You can also enable compliance scans for a working environment from the Scan Configuration page by clicking the image:screenshot_gallery_options.gif[] icon and selecting *Activate Compliance*.
 
 .Result
 
@@ -243,6 +241,10 @@ If the Cloud Compliance instance hasn't been deployed yet, Cloud Manager deploys
 == Configuring buckets
 
 After Cloud Manager enables Cloud Compliance on Amazon S3, the next step is to configure the buckets that you want to scan.
+
+When Cloud Manager is running in the AWS account that has the S3 buckets you want to scan, it discovers those buckets and displays them in an Amazon S3 working environment.
+
+Cloud Compliance can also <<Scanning buckets from additional AWS accounts,scan S3 buckets that are in different AWS accounts>>.
 
 .Steps
 
@@ -274,7 +276,7 @@ Be sure to do the following:
 * Attach the Cloud Compliance IAM policy. Make sure it has <<Requirements specific to S3,the required permissions>>.
 +
 image:screenshot_iam_create_role.gif[]
-+
+
 . Go to the source AWS account where the Cloud Compliance instance resides and select the IAM role that is attached to the instance.
 .. Click *Attach policies* and then click *Create policy*.
 .. Create a policy that includes the permissions listed below.
@@ -293,13 +295,15 @@ image:screenshot_iam_create_role.gif[]
         }
     ]
 }
-+ NOTE: The AWS-managed policy _AmazonS3ReadOnlyAccess_ includes these required permissions.
++
+NOTE: The AWS-managed policy _AmazonS3ReadOnlyAccess_ includes these required permissions.
 +
 The Cloud Compliance instance profile account now has access to the additional AWS account.
 
 . Go to the *Amazon S3 Scan Configuration* page and the new AWS account is displayed.
-image:screenshot_activate_and_select_buckets.png[]
 +
+image:screenshot_activate_and_select_buckets.png[]
+
 . Click *Activate Compliance & Select Buckets* and select the buckets you want to scan.
 
 .Result
