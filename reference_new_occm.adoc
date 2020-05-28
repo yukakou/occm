@@ -38,25 +38,29 @@ image:screenshot_azure_marketplace_subscription.gif[]
 
 The following enhancements are now available for Backup to Cloud.
 
-* Data protection (DP) volumes can now be backed up and restored.
+The following enhancements are now available for Backup to Cloud.
 
 * In Azure, you can now create a new resource group or select an existing resource group instead of having Cloud Manager create one for you. The resource group can't be changed after you enable Backup to Cloud.
 
-* In AWS, you can back up volumes to an S3 bucket that resides on a different AWS account than your Cloud Volumes ONTAP instance.
+* In AWS, you can now back up Cloud Volumes ONTAP instances that reside on a different AWS account than your Cloud Manager AWS account.
 
 * Additional options are now available when selecting the backup schedule for volumes. In addition to daily, weekly, and monthly backup options, you can now select one of the system-defined policies that provide combination policies such as 30 daily, 13 weekly, and 12 monthly backups.
+
+* After deleting all backups for a volume, you can now start creating backups again for that volume. This was a known limitation in the previous release.
 
 === Cloud Compliance enhancements
 
 The following enhancements are available for Cloud Compliance.
 
-* You can now scan S3 buckets that are in a different AWS account than the Cloud Compliance instance. You just need to create a role on that new account so the existing Cloud Compliance instance can connect to those buckets.
+* You can now scan S3 buckets that are in different AWS accounts than the Cloud Compliance instance. You just need to create a role on that new account so that the existing Cloud Compliance instance can connect to those buckets. link:task_scanning_s3.html#scanning-buckets-from-additional-aws-accounts[Learn more].
 +
-If you configured Cloud Compliance before release 3.8.5, you will need to modify the existing IAM role for the Cloud Compliance instance to use this functionality.
+If you configured Cloud Compliance before release 3.8.5, you will need to modify the existing link:task_scanning_s3.html#requirements-specific-to-s3[IAM role for the Cloud Compliance instance] to use this functionality.
 
-* You can now filter the contents of the investigation page to display only the results you want to see. Filters include working environment, category, private data, file type, and more.
+* You can now filter the contents of the investigation page to display only the results you want to see. Filters include working environment, category, private data, file type, last modified date, and whether the S3 object's permissions are open to public access.
 +
-image:screenshot_compliance_filters.gif[]
+image:screenshot_compliance_investigation_filtered.png[]
+
+* You can now activate and deactivate Cloud Compliance on a working environment directly from the Cloud Compliance tab.
 
 == Cloud Manager 3.8.4 update (10 May 2020)
 
