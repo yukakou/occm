@@ -31,7 +31,7 @@ image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Clo
 
 . Change the schedule and backup retention and then click *Save*.
 +
-image:screenshot_backup_settings.png[A screenshot that shows the Backup to Cloud settings where you can enable or disable the feature and then choose your backup retention.]
+image:screenshot_backup_settings_azure_done.png[A screenshot that shows the Backup to Cloud settings where you can enable or disable the feature and then choose your backup retention.]
 
 == Restoring a volume
 
