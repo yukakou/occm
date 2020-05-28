@@ -41,7 +41,7 @@ image:screenshot_personal_files.gif[A screenshot of the personal files dialog bo
 +
 image:screenshot_compliance_investigation_page.gif[]
 
-. You can also filter the contents of the investigation page to display only the results you want to see. Filters include working environment, category, private data, file type, and more.
+. You can also filter the contents of the investigation page to display only the results you want to see. Filters include working environment, category, private data, file type, last modified date, and whether the S3 object's permissions are open to public access.
 +
 image:screenshot_compliance_investigation_filtered.png[]
 
