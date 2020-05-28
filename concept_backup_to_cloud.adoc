@@ -98,7 +98,7 @@ If you have multiple Cloud Manager systems in the same Cloud Central account, ea
 
 Backup to Cloud supports read-write volumes only.
 
-FlexGroup volumes aren't supported.
+FlexGroup volumes and data protection volumes aren't supported.
 
 == Limitations
 

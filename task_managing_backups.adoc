@@ -63,8 +63,6 @@ Backup to Cloud enables you to delete _all_ backups of a specific volume. You ca
 
 You might do this if you deleted a volume or if you deleted a Cloud Volumes ONTAP system. Backup to Cloud doesn't automatically delete backups when you delete a volume or when you delete a system.
 
-IMPORTANT: When you delete the backups for a volume, Backup to Cloud can no longer back up the volume.
-
 .Steps
 
 . At the top of Cloud Manager, click *Backup*.
