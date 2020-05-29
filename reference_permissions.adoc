@@ -14,7 +14,7 @@ translate: false
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in https://mysupport.netapp.com/info/web/ECMP11022837.html[the policies provided by NetApp^]. You might want to understand what Cloud Manager does with these permissions.
+Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in https://mysupport.netapp.com/cloudontap/iampolicies[the policies provided by NetApp^]. You might want to understand what Cloud Manager does with these permissions.
 
 == What Cloud Manager does with AWS permissions
 
@@ -303,6 +303,7 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 |
 "Microsoft.Resources/deployments/operations/read",
+"Microsoft.Resources/deployments/operationStatuses/read",
 "Microsoft.Resources/deployments/read",
 "Microsoft.Resources/deployments/write",
 "Microsoft.Resources/resources/read",
@@ -356,6 +357,28 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 "Microsoft.Web/sites/*"
 
 | Manages failover for HA pairs.
+
+|
+"Microsoft.Network/privateEndpoints/write",
+"Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action",
+"Microsoft.Storage/storageAccounts/privateEndpointConnections/read",
+"Microsoft.Network/privateEndpoints/read",
+"Microsoft.Network/privateDnsZones/write",
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
+"Microsoft.Network/virtualNetworks/join/action",
+"Microsoft.Network/privateDnsZones/A/write",
+"Microsoft.Network/privateDnsZones/read",
+"Microsoft.Network/privateDnsZones/virtualNetworkLinks/read",
+
+| Enables the management of private endpoints. Private endpoints are used when connectivity isn't provided to outside the subnet. Cloud Manager creates the storage account for HA with only internal connectivity within the subnet.
+
+| "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete",
+
+| Enables Cloud Manager to delete volumes for Azure NetApp Files.
+
+| "Microsoft.Insights/Metrics/Read"
+
+| Enables integration with Global File Cache in an upcoming release.
 
 |===
 
