@@ -5,7 +5,7 @@ keywords: permissions, microsoft, azure, permissions, custom role, role, json, a
 summary: There are two ways to manage Azure accounts in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
 ---
 
-= Setting up and adding Azure accounts to Cloud Manager
+= Setting up and adding Azure credentials to Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: There are two ways to manage Azure accounts in Cloud Manager. First, if
 :imagesdir: ./media/
 
 [.lead]
-There are two ways to manage Azure accounts in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
+There are two ways to manage Azure credentials in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
 
 NOTE: When you deploy Cloud Manager from Cloud Central, Cloud Manager automatically adds the Azure account in which you deployed Cloud Manager. An initial account is not added if you manually installed the Cloud Manager software on an existing system. link:concept_accounts_azure.html[Learn about Azure accounts and permissions].
 
@@ -76,7 +76,7 @@ You must bind the service principal to one or more Azure subscriptions and assig
 
 . Create a custom role:
 
-.. Download the https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager Azure policy^].
+.. Download the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Azure policy^].
 
 .. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
 +
@@ -94,9 +94,9 @@ You should add the ID for each Azure subscription from which users will create C
 +
 The following example shows how to create a custom role using the Azure CLI 2.0:
 +
-*az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.7.4.json*
+*az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.8.5.json*
 +
-You should now have a custom role called _OnCommand Cloud Manager Operator_.
+You should now have a custom role called _Cloud Manager Operator_.
 
 . Assign the application to the role:
 
@@ -106,7 +106,7 @@ You should now have a custom role called _OnCommand Cloud Manager Operator_.
 
 .. Click *Access control (IAM) > Add > Add role assignment*.
 
-.. Select the *OnCommand Cloud Manager Operator* role.
+.. Select the *Cloud Manager Operator* role.
 
 .. Keep *Azure AD user, group, or service principal* selected.
 
@@ -199,31 +199,31 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 .Result
 
-You can now switch to different set of credentials from the Details and Credentials page when creating a new working environment:
+You can now switch to different set of credentials from the Details and Credentials page link:task_deploying_otc_azure.html[when creating a new working environment]:
 
-image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
+image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between credentials after clicking Edit Credentials in the Details & Credentials page.]
 
 == Associating additional Azure subscriptions with a managed identity
 
-Cloud Manager enables you to choose the Azure account and subscription in which you want to deploy Cloud Volumes ONTAP. You can't select a different Azure subscription for the managed identity profile unless you associate the https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[managed identity^] with those subscriptions.
+Cloud Manager enables you to choose the Azure credentials and Azure subscription in which you want to deploy Cloud Volumes ONTAP. You can't select a different Azure subscription for the managed identity profile unless you associate the https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[managed identity^] with those subscriptions.
 
 .About this task
 
-A managed identity is link:concept_accounts_azure.html[the initial Azure account] when you deploy Cloud Manager from NetApp Cloud Central. When you deployed Cloud Manager, Cloud Central created the OnCommand Cloud Manager Operator role and assigned it to the Cloud Manager virtual machine.
+A managed identity is link:concept_accounts_azure.html[the initial Azure account] when you deploy Cloud Manager from NetApp Cloud Central. When you deployed Cloud Manager, Cloud Central created the Cloud Manager Operator role and assigned it to the Cloud Manager virtual machine.
 
 .Steps
 
 . Log in to the Azure portal.
 
-. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP systems.
+. Open the *Subscriptions* service and then select the subscription in which you want to deploy Cloud Volumes ONTAP.
 
 . Click *Access control (IAM)*.
 
 .. Click *Add* > *Add role assignment* and then add the permissions:
 
-* Select the *OnCommand Cloud Manager Operator* role.
+* Select the *Cloud Manager Operator* role.
 +
-NOTE: OnCommand Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
+NOTE: Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
 
 * Assign access to a *Virtual Machine*.
 
