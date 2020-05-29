@@ -28,7 +28,7 @@ The following steps describe how to launch the instance from the EC2 Console bec
 
 .. Download the Cloud Manager IAM policy from the following location:
 +
-https://mysupport.netapp.com/info/web/ECMP11022837.html[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
+https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
 
 .. From the IAM console, create your own policy by copying and pasting the text from the Cloud Manager IAM policy.
 

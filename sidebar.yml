@@ -21,13 +21,13 @@ entries:
         url: /concept_cloud_central.html
       - title: Cloud Central accounts
         url: /concept_cloud_central_accounts.html
-      - title: Cloud provider accounts
+      - title: Cloud provider credentials
         entries:
-          - title: AWS accounts
+          - title: AWS credentials
             url: /concept_accounts_aws.html
-          - title: Azure accounts
+          - title: Azure credentials
             url: /concept_accounts_azure.html
-          - title: GCP accounts
+          - title: GCP credentials
             url: /concept_accounts_gcp.html
       - title: Storage
         entries:
@@ -67,13 +67,13 @@ entries:
         entries:
           - title: Set up the Cloud Central account
             url: /task_setting_up_cloud_central_accounts.html
-          - title: Add AWS accounts
+          - title: Add AWS credentials
             url: /task_adding_aws_accounts.html
-          - title: Add Azure accounts
+          - title: Add Azure credentials
             url: /task_adding_azure_accounts.html
-          - title: Add GCP accounts (9.6 only)
+          - title: Add GCP credentials (9.6 only)
             url: /task_adding_gcp_accounts.html
-          - title: Add NetApp Support Site accounts
+          - title: Add NetApp Support Site credentials
             url: /task_adding_nss_accounts.html
           - title: Install an HTTPS certificate
             url: /task_installing_https_cert.html

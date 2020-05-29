@@ -31,7 +31,7 @@ Cloud Manager updates the costs when you refresh the page. You should refer to A
 "ce:GetCostAndUsage",
 "ce:GetTags"
 +
-These actions are included in the latest https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager policy^]. New systems deployed from NetApp Cloud Central automatically include these permissions.
+These actions are included in the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^]. New systems deployed from NetApp Cloud Central automatically include these permissions.
 
 .. https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/activating-tags.html[Activate the *WorkingEnvironmentId* tag^].
 +

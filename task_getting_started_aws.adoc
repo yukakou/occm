@@ -32,7 +32,7 @@ A VPC endpoint is required if you want to tier cold data from Cloud Volumes ONTA
 When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS account that has permissions to deploy the instance.
 
 [role="quick-margin-list"]
-.. Go to the AWS IAM console and create a policy by copying and pasting the contents of the https://mysupport.netapp.com/info/web/ECMP11022837.html[NetApp Cloud Central policy for AWS^].
+.. Go to the AWS IAM console and create a policy by copying and pasting the contents of the https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Central policy for AWS^].
 
 .. Attach the policy to the IAM user.
 
