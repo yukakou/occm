@@ -38,8 +38,6 @@ image:screenshot_azure_marketplace_subscription.gif[]
 
 The following enhancements are now available for Backup to Cloud.
 
-The following enhancements are now available for Backup to Cloud.
-
 * In Azure, you can now create a new resource group or select an existing resource group instead of having Cloud Manager create one for you. The resource group can't be changed after you enable Backup to Cloud.
 
 * In AWS, you can now back up Cloud Volumes ONTAP instances that reside on a different AWS account than your Cloud Manager AWS account.
@@ -217,7 +215,7 @@ We released a few enhancements to Cloud Manager 3.8.1.
 
 * Cloud Manager no longer needs to set up _private links_ to the Backup to S3 service.
 
-Additional S3 permissions are required for these enhancements. The IAM role that provides Cloud Manager with permissions must include permissions from the latest https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager policy^].
+Additional S3 permissions are required for these enhancements. The IAM role that provides Cloud Manager with permissions must include permissions from the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^].
 
 link:task_backup_to_s3.html[Learn more about Backup to S3].
 
