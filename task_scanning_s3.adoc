@@ -136,7 +136,7 @@ Cloud Compliance requires outbound internet access. If your virtual network uses
 |===
 
 Ensure that Cloud Manager has the required permissions::
-Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Compliance instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/info/web/ECMP11022837.html[the policies provided by NetApp^].
+Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Compliance instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/cloudontap/iampolicies[the policies provided by NetApp^].
 
 Check your vCPU limits::
 Ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running.
