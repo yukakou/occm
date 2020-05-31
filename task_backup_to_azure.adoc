@@ -59,9 +59,6 @@ Cloud Volumes ONTAP 9.7 and later.
 Supported Azure regions::
 Backup to Cloud is supported in all Azure regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
 
-Azure Marketplace subscription::
-A subscription through the Azure Marketplace is required before you enable Backup to Cloud. link:task_deploying_otc_azure.html[You can subscribe from the Details & Credentials page of the working environment wizard].
-
 == Enabling Backup to Cloud on a new system
 
 Backup to Cloud is enabled by default in the working environment wizard. Be sure to keep the option enabled.
@@ -72,7 +69,7 @@ Backup to Cloud is enabled by default in the working environment wizard. Be sure
 
 . Select Microsoft Azure as the cloud provider and then choose a single node or HA system.
 
-. Fill out the Details & Credentials page and be sure that an Azure Marketplace subscription is in place.
+. Fill out the Details & Credentials page.
 
 . On the Services page, leave the service enabled and click *Continue*.
 +
