@@ -110,4 +110,6 @@ If you want to back up these volumes, you would need to disable Backup to Cloud 
 
 * Backup to Cloud can maintain up to 1,019 total backups of a volume.
 
+* In Azure, if you enable Backup to Cloud when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Backup to Cloud, *disable* Backup to Cloud when deploying Cloud Volumes ONTAP and then enable Backup to Cloud and choose the resource group from the Backup to Cloud Settings page. 
+
 * WORM storage is not supported on a Cloud Volumes ONTAP system when Backup to Cloud is enabled.
