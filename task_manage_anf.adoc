@@ -36,7 +36,7 @@ If you deployed Cloud Manager from Cloud Central, then you're all set. Cloud Cen
 +
 If you deployed Cloud Manager from the Azure Marketplace, then you should have followed link:task_launching_azure_mktp.html[instructions to enable a managed identity].
 
-* The Azure role assigned to the Cloud Manager virtual machine must include the permissions listed in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.7.4.json[Cloud Manager policy for Azure^]:
+* The Azure role assigned to the Cloud Manager virtual machine must include the permissions listed in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.8.5.json[Cloud Manager policy for Azure^]:
 +
 [source,json]
 "Microsoft.NetApp/netAppAccounts/read",
