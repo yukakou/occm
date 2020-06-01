@@ -22,8 +22,17 @@ link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.8.5 (31 May 2020)
 
+* <<New subscription required in the Azure Marketplace>>
 * <<Backup to Cloud enhancements>>
 * <<Cloud Compliance enhancements>>
+
+=== New subscription required in the Azure Marketplace
+
+A new subscription is available in the Azure Marketplace. This one-time subscription is required to deploy Cloud Volumes ONTAP 9.7 PAYGO (except for your 30-day free trial system). The subscription also enables us to offer add-on features for Cloud Volumes ONTAP PAYGO and BYOL. You’ll be charged from this subscription for every Cloud Volumes ONTAP PAYGO system that you create and each add-on feature that you enable.
+
+Cloud Manager will prompt you to subscribe to this offering when you deploy a new Cloud Volumes ONTAP system (9.7 P1 or later).
+
+image:screenshot_azure_marketplace_subscription.gif[]
 
 === Backup to Cloud enhancements
 
