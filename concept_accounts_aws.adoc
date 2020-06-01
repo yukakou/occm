@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: concept_accounts_aws.html
 keywords: cloud provider accounts, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, json
-summary: Cloud Manager enables you to choose the AWS account in which you want to deploy a Cloud Volumes ONTAP system. You can deploy all of your Cloud Volumes ONTAP systems in the initial AWS account, or you can set up additional accounts.
+summary: Cloud Manager enables you to choose the AWS credentials to use when deploying Cloud Volumes ONTAP. You can deploy all of your Cloud Volumes ONTAP systems using the initial AWS credentials, or you can add additional credentials.
 ---
 
-= AWS accounts and permissions
+= AWS credentials and permissions
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,21 +13,21 @@ summary: Cloud Manager enables you to choose the AWS account in which you want t
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager enables you to choose the AWS account in which you want to deploy a Cloud Volumes ONTAP system. You can deploy all of your Cloud Volumes ONTAP systems in the initial AWS account, or you can set up additional accounts.
+Cloud Manager enables you to choose the AWS credentials to use when deploying Cloud Volumes ONTAP. You can deploy all of your Cloud Volumes ONTAP systems using the initial AWS credentials, or you can add additional credentials.
 
-== The initial AWS account
+== Initial AWS credentials
 
-When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS account that has permissions to launch the Cloud Manager instance. The required permissions are listed in the https://mysupport.netapp.com/info/web/ECMP11022837.html[NetApp Cloud Central policy for AWS^].
+When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS account that has permissions to launch the Cloud Manager instance. The required permissions are listed in the https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Central policy for AWS^].
 
 When Cloud Central launches the Cloud Manager instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP in that AWS account. link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[Review how Cloud Manager uses the permissions].
 
 image:diagram_permissions_initial_aws.png["A conceptual image that shows Cloud Central deploying Cloud Manager in an AWS account. An IAM policy is assigned to an IAM role, which is attached to the Cloud Manager instance."]
 
-Cloud Manager selects this cloud provider account by default when you create a new working environment:
+Cloud Manager selects these AWS credentials by default when you create a new working environment:
 
 image:screenshot_accounts_select_aws.gif[A screenshot that shows the Switch Account option in the Details & Credentials page.]
 
-== Additional AWS accounts
+== Additional AWS credentials
 
 If you want to launch Cloud Volumes ONTAP in different AWS accounts, then you can either link:task_adding_aws_accounts.html[provide AWS keys for an IAM user or the ARN of a role in a trusted account]. The following image shows two additional accounts, one providing permissions through an IAM role in a trusted account and another through the AWS keys of an IAM user:
 
@@ -35,7 +35,7 @@ image:diagram_permissions_multiple_aws.png["A conceptual image that shows two ad
 
 You would then link:task_adding_aws_accounts.html#adding-aws-accounts-to-cloud-manager[add the account credentials to Cloud Manager] by specifying the Amazon Resource Name (ARN) of the IAM role, or the AWS keys for the IAM user.
 
-After you add another account, you can switch to it when creating a new working environment:
+After you add another set of credentials, you can switch to them when creating a new working environment:
 
 image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
 

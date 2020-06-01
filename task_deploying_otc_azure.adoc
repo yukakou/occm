@@ -19,7 +19,7 @@ You can launch a single node system or an HA pair in Azure by creating a Cloud V
 
 * Make sure that your Azure account has the required permissions, especially if you upgraded from a previous release and are deploying an HA system for the first time.
 +
-The latest permissions are in the https://mysupport.netapp.com/info/web/ECMP11022837.html[NetApp Cloud Central policy for Azure^].
+The latest permissions are in the https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Central policy for Azure^].
 
 * You should have chose a configuration and obtained Azure networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
 
@@ -44,19 +44,20 @@ The following table describes fields for which you might need guidance:
 | Field
 | Description
 
-| Edit Credentials | You can choose a different account or subscription if you link:task_adding_azure_accounts.html[set them up and added them to Cloud Manager].
-
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Azure virtual machine. It also uses the name as the prefix for the predefined security group, if you select that option.
 
 | Resource Group Name | If you uncheck *Use Default*, you can enter the name of a new resource group. If you want to use an existing resource group, then you must use the API.
 
-| Tags |	Tags are metadata for your Azure resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP system and each Azure resource associated with the system.
+| Tags | Tags are metadata for your Azure resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP system and each Azure resource associated with the system.
 
 You can add up to four tags from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four tags when creating a working environment.
 
 For information about tags, refer to https://azure.microsoft.com/documentation/articles/resource-group-using-tags/[Microsoft Azure Documentation: Using tags to organize your Azure resources^].
 
-| Credentials |	These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
+| User name and password |	These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through OnCommand System Manager or its CLI.
+
+| Edit Credentials | You can choose different Azure credentials and a different Azure subscription to use with this Cloud Volumes ONTAP system. You need to associate an Azure Marketplace subscription with the selected Azure subscription in order to deploy a pay-as-you-go Cloud Volumes ONTAP system. link:task_adding_azure_accounts.html[Learn how to add credentials].
+
 |===
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.

@@ -80,7 +80,7 @@ The easiest way to provide permissions is by enabling a https://docs.microsoft.c
 
 . Create a custom role using the Cloud Manager policy:
 
-.. Download the https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager Azure policy^].
+.. Download the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Azure policy^].
 
 .. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
 +
@@ -97,7 +97,7 @@ You should add the ID for each Azure subscription from which users will create C
 +
 The following example shows how to create a custom role using the Azure CLI 2.0:
 +
-*az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.7.4.json*
+*az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.8.5.json*
 +
 You should now have a custom role called OnCommand Cloud Manager Operator that you can assign to the Cloud Manager virtual machine.
 
@@ -111,7 +111,7 @@ You should now have a custom role called OnCommand Cloud Manager Operator that y
 
 * Select the *OnCommand Cloud Manager Operator* role.
 +
-NOTE: OnCommand Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/info/web/ECMP11022837.html[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
+NOTE: OnCommand Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
 
 * Assign access to a *Virtual Machine*.
 
