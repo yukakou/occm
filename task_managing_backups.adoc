@@ -17,9 +17,7 @@ Manage backups for Cloud Volumes ONTAP by changing the backup schedule, restorin
 
 == Changing the schedule and backup retention
 
-The default policy backs up volumes every day and retains 30 backup copies of each volume. You can change to weekly or monthly backups and you can change the number of backup copies to retain.
-
-A combination of daily, weekly, and monthly isn’t supported. You can choose daily, or weekly, or monthly.
+The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. You can change to weekly or monthly backups and you can change the number of backup copies to retain. You can also select one of the system-defined policies that provide more options, such as _NetappRecommended2_ that provides 30 daily, 13 weekly, and 12 monthly backups.
 
 TIP: Changing the backup policy affects all future backups. It doesn't affect any previous backups that were created.
 
@@ -33,7 +31,7 @@ image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Clo
 
 . Change the schedule and backup retention and then click *Save*.
 +
-image:screenshot_backup_settings.gif[A screenshot that shows the Backup to Cloud settings where you can enable or disable the feature and then choose your backup retention.]
+image:screenshot_backup_settings_azure_done.png[A screenshot that shows the Backup to Cloud settings where you can enable or disable the feature and then choose your backup retention.]
 
 == Restoring a volume
 
@@ -64,8 +62,6 @@ image:screenshot_backup_to_s3_restore_options.gif["A screenshot that shows the r
 Backup to Cloud enables you to delete _all_ backups of a specific volume. You can't delete _individual_ backups.
 
 You might do this if you deleted a volume or if you deleted a Cloud Volumes ONTAP system. Backup to Cloud doesn't automatically delete backups when you delete a volume or when you delete a system.
-
-IMPORTANT: When you delete the backups for a volume, Backup to Cloud can no longer back up the volume.
 
 .Steps
 

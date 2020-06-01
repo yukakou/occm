@@ -29,6 +29,8 @@ When you deactivate scans, Cloud Compliance no longer scans the data on the syst
 +
 image:screenshot_deactivate_compliance_scan.png[A screenshot of the action icon where you can select Deactivate scan. This option is available after you select a working environment from the Working Environments page.]
 
+TIP: You can also disable compliance scans for a working environment from the Scan Configuration page by clicking the image:screenshot_gallery_options.gif[] icon and selecting *Deactivate Compliance*.
+
 == Deleting the Cloud Compliance instance
 
 You can delete the Cloud Compliance instance if you no longer want to use Cloud Compliance. Deleting the instance also deletes the associated disks where the indexed data resides.

@@ -15,17 +15,19 @@ summary: Cloud Compliance provides reports that you can use to better understand
 [.lead]
 Cloud Compliance provides reports that you can use to better understand the status of your organization's data privacy program.
 
+By default, the Cloud Compliance dashboard displays compliance data for all working environments. If you want to view reports that contain data for only some of the working environments, <<Selecting the working environments for reports,select those working environments>>.
+
 NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Compliance identifies. You should always validate the information by reviewing the data.
 
 == Privacy Risk Assessment Report
 
 The Privacy Risk Assessment Report provides an overview of your organization’s privacy risk status, as required by privacy regulations such as GDPR and CCPA. The report includes the following information:
 
-Compliance status:: A severity score (see below for more details) and the distribution of data, whether it's non-sensitive, personal, or sensitive personal.
+Compliance status:: A <<Severity score,severity score>> and the distribution of data, whether it's non-sensitive, personal, or sensitive personal.
 
 Assessment overview:: A breakdown of the types of personal data found, as well as the categories of data.
 
-Data subjects in this assessment:: The number of people by location for which national identifiers were found.
+Data subjects in this assessment:: The number of people, by location, for which national identifiers were found.
 
 === Generating the Privacy Risk Assessment Report
 
@@ -53,7 +55,7 @@ Cloud Compliance calculates the severity score for the Privacy Risk Assessment R
 
 The logic used to determine the score is as follows:
 
-[cols=2*,options="header",cols="29,71"]
+[cols=2*,options="header",cols="27,73"]
 |===
 
 | Severity score
@@ -64,12 +66,12 @@ The logic used to determine the score is as follows:
 | 2 |	One of the variables are larger than 3%
 | 3 |	Two of the variables are larger than 3%
 | 4 |	Three of the variables are larger than 3%
-| 5 |	One of the variables are larger 6%
-| 6 |	Two of the variables are larger 6%
-| 7 |	Three of the variables are larger 6%
-| 8 |	One of the variables are larger 15%
-| 9 |	Two of the variables are larger 15%
-| 10 | Three of the variables are larger 15%
+| 5 |	One of the variables are larger than 6%
+| 6 |	Two of the variables are larger than 6%
+| 7 |	Three of the variables are larger than 6%
+| 8 |	One of the variables are larger than 15%
+| 9 |	Two of the variables are larger than 15%
+| 10 | Three of the variables are larger than 15%
 
 |===
 
@@ -83,7 +85,7 @@ Encryption:: The percentage of files containing credit card information that are
 
 Ransomware Protection:: The percentage of files containing credit card information that are on working environments that do or don't have ransomware protection enabled. This information is specific to Cloud Volumes ONTAP.
 
-Retention:: The timeframe in which the files were last modified, which is helpful because you shouldn't keep credit card information for longer than you need to process it.
+Retention:: The timeframe in which the files were last modified. This is helpful because you shouldn't keep credit card information for longer than you need to process it.
 
 Distribution of Credit Card Information:: The working environments where the credit card information was found and whether encryption and ransomware protection are enabled.
 
@@ -103,9 +105,9 @@ image:screenshot_pci_dss.gif[A screen shot of the Compliance tab in Cloud Manage
 
 Cloud Compliance generates a PDF report that you can review and send to other groups as needed.
 
-== Filtering data in reports
+== Selecting the working environments for reports
 
-Filter the contents of the Cloud Compliance dashboard to see compliance data for specific working environments.
+You can filter the contents of the Cloud Compliance dashboard to see compliance data for all or for just specific working environments.
 
 When you filter the dashboard, Cloud Compliance scopes the compliance data and reports to just those working environments that you selected.
 
@@ -113,4 +115,4 @@ When you filter the dashboard, Cloud Compliance scopes the compliance data and r
 
 . Click the filter drop-down, select the working environments that you'd like to view data for, and click *View*.
 +
-image:screenshot_cloud_compliance_filter.gif[]
+image:screenshot_cloud_compliance_filter.gif[A screen shot of selecting the working environments for the reports you want to run.]
