@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_modifying_ontap_cloud.html
-keywords: license, licensing, install, instance type, virtual machine type, VM type, change, modify, configuration, subscription, paygo, pay-as-you-go, pay as you go, byol, password, MTU, jumbo frames, c4.xlarge, c4.8xlarge, HA pair, file, license file, install, upload, change, modify, svm, storage virtual machine, password, route tables, nlf, gcp, machine type, virtual machine type, vm instance, aws subscription, changing aws subscription, write speed, high write speed, normal write speed
+keywords: license, licensing, install, instance type, virtual machine type, VM type, change, modify, configuration, subscription, paygo, pay-as-you-go, pay as you go, byol, password, MTU, jumbo frames, c4.xlarge, c4.8xlarge, HA pair, file, license file, install, upload, change, modify, svm, storage virtual machine, password, route tables, nlf, gcp, machine type, virtual machine type, vm instance, write speed, high write speed, normal write speed
 summary: You might need to change the configuration of Cloud Volumes ONTAP instances as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and move to an alternate subscription.
 ---
 
@@ -119,20 +119,6 @@ link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP]
 . link:task_replicating_data.html[Set up one-time data replication] between the systems for each volume that you must replicate.
 
 . Terminate the Cloud Volumes ONTAP system that you no longer need by link:task_deleting_working_env.html[deleting the original working environment].
-
-== Changing your AWS Marketplace subscription
-
-Change the AWS Marketplace subscription for your Cloud Volumes ONTAP system if you want to change the AWS account from which you get charged.
-
-.Steps
-
-. If you haven't already done so, add a new subscription from https://aws.amazon.com/marketplace/pp/B07QX2QLXX[the Cloud Manager offering in the AWS Marketplace^].
-
-. From the working environment in Cloud Manager, click the menu icon, and then click *Marketplace Subscription*.
-
-. Select a subscription from the drop-down list.
-
-. Click *Save*.
 
 == Changing write speed to normal or high
 
