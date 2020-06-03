@@ -58,10 +58,14 @@ Cloud Compliance requires outbound internet access. If your virtual network uses
 
 | \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
 
-| \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
+| 
+\https://netapp-cloud-account.auth0.com
+\https://auth0.com
+
+| Communication with NetApp Cloud Central for centralized user authentication.
 
 |
-\https://cloud-compliance-support-netapp.s3.us-west-1.amazonaws.com
+\https://cloud-compliance-support-netapp.s3.us-west-2.amazonaws.com
 \https://hub.docker.com
 \https://auth.docker.io
 \https://registry-1.docker.io

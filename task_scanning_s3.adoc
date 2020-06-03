@@ -279,7 +279,7 @@ image:screenshot_iam_create_role.gif[]
 
 . Go to the source AWS account where the Cloud Compliance instance resides and select the IAM role that is attached to the instance.
 .. Click *Attach policies* and then click *Create policy*.
-.. Create a policy that includes the permissions listed below.
+.. Create a policy that includes the "sts:AssumeRole" action and the ARN of the role that you created in the target account.
 +
 [source,json]
 {
@@ -287,16 +287,11 @@ image:screenshot_iam_create_role.gif[]
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": [
-                "s3:Get*",
-                "s3:List*"
-            ],
-            "Resource": "*"
+            "Action": "sts:AssumeRole",
+            "Resource": "arn:aws:iam::<ADDITIONAL-ACCOUNT-ID>:role/<CREATED_ADDITIONAL_ROLE_NAME>"
         }
     ]
 }
-+
-NOTE: The AWS-managed policy _AmazonS3ReadOnlyAccess_ includes these required permissions.
 +
 The Cloud Compliance instance profile account now has access to the additional AWS account.
 

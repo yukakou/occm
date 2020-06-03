@@ -38,6 +38,7 @@ image:screenshot_backup_to_azure_icon.gif[A screenshot that shows the Backup to 
 [role="quick-margin-para"]
 The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. Change to weekly or monthly backups, or select one of the system-defined policies that provide more options.
 
+[role="quick-margin-para"]
 On existing systems, you can pick your own resource group when enabling Backup to Cloud for the first time. If you enable Backup to Cloud when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it.
 
 [role="quick-margin-para"]
