@@ -35,6 +35,8 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 +
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
++
+link:task_setting_up_ontap_cloud.html[Learn how to configure AutoSupport].
 
 Number of IP addresses::
 Cloud Manager allocates 5 IP addresses to Cloud Volumes ONTAP in GCP.
