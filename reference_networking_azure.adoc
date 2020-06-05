@@ -22,6 +22,8 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 +
 * \https://support.netapp.com/aods/asupmessage
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
++
+link:task_setting_up_ontap_cloud.html[Learn how to configure AutoSupport].
 
 Security groups::
 You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].

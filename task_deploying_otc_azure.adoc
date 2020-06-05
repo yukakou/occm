@@ -79,6 +79,8 @@ If you choose one of the packages, you only need to specify a volume and then re
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed, select a license, and select a virtual machine type.
 +
+image:screenshot_cvo_licensing_azure.gif[A screenshot of the Licensing page. It shows the Cloud Volumes ONTAP version, license (either Explore, Standard, or Premium), and the VM type.]
++
 If your needs change after you launch the system, you can modify the license or virtual machine type later.
 +
 NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.6 RC1 and 9.6 GA is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
