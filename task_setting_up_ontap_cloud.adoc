@@ -40,7 +40,7 @@ If the Account Admin added a proxy server to Cloud Manager before you launched y
 You should test AutoSupport to ensure that it can send messages. For instructions, see the System Manager Help or the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html[ONTAP 9 System Administration Reference^].
 
 | Optional: Configure Cloud Manager as the AutoSupport proxy
-a| If your environment requires a proxy server to send AutoSupport messages, you can configure Cloud Manager to act as the proxy. No configuration for Cloud Manager is required. You simply need to go to the CLI for Cloud Volumes ONTAP and run the following command:
+a| If your environment requires a proxy server to send AutoSupport messages, you can configure Cloud Manager to act as the proxy. No configuration for Cloud Manager is required, other than internet access. You simply need to go to the CLI for Cloud Volumes ONTAP and run the following command:
 
 ....
 system node autosupport modify -proxy-url <cloud-manager-ip-address>
