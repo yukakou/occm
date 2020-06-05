@@ -28,6 +28,8 @@ Routing and firewall policies must allow AWS HTTP/HTTPS traffic to the following
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
 +
 If you have a NAT instance, you must define an inbound security group rule that allows HTTPS traffic from the private subnet to the internet.
++
+link:task_setting_up_ontap_cloud.html[Learn how to configure AutoSupport].
 
 Outbound internet access for the HA mediator::
 The HA mediator instance must have an outbound connection to the AWS EC2 service so it can assist with storage failover. To provide the connection, you can add a public IP address, specify a proxy server, or use a manual option.
