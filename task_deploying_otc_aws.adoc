@@ -111,6 +111,8 @@ If you prefer to use your own policy, it must meet http://mysupport.netapp.com/c
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed, select a license, an instance type, and the instance tenancy.
 +
+image:screenshot_cvo_licensing_aws.gif[A screenshot of the Licensing page. It shows the Cloud Volumes ONTAP version, license (either Explore, Standard, or Premium), and the instance type.]
++
 If your needs change after you launch the instance, you can modify the license or instance type later.
 +
 NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.6 RC1 and 9.6 GA is available. The update does not occur from one release to another—for example, from 9.6 to 9.7.
@@ -309,6 +311,8 @@ If you choose one of the packages, you only need to specify a volume and then re
 If you prefer to use your own policy, it must meet http://mysupport.netapp.com/cloudontap/support/iampolicies[policy requirements for Cloud Volumes ONTAP nodes and the HA mediator^].
 
 . *Licensing*: Change the Cloud Volumes ONTAP version as needed, select a license, an instance type, and the instance tenancy.
++
+image:screenshot_cvo_licensing_aws.gif[A screenshot of the Licensing page. It shows the Cloud Volumes ONTAP version, license (either Explore, Standard, or Premium), and the instance type.]
 +
 If your needs change after you launch the instances, you can modify the license or instance type later.
 +
