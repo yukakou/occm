@@ -26,6 +26,7 @@ It depends on where you tier the cold data. Refer to the following:
 * link:task_tiering_onprem_aws.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to Amazon S3]
 * link:task_tiering_onprem_azure.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to Azure Blob storage]
 * link:task_tiering_onprem_gcp.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to Google Cloud Storage]
+* link:task_tiering_onprem_storagegrid.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to StorageGRID]
 
 === Does Cloud Tiering enable inactive data reporting?
 
@@ -33,7 +34,7 @@ Yes, Cloud Tiering enables inactive data reporting on each aggregate. This setti
 
 === Can I tier data from NAS volumes and SAN volumes?
 
-You can use Cloud Tiering to tier data from NAS volumes.
+You can use Cloud Tiering to tier data from NAS volumes to the public cloud and from SAN volumes to a private cloud using StorageGRID.
 
 == Object storage
 
@@ -41,7 +42,7 @@ The following questions relate to object storage.
 
 === Which object storage providers are supported?
 
-AWS S3, Azure Blob storage, and Google Cloud Storage are supported.
+Amazon S3, Azure Blob storage, Google Cloud Storage, and StorageGRID using the S3 protocol are supported.
 
 === Can I use my own bucket/container?
 
@@ -59,7 +60,7 @@ Cloud Tiering supports data tiering to the _Standard_, _Standard-Infrequent Acce
 
 === Which Azure Blob access tiers are supported?
 
-Cloud Tiering automatically uses the _Hot_ access tier for your inactive data. We plan to add support for the _Cool_ access tier in a future release.
+Cloud Tiering automatically uses the _Hot_ access tier for your inactive data.
 
 === Which storage classes are supported for Google Cloud Storage?
 
@@ -79,9 +80,10 @@ The following questions relate to Cloud Manager.
 
 === Where does Cloud Manager need to be installed?
 
-* When tiering cold data to S3, Cloud Manager can reside in an AWS VPC or on your premises.
-* When tiering cold data to Blob storage, Cloud Manager must reside in an Azure VNet.
-* When tiering cold data to Google Cloud Storage, Cloud Manager must reside in a Google Cloud Platform VPC.
+* When tiering data to S3, Cloud Manager can reside in an AWS VPC or on your premises.
+* When tiering data to Blob storage, Cloud Manager must reside in an Azure VNet.
+* When tiering data to Google Cloud Storage, Cloud Manager must reside in a Google Cloud Platform VPC.
+* When tiering data to StorageGRID, Cloud Manager must reside on an on premises Linux host.
 
 === What's the difference between Cloud Manager and a Service Connector?
 
@@ -99,6 +101,8 @@ The following questions relate to networking.
 +
 ONTAP reads and writes data to and from object storage. The object storage never initiates, it just responds.
 
+* For StorageGRID, the ONTAP cluster initiates an HTTPS connection over a user-specified port to StorageGRID (the port is configurable during tiering setup).
+
 * Cloud Manager needs an outbound HTTPS connection over port 443 to your ONTAP clusters, to the object store, and to the Cloud Tiering service.
 
 For more details, see:
@@ -106,6 +110,7 @@ For more details, see:
 * link:task_tiering_onprem_aws.html[Tiering data from on-premises ONTAP clusters to Amazon S3]
 * link:task_tiering_onprem_azure.html[Tiering data from on-premises ONTAP clusters to Azure Blob storage]
 * link:task_tiering_onprem_gcp.html[Tiering data from on-premises ONTAP clusters to Google Cloud Storage]
+* link:task_tiering_onprem_storagegrid.html[Tiering data from on-premises ONTAP clusters to StorageGRID]
 
 == Permissions
 
@@ -122,3 +127,7 @@ No extra permissions are needed outside of the permissions that you need to prov
 === What permissions are required in Google Cloud Platform?
 
 Storage Admin permissions are needed for a service account that has storage access keys.
+
+=== What permissions are required for StorageGRID?
+
+link:task_tiering_onprem_storagegrid.html#preparing-storagegrid[S3 permissions are needed].
