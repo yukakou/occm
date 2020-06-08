@@ -133,18 +133,18 @@ entries:
             url: /task_registering.html
           - title: Set up Cloud Volumes ONTAP
             url: /task_setting_up_ontap_cloud.html
-      - title: Provision storage
+      - title: Provision and manage storage
         entries:
           - title: Create volumes, aggregates, and LUNs
             url: /task_provisioning_storage.html
+          - title: Manage volumes and aggregates
+            url: /task_managing_storage.html
           - title: Tier inactive data to object storage
             url: /task_tiering.html
           - title: Use ONTAP as persistent storage
             url: /task_connecting_kubernetes.html
           - title: Encrypt volumes with NetApp Volume Encryption
             url: /task_encrypting_volumes.html
-          - title: Manage existing storage
-            url: /task_managing_storage.html
       - title: Replicate data
         url: /task_replicating_data.html
       - title: Backup to Cloud
