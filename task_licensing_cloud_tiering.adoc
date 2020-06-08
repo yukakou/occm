@@ -19,6 +19,8 @@ If a FabricPool license is already installed on your cluster, then you’re all 
 
 If you want to pay-as-you-go, then you’ll need to set up licensing directly from the Cloud Tiering service, which is accessible from Cloud Central. Licensing for Cloud Tiering isn’t available through Cloud Manager at this time.
 
+NOTE: There are no charges when tiering data to StorageGRID. Neither a BYOL license or PAYGO registration is required.
+
 .Steps to set up a PAYGO subscription
 
 . Log in to https://cloud.netapp.com/home[NetApp Cloud Central^].
