@@ -199,6 +199,8 @@ entries:
             url: /task_tiering_onprem_azure.html
           - title: Tier data to Google Cloud Storage
             url: /task_tiering_onprem_gcp.html
+          - title: Tier data to StorageGRID
+            url: /task_tiering_storagegrid.html
           - title: Licensing
             url: /task_licensing_cloud_tiering.html
           - title: Manage data tiering
