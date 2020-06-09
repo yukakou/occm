@@ -27,6 +27,8 @@ If you want to launch Cloud Volumes ONTAP in AWS, you need to create a new worki
 
 * If you want to use CIFS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
 
+* link:concept_keep_up.html[You should be prepared to leave Cloud Manager running at all times].
+
 .About this task
 
 Immediately after you create the working environment, Cloud Manager launches a test instance in the specified VPC to verify connectivity. If successful, Cloud Manager immediately terminates the instance and then starts deploying the Cloud Volumes ONTAP system. If Cloud Manager cannot verify connectivity, creation of the working environment fails. The test instance is either a t2.nano (for default VPC tenancy) or m3.medium (for dedicated VPC tenancy).
@@ -213,6 +215,8 @@ If you want to launch a Cloud Volumes ONTAP HA pair in AWS, you need to create a
 * If you purchased BYOL licenses, you must have a 20-digit serial number (license key) for each node.
 
 * If you want to use CIFS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
+
+* link:concept_keep_up.html[You should be prepared to leave Cloud Manager running at all times].
 
 .About this task
 
