@@ -24,7 +24,7 @@ The following conditions should exist before you start deploying Cloud Volumes O
 ** If you want to deploy a BYOL system: https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=cloud+volumes+ontap+byol[The single node or HA page in the AWS Marketplace^].
 * Cloud Manager was installed.
 +
-IMPORTANT: link:concept_keep_up.html[Cloud Manager should remain running at all times].
+TIP: link:concept_keep_up.html[Cloud Manager should remain running at all times].
 
 .Related links
 
