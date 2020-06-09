@@ -37,7 +37,7 @@ When Cloud Manager creates a Cloud Volumes ONTAP system in Azure, it creates sev
 
 . *Details and Credentials*: Optionally change the Azure credentials and subscription, specify a cluster name and resource group name, add tags if needed, and then specify credentials.
 +
-[video]
+[[video]]
 The following table describes fields for which you might need guidance:
 +
 [cols=2*,options="header",cols="25,75"]
