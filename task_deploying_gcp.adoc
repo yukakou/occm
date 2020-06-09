@@ -21,6 +21,8 @@ You can launch a single node Cloud Volumes ONTAP system in GCP by creating a wor
 
 * To deploy a BYOL system, you need the 20-digit serial number (license key) for each node.
 
+* link:concept_keep_up.html[You should be prepared to leave Cloud Manager running at all times].
+
 .Steps
 
 . On the Working Environments page, click *Create Cloud Volumes ONTAP* and follow the prompts.
