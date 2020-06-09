@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_deploying_otc_azure.html
-keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, azure, BYOL, license key, serial number, tags, azure tags, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, HA pair
+keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, azure, BYOL, license key, serial number, tags, azure tags, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, HA pair, associate subscription, azure marketplace, marketplace subscription
 summary: You can launch a single Cloud Volumes ONTAP system in Azure by creating a Cloud Volumes ONTAP working environment in Cloud Manager.
 ---
 
@@ -37,6 +37,7 @@ When Cloud Manager creates a Cloud Volumes ONTAP system in Azure, it creates sev
 
 . *Details and Credentials*: Optionally change the Azure credentials and subscription, specify a cluster name and resource group name, add tags if needed, and then specify credentials.
 +
+[video]
 The following table describes fields for which you might need guidance:
 +
 [cols=2*,options="header",cols="25,75"]
@@ -59,6 +60,10 @@ For information about tags, refer to https://azure.microsoft.com/documentation/a
 | Edit Credentials | You can choose different Azure credentials and a different Azure subscription to use with this Cloud Volumes ONTAP system. You need to associate an Azure Marketplace subscription with the selected Azure subscription in order to deploy a pay-as-you-go Cloud Volumes ONTAP system. link:task_adding_azure_accounts.html[Learn how to add credentials].
 
 |===
++
+The following video shows how to associate a Marketplace subscription to an Azure subscription:
++
+video::video_subscribing_azure.mp4[width=848, height=480]
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with Cloud Volumes ONTAP.
 +
