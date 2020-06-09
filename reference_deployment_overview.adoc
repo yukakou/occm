@@ -28,6 +28,8 @@ Cloud Manager must be in Google Cloud Platform when deploying Cloud Volumes ONTA
 * IBM Cloud
 * In your own network
 
+TIP: link:concept_keep_up.html[Cloud Manager should remain running at all times].
+
 How you deploy Cloud Manager depends on which location you choose:
 
 [cols=2*,options="header",cols="35,65"]
