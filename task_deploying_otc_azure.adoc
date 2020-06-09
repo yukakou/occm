@@ -37,7 +37,6 @@ When Cloud Manager creates a Cloud Volumes ONTAP system in Azure, it creates sev
 
 . *Details and Credentials*: Optionally change the Azure credentials and subscription, specify a cluster name and resource group name, add tags if needed, and then specify credentials.
 +
-[[video]]
 The following table describes fields for which you might need guidance:
 +
 [cols=2*,options="header",cols="25,75"]
@@ -61,6 +60,7 @@ For information about tags, refer to https://azure.microsoft.com/documentation/a
 
 |===
 +
+[[video]]
 The following video shows how to associate a Marketplace subscription to an Azure subscription:
 +
 video::video_subscribing_azure.mp4[width=848, height=480]
