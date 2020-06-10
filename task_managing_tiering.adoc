@@ -21,7 +21,7 @@ Set up data tiering for additional volumes at any time--for example, after creat
 
 .Steps
 
-. At the top of Cloud Manager, click *Tiering*.
+. At the top of Cloud Manager, click *OnPrem Tiering*.
 
 . From the *Cluster Dashboard*, click *Tier Volumes* for the cluster.
 
@@ -41,7 +41,7 @@ Changing the tiering policy for a volume changes how ONTAP tiers cold data to ob
 
 .Steps
 
-. At the top of Cloud Manager, click *Tiering*.
+. At the top of Cloud Manager, click *OnPrem Tiering*.
 
 . From the *Cluster Dashboard*, click *Tier Volumes* for the cluster.
 
@@ -55,7 +55,7 @@ You might want to see how much data is in the cloud tier and how much data is on
 
 .Steps
 
-. At the top of Cloud Manager, click *Tiering*.
+. At the top of Cloud Manager, click *OnPrem Tiering*.
 
 . From the *Cluster Dashboard*, click *More info* for a cluster.
 +
