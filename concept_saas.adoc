@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_saas.html
 keywords: cloud manager, service connector, user interface, ui, interface, cloud, saas, saas interface
-summary: We're introducing a software-as-a-service experience for Cloud Manager, starting in Google Cloud Platform. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional ways for you to manage your hybrid cloud infrastructure.
+summary: We're introducing a software-as-a-service experience for Cloud Manager, starting in Google Cloud Platform. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
 ---
 
 = Cloud Manager transition to SaaS
@@ -13,37 +13,39 @@ summary: We're introducing a software-as-a-service experience for Cloud Manager,
 :imagesdir: ./media/
 
 [.lead]
-We're introducing a software-as-a-service experience for Cloud Manager, starting in Google Cloud Platform. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional ways for you to manage your hybrid cloud infrastructure.
+We're introducing a software-as-a-service experience for Cloud Manager, starting in Google Cloud Platform. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
 
-== SaaS user interface
+== The current Cloud Manager experience
 
-Cloud Manager is software that you deploy in your cloud network or on-premises network. It's comprised of a user interface and the management layer that sends requests to cloud providers.
+Cloud Manager software is comprised of a user interface and the management layer that sends requests to cloud providers. To get started, you deploy Cloud Manager in your cloud network or on-premises network and then access the user interface that runs on that instance.
 
-Up until now, you would deploy Cloud Manager and then access the user interface running on that instance. That experience is changing.
+That experience is changing.
 
-You will now access a SaaS-based user interface from Cloud Central and then manage your hybrid-cloud environment from there.
+== The new SaaS experience
 
-In many cases, you need to deploy a _Service Connector_ in your cloud or on-premises network. The Service Connector is software that's needed to manage Cloud Volumes ONTAP and other cloud data services. (The software is actually the same as Cloud Manager software--it includes the same user interface and management layer.)
+You will now access a SaaS-based user interface from Cloud Central to manage your hybrid-cloud environment. You no longer need to access a user interface from software that runs in your network.
+
+In most cases, you will need to deploy a _Service Connector_ in your cloud or on-premises network. The Service Connector is software that's needed to manage Cloud Volumes ONTAP and other cloud data services. (The software is actually the same as the existing Cloud Manager software--it includes the same user interface and management layer.)
 
 == Benefits
 
-This SaaS-based approach has several benefits:
+This SaaS-based approach provides several benefits:
 
-* It enables us to offer more features for Cloud Volumes Service and Azure NetApp Files without needing to deploy any software in your environment
+* It enables us to offer additional management capabilities for Azure NetApp Files and Cloud Volumes Service without needing to deploy software in your environment.
 
-* It enables you to easily switch between your Cloud Central accounts
+* You can easily switch between your Cloud Central accounts.
 +
-If a user is associated with multiple Cloud Central accounts, you can change to a different account at any time from the User Settings menu.
+If a user is associated with multiple Cloud Central accounts, the user can change to a different account at any time from the User Settings menu. From there, they can see the Service Connectors that are associated with that account.
 +
 image:screenshot_switch_account.gif[]
 
-* It enables you to easily switch between Service Connectors that are installed in different networks or cloud providers (in other words, between multiple Cloud Manager instances in your environment)
+* You can easily switch between Service Connectors (what you know today as Cloud Manager instances) that are installed in different networks or different cloud providers.
 +
 image:screenshot_switch_service_connector.gif[]
 
 == The local user interface
 
-While you should perform almost all tasks from the SaaS user interface, a user interface is still available on the Service Connector. This interface is needed for a few tasks that need to be performed from the Service Connector itself:
+While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Service Connector. This interface is needed for a few tasks that need to be performed from the Service Connector itself:
 
 * Setting a proxy server
 * Installing a patch
