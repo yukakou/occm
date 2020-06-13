@@ -21,11 +21,11 @@ Cloud Manager software is comprised of a user interface and the management layer
 
 That experience is changing.
 
-== The new SaaS experience
+== A new SaaS experience
 
-You will now access a SaaS-based user interface from Cloud Central to manage your hybrid-cloud environment. You no longer need to access a user interface from software that runs in your network.
+The Cloud Manager interface will be accessible through a SaaS-based user interface that you log in to from NetApp Cloud Central. You'll no longer need to access a user interface from software that runs in your network.
 
-In most cases, you will need to deploy a _Service Connector_ in your cloud or on-premises network. The Service Connector is software that's needed to manage Cloud Volumes ONTAP and other cloud data services. (The software is actually the same as the existing Cloud Manager software--it includes the same user interface and management layer.)
+In most cases, you will need to deploy a _Service Connector_ in your cloud or on-premises network. The Service Connector is software that's needed to manage Cloud Volumes ONTAP and other cloud data services. (The software is actually the same as the existing Cloud Manager software--it includes the same user interface and the same management layer.)
 
 == Benefits
 
@@ -35,7 +35,7 @@ This SaaS-based approach provides several benefits:
 
 * You can easily switch between your Cloud Central accounts.
 +
-If a user is associated with multiple Cloud Central accounts, the user can change to a different account at any time from the User Settings menu. From there, they can see the Service Connectors that are associated with that account.
+If a user is associated with multiple Cloud Central accounts, they can change to a different account at any time from the User Settings menu. They can then see the Service Connectors and working environments that are associated with that account.
 +
 image:screenshot_switch_account.gif[]
 
