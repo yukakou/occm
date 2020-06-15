@@ -312,7 +312,7 @@ Be sure to do the following:
             "Effect": "Allow",
             "Action": "sts:AssumeRole",
             "Resource": "arn:aws:iam::<ADDITIONAL-ACCOUNT-ID>:role/<ADDITIONAL_ROLE_NAME>"
-        }
+        },
         {
             "Effect": "Allow",
             "Action": [
@@ -330,7 +330,7 @@ Be sure to do the following:
 +
 The Cloud Compliance instance profile account now has access to the additional AWS account.
 
-. Go to the *Amazon S3 Scan Configuration* page and the new AWS account is displayed.
+. Go to the *Amazon S3 Scan Configuration* page and the new AWS account is displayed. Note that it can take a few minutes for Cloud Compliance to sync the new account’s working environment and show this information.
 +
 image:screenshot_activate_and_select_buckets.png[]
 
