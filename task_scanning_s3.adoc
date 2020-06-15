@@ -77,7 +77,8 @@ Cloud Compliance needs permissions to connect to the S3 buckets in your account 
           "Effect": "Allow",
           "Action": [
               "s3:Get*",
-              "s3:List*"
+              "s3:List*",
+              "s3:HeadBucket"
           ],
           "Resource": "*"
       },
@@ -274,14 +275,32 @@ You can scan S3 buckets that are under a different AWS account by assigning a ro
 
 . Go to the target AWS account where you want to scan S3 buckets and create an IAM role by selecting *Another AWS account*.
 +
+image:screenshot_iam_create_role.gif[]
++
 Be sure to do the following:
 
 * Enter the ID of the account where the Cloud Compliance instance resides.
-* Attach the Cloud Compliance IAM policy. Make sure it has <<Requirements specific to S3,the required permissions>>.
+* Change the *Maximum CLI/API session duration* from 1 hour to 12 hours and save that change.
+* Attach the Cloud Compliance IAM policy. Make sure it has the required permissions.
 +
-image:screenshot_iam_create_role.gif[]
+[source,json]
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": [
+              "s3:Get*",
+              "s3:List*",
+              "s3:HeadBucket"
+          ],
+          "Resource": "*"
+      },
+  ]
+}
 
 . Go to the source AWS account where the Cloud Compliance instance resides and select the IAM role that is attached to the instance.
+.. Change the *Maximum CLI/API session duration* from 1 hour to 12 hours and save that change.
 .. Click *Attach policies* and then click *Create policy*.
 .. Create a policy that includes the "sts:AssumeRole" action and the ARN of the role that you created in the target account.
 +
@@ -292,14 +311,26 @@ image:screenshot_iam_create_role.gif[]
         {
             "Effect": "Allow",
             "Action": "sts:AssumeRole",
-            "Resource": "arn:aws:iam::<ADDITIONAL-ACCOUNT-ID>:role/<CREATED_ADDITIONAL_ROLE_NAME>"
+            "Resource": "arn:aws:iam::<ADDITIONAL-ACCOUNT-ID>:role/<ADDITIONAL_ROLE_NAME>"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetPolicyVersion",
+                "iam:GetPolicy",
+                "iam:ListAttachedRolePolicies"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:policy/*",
+                "arn:aws:iam::*:role/*"
+            ]
         }
     ]
 }
 +
 The Cloud Compliance instance profile account now has access to the additional AWS account.
 
-. Go to the *Amazon S3 Scan Configuration* page and the new AWS account is displayed.
+. Go to the *Amazon S3 Scan Configuration* page and the new AWS account is displayed. Note that it can take a few minutes for Cloud Compliance to sync the new account’s working environment and show this information.
 +
 image:screenshot_activate_and_select_buckets.png[]
 

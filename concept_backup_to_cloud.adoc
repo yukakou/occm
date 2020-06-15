@@ -40,7 +40,7 @@ You'll need to pay your cloud provider for object storage costs and NetApp for b
 
 * AWS: A 30-day free trial is available. https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
 
-* Azure: A 30-day free trial is available. Pricing details will be available soon.
+* Azure: A 30-day free trial is available. https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Go to the Cloud Manager Marketplace offering for pricing details^].
 
 == How Backup to Cloud works
 
@@ -110,6 +110,6 @@ If you want to back up these volumes, you would need to disable Backup to Cloud 
 
 * Backup to Cloud can maintain up to 1,019 total backups of a volume.
 
-* In Azure, if you enable Backup to Cloud when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Backup to Cloud, *disable* Backup to Cloud when deploying Cloud Volumes ONTAP and then enable Backup to Cloud and choose the resource group from the Backup to Cloud Settings page. 
+* In Azure, if you enable Backup to Cloud when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Backup to Cloud, *disable* Backup to Cloud when deploying Cloud Volumes ONTAP and then enable Backup to Cloud and choose the resource group from the Backup to Cloud Settings page.
 
 * WORM storage is not supported on a Cloud Volumes ONTAP system when Backup to Cloud is enabled.
