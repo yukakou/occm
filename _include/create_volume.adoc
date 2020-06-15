@@ -13,4 +13,10 @@
 
 | Advanced options (for NFS only) | Select an NFS version for the volume: either NFSv3 or NFSv4.
 
+| Initiator groups and IQNs (for iSCSI only) |
+iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices.
+
+Initiator groups are tables of iSCSI host node names and control which initiators have access to which LUNs.
+
+iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).
 |===

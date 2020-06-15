@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_provisioning_storage.html
 keywords: storage, provisioning, iscsi, nfs, cifs, volumes, aggregates, provision, create, quotas, nas, san, LUNs, quotas, qtree, add, advanced allocation, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, creating aggregates, adding an aggregate, add an aggregate, create an aggregate, provision volume, provision a volume, provisioning volumes, create a LUN, create LUNs, create LUN, provision LUNs, add volume to second node, add volume to node 2, flexcache, flexcache volumes, create a flexcache volume, provision flexcache, create flexcache volume
-summary: You can provision additional NFS and CIFS storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates. If you need to create iSCSI storage, you should do so from System Manager.
+summary: You can provision additional NFS, CIFS, and iSCSI storage for your Cloud Volumes ONTAP systems from Cloud Manager by managing volumes and aggregates.
 ---
 
 = Provisioning storage
@@ -19,7 +19,11 @@ IMPORTANT: All disks and aggregates must be created and deleted directly from Cl
 
 == Creating FlexVol volumes
 
-If you need more storage after you launch a Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS or CIFS from Cloud Manager.
+If you need more storage after you launch a Cloud Volumes ONTAP system, you can create new FlexVol volumes for NFS, CIFS, or iSCSI from Cloud Manager.
+
+.About this task
+
+When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <<Connecting a LUN to a host,use the IQN to connect to the LUN from your hosts>>.
 
 .Before you begin
 
@@ -140,37 +144,23 @@ For help with disk type and disk size, see link:task_planning_your_config.html[P
 
 . Click *Go*, and then click *Approve and Purchase*.
 
-== Provisioning iSCSI LUNs
+== Connecting a LUN to a host
 
-Create iSCSI LUNs by using a Cloud Manager API or by going to System Manager.
-
-If you want to use the Cloud Manager APIs, link:api.html#_provisioning_iscsi_volumes[view an example here^].
-
-If you want to use System Manager, follow the steps below.
-
-.Before you begin
-
-* The Host Utilities must be installed and set up on the hosts that will connect to the LUN.
-
-* You must have recorded the iSCSI initiator name from the host. You need to supply this name when you create an igroup for the LUN.
-
-* Before you create volumes in System Manager, you must ensure that you have an aggregate with sufficient space. You need to create aggregates in Cloud Manager. For details, see link:task_provisioning_storage.html#creating-aggregates[Creating aggregates].
-
-.About this task
-
-These steps describe how to use System Manager for version 9.3 and later.
+When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, use the IQN to connect to the LUN from your hosts.
 
 .Steps
 
-. link:task_connecting_to_otc.html[Log in to System Manager].
+. On the Working Environments page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
 
-. Click *Storage > LUNs*.
+. Select a volume, and then click *Target iQN*.
 
-. Click *Create* and follow the prompts to create the LUN.
+. Click *copy* to copy the iQN name.
 
-. Connect to the LUN from your hosts.
+. Connect to the LUN from a host by using the following instructions for the operating system that you selected when you created the volume:
 +
-For instructions, see the http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61343[Host Utilities documentation^] for your operating system.
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-iscsi-rhel-cg/GUID-15E8C226-BED5-46D0-BAED-379EA4311340.html[Linux]
+* [VMware]
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-iscsi-cpg/GUID-857453EC-90E9-4AB6-B543-83827CF374BF.html[Windows]
 
 == Using FlexCache volumes to accelerate data access
 

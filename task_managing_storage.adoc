@@ -65,6 +65,12 @@ a|
 .. Select a volume, and then click *Mount Command*.
 .. Click *Copy*.
 
+| View the target iQN for an iSCSI volume
+a|
+.. Select a volume, and then click *Target iQN*.
+.. Click *Copy*.
+.. link:task_provisioning.html#connecting-a-lun-to-a-host[Use the IQN to connect to the LUN from your hosts].
+
 | Change the underlying disk type
 a|
 .. Select a volume, and then click *Change Disk Type & Tiering Policy*.
