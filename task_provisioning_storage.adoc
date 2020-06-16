@@ -25,6 +25,8 @@ If you need more storage after you launch a Cloud Volumes ONTAP system, you can 
 
 When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <<Connecting a LUN to a host,use the IQN to connect to the LUN from your hosts>>.
 
+NOTE: You can create additional LUNs in the volume from System Manager or the CLI.
+
 .Before you begin
 
 If you want to use CIFS in AWS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP for AWS].
@@ -148,13 +150,15 @@ For help with disk type and disk size, see link:task_planning_your_config.html[P
 
 When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, use the IQN to connect to the LUN from your hosts.
 
+NOTE: You can create additional LUNs in the volume from System Manager or the CLI.
+
 .Steps
 
 . On the Working Environments page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
 
 . Select a volume, and then click *Target iQN*.
 
-. Click *copy* to copy the iQN name.
+. Click *Copy* to copy the iQN name.
 
 . Connect to the LUN from a host by using the following instructions for the operating system that you selected when you created the volume:
 +
