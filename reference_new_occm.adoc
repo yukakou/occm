@@ -20,6 +20,32 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager 3.8.6 (5 July 2020)
+
+* <<Multiple BYOL licenses to allocate additional capacity>>
+* <<iSCSI volumes from the user interface>>
+* <<Support for the All tiering policy>>
+
+=== Multiple BYOL licenses to allocate additional capacity
+
+You can now purchase multiple licenses for a Cloud Volumes ONTAP BYOL system to allocate more than 368 TB of capacity. For example, you might purchase two licenses to allocate up to 736 TB to Cloud Volumes ONTAP. Or you could purchase four licenses to get up to 1.4 PB.
+
+The number of licenses that you can purchase for a single node system or HA pair is unlimited.
+
+Be aware that disk limits prevent you from reaching the capacity limit by using disks alone. You can reach the capacity limit by link:concept_data_tiering.html[tiering inactive data to object storage^]. For information about disk limits, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap/[storage limits in the Cloud Volumes ONTAP Release Notes^].
+
+=== Create iSCSI volumes for Cloud Volumes ONTAP
+
+Cloud Manager now enables you to create iSCSI volumes for Cloud Volumes ONTAP directly from its user interface. !!! What about on-prem clusters? !!!
+
+When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <<Connecting a LUN to a host,use the IQN to connect to the LUN from your hosts>>.
+
+NOTE: You can create additional LUNs in the volume from System Manager or the CLI.
+
+=== Support for the All tiering policy with Cloud Volumes ONTAP
+
+You can now choose the All tiering policy when you create or modify a volume for Cloud Volumes ONTAP. The All tiering policy immediately tiers all data (not including metadata) to object storage. link:concept_data_tiering.html[Learn more about data tiering].
+
 == Cloud Manager 3.8.5 (31 May 2020)
 
 * <<New subscription required in the Azure Marketplace>>
