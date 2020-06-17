@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_backup_to_cloud.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, back up volumes, Backup to Cloud, restore volumes, billing, cost
-summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an S3 bucket in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
+summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
 = Learn about Backup to Cloud
@@ -36,7 +36,11 @@ Backup to Cloud is supported with the following types of working environments:
 
 == Cost
 
-You'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on used capacity (before storage efficiencies).
+Backup to Cloud is available in two pricing options: Bring Your Own License (BYOL) and Pay As You Go (PAYGO).
+
+For BYOL you'll pay NetApp to use the service for a period of time, say 6 months, and for a maximum amount backup capacity, say 1 GB. You'll receive a serial number, per node, that you enter in the Cloud Manager Licensing page. When either limit is reached you'll need to renew the license. Go link:task_modifying_ontap_cloud.html#installing-license-files-on-cloud-volumes-ontap-byol-systems[here to see how to apply the license] on a Cloud Volumes ONTAP system.
+
+For PAYGO you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on used capacity (before storage efficiencies).
 
 * AWS: A 30-day free trial is available. https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
 
@@ -76,7 +80,7 @@ The schedule and number of backups to retain are defined at the system level. Th
 
 === The schedule is daily, _or_ weekly, _or_ monthly
 
-You can choose daily, or weekly, or monthly backups of all volumes. A combination of these backup frequency options isn’t supported.
+You can choose daily, or weekly, or monthly backups of all volumes. You can also select one of the system-defined policies that provide scheduled backups for 3 months, 1 year, and 7 years.
 
 === Backups are taken at midnight
 

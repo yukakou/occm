@@ -63,7 +63,9 @@ Supported Azure regions::
 Backup to Cloud is supported in all Azure regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
 
 Azure Marketplace subscription::
-A subscription through the Azure Marketplace is required before you enable Backup to Cloud. link:task_deploying_otc_azure.html[You can subscribe from the Details & Credentials page of the working environment wizard].
+For Backup to Cloud PAYGO licensing, a subscription through the Azure Marketplace is required before you enable Backup to Cloud. Billing for Backup to Cloud is done through this subscription. link:task_deploying_otc_azure.html[You can subscribe from the Details & Credentials page of the working environment wizard].
+
+For Backup to Cloud BYOL licensing, you do not need an Azure subscription. You need the serial number from NetApp that enables you to use the service for the duration of the license.
 
 == Enabling Backup to Cloud on a new system
 
