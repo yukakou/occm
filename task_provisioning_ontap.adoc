@@ -16,15 +16,15 @@ After you discover your ONTAP cluster from Cloud Manager, you can open the worki
 
 == Creating volumes for ONTAP clusters
 
-Cloud Manager enables you to provision NFS and CIFS volumes on ONTAP clusters.
+Cloud Manager enables you to provision NFS, CIFS, and iSCSI volumes on ONTAP clusters.
 
 .Before you begin
 
-NFS or CIFS must be set up on the cluster. You can set up NFS and CIFS using System Manager or the CLI.
+The data protocols must be set up on the cluster using System Manager or the CLI.
 
 .About this task
 
-You can create volumes on existing aggregates. You cannot create new aggregates from Cloud Manager.
+You can create volumes on existing aggregates. You can't create new aggregates from Cloud Manager.
 
 .Steps
 
@@ -43,13 +43,21 @@ Some of the fields in this page are self-explanatory. The following table descri
 
 | Size | The maximum size that you can enter largely depends on whether you enable thin provisioning, which enables you to create a volume that is bigger than the physical storage currently available to it.
 
+| Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
+
 | Access control (for NFS only) | An export policy defines the clients in the subnet that can access the volume. By default, Cloud Manager enters a value that provides access to all instances in the subnet.
 
 | Permissions and Users / Groups (for CIFS only) | These fields enable you to control the level of access to a share for users and groups (also called access control lists or ACLs). You can specify local or domain Windows users or groups, or UNIX users or groups. If you specify a domain Windows user name, you must include the user's domain using the format domain\username.
 
+| Initiator group and IQN (for iSCSI only) |
+iSCSI storage targets are called LUNs (logical units) and are presented to hosts as standard block devices.
+
+Initiator groups are tables of iSCSI host node names and control which initiators have access to which LUNs.
+
+iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).
+
 | Usage Profile | Usage profiles define the NetApp storage efficiency features that are enabled for a volume.
 
-| Snapshot Policy | A Snapshot copy policy specifies the frequency and number of automatically created NetApp Snapshot copies. A NetApp Snapshot copy is a point-in-time file system image that has no performance impact and requires minimal storage. You can choose the default policy or none. You might choose none for transient data: for example, tempdb for Microsoft SQL Server.
 |===
 
 == Replicating data
