@@ -225,3 +225,12 @@ The default Snapshot policy creates hourly, daily, and weekly Snapshot copies, r
 You can easily use a default Backup policy with the default Snapshot policy. The default Backup policies replicate daily and weekly Snapshot copies, retaining seven daily and 52 weekly Snapshot copies.
 
 If you create custom policies, the labels defined by those policies must match. You can create custom policies using System Manager.
+
+== Data replication from NetApp HCI to Cloud Volumes ONTAP
+
+If you're trying to replicate data from NetApp HCI to Cloud Volumes ONTAP, you can do so on a NetApp HCI system running NetApp Element software using SnapMirror. Alternatively, you can replicate data on volumes created on an ONTAP Select system running as a virtual guest in a NetApp HCI solution to Cloud Volumes ONTAP.
+
+Refer to the following technical reports for details:
+
+*	https://www.netapp.com/us/media/tr-4641.pdf[Technical Report 4641: NetApp HCI Data Protection^]
+*	https://www.netapp.com/us/media/tr-4651.pdf[Technical Report 4651: NetApp SolidFire SnapMirror Architecture and Configuration^]
