@@ -28,7 +28,7 @@ Cloud Compliance can empower you with data to help you:
 
 * Comply with data compliance and privacy regulations.
 * Comply with data retention policies.
-* Easily locate and report on specific data in response to data subjects, as required by GDPR, CCPA, and other data privacy regulations.
+* Easily locate and report on specific data in response to data subjects, as required by GDPR, CCPA, HIPAA, and other data privacy regulations.
 
 == What are the common use cases for Cloud Compliance?
 
@@ -86,6 +86,8 @@ Data Subject Access Request report:: Enables you to extract a report of all file
 
 PCI DSS report:: Helps you identify the distribution of credit card information across your files.
 
+HIPAA report:: Helps you identify the distribution of health information across your files.
+
 Reports on a specific information type:: Reports are available that include details about the identified files that contain personal data and sensitive personal data. You can also see files broken down by category and file type. link:task_controlling_private_data.html[Learn more].
 
 == What type of instance or VM is required for Cloud Compliance?
@@ -135,7 +137,7 @@ The compliance scan doesn't heat up the cold data--it stays cold and tiered to o
 
 == Can I use Cloud Compliance to scan on-premise ONTAP storage?
 
-No. Cloud Compliance is currently available as part of Cloud Manager and supports Cloud Volumes ONTAP and Azure NetApp Files. We're planning to support Cloud Compliance with additional cloud offerings such as Cloud Volumes Service. 
+No. Scanning the data directly from an on-premises ONTAP working environment isn’t supported. But you can scan your on-premises ONTAP data by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then enabling compliance. We're planning to support Cloud Compliance with additional cloud offerings such as Cloud Volumes Service. 
 
 link:task_scanning_onprem.html[Learn more].
 

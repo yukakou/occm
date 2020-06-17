@@ -58,7 +58,7 @@ Cloud Compliance requires outbound internet access. If your virtual network uses
 
 | \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
 
-| 
+|
 \https://netapp-cloud-account.auth0.com
 \https://auth0.com
 
@@ -220,3 +220,23 @@ image:screenshot_cifs_status.gif[A screenshot that shows the Scan Configuration 
 For example, the following image shows three volumes; one of which Cloud Compliance can't scan due to network connectivity issues between the Cloud Compliance instance and the volume.
 +
 image:screenshot_compliance_volume_details.gif[A screenshot of the View Details page in the scan configuration. This screenshot shows three volumes; one of which isn't being scanned because of network connectivity between Cloud Compliance and the volume.]
+
+== Enabling and disabling compliance scans on individual volumes
+
+You can stop or start scanning volumes in a working environment at any time from the Scan Configuration page.
+
+image:screenshot_volume_compliance_selection.png[A screenshot of the scan configuration page where you can enable or disable scanning of individual volumes.]
+
+[cols="40,50",options="header"]
+|===
+| To:
+| Do this:
+
+| Disable scanning for a volume | Move the volume slider to the left
+| Disable scanning for all volumes | Move the *Activate Compliance for all Volumes* slider to the left
+| Enable scanning for a volume | Move the volume slider to the right
+| Enable scanning for all volumes | Move the *Activate Compliance for all Volumes* slider to the right
+
+|===
+
+New volumes added to the working environment are scanned automatically only when the *Activate Compliance for all Volumes* setting is enabled. When this setting is disabled, you'll need to enable each new volume individually.

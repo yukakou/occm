@@ -102,7 +102,7 @@ image:diagram_cloud_compliance_scan.png[A diagram that shows a Cloud Manager ins
 
 After the initial scan, Cloud Compliance continuously scans each volume to detect incremental changes (this is why it's important to keep the instance running).
 
-You can turn scans on and off at the working environment level, but not at the volume level. link:task_managing_compliance.html[Learn how].
+You can turn scans on and off at the working environment level, and at the volume level. link:task_managing_compliance.html[Learn how].
 
 == Information that Cloud Compliance indexes
 
