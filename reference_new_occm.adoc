@@ -23,8 +23,10 @@ link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 
 == Cloud Manager 3.8.6 (5 July 2020)
 
 * <<Multiple BYOL licenses to allocate additional capacity>>
-* <<iSCSI volumes from the user interface>>
+* <<Support for iSCSI volumes>>
 * <<Support for the All tiering policy>>
+* <<Cloud Compliance enhancements>>
+* <<Backup to Cloud enhancements>>
 
 === Multiple BYOL licenses to allocate additional capacity
 
@@ -34,17 +36,51 @@ The number of licenses that you can purchase for a single node system or HA pair
 
 Be aware that disk limits prevent you from reaching the capacity limit by using disks alone. You can reach the capacity limit by link:concept_data_tiering.html[tiering inactive data to object storage^]. For information about disk limits, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap/[storage limits in the Cloud Volumes ONTAP Release Notes^].
 
-=== Create iSCSI volumes for Cloud Volumes ONTAP
+=== Support for iSCSI volumes
 
-Cloud Manager now enables you to create iSCSI volumes for Cloud Volumes ONTAP directly from its user interface. !!! What about on-prem clusters? !!!
+Cloud Manager now enables you to create iSCSI volumes for Cloud Volumes ONTAP and on-prem ONTAP clusters directly from its user interface.
 
-When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, <<Connecting a LUN to a host,use the IQN to connect to the LUN from your hosts>>.
+When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task_provisioning_storage.html[use the IQN to connect to the LUN from your hosts].
 
 NOTE: You can create additional LUNs in the volume from System Manager or the CLI.
 
 === Support for the All tiering policy with Cloud Volumes ONTAP
 
 You can now choose the All tiering policy when you create or modify a volume for Cloud Volumes ONTAP. The All tiering policy immediately tiers all data (not including metadata) to object storage. link:concept_data_tiering.html[Learn more about data tiering].
+
+=== Cloud Compliance enhancements
+
+The following enhancements are now available for Cloud Compliance.
+
+* Ability to choose the volumes to be scanned within a working environment
++
+Now you can disable scanning for individual volumes in a Cloud Volumes ONTAP or Azure NetApp Files working environment if those volumes don't need to be scanned for compliance. link:task_getting_started_compliance.html[Learn more about disabling scanning for volumes].
+
+* HIPAA Report
++
+A new Health Insurance Portability and Accountability Act (HIPAA) Report is now available. This report is designed to aid in your organization’s requirement to comply with HIPAA data privacy laws. link:task_generating_compliance_reports.html#hipaa-report[Learn more about the HIPAA report].
+
+* New sensitive personal data type
++
+Cloud Compliance can now find ICD-9-CM Medical Codes in files.
+
+* New personal data type
++
+Cloud Compliance can now find two new national identifiers in files: Croatian ID (OIB) and Greek ID.
+
+=== Backup to Cloud enhancements
+
+The following enhancements are now available for Backup to Cloud.
+
+* Bring Your Own License (BYOL) is now available
++
+Backup to Cloud has been available only with a Pay As You Go (PAYGO) license. A BYOL license allows you to purchase a license from NetApp to use Backup to Cloud for a certain period of time and for a maximum amount backup space. When either limit is reached you will need to renew the license.
++
+Learn more about the new Backup to Cloud BYOL license.
+
+* Combined Policy and Retention column
++
+The Policy & Retention column provides an easier way to see the number and type of backups that will be created for each volume in your working environments.
 
 == Cloud Manager 3.8.5 (31 May 2020)
 
