@@ -38,7 +38,7 @@ Be aware that disk limits can prevent you from reaching the capacity limit by us
 
 === Support for iSCSI volumes
 
-Cloud Manager now enables you to create iSCSI volumes for Cloud Volumes ONTAP and on-prem ONTAP clusters directly from its user interface.
+Cloud Manager now enables you to create iSCSI volumes for Cloud Volumes ONTAP and on-prem ONTAP clusters directly from the user interface.
 
 When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task_provisioning_storage.html[use the IQN to connect to the LUN from your hosts].
 
