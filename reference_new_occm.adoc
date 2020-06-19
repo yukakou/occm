@@ -22,19 +22,9 @@ link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.8.6 (5 July 2020)
 
-* <<Multiple BYOL licenses to allocate additional capacity>>
 * <<Support for iSCSI volumes>>
 * <<Support for the All tiering policy>>
 * <<Cloud Compliance enhancements>>
-* <<Backup to Cloud enhancements>>
-
-=== Multiple BYOL licenses to allocate additional capacity
-
-You can now purchase multiple licenses for a Cloud Volumes ONTAP BYOL system to allocate more than 368 TB of capacity. For example, you might purchase two licenses to allocate up to 736 TB of capacity to Cloud Volumes ONTAP. Or you could purchase four licenses to get up to 1.4 PB.
-
-The number of licenses that you can purchase for a single node system or HA pair is unlimited.
-
-Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by link:concept_data_tiering.html[tiering inactive data to object storage^]. For information about disk limits, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap/[storage limits in the Cloud Volumes ONTAP Release Notes^].
 
 === Support for iSCSI volumes
 
@@ -67,20 +57,6 @@ Cloud Compliance can now find ICD-9-CM Medical Codes in files.
 * New personal data type
 +
 Cloud Compliance can now find two new national identifiers in files: Croatian ID (OIB) and Greek ID.
-
-=== Backup to Cloud enhancements
-
-The following enhancements are now available for Backup to Cloud.
-
-* Bring Your Own License (BYOL) is now available
-+
-Backup to Cloud has been available only with a Pay As You Go (PAYGO) license. A BYOL license allows you to purchase a license from NetApp to use Backup to Cloud for a certain period of time and for a maximum amount backup space. When either limit is reached you will need to renew the license.
-+
-Learn more about the new Backup to Cloud BYOL license.
-
-* Combined Policy and Retention column
-+
-The Policy & Retention column provides an easier way to see the number and type of backups that will be created for each volume in your working environments.
 
 == Cloud Manager 3.8.5 (31 May 2020)
 
