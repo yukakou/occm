@@ -39,11 +39,18 @@ After you add another set of credentials, you can switch to them when creating a
 
 image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
 
-.What about Marketplace deployments and on-prem deployments?
-****
+== What about Marketplace deployments and on-prem deployments?
+
 The sections above describe the recommended deployment method from NetApp Cloud Central. You can also deploy Cloud Manager in AWS from the link:task_launching_aws_mktp.html[AWS Marketplace] and you can link:task_installing_linux.html[install Cloud Manager on-premises].
 
 If you use the Marketplace, permissions are provided in the same way. You just need to manually create and set up the IAM role, and then provide permissions for any additional accounts.
 
 For on-premises deployments, you can't set up an IAM role for the Cloud Manager system, but you can provide permissions just like you would for additional AWS accounts.
-****
+
+== How can I securely rotate my AWS credentials?
+
+As described above, Cloud Manager enables you to provide AWS credentials in a few ways: an IAM role associated with the Cloud Manager instance, by assuming an IAM role in a trusted account, or by providing AWS access keys.
+
+With the first two options, Cloud Manager uses the AWS Security Token Service to obtain temporary credentials that rotate constantly. This process is the best practice, it's automatic and it's secure.
+
+If you provide Cloud Manager with AWS access keys, you should rotate the keys by updating them in Cloud Manager at a regular interval. This is a completely manual process.
