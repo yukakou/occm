@@ -20,6 +20,10 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager transition to SaaS (22 June 2020)
+
+We're introducing a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure. link:concept_saas.html[Learn more].
+
 == Cloud Manager 3.8.5 (31 May 2020)
 
 * <<New subscription required in the Azure Marketplace>>

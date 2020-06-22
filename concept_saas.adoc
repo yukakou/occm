@@ -1,0 +1,60 @@
+---
+sidebar: sidebar
+permalink: concept_saas.html
+keywords: cloud manager, service connector, user interface, ui, interface, cloud, saas, saas interface
+summary: We're introducing a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
+---
+
+= Cloud Manager transition to SaaS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+We're introducing a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
+
+== The current Cloud Manager experience
+
+Cloud Manager software is comprised of a user interface and the management layer that sends requests to cloud providers. To get started, you deploy Cloud Manager in your cloud network or on-premises network and then access the user interface that runs on that instance.
+
+That experience is changing.
+
+== A new SaaS experience
+
+The Cloud Manager interface will be accessible through a SaaS-based user interface that you log in to from NetApp Cloud Central. You'll no longer need to access a user interface from software that runs in your network.
+
+In most cases, you will need to deploy a _Connector_ in your cloud or on-premises network. The Connector is software that's needed to manage Cloud Volumes ONTAP and other cloud data services. (The software is actually the same as the existing Cloud Manager software--it includes the same user interface and the same management layer.)
+
+== Benefits
+
+This SaaS-based approach provides several benefits:
+
+* It enables us to offer additional management capabilities for Azure NetApp Files and Cloud Volumes Service without needing to deploy software in your environment.
+
+* You can easily switch between your Cloud Central accounts.
++
+If a user is associated with multiple Cloud Central accounts, they can change to a different account at any time from the User Settings menu. They can then see the Connectors and working environments that are associated with that account.
++
+image:screenshot_switch_account.gif[]
+
+* You can easily switch between Connectors (what you know today as Cloud Manager instances) that are installed in different networks or different cloud providers.
++
+image:screenshot_switch_service_connector.gif[]
+
+== The local user interface
+
+While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. This interface is needed for a few tasks that need to be performed from the Connector itself:
+
+* Setting a proxy server
+* Installing a patch
+* Downloading AutoSupport messages
+
+You can access the local user interface directly from the SaaS user interface:
+
+image:screenshot_local_ui.gif[]
+
+== Where is this new SaaS experience available?
+
+Since 15 June 2020, we've gradually made this new SaaS experience available to new customers. We're planning to make it available to existing customers later on. Check the release notes for the latest updates.
