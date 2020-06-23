@@ -24,39 +24,18 @@ link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 
 
 * <<Support for iSCSI volumes>>
 * <<Support for the All tiering policy>>
-* <<Cloud Compliance enhancements>>
 
 === Support for iSCSI volumes
 
 Cloud Manager now enables you to create iSCSI volumes for Cloud Volumes ONTAP and on-prem ONTAP clusters directly from the user interface.
 
-When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task_provisioning_storage.html[use the IQN to connect to the LUN from your hosts].
+When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task_provisioning_storage.html#connecting-a-lun-to-a-host[use the IQN to connect to the LUN from your hosts].
 
-NOTE: You can create additional LUNs in the volume from System Manager or the CLI.
+NOTE: You can create additional LUNs from System Manager or the CLI.
 
 === Support for the All tiering policy
 
 You can now choose the All tiering policy when you create or modify a volume for Cloud Volumes ONTAP. The All tiering policy immediately tiers all data (not including metadata) to object storage. link:concept_data_tiering.html[Learn more about data tiering].
-
-=== Cloud Compliance enhancements
-
-The following enhancements are now available for Cloud Compliance.
-
-* Ability to choose the volumes to be scanned within a working environment
-+
-Now you can disable scanning for individual volumes in a Cloud Volumes ONTAP or Azure NetApp Files working environment if those volumes don't need to be scanned for compliance. link:task_getting_started_compliance.html[Learn more about disabling scanning for volumes].
-
-* HIPAA Report
-+
-A new Health Insurance Portability and Accountability Act (HIPAA) Report is now available. This report is designed to aid in your organization’s requirement to comply with HIPAA data privacy laws. link:task_generating_compliance_reports.html#hipaa-report[Learn more about the HIPAA report].
-
-* New sensitive personal data type
-+
-Cloud Compliance can now find ICD-9-CM Medical Codes in files.
-
-* New personal data type
-+
-Cloud Compliance can now find two new national identifiers in files: Croatian ID (OIB) and Greek ID.
 
 == Cloud Manager 3.8.5 (31 May 2020)
 
