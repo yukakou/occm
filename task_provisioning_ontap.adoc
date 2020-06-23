@@ -56,6 +56,8 @@ Initiator groups are tables of iSCSI host node names and control which initiator
 
 iSCSI targets connect to the network through standard Ethernet network adapters (NICs), TCP offload engine (TOE) cards with software initiators, converged network adapters (CNAs) or dedicated host bust adapters (HBAs) and are identified by iSCSI qualified names (IQNs).
 
+When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, select it, click Target IQN, and then use the IQN to connect to the LUN from your hosts.
+
 | Usage Profile | Usage profiles define the NetApp storage efficiency features that are enabled for a volume.
 
 |===

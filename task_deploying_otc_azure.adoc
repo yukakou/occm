@@ -129,8 +129,6 @@ include::_include/create_volume.adoc[]
 The following image shows the Volume page filled out for the CIFS protocol:
 +
 image:screenshot_cot_vol.gif[Screen shot: Shows the Volume page filled out for a Cloud Volumes ONTAP instance.]
-+
-TIP: When you create an iSCSI volume, Cloud Manager automatically creates a LUN for you. We’ve made it simple by creating just one LUN per volume, so there’s no management involved. After you create the volume, link:task_provisioning.html#connecting-a-lun-to-a-host[use the IQN to connect to the LUN from your hosts].
 
 . *CIFS Setup*: If you chose the CIFS protocol, set up a CIFS server.
 +
