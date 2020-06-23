@@ -69,7 +69,7 @@ a|
 a|
 .. Select a volume, and then click *Target iQN*.
 .. Click *Copy*.
-.. link:task_provisioning.html#connecting-a-lun-to-a-host[Use the IQN to connect to the LUN from your hosts].
+.. link:task_provisioning_storage.html#connecting-a-lun-to-a-host[Use the IQN to connect to the LUN from your hosts].
 
 | Change the underlying disk type
 a|
