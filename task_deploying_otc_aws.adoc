@@ -140,8 +140,6 @@ link:concept_worm.html[Learn more about WORM storage].
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
 +
-You might skip this step if you want to create a volume for iSCSI. Cloud Manager sets up volumes for NFS and CIFS only.
-+
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
 include::_include/create_volume.adoc[]
@@ -340,8 +338,6 @@ link:concept_data_tiering.html[Learn how data tiering works].
 link:concept_worm.html[Learn more about WORM storage].
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
-+
-You might skip this step if you want to create a volume for iSCSI. Cloud Manager sets up volumes for NFS and CIFS only.
 +
 Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
 +
