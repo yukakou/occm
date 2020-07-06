@@ -37,6 +37,10 @@ NOTE: You can create additional LUNs from System Manager or the CLI.
 
 You can now choose the All tiering policy when you create or modify a volume for Cloud Volumes ONTAP. The All tiering policy immediately tiers all data (not including metadata) to object storage. link:concept_data_tiering.html[Learn more about data tiering].
 
+== Cloud Manager transition to SaaS (22 June 2020)
+
+We're introducing a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure. link:concept_saas.html[Learn more].
+
 == Cloud Manager 3.8.5 (31 May 2020)
 
 * <<New subscription required in the Azure Marketplace>>
