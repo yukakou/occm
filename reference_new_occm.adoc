@@ -20,7 +20,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
-== Cloud Manager 3.8.6 (5 July 2020)
+== Cloud Manager 3.8.6 (6 July 2020)
 
 * <<Support for iSCSI volumes>>
 * <<Support for the All tiering policy>>
