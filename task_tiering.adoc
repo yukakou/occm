@@ -115,7 +115,7 @@ Cloud Volumes ONTAP can tier inactive data on read-write volumes to cost-effecti
 
 |===
 
-. Select the Snapshot Only policy or the Auto policy.
+. Select a tiering policy.
 +
 For a description of these policies, see link:concept_data_tiering.html[Data tiering overview].
 +
