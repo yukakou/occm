@@ -42,6 +42,10 @@ The IAM user must have AWS Marketplace permissions to subscribe and unsubscribe.
 +
 image:screenshot_subscribe_cm.gif[A screenshot that shows the Continue to Subscribe and Continue to Configuration buttons on the AWS Marketplace.]
 
+. On the Marketplace page, click *Continue to Subscribe* and then click *Continue to Configuration*.
++
+image:screenshot_subscribe_cm2.gif[A screenshot that shows the Continue to Subscribe and Continue to Configuration buttons on the AWS Marketplace.]
+
 . Change any of the default options and click *Continue to Launch*.
 
 . Under *Choose Action*, select *Launch through EC2* and then click *Launch*.
