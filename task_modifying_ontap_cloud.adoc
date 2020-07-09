@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_modifying_ontap_cloud.html
-keywords: license, licensing, install, instance type, virtual machine type, VM type, change, modify, configuration, subscription, paygo, pay-as-you-go, pay as you go, byol, password, MTU, jumbo frames, c4.xlarge, c4.8xlarge, HA pair, file, license file, install, upload, change, modify, svm, storage virtual machine, password, route tables, nlf, gcp, machine type, virtual machine type, vm instance, write speed, high write speed, normal write speed
+keywords: license, licensing, install, instance type, virtual machine type, VM type, change, modify, configuration, subscription, paygo, pay-as-you-go, pay as you go, byol, password, MTU, jumbo frames, c4.xlarge, c4.8xlarge, HA pair, file, license file, install, upload, change, modify, svm, storage virtual machine, password, route tables, nlf, gcp, machine type, virtual machine type, vm instance, write speed, high write speed, normal write speed, storage VM, storage virtual machine, SVM, modify SVM name, change SVM name
 summary: You might need to change the configuration of Cloud Volumes ONTAP instances as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and move to an alternate subscription.
 ---
 
@@ -140,19 +140,19 @@ If you choose High, then you'll need to read the "I understand..." statement and
 
 . Click *Save*, review the confirmation message, and then click *Proceed*.
 
-== Modifying the storage virtual machine name
+== Modifying the storage VM name
 
-Cloud Manager automatically names the storage virtual machine (SVM) for Cloud Volumes ONTAP. You can modify the name of the SVM if you have strict naming standards. For example, you might want it to match how you name the SVMs for your ONTAP clusters.
+Cloud Manager automatically names the storage VM (SVM) for Cloud Volumes ONTAP. You can modify the name of the SVM if you have strict naming standards. For example, you might want it to match how you name the SVMs for your ONTAP clusters.
 
 .Steps
 
 . From the working environment, click the menu icon, and then click *Information*.
 
-. Click the edit icon to the right of the SVM name.
+. Click the edit icon to the right of the storage VM name.
 +
 image:screenshot_svm.gif[Screen shot: Shows the SVM Name field and the edit icon that you must click to modify the SVM name.]
 
-. In the Modify SVM Name dialog box, modify the SVM name, and then click *Save*.
+. In the Modify SVM Name dialog box, change the name, and then click *Save*.
 
 == Changing the password for Cloud Volumes ONTAP
 
