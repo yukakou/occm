@@ -91,6 +91,10 @@ Snapshot Only:: After an aggregate has reached 50% capacity, Cloud Volumes ONTAP
 +
 If read, cold data blocks on the capacity tier become hot and are moved to the performance tier.
 
+All:: All data (not including metadata) is _immediately_ moved to the cloud tier. There is no need to wait 48 hours for new blocks in a volume to become cold. Note that blocks located in the volume prior to the All policy being set require 48 hours to become cold.
++
+If read, cold data blocks on the cloud tier stay cold and are not written back to the performance tier. This policy is available starting with ONTAP 9.6.
+
 Auto:: After an aggregate has reached 50% capacity, Cloud Volumes ONTAP tiers cold data blocks in a volume to a capacity tier. The cold data includes not just Snapshot copies but also cold user data from the active file system. The cooling period is approximately 31 days.
 +
 This policy is supported starting with Cloud Volumes ONTAP 9.4.

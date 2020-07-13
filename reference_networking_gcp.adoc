@@ -20,11 +20,7 @@ Cloud Manager and Cloud Volumes ONTAP are supported in a Google Cloud Platform s
 +
 A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Cloud Manager and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
 +
-The only requirement is to provide the following permissions to the Cloud Manager service account in the shared VPC host project:
-+
-compute.firewalls.*
-compute.networks.*
-compute.subnetworks.*
+The only requirement is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Cloud Manager service account.
 +
 Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
 

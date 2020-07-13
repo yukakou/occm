@@ -323,6 +323,7 @@ if (document.location.hostname.search("netapp.com") !== -1) {
 <li><a href="#_gcpvsaworkingenvironmentresponse">GcpVsaWorkingEnvironmentResponse</a></li>
 <li><a href="#_gcpzoneresponse">GcpZoneResponse</a></li>
 <li><a href="#_genericvsaworkingenvironmentresponse">GenericVsaWorkingEnvironmentResponse</a></li>
+<li><a href="#_gfcserviceinformation">GfcServiceInformation</a></li>
 <li><a href="#_globalmanifest">GlobalManifest</a></li>
 <li><a href="#_grantpermission">GrantPermission</a></li>
 <li><a href="#_haparameters">HaParameters</a></li>
@@ -350,6 +351,7 @@ if (document.location.hostname.search("netapp.com") !== -1) {
 <li><a href="#_keymanagerrequest">KeyManagerRequest</a></li>
 <li><a href="#_keymanagerresponse">KeyManagerResponse</a></li>
 <li><a href="#_keypairsbyregionresponse">KeyPairsByRegionResponse</a></li>
+<li><a href="#_kpiunitvalue">KpiUnitValue</a></li>
 <li><a href="#_legacyinstancetypes">LegacyInstanceTypes</a></li>
 <li><a href="#_licenseandinstancetype">LicenseAndInstanceType</a></li>
 <li><a href="#_licenseandinstancetypemodificationrequest">LicenseAndInstanceTypeModificationRequest</a></li>
@@ -6518,7 +6520,7 @@ kmsKey=`cat kmsKey.txt`</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">default</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IGroup">[IGroup]</a> array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IGroupt">[IGroupt]</a> array</p></td>
 </tr>
 </tbody>
 </table>
@@ -13989,7 +13991,7 @@ kmsKey=`cat kmsKey.txt`</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">default</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IGroup">[IGroup]</a> array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IGroupt">[IGroupt]</a> array</p></td>
 </tr>
 </tbody>
 </table>
@@ -19946,7 +19948,7 @@ kmsKey=`cat kmsKey.txt`</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">default</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IGroup">[IGroup]</a> array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IGroupt">[IGroupt]</a> array</p></td>
 </tr>
 </tbody>
 </table>
@@ -28274,7 +28276,7 @@ kmsKey=`cat kmsKey.txt`</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">default</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IGroup">[IGroup]</a> array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IGroupt">[IGroupt]</a> array</p></td>
 </tr>
 </tbody>
 </table>
@@ -46479,7 +46481,7 @@ kmsKey=`cat kmsKey.txt`</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">default</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IGroup">[IGroup]</a> array</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#IGroupt">[IGroupt]</a> array</p></td>
 </tr>
 </tbody>
 </table>
@@ -51237,6 +51239,13 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">privateIp</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -52077,6 +52086,13 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gov</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -56006,7 +56022,7 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">newTieringPolicy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">New tiering policy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto,  all)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -62783,6 +62799,50 @@ kmsKey=`cat kmsKey.txt`</pre>
 </table>
 </div>
 <div class="sect2">
+<h3 id="_gfcserviceinformation">GfcServiceInformation</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enabled</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dashboardUrl</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apiUrl</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
 <h3 id="_globalmanifest">GlobalManifest</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -63173,7 +63233,7 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">initiators</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Initiators</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string array</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -63563,6 +63623,20 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">legacyOs</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">legacyInstance</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -63743,14 +63817,14 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oCCMInstance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vsaInstance</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vsaInstance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oCCMInstance</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
@@ -64252,6 +64326,43 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Map[string,List[string]]</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_kpiunitvalue">KpiUnitValue</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Schema</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number (double)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unit</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -64942,14 +65053,14 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ha</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">encrypted</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">encrypted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ha</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
@@ -65587,6 +65698,34 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">number (double)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">averageLatency</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_kpiunitvalue">KpiUnitValue</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">storageAverageThroughput</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_kpiunitvalue">KpiUnitValue</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">node1AverageThroughput</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_kpiunitvalue">KpiUnitValue</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">node2AverageThroughput</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_kpiunitvalue">KpiUnitValue</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -69808,14 +69947,14 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">backupTarget</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tieringTarget</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tieringTarget</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">backupTarget</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
@@ -70375,6 +70514,13 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_monitoringserviceinformation">MonitoringServiceInformation</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gfc</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_gfcserviceinformation">GfcServiceInformation</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -73402,7 +73548,7 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tieringPolicy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tiering policy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto,  all)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -73532,7 +73678,7 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">newTieringPolicy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">New tiering policy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto,  all)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -74887,7 +75033,7 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tieringPolicy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tiering policy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto,  all)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -75001,7 +75147,7 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tieringPolicy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tiering policy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto,  all)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -75129,7 +75275,7 @@ kmsKey=`cat kmsKey.txt`</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tieringPolicy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tiering policy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto,  all)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -75958,7 +76104,7 @@ Support telephone: +1 (888) 463-8277</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>May 2020</p>
+<p>July 2020</p>
 </div>
 </div>
 </div>
