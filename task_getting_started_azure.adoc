@@ -32,10 +32,16 @@ When you deploy Cloud Manager from NetApp Cloud Central, you need to use an Azur
 .. Download the https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Central policy for Azure^].
 
 .. Modify the JSON file by adding your Azure subscription ID to the "AssignableScopes" field.
++
+For example:
++
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
 
 .. Use the JSON file to create a custom role in Azure named _Azure SetupAsService_.
 +
-Example: *az role definition create --role-definition C:\Policy_for_Setup_As_Service_Azure.json*
+For example:
++
+`az role definition create --role-definition C:\Policy_for_Setup_As_Service_Azure.json`
 
 .. From the Azure portal, assign the custom role to the user who will deploy Cloud Manager from Cloud Central.
 

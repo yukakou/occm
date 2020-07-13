@@ -37,10 +37,6 @@ Starting with version 3.4, new installations of Cloud Manager do not support usi
 
 * When deployed in the AWS GovCloud (US) region, Cloud Manager cannot discover ONTAP clusters in a NetApp Private Storage for Microsoft Azure configuration or a NetApp Private Storage for SoftLayer configuration.
 
-== Cloud Manager does not set up iSCSI volumes
-
-When you create a volume in Cloud Manager using the Storage System View, you can choose the NFS or CIFS protocol. You must use OnCommand System Manager to create a volume for iSCSI.
-
 == Storage Virtual Machine (SVM) limitation
 
 Cloud Volumes ONTAP supports one data-serving SVM and one or more SVMs used for disaster recovery. The one data-serving SVM spans the entire Cloud Volumes ONTAP system (HA pair or single node).

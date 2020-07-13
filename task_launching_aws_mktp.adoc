@@ -18,10 +18,6 @@ It's best to launch Cloud Manager in AWS using https://cloud.netapp.com[NetApp C
 
 TIP: If you launch Cloud Manager from the AWS Marketplace, Cloud Manager is still integrated with NetApp Cloud Central. link:concept_cloud_central.html[Learn more about the integration].
 
-.About this task
-
-The following steps describe how to launch the instance from the EC2 Console because the console enables you to attach an IAM role to the Cloud Manager instance. This is not possible using the *Launch from Website* action.
-
 .Steps
 
 . Create an IAM policy and role for the EC2 instance:
@@ -35,12 +31,18 @@ https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS, A
 .. Create an IAM role with the role type Amazon EC2 and attach the policy that you created in the previous step to the role.
 
 . Now go to the https://aws.amazon.com/marketplace/pp/B018REK8QG[Cloud Manager page on the AWS Marketplace^] to deploy Cloud Manager from an AMI.
++
+The IAM user must have AWS Marketplace permissions to subscribe and unsubscribe.
 
 . On the Marketplace page, click *Continue to Subscribe* and then click *Continue to Configuration*.
++
+image:screenshot_subscribe_cm.gif[A screenshot that shows the Continue to Subscribe and Continue to Configuration buttons on the AWS Marketplace.]
 
 . Change any of the default options and click *Continue to Launch*.
 
 . Under *Choose Action*, select *Launch through EC2* and then click *Launch*.
++
+These steps describe how to launch the instance from the EC2 Console because the console enables you to attach an IAM role to the Cloud Manager instance. This isn't possible using the *Launch from Website* action.
 
 . Follow the prompts to configure and deploy the instance:
 
@@ -48,7 +50,7 @@ https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS, A
 +
 link:reference_cloud_mgr_reqs.html[Review the list of supported instance types].
 
-* *Configure Instance*: Select a VPC and subnet, the IAM role that you created in step 1, and other configuration options that meet your requirements.
+* *Configure Instance*: Select a VPC and subnet, choose the IAM role that you created in step 1, enable termination protection (recommended), and choose any other configuration options that meet your requirements.
 +
 image:screenshot_aws_iam_role.gif[A screenshot that shows fields on the Configure Instance page in AWS. The IAM role that you should have created in step 1 is selected.]
 
