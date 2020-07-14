@@ -22,17 +22,18 @@ link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 
 
 == Update on Cloud Manager's transition to SaaS (15 July 2020)
 
-We previously mentioned that we'll be introducing a link:concept_saas.html[software-as-a-service experience for Cloud Manager].
+We previously mentioned that we'll be introducing a link:concept_saas.html[software-as-a-service experience for Cloud Manager]. We'd like to provide two updates related to this change.
 
-To ensure adequate resources are available for proper functionality of the new features in Cloud Manager, we've changed the default instance, VM, and machine type as follows:
-
+. To ensure adequate resources are available for proper functionality of the new features in Cloud Manager, we've changed the default instance, VM, and machine type as follows:
++
 * AWS: t3.xlarge
 * Azure: DS3 v2
 * GCP: n1-standard-4
 
-As part of this transition, Cloud Manager requires access to the following endpoint so it can obtain software images of container components for a Docker infrastructure:
+. As part of this transition, Cloud Manager requires access to the following endpoint so it can obtain software images of container components for a Docker infrastructure:
++
 \https://cloudmanagerinfraprod.azurecr.io
-
++
 Ensure that your firewall enables access to this endpoint from Cloud Manager.
 
 == Cloud Manager 3.8.6 (6 July 2020)
