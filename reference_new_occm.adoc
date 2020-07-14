@@ -29,6 +29,8 @@ We previously mentioned that we'll be introducing a link:concept_saas.html[softw
 * AWS: t3.xlarge
 * Azure: DS3 v2
 * GCP: n1-standard-4
++
+These default sizes are the minimum supported link:reference_cloud_mgr_reqs.html[based on CPU and RAM requirements].
 
 . As part of this transition, Cloud Manager requires access to the following endpoint so it can obtain software images of container components for a Docker infrastructure:
 +
