@@ -20,6 +20,21 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Update on Cloud Manager's transition to SaaS (15 July 2020)
+
+We previously mentioned that we're introducing a link:concept_saas.html[software-as-a-service experience for Cloud Manager].
+
+To ensure adequate resources are available for proper functionality of the new features in Cloud Manager, we've changed the default instance, VM, and machine type as follows:
+
+* AWS: t3.xlarge
+* Azure: DS3 v2
+* GCP: n1-standard-4
+
+As part of this transition, Cloud Manager requires access to the following endpoint so it can obtain software images of container components for a Docker infrastructure:
+/https://cloudmanagerinfraprod.azurecr.io
+
+Ensure that your firewall enables access to this endpoint from Cloud Manager.
+
 == Cloud Manager 3.8.6 (6 July 2020)
 
 * <<Support for iSCSI volumes>>
