@@ -144,7 +144,7 @@ entries:
           - title: Tier inactive data to object storage
             url: /task_tiering.html
           - title: Manage storage VMs
-            url: /task_managing_svms
+            url: /task_managing_svms.html
           - title: Use ONTAP as persistent storage
             url: /task_connecting_kubernetes.html
           - title: Encrypt volumes with NetApp Volume Encryption
