@@ -20,11 +20,9 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
-== Improved Cloud Manager experience requires stronger machine types (15 July 2020)
+== Improved experience requires stronger machine type (15 July 2020)
 
-As we improve the Cloud Manager experience, you'll need to upgrade your machine type to access the new capabilities that we'll be offering.
-
-The improvements will include a link:concept_saas.html[software-as-a-service experience for Cloud Manager] and new and enhanced cloud service integrations.
+As we improve the Cloud Manager experience, you'll need to upgrade your machine type to access the new capabilities that we'll be offering. The improvements will include a link:concept_saas.html[software-as-a-service experience for Cloud Manager] and new and enhanced cloud service integrations.
 
 Cloud Manager will prompt you with instructions to change the machine type.
 
