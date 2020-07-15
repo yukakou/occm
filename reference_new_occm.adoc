@@ -20,9 +20,15 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
-== Update on Cloud Manager's transition to SaaS (15 July 2020)
+== Improved Cloud Manager experience requires stronger machine types (15 July 2020)
 
-We previously mentioned that we'll be introducing a link:concept_saas.html[software-as-a-service experience for Cloud Manager]. We'd like to provide two updates related to this change.
+As we improve the Cloud Manager experience, you'll need to upgrade your machine type to access the new capabilities that we'll be offering.
+
+The improvements will include a link:concept_saas.html[software-as-a-service experience for Cloud Manager] and new and enhanced cloud service integrations.
+
+Cloud Manager will prompt you with instructions to change the machine type.
+
+Here are some details:
 
 . To ensure adequate resources are available for proper functionality of the new features in Cloud Manager, we've changed the default instance, VM, and machine type as follows:
 +
