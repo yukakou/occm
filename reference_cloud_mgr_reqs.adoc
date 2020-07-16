@@ -20,14 +20,18 @@ NOTE: You can install Cloud Manager on your own host in GCP, but not in your on-
 A dedicated host is required::
 Cloud Manager is not supported on a host that is shared with other applications. The host must be a dedicated host.
 
-Supported AWS EC2 instance types::
-An instance type with at least 4 vCPUs and 7 GB of RAM. We recommend t3.xlarge.
+CPU:: 4 cores or 4 vCPUs
 
-Supported Azure VM sizes::
-A VM with at least 4 vCPUs and 7 GB of RAM. We recommend DS3 v2.
+RAM:: 14 GB
 
-Supported GCP machine types::
-A machine type with at least 4 vCPUs and 7 GB of RAM.
+AWS EC2 instance type::
+An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge.
+
+Azure VM size::
+An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2.
+
+GCP machine type::
+An instance type that meets the CPU and RAM requirements above. We recommend n1-standard-4.
 
 Supported operating systems::
 * CentOS 7.2
@@ -50,10 +54,6 @@ Cloud Manager is supported on English-language versions of these operating syste
 Hypervisor::  A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux
 https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
 
-CPU:: 2.27 GHz or higher with two cores
-
-RAM:: 4 GB
-
 Free disk space in /opt:: 100 GB
 
 Outbound internet access::
@@ -65,6 +65,8 @@ The following ports must be available:
 * 443 for HTTPS access
 * 3306 for the Cloud Manager database
 * 8080 for the Cloud Manager API proxy
+* 8666 for the Service Manager API
+* 8777 for the Health-Checker Container Service API
 +
 If other services are using these ports, Cloud Manager installation fails.
 +

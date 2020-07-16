@@ -55,6 +55,14 @@ You can access the local user interface directly from the SaaS user interface:
 
 image:screenshot_local_ui.gif[]
 
+== Instance, VM, and machine type changes
+
+To ensure adequate resources are available for proper functionality of the new features in Cloud Manager, we've changed the default instance, VM, and machine type as follows:
+
+* AWS: t3.xlarge
+* Azure: DS3 v2
+* GCP: n1-standard-4
+
 == Where is this new SaaS experience available?
 
 Since 15 June 2020, we've gradually made this new SaaS experience available to new customers. We're planning to make it available to existing customers later on. Check the release notes for the latest updates.
