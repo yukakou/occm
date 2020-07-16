@@ -36,9 +36,3 @@ Starting with version 3.4, new installations of Cloud Manager do not support usi
 * Cloud Manager must be deployed in the AWS GovCloud (US) region if you want to launch Cloud Volumes ONTAP instances in the AWS GovCloud (US) region.
 
 * When deployed in the AWS GovCloud (US) region, Cloud Manager cannot discover ONTAP clusters in a NetApp Private Storage for Microsoft Azure configuration or a NetApp Private Storage for SoftLayer configuration.
-
-== Storage Virtual Machine (SVM) limitation
-
-Cloud Volumes ONTAP supports one data-serving SVM and one or more SVMs used for disaster recovery. The one data-serving SVM spans the entire Cloud Volumes ONTAP system (HA pair or single node).
-
-Cloud Manager does not provide any setup or orchestration support for SVM disaster recovery. It also does not support storage-related tasks on any additional SVMs. You must use System Manager or the CLI for SVM disaster recovery.

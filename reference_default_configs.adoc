@@ -60,7 +60,7 @@ Understanding how Cloud Volumes ONTAP is configured by default can help you set 
 
 * Cloud Volumes ONTAP is available as a single-node system in AWS, Azure, and GCP, and as an HA pair in AWS and Azure.
 
-* Cloud Manager creates one data-serving SVM when it deploys Cloud Volumes ONTAP. Using multiple data-serving SVMs is not supported.
+* Cloud Manager creates one data-serving storage VM when it deploys Cloud Volumes ONTAP. Some configurations support additional storage VMs. link:task_managing_svms.html[Learn more about managing storage VMs].
 
 * Cloud Manager automatically installs the following ONTAP feature licenses on Cloud Volumes ONTAP:
 ** CIFS
