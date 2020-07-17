@@ -20,6 +20,28 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Improved experience requires stronger machine type (15 July 2020)
+
+As we improve the Cloud Manager experience, you'll need to upgrade your machine type to access the new capabilities that we'll be offering. The improvements will include a link:concept_saas.html[software-as-a-service experience for Cloud Manager] and new and enhanced cloud service integrations.
+
+Cloud Manager will prompt you with instructions to change the machine type.
+
+Here are some details:
+
+. To ensure adequate resources are available for proper functionality of the new features in Cloud Manager, we've changed the default instance, VM, and machine type as follows:
++
+* AWS: t3.xlarge
+* Azure: DS3 v2
+* GCP: n1-standard-4
++
+These default sizes are the minimum supported link:reference_cloud_mgr_reqs.html[based on CPU and RAM requirements].
+
+. As part of this transition, Cloud Manager requires access to the following endpoint so it can obtain software images of container components for a Docker infrastructure:
++
+\https://cloudmanagerinfraprod.azurecr.io
++
+Ensure that your firewall enables access to this endpoint from Cloud Manager.
+
 == Cloud Manager 3.8.6 (6 July 2020)
 
 * <<Support for iSCSI volumes>>
