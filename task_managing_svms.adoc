@@ -28,6 +28,11 @@ A storage VM spans the entire Cloud Volumes ONTAP system (HA pair or single node
 
 If supported by your configuration, you can create additional storage VMs using link:task_connecting_to_otc.html[System Manager or the CLI].
 
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-cifs-cg/GUID-CE5DE09F-3B48-48FE-A41C-9D69C3D0C402.html[Creating an SVM for SMB access^]
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nfs-cg/GUID-CE5DE09F-3B48-48FE-A41C-9D69C3D0C402.html[Creating an SVM for NFS access^]
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-iscsi-cpg/GUID-0FCB46AA-DA18-417B-A9EF-B6A665DB77FC.html[Creating an SVM for iSCSI access^]
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[Creating a destination SVM for disaster recovery^]
+
 == Working with multiple storage VMs in Cloud Manager
 
 Cloud Manager supports any additional storage VMs that you create from System Manager or the CLI.
