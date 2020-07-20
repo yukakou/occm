@@ -239,4 +239,4 @@ image:screenshot_volume_compliance_selection.png[A screenshot of the scan config
 
 |===
 
-New volumes added to the working environment are scanned automatically only when the *Activate Compliance for all Volumes* setting is enabled. When this setting is disabled, you'll need to enable each new volume individually.
+New volumes added to the working environment are scanned automatically only when the *Activate Compliance for all Volumes* setting is enabled. When this setting is disabled, you'll need to activate scanning on each new volume you create.

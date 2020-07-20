@@ -108,6 +108,7 @@ Cloud Compliance generates a PDF report that you can review and send to other gr
 == HIPAA Report
 
 The Health Insurance Portability and Accountability Act (HIPAA) Report can help you identify files containing health information. It is designed to aid in your organization’s requirement to comply with HIPAA data privacy laws. The information Cloud Compliance looks for includes:
+
 * Health reference pattern
 * ICD-10-CM Medical code
 * ICD-9-CM Medical code
@@ -136,7 +137,7 @@ Go to the Compliance tab to generate the report.
 
 . Under *Reports*, click the download icon next to *HIPAA Report*.
 +
-image:screenshot_pci_dss.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click HIPAA.]
+image:screenshot_hipaa.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click HIPAA.]
 
 .Result
 
