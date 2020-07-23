@@ -33,7 +33,7 @@ image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Clo
 +
 image:screenshot_backup_settings_azure_done.png[A screenshot that shows the Backup to Cloud settings where you can enable or disable the feature and then choose your backup retention.]
 
-== Restoring a volume
+== Restoring a volume from a backup
 
 When you restore data from a backup, Cloud Manager performs a full volume restore to a _new_ volume. You can restore the data to the same working environment or to a different working environment that's located in the same AWS account as the source working environment.
 
