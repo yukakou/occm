@@ -104,4 +104,4 @@ The volume is created in the working environment.
 
 .After you finish
 
-Continue with link:task_manage_cvs_aws.html#mount_the_cloud_volume[Mounting the cloud volume].
+Continue with link:task_manage_cvs_aws.html#mount-the-cloud-volume[Mounting the cloud volume^].

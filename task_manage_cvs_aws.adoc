@@ -122,7 +122,7 @@ For configurations where no volumes exist, you can create your first volume dire
 
 * You will need this information when creating the first volume in a new region/working environment:
 
-** AWS account ID: A 12-digit Amazon account identifier with no dashes. To find your account ID, refer to this link:https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html[AWS topic].
+** AWS account ID: A 12-digit Amazon account identifier with no dashes. To find your account ID, refer to this link:https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html[AWS topic^].
 
 ** Classless Inter-Domain Routing (CIDR) Block: An unused IPv4 CIDR block. The network prefix must range between /16 and /28, and it must also fall within the ranges reserved for private networks (RFC 1918). Do not choose a network that overlaps your VPC CIDR allocations.
 
@@ -146,7 +146,7 @@ image:screenshot_cvs_aws_network_setup.png[A screenshot of the network setup pag
 link:reference_cvs_service_levels_and_quotas.html#allocated-capacity[Learn more about allocated capacity^].
 .. Specify a service level: Standard, Premium, or Extreme.
 +
-link:reference_cvs_service_levels_and_quotas.html#allocated-ca[Learn more about service levels^].
+link:reference_cvs_service_levels_and_quotas.html#service-levels[Learn more about service levels^].
 .. Enter one or more tag names to categorize the volume if you want.
 .. Click *Continue*.
 +
@@ -196,11 +196,11 @@ The following image shows the Volume page filled out for the SMB protocol:
 +
 image:screenshot_cvs_smb_details.png[A screenshot that shows the volume page filled out for an SMB Cloud Volumes Service volume.]
 +
-TIP: You should follow the guidance on AWS security group settings to enable cloud volumes to integrate with Windows Active Directory servers correctly. See link:reference_security_groups_windows_ad_servers.html[AWS security group settings for Windows AD servers] for more information.
+TIP: You should follow the guidance on AWS security group settings to enable cloud volumes to integrate with Windows Active Directory servers correctly. See link:reference_security_groups_windows_ad_servers.html[AWS security group settings for Windows AD servers^] for more information.
 
 . In the Snapshot Policy page, you can enable Cloud Volumes Service to create snapshot copies of your volumes based on a schedule. You can do this now or edit the volume later to define the snapshot policy
 +
-See link:task_manage_cloud_volumes.html#create_or_modify_a_snapshot_policy[Creating a snapshot policy] for more information about snapshot functionality.
+See link:task_manage_cloud_volumes_snapshots.html#create_or_modify_a_snapshot_policy[Creating a snapshot policy^] for more information about snapshot functionality.
 . Click *Add Volume*.
 
 The new volume is added to the working environment.
@@ -211,7 +211,7 @@ If this is the first volume created in this AWS subscription, you need to launch
 
 You must accept the interfaces within 10 minutes after clicking the Add Volume button or the system may time out. If this happens, email cvs-support@netapp.com with your AWS Customer ID and NetApp Serial Number. Support will fix the issue and you can restart the onboarding process.
 
-Then continue with link:task_manage_cvs_aws.html#mount_the_cloud_volume[Mounting the cloud volume].
+Then continue with link:task_manage_cvs_aws.html#mount-the-cloud-volume[Mounting the cloud volume].
 
 == Mount the cloud volume
 
@@ -322,7 +322,7 @@ If no Active Directory is configured, you can add one now. If one is configured,
 | Field
 | Description
 
-| DNS Primary IP Address | The IP addresses of the DNS servers that provide name resolution for the SMB server. Use a comma to separate the IP addresses when referencing multiple servers, for example, 172.31.25.223, 172.31.2.74..
+| DNS Primary IP Address | The IP addresses of the DNS servers that provide name resolution for the SMB server. Use a comma to separate the IP addresses when referencing multiple servers, for example, 172.31.25.223, 172.31.2.74.
 
 | Active Directory Domain to join | The FQDN of the Active Directory (AD) domain that you want the SMB server to join.
 When using AWS Managed Microsoft AD, use the value from the "Directory DNS name" field.
