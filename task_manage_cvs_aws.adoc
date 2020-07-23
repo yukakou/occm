@@ -231,7 +231,7 @@ image:screenshot_cvs_aws_nfs_mount.png[Mount instructions for NFS volumes]
 +
 The maximum I/O size defined by the `rsize` and `wsize` options is 1048576, however 65536 is the recommended default for most use cases.
 +
-Note that Linux clients will default to NFSv4.1 unless the version is specified with the `vers=`` option.
+Note that Linux clients will default to NFSv4.1 unless the version is specified with the `vers=<nfs_version>` option.
 +
 *SMB example:*
 +
@@ -261,7 +261,7 @@ image:screenshot_cvs_aws_volume_hover_menu.png[A screenshot of the volume hover 
 
 | View information about a volume | Select a volume, and then click *Info*.
 
-| Edit a volume (read-write volumes only)
+| Edit a volume (including snapshot policy)
 a|
 .. Select a volume, and then click *Edit*.
 .. Modify the volume's properties and then click *Update*.
