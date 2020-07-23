@@ -229,7 +229,9 @@ entries:
             url: /task_manage_cvs_aws.html
           - title: Manage cloud volumes snapshots
             url: /task_manage_cloud_volumes_snapshots.html
-          - title: Select the service level and capacity
+          - title: Reference
+            entries:
+          - title: Service levels and allocated capacity
             url: /reference_cvs_service_levels_and_quotas.html
           - title: AWS security group settings for Windows AD servers
             url: /reference_security_groups_windows_ad_servers.html

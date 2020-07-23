@@ -5,7 +5,7 @@ keywords: Cloud Volumes Service for AWS, service levels, bandwidth, capacity, qu
 summary: The cost for Cloud Volumes Service for AWS is based on the service level and the allocated capacity that you select. Selecting the appropriate service level and capacity helps you meet your storage needs at the lowest cost.
 ---
 
-= Selecting the appropriate service level and allocated capacity
+= Service levels and allocated capacity
 :hardbreaks:
 :nofooter:
 :icons: font

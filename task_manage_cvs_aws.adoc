@@ -47,12 +47,12 @@ Get started quickly by following these steps, or scroll down to the remaining se
 
 ==== image:number1.png[Number 1] Verify support for your configuration
 
-[role="quick-margin-list"]
+[role="quick-margin-para"]
 You have set up AWS for Cloud Volumes Service and you must have subscribed to one of the https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=netapp+cloud+volumes+service[NetApp Cloud Volumes Service offerings on the AWS Marketplace^].
 
 ==== image:number2.png[Number 2] Add your Cloud Volumes Service for AWS subscription
 
-[role="quick-margin-list"]
+[role="quick-margin-para"]
 You must create a working environment for the volumes based on your Cloud Volumes Service for AWS subscription.
 
 ==== image:number3.png[Number 3] Create cloud volumes
@@ -286,9 +286,7 @@ a|
 .. Select a volume, and then click *Restore the volume*.
 .. Select a Snapshot copy and click *Restore*.
 
-| Delete a Snapshot copy
-a|
-.. Select a volume, and then click *Delete a Snapshot copy*.
+| Delete a Snapshot copy | Select a volume, and then click *Delete a Snapshot copy*.
 
 | Delete a volume
 a|
