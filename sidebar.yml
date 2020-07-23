@@ -226,11 +226,13 @@ entries:
       - title: Cloud Volumes Service for AWS
         entries:
           - title: Manage Cloud Volumes Service for AWS
-          - url: /task_manage_cvs_aws.html
+            url: /task_manage_cvs_aws.html
           - title: Manage cloud volumes snapshots
-          - url: /task_manage_cloud_volumes_snapshots.html
+            url: /task_manage_cloud_volumes_snapshots.html
           - title: Select the service level and capacity
-          - url: /reference_cvs_service_levels_and_quotas.html
+            url: /reference_cvs_service_levels_and_quotas.html
+          - title: AWS security group settings for Windows AD servers
+            url: /reference_security_groups_windows_ad_servers.html
   - title: View Amazon S3 buckets
     url: /task_viewing_amazon_s3.html
   - title: Gain insight into data privacy
