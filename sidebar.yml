@@ -265,10 +265,16 @@ entries:
         url: /task_renewing_cert.html
       - title: Override CIFS locks in Azure
         url: /task_overriding_cifs_locks.html
-      - title: Restore Cloud Manager
-        url: /task_restoring.html
       - title: Uninstall a Connector
         url: /task_uninstalling.html
+      - title: Reference
+        entries:
+          - title: User roles
+            url: /reference_user_roles.html
+          - title: Permissions
+            url: /reference_permissions.html
+          - title: AWS Marketplace pages
+            url: /reference_aws_marketplace.html
   - title: APIs and automation
     entries:
       - title: API Developer Guide
