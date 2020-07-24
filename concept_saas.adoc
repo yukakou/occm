@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_saas.html
-keywords: cloud manager, service connector, user interface, ui, interface, cloud, saas, saas interface
+keywords: cloud manager, Connector, user interface, ui, interface, cloud, saas, saas interface
 summary: We're introducing a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
 ---
 

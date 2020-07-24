@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_setting_up_cloud_central_accounts.html
-keywords: account settings, workspaces, service connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, account, user account, user accounts, create workspace, add workspace, setup workspace, workspace, service connector, manage service connector, manage workspace, associate service connector
+keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, account, user account, user accounts, create workspace, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector
 summary: Each Cloud Manager system is associated with a NetApp Cloud Central account. Set up the Cloud Central account associated with your Cloud Manager system so a user can access Cloud Manager and deploy Cloud Volumes ONTAP systems in workspaces. You can simply add a user or add multiple users and workspaces.
 ---
 
@@ -35,7 +35,7 @@ image:screenshot_account_settings_menu.gif[A screenshot that shows the Account S
 
 .After you finish
 
-You can now associate users and service connectors with the workspace.
+You can now associate users and Connectors with the workspace.
 
 == Adding users
 
@@ -82,23 +82,23 @@ image:screenshot_associate_user_workspace.gif[A screenshot that shows the action
 
 .Result
 
-The user can now access those workspaces from Cloud Manager, as long as the service connector was also associated with the workspaces.
+The user can now access those workspaces from Cloud Manager, as long as the Connector was also associated with the workspaces.
 
-== Associating service connectors with workspaces
+== Associating Connectors with workspaces
 
-A service connector is part of the Cloud Manager system. It runs on the virtual machine instance that was deployed in your cloud provider, or on an on-prem host that you configured. You need to associate this service connector with workspaces so Workspace Admins can access those workspaces from Cloud Manager.
+A Connector is part of the Cloud Manager system. It runs on the virtual machine instance that was deployed in your cloud provider, or on an on-prem host that you configured. You need to associate this Connector with workspaces so Workspace Admins can access those workspaces from Cloud Manager.
 
-If you only have Account Admins, then associating the service connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
+If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
 
-link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and service connectors].
+link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and Connectors].
 
 .Steps
 
 . Click *Account Settings*.
 
-. Click *Service Connector*.
+. Click *Connector*.
 
-. Click *Manage Workspaces* for the service connector that you want to associate.
+. Click *Manage Workspaces* for the Connector that you want to associate.
 
 . Select one or more workspaces and click *Apply*.
 
