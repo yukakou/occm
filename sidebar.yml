@@ -53,9 +53,9 @@ entries:
             url: /task_adding_nss_accounts.html
           - title: Install an HTTPS certificate
             url: /task_installing_https_cert.html
-  - title: Manage cloud storage with Cloud Volumes ONTAP
+  - title: Manage cloud storage using Cloud Volumes ONTAP
     entries:
-      - title: Learn about Cloud Volumes ONTAP
+      - title: Learn
         entries:
             - title: Overview
               url: /concept_cvo.html
@@ -83,7 +83,7 @@ entries:
               url: /concept_security.html
             - title: Performance
               url: /concept_performance.html
-      - title: Get started with Cloud Volumes ONTAP
+      - title: Get started
         entries:
           - title: Find your system ID
             url: /task_finding_system_id.html
@@ -151,11 +151,11 @@ entries:
             url: /task_managing_svms.html
           - title: Use ONTAP as persistent storage
             url: /task_connecting_kubernetes.html
-          - title: Encrypt volumes with NetApp Volume Encryption
+          - title: Encrypt volumes with NetApp encryption
             url: /task_encrypting_volumes.html
       - title: Replicate data
         url: /task_replicating_data.html
-      - title: Backup to Cloud
+      - title: Back up to the cloud
         entries:
           - title: Learn about Backup to Cloud
             url: /concept_backup_to_cloud.html
@@ -173,7 +173,7 @@ entries:
             url: /concept_monitoring.html
           - title: Get started
             url: /task_getting_started_monitoring.html
-      - title: Administer Cloud Volumes ONTAP
+      - title: Administer
         entries:
           - title: Connect to Cloud Volumes ONTAP
             url: /task_connecting_to_otc.html
@@ -191,7 +191,7 @@ entries:
             url: /task_adding_ontap_cloud.html
           - title: Delete systems
             url: /task_deleting_working_env.html
-  - title: Provision volumes for file services
+  - title: Provision volumes using a file service
     entries:
       - title: Azure NetApp Files
         url: /task_manage_anf.html
