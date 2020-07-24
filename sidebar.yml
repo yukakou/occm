@@ -1,5 +1,5 @@
 entries:
-  - title: Cloud Manager 3.8 docs
+  - title: Cloud Manager docs
     url: /index.html
   - title: Release notes
     entries:
@@ -13,58 +13,32 @@ entries:
             url: /reference_limitations.html
       - title: Cloud Volumes ONTAP
         url: https://docs.netapp.com/us-en/cloud-volumes-ontap/
-  - title: Concepts
+  - title: Get started with Cloud Manager
     entries:
-      - title: Product overview
-        url: /concept_overview.html
-      - title: SaaS user interface
-        url: /concept_saas.html
-      - title: NetApp Cloud Central
-        url: /concept_cloud_central.html
-      - title: Cloud Central accounts
-        url: /concept_cloud_central_accounts.html
-      - title: Cloud provider credentials
+      - title: Learn about Cloud Manager
         entries:
-          - title: AWS credentials
-            url: /concept_accounts_aws.html
-          - title: Azure credentials
-            url: /concept_accounts_azure.html
-          - title: GCP credentials
-            url: /concept_accounts_gcp.html
-      - title: Storage
-        entries:
-          - title: Disks and aggregates
-            url: /concept_storage.html
-          - title: Data tiering
-            url: /concept_data_tiering.html
-          - title: Storage management
-            url: /concept_storage_management.html
-          - title: WORM storage
-            url: /concept_worm.html
-      - title: High-availability pairs
-        entries:
-          - title: HA pairs in AWS
-            url: /concept_ha.html
-          - title: HA pairs in Azure
-            url: /concept_ha_azure.html
-      - title: Evaluating
-        url: /concept_evaluating.html
-      - title: Licensing
-        url: /concept_licensing.html
-      - title: Security
-        url: /concept_security.html
-      - title: Performance
-        url: /concept_performance.html
-  - title: Get started
-    entries:
+          - title: Overview
+            url: /concept_overview.html
+          - title: SaaS user interface
+            url: /concept_saas.html
+          - title: NetApp Cloud Central
+            url: /concept_cloud_central.html
+          - title: Cloud Central accounts
+            url: /concept_cloud_central_accounts.html
+          - title: Connectors
+            url: /concept_connectors.html
+          - title: Cloud provider credentials
+            entries:
+              - title: AWS credentials
+                url: /concept_accounts_aws.html
+              - title: Azure credentials
+                url: /concept_accounts_azure.html
+              - title: GCP credentials
+                url: /concept_accounts_gcp.html
       - title: Deployment overview
         url: /reference_deployment_overview.html
-      - title: Get started in AWS
-        url: /task_getting_started_aws.html
-      - title: Get started in Azure
-        url: /task_getting_started_azure.html
-      - title: Get started in GCP
-        url: /task_getting_started_gcp.html
+      - title: Log in to Cloud Manager
+        url: /task_logging_in.html
       - title: Set up Cloud Manager
         entries:
           - title: Set up the Cloud Central account
@@ -79,58 +53,88 @@ entries:
             url: /task_adding_nss_accounts.html
           - title: Install an HTTPS certificate
             url: /task_installing_https_cert.html
-          - title: Set up the AWS KMS
-            url: /task_setting_up_kms.html
-      - title: Network requirements
-        entries:
-          - title: Cloud Manager
-            url: /reference_networking_cloud_manager.html
-          - title: Cloud Volumes ONTAP for AWS
-            url: /reference_networking_aws.html
-          - title: Set up an AWS transit gateway
-            url: /task_setting_up_transit_gateway.html
-          - title: Cloud Volumes ONTAP for Azure
-            url: /reference_networking_azure.html
-          - title: Cloud Volumes ONTAP for GCP
-            url: /reference_networking_gcp.html
-      - title: Additional deployment options
-        entries:
-          - title: Cloud Manager host requirements
-            url: /reference_cloud_mgr_reqs.html
-          - title: Install Cloud Manager on Linux
-            url: /task_installing_linux.html
-          - title: Deploy Cloud Manager from the AWS Marketplace
-            url: /task_launching_aws_mktp.html
-          - title: Deploy Cloud Manager from the Azure Marketplace
-            url: /task_launching_azure_mktp.html
-          - title: Deploy Cloud Manager in an Azure Gov region
-            url: /task_installing_azure_gov.html
-          - title: Deploy Cloud Manager in the Azure Germany region
-            url: /task_installing_azure_germany.html
-          - title: Get started in AWS C2S
-            url: https://docs.netapp.com/us-en/occm/media/c2s.pdf
-      - title: Log in to Cloud Manager
-        url: /task_logging_in.html
-      - title: Keep Cloud Manager running
-        url: /concept_keep_up.html
-  - title: Manage Cloud Volumes ONTAP
+  - title: Manage cloud storage with Cloud Volumes ONTAP
     entries:
-      - title: Deploy Cloud Volumes ONTAP
+      - title: Learn about Cloud Volumes ONTAP
         entries:
-          - title: Before you begin
-            url: /reference_before.html
-          - title: Plan your configuration
-            url: /task_planning_your_config.html
+            - title: Overview
+              url: /concept_cvo.html
+            - title: Storage
+              entries:
+                - title: Disks and aggregates
+                  url: /concept_storage.html
+                - title: Data tiering
+                  url: /concept_data_tiering.html
+                - title: Storage management
+                  url: /concept_storage_management.html
+                - title: WORM storage
+                  url: /concept_worm.html
+            - title: High-availability pairs
+              entries:
+                - title: HA pairs in AWS
+                  url: /concept_ha.html
+                - title: HA pairs in Azure
+                  url: /concept_ha_azure.html
+            - title: Evaluating
+              url: /concept_evaluating.html
+            - title: Licensing
+              url: /concept_licensing.html
+            - title: Security
+              url: /concept_security.html
+            - title: Performance
+              url: /concept_performance.html
+      - title: Get started with Cloud Volumes ONTAP
+        entries:
           - title: Find your system ID
             url: /task_finding_system_id.html
           - title: Enable Flash Cache
             url: /task_enabling_flash_cache.html
-          - title: Launch a system in AWS
-            url: /task_deploying_otc_aws.html
-          - title: Launch a system in Azure
-            url: /task_deploying_otc_azure.html
-          - title: Launch a system in GCP
-            url: /task_deploying_gcp.html
+          - title: Get started in AWS
+            entries:
+              - title: Quick start
+                url: /task_getting_started_aws.html
+              - title: Plan your configuration
+                url: /task_planning_your_config.html
+              - title: Set up your networking
+                url: /reference_networking_aws.html
+              - title: Set up an AWS transit gateway
+                url: /task_setting_up_transit_gateway.html
+              - title: Security group rules for AWS
+                url: /reference_security_groups.html
+              - title: Set up permissions
+                url: /?.html
+              - title: Set up the AWS KMS
+                url: /task_setting_up_kms.html
+              - title: Launch a system in AWS
+                url: /task_deploying_otc_aws.html
+          - title: Get started in Azure
+            entries:
+              - title: Quick start
+                url: /task_getting_started_azure.html
+              - title: Plan your configuration
+                url: /task_planning_your_config.html
+              - title: Set up your networking
+                url: /reference_networking_azure.html
+              - title: Security group rules for Azure
+                url: /reference_security_groups_azure.html
+              - title: Set up permissions
+                url: /?.html
+              - title: Launch a system in Azure
+                url: /task_deploying_otc_azure.html
+          - title: Get started in GCP
+            entries:
+              - title: Quick start
+                url: /task_getting_started_gcp.html
+              - title: Plan your configuration
+                url: /task_planning_your_config.html
+              - title: Set up your networking
+                url: /reference_networking_gcp.html
+              - title: Firewall rules for GCP
+                url: /reference_firewall_rules_gcp.html
+              - title: Set up permissions
+                url: /?.html
+              - title: Launch a system in GCP
+                url: /task_deploying_gcp.html
           - title: Register pay-as-you-go systems
             url: /task_registering.html
           - title: Set up Cloud Volumes ONTAP
@@ -187,6 +191,34 @@ entries:
             url: /task_adding_ontap_cloud.html
           - title: Delete systems
             url: /task_deleting_working_env.html
+  - title: Provision volumes for file services
+    entries:
+      - title: Azure NetApp Files
+        url: /task_manage_anf.html
+      - title: Cloud Volumes Service for AWS
+        url: /task_manage_cvs_aws.html
+  - title: Gain insight into data privacy
+    entries:
+      - title: Learn about Cloud Compliance
+        url: /concept_cloud_compliance.html
+      - title: Get started
+        entries:
+          - title: Cloud Volumes ONTAP and Azure NetApp Files
+            url: /task_getting_started_compliance.html
+          - title: Amazon S3
+            url: /task_scanning_s3.html
+          - title: On-premises ONTAP data
+            url: /task_scanning_onprem.html
+      - title: Gain visibility and control of data
+        url: /task_controlling_private_data.html
+      - title: Generate reports
+        url: /task_generating_compliance_reports.html
+      - title: Respond to a DSAR
+        url: /task_responding_to_dsar.html
+      - title: Disable Cloud Compliance
+        url: /task_managing_compliance.html
+      - title: FAQ
+        url: /faq_cloud_compliance.html
   - title: Manage ONTAP clusters
     entries:
       - title: Discover ONTAP clusters
@@ -219,40 +251,10 @@ entries:
                 url: /reference_azure_support.html
               - title: Supported Google Cloud storage classes and regions
                 url: /reference_google_support.html
-  - title: Provision volumes for file services
-    entries:
-      - title: Azure NetApp Files
-        url: /task_manage_anf.html
-      - title: Cloud Volumes Service for AWS
-        url: /task_manage_cvs_aws.html
   - title: View Amazon S3 buckets
     url: /task_viewing_amazon_s3.html
-  - title: Gain insight into data privacy
-    entries:
-      - title: Learn about Cloud Compliance
-        url: /concept_cloud_compliance.html
-      - title: Get started
-        entries:
-          - title: Cloud Volumes ONTAP and Azure NetApp Files
-            url: /task_getting_started_compliance.html
-          - title: Amazon S3
-            url: /task_scanning_s3.html
-          - title: On-premises ONTAP data
-            url: /task_scanning_onprem.html
-      - title: Gain visibility and control of data
-        url: /task_controlling_private_data.html
-      - title: Generate reports
-        url: /task_generating_compliance_reports.html
-      - title: Respond to a DSAR
-        url: /task_responding_to_dsar.html
-      - title: Disable Cloud Compliance
-        url: /task_managing_compliance.html
-      - title: FAQ
-        url: /faq_cloud_compliance.html
   - title: Administer Cloud Manager
     entries:
-      - title: Update Cloud Manager
-        url: /task_updating_cloud_manager.html
       - title: Manage the Cloud Central account
         url: /task_managing_cloud_central_accounts.html
       - title: Remove working environments
@@ -265,7 +267,7 @@ entries:
         url: /task_overriding_cifs_locks.html
       - title: Restore Cloud Manager
         url: /task_restoring.html
-      - title: Uninstall Cloud Manager
+      - title: Uninstall a Connector
         url: /task_uninstalling.html
   - title: APIs and automation
     entries:
@@ -273,28 +275,8 @@ entries:
         url: https://docs.netapp.com/us-en/occm/api.html
       - title: Automation samples
         url: /reference_infrastructure_as_code.html
-  - title: Reference
-    entries:
-      - title: Supported configurations for Cloud Volumes ONTAP
-        url: https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html
-      - title: Supported regions
-        url: https://cloud.netapp.com/cloud-volumes-global-regions
-      - title: Security group rules for AWS
-        url: /reference_security_groups.html
-      - title: Security group rules for Azure
-        url: /reference_security_groups_azure.html
-      - title: Firewall rules for GCP
-        url: /reference_firewall_rules_gcp.html
-      - title: AWS Marketplace pages
-        url: /reference_aws_marketplace.html
-      - title: Permissions
-        url: /reference_permissions.html
-      - title: Default configurations
-        url: /reference_default_configs.html
-      - title: User roles
-        url: /reference_user_roles.html
-      - title: Related links
-        url: /reference_additional_info.html
+  - title: Related links
+    url: /reference_additional_info.html
   - title: Earlier versions
     url: /reference_earlier_versions.html
   - title: Legal notices
