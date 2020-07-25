@@ -17,6 +17,8 @@ entries:
     entries:
       - title: Learn about Cloud Manager
         url: /concept_overview.html
+      - title: Networking overview
+        url: /reference_networking.html
       - title: Log in to Cloud Manager
         url: /task_logging_in.html
       - title: Set up your Cloud Central account
@@ -237,16 +239,16 @@ entries:
             url: /task_adding_gcp_accounts.html
           - title: Add NetApp Support Site credentials
             url: /task_adding_nss_accounts.html
-          - title: Install an HTTPS certificate
-            url: /task_installing_https_cert.html
       - title: Manage the Cloud Central account
         url: /task_managing_cloud_central_accounts.html
+      - title: Install an HTTPS certificate
+        url: /task_installing_https_cert.html
+      - title: Renew the HTTPS certificate
+        url: /task_renewing_cert.html
       - title: Remove working environments
         url: /task_removing.html
       - title: Configure proxy settings
         url: /task_configuring_proxy.html
-      - title: Renew the HTTPS certificate
-        url: /task_renewing_cert.html
       - title: Override CIFS locks in Azure
         url: /task_overriding_cifs_locks.html
       - title: Uninstall a Connector
