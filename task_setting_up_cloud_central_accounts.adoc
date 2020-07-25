@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_setting_up_cloud_central_accounts.html
 keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, account, user account, user accounts, create workspace, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector
-summary: Each Cloud Manager system is associated with a NetApp Cloud Central account. Set up the Cloud Central account associated with your Cloud Manager system so a user can access Cloud Manager and deploy Cloud Volumes ONTAP systems in workspaces. You can simply add a user or add multiple users and workspaces.
+summary: When you log in to Cloud Manager for the first time, you're prompted to create a NetApp Cloud Central account. This account provides multi-tenancy and enables you to organize users and resources in isolated workspaces.
 ---
 
 = Setting up workspaces and users in the Cloud Central account
@@ -13,9 +13,11 @@ summary: Each Cloud Manager system is associated with a NetApp Cloud Central acc
 :imagesdir: ./media/
 
 [.lead]
-Each Cloud Manager system is associated with a _NetApp Cloud Central account_. Set up the Cloud Central account associated with your Cloud Manager system so a user can access Cloud Manager and deploy Cloud Volumes ONTAP systems in workspaces. Just add a user or add multiple users and workspaces.
+When you log in to Cloud Manager for the first time, you're prompted to create a _NetApp Cloud Central account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
 
-The account is maintained in Cloud Central, so any changes that you make are available to other Cloud Manager systems and to other NetApp cloud data services. link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
+Set up the Cloud Central account associated with your Cloud Manager system so a user can access Cloud Manager and access the working environments in a workspace. Just add a user or add multiple users and workspaces.
+
+The account is maintained in Cloud Central, so any changes that you make are available to other NetApp cloud services. link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
 
 == Adding workspaces
 
@@ -43,7 +45,7 @@ Associate Cloud Central users with the Cloud Central account so those users can 
 
 .Steps
 
-. If the user has not already done so, ask the user to go to https://cloud.netapp.com[NetApp Cloud Central^] and create an account.
+. If the user has not already done so, ask the user to go to https://cloud.netapp.com[NetApp Cloud Central^] and sign up.
 
 . In Cloud Manager, click *Account Settings*.
 
@@ -86,7 +88,7 @@ The user can now access those workspaces from Cloud Manager, as long as the Conn
 
 == Associating Connectors with workspaces
 
-A Connector is part of the Cloud Manager system. It runs on the virtual machine instance that was deployed in your cloud provider, or on an on-prem host that you configured. You need to associate this Connector with workspaces so Workspace Admins can access those workspaces from Cloud Manager.
+A Connector enables Cloud Manager to manage resources and processes within your public cloud environment. You need to associate a Connector with workspaces so Workspace Admins can access those workspaces from Cloud Manager.
 
 If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
 
