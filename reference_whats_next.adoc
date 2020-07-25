@@ -1,0 +1,26 @@
+---
+sidebar: sidebar
+permalink: reference_whats_next.html
+keywords: get started, create working environments, manage settings
+summary: Now that you've logged in and set up Cloud Manager, users can start creating and discovering working environments.
+---
+
+= Where to go next
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Now that you've logged in and set up Cloud Manager, users can start creating and discovering working environments.
+
+* Get started with Cloud Volumes ONTAP
+* Set up Azure NetApp Files
+* Set up Cloud Volumes Service for AWS
+* Discover an on-premises ONTAP cluster
+* Discover your Amazon S3 buckets
+
+If you're an administrator, you can manage Cloud Manager settings after you create your first Connector.
+
+<links>
