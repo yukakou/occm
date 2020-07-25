@@ -16,27 +16,7 @@ entries:
   - title: Get started with Cloud Manager
     entries:
       - title: Learn about Cloud Manager
-        entries:
-          - title: Overview
-            url: /concept_overview.html
-          - title: SaaS user interface
-            url: /concept_saas.html
-          - title: NetApp Cloud Central
-            url: /concept_cloud_central.html
-          - title: Cloud Central accounts
-            url: /concept_cloud_central_accounts.html
-          - title: Connectors
-            url: /concept_connectors.html
-          - title: Cloud provider credentials
-            entries:
-              - title: AWS credentials
-                url: /concept_accounts_aws.html
-              - title: Azure credentials
-                url: /concept_accounts_azure.html
-              - title: GCP credentials
-                url: /concept_accounts_gcp.html
-      - title: Deployment overview
-        url: /reference_deployment_overview.html
+        url: /concept_overview.html
       - title: Log in to Cloud Manager
         url: /task_logging_in.html
       - title: Set up Cloud Manager
@@ -107,6 +87,8 @@ entries:
                 url: /task_setting_up_kms.html
               - title: Launch a system in AWS
                 url: /task_deploying_otc_aws.html
+              - title: Get started in AWS C2S
+                url: https://docs.netapp.com/us-en/occm/media/c2s.pdf
           - title: Get started in Azure
             entries:
               - title: Quick start
