@@ -19,20 +19,10 @@ entries:
         url: /concept_overview.html
       - title: Log in to Cloud Manager
         url: /task_logging_in.html
-      - title: Set up Cloud Manager
-        entries:
-          - title: Set up the Cloud Central account
-            url: /task_setting_up_cloud_central_accounts.html
-          - title: Add AWS credentials
-            url: /task_adding_aws_accounts.html
-          - title: Add Azure credentials
-            url: /task_adding_azure_accounts.html
-          - title: Add GCP credentials (9.6 only)
-            url: /task_adding_gcp_accounts.html
-          - title: Add NetApp Support Site credentials
-            url: /task_adding_nss_accounts.html
-          - title: Install an HTTPS certificate
-            url: /task_installing_https_cert.html
+      - title: Set up your Cloud Central account
+        url: /task_setting_up_cloud_central_accounts.html
+      - title: Where to get next
+        url: /reference_whats_next.html
   - title: Manage cloud storage using Cloud Volumes ONTAP
     entries:
       - title: Learn
@@ -237,6 +227,18 @@ entries:
     url: /task_viewing_amazon_s3.html
   - title: Administer Cloud Manager
     entries:
+      - title: Manage credentials
+        entries:
+          - title: Add AWS credentials
+            url: /task_adding_aws_accounts.html
+          - title: Add Azure credentials
+            url: /task_adding_azure_accounts.html
+          - title: Add GCP credentials (9.6 only)
+            url: /task_adding_gcp_accounts.html
+          - title: Add NetApp Support Site credentials
+            url: /task_adding_nss_accounts.html
+          - title: Install an HTTPS certificate
+            url: /task_installing_https_cert.html
       - title: Manage the Cloud Central account
         url: /task_managing_cloud_central_accounts.html
       - title: Remove working environments
