@@ -64,7 +64,7 @@ Cloud Manager creates GCP firewall rules that include the inbound and outbound r
 
 The firewall rules for Cloud Volumes ONTAP requires both inbound and outbound rules.
 
-=== Inbound rules for Cloud Volumes ONTAP
+=== Inbound rules
 
 The source for inbound rules in the predefined security group is 0.0.0.0/0.
 
@@ -102,7 +102,7 @@ The source for inbound rules in the predefined security group is 0.0.0.0/0.
 
 |===
 
-=== Outbound rules for Cloud Volumes ONTAP
+=== Outbound rules
 
 The predefined security group for Cloud Volumes ONTAP opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
 

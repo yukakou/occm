@@ -192,7 +192,7 @@ Any protocol | Any to Any | Block all other inbound traffic
 
 |===
 
-=== Outbound rules for Cloud Volumes ONTAP
+=== Outbound rules
 
 The predefined security group for Cloud Volumes ONTAP opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
 
