@@ -68,11 +68,13 @@ entries:
               - title: Plan your configuration
                 url: /task_planning_your_config.html
               - title: Set up your networking
-                url: /reference_networking_aws.html
-              - title: Set up an AWS transit gateway
-                url: /task_setting_up_transit_gateway.html
-              - title: Security group rules for AWS
-                url: /reference_security_groups.html
+                entries:
+                  - title: Networking requirements
+                    url: /reference_networking_aws.html
+                  - title: Set up an AWS transit gateway
+                    url: /task_setting_up_transit_gateway.html
+                  - title: Security group rules for AWS
+                    url: /reference_security_groups.html
               - title: Set up permissions
                 url: /?.html
               - title: Set up the AWS KMS
