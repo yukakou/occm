@@ -23,6 +23,8 @@ entries:
         url: /task_logging_in.html
       - title: Set up your Cloud Central account
         url: /task_setting_up_cloud_central_accounts.html
+      - title: Find your system ID
+        url: /task_finding_system_id.html
       - title: Where to get next
         url: /reference_whats_next.html
   - title: Manage cloud storage using Cloud Volumes ONTAP
@@ -55,62 +57,56 @@ entries:
               url: /concept_security.html
             - title: Performance
               url: /concept_performance.html
-      - title: Get started
+      - title: Enable Flash Cache
+        url: /task_enabling_flash_cache.html
+      - title: Get started in AWS
         entries:
-          - title: Find your system ID
-            url: /task_finding_system_id.html
-          - title: Enable Flash Cache
-            url: /task_enabling_flash_cache.html
-          - title: Get started in AWS
+          - title: Quick start
+            url: /task_getting_started_aws.html
+          - title: Plan your configuration
+            url: /task_planning_your_config.html
+          - title: Set up your networking
             entries:
-              - title: Quick start
-                url: /task_getting_started_aws.html
-              - title: Plan your configuration
-                url: /task_planning_your_config.html
-              - title: Set up your networking
-                entries:
-                  - title: Networking requirements
-                    url: /reference_networking_aws.html
-                  - title: Set up an AWS transit gateway
-                    url: /task_setting_up_transit_gateway.html
-                  - title: Security group rules for AWS
-                    url: /reference_security_groups.html
-              - title: Set up permissions
-                url: /?.html
-              - title: Set up the AWS KMS
-                url: /task_setting_up_kms.html
-              - title: Launch a system in AWS
-                url: /task_deploying_otc_aws.html
-              - title: Get started in AWS C2S
-                url: https://docs.netapp.com/us-en/occm/media/c2s.pdf
-          - title: Get started in Azure
-            entries:
-              - title: Quick start
-                url: /task_getting_started_azure.html
-              - title: Plan your configuration
-                url: /task_planning_your_config.html
-              - title: Set up your networking
-                url: /reference_networking_azure.html
-              - title: Set up permissions
-                url: /?.html
-              - title: Launch a system in Azure
-                url: /task_deploying_otc_azure.html
-          - title: Get started in GCP
-            entries:
-              - title: Quick start
-                url: /task_getting_started_gcp.html
-              - title: Plan your configuration
-                url: /task_planning_your_config.html
-              - title: Set up your networking
-                url: /reference_networking_gcp.html
-              - title: Set up permissions
-                url: /?.html
-              - title: Launch a system in GCP
-                url: /task_deploying_gcp.html
-          - title: Register pay-as-you-go systems
-            url: /task_registering.html
-          - title: Set up Cloud Volumes ONTAP
-            url: /task_setting_up_ontap_cloud.html
+              - title: Networking requirements
+                url: /reference_networking_aws.html
+              - title: Set up an AWS transit gateway
+                url: /task_setting_up_transit_gateway.html
+              - title: Security group rules for AWS
+                url: /reference_security_groups.html
+          - title: Set up permissions
+            url: /?.html
+          - title: Set up the AWS KMS
+            url: /task_setting_up_kms.html
+          - title: Launch a system in AWS
+            url: /task_deploying_otc_aws.html
+          - title: Get started in AWS C2S
+            url: https://docs.netapp.com/us-en/occm/media/c2s.pdf
+      - title: Get started in Azure
+        entries:
+          - title: Quick start
+            url: /task_getting_started_azure.html
+          - title: Plan your configuration
+            url: /task_planning_your_config.html
+          - title: Set up your networking
+            url: /reference_networking_azure.html
+          - title: Set up permissions
+            url: /?.html
+          - title: Launch a system in Azure
+            url: /task_deploying_otc_azure.html
+      - title: Get started in GCP
+        entries:
+          - title: Quick start
+            url: /task_getting_started_gcp.html
+          - title: Plan your configuration
+            url: /task_planning_your_config.html
+          - title: Set up your networking
+            url: /reference_networking_gcp.html
+          - title: Set up permissions
+            url: /?.html
+          - title: Launch a system in GCP
+            url: /task_deploying_gcp.html
+      - title: Set up Cloud Volumes ONTAP
+        url: /task_setting_up_ontap_cloud.html
       - title: Provision and manage storage
         entries:
           - title: Create volumes, aggregates, and LUNs
@@ -147,6 +143,8 @@ entries:
             url: /task_getting_started_monitoring.html
       - title: Administer
         entries:
+          - title: Register pay-as-you-go systems
+            url: /task_registering.html
           - title: Connect to Cloud Volumes ONTAP
             url: /task_connecting_to_otc.html
           - title: Update software
