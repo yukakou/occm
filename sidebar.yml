@@ -89,8 +89,6 @@ entries:
                 url: /task_planning_your_config.html
               - title: Set up your networking
                 url: /reference_networking_azure.html
-              - title: Security group rules for Azure
-                url: /reference_security_groups_azure.html
               - title: Set up permissions
                 url: /?.html
               - title: Launch a system in Azure
@@ -103,8 +101,6 @@ entries:
                 url: /task_planning_your_config.html
               - title: Set up your networking
                 url: /reference_networking_gcp.html
-              - title: Firewall rules for GCP
-                url: /reference_firewall_rules_gcp.html
               - title: Set up permissions
                 url: /?.html
               - title: Launch a system in GCP
@@ -241,13 +237,13 @@ entries:
             entries:
               - title: Connector host requirements
                 url: /reference_cloud_mgr_reqs.html
-              - title: Create a Connector from Cloud Manager
+              - title: Create from Cloud Manager
                 url: /task_creating_connector.html
-              - title: Create a Connector from the AWS Marketplace
+              - title: Create from the AWS Marketplace
                 url: /task_launching_aws_mktp.html
-              - title: Create a Connector from the Azure Marketplace
+              - title: Create from the Azure Marketplace
                 url: /task_launching_azure_mktp.html
-              - title: Manually install the Connector software
+              - title: Manually install the software
                 url: /task_installing_linux.html
           - title: Manage existing Connectors
             url: /task_managing_connectors.html
