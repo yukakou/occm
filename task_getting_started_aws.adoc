@@ -36,12 +36,7 @@ When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS 
 
 .. Attach the policy to the IAM user.
 
-==== image:number3.png[Number 3] Launch Cloud Manager from NetApp Cloud Central
-
-[role="quick-margin-para"]
-Cloud Manager software is required to deploy and manage Cloud Volumes ONTAP. It takes just a few minutes to launch a Cloud Manager instance from https://cloud.netapp.com[Cloud Central^].
-
-==== image:number4.png[Number 4] Launch Cloud Volumes ONTAP using Cloud Manager
+==== image:number4.png[Number 3] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]
 Once Cloud Manager is ready, just click Create, select the type of system that you would like to launch, and complete the steps in the wizard. After 25 minutes, your first Cloud Volumes ONTAP system should be up and running.
@@ -49,8 +44,6 @@ Once Cloud Manager is ready, just click Create, select the type of system that y
 Watch the following video for a walk through of these steps:
 
 video::video_getting_started_aws.mp4[width=848, height=480]
-
-//video::au5qQDiPuzo[youtube, width=848, height=480]
 
 .Related links
 

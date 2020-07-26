@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_planning_your_config.html
-keywords: license, disk, ebs, storage, size, write speed, volume usage, explore, standard, premium, byol, ec2, capacity, limit, configurations, virtual machine, vm, regions, supported disks, disk types, general purpose, gp2 provisioned IOPS, piops, throughput optimized, cold, SSD, HDD, st1, sc1, premium storage, standard storage, use profile, thin provisioning, deduplication, compression, Cloud Volumes ONTAP explore, Cloud Volumes ONTAP standard, Cloud Volumes ONTAP premium, Cloud Volumes ONTAP byol, shared instance, dedicated instance, write speed, high write speed, normal write speed, network information, worksheet, limit, limits, storage limits, volume limit, aggregate limit, maximum volume size, maximum aggregate size
-summary: When you deploy Cloud Volumes ONTAP, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
+keywords: license, disk, ebs, storage, size, write speed, volume usage, explore, standard, premium, byol, ec2, capacity, limit, configurations, virtual machine, vm, regions, supported disks, disk types, general purpose, gp2 provisioned IOPS, piops, throughput optimized, cold, SSD, HDD, st1, sc1, use profile, thin provisioning, deduplication, compression, Cloud Volumes ONTAP explore, Cloud Volumes ONTAP standard, Cloud Volumes ONTAP premium, Cloud Volumes ONTAP byol, shared instance, dedicated instance, write speed, high write speed, normal write speed, network information, worksheet, limit, limits, storage limits, volume limit, aggregate limit, maximum volume size, maximum aggregate size
+summary: When you deploy Cloud Volumes ONTAP in AWS, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 ---
 
-= Planning your Cloud Volumes ONTAP configuration
+= Planning your Cloud Volumes ONTAP configuration in AWS
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,64 +13,21 @@ summary: When you deploy Cloud Volumes ONTAP, you can choose a preconfigured sys
 :imagesdir: ./media/
 
 [.lead]
-When you deploy Cloud Volumes ONTAP, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
+When you deploy Cloud Volumes ONTAP in AWS, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 
 == Choosing a license type
 
 Cloud Volumes ONTAP is available in two pricing options: pay-as-you-go and Bring Your Own License (BYOL). For pay-as-you-go, you can choose from three licenses: Explore, Standard, or Premium. Each license provides different capacity and compute options.
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_97.html[Supported configurations for Cloud Volumes ONTAP 9.7 in AWS^]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_97.html[Supported configurations for Cloud Volumes ONTAP 9.7 in Azure^]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_97.html[Supported configurations for Cloud Volumes ONTAP 9.7 in GCP^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_97.html[Supported configurations for Cloud Volumes ONTAP 9.7 in AWS^]
 
 == Understanding storage limits
 
 The raw capacity limit for a Cloud Volumes ONTAP system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
 
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_97.html[Storage limits for Cloud Volumes ONTAP 9.7 in AWS]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_azure_97.html[Storage limits for Cloud Volumes ONTAP 9.7 in Azure]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_gcp_97.html[Storage limits for Cloud Volumes ONTAP 9.7 in GCP]
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_97.html[Storage limits for Cloud Volumes ONTAP 9.7 in AWS]
 
-== Choosing a write speed
-
-Cloud Manager enables you to choose a write speed setting for single node Cloud Volumes ONTAP systems. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
-
-==== Difference between normal write speed and high write speed
-
-When you choose normal write speed, data is written directly to disk, thereby reducing the likelihood of data loss in the event of an unplanned system outage.
-
-When you choose high write speed, data is buffered in memory before it is written to disk, which provides faster write performance. Due to this caching, there is the potential for data loss if an unplanned system outage occurs.
-
-The amount of data that can be lost in the event of an unplanned system outage is the span of the last two consistency points. A consistency point is the act of writing buffered data to disk. A consistency point occurs when the write log is full or after 10 seconds (whichever comes first). However, AWS EBS volume performance can affect consistency point processing time.
-
-==== When to use high write speed
-
-High write speed is a good choice if fast write performance is required for your workload and you can withstand the risk of data loss in the event of an unplanned system outage.
-
-==== Recommendations when using high write speed
-
-If you enable high write speed, you should ensure write protection at the application layer.
-
-== Choosing a volume usage profile
-
-ONTAP includes several storage efficiency features that can reduce the total amount of storage that you need. When you create a volume in Cloud Manager, you can choose a profile that enables these features or a profile that disables them. You should learn more about these features to help you decide which profile to use.
-
-NetApp storage efficiency features provide the following benefits:
-
-Thin provisioning:: Presents more logical storage to hosts or users than you actually have in your physical storage pool. Instead of preallocating storage space, storage space is allocated dynamically to each volume as data is written.
-
-Deduplication:: Improves efficiency by locating identical blocks of data and replacing them with references to a single shared block. This technique reduces storage capacity requirements by eliminating redundant blocks of data that reside in the same volume.
-
-Compression:: Reduces the physical capacity required to store data by compressing data within a volume on primary, secondary, and archive storage.
-
-== AWS planning
-
-Plan your deployment of Cloud Volumes ONTAP in AWS by sizing your system and reviewing the network information that you need to enter.
-
-* <<Sizing your system in AWS>>
-* <<AWS network information worksheet>>
-
-=== Sizing your system in AWS
+== Sizing your system in AWS
 
 Sizing your Cloud Volumes ONTAP system can help you meet requirements for performance and capacity. You should be aware of a few key points when choosing an instance type, disk type, and disk size:
 
@@ -98,7 +55,7 @@ Watch the following video for more details about sizing your Cloud Volumes ONTAP
 
 video::GELcXmOuYPw[youtube, width=848, height=480]
 
-=== AWS network information worksheet
+== AWS network information worksheet
 
 When you launch Cloud Volumes ONTAP in AWS, you need to specify details about your VPC network. You can use a worksheet to collect the information from your administrator.
 
@@ -142,119 +99,34 @@ When you launch Cloud Volumes ONTAP in AWS, you need to specify details about yo
 
 |===
 
-== Azure planning
+== Choosing a write speed
 
-Plan your deployment of Cloud Volumes ONTAP in Azure by sizing your system and reviewing the network information that you need to enter.
+Cloud Manager enables you to choose a write speed setting for single node Cloud Volumes ONTAP systems. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
 
-* <<Sizing your system in Azure>>
-* <<Azure network information worksheet>>
+==== Difference between normal write speed and high write speed
 
-=== Sizing your system in Azure
+When you choose normal write speed, data is written directly to disk, thereby reducing the likelihood of data loss in the event of an unplanned system outage.
 
-Sizing your Cloud Volumes ONTAP system can help you meet requirements for performance and capacity. You should be aware of a few key points when choosing a VM type, disk type, and disk size:
+When you choose high write speed, data is buffered in memory before it is written to disk, which provides faster write performance. Due to this caching, there is the potential for data loss if an unplanned system outage occurs.
 
-Virtual machine type::
-Look at the supported virtual machine types in the http://docs.netapp.com/cloud-volumes-ontap/us-en/index.html[Cloud Volumes ONTAP Release Notes^] and then review details about each supported VM type. Be aware that each VM type supports a specific number of data disks.
+The amount of data that can be lost in the event of an unplanned system outage is the span of the last two consistency points. A consistency point is the act of writing buffered data to disk. A consistency point occurs when the write log is full or after 10 seconds (whichever comes first). However, AWS EBS volume performance can affect consistency point processing time.
 
-* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general#dsv2-series[Azure documentation: General purpose virtual machine sizes^]
-* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-memory#dsv2-series-11-15[Azure documentation: Memory optimized virtual machine sizes^]
+==== When to use high write speed
 
-Azure disk type::
-When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses as a disk.
-+
-HA systems use Premium page blobs. Meanwhile, single node systems can use two types of Azure Managed Disks:
+High write speed is a good choice if fast write performance is required for your workload and you can withstand the risk of data loss in the event of an unplanned system outage.
 
-* _Premium SSD Managed Disks_ provide high performance for I/O-intensive workloads at a higher cost.
+==== Recommendations when using high write speed
 
-* _Standard SSD Managed Disks_ provide consistent performance for workloads that require low IOPS.
+If you enable high write speed, you should ensure write protection at the application layer.
 
-* _Standard HDD Managed Disks_ are a good choice if you don't need high IOPS and want to reduce your costs.
-+
-For additional details about the use cases for these disks, see https://azure.microsoft.com/documentation/articles/storage-introduction/[Microsoft Azure Documentation: Introduction to Microsoft Azure Storage^].
+== Choosing a volume usage profile
 
-Azure disk size::
-When you launch Cloud Volumes ONTAP instances, you must choose the default disk size for aggregates. Cloud Manager uses this disk size for the initial aggregate, and for any additional aggregates that it creates when you use the simple provisioning option. You can create aggregates that use a disk size different from the default by link:task_provisioning_storage.html#creating-aggregates[using the advanced allocation option].
-+
-TIP: All disks in an aggregate must be the same size.
-+
-When choosing a disk size, you should take several factors into consideration. The disk size impacts how much you pay for storage, the size of volumes that you can create in an aggregate, the total capacity available to Cloud Volumes ONTAP, and storage performance.
-+
-The performance of Azure Premium Storage is tied to the disk size. Larger disks provide higher IOPS and throughput. For example, choosing 1 TB disks can provide better performance than 500 GB disks, at a higher cost.
-+
-There are no performance differences between disk sizes for Standard Storage. You should choose disk size based on the capacity that you need.
-+
-Refer to Azure for IOPS and throughput by disk size:
-+
-* https://azure.microsoft.com/en-us/pricing/details/managed-disks/[Microsoft Azure: Managed Disks pricing^]
-* https://azure.microsoft.com/en-us/pricing/details/storage/page-blobs/[Microsoft Azure: Page Blobs pricing^]
+ONTAP includes several storage efficiency features that can reduce the total amount of storage that you need. When you create a volume in Cloud Manager, you can choose a profile that enables these features or a profile that disables them. You should learn more about these features to help you decide which profile to use.
 
-=== Azure network information worksheet
+NetApp storage efficiency features provide the following benefits:
 
-When you deploy Cloud Volumes ONTAP in Azure, you need to specify details about your virtual network. You can use a worksheet to collect the information from your administrator.
+Thin provisioning:: Presents more logical storage to hosts or users than you actually have in your physical storage pool. Instead of preallocating storage space, storage space is allocated dynamically to each volume as data is written.
 
-[cols=2*,options="header",cols="30,70"]
-|===
+Deduplication:: Improves efficiency by locating identical blocks of data and replacing them with references to a single shared block. This technique reduces storage capacity requirements by eliminating redundant blocks of data that reside in the same volume.
 
-| Azure information
-| Your value
-
-| Region |
-| Virtual network (VNet) |
-| Subnet |
-| Network security group (if using your own) |
-
-|===
-
-== GCP planning
-
-Plan your deployment of Cloud Volumes ONTAP in Google Cloud Platform by sizing your system and reviewing the network information that you need to enter.
-
-* <<Sizing your system in GCP>>
-* <<GCP network information worksheet>>
-
-=== Sizing your system in GCP
-
-Sizing your Cloud Volumes ONTAP system can help you meet requirements for performance and capacity. You should be aware of a few key points when choosing a machine type, disk type, and disk size:
-
-Machine type::
-Look at the supported machine types in the http://docs.netapp.com/cloud-volumes-ontap/us-en/index.html[Cloud Volumes ONTAP Release Notes^] and then review details from Google about each supported machine type. Match your workload requirements to the number of vCPUs and memory for the machine type. Note that each CPU core increases networking performance.
-+
-Refer to the following for more details:
-+
-** https://cloud.google.com/compute/docs/machine-types#n1_machine_types[Google Cloud documentation: N1 standard machine types^]
-** https://cloud.google.com/docs/compare/data-centers/networking#performance[Google Cloud documentation: Performance^]
-
-GCP disk type::
-When you create volumes for Cloud Volumes ONTAP, you need to choose the underlying cloud storage that Cloud Volumes ONTAP uses for a disk. The disk type can be either _Zonal SSD persistent disks_ or _Zonal standard persistent disks_.
-+
-SSD persistent disks are best for workloads that require high rates of random IOPS, while Standard persistent disks are economical and can handle sequential read/write operations. For more details, see https://cloud.google.com/compute/docs/disks/#pdspecs[Google Cloud documentation: Zonal Persistent disks (Standard and SSD)^].
-
-GCP disk size::
-You need to choose an initial disk size when you deploy a Cloud Volumes ONTAP system. After that you can let Cloud Manager manage a system's capacity for you, but if you want to build aggregates yourself, be aware of the following:
-+
-* All disks in an aggregate must be the same size.
-* Determine the space that you need, while taking performance into consideration.
-* The performance of persistent disks scales automatically with disk size and the number of vCPUs available to the system.
-+
-Refer to the following for more details:
-+
-** https://cloud.google.com/compute/docs/disks/#pdspecs[Google Cloud documentation: Zonal Persistent disks (Standard and SSD)^]
-** https://cloud.google.com/compute/docs/disks/performance[Google Cloud documentation: Optimizing Persistent Disk and Local SSD Performance^]
-
-=== GCP network information worksheet
-
-When you deploy Cloud Volumes ONTAP in GCP, you need to specify details about your virtual network. You can use a worksheet to collect the information from your administrator.
-
-[cols=2*,options="header",cols="30,70"]
-|===
-
-| GCP information
-| Your value
-
-| Region |
-| Zone |
-| VPC network |
-| Subnet |
-| Firewall policy (if using your own) |
-
-|===
+Compression:: Reduces the physical capacity required to store data by compressing data within a volume on primary, secondary, and archive storage.
