@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: reference_cloud_mgr_reqs.html
 keywords: configurations, ec2, vm, ports, ram, operating system, os, host, requirement, requirements, hypervisor, disk, space, mysql, centos, rhel, red hat, cpu, disk space, 3306
-summary: If you install Cloud Manager on your own host, then you must verify support for your configuration, which includes operating system requirements, port requirements, and so on.
+summary: The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
 ---
 
-= Cloud Manager host requirements
+= Connector host requirements
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,25 +13,25 @@ summary: If you install Cloud Manager on your own host, then you must verify sup
 :imagesdir: ./media/
 
 [.lead]
-If you install Cloud Manager on your own host, then you must verify support for your configuration, which includes operating system requirements, port requirements, and so on.
+The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
 
-NOTE: You can install Cloud Manager on your own host in GCP, but not in your on-premises network. Cloud Manager must be installed in GCP in order to deploy Cloud Volumes ONTAP in GCP.
+NOTE: You can install a Connector on your own host in GCP, but not in your on-premises network. The Connector must be installed in GCP in order to deploy Cloud Volumes ONTAP in GCP.
 
 A dedicated host is required::
-Cloud Manager is not supported on a host that is shared with other applications. The host must be a dedicated host.
+The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
 
 CPU:: 4 cores or 4 vCPUs
 
 RAM:: 14 GB
 
 AWS EC2 instance type::
-An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge.
+An instance type that meets the CPU and RAM requirements above. We recommend t3.xlarge and use that instance type when you deploy the Connector directly from Cloud Manager.
 
 Azure VM size::
-An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2.
+An instance type that meets the CPU and RAM requirements above. We recommend DS3 v2 and use that VM size when you deploy the Connector directly from Cloud Manager.
 
 GCP machine type::
-An instance type that meets the CPU and RAM requirements above. We recommend n1-standard-4.
+An instance type that meets the CPU and RAM requirements above. We recommend n1-standard-4  and use that machine type when you deploy the Connector directly from Cloud Manager.
 
 Supported operating systems::
 * CentOS 7.2
@@ -47,9 +47,9 @@ Supported operating systems::
 * Red Hat Enterprise Linux 7.6
 * Red Hat Enterprise Linux 7.7
 +
-The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Cloud Manager installation.
+The Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Connector installation.
 +
-Cloud Manager is supported on English-language versions of these operating systems.
+The Connector is supported on English-language versions of these operating systems.
 
 Hypervisor::  A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux
 https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
@@ -57,7 +57,7 @@ https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervis
 Free disk space in /opt:: 100 GB
 
 Outbound internet access::
-Outbound internet access is required when installing Cloud Manager and when using Cloud Manager to deploy Cloud Volumes ONTAP. For a list of endpoints, see link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager].
+Outbound internet access is required to install the Connector and for the Connector to manage resources and processes within your public cloud environment. For a list of endpoints, see link:reference_networking_cloud_manager.html[Networking requirements for the Connector].
 
 Ports::
 The following ports must be available:
@@ -68,11 +68,8 @@ The following ports must be available:
 * 8666 for the Service Manager API
 * 8777 for the Health-Checker Container Service API
 +
-If other services are using these ports, Cloud Manager installation fails.
+If other services are using these ports, installation of the Connector fails.
 +
 NOTE: There is a potential conflict with port 3306. If another instance of MySQL is running on the host, it uses port 3306 by default. You must change the port that the existing MySQL instance uses.
 +
-You can change the default HTTP and HTTPS ports when you install Cloud Manager. You cannot change the default port for the MySQL database. If you change the HTTP and HTTPS ports, you must ensure that users can access the Cloud Manager web console from a remote host:
-+
-** Modify the security group to allow inbound connections through the ports.
-** Specify the port when you enter the URL to the Cloud Manager web console.
+You can change the default HTTP and HTTPS ports when you install a Connector. You can't change the default port for the MySQL database.

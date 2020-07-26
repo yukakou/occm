@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: reference_networking_cloud_manager.html
 keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, proxy server, vpn, outbound, inbound, connections, jump host, URL, URLs, endpoints, endpoint, ports
-summary: Set up your networking so that Cloud Manager can deploy Cloud Volumes ONTAP systems in AWS or in Microsoft Azure. The most important step is ensuring outbound internet access to various endpoints.
+summary: Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
 ---
 
-= Networking requirements for Cloud Manager
+= Networking requirements for the Connector
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,24 +13,25 @@ summary: Set up your networking so that Cloud Manager can deploy Cloud Volumes O
 :imagesdir: ./media/
 
 [.lead]
-Set up your networking so that Cloud Manager can deploy Cloud Volumes ONTAP systems in AWS, Microsoft Azure, or Google Cloud Platform. The most important step is ensuring outbound internet access to various endpoints.
+Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
 
-TIP: If your network uses a proxy server for all communication to the internet, Cloud Manager prompts you to specify the proxy during setup. You can also specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring Cloud Manager to use a proxy server].
+TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring the Connector to use a proxy server].
 
 == Connection to target networks
 
-Cloud Manager requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.
+A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.
 
-For example, if you install Cloud Manager in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
+For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
 
 == Outbound internet access
 
-Cloud Manager requires outbound internet access to deploy and manage Cloud Volumes ONTAP. Outbound internet access is also required when accessing Cloud Manager from your web browser and when running the Cloud Manager installer on a Linux host.
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment. Outbound internet access is also required if you want to manually install the Connector on a Linux host or access the local UI running on the Connector.
 
 The following sections identify the specific endpoints.
 
 === Endpoints to manage Cloud Volumes ONTAP in AWS
-Cloud Manager requires outbound internet access to contact the following endpoints when deploying and managing Cloud Volumes ONTAP in AWS:
+
+A Connector requires outbound internet access to contact the following endpoints to deploy and manage Cloud Volumes ONTAP in AWS:
 
 [cols="43,57",options="header"]
 |===
@@ -104,7 +105,8 @@ Third-party locations are subject to change.
 |===
 
 === Endpoints to manage Cloud Volumes ONTAP in Azure
-Cloud Manager requires outbound internet access to contact the following endpoints when deploying and managing Cloud Volumes ONTAP in Microsoft Azure:
+
+A Connector requires outbound internet access to contact the following endpoints to deploy and manage Cloud Volumes ONTAP in Microsoft Azure:
 
 [cols="43,57",options="header"]
 |===
@@ -179,7 +181,8 @@ Third-party locations are subject to change.
 |===
 
 === Endpoints to manage Cloud Volumes ONTAP in GCP
-Cloud Manager requires outbound internet access to contact the following endpoints when deploying and managing Cloud Volumes ONTAP in GCP:
+
+A Connector requires outbound internet access to contact the following endpoints to deploy and manage Cloud Volumes ONTAP in GCP:
 
 [cols="43,57",options="header"]
 |===
@@ -239,15 +242,24 @@ Third-party locations are subject to change.
 | During upgrades, Cloud Manager downloads the latest packages for third-party dependencies.
 |===
 
-=== Endpoints accessed from your web browser
-Users must access Cloud Manager from a web browser. The machine running the web browser must have connections to the following endpoints:
+=== Endpoints to install Cloud Manager on a Linux host
+
+The installer for the Connector must access the following URLs during the installation process:
+
+* \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+* \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+* \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
+
+=== Endpoints accessed from your web browser when using the local UI
+
+While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. The machine running the web browser must have connections to the following endpoints:
 
 [cols="43,57",options="header"]
 |===
 | Endpoints
 | Purpose
 |
-The Cloud Manager host
+The Connector host
 
 a| You must enter the host's IP address from a web browser to load the Cloud Manager console.
 
@@ -271,18 +283,11 @@ In any case, you should secure network access by ensuring that security group ru
 
 |===
 
-=== Endpoints to install Cloud Manager on a Linux host
-The Cloud Manager installer must access the following URLs during the installation process:
-
-* \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
-* \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-* \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
-
 == Ports and security groups
 
-* If you deploy Cloud Manager from Cloud Central or from the marketplace images, refer to the following:
+* If you create a Connector from Cloud Manager or from the marketplace images, refer to the following:
 ** link:reference_security_groups.html#rules-for-cloud-manager[Security group rules for Cloud Manager in AWS]
 ** link:reference_security_groups_azure.html#rules-for-cloud-manager[Security group rules for Cloud Manager in Azure]
 ** link:reference_firewall_rules_gcp.html#rules-for-cloud-manager[Firewall rules for Cloud Manager in GCP]
 
-* If you install Cloud Manager on an existing Linux host, see link:reference_cloud_mgr_reqs.html[Cloud Manager host requirements].
+* If you install the Connector on an existing Linux host, see link:reference_cloud_mgr_reqs.html[Cloud Manager host requirements].

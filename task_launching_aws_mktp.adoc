@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_launching_aws_mktp.html
-keywords: install, installation, installing, marketplace, aws, launch, launching, ec2 console, iam role
-summary: It is best to launch Cloud Manager in AWS using NetApp Cloud Central, but you can launch it from the AWS Marketplace, if needed.
+keywords: install connector, create connector, deploy connector, installation, installing, marketplace, aws, launch, launching, ec2 console, iam role
+summary: It's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the AWS Marketplace, if you'd rather not specify AWS access keys. After you create and set up the Connector, Cloud Manager will automatically use it when you create new working environments.
 ---
 
-= Launching Cloud Manager from the AWS Marketplace
+= Creating a Connector from the AWS Marketplace
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,10 +13,7 @@ summary: It is best to launch Cloud Manager in AWS using NetApp Cloud Central, b
 :imagesdir: ./media/
 
 [.lead]
-
-It's best to launch Cloud Manager in AWS using https://cloud.netapp.com[NetApp Cloud Central^], but you can launch it from the AWS Marketplace, if needed.
-
-TIP: If you launch Cloud Manager from the AWS Marketplace, Cloud Manager is still integrated with NetApp Cloud Central. link:concept_cloud_central.html[Learn more about the integration].
+It's best to create a Connector directly from Cloud Manager, but you can launch a Connector from the AWS Marketplace, if you'd rather not specify AWS access keys. After you create and set up the Connector, Cloud Manager will automatically use it when you create new working environments.
 
 .Steps
 
@@ -58,24 +55,24 @@ image:screenshot_aws_iam_role.gif[A screenshot that shows fields on the Configur
 
 * *Add Tags*: Enter tags for the instance, if desired.
 
-* *Configure Security Group*: Specify the required connection methods for the Cloud Manager instance: SSH, HTTP, and HTTPS.
+* *Configure Security Group*: Specify the required connection methods for the Connector instance: SSH, HTTP, and HTTPS.
 
 * *Review*: Review your selections and click *Launch*.
 +
-AWS launches the software with the specified settings. The Cloud Manager instance and software should be running in approximately five minutes.
+AWS launches the software with the specified settings. The Connector instance and software should be running in approximately five minutes.
 
-. Open a web browser from a host that has a connection to the Cloud Manager virtual machine and enter the following URL:
+. Open a web browser from a host that has a connection to the Connector instance and enter the following URL:
 +
 http://_ipaddress_:80
 
-. After you log in, set up Cloud Manager:
-.. Specify the Cloud Central account to associate with this Cloud Manager system.
+. After you log in, set up the Connector:
+.. Specify the Cloud Central account to associate with the Connector.
 +
 link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts].
 .. Enter a name for the system.
 +
-image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Cloud Manager screen that enables you to select a Cloud Central account and name the Cloud Manager system.]
+image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Connector screen that enables you to select a Cloud Central account and name the system.]
 
 .Result
 
-Cloud Manager is now installed and set up.
+The Connector is now installed and set up with your Cloud Central account. Cloud Manager will automatically use this Connector when you create new working environments.
