@@ -229,6 +229,28 @@ entries:
     url: /task_viewing_amazon_s3.html
   - title: Administer Cloud Manager
     entries:
+      - title: Add and manage Connectors
+        entries:
+          - title: Learn about Connectors
+            url: /concept_connectors.html
+          - title: Keep Connectors running
+            url: /concept_keep_up.html
+          - title: Networking requirements
+            url: /reference_networking_connectors.html
+          - title: Add a Connector
+            entries:
+              - title: Connector host requirements
+                url: /reference_cloud_mgr_reqs.html
+              - title: Create a Connector from Cloud Manager
+                url: /task_creating_connector.html
+              - title: Create a Connector from the AWS Marketplace
+                url: /task_launching_aws_mktp.html
+              - title: Create a Connector from the Azure Marketplace
+                url: /task_launching_azure_mktp.html
+              - title: Manually install the Connector software
+                url: /task_installing_linux.html
+          - title: Manage existing Connectors
+            url: /task_managing_connectors.html
       - title: Manage credentials
         entries:
           - title: Add AWS credentials
@@ -251,8 +273,6 @@ entries:
         url: /task_configuring_proxy.html
       - title: Override CIFS locks in Azure
         url: /task_overriding_cifs_locks.html
-      - title: Uninstall a Connector
-        url: /task_uninstalling.html
       - title: Reference
         entries:
           - title: User roles
