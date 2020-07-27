@@ -27,12 +27,12 @@ entries:
         url: /task_finding_system_id.html
       - title: Where to get next
         url: /reference_whats_next.html
-  - title: Manage cloud storage using Cloud Volumes ONTAP
+  - title: Manage Cloud Volumes ONTAP
     entries:
       - title: Learn
         entries:
             - title: Overview
-              url: /concept_cvo.html
+              url: /concept_overview_cvo.html
             - title: Storage
               entries:
                 - title: Disks and aggregates
@@ -59,6 +59,12 @@ entries:
               url: /concept_security.html
             - title: Performance
               url: /concept_performance.html
+            - title: Supported configurations
+              url: https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html
+            - title: Supported regions
+              url: https://cloud.netapp.com/cloud-volumes-global-regions
+            - title: Default configurations
+              url: /reference_default_configs.html
       - title: Get started in AWS
         entries:
           - title: Quick start
@@ -161,14 +167,6 @@ entries:
             url: /task_adding_ontap_cloud.html
           - title: Delete systems
             url: /task_deleting_working_env.html
-      - title: Reference
-        entries:
-          - title: Supported configurations for Cloud Volumes ONTAP
-            url: https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html
-          - title: Supported regions
-            url: https://cloud.netapp.com/cloud-volumes-global-regions
-          - title: Default configurations
-            url: /reference_default_configs.html
   - title: Provision volumes using a file service
     entries:
       - title: Azure NetApp Files
