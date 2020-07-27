@@ -64,13 +64,13 @@ Set up your networking so that the Connector can manage resources and processes 
 
 TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring the Connector to use a proxy server].
 
-== Connection to target networks
+=== Connections to target networks
 
 A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.
 
 For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
 
-== Outbound internet access
+=== Outbound internet access
 
 The Connector requires outbound internet access to manage resources and processes within your public cloud environment. A Connector contacts the following endpoints when managing resources in Azure:
 
