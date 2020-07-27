@@ -66,6 +66,10 @@ Refer to Azure for IOPS and throughput by disk size:
 * https://azure.microsoft.com/en-us/pricing/details/managed-disks/[Microsoft Azure: Managed Disks pricing^]
 * https://azure.microsoft.com/en-us/pricing/details/storage/page-blobs/[Microsoft Azure: Page Blobs pricing^]
 
+== Choosing a configuration that supports Flash Cache
+
+A Cloud Volumes ONTAP configuration in Azure includes local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_ for better performance. link:concept_flash_cache.html[Learn more about Flash Cache].
+
 == Azure network information worksheet
 
 When you deploy Cloud Volumes ONTAP in Azure, you need to specify details about your virtual network. You can use a worksheet to collect the information from your administrator.

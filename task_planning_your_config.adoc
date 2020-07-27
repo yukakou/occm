@@ -55,6 +55,10 @@ Watch the following video for more details about sizing your Cloud Volumes ONTAP
 
 video::GELcXmOuYPw[youtube, width=848, height=480]
 
+== Choosing a configuration that supports Flash Cache
+
+Some Cloud Volumes ONTAP configurations in AWS include local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_ for better performance. link:concept_flash_cache.html[Learn more about Flash Cache].
+
 == AWS network information worksheet
 
 When you launch Cloud Volumes ONTAP in AWS, you need to specify details about your VPC network. You can use a worksheet to collect the information from your administrator.
