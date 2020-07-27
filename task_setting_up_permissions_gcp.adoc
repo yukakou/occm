@@ -1,0 +1,42 @@
+---
+sidebar: sidebar
+permalink: task_setting_up_permissions_gcp.html
+keywords: connector permissions, gcp permissions, permissions for the connector
+summary: A Connector enables Cloud Manager to manage resources and processes within your public cloud environment. Before you can deploy a Connector from Cloud Manager, you need to ensure that your GCP account has the correct permissions.
+---
+
+= Setting up GCP permissions to create a Connector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+A Connector enables Cloud Manager to manage resources and processes within your public cloud environment. Before you can deploy a Connector from Cloud Manager, you need to ensure that your GCP account has the correct permissions and that a service account is set up for the Connector VM.
+
+.About this task
+
+Follow these steps before you create a Connector directly from Cloud Manager. These steps don't apply if you're manually installing the Connector software on your own Linux host. If you are, then follow these steps instead.
+
+.Steps
+
+. Ensure that the GCP user who deploys Cloud Manager from NetApp Cloud Central has the permissions in the https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[Cloud Central policy for GCP^].
++
+https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[You can create a custom role using the YAML file^] and then attach it to the user. You'll need to use the gcloud command line to create the role.
+
+. Set up a service account that has the permissions that Cloud Manager needs to create and manage Cloud Volumes ONTAP systems in projects.
++
+You'll associate this service account with the Connector VM when you create it from Cloud Manager.
+
+.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.8.0_GCP.yaml[Cloud Manager policy for GCP^]. Again, you'll need to use the gcloud command line.
++
+The permissions contained in this YAML file are different than the permissions in step 2a.
+
+.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a GCP service account and apply the custom role that you just created^].
+
+.. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
+
+.Result
+
+The GCP user now has the permissions required to create the Connector from Cloud Manager and the service account for the Connector VM is set up.
