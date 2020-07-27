@@ -47,6 +47,7 @@ A VPC endpoint is required if you want to tier cold data from Cloud Volumes ONTA
 
 ==== image:number4.png[Number 4] Set up the AWS KMS
 
+[role="quick-margin-para"]
 If you want to use Amazon encryption with Cloud Volumes ONTAP, then you need to ensure that an active Customer Master Key (CMK) exists. You also need to modify the key policy for each CMK by adding the IAM role that provides permissions to the Connector as a _key user_. link:task_setting_up_kms.html[Learn more].
 
 ==== image:number5.png[Number 5] Launch Cloud Volumes ONTAP using Cloud Manager
