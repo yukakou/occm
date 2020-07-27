@@ -42,7 +42,7 @@ This step is important because the Connector can't manage Cloud Volumes ONTAP wi
 ==== image:number4.png[Number 4] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]
-Click *Add Working Environment*, select the type of system that you would like to deploy, and complete the steps in the wizard. After 25 minutes, your first Cloud Volumes ONTAP system should be up and running. link:task_deploying_otc_azure.html[Read step-by-step instructions].
+Click *Add Working Environment*, select the type of system that you would like to deploy, and complete the steps in the wizard. link:task_deploying_otc_azure.html[Read step-by-step instructions].
 
 .Related links
 

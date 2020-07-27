@@ -15,7 +15,7 @@ summary: Set up your AWS networking so Cloud Volumes ONTAP systems can operate p
 [.lead]
 Set up your AWS networking so Cloud Volumes ONTAP systems can operate properly.
 
-== General AWS networking requirements
+== General requirements for Cloud Volumes ONTAP
 
 The following requirements must be met in AWS.
 
@@ -67,7 +67,7 @@ The DNS server must provide name resolution services for the Active Directory en
 +
 For instructions, refer to https://docs.aws.amazon.com/quickstart/latest/active-directory-ds/welcome.html[AWS Documentation: Active Directory Domain Services on the AWS Cloud: Quick Start Reference Deployment^].
 
-== AWS networking requirements for HA pairs in multiple AZs
+== Requirements for HA pairs in multiple AZs
 
 Additional AWS networking requirements apply to Cloud Volumes ONTAP HA configurations that use multiple Availability Zones (AZs). You should review these requirements before you launch an HA pair because you must enter the networking details in Cloud Manager.
 
@@ -112,8 +112,126 @@ To use NetApp management tools with HA configurations that are in multiple AZs, 
 
 . Deploy the NetApp management tools in the same VPC with a similar routing configuration as NAS clients.
 
-== Example HA configuration
+=== Example HA configuration
 
 The following image shows an optimal HA configuration in AWS operating as an active-passive configuration:
 
 image:diagram_ha_networking.png["Conceptual image showing components in a Cloud Volumes ONTAP HA architecture: two Cloud Volumes ONTAP nodes and a mediator instance, each in separate availability zones."]
+
+== Requirements for the Connector
+
+Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
+
+TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring the Connector to use a proxy server].
+
+=== Connection to target networks
+
+A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.
+
+For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
+
+=== Outbound internet access
+
+A Connector requires outbound internet access to contact the following endpoints to deploy and manage Cloud Volumes ONTAP in AWS:
+
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+a|
+AWS services (amazonaws.com):
+
+*	CloudFormation
+*	Elastic Compute Cloud (EC2)
+*	Key Management Service (KMS)
+*	Security Token Service (STS)
+*	Simple Storage Service (S3)
+
+The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
+| Enables Cloud Manager to deploy and manage Cloud Volumes ONTAP in AWS.
+
+| \https://api.services.cloud.netapp.com:443 | API requests to NetApp Cloud Central.
+
+| \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
+
+| \https://repo.cloud.support.netapp.com | Used to download Cloud Manager dependencies.
+
+| \http://repo.mysql.com/ | Used to download MySQL.
+
+|
+\https://cognito-idp.us-east-1.amazonaws.com
+\https://cognito-identity.us-east-1.amazonaws.com
+\https://sts.amazonaws.com
+\https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
+| Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
+
+| \https://cloudmanagerinfraprod.azurecr.io | Access to software images of container components for an infrastructure that's running Docker and provides a solution for service integrations with Cloud Manager.
+
+| \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
+
+| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
+
+| \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
+
+| \https://w86yt021u5.execute-api.us-east-1.amazonaws.com/production/whitelist | Used to add your AWS account ID to the list of allowed users for Backup to S3.
+
+|
+\https://support.netapp.com/aods/asupmessage
+\https://support.netapp.com/asupprod/post/1.0/postAsup
+| Communication with NetApp AutoSupport.
+|
+\https://support.netapp.com/svcgw
+\https://support.netapp.com/ServiceGW/entitlement
+\https://eval.lic.netapp.com.s3.us-west-1.amazonaws.com
+\https://cloud-support-netapp-com.s3.us-west-1.amazonaws.com
+
+| Communication with NetApp for system licensing and support registration.
+
+| \https://ipa-signer.cloudmanager.netapp.com | Enables Cloud Manager to generate licenses (for example, a FlexCache license for Cloud Volumes ONTAP)
+
+|
+\https://packages.cloud.google.com/yum
+\https://github.com/NetApp/trident/releases/download/
+| Required to connect Cloud Volumes ONTAP systems with a Kubernetes cluster. The endpoints enable installation of NetApp Trident.
+
+a| Various third-party locations, for example:
+
+* \https://repo1.maven.org/maven2
+* \https://oss.sonatype.org/content/repositories
+* \https://repo.typesafe.org
+
+Third-party locations are subject to change.
+
+| During upgrades, Cloud Manager downloads the latest packages for third-party dependencies.
+|===
+
+While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. The machine running the web browser must have connections to the following endpoints:
+
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+|
+The Connector host
+
+a| You must enter the host's IP address from a web browser to load the Cloud Manager console.
+
+Depending on your connectivity to your cloud provider, you can use the private IP or a public IP assigned to the host:
+
+- A private IP works if you have a VPN and direct connect access to your virtual network
+- A public IP works in any networking scenario
+
+In any case, you should secure network access by ensuring that security group rules allow access from only authorized IPs or subnets.
+
+|
+\https://auth0.com
+\https://cdn.auth0.com
+\https://netapp-cloud-account.auth0.com
+\https://services.cloud.netapp.com
+
+| Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
+
+| \https://widget.intercom.io
+| For in-product chat that enables you to talk to NetApp cloud experts.
+
+|===

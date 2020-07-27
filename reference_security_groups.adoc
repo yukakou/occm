@@ -16,84 +16,11 @@ translate: false
 [.lead]
 Cloud Manager creates AWS security groups that include the inbound and outbound rules that Cloud Manager and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
 
-== Rules for Cloud Manager
-
-The security group for Cloud Manager requires both inbound and outbound rules.
-
-=== Inbound rules for Cloud Manager
-
-The source for inbound rules in the predefined security group is 0.0.0.0/0.
-
-[cols="10,10,80",width=100%,options="header"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| SSH | 22 | Provides SSH access to the Cloud Manager host
-| HTTP | 80 |	Provides HTTP access from client web browsers to the Cloud Manager web console and connections from Cloud Compliance
-| HTTPS |	443 |	Provides HTTPS access from client web browsers to the Cloud Manager web console
-| TCP | 3128 | Provides the Cloud Compliance instance with internet access, if your AWS network doesn’t use a NAT or proxy
-
-|===
-
-=== Outbound rules for Cloud Manager
-
-The predefined security group for Cloud Manager opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
-
-==== Basic outbound rules
-
-The predefined security group for Cloud Manager includes the following outbound rules.
-
-[cols=3*,options="header",width=70%,cols="20,20,60"]
-|===
-
-| Protocol
-| Port
-| Purpose
-
-| All TCP | All | All outbound traffic
-| All UDP | All |	All outbound traffic
-
-|===
-
-==== Advanced outbound rules
-
-If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by Cloud Manager.
-
-NOTE: The source IP address is the Cloud Manager host.
-
-[cols=5*,options="header,autowidth"]
-|===
-
-| Service
-| Protocol
-| Port
-| Destination
-| Purpose
-
-.9+| Active Directory | TCP	| 88 | Active Directory forest | Kerberos V authentication
-| TCP	| 139 | Active Directory forest | NetBIOS service session
-| TCP	| 389 | Active Directory forest | LDAP
-| TCP	| 445 | Active Directory forest | Microsoft SMB/CIFS over TCP with NetBIOS framing
-| TCP	| 464 | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
-| TCP	| 749 | Active Directory forest | Active Directory Kerberos V change & set password (RPCSEC_GSS)
-| UDP	| 137 | Active Directory forest | NetBIOS name service
-| UDP	| 138 | Active Directory forest | NetBIOS datagram service
-| UDP	| 464 | Active Directory forest | Kerberos key administration
-| API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, and sending AutoSupport messages to NetApp
-.2+| API calls | TCP	| 3000 | ONTAP cluster management LIF | API calls to ONTAP
-| TCP | 8088 | Backup to S3 | API calls to Backup to S3
-| DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
-| Cloud Compliance | HTTP | 80 | Cloud Compliance instance | Cloud Compliance for Cloud Volumes ONTAP
-|===
-
 == Rules for Cloud Volumes ONTAP
 
 The security group for Cloud Volumes ONTAP requires both inbound and outbound rules.
 
-=== Inbound rules for Cloud Volumes ONTAP
+=== Inbound rules
 
 The source for inbound rules in the predefined security group is 0.0.0.0/0.
 
@@ -131,7 +58,7 @@ The source for inbound rules in the predefined security group is 0.0.0.0/0.
 
 |===
 
-=== Outbound rules for Cloud Volumes ONTAP
+=== Outbound rules
 
 The predefined security group for Cloud Volumes ONTAP opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
 
@@ -297,4 +224,77 @@ The predefined security group includes the following outbound rules.
 
 | All traffic |	All |	Communication between the HA mediator and HA nodes
 
+|===
+
+== Rules for the Connector
+
+The security group for the Connector requires both inbound and outbound rules.
+
+=== Inbound rules
+
+The source for inbound rules in the predefined security group is 0.0.0.0/0.
+
+[cols="10,10,80",width=100%,options="header"]
+|===
+
+| Protocol
+| Port
+| Purpose
+
+| SSH | 22 | Provides SSH access to the Connector host
+| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface and connections from Cloud Compliance
+| HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
+| TCP | 3128 | Provides the Cloud Compliance instance with internet access, if your AWS network doesn’t use a NAT or proxy
+
+|===
+
+=== Outbound rules
+
+The predefined security group for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
+
+==== Basic outbound rules
+
+The predefined security group for the Connector includes the following outbound rules.
+
+[cols=3*,options="header",width=70%,cols="20,20,60"]
+|===
+
+| Protocol
+| Port
+| Purpose
+
+| All TCP | All | All outbound traffic
+| All UDP | All |	All outbound traffic
+
+|===
+
+==== Advanced outbound rules
+
+If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
+
+NOTE: The source IP address is the Cloud Manager host.
+
+[cols=5*,options="header,autowidth"]
+|===
+
+| Service
+| Protocol
+| Port
+| Destination
+| Purpose
+
+.9+| Active Directory | TCP	| 88 | Active Directory forest | Kerberos V authentication
+| TCP	| 139 | Active Directory forest | NetBIOS service session
+| TCP	| 389 | Active Directory forest | LDAP
+| TCP	| 445 | Active Directory forest | Microsoft SMB/CIFS over TCP with NetBIOS framing
+| TCP	| 464 | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
+| TCP	| 749 | Active Directory forest | Active Directory Kerberos V change & set password (RPCSEC_GSS)
+| UDP	| 137 | Active Directory forest | NetBIOS name service
+| UDP	| 138 | Active Directory forest | NetBIOS datagram service
+| UDP	| 464 | Active Directory forest | Kerberos key administration
+| API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, and sending AutoSupport messages to NetApp
+.2+| API calls | TCP	| 3000 | ONTAP cluster management LIF | API calls to ONTAP
+| TCP | 8088 | Backup to S3 | API calls to Backup to S3
+| DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
+| Cloud Compliance | HTTP | 80 | Cloud Compliance instance | Cloud Compliance for Cloud Volumes ONTAP
 |===
