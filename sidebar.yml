@@ -92,7 +92,7 @@ entries:
           - title: Quick start
             url: /task_getting_started_azure.html
           - title: Plan your configuration
-            url: /task_planning_your_config.html
+            url: /task_planning_your_config_azure.html
           - title: Set up your networking
             url: /reference_networking_azure.html
           - title: Set up permissions
@@ -104,7 +104,7 @@ entries:
           - title: Quick start
             url: /task_getting_started_gcp.html
           - title: Plan your configuration
-            url: /task_planning_your_config.html
+            url: /task_planning_your_config_gcp.html
           - title: Set up your networking
             url: /reference_networking_gcp.html
           - title: Set up permissions
@@ -233,20 +233,18 @@ entries:
     entries:
       - title: Manage the Cloud Central account
         url: /task_managing_cloud_central_accounts.html
-      - title: Add and manage Connectors
+      - title: Create and manage Connectors
         entries:
           - title: Learn about Connectors
             url: /concept_connectors.html
-          - title: Keep Connectors running
-            url: /concept_keep_up.html
           - title: Networking requirements
             url: /reference_networking_cloud_manager.html
-          - title: Add a Connector
+          - title: Create a Connector
+            url: /task_creating_connector.html
+          - title: Other ways to create Connectors
             entries:
               - title: Connector host requirements
                 url: /reference_cloud_mgr_reqs.html
-              - title: Create from Cloud Manager
-                url: /task_creating_connector.html
               - title: Create from the AWS Marketplace
                 url: /task_launching_aws_mktp.html
               - title: Create from the Azure Marketplace
