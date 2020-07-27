@@ -41,6 +41,8 @@ entries:
                   url: /concept_data_tiering.html
                 - title: Storage management
                   url: /concept_storage_management.html
+                - title: Flash Cache
+                  url: /concept_flash_cache.html
                 - title: WORM storage
                   url: /concept_worm.html
             - title: High-availability pairs
@@ -57,8 +59,6 @@ entries:
               url: /concept_security.html
             - title: Performance
               url: /concept_performance.html
-      - title: Enable Flash Cache
-        url: /task_enabling_flash_cache.html
       - title: Get started in AWS
         entries:
           - title: Quick start
@@ -105,8 +105,6 @@ entries:
             url: /?.html
           - title: Launch a system in GCP
             url: /task_deploying_gcp.html
-      - title: Set up Cloud Volumes ONTAP
-        url: /task_setting_up_ontap_cloud.html
       - title: Provision and manage storage
         entries:
           - title: Create volumes, aggregates, and LUNs
@@ -141,10 +139,14 @@ entries:
             url: /concept_monitoring.html
           - title: Get started
             url: /task_getting_started_monitoring.html
+      - title: Improve ransomware protection
+        url: /task_protecting_ransomware.html
       - title: Administer
         entries:
           - title: Register pay-as-you-go systems
             url: /task_registering.html
+          - title: Set up Cloud Volumes ONTAP
+            url: /task_setting_up_ontap_cloud.html
           - title: Connect to Cloud Volumes ONTAP
             url: /task_connecting_to_otc.html
           - title: Update software
@@ -155,12 +157,18 @@ entries:
             url: /task_managing_state.html
           - title: Monitor AWS costs
             url: /task_monitoring_costs.html
-          - title: Improve ransomware protection
-            url: /task_protecting_ransomware.html
           - title: Add existing systems
             url: /task_adding_ontap_cloud.html
           - title: Delete systems
             url: /task_deleting_working_env.html
+      - title: Reference
+        entries:
+          - title: Supported configurations for Cloud Volumes ONTAP
+            url: https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html
+          - title: Supported regions
+            url: https://cloud.netapp.com/cloud-volumes-global-regions
+          - title: Default configurations
+            url: /reference_default_configs.html
   - title: Provision volumes using a file service
     entries:
       - title: Azure NetApp Files
@@ -225,6 +233,8 @@ entries:
     url: /task_viewing_amazon_s3.html
   - title: Administer Cloud Manager
     entries:
+      - title: Manage the Cloud Central account
+        url: /task_managing_cloud_central_accounts.html
       - title: Add and manage Connectors
         entries:
           - title: Learn about Connectors
@@ -232,7 +242,7 @@ entries:
           - title: Keep Connectors running
             url: /concept_keep_up.html
           - title: Networking requirements
-            url: /reference_networking_connectors.html
+            url: /reference_networking_cloud_manager.html
           - title: Add a Connector
             entries:
               - title: Connector host requirements
@@ -257,12 +267,8 @@ entries:
             url: /task_adding_gcp_accounts.html
           - title: Add NetApp Support Site credentials
             url: /task_adding_nss_accounts.html
-      - title: Manage the Cloud Central account
-        url: /task_managing_cloud_central_accounts.html
-      - title: Install an HTTPS certificate
+      - title: Manage an HTTPS certificate
         url: /task_installing_https_cert.html
-      - title: Renew the HTTPS certificate
-        url: /task_renewing_cert.html
       - title: Remove working environments
         url: /task_removing.html
       - title: Configure proxy settings
