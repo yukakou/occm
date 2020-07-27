@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task_creating_connector.html
+permalink: task_creating_connectors.html
 keywords: create connector in aws, create connector in azure, create connector in gcp, launch connector in aws, launch connector in azure, launch connector in gcp, deploy connector in aws, deploy connector in azure, deploy connector in gcp
 summary: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector. A Connector enables Cloud Manager to manage resources and processes within your public cloud environment. You also have the option to create a new Connector at any time.
 ---
