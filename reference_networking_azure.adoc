@@ -17,7 +17,7 @@ Set up your Azure networking so Cloud Volumes ONTAP systems can operate properly
 
 == Requirements for Cloud Volumes ONTAP
 
-The following requirements must be met in Azure.
+The following networking requirements must be met in Azure.
 
 Outbound internet access for Cloud Volumes ONTAP::
 Cloud Volumes ONTAP requires outbound internet access to send messages to NetApp AutoSupport, which proactively monitors the health of your storage.

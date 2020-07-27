@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: reference_networking_gcp.html
 keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, tiering, data tiering, bucket, private google access, set up data tiering, data tiering requirement, gcp networking, google networking, shared vpc, host project, service project
-summary: Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can operate properly.
+summary: Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
 ---
 
-= Networking requirements for Cloud Volumes ONTAP in GCP
+= Networking requirements to deploy and manage Cloud Volumes ONTAP in GCP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,9 +13,9 @@ summary: Set up your Google Cloud Platform networking so Cloud Volumes ONTAP sys
 :imagesdir: ./media/
 
 [.lead]
-Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can operate properly.
+Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
 
-== Networking requirements
+== Requirements for Cloud Volumes ONTAP
 
 The following requirements must be met in GCP.
 
@@ -57,6 +57,111 @@ Connections to ONTAP systems in other networks::
 To replicate data between a Cloud Volumes ONTAP system in GCP and ONTAP systems in other networks, you must have a VPN connection between the VPC and the other network—for example, your corporate network.
 +
 For instructions, refer to https://cloud.google.com/vpn/docs/concepts/overview[Google Cloud documentation: Cloud VPN overview^].
+
+== Requirements for the Connector
+
+Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
+
+TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring the Connector to use a proxy server].
+
+=== Connection to target networks
+
+A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.
+
+For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
+
+=== Outbound internet access
+
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment. A Connector contacts the following endpoints when managing resources in GCP:
+
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+|
+\https://www.googleapis.com
+
+| Enables Cloud Manager to contact Google APIs for deploying and managing Cloud Volumes ONTAP in GCP.
+
+| \https://api.services.cloud.netapp.com:443 | API requests to NetApp Cloud Central.
+
+| \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
+
+| \https://repo.cloud.support.netapp.com | Used to download Cloud Manager dependencies.
+
+| \http://repo.mysql.com/ | Used to download MySQL.
+
+|
+\https://cognito-idp.us-east-1.amazonaws.com
+\https://cognito-identity.us-east-1.amazonaws.com
+\https://sts.amazonaws.com
+\https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
+| Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
+
+| \https://cloudmanagerinfraprod.azurecr.io | Access to software images of container components for an infrastructure that's running Docker and provides a solution for service integrations with Cloud Manager.
+
+| \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
+
+| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
+
+| \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
+
+| \https://mysupport.netapp.com | Communication with NetApp AutoSupport.
+|
+\https://support.netapp.com/svcgw
+\https://support.netapp.com/ServiceGW/entitlement
+\https://eval.lic.netapp.com.s3.us-west-1.amazonaws.com
+\https://cloud-support-netapp-com.s3.us-west-1.amazonaws.com
+| Communication with NetApp for system licensing and support registration.
+
+| \https://ipa-signer.cloudmanager.netapp.com | Enables Cloud Manager to generate licenses (for example, a FlexCache license for Cloud Volumes ONTAP)
+
+|
+\https://packages.cloud.google.com/yum
+\https://github.com/NetApp/trident/releases/download/
+| Required to connect Cloud Volumes ONTAP systems with a Kubernetes cluster. The endpoints enable installation of NetApp Trident.
+
+a| Various third-party locations, for example:
+
+* \https://repo1.maven.org/maven2
+* \https://oss.sonatype.org/content/repositories
+* \https://repo.typesafe.org
+
+Third-party locations are subject to change.
+
+| During upgrades, Cloud Manager downloads the latest packages for third-party dependencies.
+|===
+
+While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. The machine running the web browser must have connections to the following endpoints:
+
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+|
+The Connector host
+
+a| You must enter the host's IP address from a web browser to load the Cloud Manager console.
+
+Depending on your connectivity to your cloud provider, you can use the private IP or a public IP assigned to the host:
+
+- A private IP works if you have a VPN and direct connect access to your virtual network
+- A public IP works in any networking scenario
+
+In any case, you should secure network access by ensuring that security group rules allow access from only authorized IPs or subnets.
+
+|
+\https://auth0.com
+\https://cdn.auth0.com
+\https://netapp-cloud-account.auth0.com
+\https://services.cloud.netapp.com
+
+| Your web browser connects to these endpoints for centralized user authentication through NetApp Cloud Central.
+
+| \https://widget.intercom.io
+| For in-product chat that enables you to talk to NetApp cloud experts.
+
+|===
 
 == Firewall rules for Cloud Volumes ONTAP
 

@@ -80,7 +80,7 @@ entries:
               - title: Security group rules for AWS
                 url: /reference_security_groups.html
           - title: Set up permissions
-            url: /?.html
+            url: /task_setting_up_permissions_aws.html
           - title: Set up the AWS KMS
             url: /task_setting_up_kms.html
           - title: Launch a system in AWS
@@ -96,7 +96,7 @@ entries:
           - title: Set up your networking
             url: /reference_networking_azure.html
           - title: Set up permissions
-            url: /?.html
+            url: /task_setting_up_permissions_azure.html
           - title: Launch a system in Azure
             url: /task_deploying_otc_azure.html
       - title: Get started in GCP
@@ -108,7 +108,7 @@ entries:
           - title: Set up your networking
             url: /reference_networking_gcp.html
           - title: Set up permissions
-            url: /?.html
+            url: /task_setting_up_permissions_gcp.html
           - title: Launch a system in GCP
             url: /task_deploying_gcp.html
       - title: Provision and manage storage
