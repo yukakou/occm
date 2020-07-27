@@ -78,21 +78,24 @@ When you enable Backup to Cloud, _all_ supported volumes on the system are backe
 
 The schedule and number of backups to retain are defined at the system level. The backup settings affect all volumes on the system.
 
-=== The schedule is daily, _or_ weekly, _or_ monthly
+=== The schedule is daily, weekly, monthly, or a combination
 
 You can choose daily, or weekly, or monthly backups of all volumes. You can also select one of the system-defined policies that provide backups and retention for 3 months, 1 year, and 7 years. These policies are:
 
-[cols="25,20,20,20,25",width=90%,options="header"]
+[cols=5*,options="header",cols="30,20,20,20,30",width="80%"]
 |===
-| Policy
-| Daily
-| Weekly
-| Monthly
-| Max. # of Backups
+| Policy Name
+3+| Backups per interval...
+| Max. Backups
 
-| Netapp3MonthsRetention | 30 | 13 | 3 | 46
-| Netapp1YearRetention | 30 | 13 | 12 | 55
-| Netapp7YearsRetention | 30 | 53 | 84 | 167
+|  | *Daily* | *Weekly* | *Monthly* |
+| Netapp3MonthsRetention | 30 | 13 | 3
+| 46
+| Netapp1YearRetention | 30 | 13 | 12
+| 55
+| Netapp7YearsRetention | 30 | 53 | 84
+| 167
+
 |===
 
 Note that the retention period for backups of data protection volumes is the same as defined in the source SnapMirror relationship. You can change this if you want by using the API.
