@@ -225,6 +225,8 @@ entries:
         url: /task_manage_anf.html
       - title: Cloud Volumes Service for AWS
         entries:
+          - title: Learn about Cloud Volumes Service for AWS
+            url: /concept_cvs_aws.html
           - title: Deploy and manage cloud volumes
             url: /task_manage_cvs_aws.html
           - title: Manage cloud volumes snapshots
