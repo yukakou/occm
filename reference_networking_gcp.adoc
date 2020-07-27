@@ -279,3 +279,74 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 | Syslog | UDP | 514 | Node management LIF | Syslog server | Syslog forward messages
 
 |===
+
+== Firewall rules for the Connector
+
+The firewall rules for the Connector requires both inbound and outbound rules.
+
+=== Inbound rules
+
+The source for inbound rules in the predefined firewall rules is 0.0.0.0/0.
+
+[cols="10,10,80",width=100%,options="header"]
+|===
+
+| Protocol
+| Port
+| Purpose
+
+| SSH | 22 | Provides SSH access to the Connector host
+| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface
+| HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
+
+|===
+
+=== Outbound rules
+
+The predefined firewall rules for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
+
+==== Basic outbound rules
+
+The predefined firewall rules for the Connector includes the following outbound rules.
+
+[cols=3*,options="header",width=70%,cols="20,20,60"]
+|===
+
+| Protocol
+| Port
+| Purpose
+
+| All TCP | All | All outbound traffic
+| All UDP | All |	All outbound traffic
+
+|===
+
+==== Advanced outbound rules
+
+If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
+
+NOTE: The source IP address is the Connector host.
+
+[cols=5*,options="header,autowidth"]
+|===
+
+| Service
+| Protocol
+| Port
+| Destination
+| Purpose
+
+.9+| Active Directory | TCP	| 88 | Active Directory forest | Kerberos V authentication
+| TCP	| 139 | Active Directory forest | NetBIOS service session
+| TCP	| 389 | Active Directory forest | LDAP
+| TCP	| 445 | Active Directory forest | Microsoft SMB/CIFS over TCP with NetBIOS framing
+| TCP	| 464 | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
+| TCP	| 749 | Active Directory forest | Active Directory Kerberos V change & set password (RPCSEC_GSS)
+| UDP	| 137 | Active Directory forest | NetBIOS name service
+| UDP	| 138 | Active Directory forest | NetBIOS datagram service
+| UDP	| 464 | Active Directory forest | Kerberos key administration
+| API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to GCP and ONTAP, and sending AutoSupport messages to NetApp
+| API calls | TCP	| 3000 | ONTAP cluster management LIF | API calls to ONTAP
+| DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
+
+|===
