@@ -45,7 +45,7 @@ These steps describe how to launch the instance from the EC2 Console because the
 
 * *Choose Instance Type*: Depending on region availability, choose one of the supported instance types (t3.xlarge is recommended).
 +
-link:reference_cloud_mgr_reqs.html[Review the list of supported instance types].
+link:reference_cloud_mgr_reqs.html[Review the instance requirements].
 
 * *Configure Instance*: Select a VPC and subnet, choose the IAM role that you created in step 1, enable termination protection (recommended), and choose any other configuration options that meet your requirements.
 +
@@ -75,4 +75,4 @@ image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Con
 
 .Result
 
-The Connector is now installed and set up with your Cloud Central account. Cloud Manager will automatically use this Connector when you create new working environments.
+The Connector is now installed and set up with your Cloud Central account. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task_managing_connectors.html[switch between them].

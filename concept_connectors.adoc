@@ -46,9 +46,11 @@ A Connector is supported in the following locations:
 
 NOTE: You can install the Connector on your own host in GCP, but not in your on-premises network. The Connector software must be running in GCP in order to deploy Cloud Volumes ONTAP in GCP.
 
-== Keep Connectors running
+== Connectors should remain running
 
 A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.
+
+For example, each Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP systems will shut down after losing communication with a Connector for longer than 14 days.
 
 == How to create a Connector
 

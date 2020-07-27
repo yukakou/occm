@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_managing_connectors.html
-keywords: managing connectors, removing connectors, remove a connector, uninstall connector, switch connectors, switch between connectors, go to local UI, local interface, local connector, local cloud manager
-summary: After you create one or more Connectors, you can manage them by switching between Connectors, connecting to the local user interface running on a Connector, by removing Connectors from Cloud Manager, and by uninstalling the Connector software.
+keywords: managing connectors, uninstall connector, switch connectors, switch between connectors, go to local UI, local interface, local connector, local cloud manager
+summary: After you create one or more Connectors, you can manage them by switching between Connectors, connecting to the local user interface running on a Connector, and by uninstalling the Connector software.
 ---
 
 = Managing existing Connectors
@@ -13,9 +13,9 @@ summary: After you create one or more Connectors, you can manage them by switchi
 :imagesdir: ./media/
 
 [.lead]
-After you create one or more Connectors, you can manage them by switching between Connectors, connecting to the local user interface running on a Connector, by removing Connectors from Cloud Manager, and by uninstalling the Connector software.
+After you create one or more Connectors, you can manage them by switching between Connectors, connecting to the local user interface running on a Connector, and by uninstalling the Connector software.
 
-== Switch between Connectors
+== Switching between Connectors
 
 If you have multiple Connectors, you can switch between them to see the Working Environments that are associated with a specific Connector.
 
@@ -49,13 +49,7 @@ image:screenshot_connector_local_ui.gif[A screenshot that shows the Connector ic
 +
 The Cloud Manager interface running on the Connector loads in a new browser tab.
 
-== Remove a Connector
-
-
-
-
-
-== Uninstall Connector software
+== Uninstall the Connector software
 
 The Connector includes an uninstallation script that you can use to uninstall the software to troubleshoot issues or to permanently remove the software from the host.
 
