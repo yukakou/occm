@@ -57,7 +57,7 @@ NOTE: You can create additional LUNs from System Manager or the CLI.
 
 === Support for the All tiering policy
 
-You can now choose the All tiering policy when you create or modify a volume for Cloud Volumes ONTAP. The All tiering policy immediately tiers all data (not including metadata) to object storage. link:concept_data_tiering.html[Learn more about data tiering].
+You can now choose the All tiering policy when you create or modify a volume for Cloud Volumes ONTAP. When you use the All tiering policy, data is immediately marked as cold and tiered to object storage as soon as possible. link:concept_data_tiering.html[Learn more about data tiering].
 
 == Cloud Manager transition to SaaS (22 June 2020)
 
