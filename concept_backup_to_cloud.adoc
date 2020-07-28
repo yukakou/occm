@@ -98,6 +98,8 @@ You can choose daily, or weekly, or monthly backups of all volumes. You can also
 
 |===
 
+Once you have reached the maximum number of backups for a category, or interval, older backups are removed so you are always left with the most current backups.
+
 Note that the retention period for backups of data protection volumes is the same as defined in the source SnapMirror relationship. You can change this if you want by using the API.
 
 === Backups are taken at midnight
