@@ -27,11 +27,11 @@ For some types of personal data, Cloud Compliance uses _proximity validation_ to
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Compliance* and click the *Dashboard* tab.
 
 . To investigate the details for all personal data, click the icon next to the personal data percentage.
 +
-image:screenshot_compliance_personal.gif[]
+image:screenshot_compliance_personal.gif[A screenshot of selecting the personal data percentage.]
 
 . To investigate the details for a specific type of personal data, click *View All* and then click the *Investigate Results* icon for a specific type of personal data.
 +
@@ -111,7 +111,7 @@ NOTE: Only English is supported when scanning for sensitive personal data. Suppo
 
 . To investigate the details for all sensitive personal data, click the icon next to the sensitive personal data percentage.
 +
-image:screenshot_compliance_sensitive_personal.gif[]
+image:screenshot_compliance_sensitive_personal.gif[A screenshot of selecting the sensitive personal data percentage.]
 
 . To investigate the details for a specific type of sensitive personal data, click *View All* and then click the *Investigate Results* icon for a specific type of sensitive personal data.
 +
