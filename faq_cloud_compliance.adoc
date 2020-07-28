@@ -115,7 +115,7 @@ But when Cloud Compliance detects Personal Identifiable Information (PII), or wh
 
 == How do I enable Cloud Compliance?
 
-You can enable Cloud Compliance when you create a new working environment. You can enable it on existing working environments from the *Compliance* tab (on first activation only) or by selecting a specific working environment.
+First you need to deploy an instance of Cloud Compliance in Cloud Manager. Once the instance is running, you can enable Cloud Compliance when you create a new working environment. You can enable it on existing working environments from the *Compliance* tab or by selecting a specific working environment.
 
 link:task_getting_started_compliance.html[Learn how to get started].
 

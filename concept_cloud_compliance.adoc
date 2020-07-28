@@ -60,9 +60,10 @@ A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A
 
 At a high-level, Cloud Compliance works like this:
 
-. You enable Cloud Compliance on one or more working environments.
+. You deploy an instance of Cloud Compliance in Cloud Manager.
+. You enable it on one or more working environments.
 . Cloud Compliance scans the data using an AI learning process.
-. In Cloud Manager, you click *Compliance* and use the provided dashboard and reporting tools to help you in your compliance efforts.
+. In Cloud Manager, you click *Compliance* and use the provided dashboard and reporting tools to help in your compliance efforts.
 
 == The Cloud Compliance instance
 
@@ -102,7 +103,7 @@ image:diagram_cloud_compliance_scan.png[A diagram that shows a Cloud Manager ins
 
 After the initial scan, Cloud Compliance continuously scans each volume to detect incremental changes (this is why it's important to keep the instance running).
 
-You can turn scans on and off at the working environment level, and at the volume level. link:task_managing_compliance.html[Learn how].
+You can turn scans on and off at the working environment level link:task_managing_compliance.html#deactivating-compliance-scans-for-a-working-environment[learn how], at the volume level link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-individual-volumes[learn how], and at the bucket level link:task/scanning_s3.html#configuring-buckets[learn how].
 
 == Information that Cloud Compliance indexes
 

@@ -46,12 +46,17 @@ A subscription to the AWS Marketplace is required to scan Amazon S3 after the 30
 [role="quick-margin-para"]
 Click *Settings > Credentials* and click *Add Subscription* for the Instance Profile.
 
-==== image:number4.png[Number 4] Enable Cloud Compliance
+==== image:number4.png[Number 4] Deploy the Cloud Compliance instance
+
+[role="quick-margin-para"]
+Deploy Cloud Compliance in Cloud Manager.
+
+==== image:number5.png[Number 5] Enable Cloud Compliance in your working environment
 
 [role="quick-margin-para"]
 Select the Amazon S3 working environment, click *Enable Compliance*, and select an IAM role that includes the required permissions.
 
-==== image:number5.png[Number 5] Configure buckets
+==== image:number6.png[Number 6] Configure buckets
 
 [role="quick-margin-para"]
 Select the buckets that you'd like to scan and Cloud Compliance will start scanning them.
