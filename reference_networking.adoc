@@ -13,7 +13,7 @@ summary: Before users log in to Cloud Manager, you'll need to ensure that their 
 :imagesdir: ./media/
 
 [.lead]
-Before users log in to Cloud Manager, you'll need to ensure that their web browsers can access specific endpoints. After that, you need to verify networking requirements for the specific type of working environment that you create and any services that you enable.
+Before users log in to Cloud Manager, you'll need to ensure that their web browsers can access specific endpoints. After that, you need to verify networking requirements for the specific type of working environment and services that will be used.
 
 == Endpoints accessed from your web browser
 Users must access Cloud Manager from a web browser. The machine running the web browser must have connections to the following endpoints:
@@ -43,11 +43,11 @@ Users must access Cloud Manager from a web browser. The machine running the web 
 
 == Index of networking requirements
 
-* Connectors
+* link:reference_networking_cloud_manager.html[Connectors]
 * link:reference_networking_aws.html[Cloud Volumes ONTAP for AWS]
 * link:reference_networking_azure.html[Cloud Volume ONTAP for Azure]
 * link:reference_networking_gcp.html[Cloud Volumes ONTAP for GCP]
-* link:task_replicating_data.html[Data replication]
+* link:task_replicating_data.html[Data replication between ONTAP systems]
 * link:task_getting_started_compliance.html[Cloud Compliance for Cloud Volumes ONTAP or Azure NetApp Files]
 * link:task_scanning_s3.html[Cloud Compliance for Amazon S3]
 * link:task_discovering_ontap.html[On-prem ONTAP clusters]

@@ -132,7 +132,7 @@ For example, if you install a Connector in your corporate network, then you must
 
 === Outbound internet access
 
-A Connector requires outbound internet access to contact the following endpoints to deploy and manage Cloud Volumes ONTAP in AWS:
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment. A Connector contacts the following endpoints when managing resources in AWS:
 
 [cols="43,57",options="header"]
 |===

@@ -21,8 +21,8 @@ Cloud Manager enables you to create a Connector in AWS directly from its user in
 
 .What you'll need
 
-. An AWS access key and secret key for an IAM user who has the required permissions.
-. A VPC, subnet, and keypair in your AWS region of choice.
+* An AWS access key and secret key for an IAM user who has the https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^].
+* A VPC, subnet, and keypair in your AWS region of choice.
 
 .Steps
 
@@ -36,17 +36,19 @@ image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in
 +
 Remember that the Connector must have a network connection to the type of working environment that you're creating and the services that you're planning to enable.
 +
-link:reference_networking_connectors[Learn more about networking requirements for the Connector].
+link:reference_networking_cloud_manager.html[Learn more about networking requirements for the Connector].
 
 . Review what you'll need and click *Continue*.
 
-. *AWS Credentials*: Enter a name for the instance and specify the AWS access key and secret key that meet permissions requirements.
+. Provide the required information:
 
-. *Location*: Specify an AWS region, VPC, and subnet for the instance.
+* *AWS Credentials*: Enter a name for the instance and specify the AWS access key and secret key that meet permissions requirements.
 
-. *Network*: Select the key pair to use with the instance, whether to enable a public IP address, and optionally specify a proxy configuration.
+* *Location*: Specify an AWS region, VPC, and subnet for the instance.
 
-. *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
+* *Network*: Select the key pair to use with the instance, whether to enable a public IP address, and optionally specify a proxy configuration.
+
+* *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
 
 . Click *Create*.
 +
@@ -58,9 +60,9 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 
 .What you'll need
 
-. The required permission for your Azure account.
-. An Azure subscription.
-. A VNet and subnet in your Azure region of choice.
+* The https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^] for your Azure account.
+* An Azure subscription.
+* A VNet and subnet in your Azure region of choice.
 
 .Steps
 
@@ -74,7 +76,7 @@ image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in
 +
 Remember that the Connector must have a network connection to the type of working environment that you're creating and the services that you're planning to enable.
 +
-link:reference_networking_connectors[Learn more about networking requirements for the Connector].
+link:reference_networking_cloud_manager.html[Learn more about networking requirements for the Connector].
 
 . Review what you'll need and click *Continue*.
 
@@ -82,13 +84,15 @@ link:reference_networking_connectors[Learn more about networking requirements fo
 +
 The form is owned and hosted by Microsoft. Your credentials are not provided to NetApp.
 
-. *VM Authentication*: Enter a name for the virtual machine and a user name and password or public key.
+. Provide the required information:
 
-. *Basic Settings*: Choose an Azure subscription, an Azure region, and whether to create a new resource group or to use an existing resource group.
+* *VM Authentication*: Enter a name for the virtual machine and a user name and password or public key.
 
-. *Network*: Choose a VNet and subnet, whether to enable a public IP address, and optionally specify a proxy configuration.
+* *Basic Settings*: Choose an Azure subscription, an Azure region, and whether to create a new resource group or to use an existing resource group.
 
-. *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
+* *Network*: Choose a VNet and subnet, whether to enable a public IP address, and optionally specify a proxy configuration.
+
+* *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
 
 . Click *Create*.
 +
@@ -100,10 +104,10 @@ Cloud Manager enables you to create a Connector in GCP directly from its user in
 
 .What you'll need
 
-. The required permissions for your Google Cloud account.
-. A Google Cloud project.
-. A service account that has the required permissions to create and manage Cloud Volumes ONTAP.
-. A VPC and subnet in your Google Cloud region of choice.
+* The https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^] for your Google Cloud account.
+* A Google Cloud project.
+* A service account that has the required permissions to create and manage Cloud Volumes ONTAP.
+* A VPC and subnet in your Google Cloud region of choice.
 
 .Steps
 
@@ -117,7 +121,7 @@ image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in
 +
 Remember that the Connector must have a network connection to the type of working environment that you're creating and the services that you're planning to enable.
 +
-link:reference_networking_connectors[Learn more about networking requirements for the Connector].
+link:reference_networking_cloud_manager.html[Learn more about networking requirements for the Connector].
 
 . Review what you'll need and click *Continue*.
 
@@ -125,13 +129,15 @@ link:reference_networking_connectors[Learn more about networking requirements fo
 +
 The form is owned and hosted by Google. Your credentials are not provided to NetApp.
 
-. *Basic Settings*: Enter a name for the virtual machine instance and specify a project and service account that has the required permissions.
+. Provide the required information:
 
-. *Location*: Specify a region, zone, VPC, and subnet for the instance.
+* *Basic Settings*: Enter a name for the virtual machine instance and specify a project and service account that has the required permissions.
 
-. *Network*: Choose whether to enable a public IP address and optionally specify a proxy configuration.
+* *Location*: Specify a region, zone, VPC, and subnet for the instance.
 
-. *Firewall Policy*: Choose whether to create a new firewall policy or whether to select an existing firewall policy that allows inbound HTTP, HTTPS, and SSH access.
+* *Network*: Choose whether to enable a public IP address and optionally specify a proxy configuration.
+
+* *Firewall Policy*: Choose whether to create a new firewall policy or whether to select an existing firewall policy that allows inbound HTTP, HTTPS, and SSH access.
 
 . Click *Create*.
 +

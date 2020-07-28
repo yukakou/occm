@@ -17,14 +17,14 @@ entries:
     entries:
       - title: Learn about Cloud Manager
         url: /concept_overview.html
+      - title: Learn about Cloud Central accounts
+        url: /concept_cloud_central_accounts.html
       - title: Networking overview
         url: /reference_networking.html
       - title: Log in to Cloud Manager
         url: /task_logging_in.html
       - title: Set up your Cloud Central account
         url: /task_setting_up_cloud_central_accounts.html
-      - title: Find your system ID
-        url: /task_finding_system_id.html
       - title: Where to get next
         url: /reference_whats_next.html
   - title: Manage Cloud Volumes ONTAP
@@ -63,7 +63,7 @@ entries:
               url: https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html
             - title: Supported regions
               url: https://cloud.netapp.com/cloud-volumes-global-regions
-            - title: Default configurations
+            - title: Default configuration
               url: /reference_default_configs.html
       - title: Get started in AWS
         entries:
@@ -231,8 +231,8 @@ entries:
     url: /task_viewing_amazon_s3.html
   - title: Administer Cloud Manager
     entries:
-      - title: Manage the Cloud Central account
-        url: /task_managing_cloud_central_accounts.html
+      - title: Find your system ID
+        url: /task_finding_system_id.html
       - title: Create and manage Connectors
         entries:
           - title: Learn about Connectors
@@ -240,7 +240,7 @@ entries:
           - title: Networking requirements
             url: /reference_networking_cloud_manager.html
           - title: Create a Connector
-            url: /task_creating_connector.html
+            url: /task_creating_connectors.html
           - title: Other ways to create Connectors
             entries:
               - title: Connector host requirements
@@ -253,6 +253,10 @@ entries:
                 url: /task_installing_linux.html
           - title: Manage existing Connectors
             url: /task_managing_connectors.html
+          - title: Default configuration
+            url: /reference_connector_default_config.html
+      - title: Manage the Cloud Central account
+        url: /task_managing_cloud_central_accounts.html
       - title: Manage credentials
         entries:
           - title: Add AWS credentials

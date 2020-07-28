@@ -15,7 +15,7 @@ summary: Get started with Cloud Volumes ONTAP in a few steps.
 [.lead]
 Get started with Cloud Volumes ONTAP in a few steps.
 
-These steps assume that you're creating your first working environment, that you haven't created a Connector yet, and that you'll create the Connector in GCP directly from Cloud Manager (see the at the end of the page for alternatives).
+These steps assume that you're creating your first working environment, that you haven't created a link:concept_connectors.html[Connector] yet, and that you'll create the Connector in GCP directly from Cloud Manager (see the links at the end of the page for alternatives).
 
 ==== image:number1.png[Number 1] Plan your configuration
 
@@ -43,11 +43,14 @@ link:task_setting_up_permissions_gcp.html[Read step-by-step instructions].
 ==== image:number3.png[Number 3] Set up your networking
 
 [role="quick-margin-list"]
-.. Ensure connectivity between the Connector and Cloud Volumes ONTAP.
+.. Ensure that your VPC and subnets will support connectivity between the Connector and Cloud Volumes ONTAP.
 
-.. Enable outbound internet access from the target VNet so the Connector and Cloud Volumes ONTAP can contact several endpoints.
+.. Enable outbound internet access from the target VPC so the Connector and Cloud Volumes ONTAP can contact several endpoints.
 +
 This step is important because the Connector can't manage Cloud Volumes ONTAP without outbound internet access. If you need to limit outbound connectivity, refer to the list of endpoints for link:reference_networking_gcp.html[the Connector and Cloud Volumes ONTAP].
+
+[role="quick-margin-para"]
+link:reference_networking_gcp.html[Learn more about networking requirements].
 
 ==== image:number4.png[Number 4] Set up GCP for data tiering
 
@@ -81,9 +84,6 @@ Click *Add Working Environment*, select the type of system that you would like t
 .Related links
 
 * link:concept_evaluating.html[Evaluating]
-* link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager]
-* link:reference_networking_gcp.html[Networking requirements for Cloud Volumes ONTAP in GCP]
-* link:reference_firewall_rules_gcp.html[Firewall rules for GCP]
+* link:task_creating_connectors.html[Creating a Connector from Cloud Manager]
+* link:task_installing_linux.html[Installing the Connector software on a Linux host]
 * link:reference_permissions.html#what-cloud-manager-does-with-gcp-permissions[What Cloud Manager does with GCP permissions]
-* link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP]
-* link:task_installing_linux.html[Downloading and installing the Cloud Manager software on a Linux host]

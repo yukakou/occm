@@ -13,19 +13,11 @@ summary: Each Cloud Manager system is associated with a NetApp Cloud Central acc
 :imagesdir: ./media/
 
 [.lead]
-Each Cloud Manager system is associated with a _NetApp Cloud Central account_. A Cloud Central account provides multi-tenancy and enables you to organize users and resources in isolated workspaces.
+A _Cloud Central account_ provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager.
 
-A Cloud Central account enables multi-tenancy:
+For example, multiple users can deploy and manage Cloud Volumes ONTAP systems in isolated environments called workspaces. These workspaces are invisible to other users, unless they are shared.
 
-* A single Cloud Central account can include multiple Cloud Manager systems that serve different business needs.
-+
-Because users are associated with the Cloud Central account, there's no need to configure users for each individual Cloud Manager system.
-
-* Within each Cloud Manager system, multiple users can deploy and manage Cloud Volumes ONTAP systems in isolated environments called workspaces.
-+
-These workspaces are invisible to other users, unless they are shared.
-
-When you deploy Cloud Manager, you select the Cloud Central account to associate with the system:
+When you first access Cloud Manager, you're prompted to select or create a Cloud Central account:
 
 image:screenshot_account_selection.gif[A screenshot of the Cloud Manager setup wizard that prompts you for the Cloud Central account in which you want to create Cloud Manager.]
 
@@ -34,8 +26,6 @@ Account Admins can then modify the settings for this account by managing users, 
 image:screenshot_account_settings.gif["A screenshot that shows the Account Settings widget from which you can manage users, workspaces, and Connectors."]
 
 For step-by-step instructions, see link:task_setting_up_cloud_central_accounts.html[Setting up the Cloud Central account].
-
-NOTE: Cloud Manager needs access to _\https://cloudmanager.cloud.netapp.com_ in order to connect to the Cloud Central account service. Open this URL on your ﬁrewall to ensure that Cloud Manager can contact the service.
 
 == Users, workspaces, and Connectors
 
@@ -59,15 +49,15 @@ A working environment represents a storage system:
 * An ONTAP cluster in a NetApp Private Storage configuration
 
 Connectors::
-A Connector is part of Cloud Manager. It runs much of the Cloud Manager software (like the user interface), except for a few Cloud Central services that it connects to (auth0 and Cloud Central accounts). The Connector runs on the virtual machine instance that was deployed in your cloud provider, or on an on-prem host that you configured.
+A Connector enables Cloud Manager to manage resources and processes within your public cloud environment. The Connector runs on a virtual machine instance that you deploy in your cloud provider, or on an on-prem host that you configured.
 +
 You can use a Connector with more than one NetApp cloud data service. For example, if you already have a Connector for Cloud Manager, you can select it when you set up the Cloud Tiering service.
 
-== Examples
+== Example
 
 The following example shows an account that uses two workspaces to create isolated environments for Cloud Volumes ONTAP systems. For example, one workspace might be for a staging environment, while the other is for a production environment.
 
-NOTE: Cloud Manager and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
+NOTE: The Connector and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
 
 image:diagram_cloud_central_accounts_one.png[A diagram that shows a single Cloud Central account that contains two workspaces. Each workspace is associated with the same Connector and each has their own Workspace Admin.]
 
@@ -75,44 +65,6 @@ Here's another example that shows the highest level of multi-tenancy by using tw
 
 Note that account 2 includes two separate Connectors. This might happen if you have systems in separate regions or in separate cloud providers.
 
-NOTE: Again, Cloud Manager and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
+NOTE: Again, the Connector and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
 
 image:diagram_cloud_central_accounts_two.png["A diagram that shows two Cloud Central accounts, each with several workspaces and their associated Workspace Admins."]
-
-[[faq]]
-== FAQ for integration with Cloud Central accounts
-
-Some time after you upgrade to Cloud Manager 3.7, NetApp will choose specific Cloud Manager systems to integrate with Cloud Central accounts. This FAQ can answer questions that you might have about the process.
-
-=== How long does the process take?
-
-Just a few minutes.
-
-=== Will Cloud Manager be unavailable?
-
-No, you can still access your Cloud Manager system.
-
-=== What about Cloud Volumes ONTAP?
-
-There's no disruption to your Cloud Volumes ONTAP systems.
-
-=== What happens during this process?
-
-NetApp does the following during the integration process:
-
-. Creates a new Cloud Central account and associates it with your Cloud Manager system.
-
-. Assigns new roles to each existing user:
-+
-* Cloud Manager Admins become Account Admins
-* Tenant Admins and Working Environment Admins become Workspace Admins
-
-. Creates workspaces that replace existing tenants.
-
-. Places your working environments in those workspaces.
-
-. Associates the Connector with all workspaces.
-
-=== Does it matter where I installed my Cloud Manager system?
-
-No. NetApp will integrate systems with Cloud Central accounts no matter where they reside, whether that's in AWS, Azure, or on your premises.

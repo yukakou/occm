@@ -15,7 +15,7 @@ summary: In most cases, you will need to deploy a Connector in your cloud or on-
 [.lead]
 In most cases, you will need to deploy a _Connector_ in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 
-<image>
+<image coming soon>
 
 == When a Connector is required
 
@@ -25,7 +25,7 @@ A Connector is required to use any of the following features within Cloud Manage
 * On-premises ONTAP clusters
 * Cloud Compliance
 * Kubernetes
-* Back up to cloud
+* Backup to Cloud
 * Monitoring
 * On-prem tiering
 * Global File Cache
@@ -33,7 +33,7 @@ A Connector is required to use any of the following features within Cloud Manage
 
 A Connector is *_not_* required for Azure NetApp Files or for Cloud Volumes Service.
 
-NOTE: While a Connector isn't required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Compliance with Azure NetApp Files.
+NOTE: While a Connector isn't required to set up and manage Azure NetApp Files, a Connector is required if you want to use Cloud Compliance to scan Azure NetApp Files data.
 
 == Supported locations
 
@@ -44,7 +44,7 @@ A Connector is supported in the following locations:
 * Google Cloud
 * On your premises
 
-NOTE: You can install the Connector on your own host in GCP, but not in your on-premises network. The Connector software must be running in GCP in order to deploy Cloud Volumes ONTAP in GCP.
+NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector running in Google Cloud, as well. You can't use a Connector that's running in another location.
 
 == Connectors should remain running
 
@@ -69,7 +69,9 @@ Specific permissions are needed to create the Connector and another set of permi
 
 === Permissions to create a Connector
 
-The user who creates the Connector needs specific permissions to deploy the instance in your cloud provider of choice.
+The user who creates a Connector from Cloud Manager needs specific permissions to deploy the instance in your cloud provider of choice. Cloud Manager will remind you of the permissions requirements when you create a Connector.
+
+https://mysupport.netapp.com/cloudontap/iampolicies[View policies for each cloud provider^].
 
 === Permissions for the Connector instance
 
@@ -79,13 +81,15 @@ When you create a Connector directly from Cloud Manager, Cloud Manager creates t
 
 If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you'll need to make sure that the right permissions are in place.
 
+https://mysupport.netapp.com/cloudontap/iampolicies[View policies for each cloud provider^].
+
 == When to use multiple Connectors
 
 In some cases, you might only need one Connector, but you might find yourself needing two or more Connectors.
 
 Here are a few examples:
 
-* You're using a multi-cloud environment, so you'll need one Connector in AWS and another in Azure. Each would manage the Cloud Volumes ONTAP systems running in those environments.
+* You're using a multi-cloud environment (AWS and Azure), so you have one Connector in AWS and another in Azure. Each manages the Cloud Volumes ONTAP systems running in those environments.
 
 * You need to deploy Cloud Volumes ONTAP systems in separate regions, so you'll need a Connector in each region since they'll need connectivity to Cloud Volumes ONTAP.
 
@@ -99,10 +103,10 @@ link:task_managing_connectors.html#switch-between-connectors[Learn how to switch
 
 == The local user interface
 
-While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. This interface is needed for a few tasks that need to be performed from the Connector itself:
+While you should perform almost all tasks from the https://cloudmanager.netapp.com[SaaS user interface^], a local user interface is still available on the Connector. This interface is needed for a few tasks that need to be performed from the Connector itself:
 
 * link:task_configuring_proxy.html[Setting a proxy server]
 * Installing a patch (you'll typically work with NetApp personnel to install a patch)
 * Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)
 
-link:task_managing_connectors.html#accessing-the-local-UI[Learn how to access the local UI].
+link:task_managing_connectors.html#accessing-the-local-ui[Learn how to access the local UI].

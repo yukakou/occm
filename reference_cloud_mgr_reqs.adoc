@@ -15,8 +15,6 @@ summary: The Connector software must run on a host that meets specific operating
 [.lead]
 The Connector software must run on a host that meets specific operating system requirements, RAM requirements, port requirements, and so on.
 
-NOTE: You can install a Connector on your own host in GCP, but not in your on-premises network. The Connector must be installed in GCP in order to deploy Cloud Volumes ONTAP in GCP.
-
 A dedicated host is required::
 The Connector is not supported on a host that is shared with other applications. The host must be a dedicated host.
 
@@ -72,4 +70,4 @@ If other services are using these ports, installation of the Connector fails.
 +
 NOTE: There is a potential conflict with port 3306. If another instance of MySQL is running on the host, it uses port 3306 by default. You must change the port that the existing MySQL instance uses.
 +
-You can change the default HTTP and HTTPS ports when you install a Connector. You can't change the default port for the MySQL database.
+You can change the default HTTP and HTTPS ports when you create the Connector. You can't change the default port for the MySQL database.

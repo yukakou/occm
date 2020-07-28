@@ -15,13 +15,13 @@ summary: When you log in to Cloud Manager for the first time, you're prompted to
 [.lead]
 When you log in to Cloud Manager for the first time, you're prompted to create a _NetApp Cloud Central account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
 
-Set up the Cloud Central account associated with your Cloud Manager system so a user can access Cloud Manager and access the working environments in a workspace. Just add a user or add multiple users and workspaces.
+Set up your Cloud Central account so users can access Cloud Manager and access the working environments in a workspace. Just add a single user or add multiple users and workspaces.
 
 The account is maintained in Cloud Central, so any changes that you make are available to other NetApp cloud services. link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
 
 == Adding workspaces
 
-In Cloud Manager, workspaces enable you to isolate a set of working environments from other working environments and from other users. For example, you can create two workspaces and associate separate users with the workspaces.
+In Cloud Manager, workspaces enable you to isolate a set of working environments from other working environments and from other users. For example, you can create two workspaces and associate separate users with each workspace.
 
 .Steps
 
@@ -88,7 +88,9 @@ The user can now access those workspaces from Cloud Manager, as long as the Conn
 
 == Associating Connectors with workspaces
 
-A Connector enables Cloud Manager to manage resources and processes within your public cloud environment. You need to associate a Connector with workspaces so Workspace Admins can access those workspaces from Cloud Manager.
+When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector. A Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+
+You need to associate a Connector with workspaces so Workspace Admins can access those workspaces from Cloud Manager.
 
 If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
 

@@ -18,14 +18,10 @@ Cloud Manager enables IT experts and cloud architects to centrally manage their 
 
 Cloud Manager is an enterprise-class, SaaS-based management platform that keeps you in control of your data no matter where it is.
 
-* Set up and use Cloud Volumes ONTAP for efficient, multi-protocol data management across clouds
-* Set up and use file-storage services: Azure NetApp Files, Cloud Volumes Service for AWS, and Cloud Volumes Service for Google Cloud
-* Discover and manage your on-prem ONTAP clusters by creating volumes, replicating data across your hybrid cloud, and tiering cold data to the cloud
+* Set up and use Cloud Volumes ONTAP for efficient, multi-protocol data management across clouds.
+* Set up and use file-storage services: Azure NetApp Files and Cloud Volumes Service for AWS.
+* Discover and manage your on-prem ONTAP clusters by creating volumes, replicating data across your hybrid cloud, and tiering cold data to the cloud.
 * Enable integrated cloud services and software like Cloud Compliance, Cloud Insights, Cloud Backup Service, Trident, and more.
-
-Cloud Manager was built with simplicity in mind. It guides you through Cloud Volumes ONTAP setup in a few steps, eases data management by offering simplified storage provisioning and automated capacity management, enables drag-and-drop data replication across a hybrid cloud, and more.
-
-image:diagram_cloud_manager_overview.png[Shows Cloud Manager managing a Cloud Volumes ONTAP system and data replication across a hybrid cloud and multi-cloud environment.]
 
 https://www.netapp.com/us/products/data-infrastructure-management/cloud-manager.aspx[Learn more about Cloud Manager^]
 
@@ -43,21 +39,19 @@ For most tasks, Cloud Manager prompts you to deploy a Connector in your cloud ne
 
 Cloud Manager includes a SaaS-based interface that is integrated with NetApp Cloud Central, and Connectors that manage Cloud Volumes ONTAP and other cloud services.
 
-<image>
+<image coming soon>
 
-=== SaaS user interface
+=== Software-as-a-service
 
-The Cloud Manager interface is accessible through a SaaS-based user interface. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Cloud Central accounts and Connectors.
+Cloud Manager is accessible through a https://cloudmanager.netapp.com[SaaS-based user interface] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Cloud Central accounts and Connectors.
 
 === NetApp Cloud Central
 
-https://cloud.netapp.com[NetApp Cloud Central^] provides a centralized location to access and manage https://www.netapp.com/us/products/cloud-services/use-cases-for-netapp-cloud-services.aspx[NetApp cloud services^].
+https://cloud.netapp.com[NetApp Cloud Central^] provides a centralized location to access and manage https://www.netapp.com/us/products/cloud-services/use-cases-for-netapp-cloud-services.aspx[NetApp cloud services^]. With centralized user authentication, you can use the same set of credentials to access Cloud Manager and other cloud services like Cloud Insights.
 
-With centralized user authentication, you can use the same set of credentials to access  Cloud Manager and other cloud services like Cloud Insights.
+When you log in to Cloud Manager for the first time, you're prompted to create a )_Cloud Central account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
 
-When you log in to Cloud Manager for the first time, you're prompted to create a Cloud Central account. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
-
-<image>
+<image coming soon>
 
 === Connectors
 
@@ -65,4 +59,6 @@ In most cases, you will need to deploy a _Connector_ in your cloud or on-premise
 
 A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.
 
-<image>
+For example, each Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP systems will shut down after losing communication with a Connector for longer than 14 days.
+
+link:concept_connectors.html[Learn more about when Connectors are required and how they work].

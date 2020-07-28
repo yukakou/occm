@@ -13,13 +13,13 @@ summary: Set up your networking so that the Connector can manage resources and p
 :imagesdir: ./media/
 
 [.lead]
-Set up your networking so that the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
+Set up your networking so the Connector can manage resources and processes within your public cloud environment. The most important step is ensuring outbound internet access to various endpoints.
 
 TIP: If your network uses a proxy server for all communication to the internet, you can specify the proxy server from the Settings page. Refer to link:task_configuring_proxy.html[Configuring the Connector to use a proxy server].
 
 == Connection to target networks
 
-A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.
+A Connector requires a network connection to the type of working environment that you’re creating and the services that you’re planning to enable.
 
 For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
 
@@ -29,9 +29,9 @@ The Connector requires outbound internet access to manage resources and processe
 
 The following sections identify the specific endpoints.
 
-=== Endpoints to manage Cloud Volumes ONTAP in AWS
+=== Endpoints to manage resources in AWS
 
-A Connector requires outbound internet access to contact the following endpoints to deploy and manage Cloud Volumes ONTAP in AWS:
+A Connector contacts the following endpoints when managing resources in AWS:
 
 [cols="43,57",options="header"]
 |===
@@ -104,9 +104,9 @@ Third-party locations are subject to change.
 | During upgrades, Cloud Manager downloads the latest packages for third-party dependencies.
 |===
 
-=== Endpoints to manage Cloud Volumes ONTAP in Azure
+=== Endpoints to manage resources in Azure
 
-A Connector requires outbound internet access to contact the following endpoints to deploy and manage Cloud Volumes ONTAP in Microsoft Azure:
+A Connector contacts the following endpoints when managing resources in Azure:
 
 [cols="43,57",options="header"]
 |===
@@ -180,9 +180,9 @@ Third-party locations are subject to change.
 | During upgrades, Cloud Manager downloads the latest packages for third-party dependencies.
 |===
 
-=== Endpoints to manage Cloud Volumes ONTAP in GCP
+=== Endpoints to manage resources in GCP
 
-A Connector requires outbound internet access to contact the following endpoints to deploy and manage Cloud Volumes ONTAP in GCP:
+A Connector contacts the following endpoints when managing resources in GCP:
 
 [cols="43,57",options="header"]
 |===
@@ -285,9 +285,217 @@ In any case, you should secure network access by ensuring that security group ru
 
 == Ports and security groups
 
-* If you create a Connector from Cloud Manager or from the marketplace images, refer to the following:
-** link:reference_security_groups.html#rules-for-cloud-manager[Security group rules for Cloud Manager in AWS]
-** link:reference_security_groups_azure.html#rules-for-cloud-manager[Security group rules for Cloud Manager in Azure]
-** link:reference_firewall_rules_gcp.html#rules-for-cloud-manager[Firewall rules for Cloud Manager in GCP]
+== AWS Rules for the Connector
 
-* If you install the Connector on an existing Linux host, see link:reference_cloud_mgr_reqs.html[Cloud Manager host requirements].
+The security group for the Connector requires both inbound and outbound rules.
+
+=== Inbound rules
+
+The source for inbound rules in the predefined security group is 0.0.0.0/0.
+
+[cols="10,10,80",width=100%,options="header"]
+|===
+
+| Protocol
+| Port
+| Purpose
+
+| SSH | 22 | Provides SSH access to the Connector host
+| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface and connections from Cloud Compliance
+| HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
+| TCP | 3128 | Provides the Cloud Compliance instance with internet access, if your AWS network doesn’t use a NAT or proxy
+
+|===
+
+=== Outbound rules
+
+The predefined security group for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
+
+==== Basic outbound rules
+
+The predefined security group for the Connector includes the following outbound rules.
+
+[cols=3*,options="header",width=70%,cols="20,20,60"]
+|===
+
+| Protocol
+| Port
+| Purpose
+
+| All TCP | All | All outbound traffic
+| All UDP | All |	All outbound traffic
+
+|===
+
+==== Advanced outbound rules
+
+If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
+
+NOTE: The source IP address is the Cloud Manager host.
+
+[cols=5*,options="header,autowidth"]
+|===
+
+| Service
+| Protocol
+| Port
+| Destination
+| Purpose
+
+.9+| Active Directory | TCP	| 88 | Active Directory forest | Kerberos V authentication
+| TCP	| 139 | Active Directory forest | NetBIOS service session
+| TCP	| 389 | Active Directory forest | LDAP
+| TCP	| 445 | Active Directory forest | Microsoft SMB/CIFS over TCP with NetBIOS framing
+| TCP	| 464 | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
+| TCP	| 749 | Active Directory forest | Active Directory Kerberos V change & set password (RPCSEC_GSS)
+| UDP	| 137 | Active Directory forest | NetBIOS name service
+| UDP	| 138 | Active Directory forest | NetBIOS datagram service
+| UDP	| 464 | Active Directory forest | Kerberos key administration
+| API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, and sending AutoSupport messages to NetApp
+.2+| API calls | TCP	| 3000 | ONTAP cluster management LIF | API calls to ONTAP
+| TCP | 8088 | Backup to S3 | API calls to Backup to S3
+| DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
+| Cloud Compliance | HTTP | 80 | Cloud Compliance instance | Cloud Compliance for Cloud Volumes ONTAP
+|===
+
+== Azure security group rules for the Connector
+
+The security group for the Connector requires both inbound and outbound rules.
+
+=== Inbound rules
+
+The source for inbound rules in the predefined security group is 0.0.0.0/0.
+
+[cols=3*,options="header,autowidth"]
+|===
+
+| Port
+| Protocol
+| Purpose
+
+| 22 | SSH | Provides SSH access to the Connector host
+| 80 | HTTP |	Provides HTTP access from client web browsers to the local user interface
+| 443 |	HTTPS | Provides HTTPS access from client web browsers to the local user interface
+
+|===
+
+=== Outbound rules
+
+The predefined security group for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
+
+==== Basic outbound rules
+
+The predefined security group for the Connector includes the following outbound rules.
+
+[cols=3*,options="header,autowidth"]
+|===
+
+| Port
+| Protocol
+| Purpose
+
+| All | All TCP | All outbound traffic
+| All |	All UDP | All outbound traffic
+
+|===
+
+==== Advanced outbound rules
+
+If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
+
+NOTE: The source IP address is the Cloud Manager host.
+
+[cols=5*,options="header,autowidth"]
+|===
+
+| Service
+| Port
+| Protocol
+| Destination
+| Purpose
+
+.9+| Active Directory | 88 | TCP | Active Directory forest | Kerberos V authentication
+| 139 | TCP | Active Directory forest | NetBIOS service session
+| 389 | TCP	| Active Directory forest | LDAP
+| 445 | TCP	| Active Directory forest | Microsoft SMB/CIFS over TCP with NetBIOS framing
+| 464 | TCP	| Active Directory forest | Kerberos V change & set password (SET_CHANGE)
+| 749 | TCP	| Active Directory forest | Active Directory Kerberos V change & set password (RPCSEC_GSS)
+| 137 | UDP	| Active Directory forest | NetBIOS name service
+| 138 | UDP	| Active Directory forest | NetBIOS datagram service
+| 464 | UDP	| Active Directory forest | Kerberos key administration
+| API calls and AutoSupport | 443 | HTTPS | Outbound internet and ONTAP cluster management LIF | API calls to AWS and ONTAP, and sending AutoSupport messages to NetApp
+| API calls | 3000 | TCP	| ONTAP cluster management LIF | API calls to ONTAP
+| DNS | 53 | UDP	| DNS | Used for DNS resolve by Cloud Manager
+
+|===
+
+== GCP firewall rules for the Connector
+
+The firewall rules for the Connector requires both inbound and outbound rules.
+
+=== Inbound rules
+
+The source for inbound rules in the predefined firewall rules is 0.0.0.0/0.
+
+[cols="10,10,80",width=100%,options="header"]
+|===
+
+| Protocol
+| Port
+| Purpose
+
+| SSH | 22 | Provides SSH access to the Connector host
+| HTTP | 80 |	Provides HTTP access from client web browsers to the local user interface
+| HTTPS |	443 |	Provides HTTPS access from client web browsers to the local user interface
+
+|===
+
+=== Outbound rules
+
+The predefined firewall rules for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
+
+==== Basic outbound rules
+
+The predefined firewall rules for the Connector includes the following outbound rules.
+
+[cols=3*,options="header",width=70%,cols="20,20,60"]
+|===
+
+| Protocol
+| Port
+| Purpose
+
+| All TCP | All | All outbound traffic
+| All UDP | All |	All outbound traffic
+
+|===
+
+==== Advanced outbound rules
+
+If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
+
+NOTE: The source IP address is the Connector host.
+
+[cols=5*,options="header,autowidth"]
+|===
+
+| Service
+| Protocol
+| Port
+| Destination
+| Purpose
+
+.9+| Active Directory | TCP	| 88 | Active Directory forest | Kerberos V authentication
+| TCP	| 139 | Active Directory forest | NetBIOS service session
+| TCP	| 389 | Active Directory forest | LDAP
+| TCP	| 445 | Active Directory forest | Microsoft SMB/CIFS over TCP with NetBIOS framing
+| TCP	| 464 | Active Directory forest | Kerberos V change & set password (SET_CHANGE)
+| TCP	| 749 | Active Directory forest | Active Directory Kerberos V change & set password (RPCSEC_GSS)
+| UDP	| 137 | Active Directory forest | NetBIOS name service
+| UDP	| 138 | Active Directory forest | NetBIOS datagram service
+| UDP	| 464 | Active Directory forest | Kerberos key administration
+| API calls and AutoSupport | HTTPS | 443 | Outbound internet and ONTAP cluster management LIF | API calls to GCP and ONTAP, and sending AutoSupport messages to NetApp
+| API calls | TCP	| 3000 | ONTAP cluster management LIF | API calls to ONTAP
+| DNS | UDP	| 53 | DNS | Used for DNS resolve by Cloud Manager
+
+|===

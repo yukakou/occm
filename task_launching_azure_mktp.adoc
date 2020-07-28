@@ -116,4 +116,4 @@ NOTE: Cloud Manager Operator is the default name provided in the https://mysuppo
 
 .Result
 
-The Connector now has the permissions that it needs to deploy and manage Cloud Volumes ONTAP in Azure. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task_managing_connectors.html[switch between them].
+The Connector now has the permissions that it needs to manage resources and processes within your public cloud environment. Cloud Manager will automatically use this Connector when you create new working environments. But if you have more than one Connector, you'll need to link:task_managing_connectors.html[switch between them].

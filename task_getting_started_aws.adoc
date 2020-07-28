@@ -15,7 +15,7 @@ summary: Get started with Cloud Volumes ONTAP in a few steps.
 [.lead]
 Get started with Cloud Volumes ONTAP in a few steps.
 
-These steps assume that you're creating your first working environment, that you haven't created a Connector yet, and that you'll create the Connector in AWS directly from Cloud Manager (see the at the end of the page for alternatives).
+These steps assume that you're creating your first working environment, that you haven't created a link:concept_connectors.html[Connector] yet, and that you'll create the Connector in AWS directly from Cloud Manager (see the links at the end of the page for alternatives).
 
 ==== image:number1.png[Number 1] Plan your configuration
 
@@ -35,7 +35,7 @@ When you create a Connector from Cloud Manager, you need to use an AWS account t
 ==== image:number3.png[Number 3] Set up your networking
 
 [role="quick-margin-list"]
-.. Ensure connectivity between the Connector and Cloud Volumes ONTAP.
+.. Ensure that your VPC and subnets will support connectivity between the Connector and Cloud Volumes ONTAP.
 
 .. Enable outbound internet access from the target VPC so the Connector and Cloud Volumes ONTAP can contact several endpoints.
 +
@@ -45,6 +45,9 @@ This step is important because the Connector can't manage Cloud Volumes ONTAP wi
 +
 A VPC endpoint is required if you want to tier cold data from Cloud Volumes ONTAP to low-cost object storage.
 
+[role="quick-margin-para"]
+link:reference_networking_aws.html[Learn more about networking requirements].
+
 ==== image:number4.png[Number 4] Set up the AWS KMS
 
 [role="quick-margin-para"]
@@ -53,16 +56,12 @@ If you want to use Amazon encryption with Cloud Volumes ONTAP, then you need to 
 ==== image:number5.png[Number 5] Launch Cloud Volumes ONTAP using Cloud Manager
 
 [role="quick-margin-para"]
-Click *Add Working Environment*, select the type of system that you would like to deploy, and complete the steps in the wizard. link:task_deploying_otc.html[Read step-by-step instructions].
+Click *Add Working Environment*, select the type of system that you would like to deploy, and complete the steps in the wizard. link:task_deploying_otc_aws.html[Read step-by-step instructions].
 
 .Related links
 
 * link:concept_evaluating.html[Evaluating]
-* link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager]
-* link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS]
-* link:reference_security_groups.html[Security group rules for AWS]
-* link:task_adding_aws_accounts.html[Adding AWS accounts to Cloud Manager]
+* link:task_creating_connectors.html[Creating a Connector from Cloud Manager]
+* link:task_launching_aws_mktp.html[Launching a Connector from the AWS Marketplace]
+* link:task_installing_linux.html[Installing the Connector software on a Linux host]
 * link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[What Cloud Manager does with AWS permissions]
-* link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS]
-* link:task_launching_aws_mktp.html[Launching Cloud Manager from the AWS Marketplace]
-* link:task_installing_linux.html[Downloading and installing the Cloud Manager software on a Linux host]
