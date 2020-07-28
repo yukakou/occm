@@ -103,7 +103,7 @@ The following enhancements are now available for Cloud Compliance.
 
 * *Revised deployment process for your Cloud Compliance instance*
 +
-The Cloud Compliance instance is set up and deployed using a new wizard in Cloud Manager instead of deploying it separately within one of your working environments. After deployment is complete you enable the service for each working environment you want to scan.
+The Cloud Compliance instance is set up and deployed using a new wizard in Cloud Manager. After deployment is complete you enable the service for each working environment you want to scan.
 
 * *Ability to select the volumes to be scanned within a working environment*
 +
