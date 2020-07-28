@@ -32,13 +32,15 @@ link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 
 
 === New software-as-a-service experience
 
-We have fully introduced a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure. link:concept_saas.html[Learn more].
+We have fully introduced a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
 
-Cloud Manager includes a https://cloudmanager.netapp.com/[SaaS-based interface] that is integrated with NetApp Cloud Central, and Connectors that enable Cloud Manager to manage resources and processes within your public cloud environment. (The Connector is actually the same as the existing Cloud Manager software that you're used to—​it includes the same user interface and the same management layer.)
+Cloud Manager includes a https://cloudmanager.netapp.com/[SaaS-based interface] that is integrated with NetApp Cloud Central, and Connectors that enable Cloud Manager to manage resources and processes within your public cloud environment. (The Connector is actually the same as the existing Cloud Manager software that you have installed.)
 
 As previously mentioned in these release notes, you'll need to upgrade the machine type for your Connectors to access the new capabilities that we're offering. Cloud Manager will prompt you with instructions to change the machine type. link:concept_saas.html#the-local-user-interface[Learn more].
 
 === Cloud Volumes ONTAP enhancements
+
+Two enhancements are available for Cloud Volumes ONTAP.
 
 * *Multiple BYOL licenses to allocate additional capacity*
 +
