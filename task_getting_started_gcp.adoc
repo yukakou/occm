@@ -60,9 +60,11 @@ Two requirements must be met to tier cold data from Cloud Volumes ONTAP to low-c
 [role="quick-margin-list"]
 .. https://cloud.google.com/vpc/docs/configure-private-google-access[Configure the Cloud Volumes ONTAP subnet for Private Google Access^].
 
-.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Set up a service account for data tiering^] that has the predefined _Storage Admin_ role. And add the Connector service account as a _Service Account User_ to the tiering service account. link:task_tiering.html#requirements-to-tier-cold-data-to-a-google-cloud-storage-bucket[Learn more about setting up this service account].
+.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Set up a service account for data tiering^] that has the predefined _Storage Admin_ role. And add the Connector service account as a _Service Account User_ to the tiering service account.
 +
 You'll need to select this service account when you create a Cloud Volumes ONTAP working environment. If you don't select it during creation, then you'll need to turn off the system and add the service account to Cloud Volumes ONTAP from the GCP console.
++
+link:task_tiering.html#requirements-to-tier-cold-data-to-a-google-cloud-storage-bucket[Learn more about setting up this service account].
 
 ==== image:number5.png[Number 5] Enable Google Cloud APIs
 

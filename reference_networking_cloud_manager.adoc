@@ -47,7 +47,7 @@ AWS services (amazonaws.com):
 *	Simple Storage Service (S3)
 
 The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
-| Enables Cloud Manager to deploy and manage Cloud Volumes ONTAP in AWS.
+| Enables the Connector to deploy and manage Cloud Volumes ONTAP in AWS.
 
 | \https://api.services.cloud.netapp.com:443 | API requests to NetApp Cloud Central.
 
@@ -242,7 +242,7 @@ Third-party locations are subject to change.
 | During upgrades, Cloud Manager downloads the latest packages for third-party dependencies.
 |===
 
-=== Endpoints to install Cloud Manager on a Linux host
+=== Endpoints to install the Connector on a Linux host
 
 The installer for the Connector must access the following URLs during the installation process:
 
@@ -285,11 +285,13 @@ In any case, you should secure network access by ensuring that security group ru
 
 == Ports and security groups
 
-== AWS Rules for the Connector
+
+
+=== Rules for the Connector in AWS
 
 The security group for the Connector requires both inbound and outbound rules.
 
-=== Inbound rules
+==== Inbound rules
 
 The source for inbound rules in the predefined security group is 0.0.0.0/0.
 
@@ -307,11 +309,11 @@ The source for inbound rules in the predefined security group is 0.0.0.0/0.
 
 |===
 
-=== Outbound rules
+==== Outbound rules
 
 The predefined security group for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
 
-==== Basic outbound rules
+===== Basic outbound rules
 
 The predefined security group for the Connector includes the following outbound rules.
 
@@ -327,11 +329,11 @@ The predefined security group for the Connector includes the following outbound 
 
 |===
 
-==== Advanced outbound rules
+===== Advanced outbound rules
 
 If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
 
-NOTE: The source IP address is the Cloud Manager host.
+NOTE: The source IP address is the Connector host.
 
 [cols=5*,options="header,autowidth"]
 |===
@@ -358,11 +360,11 @@ NOTE: The source IP address is the Cloud Manager host.
 | Cloud Compliance | HTTP | 80 | Cloud Compliance instance | Cloud Compliance for Cloud Volumes ONTAP
 |===
 
-== Azure security group rules for the Connector
+=== Rules for the Connector in Azure
 
 The security group for the Connector requires both inbound and outbound rules.
 
-=== Inbound rules
+==== Inbound rules
 
 The source for inbound rules in the predefined security group is 0.0.0.0/0.
 
@@ -379,11 +381,11 @@ The source for inbound rules in the predefined security group is 0.0.0.0/0.
 
 |===
 
-=== Outbound rules
+==== Outbound rules
 
 The predefined security group for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
 
-==== Basic outbound rules
+===== Basic outbound rules
 
 The predefined security group for the Connector includes the following outbound rules.
 
@@ -399,11 +401,11 @@ The predefined security group for the Connector includes the following outbound 
 
 |===
 
-==== Advanced outbound rules
+===== Advanced outbound rules
 
 If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
 
-NOTE: The source IP address is the Cloud Manager host.
+NOTE: The source IP address is the Connector host.
 
 [cols=5*,options="header,autowidth"]
 |===
@@ -429,11 +431,11 @@ NOTE: The source IP address is the Cloud Manager host.
 
 |===
 
-== GCP firewall rules for the Connector
+=== Rules for the Connector in GCP
 
 The firewall rules for the Connector requires both inbound and outbound rules.
 
-=== Inbound rules
+==== Inbound rules
 
 The source for inbound rules in the predefined firewall rules is 0.0.0.0/0.
 
@@ -450,11 +452,11 @@ The source for inbound rules in the predefined firewall rules is 0.0.0.0/0.
 
 |===
 
-=== Outbound rules
+==== Outbound rules
 
 The predefined firewall rules for the Connector opens all outbound traffic. If that is acceptable, follow the basic outbound rules. If you need more rigid rules, use the advanced outbound rules.
 
-==== Basic outbound rules
+===== Basic outbound rules
 
 The predefined firewall rules for the Connector includes the following outbound rules.
 
@@ -470,7 +472,7 @@ The predefined firewall rules for the Connector includes the following outbound 
 
 |===
 
-==== Advanced outbound rules
+===== Advanced outbound rules
 
 If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
 

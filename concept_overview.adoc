@@ -49,7 +49,7 @@ Cloud Manager is accessible through a https://cloudmanager.netapp.com[SaaS-based
 
 https://cloud.netapp.com[NetApp Cloud Central^] provides a centralized location to access and manage https://www.netapp.com/us/products/cloud-services/use-cases-for-netapp-cloud-services.aspx[NetApp cloud services^]. With centralized user authentication, you can use the same set of credentials to access Cloud Manager and other cloud services like Cloud Insights.
 
-When you log in to Cloud Manager for the first time, you're prompted to create a )_Cloud Central account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
+When you log in to Cloud Manager for the first time, you're prompted to create a _Cloud Central account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
 
 <image coming soon>
 

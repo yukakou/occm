@@ -28,7 +28,10 @@ Cloud Manager offers preconfigured packages that match your workload requirement
 When you create your first working environment, Cloud Manager prompts you to create a Connector, which enables Cloud Manager to manage resources and processes within your public cloud environment. You need the right permissions to create the Connector in Azure.
 
 [role="quick-margin-para"]
-You'll need to download the https://mysupport.netapp.com/cloudontap/iampolicies[Azure policy for the Connector^], modify the "AssignableScopes" field by adding your subscription, use the file in Azure to create a custom role and assign the role to the user. link:task_setting_up_permissions_azure.html[Read step-by-step instructions].
+You'll need to download the https://mysupport.netapp.com/cloudontap/iampolicies[Azure policy for the Connector^], modify the "AssignableScopes" field by adding your subscription, use the file in Azure to create a custom role and assign the role to the user.
+
+[role="quick-margin-para"]
+link:task_setting_up_permissions_azure.html[Read step-by-step instructions].
 
 ==== image:number3.png[Number 3] Set up your networking
 
