@@ -15,19 +15,13 @@ summary: Create an Azure NetApp Files working environment in Cloud Manager to cr
 [.lead]
 Create an Azure NetApp Files working environment in Cloud Manager to create and manage NetApp accounts, capacity pools, volumes, and snapshots.
 
+== Requesting access to Azure NetApp Files
+
+You need to be granted access to Azure NetApp Files by https://aka.ms/azurenetappfiles[submitting an online request^]. You'll need to wait for approval from the Azure NetApp Files team before you can proceed.
+
 == Creating an Azure AD application
 
 Cloud Manager needs permissions to set up and manage Azure NetApp Files. You can grant the required permissions to an Azure account by creating and setting up an Azure AD application and by obtaining the Azure credentials that Cloud Manager needs.
-
-.Steps
-
-. <<Creating an Azure Active Directory application,Create an Azure Active Directory application>>.
-
-. <<Assigning the application to a role,Assign the application to a role>>.
-
-. <<Getting the application ID and directory ID,Get the application ID and directory ID>>.
-
-. <<Creating a client secret,Create a client secret>>.
 
 === Creating the AD application
 
@@ -45,19 +39,39 @@ image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Az
 
 . In the menu, click *App registrations*.
 
-. Click *New registration*.
+. Create the application:
 
-. Specify details about the application:
+.. Click *New registration*.
+
+.. Specify details about the application:
 
 * *Name*: Enter a name for the application.
 * *Account type*: Select an account type (any will work with Cloud Manager).
-* *Redirect URI*: Select *Web* and then enter any URL—for example, \https://url
+* *Redirect URI*: You can leave this blank.
 
-. Click *Register*.
+.. Click *Register*.
+
+. Copy the *Application (client) ID* and the *Directory (tenant) ID*.
++
+image:screenshot_azure_app_ids.gif[A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory.]
++
+When you create the Azure NetApp Files working environment in Cloud Manager, you need to provide the application (client) ID and the directory (tenant) ID for the application. Cloud Manager uses the IDs to programmatically sign in.
+
+. Create a client secret for the application so Cloud Manager can use it to authenticate with Azure AD:
+
+.. Click *Certificates & secrets > New client secret*.
+
+.. Provide a description of the secret and a duration.
+
+.. Click *Add*.
+
+.. Copy the value of the client secret.
++
+image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that shows a client secret for the Azure AD service principal.]
 
 .Result
 
-You've created the AD application.
+Your AD application is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in Cloud Manager when you add an Azure NetApp Files working environment.
 
 === Assigning the app to a role
 
@@ -95,42 +109,6 @@ image:screenshot_azure_service_principal_role.gif[A screenshot that shows the Ad
 +
 The service principal for Cloud Manager now has the required Azure permissions for that subscription.
 
-=== Getting the app and directory IDs
-
-When you create the Azure NetApp Files working environment in Cloud Manager, you need to provide the application (client) ID and the directory (tenant) ID for the application. Cloud Manager uses the IDs to programmatically sign in.
-
-.Steps
-
-. In the *Azure Active Directory* service, click *App registrations* and select the application.
-
-. Copy the *Application (client) ID* and the *Directory (tenant) ID*.
-+
-image:screenshot_azure_app_ids.gif[A screenshot that shows the application (client) ID and directory (tenant) ID for an application in Azure Active Directory.]
-
-=== Creating a client secret
-
-You need to create a client secret and then provide Cloud Manager with the value of the secret so Cloud Manager can use it to authenticate with Azure AD.
-
-.Steps
-
-. Open the *Azure Active Directory* service.
-
-. Click *App registrations* and select your application.
-
-. Click *Certificates & secrets > New client secret*.
-
-. Provide a description of the secret and a duration.
-
-. Click *Add*.
-
-. Copy the value of the client secret.
-+
-image:screenshot_azure_client_secret.gif[A screenshot of the Azure portal that shows a client secret for the Azure AD service principal.]
-
-.Result
-
-Your service principal is now setup and you should have copied the application (client) ID, the directory (tenant) ID, and the value of the client secret. You need to enter this information in Cloud Manager when you add an Azure NetApp Files working environment.
-
 == Creating an Azure NetApp Files working environment
 
 Set up an Azure NetApp Files working environment in Cloud Manager so you can start creating volumes.
@@ -141,10 +119,7 @@ Set up an Azure NetApp Files working environment in Cloud Manager so you can sta
 
 . Provide details about the client application that you previously set up.
 +
-* *Working Environment Name*: A name to distinguish this working environment in Cloud Manager.
-* *Application (client) ID*: See <<Getting the application ID and directory ID>>.
-* *Client Secret*: See <<Creating a client secret>>.
-* *Directory (tenant) ID*: See <<Getting the application ID and directory ID>>.
+image:screenshot_anf_details.gif[]
 
 . Click *Add*.
 
@@ -168,7 +143,9 @@ You can create NFS or SMB volumes in a new or existing Azure NetApp Files accoun
 
 * *Capacity Pool*: Select an existing capacity pool or create a new capacity pool.
 +
-info about size and service level
+If you create a new capacity pool, you need to specify a size and select a https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[service level^].
++
+The minimum size for the capacity pool size is 4 TB. You can specify a size that is multiples of 4 TB.
 
 * *Details & Tags*: Enter a volume name and size, the VNet and subnet where the volume should reside, and optionally specify tags for the volume.
 

@@ -31,9 +31,15 @@ Azure NetApp Files enables enterprises to migrate and run their performance-inte
 
 https://azure.microsoft.com/en-us/pricing/details/netapp/[View Azure NetApp Files Pricing^].
 
+Note that your subscription and charging are maintained by the Azure NetApp Files service and not by Cloud Manager.
+
 == Supported regions
 
 https://cloud.netapp.com/cloud-volumes-global-regions[View supported Azure regions^].
+
+== Requesting access
+
+You need to be granted access to Azure NetApp Files by https://aka.ms/azurenetappfiles[submitting an online request^]. You'll need to wait for approval from the Azure NetApp Files team before you can proceed.
 
 == Getting help
 
