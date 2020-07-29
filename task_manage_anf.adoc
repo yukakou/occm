@@ -15,7 +15,7 @@ summary: Create an Azure NetApp Files working environment in Cloud Manager to cr
 [.lead]
 Create an Azure NetApp Files working environment in Cloud Manager to create and manage NetApp accounts, capacity pools, volumes, and snapshots.
 
-== Creating an Azure AD application to provide permissions
+== Creating an Azure AD application
 
 Cloud Manager needs permissions to set up and manage Azure NetApp Files. You can grant the required permissions to an Azure account by creating and setting up an Azure AD application and by obtaining the Azure credentials that Cloud Manager needs.
 
@@ -29,7 +29,7 @@ Cloud Manager needs permissions to set up and manage Azure NetApp Files. You can
 
 . <<Creating a client secret,Create a client secret>>.
 
-=== Creating an Azure Active Directory application
+=== Creating the AD application
 
 Create an Azure Active Directory (AD) application and service principal that Cloud Manager can use for role-based access control.
 
@@ -59,7 +59,7 @@ image:screenshot_azure_ad.gif[Shows the Active Directory service in Microsoft Az
 
 You've created the AD application.
 
-=== Assigning the application to a role
+=== Assigning the app to a role
 
 You must bind the service principal to your Azure subscription and assign it a custom role that has the required permissions.
 
@@ -95,7 +95,7 @@ image:screenshot_azure_service_principal_role.gif[A screenshot that shows the Ad
 +
 The service principal for Cloud Manager now has the required Azure permissions for that subscription.
 
-=== Getting the application ID and directory ID
+=== Getting the app and directory IDs
 
 When you create the Azure NetApp Files working environment in Cloud Manager, you need to provide the application (client) ID and the directory (tenant) ID for the application. Cloud Manager uses the IDs to programmatically sign in.
 
