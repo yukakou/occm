@@ -66,7 +66,7 @@ For configurations where no volumes exist, you can create your first volume dire
 
 .Before you begin
 
-* If you want to use CIFS in AWS, you must have set up DNS and Active Directory.
+* If you want to use SMB in AWS, you must have set up DNS and Active Directory.
 
 * When planning to create an SMB volume, you must have a Windows Active Directory server available to which you can connect. You will enter this information when creating the volume. Also, make sure that the Admin user is able to create a machine account in the Organizational unit (OU) path specified.
 
@@ -174,6 +174,7 @@ You can mount a cloud volume to your AWS instance. Cloud volumes currently suppo
 . Hover over the volume and click *Mount the volume*.
 +
 NFS and SMB volumes display mount instructions for that protocol. Dual-protocol volumes provide both sets of instructions.
+. Hover over the commands and copy them to your clipboard to make this process easier. Just add the destination directory/mount point at the end of the command.
 +
 *NFS example:*
 +
@@ -186,7 +187,6 @@ Note that Linux clients will default to NFSv4.1 unless the version is specified 
 *SMB example:*
 +
 image:screenshot_cvs_aws_smb_mount.png[Mount instructions for SMB volumes]
-. You can hover over the commands and copy them to your clipboard to make this process easier.
 . Connect to your Amazon Elastic Compute Cloud (EC2) instance by using an SSH or RDP client, and then follow the mount instructions for your instance.
 +
 After completing the steps in the mount instructions, you have successfully mounted the cloud volume to your AWS instance.

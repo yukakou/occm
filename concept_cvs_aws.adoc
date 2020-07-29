@@ -15,8 +15,6 @@ summary: NetApp Cloud Volumes Service for AWS is a cloud native file service tha
 [.lead]
 NetApp Cloud Volumes Service for AWS is a cloud native file service that provides NAS volumes over NFS and SMB with all-flash performance. This service enables any workload, including legacy applications, to run in the AWS cloud.
 
-There are no charges to discover a Cloud Volumes Service for AWS region from Cloud Manager.
-
 == Benefits of using Cloud Volumes Service for AWS
 
 Cloud Volumes Service for AWS provides the following benefits:
@@ -32,6 +30,12 @@ Cloud Volumes Service for AWS provides the following benefits:
 ** Windows Server 2008 R2, Windows Server 2012 R2, and Windows Server 2016
 
 * Choice of bundled and pay-as-you-go pricing
+
+== Cost
+
+Volumes created by the Cloud Volumes Service for AWS are charged based on your subscription to the service, not through Cloud Manager.
+
+There are no charges to discover a Cloud Volumes Service for AWS region or volume from Cloud Manager.
 
 == Before you get started
 
