@@ -222,7 +222,13 @@ entries:
   - title: Provision volumes for file services
     entries:
       - title: Azure NetApp Files
-        url: /task_manage_anf.html
+        entries:
+          - title: Learn about Azure NetApp Files
+            url: /concept_azure_netapp_files.html
+          - title: Set up and manage volumes
+            url: /task_manage_anf.html
+          - title: Migrate data to Azure NetApp Files
+            url: /task_sync_azure_netapp_files.html
       - title: Cloud Volumes Service for AWS
         url: /task_manage_cvs_aws.html
   - title: View Amazon S3 buckets

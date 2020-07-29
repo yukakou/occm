@@ -1,0 +1,131 @@
+---
+sidebar: sidebar
+permalink: task_sync_azure_netapp_files.html
+keywords: azure netapp files, cloud sync, migrate, migration, sync data, data sync, sync anf, cloud sync anf
+summary: You can migrate NFS or SMB data to Azure NetApp Files directly from Cloud Manager. Just select the working environment and click Sync. Data migrations are powered by NetApp's Cloud Sync service.
+---
+
+= Migrating data to Azure NetApp Files
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can migrate NFS or SMB data to Azure NetApp Files directly from Cloud Manager. Just select the working environment and click *Sync*. Data migrations are powered by NetApp's Cloud Sync service.
+
+== Overview
+
+Cloud Sync is NetApp's service for rapid and secure data synchronization. Cloud Sync is a software-as-a-service (SaaS) platform that consists of a data broker, a cloud-based portal, and a source and target.
+
+image:https://docs.netapp.com/us-en/cloudsync/media/diagram_cloud_sync_overview.gif[Conceptual image that shows data flowing from a source to a target. The data broker software acts as a mediator and polls the Cloud Sync service for tasks.]
+
+At this time, Cloud Sync's integration with Cloud Manager enables you to migrate data from a source NFS or SMB server to Azure NetApp Files through a one-time copy. Azure NetApp Files is supported as a target only. The target must be a volume that uses the https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[Ultra service level^]. No other service levels are supported.
+
+When you set up a data sync to Azure NetApp Files, you need to deploy a data broker in Azure. The NetApp data broker software syncs data from a source to a target (this is called a _sync relationship_). You can use a single data broker for multiple sync relationships.
+
+== Cost
+
+NetApp doesn't charge you to sync data to Azure NetApp Files.
+
+== Requirements
+
+Prepare to sync data by verifying that your source and target are supported and setup.
+
+=== Networking requirements
+
+Networking for Cloud Sync includes connectivity between the data broker and the source and target locations, and an outbound internet connection from the data broker over port 443.
+
+* The source and target must have a network connection to the data broker, which you'll deploy in an Azure VNet.
++
+For example, if an NFS server is in your data center and the data broker is in Azure, then you need a network connection (VPN or ExpressRoute) from your network to the Azure VNet and from the Azure VNet to the Azure NetApp Files location.
+
+* The data broker needs an outbound internet connection so it can poll the Cloud Sync service for tasks over port 443.
++
+When Cloud Sync deploys the data broker in Azure, it creates a security group that enables the required outbound communication.
++
+If you need to limit outbound connectivity, https://docs.netapp.com/us-en/cloudsync/reference_endpoints.html[see the list of endpoints that the data broker contacts^].
+
+* NetApp recommends configuring the source, target, and data broker to use a Network Time Protocol (NTP) service. The time difference between the three components should not exceed 5 minutes.
+
+=== NFS and SMB server requirements
+
+* The server can be a NetApp system or a non-NetApp system.
+* The file server must allow the data broker host to access the exports.
+* NFS versions 3, 4.0, 4.1, and 4.2 are supported.
+* SMB versions 1.0, 2.0, 2.1, and 3.0 are supported.
++
+The desired version must be enabled on the server.
+
+== Migrating data
+
+When you create a sync relationship, the Cloud Sync service copies files from the source to the target volume. The schedule for the sync relationship is a one-time copy--there are no additional syncs in the schedule. You can sync the data again by <<Managing sync relationships,managing the relationship>>.
+
+The target volume in Azure NetApp Files must be a volume that uses the https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[Ultra service level^]. No other service levels are supported.
+
+.Steps
+
+. Select the Azure NetApp Files working environment.
+
+. Click *Sync Data*.
++
+image:screenshot_sync_anf.gif[A screenshot that shows the Sync Data option that appears on the right side of the screen after you select an Azure NetApp Files working environment.]
+
+. Click *Log in to Azure*.
++
+When prompted, sign in and accept the permissions request from Microsoft. The form is owned and hosted by Microsoft. Your credentials are not provided to NetApp.
+
+. Select an Azure subscription.
++
+This is the subscription that includes the volume to which you want to sync the data.
+
+. Select a volume and click *Continue*.
++
+This is the volume to which the data will be tiered.
++
+The target volume must be a volume that uses the https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[Ultra service level^]. No other service levels are supported.
+
+. If you selected an SMB volume, enter Active Directory credentials for the volume and click *Continue*.
+
+. Follow the steps in the Sync Data Wizard.
++
+.. *Data Broker*: Select an existing data broker or provide information to deploy a new data broker and click *Continue*.
++
+image:screenshot_data_broker_azure.gif[A screenshot that shows the Data Broker page filled out with details needed to deploy the data broker in Azure.]
++
+Keep the page open until the deployment is complete. It can take up to 5 minutes to deploy a new data broker.
+
+.. *Target Shares/Directories*: Select the share or directory to which you want to sync the data and then click *Continue*.
+
+.. *SMB/NFS Server*: Now you need to provide details about the source server that contains the data that you want to migrate. Select an existing SMB or NFS server that you previously entered, or enter information about a new source server and click *Continue*.
+
+.. *Shares/Directories*: Select the source share or directory that you want to sync to Azure NetApp Files.
+
+.. *Review*: Review details about the sync relationship and then click *Sync*.
++
+image:screenshot_cloud_sync_review.gif[A screenshot that shows the review screen, which shows you data going from your source server and directory to your target.]
+
+.. Click *View in Dashboard* to view details about the sync relationship.
+
+== Managing sync relationships
+
+A few actions are available from within Cloud Manager to manage your existing sync relationships. You can immediately sync the data again and you can delete relationships.
+
+If needed, you can click a link to go directly to the Cloud Sync service where you can access additional actions, such as managing sync settings or accelerating performance.
+
+.Steps
+
+. At the top of Cloud Manager, click *Sync*.
+
+. Hover over the sync relationship and click the action menu.
+
+. Select one of the available options.
++
+image:screenshot_cloud_sync_menu.gif[]
+
+. If you want to access additional options, click *View in Cloud Sync*.
++
+image:screenshot_view_cloud_sync.gif[A screenshot that shows the View in Cloud Sync link that's available in the top right of the Sync page.]
++
+The Cloud Sync service opens in another browser tab. If you can't see your sync relationships, then make sure that you're viewing the right Cloud Central account. https://docs.netapp.com/us-en/cloudsync/concept_accounts.html[Learn more about accounts^].

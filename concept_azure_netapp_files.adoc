@@ -1,0 +1,48 @@
+---
+sidebar: sidebar
+permalink: concept_azure_netapp_files.html
+keywords: azure netapp files, cost, price, features, azure netapp files features, anf, supported regions, azure regions, azure netapp files regions
+summary: Azure NetApp Files enables enterprises to migrate and run their performance-intensive and latency-sensitive core, business-critical applications in Azure with no need to refactor for the cloud.
+---
+
+= Learn about Azure NetApp Files
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Azure NetApp Files enables enterprises to migrate and run their performance-intensive and latency-sensitive core, business-critical applications in Azure with no need to refactor for the cloud.
+
+== Features
+
+* Support for multiple protocols enables "lift & shift" of both Linux & Windows applications to run seamlessly in Azure.
+* Multiple performance tiers allow for close alignment with workload performance requirements.
+* Leading certifications including SAP HANA, GDPR, and HIPPA enables migration of the most demanding workloads to Azure.
+
+== Additional features available within Cloud Manager
+
+* Migrate NFS or SMB data to Azure NetApp Files directly from Cloud Manager. Data migrations are powered by NetApp's Cloud Sync service. link:task_sync_azure_netapp_files.html[Learn more].
+
+* Using Artificial Intelligence (AI) driven technology, Cloud Compliance can help you understand data context and identify sensitive data that resides in your Azure NetApp Files accounts. link:concept_cloud_compliance.html[Learn more].
+
+== Cost
+
+https://azure.microsoft.com/en-us/pricing/details/netapp/[View Azure NetApp Files Pricing^].
+
+== Supported regions
+
+https://cloud.netapp.com/cloud-volumes-global-regions[View supported Azure regions^].
+
+== Getting help
+
+For technical support issues associated with Azure NetApp Files, use the Azure portal to log a support request to Microsoft. Select your associated Microsoft subscription and select the *Azure NetApp Files* service name under *Storage*. Provide the remaining information required to create your Microsoft support request.
+
+For issues related to Cloud Sync and Azure NetApp Files, you can start with NetApp using your Cloud Sync serial number directly from the Cloud Sync service. You will need to access the Cloud Sync service through the link in Cloud Manager. https://docs.netapp.com/us-en/cloudsync/reference_additional_info.html[View the process to enable Cloud Sync support^].
+
+== Related links
+
+* https://cloud.netapp.com/azure-netapp-files[NetApp Cloud Central: Azure NetApp Files^]
+* https://docs.microsoft.com/en-us/azure/azure-netapp-files/[Azure NetApp Files documentation^]
+* https://docs.netapp.com/us-en/cloudsync/index.html[Cloud Sync documentation^]
