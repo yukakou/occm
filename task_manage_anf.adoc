@@ -15,7 +15,26 @@ summary: Create an Azure NetApp Files working environment in Cloud Manager to cr
 [.lead]
 Create an Azure NetApp Files working environment in Cloud Manager to create and manage NetApp accounts, capacity pools, volumes, and snapshots.
 
-== Requesting access to Azure NetApp Files
+== Quick start
+
+Get started quickly by following these steps or scroll down to the remaining sections for full details.
+
+==== image:number1.png[Number 1] Request access
+
+[role="quick-margin-para"]
+https://aka.ms/azurenetappfiles[Submit an online request^] to be granted access to Azure NetApp Files.
+
+==== image:number2.png[Number 2] Set up an Azure AD application
+
+[role="quick-margin-para"]
+From Azure, grant permissions to an Azure AD application and copy the application (client) ID, the directory (tenant) ID, and the value of a client secret.
+
+==== image:number3.png[Number 3] Create an Azure NetApp Files working environment
+
+[role="quick-margin-para"]
+In Cloud Manager, click *Add Working Environment* > *Microsoft Azure* > *Azure NetApp Files* and then provide details about the AD application. 
+
+== Requesting access
 
 You need to be granted access to Azure NetApp Files by https://aka.ms/azurenetappfiles[submitting an online request^]. You'll need to wait for approval from the Azure NetApp Files team before you can proceed.
 
@@ -117,7 +136,7 @@ Set up an Azure NetApp Files working environment in Cloud Manager so you can sta
 
 . Select *Microsoft Azure* and then *Azure NetApp Files*.
 
-. Provide details about the client application that you previously set up.
+. Provide details about the AD application that you previously set up.
 +
 image:screenshot_anf_details.gif[]
 

@@ -31,7 +31,7 @@ You can create NFS or SMB volumes in a new or existing Azure NetApp Files accoun
 +
 If you create a new capacity pool, you need to specify a size and select a https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels[service level^].
 +
-The minimum size for the capacity pool size is 4 TB. You can specify a size that is multiples of 4 TB.
+The minimum size for the capacity pool is 4 TB. You can specify a size in multiples of 4 TB.
 
 * *Details & Tags*: Enter a volume name and size, the VNet and subnet where the volume should reside, and optionally specify tags for the volume.
 
@@ -53,11 +53,7 @@ Access mounting instructions from within Cloud Manager so you can mount the volu
 
 . Open the working environment.
 
-. Hover over the volume and click the menu.
-+
-image:screenshot_anf_volume_menu.gif[A screenshot that shows a volume and the menu that's available in the top right.]
-
-. Select *Mount the volume*.
+. Hover over the volume and select *Mount the volume*.
 
 . Follow the instructions to mount the volume.
 
@@ -67,11 +63,7 @@ After you create a volume, you can modify its size and tags at any time.
 
 . Open the working environment.
 
-. Hover over the volume and click the menu.
-+
-image:screenshot_anf_volume_menu.gif[A screenshot that shows a volume and the menu that's available in the top right.]
-
-. Click *Edit*.
+. Hover over the volume and select *Edit*.
 
 . Modify the size and tags as needed.
 
@@ -85,11 +77,7 @@ Snapshot copies provide a point-in-time copy of your volume. Create Snapshot cop
 
 . Open the working environment.
 
-. Hover over the volume and click the menu.
-+
-image:screenshot_anf_volume_menu.gif[A screenshot that shows a volume and the menu that's available in the top right.]
-
-. Choose one of the available options to manage Snapshot copies:
+. Hover over the volume and choose one of the available options to manage Snapshot copies:
 
 * *Create a Snapshot copy*
 * *Restore to a new volume*
@@ -105,11 +93,7 @@ Delete the volumes that you no longer need.
 
 . Open the working environment.
 
-. Hover over the volume and click the menu.
-+
-image:screenshot_anf_volume_menu.gif[A screenshot that shows a volume and the menu that's available in the top right.]
-
-. Click *Delete*.
+. Hover over the volume and click *Delete*.
 
 . Confirm that you want to delete the volume.
 
