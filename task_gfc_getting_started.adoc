@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_gfc_getting_started.html
-keywords:
-summary:
+keywords: global file cache, core, management server
+summary: You use Cloud Manager to deploy the Global File Cache Management Server and Global File Cache Core software in the working environment.
 ---
 
 = Getting started
@@ -19,6 +19,7 @@ summary:
 //
 
 [.lead]
+You use Cloud Manager to deploy the Global File Cache Management Server and Global File Cache Core software in the working environment.
 
 == Enable Global File Cache using Cloud Manager
 
@@ -28,29 +29,29 @@ In this configuration you will deploy the Global File Cache Management Server an
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details:
 
-==== image:number1.png[Number 1] Deploy Cloud Volumes ONTAP as an HA pair.
+==== image:number1.png[Number 1] Deploy Cloud Volumes ONTAP as an HA pair
 
 [role="quick-margin-para"]
 For the current release,  deploy Cloud Volumes ONTAP as an HA pair in Azure and configure SMB file shares.  For more information, see  https://docs.netapp.com/us-en/occm/task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^].
 
-==== image:number2.png[Number 2] Deploy the Global File Cache Management Server.
+==== image:number2.png[Number 2] Deploy the Global File Cache Management Server
 
 [role="quick-margin-para"]
 Deploy an instance of the Global File Cache Management Server in the same working environment as the instance of Cloud Volumes ONTAP.
 
-==== image:number3.png[Number 3] Deploy the Global File Cache Core.
+==== image:number3.png[Number 3] Deploy the Global File Cache Core
 
 [role="quick-margin-para"]
 Deploy an instance of the Global File Cache Core in the same working environment as the instance of Cloud Volumes ONTAP and join it to your Active Directory domain.
 
-==== image:number4.png[Number 4] Deploy the Global File Cache Edge instances (this is not done using Cloud Manager).
+==== image:number4.png[Number 4] Deploy the Global File Cache Edge instances (this is not done using Cloud Manager)
 
 [role="quick-margin-para"]
-For more information, see <<link in this document below>> to deploy the Global File Cache Edge instances in each remote location.
+For more information, see link:task_deploy_gfc_edge_instances.html[Deploying Global Cache Edge instances] to deploy the Global File Cache Edge instances in each remote location.
 
 === Deploy Cloud Volumes ONTAP as your storage platform
 
-In the current release,  Global File Cache supports Cloud Volumes ONTAP deployed as an HA pair in Azure.  For detailed prerequisites, requirements, and deployment instructions, see  https://docs.netapp.com/us-en/occm/task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^].
+In the current release,  Global File Cache supports Cloud Volumes ONTAP deployed as an HA pair in Azure.  For detailed prerequisites, requirements, and deployment instructions, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^].
 
 Note the following additional Global File Cache requirements:
 
@@ -62,51 +63,51 @@ If no SMB file shares are set up on the instance, then you are prompted to confi
 
 The Global File Cache wizard walks you through the steps to deploy the Global File Cache Management Server instance and the Global File Cache Core instance, as highlighted below.
 
-image:screenshot_gfc_install1.png[Error: Missing Graphic Image]
+image:screenshot_gfc_install1.png[A screenshot of the initial Global File Cache installation page.]
 
 .Steps
 
 . Select the working environment where you deployed the Cloud Volumes ONTAP HA pair.
 
-. In the Services panel, click Enable GFC.
+. In the Services panel, click *Enable GFC*.
 +
-image:screenshot_gfc_install2.png[Error: Missing Graphic Image]
+image:screenshot_gfc_install2.png[A screenshot of the initial Enable GFC button in the working environment to enable Global File Cache.]
 
-. Read the Overview page and click Continue.
+. Read the Overview page and click *Continue*.
 
-. If no SMB shares are available on the Cloud Volumes ONTAP instance, you are prompted to enter the SMB Server and SMB Share details to create the share now. For details about the SMB configuration, see Storage Platform.
+. If no SMB shares are available on the Cloud Volumes ONTAP instance, you are prompted to enter the SMB Server and SMB Share details to create the share now. For details about the SMB configuration, see link:concept_before_you_begin_to_deploy_gfc.html#storage-platform-volumes[Storage platform].
 +
-When finished,  click Continue to create the SMB share.
+When finished, click *Continue* to create the SMB share.
 +
-image:screenshot_gfc_install3.png[Error: Missing Graphic Image]
+image:screenshot_gfc_install3.png[A screenshot showing the information required to create an SMB share if one is not available.]
 
-. On the Global File Cache Service page, enter the number of Global File Cache Edge instances you plan to deploy, and then make sure your system meets the requirements for Network Configuration and Firewall Rules, Active Directory settings, and Antivirus exclusions.  See <<Prerequisites link to earlier place in doc>>.
+. On the Global File Cache Service page, enter the number of Global File Cache Edge instances you plan to deploy, and then make sure your system meets the requirements for Network Configuration and Firewall Rules, Active Directory settings, and Antivirus exclusions.  See link:concept_before_you_begin_to_deploy_gfc.html#prerequisites[Prerequisites] for more details.
 +
-image:screenshot_gfc_install4.png[Error: Missing Graphic Image]
+image:screenshot_gfc_install4.png[A screenshot showing the prerequisites before you deploy the Global File Cache Management Server and Core instances.]
 
-. After you have verified that the requirements have been met, or that you have the information to meet these requirements, click Continue.
+. After you have verified that the requirements have been met, or that you have the information to meet these requirements, click *Continue*.
 
-. Enter the admin credentials you will use to access to the Global File Cache Management Server VM and click Enable GFC Service.  You can change the VM name if you want.
+. Enter the admin credentials you will use to access to the Global File Cache Management Server VM and click *Enable GFC Service*. You can change the VM name if you want.
 +
-image:screenshot_gfc_install5.png[Error: Missing Graphic Image]
+image:screenshot_gfc_install5.png[A screenshot showing the configuration information necessary to set up the Global File Cache Management Server.]
 
-. After the Global File Cache Management Service is successfully deployed, click Continue.
+. After the Global File Cache Management Service is successfully deployed, click *Continue*.
 
-. For the Global File Cache Core, enter the admin user credentials to join the Active Directory domain, and the service account user credentials. Then click Continue.
+. For the Global File Cache Core, enter the admin user credentials to join the Active Directory domain, and the service account user credentials. Then click *Continue*.
 +
 * The Global File Cache Core instance must be deployed in the same Active Directory domain as the Cloud Volumes ONTAP instance.
 * The service account is a domain user and it is part of the BUILTIN\Backup Operators group on the Cloud Volumes ONTAP instance.
 
-. Enter the admin credentials you will use to access to the Global File Cache Core VM and click Deploy GFC Core.  You can change the VM name if you want.
+. Enter the admin credentials you will use to access to the Global File Cache Core VM and click *Deploy GFC Core*. You can change the VM name if you want.
 +
-image:screenshot_gfc_install6.png[Error: Missing Graphic Image]
+image:screenshot_gfc_install6.png[A  screenshot showing the configuration information necessary to set up the Global File Cache Core instance.]
 
-. After the Global File Cache Core is successfully deployed, click Go to Dashboard.
+. After the Global File Cache Core is successfully deployed, click *Go to Dashboard*.
 +
-image:screenshot_gfc_install7.png[Error: Missing Graphic Image]
+image:screenshot_gfc_install7.png[A screenshot showing the Global File Cache dashboard after installation is complete.]
 
-The Dashboard shows that the Management Server instance and the Core instance are both On and working.
+The Dashboard shows that the Management Server instance and the Core instance are both *On* and working.
 
 .What’s Next?
 
-Now you need to deploy the Global File Cache Edge instances in each of your remote offices.
+Now you need to link:download_gfc_resources.html[deploy the Global File Cache Edge instances] in each of your remote offices.

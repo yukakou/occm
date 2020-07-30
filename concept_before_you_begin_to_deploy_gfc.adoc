@@ -35,7 +35,7 @@ When you are designing your Global File Cache deployment you need to determine w
 
 Consult your Global File Cache Solutions Engineer to discuss the best options for your enterprise deployment.
 
-== Sizing Guidelines
+== Sizing guidelines
 
 There are a few sizing guideline ratios that you need to keep in mind when configuring the initial system. You should revisit these ratios after some usage history has accumulated to make sure you are using the system optimally. These include:
 
