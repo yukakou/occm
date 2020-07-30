@@ -50,9 +50,9 @@ The number of licenses that you can purchase for a single node system or HA pair
 +
 Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by http://vmwvatapp01-stg.corp.netapp.com/occm_july20-whats-new/us-en/concept_data_tiering.html[tiering inactive data to object storage^]. For information about disk limits, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap/[storage limits in the Cloud Volumes ONTAP Release Notes^].
 
-* *Encrypt Azure managed disks and storage blobs using external keys*
+* *Encrypt Azure managed disks using external keys*
 +
-You can now encrypt Azure managed disks and storage blobs on single node Cloud Volumes ONTAP systems using external keys from another account. This feature is supported using APIs.
+You can now encrypt Azure managed disks on single node Cloud Volumes ONTAP systems using external keys from another account. This feature is supported using APIs.
 +
 You just need to add the following to the API request when creating the single node system:
 +
@@ -60,6 +60,11 @@ You just need to add the following to the API request when creating the single n
 "azureEncryptionParameters": {
       "key": <azure id of encryptionset>
   }
+
+This feature requires new permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.7.4.json[Cloud Manager policy for Azure^].
+
+[source,json]
+"Microsoft.Compute/diskEncryptionSets/read"
 
 === Azure NetApp Files enhancements
 
@@ -160,6 +165,19 @@ Other storage platforms and other cloud providers are not supported at this time
 * The GFC Core can be deployed only as a stand-alone instance.
 +
 If you need to use a Load Distributed design that includes multiple Core instances you must use the legacy procedures.
+
+This feature requires new permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.7.4.json[Cloud Manager policy for Azure^].
+
+[source,json]
+"Microsoft.Resources/deployments/operationStatuses/read",
+"Microsoft.Insights/Metrics/Read",
+"Microsoft.Compute/virtualMachines/extensions/write",
+"Microsoft.Compute/virtualMachines/extensions/read",
+"Microsoft.Compute/virtualMachines/extensions/delete",
+"Microsoft.Compute/virtualMachines/delete",
+"Microsoft.Network/networkInterfaces/delete",
+"Microsoft.Network/networkSecurityGroups/delete",
+"Microsoft.Resources/deployments/delete",
 
 == Improved experience requires stronger machine type (15 July 2020)
 
