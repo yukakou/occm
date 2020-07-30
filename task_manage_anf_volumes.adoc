@@ -25,9 +25,11 @@ You can create NFS or SMB volumes in a new or existing Azure NetApp Files accoun
 
 . Click *Add New Volume*.
 
-. Provide the required information:
+. Provide the required information on each page:
 
 * *Azure NetApp Files Account*: Choose an existing Azure NetApp Files account or create a new account.
++
+image:screenshot_anf_create_account.gif["A screenshot of the fields required to create an Azure NetApp Files account, which includes a name, Azure subscription, location, and resource group."]
 
 * *Capacity Pool*: Select an existing capacity pool or create a new capacity pool.
 +
@@ -58,6 +60,8 @@ Access mounting instructions from within Cloud Manager so you can mount the volu
 . Open the working environment.
 
 . Hover over the volume and select *Mount the volume*.
++
+image:screenshot_anf_hover.gif[]
 
 . Follow the instructions to mount the volume.
 
