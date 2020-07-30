@@ -21,7 +21,7 @@ Follow these steps before you create a Connector directly from Cloud Manager. Th
 
 .Steps
 
-. Ensure that the GCP user who deploys Cloud Manager from NetApp Cloud Central has the permissions in the https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[Cloud Central policy for GCP^].
+. Ensure that the GCP user who deploys Cloud Manager from NetApp Cloud Central has the permissions in the https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[Connector deployment policy for GCP^].
 +
 https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[You can create a custom role using the YAML file^] and then attach it to the user. You'll need to use the gcloud command line to create the role.
 

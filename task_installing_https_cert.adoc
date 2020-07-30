@@ -15,6 +15,10 @@ summary: By default, Cloud Manager uses a self-signed certificate for HTTPS acce
 [.lead]
 By default, Cloud Manager uses a self-signed certificate for HTTPS access to the web console. You can install a certificate signed by a certificate authority (CA), which provides better security protection than a self-signed certificate.
 
+== Before you get started
+
+You need to create a Connector before you can change Cloud Manager settings. link:task_creating_connectors.html[Learn how].
+
 == Installing an HTTPS certificate
 
 Install a certificate signed by a CA for secure access.

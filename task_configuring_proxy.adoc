@@ -21,6 +21,10 @@ If your corporate policies dictate that you use a proxy server for all HTTP comm
 
 When you configure Cloud Manager to use a proxy server, Cloud Manager, Cloud Volumes ONTAP, and the HA mediator all use the proxy server.
 
+.What you'll need
+
+You need to create a Connector before you can change Cloud Manager settings. link:task_creating_connectors.html[Learn how].
+
 .Steps
 
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Manager Settings*.

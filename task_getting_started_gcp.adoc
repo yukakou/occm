@@ -33,7 +33,7 @@ When you create your first working environment, Cloud Manager prompts you to cre
 Make sure that two sets of permissions are in place:
 
 [role="quick-margin-list"]
-.. Ensure that the GCP user who deploys the Connector from Cloud Manager has the permissions in the https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[Connector policy for GCP^].
+.. Ensure that the GCP user who deploys the Connector from Cloud Manager has the permissions in the https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[Connector deployment policy for GCP^].
 
 .. Set up a service account using the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.8.0_GCP.yaml[Cloud Manager for GCP^]. These permissions enable Cloud Manager to create and manage Cloud Volumes ONTAP systems in projects. You'll assign this service account to the Connector when you create it.
 
