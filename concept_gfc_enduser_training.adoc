@@ -1,0 +1,23 @@
+---
+sidebar: sidebar
+permalink: concept_gfc_enduser_training.html
+keywords:
+summary:
+---
+
+= End-user training
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 0.9 (July 10, 2020)
+//
+// 2020-07-29 10:32:33.669022
+//
+
+[.lead]
+
+See Chapter 12 in the Global File Cache User Guide <<link to PDF>> for material you can use to train your users on the best practices that apply when working on a centralized data set/collaborative environment.  This includes suggested email content a link to a training video.

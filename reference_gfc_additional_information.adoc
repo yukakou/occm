@@ -1,0 +1,31 @@
+---
+sidebar: sidebar
+permalink: reference_gfc_additional_information.html
+keywords:
+summary:
+---
+
+= Additional information
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 0.9 (July 10, 2020)
+//
+// 2020-07-29 10:32:33.680053
+//
+
+[.lead]
+
+To learn more about the information that is described in this document, review the following websites:
+
+* Global File Cache FAQ
++
+https://cloud.netapp.com/global-file-cache-faq[https://cloud.netapp.com/global-file-cache-faq^]
+
+* NetApp Product Documentation
++
+https://docs.netapp.com[https://docs.netapp.com^]
