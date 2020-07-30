@@ -15,8 +15,6 @@ summary: Cloud Compliance is a data privacy and compliance service for Azure Net
 [.lead]
 Cloud Compliance is a data privacy and compliance service for Azure NetApp Files and Cloud Volumes ONTAP. It can also be used to scan your Amazon S3 buckets to identify the personal and sensitive data that resides in S3 object storage. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data.
 
-Cloud Compliance is currently available as a Controlled Availability release.
-
 https://cloud.netapp.com/cloud-compliance[Learn about the use cases for Cloud Compliance^].
 
 == Features
@@ -122,13 +120,11 @@ Cloud Compliance uses AI to extract natural persons’ names from documents. lin
 
 == Networking overview
 
-Cloud Manager deploys the Cloud Compliance instance with a private IP address and a security group that enables inbound HTTP connections from Cloud Manager. This connection enables you to access the Cloud Compliance dashboard from the Cloud Manager interface.
+Cloud Manager deploys the Cloud Compliance instance with a security group that enables inbound HTTP connections from Service Connector instance.
 
 Outbound rules are completely open. The instance connects to the internet through a proxy from Cloud Manager. Internet access is needed to upgrade the Cloud Compliance software and to send usage metrics.
 
 If you have strict networking requirements, link:task_getting_started_compliance.html#reviewing-prerequisites[learn about the endpoints that Cloud Compliance contacts].
-
-TIP: The indexed data never leaves the Cloud Compliance instance--the data isn't relayed outside of your virtual network and it isn't sent to Cloud Manager.
 
 == User access to compliance information
 

@@ -230,7 +230,7 @@ You can either open the security group for traffic from the IP address of the Cl
 
 .. At the top of Cloud Manager, click *Compliance*.
 
-.. In the top right, click *Scan Configuration*.
+.. Click the *Configuration* tab.
 +
 image:screenshot_cifs_credentials.gif[A screenshot of the Compliance tab that shows the Scan Status button that's available in the top right of the content pane.]
 
