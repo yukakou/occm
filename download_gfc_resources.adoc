@@ -47,9 +47,7 @@ link:media/netapp_gfc_user_guide.pdf[NetApp Global File Cache User Guide^]
 
 Depending on your requirements, you might need to deploy one or multiple Global File Cache Edge instances based on the concurrent user sessions in a branch office. The Edge instance presents the virtual file share to the end users within the branch office, which has been transparently extended from the associated Global File Cache Core instance. The Global File Cache Edge should contain a `D:\` NTFS volume, which contains the cached files within the branch office.
 
-For the Global File Cache Edge, it is important to understand the link:concept_before_you_begin_to_deploy_gfc.html#sizing-guidelines[sizing guidelines]. This will assist you in making the correct design for your Global File Cache deployment. You would also need to determine what’s right for your environment in terms of scale, availability of resources, and in terms of redundancy.
-
-For large-scale branch office environments, it might be necessary to deploy multiple Global File Cache Edge instances. For more information, see the link:media/netapp_gfc_user_guide.pdf[NetApp Global File Cache User Guide^].
+NOTE: For the Global File Cache Edge, it is important to understand the link:concept_before_you_begin_to_deploy_gfc.html#sizing-guidelines[sizing guidelines]. This will assist you in making the correct design for your Global File Cache deployment. You would also need to determine what’s right for your environment in terms of scale, availability of resources, and in terms of redundancy.
 
 === Global File Cache Edge instance
 

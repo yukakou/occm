@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_before_you_begin_to_deploy_gfc.html
-keywords: global file cache
+keywords: global file cache, core, edge, management server
 summary: There are many requirements you need to be aware of before you begin to deploy Global File Cache in the cloud and in your remote offices.
 ---
 
@@ -27,11 +27,11 @@ Depending on your requirements, you may need to deploy one or multiple Global Fi
 
 When you are designing your Global File Cache deployment you need to determine what’s right for your environment in terms of scale, availability of resources,  and in terms of redundancy.
 
-<<See Sizing Guidelines>> to understand the maximum number of Edge instances and total users that each configuration can support:
+See <<Sizing guidelines>> to understand the maximum number of Edge instances and total users that each configuration can support:
 
-* When deployed using Cloud Manager, the Global File Cache Core can be deployed only as a stand- alone instance.  You can have one Core per working environment.
+* When deployed using Cloud Manager, the Global File Cache Core can be deployed only as a stand-alone instance.  You can have one Core per working environment.
 
-* When deployed manually (not using Cloud Manager), Global File Cache Core can be deployed as a stand- alone instance or in a Load Distributed design (Cold Standby).
+* When deployed manually (not using Cloud Manager), Global File Cache Core can be deployed as a stand-alone instance or in a Load Distributed design (Cold Standby).
 
 Consult your Global File Cache Solutions Engineer to discuss the best options for your enterprise deployment.
 
@@ -47,56 +47,51 @@ There are a few sizing guideline ratios that you need to keep in mind when confi
 
 === Number of Edge Instances per Core Instance
 
-NetApp recommends a maximum of 20 Edge instances per Core instance. This is dependent to a significant degree upon the type and mean file size of the most common workload. In some cases,  with more common workloads you can add more than 30 Edge instances per Core, but in these cases you should contact NetApp Support to correctly size the number of Edge and Core instances depending on the types and sizes of the file sets.
+Our guidelines recommend up to 10 Edge instances per Global File Cache Core instance, with a maximum of 20 Edges per Global File Cache Core instance. This is dependent to a significant degree upon the type and mean file size of the most common workload. In some cases, with more common workloads you can add more Edge instances per Core, but in these cases you should contact NetApp Support to correctly size the number of Edge and Core instances depending on the types and sizes of the file sets.
 
 [NOTE]
-You can leverage multiple Global File Cache Edge and Core instances simultaneously to scale out your infrastructure depending on the requirements.  Multiple Core instances for a single set of user data is not supported when deployed using Cloud Manager at this time.
+You can leverage multiple Global File Cache Edge and Core instances simultaneously to scale out your infrastructure depending on the requirements. Multiple Core instances for a single set of user data is not supported when deployed using Cloud Manager at this time.
 
-=== Number of Concurrent Users per Edge Instance
+=== Number of concurrent users per Edge instance
 
-Global File Cache Edge handles the heavy lifting in terms of caching algorithms and file-level differencing. A single Edge instance can serve up to 600 users per physical dedicated Edge instance, and up to 300 users for dedicated VM deployments. This is dependent to a significant degree upon the type and mean file size of the most common workload. For larger collaborative file types, guide towards 50% of the maximum users per Edge lower boundary (depending on physical or virtual deployment). For more common Office items with a mean file size <1MB, guide towards the 100% users per Edge upper boundary (depending on physical or virtual deployment).
+Global File Cache Edge handles the heavy lifting in terms of caching algorithms and file-level differencing. A single Global File Cache Edge instance can serve up to 400 users per physical dedicated Edge instance, and up to 200 users for dedicated VM deployments. This is dependent to a significant degree upon the type and mean file size of the most common workload. For larger collaborative file types, guide towards 50% of the maximum users per Global File Cache Edge lower boundary (depending on physical or virtual deployment). For more common Office items with a mean file size <1MB, guide towards the 100% users per Global File Cache Edge upper boundary (depending on physical or virtual deployment).
 
 [NOTE]
-Global File Cache Edge detects whether it is running on a virtual or physical instance and it will limit the number of SMB connections to the local virtual file share to the maximum of 300 or 600 concurrent connections.
+Global File Cache Edge detects whether it is running on a virtual or physical instance and it will limit the number of SMB connections to the local virtual file share to the maximum of 200 or 400 concurrent connections.
 
 === Number of concurrent users per Core instance
 
-The Global File Cache Core instance is extremely scalable, with a recommended range of 3,000–7,000 users per Core. This is dependent to a significant degree upon the type and mean file size of the most common workload. For larger collaborative file types, guide towards the 3,000 users/Core lower boundary. For more common Office items with a mean file size <1MB, guide towards the 7,000 users/Core upper boundary.
+The Global File Cache Core instance is extremely scalable, with a recommended concurrent user count of 3,000 users per Core. This is dependent to a significant degree upon the type and mean file size of the most common workload.
 
-Consult your Global File Cache Solutions Engineer to discuss the best options for your enterprise deployment
+Consult your Global File Cache Solutions Engineer to discuss the best options for your enterprise deployment.
 
 == Prerequisites
 
 The prerequisites described in this section are for the components installed in the cloud: the Global File Cache Management Server and the Global File Cache Core.
 
-Global File Cache Edge prerequisites are described here <<link to 4.2 Global File Cache Edge requirements>>.
+Global File Cache Edge prerequisites are described link:download_gfc_resources.html#global-file-cache-edge-requirements[here].
 
 === Global File Cache Management Server
 
 This Global File Cache Management Server requires external access over HTTPS (TCP port 443) to connect to the cloud provider subscription service and to access these URLs:
 
 *  https://talonazuremicroservices.azurewebsites.net[https://talonazuremicroservices.azurewebsites.net^]
-
 *  https://talonlicensing.table.core.windows.net[https://talonlicensing.table.core.windows.net^]
 
 This port must be excluded from any WAN optimization devices or firewall restriction policies for the Global File Cache software to operate properly.
 
 The Global File Cache Management Server requirements are:
 
-* Administrative privileges (domain administrator)
-
 * A unique (geographical) NetBIOS name for the instance (such as GFC- MS1)
 
 [NOTE]
-One Management Server can support multiple Global File Cache Core instances deployed in different working environments. When deployed from Cloud Manager,  each working environment has its own separate backend storage and would not contain the same data.
+One Management Server can support multiple Global File Cache Core instances deployed in different working environments. When deployed from Cloud Manager, each working environment has its own separate backend storage and would not contain the same data.
 
 === Global File Cache Core
 
 This Global File Cache Core listens on TCP port range 6618-6630. Depending on your firewall or Network Security Group (NSG) configuration you may need to explicitly allow access to these ports through Inbound Port Rules. Finally, these ports must be excluded from any WAN optimization devices or firewall restriction policies for the Global File Cache software to operate properly.
 
 The Global File Cache Core requirements are:
-
-* Administrative privileges (Domain Administrator)
 
 * A unique (geographical) NetBIOS name for the instance (such as GFC-CORE1)
 
@@ -118,7 +113,7 @@ Depending on the level of restrictions and GPOs in the network environment, this
 
 ** The account option User Must Change Password at Next Logon should be DISABLED (unchecked).
 
-** It must be a member of the back-end file server local Backup Operators groups.
+** It must be a member of the back-end file server Built-in Backup Operators group (this is automatically enabled when deployed through Cloud Manager).
 
 === Storage platform (volumes)
 

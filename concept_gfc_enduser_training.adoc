@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept_gfc_enduser_training.html
-keywords:
-summary:
+keywords: global file cache, training
+summary: You will want to train your users on the best practices for accessing the shared files through Global File Cache.
 ---
 
 = End-user training
@@ -19,5 +19,6 @@ summary:
 //
 
 [.lead]
+You will want to train your users on the best practices for accessing the shared files through Global File Cache.
 
-See Chapter 12 in the Global File Cache User Guide <<link to PDF>> for material you can use to train your users on the best practices that apply when working on a centralized data set/collaborative environment.  This includes suggested email content a link to a training video.
+See Chapter 12 in the link:media/netapp_gfc_user_guide.pdf[NetApp Global File Cache User Guide^] for material you can use to train your users on the best practices that apply when working on a centralized data set/collaborative environment.  This includes suggested email content and a link to a training video.

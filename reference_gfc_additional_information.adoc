@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: reference_gfc_additional_information.html
-keywords:
-summary:
+keywords: global file cache
+summary: Use the following links to learn more about Global File Cache and other NetApp products.
 ---
 
 = Additional information
@@ -20,12 +20,13 @@ summary:
 
 [.lead]
 
-To learn more about the information that is described in this document, review the following websites:
+Use the following links to learn more about Global File Cache and other NetApp products:
 
 * Global File Cache FAQ
 +
-https://cloud.netapp.com/global-file-cache-faq[https://cloud.netapp.com/global-file-cache-faq^]
+See a list of frequently asked questions and the answers here:  https://cloud.netapp.com/global-file-cache-faq[https://cloud.netapp.com/global-file-cache-faq^]
 
 * NetApp Product Documentation
 +
-https://docs.netapp.com[https://docs.netapp.com^]
+See additional documentation for NetApp cloud products here:  https://docs.netapp.com/us-en/cloud/[https://docs.netapp.com/us-en/cloud/]
+See additional documentation for all NetApp products here:  https://docs.netapp.com[https://docs.netapp.com^]

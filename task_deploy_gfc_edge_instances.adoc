@@ -88,15 +88,13 @@ To configure the Edge instance, complete the following steps:
 
 .Steps
 
-. Click *Perform* next to the unchecked Core Configuration Steps listed in the System Overview section of the Initial Configuration assistant. This opens a new tab, GFC Edge, and shows the section Core Instances.
+. Click *Perform* next to the unchecked Core Configuration step listed in the "Edge Configuration Steps" section of the Initial Configuration assistant. This opens a new tab, GFC Edge, and shows the section Core Instances.
 
-. Provide the Cloud Fabric ID of the Global File Cache Core server. The Cloud Fabric ID is typically the NetBIOS name or the geographical location of the backend file server.
+. Provide the *Cloud Fabric ID* of the Global File Cache Core server. The Cloud Fabric ID is typically the NetBIOS name or the geographical location of the backend file server.
 
-. Provide the FQDN/IP Address of the Global File Cache Core server or cluster:
-
-. (Optional) Check the SSL box to enable SSL support for enhanced encryption from the Edge to the Core.
-
-. Enter the user name and password, which are the credentials of the service account used on the Core.
+. Provide the *FQDN/IP Address* of the Global File Cache Core server or cluster:
+.. (Optional) Check the *SSL* box to enable SSL support for enhanced encryption from the Edge to the Core.
+.. Enter the User Name and Password, which are the credentials of the Service Account used on the Core.
 
 . Click *Add* to confirm the addition of the Global File Cache Core appliance. A confirmation box will appear. Click *OK* to dismiss it.
 +
