@@ -19,6 +19,8 @@ After you set up your working environment, you can create and manage Azure NetAp
 
 You can create NFS or SMB volumes in a new or existing Azure NetApp Files account.
 
+.Steps
+
 . Open the Azure NetApp Files working environment.
 
 . Click *Add New Volume*.
@@ -51,6 +53,8 @@ image:screenshot_anf_smb.gif[]
 
 Access mounting instructions from within Cloud Manager so you can mount the volume to a host.
 
+.Steps
+
 . Open the working environment.
 
 . Hover over the volume and select *Mount the volume*.
@@ -60,6 +64,8 @@ Access mounting instructions from within Cloud Manager so you can mount the volu
 == Editing a volume's size and tags
 
 After you create a volume, you can modify its size and tags at any time.
+
+.Steps
 
 . Open the working environment.
 
@@ -100,6 +106,8 @@ Delete the volumes that you no longer need.
 == Removing Azure NetApp Files
 
 This action removes Azure NetApp Files from Cloud Manager. It doesn't delete your Azure NetApp Files account or volumes. You can add Azure NetApp Files back to Cloud Manager at any time.
+
+.Steps
 
 . Open the Azure NetApp Files working environment.
 
