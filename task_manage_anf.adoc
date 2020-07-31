@@ -147,3 +147,7 @@ image:screenshot_anf_details.gif["A screenshot of the fields that are required t
 You should now have an Azure NetApp Files working environment.
 
 image:screenshot_anf_we.gif[A screenshot of an Azure NetApp Files working environment.]
+
+.What's next?
+
+link:task_manage_anf_volumes.html[Start creating and managing volumes].
