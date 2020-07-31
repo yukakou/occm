@@ -25,7 +25,7 @@ entries:
         url: /task_signing_up.html
       - title: Log in to Cloud Manager
         url: /task_logging_in.html
-      - title: Set up your Cloud Central account
+      - title: Set up a Cloud Central account
         entries:
           - title: Learn about Cloud Central accounts
             url: /concept_cloud_central_accounts.html
@@ -249,7 +249,7 @@ entries:
         entries:
           - title: Manage existing Connectors
             url: /task_managing_connectors.html
-          - title: Other ways to create Connectors
+          - title: More ways to create Connectors
             entries:
               - title: Connector host requirements
                 url: /reference_cloud_mgr_reqs.html
@@ -265,13 +265,25 @@ entries:
         url: /task_managing_cloud_central_accounts.html
       - title: Manage credentials
         entries:
-          - title: Add AWS credentials
-            url: /task_adding_aws_accounts.html
-          - title: Add Azure credentials
-            url: /task_adding_azure_accounts.html
-          - title: Add GCP credentials (9.6 only)
-            url: /task_adding_gcp_accounts.html
-          - title: Add NetApp Support Site credentials
+          - title: AWS
+            entries:
+              - title: Learn about AWS credentials
+                url: /concept_accounts_aws.html
+              - title: Add AWS credentials
+                url: /task_adding_aws_accounts.html
+          - title: Azure
+            entries:
+              - title: Learn about Azure credentials
+                url: /concept_accounts_azure.html
+              - title: Add Azure credentials
+                url: /task_adding_azure_accounts.html
+          - title: GCP
+            entries:
+              - title: Learn about GCP credentials
+                url: /concept_accounts_gcp.html
+              - title: Add GCP credentials (9.6 only)
+                url: /task_adding_gcp_accounts.html
+          - title: NetApp Support Site credentials
             url: /task_adding_nss_accounts.html
       - title: Manage an HTTPS certificate
         url: /task_installing_https_cert.html

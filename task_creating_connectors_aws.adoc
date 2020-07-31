@@ -80,3 +80,7 @@ NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP
 . Click *Create*.
 +
 The instance should be ready in about 7 minutes. You should stay on the page until the process is complete.
+
+.After you finish
+
+You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems. If you only have Account Admins, then associating the Connector with workspaces isn’t required. Account Admins have the ability to access all workspaces in Cloud Manager by default. link:task_setting_up_cloud_central_accounts.html#associating-connectors-with-workspaces[Learn more].

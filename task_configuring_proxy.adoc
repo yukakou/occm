@@ -23,7 +23,7 @@ When you configure Cloud Manager to use a proxy server, Cloud Manager, Cloud Vol
 
 .What you'll need
 
-You need to create a Connector before you can change Cloud Manager settings. link:task_creating_connectors.html[Learn how].
+You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html[Learn how].
 
 .Steps
 

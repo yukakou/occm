@@ -48,11 +48,16 @@ Two requirements must be met to tier cold data from Cloud Volumes ONTAP to low-c
 [role="quick-margin-list"]
 .. https://cloud.google.com/vpc/docs/configure-private-google-access[Configure the Cloud Volumes ONTAP subnet for Private Google Access^].
 
-.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Set up a service account for data tiering^] that has the predefined _Storage Admin_ role. And add the Connector service account as a _Service Account User_ to the tiering service account.
+.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Set up a service account for data tiering^]:
 +
-You'll need to select this service account when you create a Cloud Volumes ONTAP working environment. If you don't select it during creation, then you'll need to turn off the system and add the service account to Cloud Volumes ONTAP from the GCP console.
+.. Assign the predefined _Storage Admin_ role to the tiering service account.
+.. Add the Connector service account as a _Service Account User_ to the tiering service account.
 +
-link:task_tiering.html#requirements-to-tier-cold-data-to-a-google-cloud-storage-bucket[Learn more about setting up this service account].
+You can provide the user role https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[in step 3 of the wizard when you create the tiering service account], or https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_user_for_a_service_account[grant the role after the service account was created^].
++
+You'll need to select the tiering service account later when you create a Cloud Volumes ONTAP working environment.
++
+If you don't enable data tiering and select a service account when you create the Cloud Volumes ONTAP system, then you'll need to turn off the system and add the service account to Cloud Volumes ONTAP from the GCP console.
 
 ==== image:number5.png[Number 5] Enable Google Cloud APIs
 

@@ -17,13 +17,13 @@ Cloud Manager enables you to choose the AWS credentials to use when deploying Cl
 
 == Initial AWS credentials
 
-When you deploy Cloud Manager from NetApp Cloud Central, you need to use an AWS account that has permissions to launch the Cloud Manager instance. The required permissions are listed in the https://mysupport.netapp.com/cloudontap/iampolicies[Connector deployment policy for AWS^].
+When you deploy a Connector from Cloud Manager, you need to use an AWS account that has permissions to launch the Connector instance. The required permissions are listed in the https://mysupport.netapp.com/cloudontap/iampolicies[Connector deployment policy for AWS^].
 
-When Cloud Central launches the Cloud Manager instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP in that AWS account. link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[Review how Cloud Manager uses the permissions].
+When Cloud Manager launches the Connector instance in AWS, it creates an IAM role and an instance profile for the instance. It also attaches a policy that provides Cloud Manager with permissions to manage resources and processes within that AWS account. link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[Review how Cloud Manager uses the permissions].
 
 image:diagram_permissions_initial_aws.png["A conceptual image that shows Cloud Central deploying Cloud Manager in an AWS account. An IAM policy is assigned to an IAM role, which is attached to the Cloud Manager instance."]
 
-Cloud Manager selects these AWS credentials by default when you create a new working environment:
+Cloud Manager selects these AWS credentials by default when you create a new working environment for Cloud Volumes ONTAP:
 
 image:screenshot_accounts_select_aws.gif[A screenshot that shows the Switch Account option in the Details & Credentials page.]
 
@@ -41,7 +41,7 @@ image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting betwe
 
 == What about Marketplace deployments and on-prem deployments?
 
-The sections above describe the recommended deployment method from NetApp Cloud Central. You can also deploy Cloud Manager in AWS from the link:task_launching_aws_mktp.html[AWS Marketplace] and you can link:task_installing_linux.html[install Cloud Manager on-premises].
+The sections above describe the recommended deployment method for the Connector, which is from Cloud Manager. You can also deploy a Connector in AWS from the link:task_launching_aws_mktp.html[AWS Marketplace] and you can link:task_installing_linux.html[install the Connector on-premises].
 
 If you use the Marketplace, permissions are provided in the same way. You just need to manually create and set up the IAM role, and then provide permissions for any additional accounts.
 
@@ -49,8 +49,8 @@ For on-premises deployments, you can't set up an IAM role for the Cloud Manager 
 
 == How can I securely rotate my AWS credentials?
 
-As described above, Cloud Manager enables you to provide AWS credentials in a few ways: an IAM role associated with the Cloud Manager instance, by assuming an IAM role in a trusted account, or by providing AWS access keys.
+As described above, Cloud Manager enables you to provide AWS credentials in a few ways: an IAM role associated with the Connector instance, by assuming an IAM role in a trusted account, or by providing AWS access keys.
 
-With the first two options, Cloud Manager uses the AWS Security Token Service to obtain temporary credentials that rotate constantly. This process is the best practice, it's automatic and it's secure.
+With the first two options, Cloud Manager uses the AWS Security Token Service to obtain temporary credentials that rotate constantly. This process is the best practice--it's automatic and it's secure.
 
 If you provide Cloud Manager with AWS access keys, you should rotate the keys by updating them in Cloud Manager at a regular interval. This is a completely manual process.

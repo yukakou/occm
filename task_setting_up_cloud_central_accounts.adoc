@@ -88,9 +88,7 @@ The user can now access those workspaces from Cloud Manager, as long as the Conn
 
 == Associating Connectors with workspaces
 
-When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector. A Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
-
-You need to associate a Connector with workspaces so Workspace Admins can access those workspaces from Cloud Manager.
+You need to associate a Connector with workspaces so Workspace Admins can use those Connectors to create Cloud Volumes ONTAP systems.
 
 If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
 
@@ -108,4 +106,4 @@ link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors
 
 .Result
 
-Workspace Admins can now access the associated workspaces, as long as the user was also associated with the workspace.
+Workspace Admins can now use those Connectors to create Cloud Volumes ONTAP systems.

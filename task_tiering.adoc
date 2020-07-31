@@ -91,7 +91,7 @@ The permissions are included in the latest https://mysupport.netapp.com/cloudont
 
 * You need a service account that has the predefined Storage Admin role. You'll need to select this service account when you create a Cloud Volumes ONTAP working environment.
 +
-. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Set up this tiering service account as follows^]:
+https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Set up this tiering service account as follows^]:
 .. Assign the predefined _Storage Admin_ role to the tiering service account.
 .. Add the Connector service account as a _Service Account User_ to the tiering service account.
 +
