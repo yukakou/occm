@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_creating_connectors.html
 keywords: create connector in aws, create connector in azure, create connector in gcp, launch connector in aws, launch connector in azure, launch connector in gcp, deploy connector in aws, deploy connector in azure, deploy connector in gcp
-summary: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector. A Connector enables Cloud Manager to manage resources and processes within your public cloud environment. You also have the option to create a new Connector at any time.
+summary: An Account Admin will need to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. This page describes how to create a Connector directly from Cloud Manager.
 ---
 
 = Creating a Connector from Cloud Manager
@@ -13,7 +13,13 @@ summary: When you create your first Cloud Volumes ONTAP working environment, Clo
 :imagesdir: ./media/
 
 [.lead]
-When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector. A Connector enables Cloud Manager to manage resources and processes within your public cloud environment. You also have the option to create a new Connector at any time.
+An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment. This page describes how to create a Connector directly from Cloud Manager.
+
+These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
+
+link:concept_connectors.html[Learn when a Connector is required].
+
+TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager will prompt you to create a Connector if you don't have one yet.
 
 == Creating a Connector in AWS
 
@@ -22,6 +28,7 @@ Cloud Manager enables you to create a Connector in AWS directly from its user in
 .What you'll need
 
 * An AWS access key and secret key for an IAM user who has the https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^].
+
 * A VPC, subnet, and keypair in your AWS region of choice.
 
 .Steps
@@ -49,6 +56,8 @@ link:reference_networking_cloud_manager.html[Learn more about networking require
 * *Network*: Select the key pair to use with the instance, whether to enable a public IP address, and optionally specify a proxy configuration.
 
 * *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
++
+NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept_connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
 
 . Click *Create*.
 +
@@ -61,7 +70,9 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 .What you'll need
 
 * The https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^] for your Azure account.
+
 * An Azure subscription.
+
 * A VNet and subnet in your Azure region of choice.
 
 .Steps
@@ -93,6 +104,8 @@ The form is owned and hosted by Microsoft. Your credentials are not provided to 
 * *Network*: Choose a VNet and subnet, whether to enable a public IP address, and optionally specify a proxy configuration.
 
 * *Security Group*: Choose whether to create a new security group or whether to select an existing security group that allows inbound HTTP, HTTPS, and SSH access.
++
+NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept_connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
 
 . Click *Create*.
 +
@@ -105,8 +118,11 @@ Cloud Manager enables you to create a Connector in GCP directly from its user in
 .What you'll need
 
 * The https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^] for your Google Cloud account.
+
 * A Google Cloud project.
+
 * A service account that has the required permissions to create and manage Cloud Volumes ONTAP.
+
 * A VPC and subnet in your Google Cloud region of choice.
 
 .Steps
@@ -138,6 +154,8 @@ The form is owned and hosted by Google. Your credentials are not provided to Net
 * *Network*: Choose whether to enable a public IP address and optionally specify a proxy configuration.
 
 * *Firewall Policy*: Choose whether to create a new firewall policy or whether to select an existing firewall policy that allows inbound HTTP, HTTPS, and SSH access.
++
+NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept_connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
 
 . Click *Create*.
 +

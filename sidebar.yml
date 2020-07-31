@@ -17,14 +17,26 @@ entries:
     entries:
       - title: Learn about Cloud Manager
         url: /concept_overview.html
-      - title: Learn about Cloud Central accounts
-        url: /concept_cloud_central_accounts.html
       - title: Networking overview
         url: /reference_networking.html
+      - title: Sign up to Cloud Central
+        url: /task_signing_up.html
       - title: Log in to Cloud Manager
         url: /task_logging_in.html
       - title: Set up your Cloud Central account
-        url: /task_setting_up_cloud_central_accounts.html
+        entries:
+          - title: Learn about Cloud Central accounts
+            url: /concept_cloud_central_accounts.html
+          - title: Set up an account
+            url: /task_setting_up_cloud_central_accounts.html
+      - title: Set up a Connector
+        entries:
+          - title: Learn about Connectors
+            url: /concept_connectors.html
+          - title: Networking requirements
+            url: /reference_networking_cloud_manager.html
+          - title: Create a Connector
+            url: /task_creating_connectors.html
       - title: Where to get next
         url: /reference_whats_next.html
   - title: Manage Cloud Volumes ONTAP
@@ -233,14 +245,10 @@ entries:
     entries:
       - title: Find your system ID
         url: /task_finding_system_id.html
-      - title: Create and manage Connectors
+      - title: Manage Connectors
         entries:
-          - title: Learn about Connectors
-            url: /concept_connectors.html
-          - title: Networking requirements
-            url: /reference_networking_cloud_manager.html
-          - title: Create a Connector
-            url: /task_creating_connectors.html
+          - title: Manage existing Connectors
+            url: /task_managing_connectors.html
           - title: Other ways to create Connectors
             entries:
               - title: Connector host requirements
@@ -251,8 +259,6 @@ entries:
                 url: /task_launching_azure_mktp.html
               - title: Manually install the software
                 url: /task_installing_linux.html
-          - title: Manage existing Connectors
-            url: /task_managing_connectors.html
           - title: Default configuration
             url: /reference_connector_default_config.html
       - title: Manage the Cloud Central account

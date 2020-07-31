@@ -13,7 +13,7 @@ summary: In most cases, you will need to deploy a Connector in your cloud or on-
 :imagesdir: ./media/
 
 [.lead]
-In most cases, you will need to deploy a _Connector_ in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+In most cases, an Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 
 <image coming soon>
 
@@ -24,7 +24,7 @@ A Connector is required to use any of the following features within Cloud Manage
 * Cloud Volumes ONTAP
 * On-premises ONTAP clusters
 * Cloud Compliance
-* Kubernetes
+* Kubernetesb
 * Backup to Cloud
 * Monitoring
 * On-prem tiering
@@ -54,14 +54,16 @@ For example, each Connector is a key component in the health and operation of Cl
 
 == How to create a Connector
 
-When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector. You also have the option to create a new Connector at any time.
+An Account Admin needs to create a Connector before a Workspace Admin can create a Cloud Volumes ONTAP working environment and use any of the other features listed above.
 
-You can create a Connector in a number of ways:
+An Account Admin can create a Connector in a number of ways:
 
 * link:task_creating_connector.html[Directly from Cloud Manager] (recommended)
 * link:task_launching_aws_mktp.html[From the AWS Marketplace]
 * link:task_launching_azure_mktp.html[From the Azure Marketplace]
 * link:task_installing_linux.html[By downloading and installing the software on an existing Linux host]
+
+When you create your first Cloud Volumes ONTAP working environment, Cloud Manager will prompt you to create a Connector if you don't have one yet.
 
 == Permissions
 

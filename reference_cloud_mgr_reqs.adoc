@@ -32,16 +32,8 @@ GCP machine type::
 An instance type that meets the CPU and RAM requirements above. We recommend n1-standard-4  and use that machine type when you deploy the Connector directly from Cloud Manager.
 
 Supported operating systems::
-* CentOS 7.2
-* CentOS 7.3
-* CentOS 7.4
-* CentOS 7.5
 * CentOS 7.6
 * CentOS 7.7
-* Red Hat Enterprise Linux 7.2
-* Red Hat Enterprise Linux 7.3
-* Red Hat Enterprise Linux 7.4
-* Red Hat Enterprise Linux 7.5
 * Red Hat Enterprise Linux 7.6
 * Red Hat Enterprise Linux 7.7
 +
@@ -52,22 +44,7 @@ The Connector is supported on English-language versions of these operating syste
 Hypervisor::  A bare metal or hosted hypervisor that is certified to run CentOS or Red Hat Enterprise Linux
 https://access.redhat.com/certified-hypervisors[Red Hat Solution: Which hypervisors are certified to run Red Hat Enterprise Linux?^]
 
-Free disk space in /opt:: 100 GB
+Disk space in /opt:: 100 GB of space must be available
 
 Outbound internet access::
 Outbound internet access is required to install the Connector and for the Connector to manage resources and processes within your public cloud environment. For a list of endpoints, see link:reference_networking_cloud_manager.html[Networking requirements for the Connector].
-
-Ports::
-The following ports must be available:
-* 80 for HTTP access
-* 443 for HTTPS access
-* 3306 for the Cloud Manager database
-* 8080 for the Cloud Manager API proxy
-* 8666 for the Service Manager API
-* 8777 for the Health-Checker Container Service API
-+
-If other services are using these ports, installation of the Connector fails.
-+
-NOTE: There is a potential conflict with port 3306. If another instance of MySQL is running on the host, it uses port 3306 by default. You must change the port that the existing MySQL instance uses.
-+
-You can change the default HTTP and HTTPS ports when you create the Connector. You can't change the default port for the MySQL database.

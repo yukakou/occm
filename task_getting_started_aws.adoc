@@ -20,7 +20,7 @@ These steps assume that you're creating your first working environment, that you
 ==== image:number1.png[Number 1] Plan your configuration
 
 [role="quick-margin-para"]
-Cloud Manager offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. link:task_planning_your_config_azure.html[Learn more].
+Cloud Manager offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. link:task_planning_your_config.html[Learn more].
 
 ==== image:number2.png[Number 2] Provide the required AWS permissions
 

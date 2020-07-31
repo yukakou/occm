@@ -285,7 +285,7 @@ In any case, you should secure network access by ensuring that security group ru
 
 == Ports and security groups
 
-
+There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept_connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
 
 === Rules for the Connector in AWS
 
