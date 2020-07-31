@@ -1,0 +1,98 @@
+---
+sidebar: sidebar
+permalink: task_creating_connectors_gcp.html
+keywords: create connector in aws, create connector in azure, create connector in gcp, launch connector in aws, launch connector in azure, launch connector in gcp, deploy connector in aws, deploy connector in azure, deploy connector in gcp
+summary: An Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+---
+
+= Creating a Connector in GCP from Cloud Manager
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. link:concept_connectors.html[Learn when a Connector is required]. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
+
+This page describes how to create a Connector in AWS directly from Cloud Manager. You also have the option to link:task_installing_linux.html[download the software and install it on your own host].
+
+These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
+
+TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager will prompt you to create a Connector if you don't have one yet.
+
+== Setting up GCP permissions to create a Connector
+
+Before you can deploy a Connector from Cloud Manager, you need to ensure that your GCP account has the correct permissions and that a service account is set up for the Connector VM.
+
+.Steps
+
+. Ensure that the GCP user who deploys Cloud Manager from NetApp Cloud Central has the permissions in the https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml[Connector deployment policy for GCP^].
++
+https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[You can create a custom role using the YAML file^] and then attach it to the user. You'll need to use the gcloud command line to create the role.
+
+. Set up a service account that has the permissions that Cloud Manager needs to create and manage Cloud Volumes ONTAP systems in projects.
++
+You'll associate this service account with the Connector VM when you create it from Cloud Manager.
+
+.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud[Create a role in GCP^] that includes the permissions defined in the https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.8.0_GCP.yaml[Cloud Manager policy for GCP^]. Again, you'll need to use the gcloud command line.
++
+The permissions contained in this YAML file are different than the permissions in step 2a.
+
+.. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a GCP service account and apply the custom role that you just created^].
+
+.. If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
+
+.Result
+
+The GCP user now has the permissions required to create the Connector from Cloud Manager and the service account for the Connector VM is set up.
+
+== Creating a Connector in GCP
+
+Cloud Manager enables you to create a Connector in GCP directly from its user interface.
+
+.What you'll need
+
+* The https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^] for your Google Cloud account.
+
+* A Google Cloud project.
+
+* A service account that has the required permissions to create and manage Cloud Volumes ONTAP.
+
+* A VPC and subnet in your Google Cloud region of choice.
+
+.Steps
+
+. If you're creating you first Working Environment, click *Add Working Environment* and follow the prompts. Otherwise, click the Connector icon and select *Add Connector*.
++
+image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
+
+. Click *Let's Start*.
+
+. Choose *Google Cloud Platform* as your cloud provider.
++
+Remember that the Connector must have a network connection to the type of working environment that you're creating and the services that you're planning to enable.
++
+link:reference_networking_cloud_manager.html[Learn more about networking requirements for the Connector].
+
+. Review what you'll need and click *Continue*.
+
+. If you're prompted, log in to your Google account, which should have the required permissions to create the virtual machine instance.
++
+The form is owned and hosted by Google. Your credentials are not provided to NetApp.
+
+. Provide the required information:
+
+* *Basic Settings*: Enter a name for the virtual machine instance and specify a project and service account that has the required permissions.
+
+* *Location*: Specify a region, zone, VPC, and subnet for the instance.
+
+* *Network*: Choose whether to enable a public IP address and optionally specify a proxy configuration.
+
+* *Firewall Policy*: Choose whether to create a new firewall policy or whether to select an existing firewall policy that allows inbound HTTP, HTTPS, and SSH access.
++
+NOTE: There's no incoming traffic to the Connector, unless you initiate it. HTTP and HTTPS provide access to the link:concept_connectors.html#the-local-user-interface[local UI], which you'll use in rare circumstances. SSH is only needed if you need to connect to the host for troubleshooting.
+
+. Click *Create*.
++
+The instance should be ready in about 7 minutes. You should stay on the page until the process is complete.
