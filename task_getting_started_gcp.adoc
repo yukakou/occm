@@ -19,7 +19,7 @@ Get started with Cloud Volumes ONTAP for GCP in a few steps.
 
 [role="quick-margin-para"]
 If you don't have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:task_creating_connectors_gcp.html[Learn how to create a Connector in GCP].
-
++
 TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don't have one yet.
 
 ==== image:number2.png[Number 2] Plan your configuration
