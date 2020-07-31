@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_saas.html
 keywords: cloud manager, Connector, user interface, ui, interface, cloud, saas, saas interface
-summary: We're introducing a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
+summary: We've introduced a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
 ---
 
 = Cloud Manager transition to SaaS
@@ -13,19 +13,19 @@ summary: We're introducing a software-as-a-service experience for Cloud Manager.
 :imagesdir: ./media/
 
 [.lead]
-We're introducing a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
+We've introduced a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
 
-== The current Cloud Manager experience
+== The previous Cloud Manager experience
 
-Cloud Manager software is comprised of a user interface and the management layer that sends requests to cloud providers. To get started, you deploy Cloud Manager in your cloud network or on-premises network and then access the user interface that runs on that instance.
+Cloud Manager software was previously comprised of a user interface and a management layer that sent requests to cloud providers. To get started, you would deploy Cloud Manager in your cloud network or on-premises network and then access the user interface that runs on that instance.
 
-That experience is changing.
+That experience has changed.
 
-== A new SaaS experience
+== The new SaaS experience
 
-The Cloud Manager interface will be accessible through a SaaS-based user interface that you log in to from NetApp Cloud Central. You'll no longer need to access a user interface from software that runs in your network.
+The Cloud Manager interface is now accessible through a SaaS-based user interface that you log in to from NetApp Cloud Central. You no longer need to access a user interface from software that runs in your network.
 
-In most cases, you will need to deploy a _Connector_ in your cloud or on-premises network. The Connector is software that's needed to manage Cloud Volumes ONTAP and other cloud data services. (The software is actually the same as the existing Cloud Manager software--it includes the same user interface and the same management layer.)
+In most cases, you need to deploy a _Connector_ in your cloud or on-premises network. The Connector is software that's needed to manage Cloud Volumes ONTAP and other cloud data services. (The Connector is actually the same as the existing Cloud Manager software that you have installed.)
 
 == Benefits
 
@@ -39,7 +39,7 @@ If a user is associated with multiple Cloud Central accounts, they can change to
 +
 image:screenshot_switch_account.gif[]
 
-* You can easily switch between Connectors (what you know today as Cloud Manager instances) that are installed in different networks or different cloud providers.
+* You can easily switch between Connectors (what you know today as the Cloud Manager software) that are installed in different networks or different cloud providers.
 +
 image:screenshot_switch_service_connector.gif[]
 
@@ -62,7 +62,3 @@ To ensure adequate resources are available for proper functionality of the new f
 * AWS: t3.xlarge
 * Azure: DS3 v2
 * GCP: n1-standard-4
-
-== Where is this new SaaS experience available?
-
-Since 15 June 2020, we've gradually made this new SaaS experience available to new customers. We're planning to make it available to existing customers later on. Check the release notes for the latest updates.
