@@ -25,6 +25,8 @@ You use Cloud Manager to deploy the Global File Cache Management Server and Glob
 
 In this configuration you will deploy the Global File Cache Management Server and Global File Cache Core in the same working environment where you created your Cloud Volumes ONTAP HA pair using Cloud Manager.
 
+Watch link:https://www.youtube.com/watch?v=TGIQVssr43A[this video] to see the steps from start to finish.
+
 === Quick start
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details:
@@ -32,7 +34,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Deploy Cloud Volumes ONTAP as an HA pair
 
 [role="quick-margin-para"]
-For the current release,  deploy Cloud Volumes ONTAP as an HA pair in Azure and configure SMB file shares.  For more information, see  https://docs.netapp.com/us-en/occm/task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^].
+For the current release,  deploy Cloud Volumes ONTAP as an HA pair in Azure and configure SMB file shares. For more information, see https://docs.netapp.com/us-en/occm/task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^].
 
 ==== image:number2.png[Number 2] Deploy the Global File Cache Management Server
 

@@ -107,11 +107,11 @@ The Global File Cache Core requirements are:
 
 Depending on the level of restrictions and GPOs in the network environment, this account might require domain admin privileges.
 
-** It must have Run as a Service privileges.
+** It must have "Run as a Service" privileges.
 
-** The password should be set to Never Expire.
+** The password should be set to "Never Expire".
 
-** The account option User Must Change Password at Next Logon should be DISABLED (unchecked).
+** The account option "User Must Change Password at Next Logon" should be DISABLED (unchecked).
 
 ** It must be a member of the back-end file server Built-in Backup Operators group (this is automatically enabled when deployed through Cloud Manager).
 
