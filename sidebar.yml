@@ -261,8 +261,6 @@ entries:
                 url: /task_installing_linux.html
           - title: Default configuration
             url: /reference_connector_default_config.html
-      - title: Manage the Cloud Central account
-        url: /task_managing_cloud_central_accounts.html
       - title: Manage credentials
         entries:
           - title: AWS
@@ -285,6 +283,8 @@ entries:
                 url: /task_adding_gcp_accounts.html
           - title: NetApp Support Site credentials
             url: /task_adding_nss_accounts.html
+      - title: Manage the Cloud Central account
+        url: /task_managing_cloud_central_accounts.html
       - title: Manage an HTTPS certificate
         url: /task_installing_https_cert.html
       - title: Remove working environments
