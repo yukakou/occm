@@ -7,6 +7,8 @@ entries:
         entries:
           - title: What's new
             url: /reference_new_occm.html
+          - title: Transition to SaaS
+            url: /concept_saas.html
           - title: Known issues
             url: /reference_issues.html
           - title: Known limitations
