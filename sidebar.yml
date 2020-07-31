@@ -35,8 +35,51 @@ entries:
             url: /concept_connectors.html
           - title: Networking requirements
             url: /reference_networking_cloud_manager.html
+            entries:
+              - title: AWS
+                url: /reference_connector_networking_aws.html
+              - title: Azure
+                url: /reference_connector_networking_azure.html
+              - title: GCP
+                url: /reference_connector_networking_gcp.html
+          - title: Set up permissions
+            entries:
+              - title: AWS
+                url: /task_setting_up_permissions_aws.html
+              - title: Azure
+                url: /task_setting_up_permissions_azure.html
+              - title: GCP
+                url: /task_setting_up_permissions_gcp.html
           - title: Create a Connector
             url: /task_creating_connectors.html
+      - title: Set up a Connector
+        entries:
+          - title: Learn about Connectors
+            url: /concept_connectors.html
+          - title: Create in AWS
+            entries:
+              - title: Set up your networking
+                url: /reference_connector_networking_aws.html
+              - title: Set up AWS permissions
+                url: /task_setting_up_permissions_aws.html
+              - title: Create the Connector in AWS
+                url: /task_creating_connectors.html
+          - title: Create in Azure
+            entries:
+              - title: Set up your networking
+                url: /reference_connector_networking_azure.html
+              - title: Set up Azure permissions
+                url: /task_setting_up_permissions_azure.html
+              - title: Create the Connector in Azure
+                url: /task_creating_connectors.html
+          - title: Create in GCP
+            entries:
+              - title: Set up your networking
+                url: /reference_connector_networking_gcp.html
+              - title: Set up GCP permissions
+                url: /task_setting_up_permissions_gcp.html
+              - title: Create the Connector in GCP
+                url: /task_creating_connectors.html
       - title: Where to get next
         url: /reference_whats_next.html
   - title: Manage Cloud Volumes ONTAP
