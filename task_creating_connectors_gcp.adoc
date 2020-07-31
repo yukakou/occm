@@ -47,6 +47,20 @@ The permissions contained in this YAML file are different than the permissions i
 
 The GCP user now has the permissions required to create the Connector from Cloud Manager and the service account for the Connector VM is set up.
 
+== Enabling Google Cloud APIs
+
+Several APIs are required to deploy the Connector and Cloud Volumes ONTAP.
+
+.Step
+
+. https://cloud.google.com/apis/docs/getting-started#enabling_apis[Enable the following Google Cloud APIs in your project^].
++
+* Cloud Deployment Manager V2 API
+* Cloud Logging API
+* Cloud Resource Manager API
+* Compute Engine API
+* Identity and Access Management (IAM) API
+
 == Creating a Connector in GCP
 
 Cloud Manager enables you to create a Connector in GCP directly from its user interface.

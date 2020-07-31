@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_getting_started_aws.html
 keywords: amazon web services, aws, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, vpc, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, get started, network, vpn, multi-cloud, tier, tiering, storage tier, data tier, vpc endpoint, endpoint, S3, subscribe, subscribing, marketplace, granting, permissions, policy, iam policy, ec2 console, ami, mediator, connectivity, internet, outbound, endpoint, connection, networks, replicating, ec2 service, policies, attach, iam user, access key, secret key, keys, sign up, cloud manager, cloud volumes ontap, cloud ontap, create
-summary: Get started with Cloud Volumes ONTAP in a few steps.
+summary: Get started with Cloud Volumes ONTAP for AWS in a few steps.
 ---
 
-= Getting started with Cloud Volumes ONTAP in AWS
+= Getting started with Cloud Volumes ONTAP for AWS
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,24 +13,19 @@ summary: Get started with Cloud Volumes ONTAP in a few steps.
 :imagesdir: ./media/
 
 [.lead]
-Get started with Cloud Volumes ONTAP in a few steps.
+Get started with Cloud Volumes ONTAP for AWS in a few steps.
 
-These steps assume that you're creating your first working environment, that you haven't created a link:concept_connectors.html[Connector] yet, and that you'll create the Connector in AWS directly from Cloud Manager (see the links at the end of the page for alternatives).
+==== image:number1.png[Number 1] Create a Connector
 
-==== image:number1.png[Number 1] Plan your configuration
+[role="quick-margin-para"]
+If you don't have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:task_creating_connectors_aws.html[Learn how to create a Connector in AWS].
+
+TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don't have one yet.
+
+==== image:number2.png[Number 2] Plan your configuration
 
 [role="quick-margin-para"]
 Cloud Manager offers preconfigured packages that match your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you. link:task_planning_your_config.html[Learn more].
-
-==== image:number2.png[Number 2] Provide the required AWS permissions
-
-[role="quick-margin-para"]
-When you create a Connector from Cloud Manager, you need to use an AWS account that has permissions to deploy the instance.
-
-[role="quick-margin-list"]
-.. Go to the AWS IAM console and create a policy by copying and pasting the contents of the https://mysupport.netapp.com/cloudontap/iampolicies[Connector IAM policy for AWS^].
-
-.. Attach the policy to the IAM user.
 
 ==== image:number3.png[Number 3] Set up your networking
 
@@ -61,7 +56,7 @@ Click *Add Working Environment*, select the type of system that you would like t
 .Related links
 
 * link:concept_evaluating.html[Evaluating]
-* link:task_creating_connectors.html[Creating a Connector from Cloud Manager]
+* link:task_creating_connectors_aws.html[Creating a Connector from Cloud Manager]
 * link:task_launching_aws_mktp.html[Launching a Connector from the AWS Marketplace]
 * link:task_installing_linux.html[Installing the Connector software on a Linux host]
 * link:reference_permissions.html#what-cloud-manager-does-with-aws-permissions[What Cloud Manager does with AWS permissions]
