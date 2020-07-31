@@ -36,6 +36,8 @@ We have fully introduced a software-as-a-service experience for Cloud Manager. T
 
 Cloud Manager includes a https://cloudmanager.netapp.com/[SaaS-based interface] that is integrated with NetApp Cloud Central, and Connectors that enable Cloud Manager to manage resources and processes within your public cloud environment. (The Connector is actually the same as the existing Cloud Manager software that you have installed.)
 
+NOTE: A Connector is required in most cases, but it's not required to use Azure NetApp Files, Cloud Volumes Service, or Cloud Sync from Cloud Manager.
+
 As previously mentioned in these release notes, you'll need to upgrade the machine type for your Connectors to access the new capabilities that we're offering. Cloud Manager will prompt you with instructions to change the machine type. link:concept_saas.html#the-local-user-interface[Learn more].
 
 === Cloud Volumes ONTAP enhancements
@@ -60,9 +62,9 @@ You just need to add the following to the API request when creating the single n
 "azureEncryptionParameters": {
       "key": <azure id of encryptionset>
   }
-
-This feature requires new permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.7.4.json[Cloud Manager policy for Azure^].
-
++
+This feature requires new permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.8.7.json[Cloud Manager policy for Azure^].
++
 [source,json]
 "Microsoft.Compute/diskEncryptionSets/read"
 
@@ -156,17 +158,17 @@ Starting with this release, the Global File Cache Management instance and Core i
 
 See link:concept_gfc.html[Global File Cache overview] for more information.
 
-Note that the initial configuration that can be deployed using Cloud Manager must meet the following requirements. Other configurations continue to be deployed using the legacy procedures.
+The initial configuration that can be deployed using Cloud Manager must meet the following requirements. Other configurations like Cloud Volumes Service, Azure NetApp Files, and Cloud Volumes Service for AWS and GCP continue to be deployed using the legacy procedures. https://cloud.netapp.com/global-file-cache/onboarding[Learn more^].
 
 * The backend storage platform that is used as your central storage must be a working environment where you have deployed a Cloud Volumes ONTAP HA pair in Azure.
 +
-Other storage platforms and other cloud providers are not supported at this time.
+Other storage platforms and other cloud providers are not supported at this time using Cloud Manager but can be deployed using legacy deployment procedures.
 
 * The GFC Core can be deployed only as a stand-alone instance.
 +
 If you need to use a Load Distributed design that includes multiple Core instances you must use the legacy procedures.
 
-This feature requires new permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.7.4.json[Cloud Manager policy for Azure^].
+This feature requires new permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.8.7.json[Cloud Manager policy for Azure^].
 
 [source,json]
 "Microsoft.Resources/deployments/operationStatuses/read",
