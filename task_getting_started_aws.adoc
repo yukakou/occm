@@ -19,7 +19,8 @@ Get started with Cloud Volumes ONTAP for AWS in a few steps.
 
 [role="quick-margin-para"]
 If you don't have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:task_creating_connectors_aws.html[Learn how to create a Connector in AWS].
-+
+
+[role="quick-margin-para"]
 TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don't have one yet.
 
 ==== image:number2.png[Number 2] Plan your configuration
