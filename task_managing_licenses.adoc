@@ -1,0 +1,111 @@
+---
+sidebar: sidebar
+permalink: task_managing_licenses.html
+keywords: license, licensing, install, updating license, system license, add system license, adding a system license, byol license, add byol license, update byol license, nlf, license generator, backup license, add backup license, update backup license
+summary: Add a Cloud Volumes ONTAP BYOL system license to add additional capacity, update an existing system license, and manage BYOL licenses for Backup to Cloud.
+---
+
+= Managing BYOL licenses for Cloud Volumes ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Add a Cloud Volumes ONTAP BYOL system license to add additional capacity, update an existing system license, and manage BYOL licenses for Backup to Cloud.
+
+== Managing system licenses
+
+You can purchase multiple licenses for a Cloud Volumes ONTAP BYOL system to allocate more than 368 TB of capacity. For example, you might purchase two licenses to allocate up to 736 TB of capacity to Cloud Volumes ONTAP. Or you could purchase four licenses to get up to 1.4 PB.
+
+The number of licenses that you can purchase for a single node system or HA pair is unlimited.
+
+=== Obtaining a system license file
+
+You'll need the system license file to update an existing license. When you add a new system license, you can either enter the serial number or upload the license file. If you don't have the license file, you can obtain it from netapp.com.
+
+.Steps
+
+. Go to the https://register.netapp.com/register/getlicensefile[NetApp License File Generator^] and log in using your NetApp Support Site credentials.
+
+. Enter your password, choose your product, enter the serial number, confirm that you have read and accepted the privacy policy, and then click *Submit*.
++
+*Example*
++
+image:screenshot_license_generator.gif[Screen shot: Shows an example of the NetApp License File Generator web page filled out, including a password, a product (NetApp Cloud Volumes ONTAP BYOL for AWS), and a product serial number.]
+
+. Choose whether you want to receive the serialnumber.NLF JSON file through email or direct download.
+
+=== Adding a new system license
+
+Add a new BYOL system license at any time to allocate an additional 368 TB of capacity to your Cloud Volumes ONTAP BYOL system.
+
+.Steps
+
+. In Cloud Manager, open the Cloud Volumes ONTAP BYOL working environment.
+
+. Click the menu icon and then click *License*.
++
+image:screenshot_menu_license.gif[A screenshot that shows menu icon in a working environment. The License option enables you to upload a license file.]
+
+. Click *Add CVO System License*.
++
+image:screenshot_system_license.gif[A screenshot of a Cloud Volumes ONTAP System License which shows the button to add a system license and update a system license.]
+
+. Choose to enter the serial number or to upload the license file.
+
+. Click *Add License*.
+
+.Result
+
+Cloud Manager installs the new license file on the Cloud Volumes ONTAP system.
+
+=== Updating a system license
+
+If your existing Cloud Volumes ONTAP BYOL system license is about to expire, you can update the license in Cloud Manager after renewing it.
+
+.Steps
+
+. In Cloud Manager, open the Cloud Volumes ONTAP BYOL working environment.
+
+. Click the menu icon and then click *License*.
+
+. Click *Update CVO System License*.
++
+image:screenshot_system_license.gif[A screenshot of a Cloud Volumes ONTAP System License which shows the button to add a system license and update a system license.]
+
+. Click *Upload File* and select the license file.
+
+. Click *Update License*.
+
+.Result
+
+Cloud Manager updates the license on the Cloud Volumes ONTAP system.
+
+== Adding and updating your Backup BYOL license
+
+You use the BYOL Licenses page to add or update your Backup BYOL license.
+
+.Steps
+
+. In Cloud Manager, open the Cloud Volumes ONTAP BYOL working environment.
+
+. Click the menu icon and then click *License*.
++
+image:screenshot_menu_license.gif[A screenshot that shows menu icon in a working environment. The License option enables you to upload a license file.]
+
+. Click *Add Backup License* or *Update Backup License* depending on whether you are adding a new license or updating an existing license.
++
+image:screenshot_backup_byol_license.png[A screenshot that shows the BYOL licensing page with buttons for add and update backup license]
+
+. Enter the license information and click *Add License*:
++
+* If you have the serial number, select the *Enter Backup BYOL Serial Number* option and enter the serial number.
+* If you have the backup license file, select the *Upload Backup BYOL License* option and follow the prompts to attach the file.
++
+image:screenshot_backup_byol_license_add.png[A screenshot that shows the page to add the Backup BYOL license.]
+
+.Result
+
+Cloud Manager adds or updates the license so that your Backup to Cloud service is active.
