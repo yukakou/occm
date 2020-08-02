@@ -39,8 +39,6 @@ For most tasks, Cloud Manager prompts you to deploy a Connector in your cloud ne
 
 Cloud Manager includes a SaaS-based interface that is integrated with NetApp Cloud Central, and Connectors that manage Cloud Volumes ONTAP and other cloud services.
 
-<image coming soon>
-
 === Software-as-a-service
 
 Cloud Manager is accessible through a https://cloudmanager.netapp.com[SaaS-based user interface] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Cloud Central accounts and Connectors.
@@ -50,8 +48,6 @@ Cloud Manager is accessible through a https://cloudmanager.netapp.com[SaaS-based
 https://cloud.netapp.com[NetApp Cloud Central^] provides a centralized location to access and manage https://www.netapp.com/us/products/cloud-services/use-cases-for-netapp-cloud-services.aspx[NetApp cloud services^]. With centralized user authentication, you can use the same set of credentials to access Cloud Manager and other cloud services like Cloud Insights.
 
 When you log in to Cloud Manager for the first time, you're prompted to create a _Cloud Central account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
-
-<image coming soon>
 
 === Connectors
 

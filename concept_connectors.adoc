@@ -15,8 +15,6 @@ summary: In most cases, you will need to deploy a Connector in your cloud or on-
 [.lead]
 In most cases, an Account Admin will need to deploy a _Connector_ in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 
-<image coming soon>
-
 == When a Connector is required
 
 A Connector is required to use any of the following features within Cloud Manager:
