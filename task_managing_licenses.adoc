@@ -63,7 +63,7 @@ Cloud Manager installs the new license file on the Cloud Volumes ONTAP system.
 
 === Updating a system license
 
-If your existing Cloud Volumes ONTAP BYOL system license is about to expire, you can update the license in Cloud Manager after renewing it.
+If your existing Cloud Volumes ONTAP BYOL system license is about to expire, you can renew your BYOL license by contacting your NetApp representative. You can then update the license in Cloud Manager by uploading the new license file.
 
 .Steps
 
