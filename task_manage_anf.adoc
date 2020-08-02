@@ -101,7 +101,7 @@ You must bind the service principal to your Azure subscription and assign it a c
 . https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/roles-create-custom[Create a custom role^] that includes the following permissions:
 +
 [source,json]
-"Microsoft.NetApp/*”
+"Microsoft.NetApp/*"
 "Microsoft.Resources/resources/read"
 "Microsoft.Resources/subscriptions/resourceGroups/read"
 "Microsoft.Resources/subscriptions/resourcegroups/resources/read"
