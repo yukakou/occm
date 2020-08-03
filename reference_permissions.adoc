@@ -14,7 +14,7 @@ translate: false
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in https://mysupport.netapp.com/cloudontap/iampolicies[the policies provided by NetApp^]. You might want to understand what Cloud Manager does with these permissions.
+Cloud Manager requires permissions to perform actions in your cloud provider. These permissions are included in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^]. You might want to understand what Cloud Manager does with these permissions.
 
 == What Cloud Manager does with AWS permissions
 

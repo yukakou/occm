@@ -27,6 +27,7 @@ Cloud Manager enables you to deploy and manage NetApp Cloud Volumes ONTAP, which
 * link:task_manage_anf.html[Azure NetApp Files]
 * link:task_manage_cvs_aws.html[Cloud Volumes Service for AWS]
 * link:task_getting_started_compliance.html[Cloud Compliance]
+* link:task_gfc_getting_started.html[Global File Cache]
 * link:concept_backup_to_cloud.html[Backup to Cloud]
 * link:task_getting_started_monitoring.html[Cloud Insights]
 

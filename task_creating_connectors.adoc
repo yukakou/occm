@@ -27,7 +27,7 @@ Cloud Manager enables you to create a Connector in AWS directly from its user in
 
 .What you'll need
 
-* An AWS access key and secret key for an IAM user who has the https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^].
+* An AWS access key and secret key for an IAM user who has the https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^].
 
 * A VPC, subnet, and keypair in your AWS region of choice.
 
@@ -69,7 +69,7 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 
 .What you'll need
 
-* The https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^] for your Azure account.
+* The https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^] for your Azure account.
 
 * An Azure subscription.
 
@@ -117,7 +117,7 @@ Cloud Manager enables you to create a Connector in GCP directly from its user in
 
 .What you'll need
 
-* The https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^] for your Google Cloud account.
+* The https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^] for your Google Cloud account.
 
 * A Google Cloud project.
 

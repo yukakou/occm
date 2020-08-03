@@ -49,7 +49,7 @@ If you want to tier cold data to Azure Blob storage, you don't need to set up a 
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 +
-These permissions are included in the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy].
+These permissions are included in the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy].
 +
 For details about setting up data tiering, see link:task_tiering.html[Tiering cold data to low-cost object storage].
 

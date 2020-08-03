@@ -37,7 +37,7 @@ link:reference_cloud_mgr_reqs.html[Review the VM requirements].
 
 * For the network security group, the Connector requires inbound connections using SSH, HTTP, and HTTPS.
 +
-link:reference_security_groups_azure.html[Learn more about security group rules for the Connector].
+link:reference_networking_cloud_manager.html#ports-and-security-groups[Learn more about security group rules for the Connector].
 
 * Under *Management*, enable *System assigned managed identity* for the Connector by selecting *On*.
 +
@@ -71,7 +71,7 @@ When you deployed the Connector in Azure, you should have enabled a https://docs
 
 . Create a custom role using the Cloud Manager policy:
 
-.. Download the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Azure policy^].
+.. Download the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Azure policy^].
 
 .. Modify the JSON file by adding Azure subscription IDs to the assignable scope.
 +
@@ -102,7 +102,7 @@ You should now have a custom role called Cloud Manager Operator that you can ass
 
 * Select the *Cloud Manager Operator* role.
 +
-NOTE: Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
+NOTE: Cloud Manager Operator is the default name provided in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy]. If you chose a different name for the role, then select that name instead.
 
 * Assign access to a *Virtual Machine*.
 

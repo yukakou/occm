@@ -83,7 +83,7 @@ You don't need to set up a connection between the performance tier and the capac
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 
-The permissions are included in the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy].
+The permissions are included in the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy].
 
 == Requirements to tier cold data to a Google Cloud Storage bucket
 

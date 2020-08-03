@@ -21,7 +21,7 @@ It's best to create a Connector directly from Cloud Manager, but you can launch 
 
 .. Download the Cloud Manager IAM policy from the following location:
 +
-https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
+https://mysupport.netapp.com/site/info/cloud-manager-policies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
 
 .. From the IAM console, create your own policy by copying and pasting the text from the Cloud Manager IAM policy.
 
