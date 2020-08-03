@@ -17,7 +17,7 @@ Known limitations identify platforms, devices, or functions that are not support
 
 == Cloud Manager should remain running at all times
 
-Cloud Manager is a key component in the health and billing of Cloud Volumes ONTAP. If Cloud Manager is powered down, Cloud Volumes ONTAP systems will shut down after losing communication with Cloud Manager for longer than 4 days.
+Cloud Manager is a key component in the health and billing of Cloud Volumes ONTAP. If Cloud Manager is powered down, Cloud Volumes ONTAP systems will shut down after losing communication with Cloud Manager for longer than 14 days.
 
 == Shared Linux hosts are not supported
 

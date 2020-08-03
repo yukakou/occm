@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_modifying_ontap_cloud.html
 keywords: license, licensing, install, instance type, virtual machine type, VM type, change, modify, configuration, subscription, paygo, pay-as-you-go, pay as you go, byol, password, MTU, jumbo frames, c4.xlarge, c4.8xlarge, HA pair, file, license file, install, upload, change, modify, svm, storage virtual machine, password, route tables, nlf, gcp, machine type, virtual machine type, vm instance, write speed, high write speed, normal write speed, storage VM, storage virtual machine, SVM, modify SVM name, change SVM name
-summary: You might need to change the configuration of Cloud Volumes ONTAP instances as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and move to an alternate subscription.
+summary: You might need to change the configuration of Cloud Volumes ONTAP systems as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and more.
 ---
 
 = Modifying Cloud Volumes ONTAP systems
@@ -13,38 +13,7 @@ summary: You might need to change the configuration of Cloud Volumes ONTAP insta
 :imagesdir: ./media/
 
 [.lead]
-
-You might need to change the configuration of Cloud Volumes ONTAP instances as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and move to an alternate subscription.
-
-== Installing license files on Cloud Volumes ONTAP BYOL systems
-
-If Cloud Manager cannot obtain a BYOL license file from NetApp, you can obtain the file yourself and then manually upload the file to Cloud Manager so it can install the license on the Cloud Volumes ONTAP system.
-
-.Steps
-
-. Go to the https://register.netapp.com/register/getlicensefile[NetApp License File Generator^] and log in using your NetApp Support Site credentials.
-
-. Enter your password, choose your product, enter the serial number, confirm that you have read and accepted the privacy policy, and then click *Submit*.
-+
-*Example*
-+
-image:screenshot_license_generator.gif[Screen shot: Shows an example of the NetApp License File Generator web page filled out, including a password, a product (NetApp Cloud Volumes ONTAP BYOL for AWS), and a product serial number.]
-
-. Choose whether you want to receive the serialnumber.NLF JSON file through email or direct download.
-
-. In Cloud Manager, open the Cloud Volumes ONTAP BYOL working environment.
-
-. Click the menu icon and then click *License*.
-+
-image:screenshot_menu_license.gif[A screenshot that shows menu icon in a working environment. The License option enables you to upload a license file.]
-
-. Click *Upload License File*.
-
-. Click *Upload* and then select the file.
-
-.Result
-
-Cloud Manager installs the new license file on the Cloud Volumes ONTAP system.
+You might need to change the configuration of Cloud Volumes ONTAP systems as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and more.
 
 == Changing the instance or machine type for Cloud Volumes ONTAP
 
@@ -106,7 +75,7 @@ Cloud Volumes ONTAP reboots with the new license, instance type or machine type,
 
 == Moving to an alternate Cloud Volumes ONTAP configuration
 
-If you want to move between a pay-as-you-go subscription and a BYOL subscription or between a single Cloud Volumes ONTAP system and an HA pair, you can deploy a new system and then replicate data from the existing system to the new system.
+If you want to switch between a pay-as-you-go subscription and a BYOL subscription or between a single Cloud Volumes ONTAP system and an HA pair, then you need to deploy a new system and then replicate data from the existing system to the new system.
 
 .Steps
 

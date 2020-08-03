@@ -1,0 +1,107 @@
+---
+sidebar: sidebar
+permalink: task_manage_cloud_volumes_snapshots.html
+keywords: Cloud Volumes Service for AWS, snapshots, on-demand, snapshot schedule
+summary: You can create a snapshot policy for each volume so that you can recover or restore the entire contents of a volume from an earlier time. You can also create an on-demand snapshot of a cloud volume when needed.
+---
+
+= Manage cloud volumes snapshots
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can create a snapshot policy for each volume so that you can recover or restore the entire contents of a volume from an earlier time. You can also create an on-demand snapshot of a cloud volume when needed.
+
+== Create an on-demand snapshot
+
+You can create an on-demand snapshot of a cloud volume if you want to create a snapshot with the current volume state.
+
+.Steps
+. Open the working environment.
+. Hover over the volume and click *Create a snapshot copy*.
+. Enter a name for the snapshot, or use the automatically generated name, and click *Create*.
++
+image:screenshot_cvs_ondemand_snapshot.png[Screenshot of selecting the snapshot copy to be restored to a new volume]
++
+The snapshot is created.
+
+== Create or modify a snapshot policy
+
+You can create or modify a snapshot policy as necessary for a cloud volume. You define the snapshot policy from the _Snapshot Policy_ tab either when creating a volume or when editing a volume.
+
+.Steps
+. Open the working environment.
+. Hover over the volume and click *Edit*.
+. From the _Snapshot Policy_ tab, move the enable snapshots slider to the right.
+. Define the schedule for snapshots:
+.. Select the frequency: *Hourly*, *Daily*, *Weekly*, or *Monthly*
+.. Select the number of snapshots you want to keep.
+.. Select the day, hour, and minute when the snapshot should be taken.
++
+image:screenshot_cvs_aws_snapshot_policy.png[Screenshot of a configured Snapshot policy]
+. Click *Add volume* or *Update volume* to save your policy settings.
+
+== Disable a snapshot policy
+
+You can disable a snapshot policy to stop snapshots from being created for a short period of time while retaining your snapshot policy settings.
+
+.Steps
+. Open the working environment.
+. Hover over the volume and click *Edit*.
+. From the _Snapshot Policy_ tab, move the enable snapshots slider to the left.
++
+image:screenshot_cvs_aws_snapshot_policy_button_off.png[Screenshot of the snapshot policy button in the disabled position]
+. Click *Update volume*.
+
+When you want to re-enable the snapshot policy, move the enable snapshots slider to the right and click *Update volume*.
+
+== Delete a snapshot
+
+You can delete a snapshot from the Volumes page.
+
+.Steps
+. Open the working environment.
+. Hover over the volume and click *Delete a Snapshot copy*.
+. Select the snapshot from the drop-down list and click *Delete*.
++
+image:screenshot_cvs_delete_snapshot.png[Screenshot of selecting the snapshot copy to be deleted]
+. In the confirmation dialog box, click *Delete*.
+
+== Revert a volume from a snapshot
+
+You can revert a volume to an earlier point in time from an existing snapshot.
+
+When you revert a volume, the content of the snapshot overwrites the existing volume configuration. Any changes that were made to the data in the volume after the snapshot was created are lost.
+
+Note that clients do not need to remount the volume after the revert operation.
+
+.Steps
+. Open the working environment.
+. Hover over the volume and click *Restore the volume*.
+. Select the snapshot that you want to use to restore the existing volume from the drop-down list and click *Restore*.
++
+image:screenshot_cvs_revert_snapshot.png[Screenshot of selecting the snapshot copy to be used to overwrite the existing volume]
+
+== Restore a snapshot to a new volume
+
+You can restore a snapshot to a new volume as necessary.
+
+.Steps
+. Open the working environment.
+. Hover over the volume and click *Restore to a new volume*.
+. Select the snapshot that you want to use to create the new volume from the drop-down list.
+. Enter a name for the new volume and click *Restore*.
++
+image:screenshot_cvs_restore_snapshot.png[Screenshot of selecting the snapshot copy to be restored to a new volume]
++
+The volume is created in the working environment.
+. If you need to change any of the volume attributes, such as volume path or service level:
+.. Hover over the volume and click *Edit*.
+.. Make your changes and click *Update volume*.
+
+.After you finish
+
+Continue with link:task_manage_cvs_aws.html#mount-the-cloud-volume[Mounting the cloud volume^].

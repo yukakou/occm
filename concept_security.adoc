@@ -53,7 +53,16 @@ If you want to use this encryption option, then you must ensure that the AWS KMS
 
 https://azure.microsoft.com/en-us/documentation/articles/storage-service-encryption/[Azure Storage Service Encryption^] for data at rest is enabled by default for Cloud Volumes ONTAP data in Azure. No setup is required.
 
-NOTE: Customer-managed keys are not supported with Cloud Volumes ONTAP.
+You can encrypt Azure managed disks on single node Cloud Volumes ONTAP systems using external keys from another account. This feature is supported using Cloud Manager APIs.
+
+You just need to add the following to the API request when creating the single node system:
+
+[source,json]
+"azureEncryptionParameters": {
+      "key": <azure id of encryptionset>
+  }
+
+NOTE: Customer-managed keys are not supported with Cloud Volumes ONTAP HA pairs.
 
 === Google Cloud Platform default encryption
 

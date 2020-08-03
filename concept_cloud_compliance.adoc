@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_compliance.html
-keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, scans, scanning, azure netapp files, cloud volumes ontap
-summary: Cloud Compliance is a data privacy and compliance service for Azure NetApp Files and Cloud Volumes ONTAP in AWS and Azure. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data.
+keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, cloud volumes ontap
+summary: Cloud Compliance is a data privacy and compliance service for Azure NetApp Files and Cloud Volumes ONTAP. It can also be used to scan your Amazon S3 buckets to identify the personal and sensitive data that resides in S3 object storage. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data.
 ---
 
 = Learn about Cloud Compliance
@@ -13,9 +13,7 @@ summary: Cloud Compliance is a data privacy and compliance service for Azure Net
 :imagesdir: ./media/
 
 [.lead]
-Cloud Compliance is a data privacy and compliance service for Azure NetApp Files and Cloud Volumes ONTAP. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data.
-
-Cloud Compliance is currently available as a Controlled Availability release.
+Cloud Compliance is a data privacy and compliance service for Azure NetApp Files and Cloud Volumes ONTAP. It can also be used to scan your Amazon S3 buckets to identify the personal and sensitive data that resides in S3 object storage. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data.
 
 https://cloud.netapp.com/cloud-compliance[Learn about the use cases for Cloud Compliance^].
 
@@ -60,9 +58,10 @@ A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A
 
 At a high-level, Cloud Compliance works like this:
 
-. You enable Cloud Compliance on one or more working environments.
+. You deploy an instance of Cloud Compliance in Cloud Manager.
+. You enable it on one or more working environments.
 . Cloud Compliance scans the data using an AI learning process.
-. In Cloud Manager, you click *Compliance* and use the provided dashboard and reporting tools to help you in your compliance efforts.
+. In Cloud Manager, you click *Compliance* and use the provided dashboard and reporting tools to help in your compliance efforts.
 
 == The Cloud Compliance instance
 
@@ -102,7 +101,7 @@ image:diagram_cloud_compliance_scan.png[A diagram that shows a Cloud Manager ins
 
 After the initial scan, Cloud Compliance continuously scans each volume to detect incremental changes (this is why it's important to keep the instance running).
 
-You can turn scans on and off at the working environment level, but not at the volume level. link:task_managing_compliance.html[Learn how].
+You can turn scans on and off at the working environment level link:task_managing_compliance.html#deactivating-compliance-scans-for-a-working-environment[learn how], at the volume level link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-individual-volumes[learn how], and at the bucket level link:task/scanning_s3.html#configuring-buckets[learn how].
 
 == Information that Cloud Compliance indexes
 
@@ -121,13 +120,11 @@ Cloud Compliance uses AI to extract natural persons’ names from documents. lin
 
 == Networking overview
 
-Cloud Manager deploys the Cloud Compliance instance with a private IP address and a security group that enables inbound HTTP connections from Cloud Manager. This connection enables you to access the Cloud Compliance dashboard from the Cloud Manager interface.
+Cloud Manager deploys the Cloud Compliance instance with a security group that enables inbound HTTP connections from Service Connector instance.
 
 Outbound rules are completely open. The instance connects to the internet through a proxy from Cloud Manager. Internet access is needed to upgrade the Cloud Compliance software and to send usage metrics.
 
 If you have strict networking requirements, link:task_getting_started_compliance.html#reviewing-prerequisites[learn about the endpoints that Cloud Compliance contacts].
-
-TIP: The indexed data never leaves the Cloud Compliance instance--the data isn't relayed outside of your virtual network and it isn't sent to Cloud Manager.
 
 == User access to compliance information
 
