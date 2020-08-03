@@ -224,7 +224,19 @@ entries:
       - title: Azure NetApp Files
         url: /task_manage_anf.html
       - title: Cloud Volumes Service for AWS
-        url: /task_manage_cvs_aws.html
+        entries:
+          - title: Learn about Cloud Volumes Service for AWS
+            url: /concept_cvs_aws.html
+          - title: Deploy and manage cloud volumes
+            url: /task_manage_cvs_aws.html
+          - title: Manage cloud volumes snapshots
+            url: /task_manage_cloud_volumes_snapshots.html
+          - title: Reference
+            entries:
+              - title: Service levels and allocated capacity
+                url: /reference_cvs_service_levels_and_quotas.html
+              - title: AWS security group settings for Windows AD servers
+                url: /reference_security_groups_windows_ad_servers.html
   - title: View Amazon S3 buckets
     url: /task_viewing_amazon_s3.html
   - title: Gain insight into data privacy
