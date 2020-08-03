@@ -60,7 +60,7 @@ You should now have a custom role called _Azure SetupAsService_.
 
 * Select the *Azure SetupAsService* role.
 +
-NOTE: Azure SetupAsService is the default name provided in the https://mysupport.netapp.com/info/web/ECMP11022837.html[Connector deployment policy for Azure^]. If you chose a different name for the role, then select that name instead.
+NOTE: Azure SetupAsService is the default name provided in the https://mysupport.netapp.com/site/info/cloud-manager-policies[Connector deployment policy for Azure^]. If you chose a different name for the role, then select that name instead.
 
 * Assign access to an *Azure AD user, group, or application*.
 
@@ -78,7 +78,7 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 
 .What you'll need
 
-* The https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^] for your Azure account.
+* The https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^] for your Azure account.
 
 * An Azure subscription.
 

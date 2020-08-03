@@ -67,7 +67,7 @@ Cloud Manager enables you to create a Connector in GCP directly from its user in
 
 .What you'll need
 
-* The https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^] for your Google Cloud account.
+* The https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^] for your Google Cloud account.
 
 * A Google Cloud project.
 

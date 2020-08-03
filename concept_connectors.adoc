@@ -56,7 +56,7 @@ An Account Admin needs to create a Connector before a Workspace Admin can create
 
 An Account Admin can create a Connector in a number of ways:
 
-* link:task_creating_connector.html[Directly from Cloud Manager] (recommended)
+* link:task_creating_connectors.html[Directly from Cloud Manager] (recommended)
 * link:task_launching_aws_mktp.html[From the AWS Marketplace]
 * link:task_launching_azure_mktp.html[From the Azure Marketplace]
 * link:task_installing_linux.html[By downloading and installing the software on an existing Linux host]
@@ -71,7 +71,7 @@ Specific permissions are needed to create the Connector and another set of permi
 
 The user who creates a Connector from Cloud Manager needs specific permissions to deploy the instance in your cloud provider of choice. Cloud Manager will remind you of the permissions requirements when you create a Connector.
 
-https://mysupport.netapp.com/cloudontap/iampolicies[View policies for each cloud provider^].
+https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^].
 
 === Permissions for the Connector instance
 
@@ -81,7 +81,7 @@ When you create a Connector directly from Cloud Manager, Cloud Manager creates t
 
 If you create the Connector yourself from the AWS Marketplace, the Azure Marketplace, or by manually installing the software, then you'll need to make sure that the right permissions are in place.
 
-https://mysupport.netapp.com/cloudontap/iampolicies[View policies for each cloud provider^].
+https://mysupport.netapp.com/site/info/cloud-manager-policies[View policies for each cloud provider^].
 
 == When to use multiple Connectors
 

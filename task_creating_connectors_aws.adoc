@@ -29,7 +29,7 @@ Before you can deploy a Connector from Cloud Manager, you need to ensure that yo
 
 . Download the Connector IAM policy from the following location:
 +
-https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
+https://mysupport.netapp.com/site/info/cloud-manager-policies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
 
 . From the AWS IAM console, create your own policy by copying and pasting the text from the Connector IAM policy.
 
@@ -45,7 +45,7 @@ Cloud Manager enables you to create a Connector in AWS directly from its user in
 
 .What you'll need
 
-* An AWS access key and secret key for an IAM user who has the https://mysupport.netapp.com/cloudontap/iampolicies[required permissions^].
+* An AWS access key and secret key for an IAM user who has the https://mysupport.netapp.com/site/info/cloud-manager-policies[required permissions^].
 
 * A VPC, subnet, and keypair in your AWS region of choice.
 
