@@ -20,6 +20,169 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager 3.8.7 (3 Aug 2020)
+
+* <<New software-as-a-service experience>>
+* <<Cloud Volumes ONTAP enhancements>>
+* <<Azure NetApp Files enhancements>>
+* <<Cloud Volumes Service for AWS enhancements>>
+* <<Cloud Compliance enhancements>>
+* <<Backup to Cloud enhancements>>
+* <<Support for Global File Cache>>
+
+=== New software-as-a-service experience
+
+We have fully introduced a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
+
+Cloud Manager includes a https://cloudmanager.netapp.com/[SaaS-based interface] that is integrated with NetApp Cloud Central, and Connectors that enable Cloud Manager to manage resources and processes within your public cloud environment. (The Connector is actually the same as the existing Cloud Manager software that you have installed.)
+
+NOTE: A Connector is required in most cases, but it's not required to use Azure NetApp Files, Cloud Volumes Service, or Cloud Sync from Cloud Manager.
+
+As previously mentioned in these release notes, you'll need to upgrade the machine type for your Connectors to access the new capabilities that we're offering. Cloud Manager will prompt you with instructions to change the machine type. link:concept_saas.html#the-local-user-interface[Learn more].
+
+=== Cloud Volumes ONTAP enhancements
+
+Two enhancements are available for Cloud Volumes ONTAP.
+
+* *Multiple BYOL licenses to allocate additional capacity*
++
+You can now purchase multiple licenses for a Cloud Volumes ONTAP BYOL system to allocate more than 368 TB of capacity. For example, you might purchase two licenses to allocate up to 736 TB of capacity to Cloud Volumes ONTAP. Or you could purchase four licenses to get up to 1.4 PB.
++
+The number of licenses that you can purchase for a single node system or HA pair is unlimited.
++
+Be aware that disk limits can prevent you from reaching the capacity limit by using disks alone. You can go beyond the disk limit by http://vmwvatapp01-stg.corp.netapp.com/occm_july20-whats-new/us-en/concept_data_tiering.html[tiering inactive data to object storage^]. For information about disk limits, refer to https://docs.netapp.com/us-en/cloud-volumes-ontap/[storage limits in the Cloud Volumes ONTAP Release Notes^].
++
+link:task_managing_licenses.html[Learn how to add a new system license].
+
+* *Encrypt Azure managed disks using external keys*
++
+You can now encrypt Azure managed disks on single node Cloud Volumes ONTAP systems using external keys from another account. This feature is supported using APIs.
++
+You just need to add the following to the API request when creating the single node system:
++
+[source,json]
+"azureEncryptionParameters": {
+      "key": <azure id of encryptionset>
+  }
++
+This feature requires new permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.8.7.json[Cloud Manager policy for Azure^].
++
+[source,json]
+"Microsoft.Compute/diskEncryptionSets/read"
+
+=== Azure NetApp Files enhancements
+
+This release includes several enhancements in support of Azure NetApp Files.
+
+* *Azure NetApp Files setup*
++
+You can now set up and manage Azure NetApp Files directly from Cloud Manager. link:task_manage_anf.html[Learn how].
+
+* *New protocol support*
++
+You can now create NFSv4.1 volumes and SMB volumes.
+
+* *Capacity pool and volume snapshot management*
++
+Cloud Manager enables you to create, delete, and restore volume snapshots. You can also create new capacity pools and specify their service levels.
+
+* *Ability to edit volumes*
++
+You can edit a volume by changing its size and managing tags.
+
+=== Cloud Volumes Service for AWS enhancements
+
+There are many enhancements in Cloud Manager in support of Cloud Volumes Service for AWS.
+
+* *New protocol support*
++
+Now you can create NFSv4.1 volumes, SMB volumes, and dual protocol volumes. Previously you could only create and discover NFSv3 volumes within Cloud Manager.
+
+* *Snapshot support*
++
+You can create snapshot policies to automate the creation of volume snapshots, create an on-demand snapshot, restore a volume from a snapshot, create a new volume based on an existing snapshot, and more. See link:task_manage_cloud_volumes_snapshots.html[Managing cloud volumes snapshots^] for more information.
+
+* *Create the initial volume in a region from Cloud Manager*
++
+Before this release the first volume in each region had to be created in the Cloud Volumes Service for AWS interface. Now you can subscribe to link:https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=netapp+cloud+volumes+service[one of the NetApp Cloud Volumes Service offerings on the AWS Marketplace^] and then create the first volume from Cloud Manager.
+
+=== Cloud Compliance enhancements
+
+The following enhancements are now available for Cloud Compliance.
+
+* *Revised deployment process for your Cloud Compliance instance*
++
+The Cloud Compliance instance is set up and deployed using a new wizard in Cloud Manager. After deployment is complete you enable the service for each working environment you want to scan.
+
+* *Ability to select the volumes to be scanned within a working environment*
++
+Now you can enable and disable scanning for individual volumes in a Cloud Volumes ONTAP or Azure NetApp Files working environment. If you don't need to scan certain volumes for compliance, turn them off.
++
+link:task_getting_started_compliance.html[Learn more about disabling scanning for volumes.]
+
+* *Navigation tabs to quickly jump to your area of interest*
++
+New tabs for Dashboard, Investigation, and Configuration enable you to get to these sections more easily.
+
+* *HIPAA Report*
++
+A new Health Insurance Portability and Accountability Act (HIPAA) Report is now available. This report is designed to aid in your organization’s requirement to comply with HIPAA data privacy laws.
++
+link:task_generating_compliance_reports.html#hipaa-report[Learn more about the HIPAA report.]
+
+* *New sensitive personal data type*
++
+Cloud Compliance can now find ICD-9-CM Medical Codes in files.
+
+* *New personal data type*
++
+Cloud Compliance can now find two new national identifiers in files: Croatian ID (OIB) and Greek ID.
+
+=== Backup to Cloud enhancements
+
+The following enhancements are now available for Backup to Cloud.
+
+* *Bring Your Own License (BYOL) is now available*
++
+Backup to Cloud has been available only with a Pay As You Go (PAYGO) license. A BYOL license allows you to purchase a license from NetApp to use Backup to Cloud for a certain period of time and for a maximum amount backup space. When either limit is reached you will need to renew the license.
++
+link:concept_backup_to_cloud.html#cost[Learn more about the new Backup to Cloud BYOL license.]
+
+* *Support for data protection (DP) volumes*
++
+Data protection volumes can be backed up and restored now.
+
+=== Support for Global File Cache
+
+NetApp Global File Cache enables you to consolidate silos of distributed file servers into one cohesive global storage footprint in the public cloud. This creates a globally accessible file system in the cloud that all distributed locations can use as if they were local.
+
+Starting with this release, the Global File Cache Management instance and Core instance can be deployed and managed through Cloud Manager. This saves many hours during your initial deployment process and provides a single pane of glass through Cloud Manager for this and other deployed systems. Global File Cache Edge instances are still deployed locally at your remote offices.
+
+See link:concept_gfc.html[Global File Cache overview] for more information.
+
+The initial configuration that can be deployed using Cloud Manager must meet the following requirements. Other configurations like Cloud Volumes Service, Azure NetApp Files, and Cloud Volumes Service for AWS and GCP continue to be deployed using the legacy procedures. https://cloud.netapp.com/global-file-cache/onboarding[Learn more^].
+
+* The backend storage platform that is used as your central storage must be a working environment where you have deployed a Cloud Volumes ONTAP HA pair in Azure.
++
+Other storage platforms and other cloud providers are not supported at this time using Cloud Manager but can be deployed using legacy deployment procedures.
+
+* The GFC Core can be deployed only as a stand-alone instance.
++
+If you need to use a Load Distributed design that includes multiple Core instances you must use the legacy procedures.
+
+This feature requires new permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.8.7.json[Cloud Manager policy for Azure^].
+
+[source,json]
+"Microsoft.Resources/deployments/operationStatuses/read",
+"Microsoft.Insights/Metrics/Read",
+"Microsoft.Compute/virtualMachines/extensions/write",
+"Microsoft.Compute/virtualMachines/extensions/read",
+"Microsoft.Compute/virtualMachines/extensions/delete",
+"Microsoft.Compute/virtualMachines/delete",
+"Microsoft.Network/networkInterfaces/delete",
+"Microsoft.Network/networkSecurityGroups/delete",
+"Microsoft.Resources/deployments/delete",
+
 == Improved experience requires stronger machine type (15 July 2020)
 
 As we improve the Cloud Manager experience, you'll need to upgrade your machine type to access the new capabilities that we'll be offering. The improvements will include a link:concept_saas.html[software-as-a-service experience for Cloud Manager] and new and enhanced cloud service integrations.

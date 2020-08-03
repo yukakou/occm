@@ -1,12 +1,12 @@
 ---
 sidebar: sidebar
 permalink: reference_default_configs.html
-keywords: linux, user name, operating system, installation files, installation folder, folder, log, logs, service, mysql, packages, linux,  svm, LIF, LIFs, configuration backups, attributes, autosize, security style, space guarantee, unix permissions, NTFS, UNIX, boot, root, disks, aggr0, aggr1, svm, svms, storage virtual machine, LIF failover, failover, attributes, volume attributes, boot disk, root disk, licenses, feature licenses, default licenses, ontap licenses, ontap features
-summary: Details about how Cloud Manager and Cloud Volumes ONTAP are configured by default can help you administer the systems.
+keywords: svm, LIF, LIFs, configuration backups, attributes, autosize, security style, space guarantee, unix permissions, NTFS, UNIX, boot, root, disks, aggr0, aggr1, svm, svms, storage virtual machine, LIF failover, failover, attributes, volume attributes, boot disk, root disk, licenses, feature licenses, default licenses, ontap licenses, ontap features
+summary: Understanding how Cloud Volumes ONTAP is configured by default can help you set up and administer your systems, especially if you are familiar with ONTAP because the default setup for Cloud Volumes ONTAP is different than ONTAP.
 translate: false
 ---
 
-= Default configurations
+= Default configuration for Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,49 +14,9 @@ translate: false
 :imagesdir: ./media/
 
 [.lead]
-Details about how Cloud Manager and Cloud Volumes ONTAP are configured by default can help you administer the systems.
-
-== Default configuration for Cloud Manager on Linux
-
-If you need to troubleshoot Cloud Manager or your Linux host, it might help to understand how Cloud Manager is configured.
-
-* If you deployed Cloud Manager from NetApp Cloud Central (or directly from a cloud provider's marketplace), note the following:
-
-** In AWS, the user name for the EC2 Linux instance is ec2-user.
-
-** The operating system for the Cloud Manager image is as follows:
-*** AWS: Red Hat Enterprise Linux 7.5 (HVM)
-*** Azure: Red Hat Enterprise Linux 7.6 (HVM)
-*** GCP: CentOS 7.6
-+
-The operating system does not include a GUI. You must use a terminal to access the system.
-
-* The Cloud Manager installation folder resides in the following location:
-+
-/opt/application/netapp/cloudmanager
-
-* Log files are contained in the following folder:
-+
-/opt/application/netapp/cloudmanager/log
-
-* The Cloud Manager service is named occm.
-
-* The occm service is dependent on the MySQL service.
-+
-If the MySQL service is down, then the occm service is down too.
-
-* Cloud Manager installs the following packages on the Linux host, if they are not already installed:
-** 7Zip
-** AWSCLI
-** Java
-** Kubectl
-** MySQL
-** Tridentctl
-** Wget
-
-== Default configuration for Cloud Volumes ONTAP
-
 Understanding how Cloud Volumes ONTAP is configured by default can help you set up and administer your systems, especially if you are familiar with ONTAP because the default setup for Cloud Volumes ONTAP is different than ONTAP.
+
+== Defaults
 
 * Cloud Volumes ONTAP is available as a single-node system in AWS, Azure, and GCP, and as an HA pair in AWS and Azure.
 
@@ -83,9 +43,9 @@ Understanding how Cloud Volumes ONTAP is configured by default can help you set 
 +
 NOTE: LIF failover is disabled by default for Cloud Volumes ONTAP due to EC2 requirements. Migrating a LIF to a different port breaks the external mapping between IP addresses and network interfaces on the instance, making the LIF inaccessible.
 
-* Cloud Volumes ONTAP sends configuration backups to Cloud Manager using HTTPS.
+* Cloud Volumes ONTAP sends configuration backups to the Connector using HTTPS.
 +
-When logged in to Cloud Manager, the backups are accessible from https://ipaddress/occm/offboxconfig/
+The backups are accessible from https://ipaddress/occm/offboxconfig/ where _ipaddress_ is the IP address of the Connector host.
 
 * Cloud Manager sets a few volume attributes differently than other management tools (System Manager or the CLI, for example).
 +

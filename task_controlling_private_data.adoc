@@ -27,11 +27,11 @@ For some types of personal data, Cloud Compliance uses _proximity validation_ to
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Compliance* and click the *Dashboard* tab.
 
 . To investigate the details for all personal data, click the icon next to the personal data percentage.
 +
-image:screenshot_compliance_personal.gif[]
+image:screenshot_compliance_personal.gif[A screenshot of selecting the personal data percentage.]
 
 . To investigate the details for a specific type of personal data, click *View All* and then click the *Investigate Results* icon for a specific type of personal data.
 +
@@ -60,33 +60,35 @@ The personal data found in files can be general personal data or national identi
 | IBAN number (International Bank Account Number) | No
 | IP address | Yes
 
-.29+| National Identifiers | Belgian ID (Numero National) | Yes
+.31+| National Identifiers | Belgian ID (Numero National) | Yes
 | Brazilian ID (CPF) | Yes
-| Bulgarian ID (Unified Civil Number) | Yes
+| Bulgarian ID (UCN) | Yes
 | California Driver's License | Yes
+| Croatian ID (OIB) | Yes
 | Cyprus Tax Identification Number (TIC) | Yes
+| Czech/Slovak ID | Yes
 | Danish ID (CPR) | Yes
-| Estonian ID (Isikukood) | Yes
-| Finnish ID (henkilötunnus) | Yes
+| Dutch ID (BSN) | Yes
+| Estonian ID | Yes
+| Finnish ID (HETU) | Yes
 | French Tax Identification Number (SPI) | Yes
 | German Tax Identification Number (Steuerliche Identifikationsnummer) | Yes
-| Hungarian Tax Identification Number (Adóazonosító jel) | Yes
+| Greek ID | Yes
+| Hungarian Tax Identification Number | Yes
 | Irish ID (PPS) | Yes
 | Israeli ID | Yes
-| Italian ID (Codice Fiscale) | Yes
+| Italian Tax Identification Number | Yes
 | Latvian ID | Yes
-| Lithuanian ID (Asmens kodas) | Yes
+| Lithuanian ID | Yes
 | Luxembourg ID | Yes
-| Maltese ID Card Number | Yes
-| Netherlands ID (BSN) | Yes
-| Polish Tax Identification Number | Yes
-| Portuguese ID (NIF) | Yes
+| Maltese ID | Yes
+| Polish ID (PESEL) | Yes
+| Portuguese Tax Identification Number (NIF) | Yes
 | Romanian ID (CNP) | Yes
-| Slovak Tax Identification Number | Yes
-| Slovenian Tax Identification Number | Yes
+| Slovenian ID (EMSO) | Yes
 | South African ID | Yes
-| Spanish ID (DNI) | Yes
-| Swedish ID (personnummer) | Yes
+| Spanish Tax Identification Number | Yes
+| Swedish ID | Yes
 | U.K. ID (NINO) | Yes
 | USA Social Security Number (SSN) | Yes
 |===
@@ -109,7 +111,7 @@ NOTE: Only English is supported when scanning for sensitive personal data. Suppo
 
 . To investigate the details for all sensitive personal data, click the icon next to the sensitive personal data percentage.
 +
-image:screenshot_compliance_sensitive_personal.gif[]
+image:screenshot_compliance_sensitive_personal.gif[A screenshot of selecting the sensitive personal data percentage.]
 
 . To investigate the details for a specific type of sensitive personal data, click *View All* and then click the *Investigate Results* icon for a specific type of sensitive personal data.
 +
@@ -124,6 +126,7 @@ The sensitive personal data that Cloud Compliance can find in files includes the
 Criminal Procedures Reference::	Data concerning a natural person’s criminal convictions and offenses.
 Ethnicity Reference::	Data concerning a natural person’s racial or ethnic origin.
 Health Reference:: Data concerning a natural person’s health.
+ICD-9-CM Medical Codes:: Codes used in the medical and health industry.
 ICD-10-CM Medical Codes:: Codes used in the medical and health industry.
 Philosophical Beliefs Reference::	Data concerning a natural person’s philosophical beliefs.
 Religious Beliefs Reference::	Data concerning a natural person’s religious beliefs.

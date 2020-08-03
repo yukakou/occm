@@ -21,8 +21,9 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 ==== image:number1.png[Number 1] Verify support for your configuration
 
-[role="quick-margin-para"]
-You're running Cloud Volumes ONTAP 9.7 or later in Azure.
+[role="quick-margin-list"]
+* You're running Cloud Volumes ONTAP 9.7 or later in Azure.
+* You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_backups.html#adding-and-updating-your-backup-byol-license[and activated^] a Backup to Cloud BYOL license from NetApp.
 
 ==== image:number2.png[Number 2] Enable Backup to Cloud on your new or existing system
 
@@ -62,14 +63,16 @@ Cloud Volumes ONTAP 9.7 and later.
 Supported Azure regions::
 Backup to Cloud is supported in all Azure regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
 
-Azure Marketplace subscription::
-A subscription through the Azure Marketplace is required before you enable Backup to Cloud. link:task_deploying_otc_azure.html[You can subscribe from the Details & Credentials page of the working environment wizard].
+License requirements::
+For Backup to Cloud PAYGO licensing, a subscription through the Azure Marketplace is required before you enable Backup to Cloud. Billing for Backup to Cloud is done through this subscription. link:task_deploying_otc_azure.html[You can subscribe from the Details & Credentials page of the working environment wizard].
++
+For Backup to Cloud BYOL licensing, you do not need an Azure subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_backups.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
 
 == Enabling Backup to Cloud on a new system
 
 Backup to Cloud is enabled by default in the working environment wizard. Be sure to keep the option enabled.
 
-NOTE: If you want to pick the name of the resource group, *disable* Backup to Cloud when deploying Cloud Volumes ONTAP. Follow the steps for <<enabling backup to cloud on an existing system,enabling backup to cloud on an existing system>> to enable Backup to Cloud and choose the resource group.
+NOTE: If you want to pick the name of the resource group, *disable* Backup to Cloud when deploying Cloud Volumes ONTAP. Follow the steps for <<enabling-backup-to-cloud-on-an-existing-system,enabling backup to cloud on an existing system>> to enable Backup to Cloud and choose the resource group.
 
 .Steps
 

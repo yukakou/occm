@@ -13,19 +13,19 @@ summary: You use a Google Cloud account to deploy Cloud Manager in a project. Yo
 :imagesdir: ./media/
 
 [.lead]
-A service account provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP systems in the same project as Cloud Manager, or in different projects. Google Cloud accounts that you add to Cloud Manager are used to enable data tiering.
+A service account provides Cloud Manager with permissions to deploy and manage Cloud Volumes ONTAP systems in the same project as Cloud Manager, or in different projects.
 
 == Project and permissions for Cloud Manager
 
-Before you can deploy Cloud Volumes ONTAP in Google Cloud, you must first deploy Cloud Manager in a Google Cloud project. Cloud Manager can't be running on your premises, or in a different cloud provider.
+Before you can deploy Cloud Volumes ONTAP in Google Cloud, you must first deploy a Connector in a Google Cloud project. The Connector can't be running on your premises, or in a different cloud provider.
 
-Two sets of permissions must be in place before you deploy Cloud Manager from https://cloud.netapp.com[NetApp Cloud Central^]:
+Two sets of permissions must be in place before you deploy a Connector directly from Cloud Manager:
 
-. You need to deploy Cloud Manager using a Google account that has permissions to launch the Cloud Manager VM instance from Cloud Central.
+. You need to deploy a Connector using a Google account that has permissions to launch the Connector VM instance from Cloud Manager.
 
-. When deploying Cloud Manager, you are prompted to select a https://cloud.google.com/iam/docs/service-accounts[service account^] for the VM instance. Cloud Manager gets permissions from the service account to create and manage Cloud Volumes ONTAP systems on your behalf. Permissions are provided by attaching a custom role to the service account.
+. When deploying the Connector, you are prompted to select a https://cloud.google.com/iam/docs/service-accounts[service account^] for the VM instance. Cloud Manager gets permissions from the service account to create and manage Cloud Volumes ONTAP systems on your behalf. Permissions are provided by attaching a custom role to the service account.
 
-We have set up two YAML files that include the required permissions for the user and the service account. link:task_getting_started_gcp.html[Learn how to use the YAML files to set up permissions].
+We have set up two YAML files that include the required permissions for the user and the service account. link:task_creating_connectors_gcp.html[Learn how to use the YAML files to set up permissions].
 
 The following image depicts the permission requirements described in numbers 1 and 2 above:
 
@@ -33,9 +33,9 @@ image:diagram_permissions_gcp.png[explanation]
 
 == Project for Cloud Volumes ONTAP
 
-Cloud Volumes ONTAP can reside in the same project as Cloud Manager, or in a different project. To deploy Cloud Volumes ONTAP in a different project, you need to first add the Cloud Manager service account and role to that project.
+Cloud Volumes ONTAP can reside in the same project as the Connector, or in a different project. To deploy Cloud Volumes ONTAP in a different project, you need to first add the Connector service account and role to that project.
 
-* link:task_getting_started_gcp.html#service-account[Learn how to set up the Cloud Manager service account (see step 2)].
+* link:task_creating_connectors_gcp.html#setting-up-gcp-permissions-to-create-a-connector[Learn how to set up service account (see step 2)].
 * link:task_deploying_gcp.html[Learn how to deploy Cloud Volumes ONTAP in GCP and select a project].
 
 == Account for data tiering

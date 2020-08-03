@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_managing_cloud_central_accounts.html
-keywords: account settings, workspaces, service connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, service connector, manage service connector, manage workspace, associate service connector
-summary: After you perform initial setup, you might need to later manage users, workspaces, and service connectors.
+keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector
+summary: After you perform initial setup, you might need to later manage users, workspaces, and Connectors.
 ---
 
 = Managing workspaces and users in the Cloud Central account
@@ -13,7 +13,7 @@ summary: After you perform initial setup, you might need to later manage users, 
 :imagesdir: ./media/
 
 [.lead]
-link:task_setting_up_cloud_central_accounts.html[After you perform initial setup], you might need to later manage users, workspaces, and service connectors.
+link:task_setting_up_cloud_central_accounts.html[After you perform initial setup], you might need to later manage users, workspaces, and Connectors.
 
 link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
 
@@ -84,7 +84,7 @@ image:screenshot_associate_user_workspace.gif[A screenshot that shows the action
 
 .Result
 
-The user can now access those workspaces from Cloud Manager, as long as the service connector was also associated with the workspaces.
+The user can now access those workspaces from Cloud Manager, as long as the Connector was also associated with the workspaces.
 
 == Managing workspaces
 
@@ -102,20 +102,20 @@ Manage your workspaces by creating, renaming, and deleting them. Note that you c
 * Click *Rename* to rename the workspace.
 * Click *Delete* to delete the workspace.
 
-== Managing a service connector's workspaces
+== Managing a Connector's workspaces
 
-You need to associate the service connector with workspaces so Workspace Admins can access those workspaces from Cloud Manager.
+You need to associate the Connector with workspaces so Workspace Admins can access those workspaces from Cloud Manager.
 
-If you only have Account Admins, then associating the service connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
+If you only have Account Admins, then associating the Connector with workspaces isn't required. Account Admins have the ability to access all workspaces in Cloud Manager by default.
 
-link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and service connectors].
+link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors[Learn more about users, workspaces, and Connectors].
 
 .Steps
 
 . Click *Account Settings*.
 
-. Click *Service Connector*.
+. Click *Connector*.
 
-. Click *Manage Workspaces* for the service connector that you want to associate.
+. Click *Manage Workspaces* for the Connector that you want to associate.
 
-. Select the workspaces to associate with the service connector and click *Apply*.
+. Select the workspaces to associate with the Connector and click *Apply*.

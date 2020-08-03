@@ -51,6 +51,10 @@ You'll need to enter this information in Cloud Manager when you add the GCP acco
 
 Now that you have an access key for a service account, you can add it to Cloud Manager.
 
+.What you'll need
+
+You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html[Learn how].
+
 .Steps
 
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.

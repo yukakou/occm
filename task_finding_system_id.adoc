@@ -15,6 +15,10 @@ summary: To help you get started, your NetApp representative might ask you for t
 [.lead]
 To help you get started, your NetApp representative might ask you for your Cloud Manager system ID. The ID is typically used for licensing and troubleshooting purposes.
 
+.What you'll need
+
+You need to create a Connector before you can change Cloud Manager settings. link:task_creating_connectors.html[Learn how].
+
 .Steps
 
 . In the upper right of the Cloud Manager console, click the Settings icon.

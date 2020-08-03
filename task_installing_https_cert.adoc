@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_installing_https_cert.html
-keywords: https certificate, certificate, adding, installing, ca, certificate authority, format, encoding
+keywords: https certificate, certificate, adding, installing, ca, certificate authority, format, encoding, renewing
 summary: By default, Cloud Manager uses a self-signed certificate for HTTPS access to the web console. You can install a certificate signed by a certificate authority (CA), which provides better security protection than a self-signed certificate.
 ---
 
-= Installing an HTTPS certificate for secure access
+= Managing an HTTPS certificate for secure access
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,6 +14,14 @@ summary: By default, Cloud Manager uses a self-signed certificate for HTTPS acce
 
 [.lead]
 By default, Cloud Manager uses a self-signed certificate for HTTPS access to the web console. You can install a certificate signed by a certificate authority (CA), which provides better security protection than a self-signed certificate.
+
+== Before you get started
+
+You need to create a Connector before you can change Cloud Manager settings. link:task_creating_connectors.html[Learn how].
+
+== Installing an HTTPS certificate
+
+Install a certificate signed by a CA for secure access.
 
 .Steps
 
@@ -53,3 +61,19 @@ The certificate must use the Privacy Enhanced Mail (PEM) Base-64 encoded X.509 f
 Cloud Manager now uses the CA-signed certificate to provide secure HTTPS access. The following image shows a Cloud Manager system that is configured for secure access:
 
 image:screenshot_https_cert.gif[Screen shot: Shows the HTTPS Setup page after you install a signed certificate. The page shows the certificate properties and an option to renew the certificate.]
+
+== Renewing the Cloud Manager HTTPS certificate
+
+You should renew the Cloud Manager HTTPS certificate before it expires to ensure secure access to the Cloud Manager web console. If you do not renew the certificate before it expires, a warning appears when users access the web console using HTTPS.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *HTTPS Setup*.
++
+Details about the Cloud Manager certificate displays, including the expiration date.
+
+. Click *Renew HTTPS Certificate* and follow the steps to generate a CSR or install your own CA-signed certificate.
+
+.Result
+
+Cloud Manager uses the new CA-signed certificate to provide secure HTTPS access.

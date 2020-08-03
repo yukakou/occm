@@ -1,0 +1,212 @@
+---
+sidebar: sidebar
+permalink: reference_cvs_service_levels_and_quotas.html
+keywords: Cloud Volumes Service for AWS, service levels, bandwidth, capacity, quotas, inodes
+summary: The cost for Cloud Volumes Service for AWS is based on the service level and the allocated capacity that you select. Selecting the appropriate service level and capacity helps you meet your storage needs at the lowest cost.
+---
+
+= Service levels and allocated capacity
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+
+[.lead]
+The cost for Cloud Volumes Service for AWS is based on the _service level_ and the _allocated capacity_ that you select. Selecting the appropriate service level and capacity helps you meet your storage needs at the lowest cost.
+
+== Considerations
+
+Storage needs include two fundamental aspects:
+
+* The storage _capacity_ for holding data
+* The storage _bandwidth_ for interacting with data
+
+If you consume more storage space than the capacity you selected for the volume, the following considerations apply:
+
+* You will be billed for the additional storage capacity that you consume at the price defined by your service level.
+
+* The amount of storage bandwidth available to the volume does not increase until you increase the allocated capacity size or change the service level.
+
+== Service levels
+
+Cloud Volumes Service for AWS supports three service levels. You specify your service level when you create or modify the volume.
+
+The service levels are catered to different storage capacity and storage bandwidth needs:
+
+* **Standard** (capacity)
++
+If you want capacity at the lowest cost, and your bandwidth needs are limited, then the Standard service level might be most appropriate for you.  An example is using the volume as a backup target.
++
+** Bandwidth: 16 KB of bandwidth per GB provisioned capacity
+
+* **Premium** (a balance of capacity and performance)
++
+If your application has a balanced need for storage capacity and bandwidth, then the Premium service level might be most appropriate for you. This level is less expensive per MB/s than the Standard service level, and it is also less expensive per GB of storage capacity than the Extreme service level.
++
+** Bandwidth: 64 KB of bandwidth per GB provisioned capacity
+
+* **Extreme** (performance)
++
+The Extreme service level is least expensive in terms of storage bandwidth. If your application demands storage bandwidth without the associated demand for lots of storage capacity, then the Extreme service level might be most appropriate for you.
++
+** Bandwidth: 128 KB of bandwidth per GB provisioned capacity
+
+== Allocated capacity
+You specify your allocated capacity for the volume when you create or modify the volume.
+
+While you would select your service level based on your general, high-level business needs, you should select your allocated capacity size based on the specific needs of applications, for example:
+
+* How much storage space the applications need
+* How much storage bandwidth per second the applications or the users require
+
+Allocated capacity is specified in GBs. A volume's allocated capacity can be set within the range of 100 GB to 100,000 GB (equivalent to 100 TBs).
+
+=== Number of inodes
+Volumes less than or equal to 1 TB can use up to 20 million inodes. The number of inodes increase by 20 million for each TB you allocate, up to a maximum of 100 million inodes.
+
+* \<= 1TB = 20 million inodes
+* >1 TB to 2 TB = 40 million inodes
+* >2 TB to 3 TB = 60 million inodes
+* >3 TB to 4 TB = 80 million inodes
+* >4 TB to 100 TB = 100 million inodes
+
+== Bandwidth
+
+The combination of both the service level and the allocated capacity you select determines the maximum bandwidth for the volume.
+
+If your applications or users need more bandwidth than your selections, you can change the service level or increase the allocated capacity.  The changes do not disrupt data access.
+
+== Selecting the service level and the allocated capacity
+
+To select the most appropriate service level and allocated capacity for your needs, you need to know how much capacity and bandwidth you require at the peak or the edge.
+
+=== List of service levels and allocated capacity
+
+The leftmost column indicates the capacity, and the other columns define the MB/s available at each capacity point based on service level.
+
+See link:https://aws.amazon.com/marketplace/pp/B07MF4GHYW?qid=1595869056263&sr=0-2&ref_=srh_res_product_title[Contract subscription pricing] and link:https://aws.amazon.com/marketplace/pp/B0848MXK74?qid=1595869056263&sr=0-1&ref_=srh_res_product_title[Metered subscription pricing^] for complete details on pricing.
+
+[cols=4*,options="header",cols="15,15,15,15",width="80%"]
+|===
+|  Capacity (TB)
+|  Standard (MB/s)
+|  Premium (MB/s)
+|  Extreme (MB/s)
+
+|	0.1 (100 GB)	|	      1.6	    |	      6.4	 	  |	      12.8
+|       1       |       16      |       64      |       128
+|       2       |       32      |       128     |       256
+|       3       |       48      |       192     |       384
+|       4       |       64      |       256     |       512
+|       5       |       80      |       320     |       640
+|       6       |       96      |       384     |       768
+|       7       |       112     |       448     |       896
+|       8       |       128     |       512     |       1,024
+|       9       |       144     |       576     |       1,152
+|       10      |       160     |       640     |       1,280
+|       11      |       176     |       704     |       1,408
+|       12      |       192     |       768     |       1,536
+|       13      |       208     |       832     |       1,664
+|       14      |       224     |       896     |       1,792
+|       15      |       240     |       960     |       1,920
+|       16      |       256     |       1,024   |       2,048
+|       17      |       272     |       1,088   |       2,176
+|       18      |       288     |       1,152   |       2,304
+|       19      |       304     |       1,216   |       2,432
+|       20      |       320     |       1,280   |       2,560
+|       21      |       336     |       1,344   |       2,688
+|       22      |       352     |       1,408   |       2,816
+|       23      |       368     |       1,472   |       2,944
+|       24      |       384     |       1,536   |       3,072
+|       25      |       400     |       1,600   |       3,200
+|       26      |       416     |       1,664   |       3,328
+|       27      |       432     |       1,728   |       3,456
+|       28      |       448     |       1,792   |       3,584
+|       29      |       464     |       1,856   |       3,712
+|       30      |       480     |       1,920   |       3,840
+|       31      |       496     |       1,984   |       3,968
+|       32      |       512     |       2,048   |       4,096
+|       33      |       528     |       2,112   |       4,224
+|       34      |       544     |       2,176   |       4,352
+|       35      |       560     |       2,240   |       4,480
+|       36      |       576     |       2,304   |       4,500
+|       37      |       592     |       2,368   |       4,500
+|       38      |       608     |       2,432   |       4,500
+|       39      |       624     |       2,496   |       4,500
+|       40      |       640     |       2,560   |       4,500
+|       41      |       656     |       2,624   |       4,500
+|       42      |       672     |       2,688   |       4,500
+|       43      |       688     |       2,752   |       4,500
+|       44      |       704     |       2,816   |       4,500
+|       45      |       720     |       2,880   |       4,500
+|       46      |       736     |       2,944   |       4,500
+|       47      |       752     |       3,008   |       4,500
+|       48      |       768     |       3,072   |       4,500
+|       49      |       784     |       3,136   |       4,500
+|       50      |       800     |       3,200   |       4,500
+|       51      |       816     |       3,264   |       4,500
+|       52      |       832     |       3,328   |       4,500
+|       53      |       848     |       3,392   |       4,500
+|       54      |       864     |       3,456   |       4,500
+|       55      |       880     |       3,520   |       4,500
+|       56      |       896     |       3,584   |       4,500
+|       57      |       912     |       3,648   |       4,500
+|       58      |       928     |       3,712   |       4,500
+|       59      |       944     |       3,776   |       4,500
+|       60      |       960     |       3,840   |       4,500
+|       61      |       976     |       3,904   |       4,500
+|       62      |       992     |       3,968   |       4,500
+|       63      |       1,008   |       4,032   |       4,500
+|       64      |       1,024   |       4,096   |       4,500
+|       65      |       1,040   |       4,160   |       4,500
+|       66      |       1,056   |       4,224   |       4,500
+|       67      |       1,072   |       4,288   |       4,500
+|       68      |       1,088   |       4,352   |       4,500
+|       69      |       1,104   |       4,416   |       4,500
+|       70      |       1,120   |       4,480   |       4,500
+|       71      |       1,136   |       4,500   |       4,500
+|       72      |       1,152   |       4,500   |       4,500
+|       73      |       1,168   |       4,500   |       4,500
+|       74      |       1,184   |       4,500   |       4,500
+|       75      |       1,200   |       4,500   |       4,500
+|       76      |       1,216   |       4,500   |       4,500
+|       77      |       1,232   |       4,500   |       4,500
+|       78      |       1,248   |       4,500   |       4,500
+|       79      |       1,264   |       4,500   |       4,500
+|       80      |       1,280   |       4,500   |       4,500
+|       81      |       1,296   |       4,500   |       4,500
+|       82      |       1,312   |       4,500   |       4,500
+|       83      |       1,328   |       4,500   |       4,500
+|       84      |       1,344   |       4,500   |       4,500
+|       85      |       1,360   |       4,500   |       4,500
+|       86      |       1,376   |       4,500   |       4,500
+|       87      |       1,392   |       4,500   |       4,500
+|       88      |       1,408   |       4,500   |       4,500
+|       89      |       1,424   |       4,500   |       4,500
+|       90      |       1,440   |       4,500   |       4,500
+|       91      |       1,456   |       4,500   |       4,500
+|       92      |       1,472   |       4,500   |       4,500
+|       93      |       1,488   |       4,500   |       4,500
+|       94      |       1,504   |       4,500   |       4,500
+|       95      |       1,520   |       4,500   |       4,500
+|       96      |       1,536   |       4,500   |       4,500
+|       97      |       1,552   |       4,500   |       4,500
+|       98      |       1,568   |       4,500   |       4,500
+|       99      |       1,584   |       4,500   |       4,500
+|       100     |       1,600   |       4,500   |       4,500
+
+|===
+
+=== Example 1
+
+For example, your application requires 25 TB of capacity and 100 MB/s of bandwidth. At 25 TB of capacity, the Standard service level would provide 400 MB/s of bandwidth at a cost of $2,500 (estimate: see current pricing), making Standard the most suitable service level in this case.
+
+image:diagram_service_level_quota_example1.png[Service level and capacity selection, example 1]
+
+=== Example 2
+
+For example, your application requires 12 TB of capacity and 800 MB/s of peak bandwidth. Although the Extreme service level can meet the demands of the application at the 12 TB mark, it is more cost-effective (estimate: see current pricing) to select 13 TB at the Premium service level.
+
+image:diagram_service_level_quota_example2.png[Service level and capacity selection, example 2]
