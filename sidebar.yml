@@ -224,9 +224,29 @@ entries:
   - title: Provision volumes for file services
     entries:
       - title: Azure NetApp Files
-        url: /task_manage_anf.html
+        entries:
+          - title: Learn about Azure NetApp Files
+            url: /concept_azure_netapp_files.html
+          - title: Set up Azure NetApp Files
+            url: /task_manage_anf.html
+          - title: Create and manage volumes
+            url: /task_manage_anf_volumes.html
+          - title: Migrate data to Azure NetApp Files
+            url: /task_sync_azure_netapp_files.html
       - title: Cloud Volumes Service for AWS
-        url: /task_manage_cvs_aws.html
+        entries:
+          - title: Learn about Cloud Volumes Service for AWS
+            url: /concept_cvs_aws.html
+          - title: Deploy and manage cloud volumes
+            url: /task_manage_cvs_aws.html
+          - title: Manage cloud volumes snapshots
+            url: /task_manage_cloud_volumes_snapshots.html
+          - title: Reference
+            entries:
+              - title: Service levels and allocated capacity
+                url: /reference_cvs_service_levels_and_quotas.html
+              - title: AWS security group settings for Windows AD servers
+                url: /reference_security_groups_windows_ad_servers.html
   - title: View Amazon S3 buckets
     url: /task_viewing_amazon_s3.html
   - title: Gain insight into data privacy
@@ -251,6 +271,22 @@ entries:
         url: /task_managing_compliance.html
       - title: FAQ
         url: /faq_cloud_compliance.html
+  - title: Global File Cache
+    entries:
+      - title: Learn about Global File Cache
+        url: /concept_gfc.html
+      - title: Before you begin to deploy Global File Cache
+        url: /concept_before_you_begin_to_deploy_gfc.html
+      - title: Getting started
+        url: /task_gfc_getting_started.html
+      - title: Before you begin to deploy Global File Cache Edge
+        url: /download_gfc_resources.html
+      - title: Deploy Global File Cache Edge
+        url: /task_deploy_gfc_edge_instances.html
+      - title: End-user training
+        url: /concept_gfc_enduser_training.html
+      - title: Additional information
+        url: /reference_gfc_additional_information.html
   - title: Administer Cloud Manager
     entries:
       - title: Update Cloud Manager

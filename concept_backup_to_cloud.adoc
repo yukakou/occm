@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept_backup_to_cloud.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, back up volumes, Backup to Cloud, restore volumes, billing, cost
-summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an S3 bucket in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
+summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
 = Learn about Backup to Cloud
@@ -36,7 +36,11 @@ Backup to Cloud is supported with the following types of working environments:
 
 == Cost
 
-You'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on used capacity (before storage efficiencies).
+Backup to Cloud is available in two pricing options: Bring Your Own License (BYOL) and Pay As You Go (PAYGO).
+
+For BYOL you'll pay NetApp to use the service for a period of time, say 6 months, and for a maximum amount backup capacity, say 10 GB (before storage efficiencies), and you'll need to pay your cloud provider for object storage costs. You'll receive a serial number that you enter in the Cloud Manager Licensing page to enable the service. When either limit is reached you'll need to renew the license. See link:task_managing_backups.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^]. The Backup BYOL license applies to all Cloud Volumes ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Central account].
+
+For PAYGO you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on used capacity (before storage efficiencies):
 
 * AWS: A 30-day free trial is available. https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
 
@@ -44,7 +48,7 @@ You'll need to pay your cloud provider for object storage costs and NetApp for b
 
 == How Backup to Cloud works
 
-When you enable Backup to Cloud, the service performs a full backup of your data. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up.
+When you enable Backup to Cloud on a Cloud Volumes ONTAP system, the service performs a full backup of your data. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up.
 
 === Where backups reside
 
@@ -74,9 +78,29 @@ When you enable Backup to Cloud, _all_ supported volumes on the system are backe
 
 The schedule and number of backups to retain are defined at the system level. The backup settings affect all volumes on the system.
 
-=== The schedule is daily, _or_ weekly, _or_ monthly
+=== The schedule is daily, weekly, monthly, or a combination
 
-You can choose daily, or weekly, or monthly backups of all volumes. A combination of these backup frequency options isn’t supported.
+You can choose daily, or weekly, or monthly backups of all volumes. You can also select one of the system-defined policies that provide backups and retention for 3 months, 1 year, and 7 years. These policies are:
+
+[cols=5*,options="header",cols="30,20,20,20,30",width="80%"]
+|===
+| Policy Name
+3+| Backups per interval...
+| Max. Backups
+
+|  | *Daily* | *Weekly* | *Monthly* |
+| Netapp3MonthsRetention | 30 | 13 | 3
+| 46
+| Netapp1YearRetention | 30 | 13 | 12
+| 55
+| Netapp7YearsRetention | 30 | 53 | 84
+| 167
+
+|===
+
+Once you have reached the maximum number of backups for a category, or interval, older backups are removed so you are always left with the most current backups.
+
+Note that the retention period for backups of data protection volumes is the same as defined in the source SnapMirror relationship. You can change this if you want by using the API.
 
 === Backups are taken at midnight
 
@@ -90,15 +114,33 @@ At this time, you can’t schedule backup operations at a user specified time.
 
 === Backup copies are associated with your Cloud Central account
 
-Backup copies are associated with the link:concept_cloud_central_accounts.html[Cloud Central account] in which Cloud Manager resides.
+Backup copies are associated with the link:concept_cloud_central_accounts.html[Cloud Central account^] in which Cloud Manager resides.
 
 If you have multiple Cloud Manager systems in the same Cloud Central account, each Cloud Manager system will display the same list of backups. That includes the backups associated with Cloud Volumes ONTAP instances from other Cloud Manager systems.
+
+=== BYOL license considerations
+
+When using a Backup to Cloud BYOL license, Cloud Manager notifies you when backups are nearing the capacity limit or nearing the license expiration date. You receive these notifications:
+
+* when backups have reached 80% of licensed capacity, and again when you have reached the limit
+* 30 days before a license is due to expire, and again when the license expires
+
+Use the chat icon in the lower right of the Cloud Manager interface to renew your license when you receive these notifications.
+
+Two things can happen when your license expires:
+
+* If the account you are using for your Cloud Volumes ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by your cloud provider for object storage costs, and by NetApp for backup licensing costs, for the capacity that your backups are using.
+* If the account you are using for your Cloud Volumes ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to receive the expiration message.
+
+Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload the file to Cloud Manager. For instructions, see link:task_managing_backups.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
+
+Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop receiving the warning message and will be charged for backups that occurred while the license was expired.
 
 === Supported volumes
 
 Backup to Cloud supports read-write volumes only.
 
-FlexGroup volumes and data protection volumes aren't supported.
+FlexGroup volumes aren't currently supported.
 
 == Limitations
 

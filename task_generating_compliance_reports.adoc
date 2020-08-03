@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_generating_compliance_reports.html
-keywords: report, privacy, risk, privacy risk assessment, compliance status, severity, compliance, privacy risk, data subjects, privacy, credit cards, pci dss
+keywords: report, privacy, risk, privacy risk assessment, compliance status, severity, compliance, privacy risk, data subjects, privacy, credit cards, pci dss, hipaa
 summary: Cloud Compliance provides reports that you can use to better understand the status of your organization's data privacy program.
 ---
 
@@ -100,6 +100,44 @@ Go to the Compliance tab to generate the report.
 . Under *Reports*, click the download icon next to *PCI DSS Report*.
 +
 image:screenshot_pci_dss.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click Privacy Risk Assessment.]
+
+.Result
+
+Cloud Compliance generates a PDF report that you can review and send to other groups as needed.
+
+== HIPAA Report
+
+The Health Insurance Portability and Accountability Act (HIPAA) Report can help you identify files containing health information. It is designed to aid in your organization’s requirement to comply with HIPAA data privacy laws. The information Cloud Compliance looks for includes:
+
+* Health reference pattern
+* ICD-10-CM Medical code
+* ICD-9-CM Medical code
+* HR – Health category
+* Health Application Data category
+
+The report includes the following information:
+
+Overview:: How many files contain health information and in which working environments.
+
+Encryption:: The percentage of files containing health information that are on encrypted or unencrypted working environments. This information is specific to Cloud Volumes ONTAP.
+
+Ransomware Protection:: The percentage of files containing health information that are on working environments that do or don't have ransomware protection enabled. This information is specific to Cloud Volumes ONTAP.
+
+Retention:: The timeframe in which the files were last modified. This is helpful because you shouldn't keep health information for longer than you need to process it.
+
+Distribution of Health Information:: The working environments where the health information was found and whether encryption and ransomware protection are enabled.
+
+=== Generating the HIPAA Report
+
+Go to the Compliance tab to generate the report.
+
+.Steps
+
+. At the top of Cloud Manager, click *Compliance*.
+
+. Under *Reports*, click the download icon next to *HIPAA Report*.
++
+image:screenshot_hipaa.gif[A screen shot of the Compliance tab in Cloud Manager that shows the Reports pane where you can click HIPAA.]
 
 .Result
 
