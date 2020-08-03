@@ -171,8 +171,8 @@ entries:
             url: /task_getting_started_monitoring.html
       - title: Administer Cloud Volumes ONTAP
         entries:
-          - title: Connect to Cloud Volumes ONTAP
-            url: /task_connecting_to_otc.html
+          - title: Manage BYOL licenses
+            url: /task_managing_licenses.html
           - title: Update software
             url: /task_updating_ontap_cloud.html
           - title: Modify system configurations
@@ -183,6 +183,8 @@ entries:
             url: /task_monitoring_costs.html
           - title: Improve ransomware protection
             url: /task_protecting_ransomware.html
+          - title: Connect to Cloud Volumes ONTAP
+            url: /task_connecting_to_otc.html
           - title: Add existing systems
             url: /task_adding_ontap_cloud.html
           - title: Delete systems
