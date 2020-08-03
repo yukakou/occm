@@ -17,11 +17,15 @@ You can launch a single node system or an HA pair in Azure by creating a Cloud V
 
 .Before you begin
 
+* You should have a link:task_creating_connectors_aws.html[Connector that is associated with your workspace].
++
+NOTE: You must be an Account Admin to create a Connector. When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don’t have one yet.
+
+* link:concept_connectors.html[You should be prepared to leave the Connector running at all times].
+
 * You should have chose a configuration and obtained Azure networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
 
 * To deploy a BYOL system, you need the 20-digit serial number (license key) for each node.
-
-* link:concept_keep_up.html[You should be prepared to leave Cloud Manager running at all times].
 
 .About this task
 
