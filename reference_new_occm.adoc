@@ -118,7 +118,7 @@ The Cloud Compliance instance is set up and deployed using a new wizard in Cloud
 +
 Now you can enable and disable scanning for individual volumes in a Cloud Volumes ONTAP or Azure NetApp Files working environment. If you don't need to scan certain volumes for compliance, turn them off.
 +
-link:task_getting_started_compliance.html[Learn more about disabling scanning for volumes.]
+link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-individual-volumes[Learn more about disabling scanning for volumes.^]
 
 * *Navigation tabs to quickly jump to your area of interest*
 +
@@ -128,7 +128,7 @@ New tabs for Dashboard, Investigation, and Configuration enable you to get to th
 +
 A new Health Insurance Portability and Accountability Act (HIPAA) Report is now available. This report is designed to aid in your organization’s requirement to comply with HIPAA data privacy laws.
 +
-link:task_generating_compliance_reports.html#hipaa-report[Learn more about the HIPAA report.]
+link:task_generating_compliance_reports.html#hipaa-report[Learn more about the HIPAA report.^]
 
 * *New sensitive personal data type*
 +
@@ -146,7 +146,7 @@ The following enhancements are now available for Backup to Cloud.
 +
 Backup to Cloud has been available only with a Pay As You Go (PAYGO) license. A BYOL license allows you to purchase a license from NetApp to use Backup to Cloud for a certain period of time and for a maximum amount backup space. When either limit is reached you will need to renew the license.
 +
-link:concept_backup_to_cloud.html#cost[Learn more about the new Backup to Cloud BYOL license.]
+link:concept_backup_to_cloud.html#cost[Learn more about the new Backup to Cloud BYOL license.^]
 
 * *Support for data protection (DP) volumes*
 +
@@ -158,7 +158,7 @@ NetApp Global File Cache enables you to consolidate silos of distributed file se
 
 Starting with this release, the Global File Cache Management instance and Core instance can be deployed and managed through Cloud Manager. This saves many hours during your initial deployment process and provides a single pane of glass through Cloud Manager for this and other deployed systems. Global File Cache Edge instances are still deployed locally at your remote offices.
 
-See link:concept_gfc.html[Global File Cache overview] for more information.
+See link:concept_gfc.html[Global File Cache overview^] for more information.
 
 The initial configuration that can be deployed using Cloud Manager must meet the following requirements. Other configurations like Cloud Volumes Service, Azure NetApp Files, and Cloud Volumes Service for AWS and GCP continue to be deployed using the legacy procedures. https://cloud.netapp.com/global-file-cache/onboarding[Learn more^].
 
