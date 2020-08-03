@@ -261,6 +261,22 @@ entries:
         url: /task_managing_compliance.html
       - title: FAQ
         url: /faq_cloud_compliance.html
+  - title: Global File Cache
+    entries:
+      - title: Learn about Global File Cache
+        url: /concept_gfc.html
+      - title: Before you begin to deploy Global File Cache
+        url: /concept_before_you_begin_to_deploy_gfc.html
+      - title: Getting started
+        url: /task_gfc_getting_started.html
+      - title: Before you begin to deploy Global File Cache Edge
+        url: /download_gfc_resources.html
+      - title: Deploy Global File Cache Edge
+        url: /task_deploy_gfc_edge_instances.html
+      - title: End-user training
+        url: /concept_gfc_enduser_training.html
+      - title: Additional information
+        url: /reference_gfc_additional_information.html
   - title: Administer Cloud Manager
     entries:
       - title: Update Cloud Manager

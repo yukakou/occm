@@ -1,0 +1,146 @@
+---
+sidebar: sidebar
+permalink: concept_gfc.html
+keywords: global file cache
+summary: NetApp Global File Cache enables you to consolidate silos of distributed file servers into one cohesive global storage footprint in the public cloud. This creates a globally accessible file system in the cloud that all remote locations can use as if they were local.
+---
+
+= Learn about Global File Cache
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+//
+// This file was created with NDAC Version 0.9 (July 10, 2020)
+//
+// 2020-07-29 10:32:33.290902
+//
+
+[.lead]
+NetApp Global File Cache enables you to consolidate silos of distributed file servers into one cohesive global storage footprint in the public cloud. This creates a globally accessible file system in the cloud that all remote locations can use as if they were local.
+
+== Overview
+
+Implementing Global File Cache results in a single, centralized storage footprint, versus a distributed storage architecture that requires local data management, backup, security management, storage, and infrastructure footprint in each location.
+
+image:diagram_gfc_image1.png[A diagram showing how remote office locations access a single shared file system using Global File Cache.]
+
+== Features
+
+Global File Cache enables the following features:
+
+* Consolidate and centralize your data into the public cloud and leverage the scalability and performance from enterprise-grade storage solutions
+
+* Create a single set of data for users globally and leverage intelligent file caching to improve global data access, collaboration, and performance
+
+* Rely on a self-sustaining, self-managing cache, and eliminate full data copies and backups. Utilize local file caching for active data and cut storage costs
+
+* Transparent access from branch locations through a global namespace with real time central file locking
+
+See more about Global File Cache features and use cases https://cloud.netapp.com/global-file-cache[here^].
+
+== Global File Cache components
+
+Global File Cache consists of the following components:
+
+* Global File Cache Management Server VM
+
+* Global File Cache Core VM
+
+* Global File Cache Edge (deployed in your remote locations)
+
+The Global File Cache Core instance mounts to your corporate file shares hosted on your backend storage platform of choice (such as Cloud Volumes ONTAP, Cloud Volumes Service, and Azure NetApp Files) and creates the Global File Cache Fabric that provides the ability to centralize and consolidate unstructured data into a single set of data, whether it resides on one or multiple storage platforms in the public cloud.
+
+image:diagram_gfc_image2.png[A diagram showing the details of a Global File Cache deployment with software installed in remote offices and in a central server in the cloud]
+
+== Supported storage platforms
+
+The supported storage platform for Global File Cache include automated and manual deployment options.
+
+=== Automated deployment options
+
+Global File Cache is supported with the following types of working environments within Cloud Manager:
+
+* Cloud Volumes ONTAP as an HA pair in Azure
+
+This configuration lets you deploy and manage the entire Global File Cache server-side deployment, including Global File Cache Management Server and Global File Cache Core from within Cloud Manager.
+
+=== Manual deployment options
+
+Global File Cache configurations are also supported with Cloud Volumes ONTAP, Cloud Volumes Service, or Azure NetApp Files installed on Microsoft Azure, Google Cloud Platform, or Amazon Web Services public cloud storage infrastructure. In these installations the Global File Cache server-side components must be configured and deployed manually, not using Cloud Manager.
+
+See the link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Guide.pdf[NetApp Global File Cache User Guide^] for details.
+
+== How Global File Cache works
+
+Global File Cache creates a software fabric that caches active data sets in remote offices globally. As a result, business users are guaranteed transparent data access and optimal performance on a global scale.
+
+image:diagram_gfc_image3.png[A diagram showing Global File Cache components at the Edge and the Core.]
+
+The topology referenced in this example is a hub and spoke model, whereby the network of remote offices/locations are all accessing one common set of data in the cloud. The key points of this example are:
+
+* Centralized data store: Enterprise public cloud storage platform, such as Cloud Volumes ONTAP
+
+* Global File Cache Fabric: Extension of the central data store to the remote locations:
+
+** Global File Cache Core instance, mounting to corporate file shares (SMB).
+
+** Global File Cache Edge instances running in each remote location.
+
+** Presents a virtual file share in each remote location that provides access to central data.
+
+** Hosts the Intelligent File Cache on a custom-sized NTFS volume (`D:\`).
+
+* Network configuration:
+
+** Multiprotocol Label Switching (MPLS), ExpressRoute, or VPN connectivity
+
+* Integration with customer’s Active Directory domain services.
+
+* DFS namespace for the use of a global namespace (recommended).
+
+== Cost
+
+The cost to use Global File Cache depends on the type of installation you have chosen.
+
+* All installations require that you deploy one or more volumes in the cloud (Cloud Volumes ONTAP, Cloud Volumes Service, or Azure NetApp Files). This results in charges from the selected cloud provider.
+
+* All installations also require that you deploy two or more virtual machines (VMs) in the cloud. This results in charges from the selected cloud provider.
+
+** Global File Cache Management Server:
++
+In Azure, this runs on a D2s_V3 or equivalent (2 vCPU/8GB RAM) VM with 127GB premium SSD
+
+** Global File Cache Core:
++
+In Azure, this runs on a D4s_V3 or equivalent (4 vCPU/16GB RAM) VM with 127GB premium SSD
+
+* When installed with Cloud Volumes ONTAP as an HA pair in Azure (the initial configuration deployed completely through Cloud Manager), your first 10 remote office Global File Cache Edge instances are free. Additional Edge installations are $3,000 per site, per year.
+
+* When installed using the manual deployment options the pricing is different. To see a high-level estimate of costs, see  https://cloud.netapp.com/global-file-cache/roi[Calculate Your Savings Potential^] or consult your Global File Cache Solutions Engineer to discuss the best options for your enterprise deployment.
+
+== Licensing
+
+If you already have a license for Cloud Volumes ONTAP as an HA pair in Azure, you automatically get access to Global File Cache, including 10 free Edge licenses.
+
+When installed using different storage option, such as Cloud Volumes Service or Azure NetApp Files, you are entitled to one additional Edge instance for every 2TB of storage capacity over 20TB.
+
+When you purchase additional Edge licenses, in most cases Cloud Manager uses your NetApp Support Site account to obtain the license file from NetApp and to install it on the Cloud Volumes ONTAP system. See https://docs.netapp.com/us-en/occm/concept_licensing.html[Licensing^] for details.
+
+Global File Cache licenses are automatically obtained by enabling Global File Cache Service through Cloud Manager or by deploying a Global File Cache Management Server VM in your preferred environment. If you choose to deploy manually, additional steps are required to configure the Global File Cache Management Server services.
+
+See the link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Guide.pdf[NetApp Global File Cache User Guide^] for details around manual licensing.
+
+== Limitations
+
+* The initial version of Global File Cache supported within Cloud Manager requires that the backend storage platform used as your central storage must be a working environment where you have deployed a Cloud Volumes ONTAP HA pair in Azure.
++
+Other storage platforms and other cloud providers are not supported at this time using Cloud Manager, but can be deployed using legacy deployment procedures.
+
+* Only a single Global File Cache Core can be deployed in the working environment where your Cloud Volumes ONTAP system resides.
++
+If you need to use a load-distributed design that includes multiple Core instances, you must use the legacy procedures.
+
+These other configurations, for example, Global File Cache using Cloud Volumes ONTAP, Cloud Volumes Service, and Azure NetApp Files on Microsoft Azure, Google Cloud, and AWS continue to be supported using the legacy procedures. See also https://cloud.netapp.com/global-file-cache/onboarding for details.
