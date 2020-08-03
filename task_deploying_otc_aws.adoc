@@ -21,13 +21,17 @@ If you want to launch Cloud Volumes ONTAP in AWS, you need to create a new worki
 
 .Before you begin
 
+* You should have a link:task_creating_connectors_aws.html[Connector that is associated with your workspace].
++
+NOTE: You must be an Account Admin to create a Connector. When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don’t have one yet.
+
+* link:concept_connectors.html[You should be prepared to leave the Connector running at all times].
+
 * You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
 
 * If you want to launch a BYOL system, you must have the 20-digit serial number (license key).
 
 * If you want to use CIFS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
-
-* link:concept_keep_up.html[You should be prepared to leave Cloud Manager running at all times].
 
 .About this task
 
@@ -208,13 +212,17 @@ If you want to launch a Cloud Volumes ONTAP HA pair in AWS, you need to create a
 
 .Before you begin
 
+* You should have a link:task_creating_connectors_aws.html[Connector that is associated with your workspace].
++
+NOTE: You must be an Account Admin to create a Connector. When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don’t have one yet.
+
+* link:concept_connectors.html[You should be prepared to leave the Connector running at all times].
+
 * You should have prepared by choosing a configuration and by obtaining AWS networking information from your administrator. For details, see link:task_planning_your_config.html[Planning your Cloud Volumes ONTAP configuration].
 
 * If you purchased BYOL licenses, you must have a 20-digit serial number (license key) for each node.
 
 * If you want to use CIFS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
-
-* link:concept_keep_up.html[You should be prepared to leave Cloud Manager running at all times].
 
 .About this task
 
