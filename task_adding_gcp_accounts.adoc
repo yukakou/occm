@@ -15,7 +15,7 @@ summary: Adding a Google Cloud Platform account to Cloud Manager is required to 
 [.lead]
 If you want to enable link:concept_data_tiering.html[data tiering] on a Cloud Volumes ONTAP 9.6 system, you need to provide Cloud Manager with a storage access key for a service account that has Storage Admin permissions. Cloud Manager uses the access keys to set up and manage a Cloud Storage bucket for data tiering.
 
-TIP: If you want to use data tiering with Cloud Volumes ONTAP 9.7, then follow step 3 in link:task_getting_started_gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud Platform].
+TIP: If you want to use data tiering with Cloud Volumes ONTAP 9.7, then follow step 4 in link:task_getting_started_gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud Platform].
 
 == Setting up a service account and access keys for Google Cloud Storage
 

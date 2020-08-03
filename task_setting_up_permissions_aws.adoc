@@ -27,7 +27,7 @@ If you're manually installing the Connector software on your own Linux host, fol
 
 . Download the Connector IAM policy from the following location:
 +
-https://mysupport.netapp.com/cloudontap/iampolicies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
+https://mysupport.netapp.com/site/info/cloud-manager-policies[NetApp Cloud Manager: AWS, Azure, and GCP Policies^]
 
 . From the AWS IAM console, create your own policy by copying and pasting the text from the Connector IAM policy.
 

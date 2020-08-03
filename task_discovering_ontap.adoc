@@ -40,4 +40,4 @@ image:screenshot_discover_ontap.gif["A screenshot that shows an example of the O
 
 .Result
 
-Cloud Manager discovers the cluster. You can now create volumes, replicate data to and from the cluster, and launch OnCommand System Manager to perform advanced tasks.``
+Cloud Manager discovers the cluster. You can now create volumes, replicate data to and from the cluster, and launch System Manager to perform advanced tasks.

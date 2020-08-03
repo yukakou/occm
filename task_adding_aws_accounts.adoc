@@ -39,7 +39,7 @@ If you want to provide Cloud Manager with AWS keys for an IAM user, then you nee
 
 .Steps
 
-. Download the Cloud Manager IAM policy from the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Policies page^].
+. Download the Cloud Manager IAM policy from the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Policies page^].
 
 . From the IAM console, create your own policy by copying and pasting the text from the Cloud Manager IAM policy.
 +
@@ -65,7 +65,7 @@ You can set up a trust relationship between the source AWS account in which you 
 Be sure to do the following:
 
 * Enter the ID of the account where the Connector instance resides.
-* Attach the Cloud Manager IAM policy, which is available from the https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager Policies page^].
+* Attach the Cloud Manager IAM policy, which is available from the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager Policies page^].
 +
 image:screenshot_iam_create_role.gif[A screenshot that shows the Create role page in the AWS IAM Console. Under Select type of trusted entity, Another AWS account is selected.]
 

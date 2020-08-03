@@ -24,7 +24,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-list"]
 * You're running Cloud Volumes ONTAP 9.6 or later in AWS.
 * You have subscribed to the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_backups.html#adding-and-updating-your-backup-byol-license[and activated^] a Backup to Cloud BYOL license from NetApp.
-* The IAM role that provides Cloud Manager with permissions includes S3 permissions from the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^].
+* The IAM role that provides Cloud Manager with permissions includes S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^].
 
 ==== image:number2.png[Number 2] Enable Backup to Cloud on your new or existing system
 
@@ -67,7 +67,7 @@ For Backup to Cloud PAYGO licensing, a Cloud Manager subscription is available i
 For Backup to Cloud BYOL licensing, you do not need an AWS subscription. You need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_backups.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
 
 AWS permissions required::
-The IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/cloudontap/iampolicies[Cloud Manager policy^].
+The IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^].
 +
 Here are the specific permissions from the policy:
 +

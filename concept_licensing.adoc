@@ -53,4 +53,4 @@ If Cloud Manager can't access the license file over the secure internet connecti
 
 A BYOL backup license allows you to purchase a license from NetApp to use Backup to Cloud for a certain period of time and for a maximum amount backup space. When either limit is reached you will need to renew the license.
 
-link:concept_backup_to_cloud.html#cost[Learn more about the Backup to Cloud BYOL license^].
+link:concept_backup_to_cloud.html#cost[Learn more about the Backup to Cloud BYOL license].
