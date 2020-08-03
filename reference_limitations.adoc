@@ -15,9 +15,11 @@ summary: Known limitations identify platforms, devices, or functions that are no
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
-== Cloud Manager should remain running at all times
+== Connectors should remain running
 
-Cloud Manager is a key component in the health and billing of Cloud Volumes ONTAP. If Cloud Manager is powered down, Cloud Volumes ONTAP systems will shut down after losing communication with Cloud Manager for longer than 14 days.
+A Connector should remain running at all times. It's important for the continued health and operation of the services that you enable.
+
+For example, each Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP systems will shut down after losing communication with a Connector for longer than 14 days.
 
 == Shared Linux hosts are not supported
 

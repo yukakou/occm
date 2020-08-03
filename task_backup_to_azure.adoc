@@ -21,7 +21,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 ==== image:number1.png[Number 1] Verify support for your configuration
 
-[role="quick-margin-para"]
+[role="quick-margin-list"]
 * You're running Cloud Volumes ONTAP 9.7 or later in Azure.
 * You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_backups.html#adding-and-updating-your-backup-byol-license[and activated^] a Backup to Cloud BYOL license from NetApp.
 

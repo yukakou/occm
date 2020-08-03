@@ -22,7 +22,7 @@ A Connector is required to use any of the following features within Cloud Manage
 * Cloud Volumes ONTAP
 * On-premises ONTAP clusters
 * Cloud Compliance
-* Kubernetesb
+* Kubernetes
 * Backup to Cloud
 * Monitoring
 * On-prem tiering

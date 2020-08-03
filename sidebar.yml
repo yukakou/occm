@@ -181,7 +181,7 @@ entries:
             url: /task_adding_ontap_cloud.html
           - title: Delete systems
             url: /task_deleting_working_env.html
-  - title: Provision volumes for file services
+  - title: Provision volumes using a file service
     entries:
       - title: Azure NetApp Files
         entries:
