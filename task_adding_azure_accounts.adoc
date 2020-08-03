@@ -15,7 +15,7 @@ summary: There are two ways to manage Azure accounts in Cloud Manager. First, if
 [.lead]
 There are two ways to manage Azure credentials in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
 
-NOTE: When you deploy Cloud Manager from Cloud Central, Cloud Manager automatically adds the Azure account in which you deployed Cloud Manager. An initial account is not added if you manually installed the Cloud Manager software on an existing system. link:concept_accounts_azure.html[Learn about Azure accounts and permissions].
+NOTE: When you deploy a Connector from Cloud Manager, Cloud Manager automatically adds the Azure account in which you deployed the Connector. An initial account is not added if you manually installed the Connector software on an existing system. link:concept_accounts_azure.html[Learn about Azure accounts and permissions].
 
 == Granting Azure permissions using a service principal
 
@@ -181,6 +181,10 @@ Your service principal is now setup and you should have copied the application (
 
 After you provide an Azure account with the required permissions, you can add the credentials for that account to Cloud Manager. This enables you to launch Cloud Volumes ONTAP systems in that account.
 
+.What you'll need
+
+You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html[Learn how].
+
 .Steps
 
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
@@ -209,7 +213,7 @@ Cloud Manager enables you to choose the Azure credentials and Azure subscription
 
 .About this task
 
-A managed identity is link:concept_accounts_azure.html[the initial Azure account] when you deploy Cloud Manager from NetApp Cloud Central. When you deployed Cloud Manager, Cloud Central created the Cloud Manager Operator role and assigned it to the Cloud Manager virtual machine.
+A managed identity is link:concept_accounts_azure.html[the initial Azure account] when you deploy a Connector from Cloud Manager. When you deployed the Connector, Cloud Manager created the Cloud Manager Operator role and assigned it to the Connector virtual machine.
 
 .Steps
 
@@ -227,9 +231,9 @@ NOTE: Cloud Manager Operator is the default name provided in the https://mysuppo
 
 * Assign access to a *Virtual Machine*.
 
-* Select the subscription in which the Cloud Manager virtual machine was created.
+* Select the subscription in which the Connector virtual machine was created.
 
-* Select the Cloud Manager virtual machine.
+* Select the Connector virtual machine.
 
 * Click *Save*.
 

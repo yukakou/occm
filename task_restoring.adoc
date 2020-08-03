@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_restoring.html
 keywords: cloud manager, restore, restoring, restore cloud manager, back up, backup, backups, back up cloud manager
-summary: NetApp Cloud Central accounts make it easy for you to restore a Cloud Manager configuration. The account is a service running in Cloud Central so the users, workspaces, and service connectors that you associated with the account are always accessible. Even if your Cloud Manager system was accidentally deleted.
+summary: NetApp Cloud Central accounts make it easy for you to restore a Cloud Manager configuration. The account is a service running in Cloud Central so the users, workspaces, and Connectors that you associated with the account are always accessible. Even if your Cloud Manager system was accidentally deleted.
 ---
 
 = Restoring Cloud Manager
@@ -13,7 +13,7 @@ summary: NetApp Cloud Central accounts make it easy for you to restore a Cloud M
 :imagesdir: ./media/
 
 [.lead]
-Your link:concept_cloud_central_accounts.html[NetApp Cloud Central account] makes it easy for you to restore a Cloud Manager configuration. The account is a service running in Cloud Central so the users, workspaces, and service connectors that you associated with the account are always accessible. Even if your Cloud Manager system was accidentally deleted.
+Your link:concept_cloud_central_accounts.html[NetApp Cloud Central account] makes it easy for you to restore a Cloud Manager configuration. The account is a service running in Cloud Central so the users, workspaces, and Connectors that you associated with the account are always accessible. Even if your Cloud Manager system was accidentally deleted.
 
 NOTE: Starting with the 3.7.1 release, Cloud Manager no longer supports downloading a backup and using it to restore your configuration. You need to follow these steps to restore Cloud Manager.
 

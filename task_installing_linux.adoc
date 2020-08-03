@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_installing_linux.html
-keywords: install, installation, installing, linux, installer, software, on prem, on-prem, silent
-summary: The most common way to deploy Cloud Manager is from Cloud Central or from a cloud provider's marketplace. But you have the option to download and install the Cloud Manager software on an existing Linux host in your network or in the cloud.
+keywords: install connector, manually install connector, install connector software, installation, installing, linux, installer, software, on prem, on-prem, silent
+summary: The most common way to create a Connector is directly from Cloud Manager or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud.
 ---
 
-= Installing Cloud Manager on an existing Linux host
+= Installing the Connector software on an existing Linux host
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,38 +13,33 @@ summary: The most common way to deploy Cloud Manager is from Cloud Central or fr
 :imagesdir: ./media/
 
 [.lead]
-The most common way to deploy Cloud Manager is from Cloud Central or from a cloud provider's marketplace. But you have the option to download and install the Cloud Manager software on an existing Linux host in your network or in the cloud.
+The most common way to create a Connector is directly from Cloud Manager or from a cloud provider's marketplace. But you have the option to download and install the Connector software on an existing Linux host in your network or in the cloud.
 
-NOTE: You can install Cloud Manager on your own host in GCP, but not in your on-premises network. Cloud Manager must be installed in GCP in order to deploy Cloud Volumes ONTAP in GCP.
+NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then you must have a Connector running in Google Cloud, as well. You can't use a Connector that's running in another location.
 
-.Before you begin
+.Requirements
 
-* A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during Cloud Manager installation.
+* A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during installation.
 
-* The Cloud Manager installer accesses several URLs during the installation process. You must ensure that outbound internet access is allowed to those endpoints. Refer to link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager].
+* The Connector installer accesses several URLs during the installation process. You must ensure that outbound internet access is allowed to these endpoints:
+
+** \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+** \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+** \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
 
 .About this task
 
-* Root privileges are not required to install Cloud Manager.
+* Root privileges are not required to install the Connector.
 
-* Cloud Manager installs the AWS command line tools (awscli) to enable recovery procedures from NetApp support.
+* The installation installs the AWS command line tools (awscli) to enable recovery procedures from NetApp support.
 +
-If you receive a message that installing the awscli failed, you can safely ignore the message. Cloud Manager can operate successfully without the tools.
+If you receive a message that installing the awscli failed, you can safely ignore the message. The Connector can operate successfully without the tools.
 
-* The installer that is available on the NetApp Support Site might be an earlier version. After installation, Cloud Manager automatically updates itself if a new version is available.
+* The installer that is available on the NetApp Support Site might be an earlier version. After installation, the Connector automatically updates itself if a new version is available.
 
 .Steps
 
-. Review networking requirements:
-
-* link:reference_networking_cloud_manager.html[Networking requirements for Cloud Manager]
-* link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS]
-* link:reference_networking_azure.html[Networking requirements for Cloud Volumes ONTAP in Azure]
-* link:reference_networking_gcp.html[Networking requirements for Cloud Volumes ONTAP in GCP]
-
-. Review link:reference_cloud_mgr_reqs.html[Cloud Manager host requirements].
-
-. Download the software from the http://mysupport.netapp.com/NOW/cgi-bin/software[NetApp Support Site^], and then copy it to the Linux host.
+. Download the software from the http://mysupport.netapp.com/NOW/cgi-bin/software[NetApp Support Site^] by selecting Cloud Manager, and then copy it to the Linux host.
 +
 For help with connecting and copying the file to an EC2 instance in AWS, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html[AWS Documentation: Connecting to Your Linux Instance Using SSH^].
 
@@ -60,7 +55,7 @@ For help with connecting and copying the file to an EC2 instance in AWS, see htt
 +
 _silent_ runs the installation without prompting you for information.
 +
-_proxy_ is required if the Cloud Manager host is behind a proxy server.
+_proxy_ is required if the host is behind a proxy server.
 +
 _proxyport_ is the port for the proxy server.
 +
@@ -70,35 +65,33 @@ _proxypwd_ is the password for the user name that you specified.
 
 . Unless you specified the silent parameter, type *Y* to continue the script, and then enter the HTTP and HTTPS ports when prompted.
 +
-If you change the HTTP and HTTPS ports, you must ensure that users can access the Cloud Manager web console from a remote host:
-
-* Modify the security group to allow inbound connections through the ports.
-
-* Specify the port when you enter the URL to the Cloud Manager web console.
-+
 Cloud Manager is now installed. At the end of the installation, the Cloud Manager service (occm) restarts twice if you specified a proxy server.
 
 . Open a web browser and enter the following URL:
 +
 https://_ipaddress_:__port__
 +
-_ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the Cloud Manager host. For example, if Cloud Manager is in the public cloud without a public IP address, you must enter a private IP address from a host that has a connection to the Cloud Manager host.
+_ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the host. For example, if the Connector is in the public cloud without a public IP address, you must enter a private IP address from a host that has a connection to the Connector host.
 +
 _port_ is required if you changed the default HTTP (80) or HTTPS (443) ports. For example, if the HTTPS port was changed to 8443, you would enter https://_ipaddress_:8443
 
 . Sign up at NetApp Cloud Central or log in.
 
 . After you log in, set up Cloud Manager:
-.. Specify the Cloud Central account to associate with this Cloud Manager system.
+.. Specify the Cloud Central account to associate with the Connector.
 +
 link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts].
 .. Enter a name for the system.
 +
-image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up Cloud Manager screen that enables you to select a Cloud Central account and name the Cloud Manager system.]
+image:screenshot_set_up_cloud_manager.gif[A screenshot that shows the set up screen that enables you to select a Cloud Central account and name the system.]
+
+.Result
+
+The Connector is now installed and set up with your Cloud Central account. Cloud Manager will automatically use this Connector when you create new working environments.
 
 .After you finish
 
-Set up permissions so Cloud Manager can deploy Cloud Volumes ONTAP in your cloud provider:
+Set up permissions so Cloud Manager can manage resources and processes within your public cloud environment:
 
 * AWS: link:task_adding_aws_accounts.html[Set up an AWS account and then add it to Cloud Manager].
 
@@ -110,6 +103,6 @@ Set up permissions so Cloud Manager can deploy Cloud Volumes ONTAP in your cloud
 +
 . https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a GCP service account and apply the custom role that you just created^].
 +
-. https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Associate this service account with the Cloud Manager VM^].
+. https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes[Associate this service account with the Connector VM^].
 +
 . If you want to deploy Cloud Volumes ONTAP in other projects, https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console[grant access by adding the service account with the Cloud Manager role to that project^]. You'll need to repeat this step for each project.
