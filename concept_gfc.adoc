@@ -57,7 +57,7 @@ image:diagram_gfc_image2.png[A diagram showing the details of a Global File Cach
 
 == Supported storage platforms
 
-The supported storage platform for Global File Cache include automated and manual deployment options.
+The supported storage platform for Global File Cache includes automated and manual deployment options.
 
 === Automated deployment options
 
