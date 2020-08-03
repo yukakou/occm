@@ -19,6 +19,10 @@ Watch the following video to learn how to add NetApp Support Site accounts to Cl
 
 video::V2fLTyztqYQ[youtube, width=848, height=480]
 
+.What you'll need
+
+You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html[Learn how].
+
 .Steps
 
 . If you don't have a NetApp Support Site account yet, http://now.netapp.com/newuser/[register for one^].

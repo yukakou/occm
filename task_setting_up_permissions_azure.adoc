@@ -1,0 +1,71 @@
+---
+sidebar: sidebar
+permalink: task_setting_up_permissions_azure.html
+keywords: connector permissions, azure permissions, permissions for the connector, assignable scope, azure subscription
+summary: A Connector enables Cloud Manager to manage resources and processes within your public cloud environment. Before you can deploy a Connector from Cloud Manager, you need to ensure that your Azure account has the correct permissions.
+---
+
+= Setting up Azure permissions to create a Connector
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+A Connector enables Cloud Manager to manage resources and processes within your public cloud environment. Before you can deploy a Connector from Cloud Manager, you need to ensure that your Azure account has the correct permissions.
+
+.About this task
+
+Follow these steps before you create a Connector directly from Cloud Manager. These steps don't apply if you're using one of the alternative ways to create a Connector.
+
+If you're deploying the Connector from the Azure Marketplace, follow these steps instead.
+
+If you're manually installing the Connector software on your own Linux host, follow these steps instead.
+
+.Steps
+
+. Create a custom role using the Azure policy for the Connector:
+
+.. Download the https://s3.amazonaws.com/occm-sample-policies/Policy_for_Setup_As_Service_Azure.json[Azure policy for the Connector^].
++
+TIP: Right-click the link and click *Save link as...* to download the file.
+
+.. Modify the JSON file by adding your Azure subscription ID to the assignable scope.
++
+*Example*
++
+[source,json]
+"AssignableScopes": [
+"/subscriptions/d333af45-0d07-4154-943d-c25fbzzzzzzz",
+],
+
+.. Use the JSON file to create a custom role in Azure.
++
+The following example shows how to create a custom role using the Azure CLI 2.0:
++
+*az role definition create --role-definition C:\Policy_for_Setup_As_Service_Azure.json*
++
+You should now have a custom role called _Azure SetupAsService_.
+
+. Assign the role to the user who will deploy the Connector from Cloud Manager:
+
+.. Open the *Subscriptions* service and select the user's subscription.
+
+.. Click *Access control (IAM)*.
+
+.. Click *Add* > *Add role assignment* and then add the permissions:
+
+* Select the *Azure SetupAsService* role.
++
+NOTE: Azure SetupAsService is the default name provided in the https://mysupport.netapp.com/info/web/ECMP11022837.html[Connector deployment policy for Azure^]. If you chose a different name for the role, then select that name instead.
+
+* Assign access to an *Azure AD user, group, or application*.
+
+* Select the user account.
+
+* Click *Save*.
+
+.Result
+
+The Azure user now has the permissions required to deploy the Connector from Cloud Manager.

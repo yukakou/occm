@@ -23,6 +23,10 @@ If you enable this setting, Cloud Volumes ONTAP will veto the locks and reset th
 
 IMPORTANT: This process might be disruptive to CIFS clients. Data that is not committed from CIFS clients could be lost.
 
+.What you'll need
+
+You need to create a Connector before you can change Cloud Manager settings. link:task_creating_connectors.html[Learn how].
+
 .Steps
 
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Cloud Manager Settings*.
