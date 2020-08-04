@@ -5,7 +5,7 @@ keywords: global file cache, core, edge, management server
 summary: There are many requirements you need to be aware of before you begin to deploy Global File Cache in the cloud and in your remote offices.
 ---
 
-= Before you begin to Deploy Global File Cache
+= Before you begin to deploy Global File Cache
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -70,6 +70,23 @@ Consult your Global File Cache Solutions Engineer to discuss the best options fo
 The prerequisites described in this section are for the components installed in the cloud: the Global File Cache Management Server and the Global File Cache Core.
 
 Global File Cache Edge prerequisites are described link:download_gfc_resources.html#global-file-cache-edge-requirements[here].
+
+=== Cloud Manager instance
+
+Ensure that Cloud Manager has permissions as shown in the latest https://occm-sample-policies.s3.amazonaws.com/Policy_for_cloud_Manager_Azure_3.8.7.json[Cloud Manager policy for Azure^].
+
+[source,json]
+"Microsoft.Resources/deployments/operationStatuses/read",
+"Microsoft.Insights/Metrics/Read",
+"Microsoft.Compute/virtualMachines/extensions/write",
+"Microsoft.Compute/virtualMachines/extensions/read",
+"Microsoft.Compute/virtualMachines/extensions/delete",
+"Microsoft.Compute/virtualMachines/delete",
+"Microsoft.Network/networkInterfaces/delete",
+"Microsoft.Network/networkSecurityGroups/delete",
+"Microsoft.Resources/deployments/delete",
+
+Newly created instances will have these permissions by default. If you deployed your instance prior to version 3.8.7 (August 3, 2020), then you will need to add these items.
 
 === Global File Cache Management Server
 
