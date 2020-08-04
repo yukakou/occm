@@ -49,3 +49,4 @@ Notice files provide information about third-party copyright and licenses used i
 * link:media/notice_cloud_manager_3.8.1.pdf[Notice for Cloud Manager 3.8.1^]
 * link:media/notice_cloud_manager_3.8.pdf[Notice for Cloud Manager 3.8^]
 * link:media/notice_cloud_backup_service.pdf[Notice for the Cloud Backup Service^]
+* link:media/notice_global_file_cache.pdf[Notice for Global File Cache^]
