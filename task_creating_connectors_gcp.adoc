@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_creating_connectors_gcp.html
-keywords: create connector in aws, create connector in azure, create connector in gcp, launch connector in aws, launch connector in azure, launch connector in gcp, deploy connector in aws, deploy connector in azure, deploy connector in gcp
+keywords: create connector in GCP, create connector in azure, create connector in gcp, launch connector in GCP, launch connector in azure, launch connector in gcp, deploy connector in GCP, deploy connector in azure, deploy connector in gcp
 summary: An Account Admin needs to deploy a Connector before you can use most Cloud Manager features. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 ---
 
@@ -15,7 +15,7 @@ summary: An Account Admin needs to deploy a Connector before you can use most Cl
 [.lead]
 An Account Admin needs to deploy a _Connector_ before you can use most Cloud Manager features. link:concept_connectors.html[Learn when a Connector is required]. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 
-This page describes how to create a Connector in AWS directly from Cloud Manager. You also have the option to link:task_installing_linux.html[download the software and install it on your own host].
+This page describes how to create a Connector in GCP directly from Cloud Manager. You also have the option to link:task_installing_linux.html[download the software and install it on your own host].
 
 These steps must be completed by a user who has the Account Admin role. A Workspace Admin can't create a Connector.
 
