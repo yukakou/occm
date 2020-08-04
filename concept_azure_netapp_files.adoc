@@ -29,7 +29,7 @@ Azure NetApp Files enables enterprises to migrate and run their performance-inte
 
 == Cost
 
-https://azure.microsoft.com/en-us/pricing/details/netapp/[View Azure NetApp Files pricing^].
+https://azure.microsoft.com/pricing/details/netapp/[View Azure NetApp Files pricing^].
 
 Note that your subscription and charging are maintained by the Azure NetApp Files service and not by Cloud Manager.
 
@@ -50,5 +50,5 @@ For issues related to Cloud Sync and Azure NetApp Files, you can start with NetA
 == Related links
 
 * https://cloud.netapp.com/azure-netapp-files[NetApp Cloud Central: Azure NetApp Files^]
-* https://docs.microsoft.com/en-us/azure/azure-netapp-files/[Azure NetApp Files documentation^]
+* https://docs.microsoft.com/azure/azure-netapp-files/[Azure NetApp Files documentation^]
 * https://docs.netapp.com/us-en/cloudsync/index.html[Cloud Sync documentation^]
