@@ -136,11 +136,11 @@ image:screenshot_filter_options.gif[A screenshot of the Monitoring tab that show
 +
 image:screenshot_vol_performance.gif[A screenshot of the performance data for a volume.]
 
-. Use the data to prevent performance issues from impacting your users and apps.
+. Use the data to identify performance issues to minimize impact on your users and apps.
 
 == Getting more information from Cloud Insights
 
-The Monitoring tab in Cloud Manager provides basic performance data for your volumes. You can go to the Cloud Insights interface to perform more in-depth monitoring of your Cloud Volumes ONTAP systems.
+The Monitoring tab in Cloud Manager provides basic performance data for your volumes. You can go to the Cloud Insights web interface from your browser to perform more in-depth monitoring and to configure alerts for your Cloud Volumes ONTAP systems.
 
 .Steps
 
