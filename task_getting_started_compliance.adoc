@@ -250,7 +250,7 @@ image:screenshot_compliance_volume_details.gif[A screenshot of the View Details 
 
 == Enabling and disabling compliance scans on individual volumes
 
-You can stop or start scanning volumes in a working environment at any time from the Scan Configuration page.
+You can stop or start scanning volumes in a working environment at any time from the Scan Configuration page. We recommend that you scan all volumes.
 
 image:screenshot_volume_compliance_selection.png[A screenshot of the scan configuration page where you can enable or disable scanning of individual volumes.]
 
@@ -266,4 +266,4 @@ image:screenshot_volume_compliance_selection.png[A screenshot of the scan config
 
 |===
 
-TIP: New volumes added to the working environment are scanned automatically only when the *Activate Compliance for all Volumes* setting is enabled. When this setting is disabled, you'll need to activate scanning on each new volume you create in the working environment.
+TIP: New volumes added to the working environment are automatically scanned only when the *Activate Compliance for all Volumes* setting is enabled. When this setting is disabled, you'll need to activate scanning on each new volume you create in the working environment.
