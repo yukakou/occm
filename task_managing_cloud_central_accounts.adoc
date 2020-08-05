@@ -44,10 +44,6 @@ image:screenshot_associate_user.gif[A screenshot that shows how to associate a u
 
 The user should receive an email from NetApp Cloud Central titled "Account Association." The email includes the information needed to access Cloud Manager.
 
-.Result
-
-The user should receive an email from NetApp Cloud Central titled "Account Association." The email includes the information needed to access Cloud Manager.
-
 == Removing users
 
 Disassociating a user makes it so they can no longer access the resources in a Cloud Central account.
