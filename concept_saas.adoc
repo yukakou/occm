@@ -57,8 +57,14 @@ image:screenshot_local_ui.gif[]
 
 == Instance, VM, and machine type changes
 
-To ensure adequate resources are available for proper functionality of the new features in Cloud Manager, we've changed the default instance, VM, and machine type as follows:
+To ensure that adequate resources are available for new and upcoming features in Cloud Manager, we've changed the minimum required instance, VM, and machine type as follows:
 
 * AWS: t3.xlarge
 * Azure: DS3 v2
 * GCP: n1-standard-4
+
+When you upgrade the machine type, you'll get access to features like a new Kubernetes experience, Global File Cache, Monitoring, and more.
+
+These default sizes are the minimum supported link:reference_cloud_mgr_reqs.html[based on CPU and RAM requirements].
+
+Cloud Manager will prompt you with instructions to change the machine type of the Connector.
