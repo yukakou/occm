@@ -57,7 +57,7 @@ image:diagram_gfc_image2.png[A diagram showing the details of a Global File Cach
 
 == Supported storage platforms
 
-The supported storage platform for Global File Cache include automated and manual deployment options.
+The supported storage platform for Global File Cache includes automated and manual deployment options.
 
 === Automated deployment options
 
@@ -79,7 +79,7 @@ Global File Cache creates a software fabric that caches active data sets in remo
 
 image:diagram_gfc_image3.png[A diagram showing Global File Cache components at the Edge and the Core.]
 
-The topology referenced in this example is a hub and spoke model, whereby the network of remote offices/locations are all accessing one common set of data in the cloud. The key points of this example are:
+The topology referenced in this example is a hub and spoke model, whereby the network of remote offices/locations is accessing one common set of data in the cloud. The key points of this example are:
 
 * Centralized data store: Enterprise public cloud storage platform, such as Cloud Volumes ONTAP
 
