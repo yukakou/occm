@@ -17,7 +17,7 @@ This page highlights _important_ changes in Cloud Manager that can help you use 
 
 == SaaS changes
 
-We have fully introduced a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
+We have introduced a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
 
 * link:concept_saas.html[Cloud Manager transition to SaaS]
 * link:concept_overview.html[Learn how Cloud Manager works]
@@ -87,7 +87,7 @@ Starting with the 3.8.1 release, the following permissions are required to use B
 [source,json]
 "Microsoft.Resources/deployments/operationStatuses/read"
 
-* Starting with the 3.8.7 release, the following permissions is required to encrypt Azure managed disks on single node Cloud Volumes ONTAP systems using external keys from another account. link:reference_new_occm.html#cloud-volumes-ontap-enhancements[Learn more].
+* Starting with the 3.8.7 release, the following permission is required to encrypt Azure managed disks on single node Cloud Volumes ONTAP systems using external keys from another account. link:reference_new_occm.html#cloud-volumes-ontap-enhancements[Learn more].
 +
 [source,json]
 "Microsoft.Compute/diskEncryptionSets/read"
@@ -119,8 +119,14 @@ Starting with the 3.8 release, the following permissions are required to use a s
 
 The Connector requires outbound internet access to manage resources and processes within your public cloud environment. This section identifies new endpoints that are now required.
 
-Cloud Manager requires access to the following endpoint so it can obtain software images of container components for a Docker infrastructure:
+You can find the link:reference_networking.html[full list of endpoints accessed from your web browser here] and the link:reference_networking_cloud_manager.html#outbound-internet-access[full list of endpoints accessed by the Connector here].
 
+* Users need to access Cloud Manager from a web browser by contacting the following endpoint:
++
+\https://cloudmanager.netapp.com/
+
+* Connectors require access to the following endpoint to obtain software images of container components for a Docker infrastructure:
++
 \https://cloudmanagerinfraprod.azurecr.io
-
++
 Ensure that your firewall enables access to this endpoint from the Connector.
