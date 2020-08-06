@@ -303,7 +303,6 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 |
 "Microsoft.Resources/deployments/operations/read",
-"Microsoft.Resources/deployments/operationStatuses/read",
 "Microsoft.Resources/deployments/read",
 "Microsoft.Resources/deployments/write",
 "Microsoft.Resources/resources/read",
@@ -375,6 +374,9 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 | "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete",
 
 | Enables Cloud Manager to delete volumes for Azure NetApp Files.
+
+| "Microsoft.Resources/deployments/operationStatuses/read"
+Azure requires this permission for some virtual machine deployments (it depends on the underlying physical hardware that's used during deployment).
 
 |
 "Microsoft.Resources/deployments/operationStatuses/read",
