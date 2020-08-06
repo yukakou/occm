@@ -21,7 +21,7 @@ When you first access Cloud Manager, you're prompted to select or create a Cloud
 
 image:screenshot_account_selection.gif[A screenshot of the Cloud Manager setup wizard that prompts you for the Cloud Central account in which you want to create Cloud Manager.]
 
-Account Admins can then modify the settings for this account by managing users, workspaces, and Connectors:
+Account Admins can then modify the settings for this account by managing users, workspaces, Connectors, and subscriptions:
 
 image:screenshot_account_settings.gif["A screenshot that shows the Account Settings widget from which you can manage users, workspaces, and Connectors."]
 
@@ -70,11 +70,17 @@ For example, let's say that you have two accounts and each is billed through sep
 
 == Examples
 
+The following examples depict how you might set up your accounts.
+
+=== Example 1
+
 The following example shows an account that uses two workspaces to create isolated environments for Cloud Volumes ONTAP systems. For example, one workspace might be for a staging environment, while the other is for a production environment.
 
 NOTE: The Connector and the Cloud Volumes ONTAP systems don't actually reside _in_ the NetApp Cloud Central account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
 
 image:diagram_cloud_central_accounts_one.png[A diagram that shows a single Cloud Central account that contains two workspaces. Each workspace is associated with the same Connector and each has their own Workspace Admin.]
+
+=== Example 2
 
 Here's another example that shows the highest level of multi-tenancy by using two separate Cloud Central accounts. For example, a service provider might use Cloud Manager in one Cloud Central account to provide services for their customers, while using another account to provide disaster recovery for one of their business units.
 
