@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_central_accounts.html
-keywords: accounts, workspaces, Connector, users, cloud central, admin, Account Admin, Workspace Admin
-summary: Each Cloud Manager system is associated with a NetApp Cloud Central account. A Cloud Central account is a container for your Cloud Manager systems and the workspaces in which users deploy Cloud Volumes ONTAP.
+keywords: accounts, workspaces, Connector, users, cloud central, admin, Account Admin, Workspace Admin, account settings, workspaces, users, connector, service connector, user accounts, what are users, what is a workspace, users and workspaces
+summary: A Cloud Central account provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager.
 ---
 
-= Cloud Central accounts
+= Account settings: users, workspaces, and connectors
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,7 +15,7 @@ summary: Each Cloud Manager system is associated with a NetApp Cloud Central acc
 [.lead]
 A _Cloud Central account_ provides multi-tenancy and enables you to organize users and resources in isolated workspaces from within Cloud Manager.
 
-For example, multiple users can deploy and manage Cloud Volumes ONTAP systems in isolated environments called workspaces. These workspaces are invisible to other users, unless they are shared.
+For example, multiple users can deploy and manage Cloud Volumes ONTAP systems in isolated environments called _workspaces_. These workspaces are invisible to other users, unless they are shared.
 
 When you first access Cloud Manager, you're prompted to select or create a Cloud Central account:
 
