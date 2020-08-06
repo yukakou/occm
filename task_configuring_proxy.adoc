@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_configuring_proxy.html
 keywords: proxy, proxy server, proxy, internet
-summary: When you first deploy Cloud Manager, it prompts you to enter a proxy server if the system does not have internet access. You can also manually enter and modify the proxy from Cloud Manager's settings.
+summary: If your corporate policies dictate that you use a proxy server for all HTTP communication to the internet, then you must configure Cloud Manager to use that proxy server. The proxy server can be in the cloud or in your network.
 ---
 
 = Configuring Cloud Manager to use a proxy server
@@ -13,13 +13,9 @@ summary: When you first deploy Cloud Manager, it prompts you to enter a proxy se
 :imagesdir: ./media/
 
 [.lead]
-When you first deploy Cloud Manager, it prompts you to enter a proxy server if the system does not have internet access. You can also manually enter and modify the proxy from Cloud Manager's settings.
-
-.About this task
-
 If your corporate policies dictate that you use a proxy server for all HTTP communication to the internet, then you must configure Cloud Manager to use that proxy server. The proxy server can be in the cloud or in your network.
 
-When you configure Cloud Manager to use a proxy server, Cloud Manager, Cloud Volumes ONTAP, and the HA mediator all use the proxy server.
+When you configure Cloud Manager to use a proxy server, Connectors, Cloud Volumes ONTAP, and the HA mediator all use the proxy server.
 
 .What you'll need
 

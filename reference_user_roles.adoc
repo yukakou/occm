@@ -23,21 +23,27 @@ The Account Admin and Workspace Admin roles provide specific permissions to user
 | Account Admin
 | Workspace Admin
 
-| Manage working environments |	Yes |	Yes, for associated workspaces
+| Manage working environments |	Yes |	Yes
 
-| View data replication status |	Yes |	Yes, for associated workspaces
+| Enable services on working environments | Yes | Yes
 
-| View the timeline |	Yes |	Yes, for associated workspaces
+| View data replication status |	Yes |	Yes
+
+| View the timeline |	Yes |	Yes
+
+| Switch between workspaces | Yes | Yes
 
 | Delete working environments | Yes | No
 
-| Connect Kubernetes clusters to Cloud Volumes ONTAP | Yes | No
+| Connect Kubernetes clusters to working environments | Yes | No
 
 | Receive the Cloud Volumes ONTAP report | Yes | No
 
+| Create Connectors | Yes | No
+
 | Manage Cloud Central accounts |	Yes |	No
 
-| Manage cloud provider accounts | Yes | No
+| Manage credentials | Yes | No
 
 | Modify Cloud Manager settings |	Yes |	No
 
@@ -45,11 +51,8 @@ The Account Admin and Workspace Admin roles provide specific permissions to user
 
 | Remove working environments from Cloud Manager |	Yes |	No
 
-| Update Cloud Manager |	Yes |	No
-
 | Install an HTTPS certificate |	Yes |	No
 
-| Set up Active Directory |	Yes |	No
 |===
 
 .Related links
