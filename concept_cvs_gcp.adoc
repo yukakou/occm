@@ -1,0 +1,85 @@
+---
+sidebar: sidebar
+permalink: concept_cvs_gcp.html
+keywords: cloud volumes service for gcp, google cloud, cloud volumes, cloud volumes service subscription
+summary: NetApp Cloud Volumes Service for Google Cloud is a cloud native data service that provides advanced data management capabilities and performance. This service enables you to quickly add multi-protocol workloads as well as build and deploy both Windows-based and UNIX-based apps.
+---
+
+= Learn about Cloud Volumes Service for Google Cloud
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+NetApp Cloud Volumes Service for Google Cloud is a cloud native data service that provides advanced data management capabilities and performance. This service enables you to quickly add multi-protocol workloads as well as build and deploy both Windows-based and UNIX-based apps.
+
+== Key features:
+
+* Migrate data between on-premises and Google Cloud.
+
+* Provision volumes from 0 to 100 TB in seconds.
+
+* Multiprotocol support (you can create an NFS or SMB volume).
+
+* Protect data with automated, efficient snapshots.
+
+* Accelerate app development with rapid cloning.
+
+* Consume cloud services such as analytics, AI, and ML.
+
+== Cost
+
+Volumes created by the Cloud Volumes Service for Google Cloud are charged based on your subscription to the service, not through Cloud Manager.
+
+link:https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com?q=cloud%20volumes%20service[View pricing]
+
+There are no charges to discover a Cloud Volumes Service for Google Cloud region or volume from Cloud Manager.
+
+== Before you get started
+
+* Cloud Manager can discover existing Cloud Volumes Service for GCP subscriptions and volumes. See the https://docs.netapp.com/us-en/cloud_volumes/aws/media/cvs_aws_account_setup.pdf[NetApp Cloud Volumes Service for AWS Account Setup Guide^] if you haven't set up your subscription yet. You must follow this setup process for each region before you can add the AWS subscriptions and volumes in Cloud Manager.
+
+* You need to obtain the Cloud Volumes API key and secret key so you can provide them to Cloud Manager. https://docs.netapp.com/us-en/cloud_volumes/aws/reference_cloud_volume_apis.html#finding-the-api-url-api-key-and-secret-key[For instructions, refer to Cloud Volumes Service for AWS documentation^].
+
+== Quick start
+
+Get started quickly by following these steps, or go to the next section for full details.
+
+==== image:number1.png[Number 1] Verify support for your configuration
+
+[role="quick-margin-para"]
+You have set up GCP for Cloud Volumes Service and you must have subscribed to one of the https://aws.amazon.com/marketplace/search/results?x=0&y=0&searchTerms=netapp+cloud+volumes+service[NetApp Cloud Volumes Service offerings on the AWS Marketplace^].
+
+==== image:number2.png[Number 2] Add your Cloud Volumes Service for GCP subscription
+
+[role="quick-margin-para"]
+You must create a working environment for the volumes based on your Cloud Volumes Service for GCP subscription.
+
+==== image:number3.png[Number 3] Create a cloud volumes
+
+[role="quick-margin-para"]
+Cloud volumes that already exist for this subscription appear in the new working environment. Otherwise you create new volumes from Cloud Manager.
+
+==== image:number4.png[Number 4] Mount a cloud volume
+
+[role="quick-margin-para"]
+Mount new cloud volumes to your GCP instance so that users can begin to use the storage.
+
+== Getting help
+
+Use the Cloud Manager chat for general service questions.
+
+For technical support issues associated with your cloud volumes, use your 20 digit “930” serial number located in the "Support" tab of the Cloud Volumes Service user interface. Use this support ID when opening a web ticket or calling for support. Be sure to activate your Cloud Volumes Service serial number for support from the Cloud Volumes Service user interface. https://docs.netapp.com/us-en/cloud_volumes/aws/task_activating_support_entitlement.html[Those steps are explained here^].
+
+== Limitations
+
+* Cloud Manager doesn't support data replication between working environments when using Cloud Volumes Service volumes.
+
+* Removing your Cloud Volumes Service for GCP subscription from Cloud Manager isn't supported. You can do this only through the Cloud Volumes Service for AWS interface.
+
+== Related links
+
+* https://cloud.netapp.com/cloud-volumes-service-for-gcp[NetApp Cloud Central: Cloud Volumes Service for Google Cloud^]
+* https://cloud.google.com/solutions/partners/netapp-cloud-volumes/[NetApp Cloud Volumes Service for Google Cloud documentation^]

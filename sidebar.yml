@@ -207,6 +207,14 @@ entries:
                 url: /reference_cvs_service_levels_and_quotas.html
               - title: AWS security group settings for Windows AD servers
                 url: /reference_security_groups_windows_ad_servers.html
+      - title: Cloud Volumes Service for GCP
+        entries:
+          - title: Learn about Cloud Volumes Service for GCP
+            url: /concept_cvs_gcp.html
+          - title: Create and manage cloud volumes
+            url: /task_manage_cvs_gcp.html
+          - title: Manage cloud volumes snapshots
+            url: /task_manage_cloud_volumes_gcp_snapshots.html
   - title: Gain insight into data privacy
     entries:
       - title: Learn about Cloud Compliance
