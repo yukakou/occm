@@ -13,7 +13,7 @@ summary: This page highlights _important_ changes in Cloud Manager that can help
 :imagesdir: ./media/
 
 [.lead]
-This page highlights _important_ changes in Cloud Manager that can help you use the service as we introduce new enhancements. You should continue to read the link:reference_new_occm.html[What's new] page to learn about all new features and enhancements.
+This page highlights important changes in Cloud Manager that can help you use the service as we introduce new enhancements. You should continue to read the link:reference_new_occm.html[What's new] page to learn about all new features and enhancements.
 
 == SaaS changes
 
@@ -24,7 +24,7 @@ We have introduced a software-as-a-service experience for Cloud Manager. This ne
 
 == Machine type changes
 
-To ensure that adequate resources are available for new and upcoming features in Cloud Manager, we've changed the default instance, VM, and machine type as follows:
+To ensure that adequate resources are available for new and upcoming features in Cloud Manager, we've changed the minimum required instance, VM, and machine type as follows:
 
 * AWS: t3.xlarge
 * Azure: DS3 v2
@@ -123,7 +123,7 @@ You can find the link:reference_networking.html[full list of endpoints accessed 
 
 * Users need to access Cloud Manager from a web browser by contacting the following endpoint:
 +
-\https://cloudmanager.netapp.com/
+\https://cloudmanager.netapp.com
 
 * Connectors require access to the following endpoint to obtain software images of container components for a Docker infrastructure:
 +
