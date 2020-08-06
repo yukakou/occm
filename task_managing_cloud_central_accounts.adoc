@@ -5,7 +5,7 @@ keywords: account settings, workspaces, Connector, account admin, workspace admi
 summary: After you perform initial setup, you might need to later manage users, workspaces, and Connectors.
 ---
 
-= Managing workspaces and users in the Cloud Central account
+= Managing users, workspaces, Connectors, and subscriptions
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: After you perform initial setup, you might need to later manage users, 
 :imagesdir: ./media/
 
 [.lead]
-link:task_setting_up_cloud_central_accounts.html[After you perform initial setup], you might need to later manage users, workspaces, and Connectors.
+link:task_setting_up_cloud_central_accounts.html[After you perform initial setup], you might need to administer your account settings later by managing users, workspaces, Connectors, and subscriptions.
 
 link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
 
@@ -119,3 +119,25 @@ link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors
 . Click *Manage Workspaces* for the Connector that you want to associate.
 
 . Select the workspaces to associate with the Connector and click *Apply*.
+
+== Managing subscriptions
+
+After you subscribe from a cloud provider's marketplace, each subscription is available from the Account Settings widget. You have the option to rename a subscription and to disassociate the subscription from one or more accounts.
+
+For example, let's say that you have two accounts and each is billed through separate subscriptions. You might disassociate a subscription from one of the accounts so the users in that account don't accidentally choose the wrong subscription when creating a Cloud Volume ONTAP working environment.
+
+link:concept_cloud_central_accounts.html[Learn more about subscriptions].
+
+.Steps
+
+. Click *Account Settings*.
+
+. Click *Subscriptions*.
++
+You'll only see the subscriptions that are associated with the account that you're currently viewing.
+
+. Click the action menu in the row that corresponds to the subscription that you want to manage.
++
+image:screenshot_subscription_menu.gif[A screenshot of the action menu for a subscription.]
+
+. Choose to rename the subscription or to manage the accounts that are associated with the subscription.
