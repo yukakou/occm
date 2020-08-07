@@ -1,0 +1,132 @@
+---
+sidebar: sidebar
+permalink: reference_key_changes.html
+keywords: what's new, key changes, saas, accounts, workspaces, users, connectors, endpoints, urls, permissions, permission changes
+summary: This page highlights _important_ changes in Cloud Manager that can help you use the service as we introduce new enhancements. You should continue to read the What's new page to learn about all new features and enhancements.
+---
+
+= Important changes in Cloud Manager
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+This page highlights important changes in Cloud Manager that can help you use the service as we introduce new enhancements. You should continue to read the link:reference_new_occm.html[What's new] page to learn about all new features and enhancements.
+
+== SaaS changes
+
+We have introduced a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
+
+* link:concept_saas.html[Cloud Manager transition to SaaS]
+* link:concept_overview.html[Learn how Cloud Manager works]
+
+== Machine type changes
+
+To ensure that adequate resources are available for new and upcoming features in Cloud Manager, we've changed the minimum required instance, VM, and machine type as follows:
+
+* AWS: t3.xlarge
+* Azure: DS3 v2
+* GCP: n1-standard-4
+
+When you upgrade the machine type, you'll get access to features like a new Kubernetes experience, Global File Cache, Monitoring, and more.
+
+These default sizes are the minimum supported link:reference_cloud_mgr_reqs.html[based on CPU and RAM requirements].
+
+Cloud Manager will prompt you with instructions to change the machine type of the Connector.
+
+== Account settings
+
+We introduced Cloud Central accounts to provide multi-tenancy, to help you organize users and resources in isolated workspaces, and to manage access to Connectors and subscriptions.
+
+* link:concept_cloud_central_accounts.html[Learn about Cloud Central accounts: users, workspaces, Connectors, and subscriptions]
+* link:task_setting_up_cloud_central_accounts.html[Learn how to get started with your account]
+* link:task_managing_cloud_central_accounts.html[Learn how to manage your account after you set it up]
+
+== New permissions
+
+Cloud Manager occasionally requires additional cloud provider permissions as we introduce new features and enhancements. This section identifies new permissions that are now required.
+
+You can find the latest list of permissions on the https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policies page^].
+
+=== AWS
+
+Starting with the 3.8.1 release, the following permissions are required to use Backup to Cloud with Cloud Volumes ONTAP. link:task_backup_to_s3.html[Learn more].
+
+[source,json]
+{
+            "Sid": "backupPolicy",
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteBucket",
+                "s3:GetLifecycleConfiguration",
+                "s3:PutLifecycleConfiguration",
+                "s3:PutBucketTagging",
+                "s3:ListBucketVersions",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketTagging",
+                "s3:GetBucketLocation",
+                "s3:GetBucketPolicyStatus",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetBucketAcl",
+                "s3:GetBucketPolicy",
+                "s3:PutBucketPublicAccessBlock"
+            ],
+            "Resource": [
+                "arn:aws:s3:::netapp-backup-*"
+            ]
+        },
+
+=== Azure
+
+* To avoid Azure deployment failures, make sure that your Cloud Manager policy in Azure includes the following permission:
++
+[source,json]
+"Microsoft.Resources/deployments/operationStatuses/read"
+
+* Starting with the 3.8.7 release, the following permission is required to encrypt Azure managed disks on single node Cloud Volumes ONTAP systems using external keys from another account. link:reference_new_occm.html#cloud-volumes-ontap-enhancements[Learn more].
++
+[source,json]
+"Microsoft.Compute/diskEncryptionSets/read"
+
+* The following permissions are required to enable Global File Cache on Cloud Volumes ONTAP. link:concept_gfc.html[Learn more].
++
+[source,json]
+"Microsoft.Resources/deployments/operationStatuses/read",
+"Microsoft.Insights/Metrics/Read",
+"Microsoft.Compute/virtualMachines/extensions/write",
+"Microsoft.Compute/virtualMachines/extensions/read",
+"Microsoft.Compute/virtualMachines/extensions/delete",
+"Microsoft.Compute/virtualMachines/delete",
+"Microsoft.Network/networkInterfaces/delete",
+"Microsoft.Network/networkSecurityGroups/delete",
+"Microsoft.Resources/deployments/delete",
+
+=== GCP
+
+Starting with the 3.8 release, the following permissions are required to use a service account for data tiering. link:reference_new_occm.html#data-tiering-enhancements-in-gcp[Learn more].
+
+[source,yaml]
+- storage.buckets.update
+- compute.instances.setServiceAccount
+- iam.serviceAccounts.getIamPolicy
+- iam.serviceAccounts.list
+
+== New endpoints
+
+The Connector requires outbound internet access to manage resources and processes within your public cloud environment. This section identifies new endpoints that are now required.
+
+You can find the link:reference_networking.html[full list of endpoints accessed from your web browser here] and the link:reference_networking_cloud_manager.html#outbound-internet-access[full list of endpoints accessed by the Connector here].
+
+* Users need to access Cloud Manager from a web browser by contacting the following endpoint:
++
+\https://cloudmanager.netapp.com
+
+* Connectors require access to the following endpoint to obtain software images of container components for a Docker infrastructure:
++
+\https://cloudmanagerinfraprod.azurecr.io
++
+Ensure that your firewall enables access to this endpoint from the Connector.

@@ -303,7 +303,6 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 |
 "Microsoft.Resources/deployments/operations/read",
-"Microsoft.Resources/deployments/operationStatuses/read",
 "Microsoft.Resources/deployments/read",
 "Microsoft.Resources/deployments/write",
 "Microsoft.Resources/resources/read",
@@ -376,9 +375,25 @@ The Cloud Manager Azure policy includes the permissions that Cloud Manager needs
 
 | Enables Cloud Manager to delete volumes for Azure NetApp Files.
 
-| "Microsoft.Insights/Metrics/Read"
+| "Microsoft.Resources/deployments/operationStatuses/read"
+Azure requires this permission for some virtual machine deployments (it depends on the underlying physical hardware that's used during deployment).
 
-| Enables integration with Global File Cache in an upcoming release.
+|
+"Microsoft.Resources/deployments/operationStatuses/read",
+"Microsoft.Insights/Metrics/Read",
+"Microsoft.Compute/virtualMachines/extensions/write",
+"Microsoft.Compute/virtualMachines/extensions/read",
+"Microsoft.Compute/virtualMachines/extensions/delete",
+"Microsoft.Compute/virtualMachines/delete",
+"Microsoft.Network/networkInterfaces/delete",
+"Microsoft.Network/networkSecurityGroups/delete",
+"Microsoft.Resources/deployments/delete",
+
+| Enables you to use Global File Cache.
+
+| "Microsoft.Compute/diskEncryptionSets/read"
+
+| Enables Cloud Manager to encrypt Azure managed disks on single node Cloud Volumes ONTAP systems using external keys from another account. This feature is supported using APIs.
 
 |===
 

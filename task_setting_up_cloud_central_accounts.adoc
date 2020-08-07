@@ -15,9 +15,9 @@ summary: When you log in to Cloud Manager for the first time, you're prompted to
 [.lead]
 When you log in to Cloud Manager for the first time, you're prompted to create a _NetApp Cloud Central account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
 
-Set up your Cloud Central account so users can access Cloud Manager and access the working environments in a workspace. Just add a single user or add multiple users and workspaces.
+link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
 
-The account is maintained in Cloud Central, so any changes that you make are available to other NetApp cloud services. link:concept_cloud_central_accounts.html[Learn more about how Cloud Central accounts work].
+Set up your Cloud Central account so users can access Cloud Manager and access the working environments in a workspace. Just add a single user or add multiple users and workspaces.
 
 == Adding workspaces
 
@@ -107,3 +107,7 @@ link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors
 .Result
 
 Workspace Admins can now use those Connectors to create Cloud Volumes ONTAP systems.
+
+== What's next?
+
+Now that you've set up your account, you can manage it any time by removing users, managing workspaces, Connectors, and subscriptions. link:task_managing_cloud_central_accounts.html[Learn more].
