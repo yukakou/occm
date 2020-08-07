@@ -19,7 +19,7 @@ NetApp Cloud Volumes Service for Google Cloud is a cloud native data service tha
 
 * Migrate data between on-premises and Google Cloud.
 
-* Provision volumes from 0 to 100 TB in seconds.
+* Provision volumes from 1 to 100 TiB in seconds.
 
 * Multiprotocol support (you can create an NFS or SMB volume).
 
@@ -57,7 +57,7 @@ You have set up GCP for Cloud Volumes Service and you must have subscribed to on
 [role="quick-margin-para"]
 You must create a working environment for the volumes based on your Cloud Volumes Service for GCP subscription.
 
-==== image:number3.png[Number 3] Create a cloud volumes
+==== image:number3.png[Number 3] Create a cloud volume
 
 [role="quick-margin-para"]
 Cloud volumes that already exist for this subscription appear in the new working environment. Otherwise you create new volumes from Cloud Manager.
@@ -77,7 +77,7 @@ For technical support issues associated with your cloud volumes, use your 20 dig
 
 * Cloud Manager doesn't support data replication between working environments when using Cloud Volumes Service volumes.
 
-* Removing your Cloud Volumes Service for GCP subscription from Cloud Manager isn't supported. You can do this only through the Cloud Volumes Service for AWS interface.
+* Removing your Cloud Volumes Service for Google Cloud subscription from Cloud Manager isn't supported. You can do this only through the Cloud Volumes Service for Google Cloud interface.
 
 == Related links
 
