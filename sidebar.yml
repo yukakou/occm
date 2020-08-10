@@ -213,6 +213,8 @@ entries:
         entries:
           - title: Learn about Cloud Volumes Service for GCP
             url: /concept_cvs_gcp.html
+          - title: Set up Cloud Volumes Service for GCP
+            url: /task_setup_cvs_gcp.html
           - title: Create and manage cloud volumes
             url: /task_manage_cvs_gcp.html
           - title: Manage cloud volumes snapshots

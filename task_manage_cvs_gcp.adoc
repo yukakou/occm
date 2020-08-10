@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_manage_cvs_gcp.html
-keywords: cloud volumes service for gcp, google cloud, cloud volumes, create cloud volumes, discover cloud volumes service for gcp, delete cloud volumes, cloud volumes service subscription, discover cloud volumes service subscription, discover region, service level, allowed clients, create snapshots
+keywords: cloud volumes service for gcp, google cloud, cloud volumes, create cloud volumes, delete cloud volumes, discover region, service level, allowed clients, create snapshots
 summary: Cloud Manager enables you to create cloud volumes based on your Cloud Volumes Service for Google Cloud subscription. You can also discover cloud volumes that you have already created from the Cloud Volumes Service interface and add them to a working environment.
 ---
 
-= Managing Cloud Volumes Service for Google Cloud
+= Create and manage volumes for Cloud Volumes Service for Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,56 +13,12 @@ summary: Cloud Manager enables you to create cloud volumes based on your Cloud V
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager enables you to create cloud volumes based on your link:https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com?q=cloud%20volumes%20service[Cloud Volumes Service for Google Cloud^] subscription. You can also discover cloud volumes that you have already created from the Cloud Volumes Service interface and add them to a working environment.
+Cloud Manager enables you to create cloud volumes based on your link:https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com?q=cloud%20volumes%20service[Cloud Volumes Service for Google Cloud^] subscription. You can also discover cloud volumes that you have already created from the Google Cloud Console and add them to a working environment.
 
-== Add your Cloud Volumes Service for GCP subscription
-
-Regardless of whether you have already created volumes from the Cloud Volumes Service user interface, or if you just signed up for Cloud Volumes Service for GCP and have no volumes yet, the first step is to create a working environment for the volumes based on your GCP subscription.
-
-If cloud volumes already exist for this subscription, then the volumes are automatically added to the new working environment. If you haven't added any cloud volumes yet for the GCP subscription, then you do that after you create the new working environment.
-
-TIP: If you have subscriptions and volumes in multiple GCP regions, you need to perform this task for each region.
-
-.Before you begin
-
-You must have the following information available when adding a subscription in each region:
-
-* Cloud Volumes API key and Secret key: https://docs.netapp.com/us-en/cloud_volumes/aws/reference_cloud_volume_apis.html#finding-the-api-url-api-key-and-secret-key[See the Cloud Volumes Service for AWS documentation to get this information^].
-
-* The GCP region where the subscription was created.
-
-.Steps
-
-. In Cloud Manager, add a new Working Environment, select the location *Amazon Web Services*, and click *Continue*.
-
-. Select *Cloud Volumes Service* and click *Continue*.
-+
-image:screenshot_add_cvs_aws_working_env.png[A screenshot of adding a working environment for a Cloud Volumes Service for AWS subscription]
-
-. Provide information about your Cloud Volumes Service subscription:
-
-.. Enter the Working Environment Name you want to use.
-.. Enter the Cloud Volumes Service API key and secret key.
-.. Select the GCP region where your cloud volumes reside, or where they will be deployed.
-.. Click *Add*.
-+
-image:screenshot_add_cvs_aws_credentials.png[A screenshot of adding credentials for a Cloud Volumes Service for AWS subscription]
-
-.Result
-
-Cloud Manager displays your Cloud Volumes Service for Google Cloud configuration on the Working Environments page.
-
-image:screenshot_cvs_gcp_cloud.png[A screenshot of Cloud Volumes Service for Google Cloud on the working environments page.]
-
-If cloud volumes already exist for this subscription, then the volumes are automatically added to the new working environment, as shown in the screenshot. You can add additional cloud volumes from Cloud Manager.
-
-If no cloud volumes exist for this subscription, then you can create them now.
 
 == Create cloud volumes
 
-For configurations where volumes already exist in the Cloud Volumes Service working environment you can use these steps to add new volumes.
-
-For configurations where no volumes exist, you can create your first volume directly from Cloud Manager after you have set up your Cloud Volumes Service for GCP subscription.
+You can create NFS or SMB volumes in a new or existing Cloud Volumes Service for Google Cloud account. Cloud volumes currently support NFSv3 and NFSv4.1 for Linux and UNIX clients, and SMB 3.0 and 3.1.1 for Windows clients.
 
 .Before you begin
 
@@ -140,17 +96,11 @@ See link:task_manage_cloud_volumes_gcp_snapshots.html#create_or_modify_a_snapsho
 
 The new volume is added to the working environment.
 
-.After you finish
+Continue with link:task_manage_cvs_gcp.html#mount-the-cloud-volume[Mounting the cloud volume].
 
-If this is the first volume created in this AWS subscription, you need to launch the AWS Management Console to accept the two virtual interface that will be used in this AWS region to connect all your cloud volumes. See the https://docs.netapp.com/us-en/cloud_volumes/aws/media/cvs_aws_account_setup.pdf[NetApp Cloud Volumes Service for AWS Account Setup Guide^] for details.
+== Mount cloud volumes
 
-You must accept the interfaces within 10 minutes after clicking the Add Volume button or the system may time out. If this happens, email cvs-support@netapp.com with your AWS Customer ID and NetApp Serial Number. Support will fix the issue and you can restart the onboarding process.
-
-Then continue with link:task_manage_cvs_gcp.html#mount-the-cloud-volume[Mounting the cloud volume].
-
-== Mount the cloud volume
-
-You can mount a cloud volume to your GCP instance. Cloud volumes currently support NFSv3 and NFSv4.1 for Linux and UNIX clients, and SMB 3.0 and 3.1.1 for Windows clients.
+Access mounting instructions from within Cloud Manager so you can mount the volume to a host.
 
 *Note:* Please use the highlighted protocol/dialect supported by your client.
 
@@ -176,7 +126,7 @@ image:screenshot_cvs_aws_smb_mount.png[Mount instructions for SMB volumes]
 +
 After completing the steps in the mount instructions, you have successfully mounted the cloud volume to your GCP instance.
 
-== Managing existing volumes
+== Manage existing volumes
 
 You can manage existing volumes as your storage needs change. You can view, edit, restore, and delete volumes.
 

@@ -1,0 +1,94 @@
+---
+sidebar: sidebar
+permalink: task_setup_cvs_gcp.html
+keywords: cloud volumes service for gcp, google cloud, cloud volumes, create cloud volumes, discover cloud volumes service for gcp, cloud volumes service subscription, discover cloud volumes service subscription, discover region, allowed clients, create snapshots
+summary: Create a Cloud Volumes Service for Google Cloud working environment in Cloud Manager to create and manage NetApp accounts, volumes, and snapshots.
+---
+
+= Set up Cloud Volumes Service for Google Cloud
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Create a Cloud Volumes Service for Google Cloud working environment in Cloud Manager to create and manage NetApp accounts, volumes, and snapshots.
+
+== Quick start
+
+Get started quickly by following these steps, or go to the next section for full details.
+
+==== image:number1.png[Number 1] Configure your account
+
+[role="quick-margin-para"]
+You have set up Cloud Volumes Service for GCP and enabled the APIs. See link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/before-you-begin-cloud-volumes[Before you begin using Cloud Volumes Service^].
+
+==== image:number2.png[Number 2] Set up your networking and connections
+
+[role="quick-margin-para"]
+You have set up the networking and connections. See link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[Setting up private services access^].
+
+==== image:number3.png[Number 3] Create a Cloud Volumes Service for GCP working environment
+
+[role="quick-margin-para"]
+You must create a working environment for the volumes based on your Cloud Volumes Service for GCP subscription.
+
+==== image:number4.png[Number 4] Create a cloud volume
+
+[role="quick-margin-para"]
+Cloud volumes that already exist for this subscription appear in the new working environment. Otherwise you create new volumes from Cloud Manager.
+
+==== image:number5.png[Number 5] Mount the cloud volume
+
+[role="quick-margin-para"]
+Mount new cloud volumes to your GCP instance so that users can begin to use the storage.
+
+== Create a Cloud Volumes Service for GCP working environment
+
+Set up a Cloud Volumes Service for GCP working environment in Cloud Manager so you can start creating volumes.
+
+Regardless of whether you have already created volumes from the Google Cloud Console, or if you just signed up for Cloud Volumes Service for GCP and have no volumes yet, the first step is to create a working environment for the volumes based on your GCP subscription.
+
+If cloud volumes already exist for this subscription, then the volumes will appear in the new working environment. If you haven't added any cloud volumes yet for the GCP subscription, then you do that after you create the new working environment.
+
+TIP: If you have subscriptions and volumes in multiple GCP regions, you need to perform this task for each region.
+
+.Before you begin
+
+You must have the following information available when adding a subscription in each region:
+
+* Service account credentials.
+
+* Project name.
+
+.Steps
+
+. In Cloud Manager, add a new Working Environment, select the location *Google Cloud*, and click *Continue*.
+
+. Select *Cloud Volumes Service* and click *Continue*.
++
+image:screenshot_add_cvs_gcp_working_env.png[A screenshot of adding a working environment for a Cloud Volumes Service for GCP subscription]
+
+. Provide information about your Cloud Volumes Service subscription:
+
+.. Enter the Working Environment Name you want to use.
+.. Download the service account credentials.
+.. Select the project........, or where they will be deployed.
++
+image:screenshot_add_cvs_gcp_credentials.png[A screenshot of adding credentials for a Cloud Volumes Service for GCP subscription]
+.. Click *Add*.
+
+.Result
+
+Cloud Manager displays your Cloud Volumes Service for Google Cloud working environment.
+
+image:screenshot_cvs_gcp_cloud.png[A screenshot of Cloud Volumes Service for Google Cloud working environment.]
+
+If cloud volumes already exist for this subscription, then the volumes are automatically added to the new working environment, as shown in the screenshot. You can add additional cloud volumes from Cloud Manager.
+
+If no cloud volumes exist for this subscription, then you can create them now.
+
+.What's next?
+
+link:task_manage_cvs_gcp.html[Start creating and managing volumes].
