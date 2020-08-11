@@ -37,9 +37,9 @@ While you should perform almost all tasks from the SaaS user interface, a local 
 * Installing a patch (you'll typically work with NetApp personnel to install a patch)
 * Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)
 
-.Step
+.Steps
 
-. Open the Cloud Manager SaaS interface from a machine that has a network connection to the Connector instance.
+. https://docs.netapp.com/us-en/occm/task_logging_in.html[Log in to the Cloud Manager SaaS interface^] from a machine that has a network connection to the Connector instance.
 +
 If the Connector doesn't have a public IP address, you'll need a VPN connection or you'll need to connect from a jump host that's in the same network as the Connector.
 
@@ -53,7 +53,7 @@ The Cloud Manager interface running on the Connector loads in a new browser tab.
 
 The Connector includes an uninstallation script that you can use to uninstall the software to troubleshoot issues or to permanently remove the software from the host.
 
-.Steps
+.Step
 
 . From the Linux host, run the uninstallation script:
 +

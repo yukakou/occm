@@ -17,7 +17,7 @@ To help you get started, your NetApp representative might ask you for your Cloud
 
 .What you'll need
 
-You need to create a Connector before you can change Cloud Manager settings. link:task_creating_connectors.html[Learn how].
+You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html#how-to-create-a-connector[Learn how].
 
 .Steps
 
