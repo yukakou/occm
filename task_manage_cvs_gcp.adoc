@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_manage_cvs_gcp.html
 keywords: cloud volumes service for gcp, google cloud, cloud volumes, create cloud volumes, delete cloud volumes, discover region, service level, allowed clients, create snapshots
-summary: Cloud Manager enables you to create cloud volumes based on your Cloud Volumes Service for Google Cloud subscription. You can also discover cloud volumes that you have already created from the Cloud Volumes Service interface and add them to a working environment.
+summary: Cloud Manager enables you to create cloud volumes based on your Cloud Volumes Service for Google Cloud subscription. You can also edit certain attributes of a volume, get the relevant mount commands, create snapshot copies, and delete cloud volumes.
 ---
 
 = Create and manage volumes for Cloud Volumes Service for Google Cloud
@@ -13,12 +13,11 @@ summary: Cloud Manager enables you to create cloud volumes based on your Cloud V
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager enables you to create cloud volumes based on your link:https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com?q=cloud%20volumes%20service[Cloud Volumes Service for Google Cloud^] subscription. You can also discover cloud volumes that you have already created from the Google Cloud Console and add them to a working environment.
-
+Cloud Manager enables you to create cloud volumes based on your link:https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com?q=cloud%20volumes%20service[Cloud Volumes Service for Google Cloud^] subscription. You can also edit certain attributes of a volume, get the relevant mount commands, create snapshot copies, and delete cloud volumes.
 
 == Create cloud volumes
 
-You can create NFS or SMB volumes in a new or existing Cloud Volumes Service for Google Cloud account. Cloud volumes currently support NFSv3 and NFSv4.1 for Linux and UNIX clients, and SMB 3.0 and 3.1.1 for Windows clients.
+You can create NFS or SMB volumes in a new or existing Cloud Volumes Service for Google Cloud account. Cloud volumes currently support NFSv3 and NFSv4.1 for Linux and UNIX clients, and SMB 3.x for Windows clients.
 
 .Before you begin
 

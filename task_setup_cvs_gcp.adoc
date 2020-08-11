@@ -73,7 +73,7 @@ image:screenshot_add_cvs_gcp_working_env.png[A screenshot of adding a working en
 . Provide information about your Cloud Volumes Service subscription:
 
 .. Enter the Working Environment Name you want to use.
-.. Download the service account credentials.
+.. Download the service account credentials from ... and paste them in here.
 .. Select the project........, or where they will be deployed.
 +
 image:screenshot_add_cvs_gcp_credentials.png[A screenshot of adding credentials for a Cloud Volumes Service for GCP subscription]
@@ -85,9 +85,9 @@ Cloud Manager displays your Cloud Volumes Service for Google Cloud working envir
 
 image:screenshot_cvs_gcp_cloud.png[A screenshot of Cloud Volumes Service for Google Cloud working environment.]
 
-If cloud volumes already exist for this subscription, then the volumes are automatically added to the new working environment, as shown in the screenshot. You can add additional cloud volumes from Cloud Manager.
+If cloud volumes already exist for this subscription, then the volumes appear in the new working environment, as shown in the screenshot. You can add additional cloud volumes from Cloud Manager.
 
-If no cloud volumes exist for this subscription, then you can create them now.
+If no cloud volumes exist for this subscription, create them now.
 
 .What's next?
 

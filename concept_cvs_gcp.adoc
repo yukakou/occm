@@ -27,19 +27,24 @@ NetApp Cloud Volumes Service for Google Cloud enables you to quickly add multi-p
 
 * Accelerate app development with rapid cloning.
 
-* Consume cloud services such as analytics, AI, and ML.
+////
+Add this content into the topic when Cloud Compliance support CVS GCP
+== Additional features in Cloud Manager
+
+Using Artificial Intelligence (AI) driven technology, Cloud Compliance can help you understand data context and identify sensitive data that resides in your Cloud Volumes Service for Google Cloud volumes. link:concept_cloud_compliance.html[Learn more].
+////
 
 == Cost
 
 Volumes created by the Cloud Volumes Service for Google Cloud are charged to your subscription to the service, not through Cloud Manager.
 
-link:https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com?q=cloud%20volumes%20service[View pricing]
+link:https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com?q=cloud%20volumes%20service[View pricing^]
 
 There are no charges to discover a Cloud Volumes Service for Google Cloud region or volume from Cloud Manager.
 
 == Supported regions
 
-link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/regional-availability[View supported Google Cloud regions.]
+link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/regional-availability[View supported Google Cloud regions.^]
 
 == Before you get started
 
@@ -47,9 +52,11 @@ Cloud Manager can discover existing Cloud Volumes Service for GCP subscriptions 
 
 == Getting help
 
-Use the Cloud Manager chat for general service questions.
+Use the Cloud Manager chat for general questions about Cloud Volumes Service operation in Cloud Manager.
 
-For technical support issues associated with your cloud volumes, you can create a technical support case from the Google Cloud Console. See link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/support[obtaining support^] for details.
+For general questions about Cloud Volumes Service for Google Cloud, email NetApp’s Google Cloud Team at gcinfo@netapp.com.
+
+For technical issues associated with your cloud volumes, you can create a technical support case from the Google Cloud Console. See link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/support[obtaining support^] for details.
 
 == Limitations
 
