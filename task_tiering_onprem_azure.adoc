@@ -26,8 +26,8 @@ You need the following:
 
 [role="quick-margin-list"]
 * An AFF or FAS system with all-SSD aggregates that's running ONTAP 9.4 or later and has an HTTPS connection to Azure Blob storage.
-* Cloud Manager installed in an Azure VNet.
-* Networking for Cloud Manager that enables an outbound HTTPS connection to the ONTAP cluster in your data center, to Azure Blob storage, and to the Cloud Tiering service.
+* A Connector installed in an Azure VNet.
+* Networking for a Connector that enables an outbound HTTPS connection to the ONTAP cluster in your data center, to Azure Blob storage, and to the Cloud Tiering service.
 
 ==== image:number2.png[number2] Set up tiering
 
@@ -47,7 +47,7 @@ The following image shows each component and the connections that you need to pr
 
 image:diagram_cloud_tiering_azure.png["An architecture image that shows the Cloud Tiering service with a connection to the Service Connector in your cloud provider, the Service Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage in your cloud provider. Active data resides on the ONTAP cluster, while inactive data resides in object storage."]
 
-NOTE: Communication between Cloud Manager and Blob storage is for object storage setup only.
+NOTE: Communication between the Connector and Blob storage is for object storage setup only.
 
 === Preparing your ONTAP clusters
 
@@ -80,13 +80,21 @@ include::https://raw.githubusercontent.com/NetAppDocs/cloud-tiering/master/_incl
 
 NOTE: Cloud Tiering supports FlexGroup volumes, starting with ONTAP 9.5. Setup works the same as any other volume.
 
-=== Preparing networking for Cloud Manager
+=== Creating or switching Connectors
 
-Ensure that Cloud Manager has the required networking connections.
+A Connector is required to tier data to the cloud. When tiering data to Azure Blob storage, a Connector must be available in an Azure VNet. You'll either need to create a new Connector or make sure that the currently selected Connector resides in Azure.
+
+* link:concept_connectors.html[Learn about Connectors]
+* link:task_creating_connectors_azure.html[Creating a Connector in Azure]
+* link:task_managing_connectors.html[Switching between Connectors]
+
+=== Preparing networking for the Connector
+
+Ensure that the Connector has the required networking connections.
 
 .Steps
 
-. Ensure that the VNet where Cloud Manager is installed enables the following connections:
+. Ensure that the VNet where the Connector is installed enables the following connections:
 
 * An outbound internet connection to the Cloud Tiering service over port 443 (HTTPS)
 * An HTTPS connection over port 443 to Azure Blob storage
@@ -94,7 +102,7 @@ Ensure that Cloud Manager has the required networking connections.
 
 . If needed, enable a VNet service endpoint to Azure storage.
 +
-A VNet service endpoint to Azure storage is recommended if you have an ExpressRoute or VPN connection from your ONTAP cluster to the VNet and you want communication between Cloud Manager and Blob storage to stay in your virtual private network.
+A VNet service endpoint to Azure storage is recommended if you have an ExpressRoute or VPN connection from your ONTAP cluster to the VNet and you want communication between the Connector and Blob storage to stay in your virtual private network.
 
 == Tiering inactive data from your first cluster to Azure Blob storage
 

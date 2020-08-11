@@ -15,4 +15,4 @@ summary: Connectors should remain running at all times. They are important for t
 [.lead]
 Connectors should remain running at all times. They are important for the continued health and operation of the services that you enable.
 
-For example, each Connector is a key component in the health and operation of Cloud Volumes ONTAP. If a Connector is powered down, Cloud Volumes ONTAP systems will shut down after losing communication with a Connector for longer than 14 days.
+For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP PAYGO systems. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems will shut down after losing communication with a Connector for longer than 14 days.

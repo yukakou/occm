@@ -27,8 +27,8 @@ You need the following:
 [role="quick-margin-list"]
 * An AFF or FAS system with all-SSD aggregates that's running ONTAP 9.4 or later, and a connection over a user-specified port to StorageGRID.
 * StorageGRID 10.3 or later with AWS access keys that have S3 permissions.
-* Cloud Manager installed on your premises.
-* Networking for Cloud Manager that enables an outbound HTTPS connection to the ONTAP cluster, to StorageGRID, and to the Cloud Tiering service.
+* A Connector installed on your premises.
+* Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster, to StorageGRID, and to the Cloud Tiering service.
 
 ==== image:number2.png[number 2] Set up tiering
 
@@ -43,7 +43,7 @@ The following image shows each component and the connections that you need to pr
 
 image:diagram_cloud_tiering_storagegrid.png["An architecture image that shows the Cloud Tiering service with a connection to the Service Connector on your premises, the Service Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage. Active data resides on the ONTAP cluster, while inactive data resides in object storage."]
 
-NOTE: Communication between Cloud Manager and StorageGRID is for object storage setup only.
+NOTE: Communication between the Connector and StorageGRID is for object storage setup only.
 
 === Preparing your ONTAP clusters
 
@@ -63,7 +63,7 @@ Cluster networking requirements::
 +
 ONTAP reads and writes data to and from object storage. The object storage never initiates, it just responds.
 
-* An inbound connection is required from Cloud Manager, which must reside on your premises.
+* An inbound connection is required from the Connector, which must reside on your premises.
 +
 A connection between the cluster and the Cloud Tiering service is not required.
 
@@ -100,13 +100,22 @@ These access keys must be associated with a user who has the following permissio
 Object versioning::
 You must not enable StorageGRID object versioning on the object store bucket.
 
-=== Preparing networking for Cloud Manager
+=== Creating or switching Connectors
 
-Ensure that Cloud Manager has the required networking connections.
+A Connector is required to tier data to the cloud. When tiering data to StorageGRID, a Connector must be available on your premises. You'll either need to install a new Connector or make sure that the currently selected Connector resides on-prem.
+
+* link:concept_connectors.html[Learn about Connectors]
+* link:reference_cloud_mgr_reqs.html[Connector host requirements]
+* link:task_installing_linux.html[Installing the Connector on an existing Linux host]
+* link:task_managing_connectors.html[Switching between Connectors]
+
+=== Preparing networking for the Connector
+
+Ensure that the Connector has the required networking connections.
 
 .Steps
 
-. Ensure that the network where Cloud Manager is installed enables the following connections:
+. Ensure that the network where the Connector is installed enables the following connections:
 
 * An outbound internet connection to the Cloud Tiering service over port 443 (HTTPS)
 * An HTTPS connection over port 443 to StorageGRID
