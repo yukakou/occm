@@ -123,7 +123,7 @@ If you haven't yet added an AWS subscription to a set of AWS credentials, you ca
 
 .What you'll need
 
-You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html[Learn how].
+You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html#how-to-create-a-connector[Learn how].
 
 .Steps
 

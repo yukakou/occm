@@ -31,13 +31,13 @@ Note the following as you configure the VM:
 
 * Cloud Manager can perform optimally with either HDD or SSD disks.
 
-* Choose a VM size that has at least 4 vCPUs and 14 GB of RAM. We recommend DS3 v2.
+* Choose a VM size that meets CPU and RAM requirements. We recommend DS3 v2.
 +
 link:reference_cloud_mgr_reqs.html[Review the VM requirements].
 
 * For the network security group, the Connector requires inbound connections using SSH, HTTP, and HTTPS.
 +
-link:reference_networking_cloud_manager.html#ports-and-security-groups[Learn more about security group rules for the Connector].
+link:reference_networking_cloud_manager.html#rules-for-the-connector-in-azure[Learn more about security group rules for the Connector].
 
 * Under *Management*, enable *System assigned managed identity* for the Connector by selecting *On*.
 +
@@ -88,7 +88,7 @@ You should add the ID for each Azure subscription from which users will create C
 +
 The following example shows how to create a custom role using the Azure CLI 2.0:
 +
-*az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.8.5.json*
+*az role definition create --role-definition C:\Policy_for_cloud_Manager_Azure_3.8.7.json*
 +
 You should now have a custom role called Cloud Manager Operator that you can assign to the Connector virtual machine.
 

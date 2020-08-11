@@ -19,6 +19,8 @@ NOTE: If you want to create a Cloud Volumes ONTAP system in Google Cloud, then y
 
 .Requirements
 
+* The host must meet link:reference_cloud_mgr_reqs.html[requirements for the Connector].
+
 * A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during installation.
 
 * The Connector installer accesses several URLs during the installation process. You must ensure that outbound internet access is allowed to these endpoints:
@@ -41,7 +43,7 @@ If you receive a message that installing the awscli failed, you can safely ignor
 
 .Steps
 
-. Download the software from the http://mysupport.netapp.com/NOW/cgi-bin/software[NetApp Support Site^] by selecting Cloud Manager, and then copy it to the Linux host.
+. Download the Cloud Manager software from the https://mysupport.netapp.com/site/products/all/details/cloud-manager/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
 +
 For help with connecting and copying the file to an EC2 instance in AWS, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html[AWS Documentation: Connecting to Your Linux Instance Using SSH^].
 
