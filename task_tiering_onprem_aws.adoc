@@ -27,8 +27,8 @@ You need the following:
 [role="quick-margin-list"]
 * An AFF or FAS system with all-SSD aggregates that's running ONTAP 9.2 or later and has an HTTPS connection to Amazon S3.
 * An AWS account that has an access key and <<Preparing Amazon S3,the required permissions>> so the ONTAP cluster can tier inactive data in and out of S3.
-* Cloud Manager installed in an AWS VPC or on your premises.
-* Networking for Cloud Manager that enables an outbound HTTPS connection to the ONTAP cluster, to S3 storage, and to the Cloud Tiering service.
+* A Connector installed in an AWS VPC or on your premises.
+* Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster, to S3 storage, and to the Cloud Tiering service.
 
 ==== image:number2.png[number 2] Set up tiering
 
@@ -46,9 +46,9 @@ Verify support for your ONTAP cluster, set up your networking, and prepare your 
 
 The following image shows each component and the connections that you need to prepare between them:
 
-image:diagram_cloud_tiering_aws.png["An architecture image that shows the Cloud Tiering service with a connection to the Service Connector in your cloud provider, the Service Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage in your cloud provider. Active data resides on the ONTAP cluster, while inactive data resides in object storage."]
+image:diagram_cloud_tiering_aws.png["An architecture image that shows the Cloud Tiering service with a connection to the Connector in your cloud provider, the Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage in your cloud provider. Active data resides on the ONTAP cluster, while inactive data resides in object storage."]
 
-NOTE: Communication between Cloud Manager and S3 is for object storage setup only. Cloud Manager can reside on your premises, instead of in the cloud.
+NOTE: Communication between a Connector and S3 is for object storage setup only. The Connector can reside on your premises, instead of in the cloud.
 
 === Preparing your ONTAP clusters
 
@@ -67,7 +67,7 @@ ONTAP reads and writes data to and from object storage. The object storage never
 +
 Although AWS Direct Connect provides better performance and lower data transfer charges, it's not required between the ONTAP cluster and S3. Because performance is significantly better when using AWS Direct Connect, doing so is the recommended best practice.
 
-* An inbound connection is required from Cloud Manager, which can reside in an AWS VPC or on your premises.
+* An inbound connection is required from the Connector, which can reside in an AWS VPC or on your premises.
 +
 A connection between the cluster and the Cloud Tiering service is not required.
 
@@ -81,13 +81,23 @@ include::https://raw.githubusercontent.com/NetAppDocs/cloud-tiering/master/_incl
 
 NOTE: Cloud Tiering supports FlexGroup volumes, starting with ONTAP 9.5. Setup works the same as any other volume.
 
-=== Preparing networking for Cloud Manager
+=== Creating or switching Connectors
 
-Ensure that Cloud Manager has the required networking connections. Cloud Manager can be installed on-prem or in AWS.
+A Connector is required to tier data to the cloud. When tiering data to AWS S3, you can use a Connector that's in an AWS VPC or on your premises. You'll either need to create a new Connector or make sure that the currently selected Connector resides in AWS or on-prem.
+
+* link:concept_connectors.html[Learn about Connectors]
+* link:task_creating_connectors_aws.html[Creating a Connector in AWS]
+* link:reference_cloud_mgr_reqs.html[Connector host requirements]
+* link:task_installing_linux.html[Installing the Connector on an existing Linux host]
+* link:task_managing_connectors.html[Switching between Connectors]
+
+=== Preparing networking for the Connector
+
+Ensure that the Connector has the required networking connections. A Connector can be installed on-prem or in AWS.
 
 .Steps
 
-. Ensure that the network where Cloud Manager is installed enables the following connections:
+. Ensure that the network where the Connector is installed enables the following connections:
 
 * An outbound internet connection to the Cloud Tiering service over port 443 (HTTPS)
 * An HTTPS connection over port 443 to S3
@@ -95,11 +105,11 @@ Ensure that Cloud Manager has the required networking connections. Cloud Manager
 
 . If needed, enable a VPC Endpoint to S3.
 +
-A VPC Endpoint to S3 is recommended if you have a Direct Connect or VPN connection from your ONTAP cluster to the VPC and you want communication between Cloud Manager and S3 to stay in your AWS internal network.
+A VPC Endpoint to S3 is recommended if you have a Direct Connect or VPN connection from your ONTAP cluster to the VPC and you want communication between the Connector and S3 to stay in your AWS internal network.
 
 === Preparing Amazon S3
 
-When you set up data tiering to a new cluster, you're prompted to create an S3 bucket or to select an existing S3 bucket in the AWS account where Cloud Manager is set up.
+When you set up data tiering to a new cluster, you're prompted to create an S3 bucket or to select an existing S3 bucket in the AWS account where the Connector is set up.
 
 The AWS account must have permissions and an access key that you can enter in Cloud Tiering. The ONTAP cluster uses the access key to tier data in and out of S3.
 
@@ -147,7 +157,7 @@ You're now on the Tiering dashboard.
 
 .. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket that starts with the prefix _fabric-pool_ and click *Continue*.
 +
-The _fabric-pool_ prefix is required because the IAM policy for the Service Connector enables the instance to perform S3 actions on buckets named with that exact prefix.
+The _fabric-pool_ prefix is required because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix.
 +
 For example, you could name the S3 bucket fabric-pool-AFF1, where AFF1 is the name of the cluster.
 

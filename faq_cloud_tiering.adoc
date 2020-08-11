@@ -82,22 +82,16 @@ One object store for the entire cluster.
 
 No, Cloud Tiering does not support object lifecycle management rules that move or delete data from object stores.
 
-== Cloud Manager
+== Connectors
 
-The following questions relate to Cloud Manager.
+The following questions relate to Connectors.
 
-=== Where does Cloud Manager need to be installed?
+=== Where does the Connector need to be installed?
 
-* When tiering data to S3, Cloud Manager can reside in an AWS VPC or on your premises.
-* When tiering data to Blob storage, Cloud Manager must reside in an Azure VNet.
-* When tiering data to Google Cloud Storage, Cloud Manager must reside in a Google Cloud Platform VPC.
-* When tiering data to StorageGRID, Cloud Manager must reside on an on premises Linux host.
-
-=== What's the difference between Cloud Manager and a Service Connector?
-
-There's no difference, really. A Service Connector is part of Cloud Manager.
-
-You might be familiar with the Service Connector term if you've accessed the Cloud Tiering service directly from NetApp Cloud Central. Cloud Tiering prompts you to deploy a Service Connector to discover your on-prem clusters. That's not necessary when you use Cloud Tiering from within Cloud Manager because Cloud Manager acts as the Service Connector--it communicates with ONTAP clusters to discover information about active and inactive data, and to set up data tiering.
+* When tiering data to S3, a Connector can reside in an AWS VPC or on your premises.
+* When tiering data to Blob storage, a Connector must reside in an Azure VNet.
+* When tiering data to Google Cloud Storage, a Connector must reside in a Google Cloud Platform VPC.
+* When tiering data to StorageGRID, a Connector must reside on an on premises Linux host.
 
 == Networking
 
@@ -111,7 +105,7 @@ ONTAP reads and writes data to and from object storage. The object storage never
 
 * For StorageGRID, the ONTAP cluster initiates an HTTPS connection over a user-specified port to StorageGRID (the port is configurable during tiering setup).
 
-* Cloud Manager needs an outbound HTTPS connection over port 443 to your ONTAP clusters, to the object store, and to the Cloud Tiering service.
+* A Connector needs an outbound HTTPS connection over port 443 to your ONTAP clusters, to the object store, and to the Cloud Tiering service.
 
 For more details, see:
 
