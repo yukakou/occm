@@ -62,7 +62,7 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 \https://cognito-identity.us-east-1.amazonaws.com
 \https://sts.amazonaws.com
 \https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
-| Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
+| Enables the Connector to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
 
 | \https://cloudmanagerinfraprod.azurecr.io | Access to software images of container components for an infrastructure that's running Docker and provides a solution for service integrations with Cloud Manager.
 
@@ -149,7 +149,7 @@ A Connector contacts the following endpoints when managing resources in Azure:
 \https://cognito-identity.us-east-1.amazonaws.com
 \https://sts.amazonaws.com
 \https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
-| Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
+| Enables the Connector to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
 
 | \https://cloudmanagerinfraprod.azurecr.io | Access to software images of container components for an infrastructure that's running Docker and provides a solution for service integrations with Cloud Manager.
 
@@ -205,7 +205,7 @@ A Connector contacts the following endpoints when managing resources in GCP:
 |
 \https://www.googleapis.com
 
-| Enables Cloud Manager to contact Google APIs for deploying and managing Cloud Volumes ONTAP in GCP.
+| Enables the Connector to contact Google APIs for deploying and managing Cloud Volumes ONTAP in GCP.
 
 | \https://api.services.cloud.netapp.com:443 | API requests to NetApp Cloud Central.
 
@@ -220,7 +220,7 @@ A Connector contacts the following endpoints when managing resources in GCP:
 \https://cognito-identity.us-east-1.amazonaws.com
 \https://sts.amazonaws.com
 \https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
-| Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
+| Enables the Connector to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
 
 | \https://cloudmanagerinfraprod.azurecr.io | Access to software images of container components for an infrastructure that's running Docker and provides a solution for service integrations with Cloud Manager.
 

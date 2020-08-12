@@ -30,12 +30,7 @@ Availability Set::
 The Availability Set ensures that the nodes are in different fault and update domains.
 
 Disks::
-Customer data resides on Premium Storage page blobs. Each node has access to the other node's storage.
-Additional storage is also required for boot, root, and core data:
-+
-*	Two 90 GB Premium SSD disks for the boot volume (one per node)
-* Two 140 GB Premium Storage page blobs for the root volume (one per node)
-* Two 128 GB Standard HDD disks for saving cores (one per node)
+Customer data resides on Premium Storage page blobs. Each node has access to the other node's storage. Additional storage is also required for link:reference_default_configs.html#boot-and-root-data-for-cloud-volumes-ontap[boot, root, and core data].
 
 Storage accounts::
 * One storage account is required for managed disks.

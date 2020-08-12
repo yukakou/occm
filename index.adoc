@@ -41,5 +41,5 @@ Cloud Manager enables IT experts and cloud architects to centrally manage their 
 == Connect with peers, get help, and find more information
 
 * https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS[NetApp Community: Cloud Data Services^]
-* https://mysupport.netapp.com/cloudontap[NetApp Cloud Volumes ONTAP Support^]
+* https://mysupport.netapp.com/GPS/ECMLS2588181.html[NetApp Cloud Volumes ONTAP Support^]
 * link:reference_additional_info.html[Where to get help and find more information]

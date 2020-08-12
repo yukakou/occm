@@ -72,8 +72,8 @@ For example:
 +
 Contact us through the in-product chat if you need help identifying your Cloud Insights domain and tenant ID.
 
-Networking for Cloud Manager::
-Similar to the Acquisition Unit, Cloud Manager must have outbound connectivity to the Cloud Insights tenant. But the endpoint that Cloud Manager contacts is slightly different. It contacts the tenant host URL using the shortened tenant ID:
+Networking for the Connector::
+Similar to the Acquisition Unit, the Connector must have outbound connectivity to the Cloud Insights tenant. But the endpoint that the Connector contacts is slightly different. It contacts the tenant host URL using the shortened tenant ID:
 +
  https://<your-short-tenant-ID>.<Cloud Insights Domain>
 +
