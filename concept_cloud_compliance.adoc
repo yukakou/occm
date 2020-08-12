@@ -65,9 +65,9 @@ At a high-level, Cloud Compliance works like this:
 
 == The Cloud Compliance instance
 
-When you enable Cloud Compliance, Cloud Manager deploys a Cloud Compliance instance in the same subnet as Cloud Manager.
+When you enable Cloud Compliance, Cloud Manager deploys a Cloud Compliance instance in the same subnet as the Connector.
 
-NOTE: If Cloud Manager is installed on-prem, it deploys the Cloud Compliance instance in same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
+NOTE: If the Connector is installed on-prem, it deploys the Cloud Compliance instance in same VPC or VNet as the first Cloud Volumes ONTAP system in the request.
 
 image:diagram_cloud_compliance_instance.png[A diagram that shows a Cloud Manager instance and a Cloud Compliance instance running in your cloud provider.]
 
@@ -83,7 +83,7 @@ NOTE: Changing or resizing the instance/VM type isn't supported. You need to use
 
 * The instance is named _CloudCompliance_ with a generated hash (UUID) concatenated to it. For example: _CloudCompliance-16bb6564-38ad-4080-9a92-36f5fd2f71c7_
 
-* Only one Cloud Compliance instance is deployed per Cloud Manager system.
+* Only one Cloud Compliance instance is deployed per Connector.
 
 * Upgrades of Cloud Compliance software is automated--you don't need to worry about it.
 

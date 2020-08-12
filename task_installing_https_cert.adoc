@@ -37,7 +37,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 | Description
 | Generate a CSR
 a|
-.. Enter the host name or DNS of the Cloud Manager host (its Common Name), and then click *Generate CSR*.
+.. Enter the host name or DNS of the Connector host (its Common Name), and then click *Generate CSR*.
 +
 Cloud Manager displays a certificate signing request.
 
