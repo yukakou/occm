@@ -19,10 +19,10 @@ Create a Cloud Volumes Service for Google Cloud working environment in Cloud Man
 
 Get started quickly by following these steps, or go to the next section for full details.
 
-==== image:number1.png[Number 1] Enable the Cloud Volumes Service APIs
+==== image:number1.png[Number 1] Enable the Cloud Volumes Service API
 
 [role="quick-margin-para"]
-From Google, enable certain Cloud Volumes Service for GCP APIs so that Cloud Manager can manage the subscription.
+From Google, enable the Cloud Volumes Service for GCP API so that Cloud Manager can manage the subscription.
 
 ==== image:number2.png[Number 2] Create a GCP service account
 
@@ -34,14 +34,11 @@ From Google, create a GCP service account and role so that Cloud Manager can acc
 [role="quick-margin-para"]
 In Cloud Manager, click *Add Working Environment* > *Google Cloud* > *Cloud Volumes Service* and then provide details about the service account and Google Cloud project.
 
-== Enable the Cloud Volumes Service APIs
+== Enable the Cloud Volumes Service API
 
-In Google Cloud Shell, run the following commands to enable the Service Networking API and the Service Management API if they are not already enabled:
+In Google Cloud Shell, run the following command to enable the Cloud Volumes Service API:
 
-    `gcloud --project=<my-cvs-project> services enable servicenetworking.googleapis.com`
-    `gcloud --project=<my-cvs-project> services enable servicemanagement.googleapis.com`
-
-For detailed steps, see the Cloud Volumes Service for GCP topic link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/before-you-begin-cloud-volumes[Before you begin using Cloud Volumes Service^].
+    `gcloud --project=<my-cvs-project> services enable cloudvolumesgcp-api.netapp.com`
 
 == Give Cloud Manager access to the Cloud Volumes Service for GCP account
 
@@ -75,7 +72,7 @@ Add an IAM role for the service account.
 
 . Enter the service account and a single email address (required).
 
-. Select the XYZ role.
+. Select the _compute.viewer_ role.
 
 . Click *Save*.
 
