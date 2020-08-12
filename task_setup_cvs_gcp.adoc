@@ -13,33 +13,33 @@ summary: Create a Cloud Volumes Service for Google Cloud working environment in 
 :imagesdir: ./media/
 
 [.lead]
-Create a Cloud Volumes Service for Google Cloud working environment in Cloud Manager to create and manage NetApp accounts, volumes, and snapshots.
+Create a Cloud Volumes Service for Google Cloud working environment in Cloud Manager to create and manage volumes and snapshots.
 
 == Quick start
 
 Get started quickly by following these steps, or go to the next section for full details.
 
-==== image:number1.png[Number 1] Enable the Cloud Volumes Service API
+==== image:number1.png[Number 1] Enable the Cloud Volumes Service APIs
 
 [role="quick-margin-para"]
-Set up Cloud Volumes Service for GCP and enable the APIs. See link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/before-you-begin-cloud-volumes[Before you begin using Cloud Volumes Service^].
+From Google, enable certain Cloud Volumes Service for GCP APIs so that Cloud Manager can manage the subscription.
 
-==== image:number2.png[Number 2] Set up your networking and connections
+==== image:number2.png[Number 2] Create a GCP service account
 
 [role="quick-margin-para"]
-You have set up the networking and connections. See link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access[Setting up private services access^].
+From Google, create a GCP service account and role so that Cloud Manager can access your Cloud Volumes Service for GCP account.
 
 ==== image:number3.png[Number 3] Create a Cloud Volumes Service for GCP working environment
 
 [role="quick-margin-para"]
-You must create a working environment for the volumes based on your Cloud Volumes Service for GCP subscription.
+In Cloud Manager, click *Add Working Environment* > *Google Cloud* > *Cloud Volumes Service* and then provide details about the service account and Google Cloud project.
 
-== Enable the Cloud Volumes Service API
+== Enable the Cloud Volumes Service APIs
 
 In Google Cloud Shell, run the following commands to enable the Service Networking API and the Service Management API if they are not already enabled:
 
-    `gcloud --project=my-cvs-prj services enable servicenetworking.googleapis.com`
-    `gcloud --project=my-cvs-prj services enable servicemanagement.googleapis.com`
+    `gcloud --project=<my-cvs-project> services enable servicenetworking.googleapis.com`
+    `gcloud --project=<my-cvs-project> services enable servicemanagement.googleapis.com`
 
 For detailed steps, see the Cloud Volumes Service for GCP topic link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/before-you-begin-cloud-volumes[Before you begin using Cloud Volumes Service^].
 
@@ -111,10 +111,10 @@ image:screenshot_add_cvs_gcp_working_env.png[A screenshot of adding a working en
 
 .. Enter the Working Environment Name you want to use.
 .. Copy/paste the service account credentials that you downloaded in the previous steps.
-.. Select the ID of your Google Cloud project.
+.. Select the name of your Google Cloud project.
+.. Click *Add*.
 +
 image:screenshot_add_cvs_gcp_credentials.png[A screenshot of adding credentials for a Cloud Volumes Service for GCP subscription]
-.. Click *Add*.
 
 .Result
 
