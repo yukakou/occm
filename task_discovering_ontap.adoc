@@ -14,23 +14,35 @@ summary: Cloud Manager can discover the ONTAP clusters in your on-premises envir
 
 Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering an ONTAP cluster enables you to provision storage, replicate data, and tier cold data from an on-prem cluster to the cloud.
 
-.Before you begin
+.What you'll need
 
-You must have the cluster management IP address and the password for the admin user account to add the cluster to Cloud Manager.
+* A Connector installed in a cloud provider or on your premises.
++
+If you want to tier cold data to the cloud, then you should review requirements for the Connector based on where you plan to tier cold data.
++
+** link:concept_connectors.html[Learn about Connectors]
+** link:task_managing_connectors.html[Switching between Connectors]
+** link:concept_cloud_tiering.html[Learn about Cloud Tiering]
 
+* The cluster management IP address and the password for the admin user account to add the cluster to Cloud Manager.
++
 Cloud Manager discovers ONTAP clusters using HTTPS. If you use custom firewall policies, they must meet the following requirements:
 
-* The Cloud Manager host must allow outbound HTTPS access through port 443.
+** The Connector host must allow outbound HTTPS access through port 443.
 +
-If Cloud Manager is in AWS, all outbound communication is allowed by the predefined security group.
+If the Connector is in the cloud, all outbound communication is allowed by the predefined security group.
 
-* The ONTAP cluster must allow inbound HTTPS access through port 443.
+** The ONTAP cluster must allow inbound HTTPS access through port 443.
 +
-The default "mgmt" firewall policy allows inbound HTTPS access from all IP addresses. If you modified this default policy, or if you created your own firewall policy, you must associate the HTTPS protocol with that policy and enable access from the Cloud Manager host.
+The default "mgmt" firewall policy allows inbound HTTPS access from all IP addresses. If you modified this default policy, or if you created your own firewall policy, you must associate the HTTPS protocol with that policy and enable access from the Connector host.
 
 .Steps
 
-. On the Working Environments page, click *Discover* and select *ONTAP Cluster*.
+. On the Working Environments page, click *Add Working Environment* and select *On-Premises ONTAP*.
+
+. If you're prompted, create a Connector.
++
+Refer to the links above for more details.
 
 . On the *ONTAP Cluster Details* page, enter the cluster management IP address, the password for the admin user account, and the location of the cluster.
 +
@@ -40,4 +52,4 @@ image:screenshot_discover_ontap.gif["A screenshot that shows an example of the O
 
 .Result
 
-Cloud Manager discovers the cluster. You can now create volumes, replicate data to and from the cluster, and launch System Manager to perform advanced tasks.
+Cloud Manager discovers the cluster. You can now create volumes, replicate data to and from the cluster, set up data tiering to the cloud, and launch System Manager to perform advanced tasks.

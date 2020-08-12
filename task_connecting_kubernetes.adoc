@@ -20,9 +20,9 @@ Before you complete these steps, you need to link:reference_before.html[create a
 ==== image:number1.png[Number 1] Verify network connectivity
 
 [role="quick-margin-list"]
-.. A network connection must be available between Cloud Manager and the Kubernetes clusters, and from the Kubernetes clusters to ONTAP systems.
+.. A network connection must be available between the Connector and the Kubernetes clusters, and from the Kubernetes clusters to ONTAP systems.
 
-.. Cloud Manager needs an outbound internet connection to access the following endpoints when installing Trident:
+.. The Connector needs an outbound internet connection to access the following endpoints when installing Trident:
 +
 \https://packages.cloud.google.com/yum
 \https://github.com/NetApp/trident/releases/download/

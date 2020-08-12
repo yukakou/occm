@@ -60,7 +60,7 @@ network interface create -vserver svm_cloud -lif svm_mgmt -role data -data-proto
 
 | Optional: Change the backup location of configuration files | Cloud Volumes ONTAP automatically creates configuration backup files that contain information about the configurable options that it needs to operate properly.
 
-By default, Cloud Volumes ONTAP backs up the files to the Cloud Manager host every eight hours. If you want to send the backups to an alternate location, you can change the location to an FTP or HTTP server in your data center or in AWS. For example, you might already have a backup location for your FAS storage systems.
+By default, Cloud Volumes ONTAP backs up the files to the Connector host every eight hours. If you want to send the backups to an alternate location, you can change the location to an FTP or HTTP server in your data center or in AWS. For example, you might already have a backup location for your FAS storage systems.
 
 You can change the backup location using the CLI. See the http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-sag/home.html[ONTAP 9 System Administration Reference^].
 |===

@@ -39,9 +39,9 @@ Immediately after you create the working environment, Cloud Manager launches a t
 
 .Steps
 
-. On the Working Environments page, click *Create Cloud Volumes ONTAP* and follow the prompts.
+. On the Working Environments page, click *Add Working Environment* and follow the prompts.
 
-. *Define Your Working Environment*: Select *Amazon Web Services* and *Cloud Volumes ONTAP*.
+. *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
 
 . *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
 +
@@ -138,9 +138,11 @@ link:concept_data_tiering.html[Learn how data tiering works].
 
 . *Write Speed & WORM*: Choose *Normal* or *High* write speed, and activate write once, read many (WORM) storage, if desired.
 +
-NOTE: Choosing a write speed is supported with single node systems only.
+Choosing a write speed is supported with single node systems only.
 +
 link:task_planning_your_config.html#choosing-a-write-speed[Learn more about write speed].
++
+WORM can't be enabled if data tiering was enabled.
 +
 link:concept_worm.html[Learn more about WORM storage].
 
@@ -198,7 +200,7 @@ Cloud Manager launches the Cloud Volumes ONTAP instance. You can track the progr
 
 If you experience any issues launching the Cloud Volumes ONTAP instance, review the failure message. You can also select the working environment and click Re-create environment.
 
-For additional help, go to https://mysupport.netapp.com/cloudontap[NetApp Cloud Volumes ONTAP Support^].
+For additional help, go to https://mysupport.netapp.com/GPS/ECMLS2588181.html[NetApp Cloud Volumes ONTAP Support^].
 
 .After you finish
 
@@ -232,9 +234,9 @@ Immediately after you create the working environment, Cloud Manager launches a t
 
 .Steps
 
-. On the Working Environments page, click *Create Cloud Volumes ONTAP* and follow the prompts.
+. On the Working Environments page, click *Add Working Environment* and follow the prompts.
 
-. *Define Your Working Environment*: Select *Amazon Web Services* and *Cloud Volumes ONTAP HA*.
+. *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
 
 . *Details and Credentials*: Optionally change the AWS credentials and subscription, enter a working environment name, add tags if needed, and then enter a password.
 +
@@ -274,8 +276,8 @@ image:screenshot_aws_marketplace.gif[A screenshot that shows the subscription pa
 
 . *Services*: Keep the services enabled or disable the individual services that you don't want to use with this Cloud Volumes ONTAP system.
 +
-* link:task_backup_to_s3.html[Learn more about Backup to S3].
 * link:concept_cloud_compliance.html[Learn more about Cloud Compliance].
+* link:task_backup_to_s3.html[Learn more about Backup to Cloud].
 * link:concept_monitoring.html[Learn more about Monitoring].
 
 . *HA Deployment Models*: Choose an HA configuration.
@@ -345,6 +347,8 @@ link:concept_data_tiering.html[Learn how data tiering works].
 
 . *WORM*: Activate write once, read many (WORM) storage, if desired.
 +
+WORM can't be enabled if data tiering was enabled.
++
 link:concept_worm.html[Learn more about WORM storage].
 
 . *Create Volume*: Enter details for the new volume or click *Skip*.
@@ -401,7 +405,7 @@ Cloud Manager launches the Cloud Volumes ONTAP HA pair. You can track the progre
 
 If you experience any issues launching the HA pair, review the failure message. You can also select the working environment and click Re-create environment.
 
-For additional help, go to https://mysupport.netapp.com/cloudontap[NetApp Cloud Volumes ONTAP Support^].
+For additional help, go to https://mysupport.netapp.com/GPS/ECMLS2588181.html[NetApp Cloud Volumes ONTAP Support^].
 
 .After you finish
 
