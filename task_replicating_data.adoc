@@ -19,6 +19,12 @@ Cloud Manager simplifies data replication between volumes on separate systems us
 
 NOTE: The baseline transfer includes a full copy of the source data. Subsequent transfers contain differential copies of the source data.
 
+Cloud Manager enables data replication between the following types of working environments:
+
+* From a Cloud Volumes ONTAP system to another Cloud Volumes ONTAP system
+* Between a Cloud Volumes ONTAP system and an on-prem ONTAP cluster
+* From an on-prem ONTAP cluster to another on-prem ONTAP cluster
+
 == Data replication requirements
 
 Before you can replicate data, you should confirm that specific requirements are met for both Cloud Volumes ONTAP systems and ONTAP clusters.
