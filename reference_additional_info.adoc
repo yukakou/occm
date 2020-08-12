@@ -16,7 +16,7 @@ translate: false
 [.lead]
 You can get help and find more information about Cloud Manager and Cloud Volumes ONTAP through various resources, including videos, forums, and support.
 
-* https://mysupport.netapp.com/cloudontap[NetApp Cloud Volumes ONTAP Support^]
+* https://mysupport.netapp.com/GPS/ECMLS2588181.html[NetApp Cloud Volumes ONTAP Support^]
 +
 Access support resources to get help and troubleshoot issues with Cloud Volumes ONTAP.
 

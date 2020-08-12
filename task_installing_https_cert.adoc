@@ -17,7 +17,7 @@ By default, Cloud Manager uses a self-signed certificate for HTTPS access to the
 
 == Before you get started
 
-You need to create a Connector before you can change Cloud Manager settings. link:task_creating_connectors.html[Learn how].
+You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html#how-to-create-a-connector[Learn how].
 
 == Installing an HTTPS certificate
 

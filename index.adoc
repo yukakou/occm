@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: index.html
-summary: Welcome to the documentation portal for Cloud Manager and Cloud Volumes ONTAP.
+summary: Cloud Manager enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp’s cloud solutions.
 ---
 
 = Cloud Manager and Cloud Volumes ONTAP documentation
@@ -11,10 +11,11 @@ summary: Welcome to the documentation portal for Cloud Manager and Cloud Volumes
 :linkattrs:
 :imagesdir: ./media/
 
-Cloud Manager enables you to deploy and manage NetApp Cloud Volumes ONTAP, which is a data management solution that provides protection, visibility, and control for your cloud-based workloads.
+Cloud Manager enables IT experts and cloud architects to centrally manage their hybrid multi-cloud infrastructure using NetApp’s cloud solutions.
 
 == Discover what's new
 
+* link:reference_key_changes.html[Important changes in Cloud Manager]
 * link:reference_new_occm.html[What's new in Cloud Manager]
 * https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_97.html[What's new in Cloud Volumes ONTAP^]
 

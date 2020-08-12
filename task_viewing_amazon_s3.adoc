@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_viewing_amazon_s3.html
 keywords: s3 buckets, s3 storage, s3 working environment, amazon s3 buckets, amazon s3 working environment
-summary: Cloud Manager can automatically discover information about the Amazon S3 buckets that reside in the AWS account where it's installed.
+summary: After you install a Connector in AWS, Cloud Manager can automatically discover information about the Amazon S3 buckets that reside in the AWS account where it's installed.
 ---
 
 = Viewing your Amazon S3 buckets
@@ -13,13 +13,13 @@ summary: Cloud Manager can automatically discover information about the Amazon S
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager can automatically discover information about the Amazon S3 buckets that reside in the AWS account where it's installed.
+After you install a Connector in AWS, Cloud Manager can automatically discover information about the Amazon S3 buckets that reside in the AWS account where it's installed.
 
 You can see details about your S3 buckets, including the region, access level, storage class, and whether the bucket is used with Cloud Volumes ONTAP for backups or data tiering. And you can scan the S3 buckets with Cloud Compliance.
 
 .Steps
 
-. Install Cloud Manager in the AWS account where you want to view your Amazon S3 buckets.
+. link:task_creating_connectors_aws.html[Install a Connector] in the AWS account where you want to view your Amazon S3 buckets.
 +
 You should automatically see an Amazon S3 working environment shortly after.
 +
