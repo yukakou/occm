@@ -20,16 +20,9 @@ Cloud Manager can discover the ONTAP clusters in your on-premises environment, i
 +
 If you want to tier cold data to the cloud, then you should review requirements for the Connector based on where you plan to tier cold data.
 +
-* link:concept_connectors.html[Learn about Connectors]
-* link:task_creating_connectors_aws.html[Creating a Connector in AWS]
-* link:task_creating_connectors_azure.html[Creating a Connector in Azure]
-* link:task_creating_connectors_gcp.html[Creating a Connector in GCP]
-* link:task_installing_linux.html[Installing the Connector on an existing Linux host]
-* link:task_managing_connectors.html[Switching between Connectors]
-* link:task_tiering_onprem_aws.html[Tier data to Amazon S3]
-* link:task_tiering_onprem_azure.html[Tier data to Azure Blob storage]
-* link:task_tiering_onprem_gcp.html[Tier data to Google Cloud Storage]
-* link:task_tiering_onprem_storagegrid.html[Tier data to StorageGRID]
+** link:concept_connectors.html[Learn about Connectors]
+** link:task_managing_connectors.html[Switching between Connectors]
+** link:concept_cloud_tiering.html[Learn about Cloud Tiering]
 
 * The cluster management IP address and the password for the admin user account to add the cluster to Cloud Manager.
 +
