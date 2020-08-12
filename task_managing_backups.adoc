@@ -57,28 +57,6 @@ image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon 
 +
 image:screenshot_backup_to_s3_restore_options.gif[A screenshot that shows the restore options: a working environment to restore to, the name of the volume, and the volume info.]
 
-== Adding and updating your Backup BYOL license
-
-You use the BYOL Licenses page to add or update your Backup BYOL license.
-
-.Steps
-
-. At the top of Cloud Manager, click the menu icon and then click *License*.
-
-. Click *Add Backup License* or *Update Backup License* depending on whether you are adding a new license or updating an existing license.
-+
-image:screenshot_backup_byol_license.png[A screenshot that shows the BYOL licensing page with buttons for add and update backup license]
-
-. Enter the license information and click *Add License*:
-* If you have the serial number, select the *Enter Backup BYOL Serial Number* option and enter the serial number.
-* If you have the backup license file, select the *Upload Backup BYOL License* option and follow the prompts to attach the file.
-+
-image:screenshot_backup_byol_license_add.png[A screenshot that shows the page to add the Backup BYOL license.]
-
-.Result
-
-Cloud Manager adds or updates the license so that your Backup to Cloud service is active.
-
 == Deleting backups
 
 Backup to Cloud enables you to delete _all_ backups of a specific volume. You can't delete _individual_ backups.
