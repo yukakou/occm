@@ -14,7 +14,7 @@ translate: false
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager creates AWS security groups that include the inbound and outbound rules that Cloud Manager and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
+Cloud Manager creates AWS security groups that include the inbound and outbound rules that the Connector and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
 
 == Rules for Cloud Volumes ONTAP
 
@@ -148,7 +148,7 @@ The source for inbound rules is 0.0.0.0/0.
 | Purpose
 
 | SSH |	22 | SSH connections to the HA mediator
-| TCP |	3000 | RESTful API access from Cloud Manager
+| TCP |	3000 | RESTful API access from the Connector
 
 |===
 
@@ -184,7 +184,7 @@ If you need rigid rules for outbound traffic, you can use the following informat
 | Destination
 | Purpose
 
-| HTTP | 80 | Cloud Manager IP address | Download upgrades for the mediator
+| HTTP | 80 | Connector IP address | Download upgrades for the mediator
 | HTTPS | 443 | AWS API services | Assist with storage failover
 | UDP | 53 | AWS API services | Assist with storage failover
 
@@ -272,7 +272,7 @@ The predefined security group for the Connector includes the following outbound 
 
 If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
 
-NOTE: The source IP address is the Cloud Manager host.
+NOTE: The source IP address is the Connector host.
 
 [cols=5*,options="header,autowidth"]
 |===

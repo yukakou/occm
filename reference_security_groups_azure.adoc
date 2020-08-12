@@ -31,7 +31,7 @@ The source for inbound rules in the predefined security group is 0.0.0.0/0.
 | Protocol
 | Purpose
 
-| 22 | SSH | Provides SSH access to the Cloud Manager host
+| 22 | SSH | Provides SSH access to the Connector host
 | 80 | HTTP |	Provides HTTP access from client web browsers to the Cloud Manager web console
 | 443 |	HTTPS | Provides HTTPS access from client web browsers to the Cloud Manager web console
 
@@ -61,7 +61,7 @@ The predefined security group for Cloud Manager includes the following outbound 
 
 If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by Cloud Manager.
 
-NOTE: The source IP address is the Cloud Manager host.
+NOTE: The source IP address is the Connector host.
 
 [cols=5*,options="header,autowidth"]
 |===

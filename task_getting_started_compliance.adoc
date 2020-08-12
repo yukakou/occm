@@ -22,7 +22,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Review prerequisites
 
 [role="quick-margin-para"]
-Ensure that your cloud environment can meet the prerequisites, which includes 16 vCPUs for the Cloud Compliance instance, outbound internet access for the instance, connectivity between Cloud Manager and Cloud Compliance over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
+Ensure that your cloud environment can meet the prerequisites, which includes 16 vCPUs for the Cloud Compliance instance, outbound internet access for the instance, connectivity between the Connector and Cloud Compliance over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
 
 ==== image:number2.png[Number 2] Deploy the Cloud Compliance instance
 
@@ -54,7 +54,7 @@ Click *Compliance* > *Scan Configuration* > *Edit CIFS Credentials* and provide 
 Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Compliance. You'll need to ensure connectivity to volumes after you enable Cloud Compliance. That's covered below.
 
 Enable outbound internet access::
-Cloud Compliance requires outbound internet access. If your virtual network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. Note that Cloud Manager deploys the Cloud Compliance instance in the same subnet as Cloud Manager.
+Cloud Compliance requires outbound internet access. If your virtual network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. Note that Cloud Manager deploys the Cloud Compliance instance in the same subnet as the Connector.
 +
 [cols="43,57",options="header"]
 |===
@@ -103,17 +103,17 @@ For more details on vCPU limits, see the following:
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quotas[Azure documentation: Virtual machine vCPU quotas^]
 
 Ensure that Cloud Manager can access Cloud Compliance::
-Ensure connectivity between Cloud Manager and the Cloud Compliance instance:
+Ensure connectivity between the Connector and the Cloud Compliance instance:
 
-* The security group for Cloud Manager must allow inbound and outbound traffic over port 80 to and from the Cloud Compliance instance.
+* The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Cloud Compliance instance.
 +
 This connection enables deployment of the Cloud Compliance instance and enables you to view information in the Compliance tab.
 
-* If your AWS network doesn’t use a NAT or proxy for internet access, modify the security group for Cloud Manager to allow inbound traffic over TCP port 3128 from the Cloud Compliance instance.
+* If your AWS network doesn’t use a NAT or proxy for internet access, modify the security group for the Connector to allow inbound traffic over TCP port 3128 from the Cloud Compliance instance.
 +
-This is required because the Cloud Compliance instance uses Cloud Manager as a proxy to access the internet.
+This is required because the Cloud Compliance instance uses the Connector as a proxy to access the internet.
 +
-NOTE: This port is open by default on all new Cloud Manager instances, starting with version 3.7.5. It's not open on Cloud Manager instances created prior to that.
+NOTE: This port is open by default on all new Connector instances, starting with version 3.7.5. It's not open on instances created prior to that.
 
 Set up discovery of Azure NetApp Files::
 Before you can scan volumes for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration].
@@ -125,8 +125,6 @@ Ensure web browser connectivity to Cloud Compliance::
 After Cloud Compliance is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Cloud Compliance instance.
 +
 The Cloud Compliance instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to AWS or Azure (for example, a VPN), or from a host that's inside the same network as the Cloud Compliance instance.
-+
-TIP: If you're accessing Cloud Manager from a public IP address, then your web browser probably isn't running on a host inside the network.
 
 == Deploying the Cloud Compliance instance
 

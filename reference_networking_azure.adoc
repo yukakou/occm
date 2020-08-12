@@ -425,7 +425,7 @@ The predefined security group for the Connector includes the following outbound 
 
 If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
 
-NOTE: The source IP address is the Cloud Manager host.
+NOTE: The source IP address is the Connector host.
 
 [cols=5*,options="header,autowidth"]
 |===
