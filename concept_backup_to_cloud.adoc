@@ -131,7 +131,7 @@ Use the chat icon in the lower right of the Cloud Manager interface to renew you
 Two things can happen when your license expires:
 
 * If the account you are using for your Cloud Volumes ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by your cloud provider for object storage costs, and by NetApp for backup licensing costs, for the capacity that your backups are using.
-* If the account you are using for your Cloud Volumes ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to receive the expiration message.
+* If the account you are using for your Cloud Volumes ONTAP or on-premises ONTAP system does not have a marketplace account, the backup service continues to run, but you will continue to receive the expiration message.
 
 Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
 

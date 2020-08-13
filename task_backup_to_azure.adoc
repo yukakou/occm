@@ -114,8 +114,10 @@ image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Clo
 . In the _Define Policy_ page, select the backup schedule and retention value.
 +
 image:screenshot_backup_settings_azure.png[A screenshot that shows the Backup to Cloud settings where you can enable or disable the feature and then choose your backup retention.]
++
+See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-combination[the list of existing policies].
 
-. Choose how the resource group is created.
+. Choose how the resource group is created and click *Continue*.
 * *Automatically create a resource group* - Cloud Manager creates a resource group
 * *Create a new resource group* - You create the resource group
 * *Select an existing resource group* - You select an existing resource group
