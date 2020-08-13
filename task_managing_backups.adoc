@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_managing_backups.html
 keywords: restoring, restore, restore volumes, Backup to Cloud, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable backup to cloud, turn off backup to cloud
-summary: Manage backups for Cloud Volumes ONTAP by changing the backup schedule, restoring volumes, and more.
+summary: Manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, restoring volumes, deleting backups, and more.
 ---
 
-= Managing backups for Cloud Volumes ONTAP
+= Managing backups for Cloud Volumes ONTAP and on-premises ONTAP systems
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,23 +13,23 @@ summary: Manage backups for Cloud Volumes ONTAP by changing the backup schedule,
 :imagesdir: ./media/
 
 [.lead]
-Manage backups for Cloud Volumes ONTAP by changing the backup schedule, restoring volumes, update BYOL licenses, and more.
+Manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, restoring volumes, deleting backups, and more.
 
 == Changing the schedule and backup retention
 
 The default policy backs up volumes every day and retains the most recent 30 backup copies of each volume. You can change to weekly or monthly backups and you can change the number of backup copies to retain. You can also select one of the system-defined policies that provide scheduled backups for 3 months, 1 year, and 7 years.
 
-TIP: Changing the backup policy affects all future backups. It doesn't affect any previous backups that were created.
+TIP: Changing the backup policy affects only new volumes created after you change the schedule. It doesn't affect the schedule for any existing volumes.
 
 .Steps
 
-. Open the working environment.
+. Select the working environment.
 
-. Click the backup settings icon.
+. Click image:screenshot_gallery_options.gif[More icon] and select *Backup Settings*.
 +
-image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud icon which is available after you open a working environment.]
+image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
-. Change the schedule and backup retention and then click *Save*.
+. From the _Backup to Cloud Settings_ page, change the schedule and backup retention and then click *Save*.
 +
 image:screenshot_backup_settings_azure_done.png[A screenshot that shows the Backup to Cloud settings where you can enable or disable the feature and then choose your backup retention.]
 
@@ -39,23 +39,30 @@ When you restore data from a backup, Cloud Manager performs a full volume restor
 
 .Steps
 
-. At the top of Cloud Manager, click *Backup*.
+. Select the working environment.
+
+. Click image:screenshot_gallery_options.gif[More icon] and select *View Backups*.
++
+image:screenshot_view_backups_selection.png[A screenshot of selecting the View Backups button for a working environment.]
 
 . Select the volume that you want to restore.
 +
 image:screenshot_backup_to_s3_volume.gif[A screenshot of the Backup and Restore tab showing a volume that has backups.]
 
-. Find the backup that you want to restore from and click the restore icon.
+. Click *View Backup List* and find the backup that you want to restore and click the *Restore* icon.
 +
 image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon for a backup after you select a volume.]
 
-. Select the working environment to which you want to restore the volume.
-
-. Enter a name for the volume.
-
-. Click *Restore*.
+. Fill out the _Restore Backup to new volume_ page:
+.. Select the working environment to which you want to restore the volume.
+.. Enter a name for the volume.
+.. Click *Restore*.
 +
 image:screenshot_backup_to_s3_restore_options.gif[A screenshot that shows the restore options: a working environment to restore to, the name of the volume, and the volume info.]
+
+.Result
+
+Cloud Manager creates a new volume based on the backup you selected. You can link:task_managing_storage.html#managing-existing-volumes[manage this new volume] as required.
 
 == Deleting backups
 
@@ -67,9 +74,11 @@ You might do this if you deleted a volume or if you deleted a Cloud Volumes ONTA
 
 . At the top of Cloud Manager, click *Backup*.
 
-. Click *View Backup List* for a volume.
+. From the volume list, find the volume and click *View Backup List*.
 
-. Click the menu and select *Delete All Backups*.
+. Click image:screenshot_gallery_options.gif[More icon] and select *Delete All Backups*.
++
+image:screenshot_delete_all_backups.png[A screenshot of selecting the Delete All Backups button to delete all backup for a volume.]
 
 .Result
 
@@ -77,16 +86,18 @@ Cloud Manager deletes all backups for the selected volume.
 
 == Disabling Backup to Cloud
 
-Disabling Backup to Cloud disables backups of each volume on the system. Any existing backups will not be deleted.
+Disabling Backup to Cloud for a working environment disables backups of each volume on the system. Any existing backups will not be deleted.
 
 Note that you'll continue to be charged by your cloud provider for object storage costs for the capacity that your backups use unless you delete the backups.
 
 .Steps
 
-. Open the working environment.
+. Select the working environment.
 
-. Click the backup settings icon.
+. Click image:screenshot_gallery_options.gif[More icon] and select *Backup Settings*.
 +
-image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud icon which is available after you open a working environment.]
+image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
 
-. Disable *Automatically back up all volumes* and then click *Save*.
+. From the _Backup to Cloud Settings page_, disable *Automatically back up all volumes* and then click *Save*.
++
+image:screenshot_disable_backups.png[]

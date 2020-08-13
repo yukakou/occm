@@ -31,9 +31,9 @@ Get started quickly by following these steps or scroll down to the remaining sec
 [role="quick-margin-list"]
 * New systems: Backup to Cloud is enabled by default in the working environment wizard. Be sure to keep the option enabled.
 
-* Existing systems: Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel.
+* Existing systems: Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel, and then follow the setup wizard.
 +
-image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud button which is available after you select a working environment.]
+image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Activate button which is available after you select a working environment.]
 
 ==== image:number3.png[Number 3] If needed, modify the backup policy
 
@@ -138,18 +138,19 @@ Enable Backup to Cloud at any time directly from the working environment.
 +
 image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Settings button which is available after you select a working environment.]
 
-. Choose your backup schedule and retention value and click *Continue*.
+. Define the backup schedule and retention value and click *Continue*.
 +
 image:screenshot_backup_settings.png[A screenshot that shows the Backup to Cloud settings where you can choose your schedule and backup retention.]
 +
 See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-combination[the list of existing policies].
 
-. Select the volumes that you want to be backed up and click *Activate*.
-+image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
+. Select the volumes that you want to back up and click *Activate*.
++
+image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
 
 .Result
 
-Backup to Cloud starts taking the initial backups of each volume.
+Backup to Cloud starts taking the initial backups of each selected volume.
 
 .What's next?
 
