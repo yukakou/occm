@@ -24,16 +24,17 @@ NOTE: You must use Cloud Manager for all backup and restore operations. Any acti
 * Back up independent copies of your data volumes to low-cost object storage in the cloud.
 +
 Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
+* Back up from cloud to cloud, and from on-premises ONTAP systems to cloud
 * Restore data from a specific point in time.
 * Restore the data to the source system or to a different system.
 
-== Supported object storage providers
+== Supported working environments and object storage providers
 
 Backup to Cloud is supported with the following types of working environments:
 
 * Cloud Volumes ONTAP in AWS
 * Cloud Volumes ONTAP in Azure
-* On-premises ONTAP clusters
+* On-premises ONTAP clusters in Azure
 
 == Cost
 
@@ -145,7 +146,7 @@ FlexGroup volumes aren't currently supported.
 
 == Limitations
 
-* Volumes that you create outside of Cloud Manager aren't automatically backed up.
+* When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up.
 +
 For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up.
 +
