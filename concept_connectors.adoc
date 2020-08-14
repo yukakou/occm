@@ -56,7 +56,10 @@ An Account Admin needs to create a Connector before a Workspace Admin can create
 
 An Account Admin can create a Connector in a number of ways:
 
-* link:task_creating_connectors.html[Directly from Cloud Manager] (recommended)
+* Directly from Cloud Manager (recommended)
+**
+**
+** 
 * link:task_launching_aws_mktp.html[From the AWS Marketplace]
 * link:task_launching_azure_mktp.html[From the Azure Marketplace]
 * link:task_installing_linux.html[By downloading and installing the software on an existing Linux host]

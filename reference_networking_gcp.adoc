@@ -46,7 +46,7 @@ Note that Cloud Manager doesn't create an SVM management LIF for Cloud Volumes O
 TIP: A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
 
 Firewall rules::
-You don't need to create firewall rules because Cloud Manager does that for you. If you need to use your own, refer to link:reference_firewall_rules_gcp.html[GCP firewall rules].
+You don't need to create firewall rules because Cloud Manager does that for you. If you need to use your own, refer to the firewall rules listed below.
 
 Connection from Cloud Volumes ONTAP to Google Cloud Storage for data tiering::
 If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
