@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept_backup_to_cloud.html
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, back up volumes, Backup to Cloud, restore volumes, billing, cost
-summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your account, independent of volume Snapshot copies used for near-term recovery or cloning.
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, back up volumes, Backup to Cloud, restore volumes, billing, cost, on-premises ONTAP, onprem
+summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
 = Learn about Backup to Cloud
@@ -100,7 +100,7 @@ You can choose daily, or weekly, or monthly backups of all volumes. You can also
 
 |===
 
-Once you have reached the maximum number of backups for a category, or interval, older backups are removed so you are always left with the most current backups.
+Once you have reached the maximum number of backups for a category, or interval, older backups are removed so you always have the most current backups.
 
 Note that the retention period for backups of data protection volumes is the same as defined in the source SnapMirror relationship. You can change this if you want by using the API.
 
@@ -131,8 +131,8 @@ Use the chat icon in the lower right of the Cloud Manager interface to renew you
 
 Two things can happen when your license expires:
 
-* If the account you are using for your Cloud Volumes ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by your cloud provider for object storage costs, and by NetApp for backup licensing costs, for the capacity that your backups are using.
-* If the account you are using for your Cloud Volumes ONTAP or on-premises ONTAP system does not have a marketplace account, the backup service continues to run, but you will continue to receive the expiration message.
+* If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by your cloud provider for object storage costs, and by NetApp for backup licensing costs, for the capacity that your backups are using.
+* If the account you are using for your ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to receive the expiration message.
 
 Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
 
@@ -151,6 +151,10 @@ FlexGroup volumes aren't currently supported.
 For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up.
 +
 If you want to back up these volumes, you would need to disable Backup to Cloud and then enable it again.
+
+* Backups created from on-premises ONTAP systems can be restored only to Cloud Volumes ONTAP systems that use the same cloud provider.
++
+You cannot restore a backup to an on-premises ONTAP system or to a Cloud Volumes ONTAP system that is using a different cloud provider.
 
 * Backup to Cloud can maintain up to 1,019 total backups of a volume.
 

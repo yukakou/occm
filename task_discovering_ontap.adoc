@@ -12,7 +12,7 @@ summary: Cloud Manager can discover the ONTAP clusters in your on-premises envir
 :linkattrs:
 :imagesdir: ./media/
 
-Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering an ONTAP cluster enables you to provision storage, replicate data, and tier cold data from an on-prem cluster to the cloud.
+Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering an ONTAP cluster enables you to provision storage, replicate data, back up data, and tier cold data from an on-prem cluster to the cloud.
 
 .What you'll need
 
@@ -52,4 +52,4 @@ image:screenshot_discover_ontap.gif["A screenshot that shows an example of the O
 
 .Result
 
-Cloud Manager discovers the cluster. You can now create volumes, replicate data to and from the cluster, set up data tiering to the cloud, and launch System Manager to perform advanced tasks.
+Cloud Manager discovers the cluster. You can now create volumes, replicate data to and from the cluster, set up data tiering to the cloud, back up volumes to the cloud, and launch System Manager to perform advanced tasks.
