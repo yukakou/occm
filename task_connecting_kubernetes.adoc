@@ -15,14 +15,14 @@ summary: Cloud Manager can automate the deployment of NetApp Trident on Kubernet
 [.lead]
 Cloud Manager can automate the deployment of https://netapp-trident.readthedocs.io/en/stable-v18.10/introduction.html[NetApp Trident^] on Kubernetes clusters so you can use ONTAP as persistent storage for containers. This works with Cloud Volumes ONTAP and on-prem ONTAP clusters.
 
-Before you complete these steps, you need to link:reference_before.html[create a Cloud Volumes ONTAP system] or link:task_discovering_ontap.html[discover an on-premises ONTAP cluster] from Cloud Manager.
+Before you complete these steps, you need to create a Cloud Volumes ONTAP system or link:task_discovering_ontap.html[discover an on-premises ONTAP cluster] from Cloud Manager.
 
 ==== image:number1.png[Number 1] Verify network connectivity
 
 [role="quick-margin-list"]
-.. A network connection must be available between Cloud Manager and the Kubernetes clusters, and from the Kubernetes clusters to ONTAP systems.
+.. A network connection must be available between the Connector and the Kubernetes clusters, and from the Kubernetes clusters to ONTAP systems.
 
-.. Cloud Manager needs an outbound internet connection to access the following endpoints when installing Trident:
+.. The Connector needs an outbound internet connection to access the following endpoints when installing Trident:
 +
 \https://packages.cloud.google.com/yum
 \https://github.com/NetApp/trident/releases/download/

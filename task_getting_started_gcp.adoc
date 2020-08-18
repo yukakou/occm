@@ -21,7 +21,7 @@ Get started with Cloud Volumes ONTAP for GCP in a few steps.
 If you don't have a link:concept_connectors.html[Connector] yet, an Account Admin needs to create one. link:task_creating_connectors_gcp.html[Learn how to create a Connector in GCP].
 
 [role="quick-margin-para"]
-TIP: When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don't have one yet.
+When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to deploy a Connector if you don't have one yet.
 
 ==== image:number2.png[Number 2] Plan your configuration
 
@@ -50,8 +50,8 @@ Two requirements must be met to tier cold data from Cloud Volumes ONTAP to low-c
 
 .. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Set up a service account for data tiering^]:
 +
-.. Assign the predefined _Storage Admin_ role to the tiering service account.
-.. Add the Connector service account as a _Service Account User_ to the tiering service account.
+* Assign the predefined _Storage Admin_ role to the tiering service account.
+* Add the Connector service account as a _Service Account User_ to the tiering service account.
 +
 You can provide the user role https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[in step 3 of the wizard when you create the tiering service account], or https://cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_user_for_a_service_account[grant the role after the service account was created^].
 +

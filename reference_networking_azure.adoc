@@ -30,7 +30,7 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 link:task_setting_up_ontap_cloud.html[Learn how to configure AutoSupport].
 
 Security groups::
-You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to link:reference_security_groups_azure.html[Security group rules].
+You do not need to create security groups because Cloud Manager does that for you. If you need to use your own, refer to the security group rules listed below.
 
 Number of IP addresses::
 Cloud Manager allocates the following number of IP addresses to Cloud Volumes ONTAP in Azure:
@@ -425,7 +425,7 @@ The predefined security group for the Connector includes the following outbound 
 
 If you need rigid rules for outbound traffic, you can use the following information to open only those ports that are required for outbound communication by the Connector.
 
-NOTE: The source IP address is the Cloud Manager host.
+NOTE: The source IP address is the Connector host.
 
 [cols=5*,options="header,autowidth"]
 |===

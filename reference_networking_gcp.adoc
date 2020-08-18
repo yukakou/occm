@@ -20,11 +20,11 @@ Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can 
 The following requirements must be met in GCP.
 
 Shared VPC::
-Cloud Manager and Cloud Volumes ONTAP are supported in a Google Cloud Platform shared VPC.
+The Connector and Cloud Volumes ONTAP are supported in a Google Cloud Platform shared VPC.
 +
-A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Cloud Manager and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
+A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Connector and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
 +
-The only requirement is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Cloud Manager service account.
+The only requirement is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account.
 +
 Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
 
@@ -46,7 +46,7 @@ Note that Cloud Manager doesn't create an SVM management LIF for Cloud Volumes O
 TIP: A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
 
 Firewall rules::
-You don't need to create firewall rules because Cloud Manager does that for you. If you need to use your own, refer to link:reference_firewall_rules_gcp.html[GCP firewall rules].
+You don't need to create firewall rules because Cloud Manager does that for you. If you need to use your own, refer to the firewall rules listed below.
 
 Connection from Cloud Volumes ONTAP to Google Cloud Storage for data tiering::
 If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
@@ -81,7 +81,7 @@ The Connector requires outbound internet access to manage resources and processe
 |
 \https://www.googleapis.com
 
-| Enables Cloud Manager to contact Google APIs for deploying and managing Cloud Volumes ONTAP in GCP.
+| Enables the Connector to contact Google APIs for deploying and managing Cloud Volumes ONTAP in GCP.
 
 | \https://api.services.cloud.netapp.com:443 | API requests to NetApp Cloud Central.
 
@@ -96,7 +96,7 @@ The Connector requires outbound internet access to manage resources and processe
 \https://cognito-identity.us-east-1.amazonaws.com
 \https://sts.amazonaws.com
 \https://cloud-support-netapp-com-accelerated.s3.amazonaws.com
-| Enables Cloud Manager to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
+| Enables the Connector to access and download manifests, templates, and Cloud Volumes ONTAP upgrade images.
 
 | \https://cloudmanagerinfraprod.azurecr.io | Access to software images of container components for an infrastructure that's running Docker and provides a solution for service integrations with Cloud Manager.
 

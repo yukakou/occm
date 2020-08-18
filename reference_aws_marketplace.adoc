@@ -41,12 +41,6 @@ This page doesn't enable you to launch Cloud Manager in AWS. That should be done
 | https://aws.amazon.com/marketplace/pp/B018REK8QG[Cloud Manager - Manual installation without access keys^]
 | We recommend that you launch Cloud Manager in AWS from https://cloud.netapp.com[NetApp Cloud Central^], but you can launch it from this AWS Marketplace page, if you prefer.
 
-| Enable deployment of Cloud Volumes ONTAP using a license that I purchased from NetApp (BYOL)
-a|
-* https://aws.amazon.com/marketplace/pp/B00OMA46T0[Cloud Volumes ONTAP for AWS (BYOL)^]
-* https://aws.amazon.com/marketplace/pp/B01H4LVJUC[Cloud Volumes ONTAP for AWS - High Availability (BYOL)^]
-| These AWS Marketplace pages enable you to subscribe to the single node or HA versions of Cloud Volumes ONTAP BYOL. You should subscribe to these offerings when Cloud Manager prompts you and redirects you to the page.
-
 | Enable deployment of Cloud Volumes ONTAP PAYGO (9.5 or earlier)
 a|
 * https://aws.amazon.com/marketplace/pp/B011KEZ734[Cloud Volumes ONTAP for AWS^]
