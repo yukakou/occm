@@ -22,9 +22,9 @@ Get started quickly by following these steps, or go to the next section for full
 ==== image:number1.png[Number 1] Enable the Cloud Volumes Service API
 
 [role="quick-margin-para"]
-From Google, enable the Cloud Volumes Service for GCP API so that Cloud Manager can manage the subscription.
+From Google, enable the Cloud Volumes Service for GCP API so that Cloud Manager can manage the subscription and cloud volumes.
 
-==== image:number2.png[Number 2] Create a GCP service account
+==== image:number2.png[Number 2] Create a GCP service account and download credentials
 
 [role="quick-margin-para"]
 From Google, create a GCP service account and role so that Cloud Manager can access your Cloud Volumes Service for GCP account.
@@ -38,45 +38,39 @@ In Cloud Manager, click *Add Working Environment* > *Google Cloud* > *Cloud Volu
 
 In Google Cloud Shell, run the following command to enable the Cloud Volumes Service API:
 
-    `gcloud --project=<my-cvs-project> services enable cloudvolumesgcp-api.netapp.com`
+`gcloud --project=<my-cvs-project> services enable cloudvolumesgcp-api.netapp.com`
 
 == Give Cloud Manager access to the Cloud Volumes Service for GCP account
 
-You must create a service account and role that Cloud Manager can use to access your Google account and cloud volumes.
+You must complete the following tasks so that Cloud Manager can access your Google Cloud account:
 
-=== Create a service account and service access key
+* Create a new service account
+* Add the new service account member to your project and assign it specific roles (permissions)
+* Create and download a key pair for the service account that is used to authenticate to Google
 
-Create a service account and access key pair that is used to authenticate to Google.
+.Steps
 
 . In the Google Cloud Console, go to the *Service Accounts* page.
 
 . Click *Select a project*, choose your project, and click *Open*.
 
-. Click *Create Service Account*.
+. Click *Create Service Account*, enter the service account name (friendly display name) and description, and click *Create*.
 
-. Enter a service account name (friendly display name), an optional description, select the _admin_ role, and then click *Save*.
+. From the _IAM page_ click *Add* and fill out the fields in the _Add Members_ page:
+.. In the New Members field, enter the full service account ID, for example, user1-service-account-cvs@project1.iam.gserviceaccount.com.
+.. Add these roles:
+* _NetApp Cloud Volumes Admin_
+* _Compute Network Viewer_
+* _Viewer_
+.. Click *Save*.
 
-. In the row for the new service account, click image:screenshot_gallery_options.gif[More button], and then click *Create key*.
+. From the _Service account details_ page click *Add key > Create new key*.
 
-. Select a *Key type* and click *Create*.
+. Select *JSON* as the key type and click *Create*.
++
+By clicking *Create* your new public/private key pair is generated and downloaded to your system. It serves as the only copy of the private key. Store this file securely because it can be used to authenticate as your service account.
 
-By clicking *Create* your new public/private key pair is generated and downloaded to your machine. It serves as the only copy of the private key. Store this file securely because it can be used to authenticate as your service account.
-
-For detailed steps, see the Google Cloud topics link:https://cloud.google.com/iam/docs/creating-managing-service-accounts[Creating and managing service accounts^] and link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys[Creating and managing service account keys^].
-
-=== Add an IAM role for the service account
-
-Add an IAM role for the service account.
-
-. In the Google Cloud Console, in your project, go to the *IAM* page and click *Add*.
-
-. Enter the service account and a single email address (required).
-
-. Select the _compute.viewer_ role.
-
-. Click *Save*.
-
-For detailed steps, see the Google Cloud topics link:https://cloud.google.com/iam/docs/granting-changing-revoking-access[Granting, changing, and revoking access to resources^]
+For detailed steps, see the Google Cloud topics link:https://cloud.google.com/iam/docs/creating-managing-service-accounts[Creating and managing service accounts^], link:https://cloud.google.com/iam/docs/granting-changing-revoking-access[Granting, changing, and revoking access to resources^], and link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys[Creating and managing service account keys^].
 
 == Create a Cloud Volumes Service for GCP working environment
 
@@ -92,9 +86,9 @@ TIP: If you have subscriptions and volumes in multiple GCP regions, you need to 
 
 You must have the following information available when adding a subscription in each region:
 
-* Service account credentials.
+* Service account credentials (JSON private key you downloaded)
 
-* Project name.
+* Project name
 
 .Steps
 
@@ -107,7 +101,7 @@ image:screenshot_add_cvs_gcp_working_env.png[A screenshot of adding a working en
 . Provide information about your Cloud Volumes Service subscription:
 
 .. Enter the Working Environment Name you want to use.
-.. Copy/paste the service account credentials that you downloaded in the previous steps.
+.. Copy/paste the JSON private key you downloaded in the previous steps.
 .. Select the name of your Google Cloud project.
 .. Click *Add*.
 +
