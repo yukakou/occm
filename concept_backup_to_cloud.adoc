@@ -44,9 +44,15 @@ For BYOL you'll pay NetApp to use the service for a period of time, say 6 months
 
 For PAYGO you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on used capacity (before storage efficiencies):
 
-* AWS: A 30-day free trial is available. https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
+* AWS: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
 
-* Azure: A 30-day free trial is available. https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Go to the Cloud Manager Marketplace offering for pricing details^].
+* Azure: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Go to the Cloud Manager Marketplace offering for pricing details^].
+
+=== Free trial
+
+A 30-day free trial is available. When using the trial version, you are notified about the number of free trial days that remain. At the end of your free trial, backups stop being created and you will not have the ability to restore a volume. You must subscribe to the service or purchase a license to continue using the service.
+
+Backup are not deleted when the service is disabled. You'll continue to be charged by your cloud provider for object storage costs for the capacity that your backups use unless you delete the backups.
 
 == How Backup to Cloud works
 
@@ -138,7 +144,7 @@ Once you renew your BYOL subscription, Cloud Manager automatically obtains the n
 
 Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop receiving the warning message and will be charged for backups that occurred while the license was expired.
 
-=== Supported volumes
+== Supported volumes
 
 Backup to Cloud supports read-write volumes only.
 

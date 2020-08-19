@@ -37,6 +37,28 @@ image:screenshot_backup_modify_policy.png[A screenshot that shows the Backup Set
 +
 image:screenshot_backup_modify_policy_page.png[A screenshot that shows the Backup to Cloud settings where you can modify the backup schedule and backup retention setting.]
 
+== Starting and stopping backups of volumes
+
+You can stop backing up a volume if you do not need backup copies of that volume and you do not want to pay for the cost to store the backups. You can also add a new volume to the backup list if it is not currently being backed up.
+
+.Steps
+
+. Select the working environment.
+
+. Click image:screenshot_gallery_options.gif[More icon] and select *Backup Settings*.
++
+image:screenshot_backup_settings_button.png[A screenshot that shows the Backup Settings button which is available after you select a working environment.]
+
+. From the _Backup Settings page_, click image:screenshot_horizontal_more_button.gif[More icon] for the working environment and select *Manage Volumes*.
++
+image:screenshot_backup_manage_volumes.png[A screenshot that shows the Manage Volumes button from the Backup Settings page.]
+
+. Select the checkbox for volumes that you want to start backing up, and deselect the checkbox for volumes that you want to stop backing up.
++
+image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where you can select or deselect volumes.]
+
+*Note:* When stopping a volume from being backed up you’ll continue to be charged by your cloud provider for object storage costs for the capacity that the backups use unless you <<deleting backups,delete the backups>>.
+
 == Restoring a volume from a backup
 
 When you restore data from a backup, Cloud Manager performs a full volume restore to a _new_ volume. You can restore the data to the same working environment or to a different working environment that's located in the same cloud account as the source working environment.
