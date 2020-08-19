@@ -25,13 +25,12 @@ There are many requirements you need to be aware of before you begin to deploy G
 
 Depending on your requirements, you may need to deploy one or multiple Global File Cache Core instances to create the Global File Cache Fabric. The Core instance is designed to act as a traffic cop between your distributed Global File Cache Edge instances and the data center file server resources, for example, file shares, folders, and files.
 
-When you are designing your Global File Cache deployment you need to determine what’s right for your environment in terms of scale, availability of resources,  and in terms of redundancy.
+When you are designing your Global File Cache deployment you need to determine what’s right for your environment in terms of scale, availability of resources,  and in terms of redundancy. GFC core can be deployed in the following ways:
+
+* GFC Core stand-alone instance.
+* GFC Core Load Distributed design (Cold Standby).
 
 See <<Sizing guidelines>> to understand the maximum number of Edge instances and total users that each configuration can support:
-
-* When deployed using Cloud Manager, the Global File Cache Core can be deployed only as a stand-alone instance.  You can have one Core per working environment.
-
-* When deployed manually (not using Cloud Manager), Global File Cache Core can be deployed as a stand-alone instance or in a Load Distributed design (Cold Standby).
 
 Consult your Global File Cache Solutions Engineer to discuss the best options for your enterprise deployment.
 
@@ -50,7 +49,7 @@ There are a few sizing guideline ratios that you need to keep in mind when confi
 Our guidelines recommend up to 10 Edge instances per Global File Cache Core instance, with a maximum of 20 Edges per Global File Cache Core instance. This is dependent to a significant degree upon the type and mean file size of the most common workload. In some cases, with more common workloads you can add more Edge instances per Core, but in these cases you should contact NetApp Support to correctly size the number of Edge and Core instances depending on the types and sizes of the file sets.
 
 [NOTE]
-You can leverage multiple Global File Cache Edge and Core instances simultaneously to scale out your infrastructure depending on the requirements. Multiple Core instances for a single set of user data is not supported when deployed using Cloud Manager at this time.
+You can leverage multiple Global File Cache Edge and Core instances simultaneously to scale out your infrastructure depending on the requirements.
 
 === Number of concurrent users per Edge instance
 

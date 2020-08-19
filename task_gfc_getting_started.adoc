@@ -34,7 +34,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Deploy Cloud Volumes ONTAP as an HA pair
 
 [role="quick-margin-para"]
-For the current release,  deploy Cloud Volumes ONTAP as an HA pair in Azure and configure SMB file shares. For more information, see https://docs.netapp.com/us-en/occm/task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^].
+For the current release, deploy Cloud Volumes ONTAP as an HA pair in Azure or AWS and configure SMB file shares. For more information, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^] or link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^].
 
 ==== image:number2.png[Number 2] Deploy the Global File Cache Management Server
 
@@ -53,7 +53,7 @@ For more information, see link:task_deploy_gfc_edge_instances.html[Deploying Glo
 
 === Deploy Cloud Volumes ONTAP as your storage platform
 
-In the current release,  Global File Cache supports Cloud Volumes ONTAP deployed as an HA pair in Azure.  For detailed prerequisites, requirements, and deployment instructions, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^].
+In the current release,  Global File Cache supports Cloud Volumes ONTAP deployed as an HA pair in Azure or AWS.  For detailed prerequisites, requirements, and deployment instructions, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^] or link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^].
 
 Note the following additional Global File Cache requirements:
 
@@ -89,7 +89,7 @@ image:screenshot_gfc_install4.png[A screenshot showing the prerequisites before 
 
 . After you have verified that the requirements have been met, or that you have the information to meet these requirements, click *Continue*.
 
-. Enter the admin credentials you will use to access to the Global File Cache Management Server VM and click *Enable GFC Service*. You can change the VM name if you want.
+. Enter the admin credentials you will use to access to the Global File Cache Management Server VM and click *Enable GFC Service*. For Azure you enter the credentials as a user name and password; for AWS you select the appropriate key pair. You can change the VM name if you want.
 +
 image:screenshot_gfc_install5.png[A screenshot showing the configuration information necessary to set up the Global File Cache Management Server.]
 
@@ -99,14 +99,16 @@ image:screenshot_gfc_install5.png[A screenshot showing the configuration informa
 +
 * The Global File Cache Core instance must be deployed in the same Active Directory domain as the Cloud Volumes ONTAP instance.
 * The service account is a domain user and it is part of the BUILTIN\Backup Operators group on the Cloud Volumes ONTAP instance.
-
-. Enter the admin credentials you will use to access to the Global File Cache Core VM and click *Deploy GFC Core*. You can change the VM name if you want.
 +
-image:screenshot_gfc_install6.png[A  screenshot showing the configuration information necessary to set up the Global File Cache Core instance.]
+image:screenshot_gfc_install6.png[A screenshot showing the configuration information necessary to set up the Global File Cache Core active directory and service account.]
+
+. Enter the admin credentials you will use to access to the Global File Cache Core VM and click *Deploy GFC Core*. For Azure you enter the credentials as a user name and password; for AWS you select the appropriate key pair. You can change the VM name if you want.
++
+image:screenshot_gfc_install7.png[A screenshot showing the configuration information necessary to set up the Global File Cache Core instance.]
 
 . After the Global File Cache Core is successfully deployed, click *Go to Dashboard*.
 +
-image:screenshot_gfc_install7.png[A screenshot showing the Global File Cache dashboard after installation is complete.]
+image:screenshot_gfc_install8.png[A screenshot showing the Global File Cache dashboard after installation is complete.]
 
 The Dashboard shows that the Management Server instance and the Core instance are both *On* and working.
 
