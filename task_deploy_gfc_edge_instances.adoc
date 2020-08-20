@@ -53,7 +53,7 @@ There are several TCP ports used by Global File Cache services. It is mandatory 
 
 The virtual template (`.OVA` and `.VHD`) images contain the latest release of the Global File Cache software. If you are deploying Global File Cache using the `.OVA` or `.VHD` virtual machine (VM) template, follow the steps as outlined in this section. It is assumed that you understand how to deploy the `.OVA` or `.VHD` template on the designated hypervisor platform.
 
-Ensure that VM preferences, including resource reservations, are in line with the requirements as outlined in link:download_gfc_resources.html#physical-hardware-requirements[Virtual deployment requirements].
+Ensure that VM preferences, including resource reservations, are in line with the requirements as outlined in link:download_gfc_resources.html#physical-hardware-requirements[Virtual deployment requirements^].
 
 .Steps
 
@@ -82,13 +82,13 @@ Ensure that VM preferences, including resource reservations, are in line with th
 The Global File Cache Edge instance connects to a Global File Cache Core to provide users at the branch office access to data center file server resources.
 
 [NOTE]
-The Edge instance must be licensed as part of your Cloud Volumes ONTAP deployment prior to beginning the configuration. See link:concept_gfc.html#licensing[Licensing] for more information about licensing.
+The Edge instance must be licensed as part of your Cloud Volumes ONTAP deployment prior to beginning the configuration. See link:concept_gfc.html#licensing[Licensing^] for more information about licensing.
 
 To configure the Edge instance, complete the following steps:
 
 .Steps
 
-. Click *Perform* next to the unchecked Core Configuration step listed in the "Edge Configuration Steps" section of the Initial Configuration assistant. This opens a new tab, GFC Edge, and shows the section Core Instances.
+. Click *Perform* next to the unchecked Core Configuration step listed in the "Edge Configuration Steps" section of the Initial Configuration assistant. This opens a new tab, GFC Edge, and shows the section _Core Instances_.
 
 . Provide the *Cloud Fabric ID* of the Global File Cache Core server. The Cloud Fabric ID is typically the NetBIOS name or the geographical location of the backend file server.
 

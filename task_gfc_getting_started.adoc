@@ -25,7 +25,7 @@ You use Cloud Manager to deploy the Global File Cache Management Server and Glob
 
 In this configuration you will deploy the Global File Cache Management Server and Global File Cache Core in the same working environment where you created your Cloud Volumes ONTAP HA pair using Cloud Manager.
 
-Watch link:https://www.youtube.com/watch?v=TGIQVssr43A[this video] to see the steps from start to finish.
+Watch link:https://www.youtube.com/watch?v=TGIQVssr43A[this video^] to see the steps from start to finish.
 
 === Quick start
 
@@ -34,7 +34,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Deploy Cloud Volumes ONTAP as an HA pair
 
 [role="quick-margin-para"]
-For the current release, deploy Cloud Volumes ONTAP as an HA pair in Azure or AWS and configure SMB file shares. For more information, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^] or link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^].
+Deploy Cloud Volumes ONTAP as an HA pair in Azure or AWS and configure SMB file shares. For more information, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^] or link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^].
 
 ==== image:number2.png[Number 2] Deploy the Global File Cache Management Server
 
@@ -44,12 +44,12 @@ Deploy an instance of the Global File Cache Management Server in the same workin
 ==== image:number3.png[Number 3] Deploy the Global File Cache Core
 
 [role="quick-margin-para"]
-Deploy an instance of the Global File Cache Core in the same working environment as the instance of Cloud Volumes ONTAP and join it to your Active Directory domain.
+Deploy an instance, or multiple instances, of the Global File Cache Core in the same working environment as the instance of Cloud Volumes ONTAP and join it to your Active Directory domain.
 
 ==== image:number4.png[Number 4] Deploy the Global File Cache Edge instances (this is not done using Cloud Manager)
 
 [role="quick-margin-para"]
-For more information, see link:task_deploy_gfc_edge_instances.html[Deploying Global Cache Edge instances] to deploy the Global File Cache Edge instances in each remote location.
+See link:task_deploy_gfc_edge_instances.html[Deploying Global File Cache Edge instances^] to deploy the Global File Cache Edge instances in each remote location.
 
 === Deploy Cloud Volumes ONTAP as your storage platform
 
@@ -77,7 +77,7 @@ image:screenshot_gfc_install2.png[A screenshot of the initial Enable GFC button 
 
 . Read the Overview page and click *Continue*.
 
-. If no SMB shares are available on the Cloud Volumes ONTAP instance, you are prompted to enter the SMB Server and SMB Share details to create the share now. For details about the SMB configuration, see link:concept_before_you_begin_to_deploy_gfc.html#storage-platform-volumes[Storage platform].
+. If no SMB shares are available on the Cloud Volumes ONTAP instance, you are prompted to enter the SMB Server and SMB Share details to create the share now. For details about the SMB configuration, see link:concept_before_you_begin_to_deploy_gfc.html#storage-platform-volumes[Storage platform^].
 +
 When finished, click *Continue* to create the SMB share.
 +
@@ -114,4 +114,6 @@ The Dashboard shows that the Management Server instance and the Core instance ar
 
 .What’s Next?
 
-Now you need to link:download_gfc_resources.html[deploy the Global File Cache Edge instances] in each of your remote offices.
+If you have determined that you need to deploy multiple Global File Cache Cores to support your configuration, click *Add Core Instance* from the Dashboard and follow the deployment wizard.
+
+After you have completed your Core deployment, you need to link:download_gfc_resources.html[deploy the Global File Cache Edge instances^] in each of your remote offices.
