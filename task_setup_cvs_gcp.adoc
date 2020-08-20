@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_setup_cvs_gcp.html
 keywords: cloud volumes service for gcp, google cloud, cloud volumes, create cloud volumes, discover cloud volumes service for gcp, cloud volumes service subscription, discover cloud volumes service subscription, discover region, allowed clients, create snapshots
-summary: Create a Cloud Volumes Service for Google Cloud working environment in Cloud Manager to create and manage NetApp accounts, volumes, and snapshots.
+summary: Create a Cloud Volumes Service for Google Cloud working environment in Cloud Manager to create and manage volumes and snapshots.
 ---
 
 = Set up Cloud Volumes Service for Google Cloud
@@ -42,7 +42,7 @@ In Google Cloud Shell, run the following command to enable the Cloud Volumes Ser
 
 == Give Cloud Manager access to the Cloud Volumes Service for GCP account
 
-You must complete the following tasks so that Cloud Manager can access your Google Cloud account:
+You must complete the following tasks so that Cloud Manager can access your Google Cloud project:
 
 * Create a new service account
 * Add the new service account member to your project and assign it specific roles (permissions)
@@ -80,11 +80,11 @@ Regardless of whether you have already created volumes from the Google Cloud Con
 
 If cloud volumes already exist for this subscription, then the volumes will appear in the new working environment. If you haven't added any cloud volumes yet for the GCP subscription, then you do that after you create the new working environment.
 
-TIP: If you have subscriptions and volumes in multiple GCP regions, you need to perform this task for each region.
+TIP: If you have subscriptions and volumes in multiple GCP projects, you need to perform this task for each project.
 
 .Before you begin
 
-You must have the following information available when adding a subscription in each region:
+You must have the following information available when adding a subscription for each project:
 
 * Service account credentials (JSON private key you downloaded)
 
@@ -96,7 +96,7 @@ You must have the following information available when adding a subscription in 
 
 . Select *Cloud Volumes Service* and click *Continue*.
 +
-image:screenshot_add_cvs_gcp_working_env.png[A screenshot of adding a working environment for a Cloud Volumes Service for GCP subscription]
+image:screenshot_add_cvs_gcp_working_env.png[A screenshot of adding a working environment for a Cloud Volumes Service for GCP subscription.]
 
 . Provide information about your Cloud Volumes Service subscription:
 
@@ -105,7 +105,7 @@ image:screenshot_add_cvs_gcp_working_env.png[A screenshot of adding a working en
 .. Select the name of your Google Cloud project.
 .. Click *Add*.
 +
-image:screenshot_add_cvs_gcp_credentials.png[A screenshot of adding credentials for a Cloud Volumes Service for GCP subscription]
+image:screenshot_add_cvs_gcp_credentials.png[A screenshot of adding credentials for a Cloud Volumes Service for GCP subscription.]
 
 .Result
 
