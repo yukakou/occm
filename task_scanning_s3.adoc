@@ -234,13 +234,13 @@ image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the
 +
 image:screenshot_cloud_compliance_wizard_start.png[A screenshot of the Cloud Compliance wizard to deploy a new instance.]
 
-. When the instance in deployed, click *Continue to configuration* to go to the Scan Configuration page.
+. When the instance in deployed, click *Continue to configuration* to go to the _Scan Configuration_ page.
 
 .Result
 
 Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
 
-From the Scan Configuration page you can select the working environments, volumes, and buckets that you want to scan for compliance.
+From the Scan Configuration page you can select the working environments, volumes, and buckets that you want to scan for compliance. You can also connect to a database server in order to scan specific schemas.
 
 == Enabling Cloud Compliance
 

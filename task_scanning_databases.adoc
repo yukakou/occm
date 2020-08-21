@@ -1,0 +1,70 @@
+---
+sidebar: sidebar
+permalink: task_scanning_databases.html
+keywords: cloud compliance, enable cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, databases, database schemas
+summary: Complete a few steps to start scanning your database schemas with Cloud Compliance.
+---
+
+= Scanning database schemas
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Complete a few steps to start scanning your database schemas with Cloud Compliance.
+
+== Quick start
+
+Get started quickly by following these steps or scroll down to the remaining sections for full details.
+
+==== image:number1.png[Number 1] Review database prerequisites
+
+[role="quick-margin-para"]
+Ensure that your database is supported and that you have the information necessary to connect to the datatase.
+
+==== image:number2.png[Number 2] Deploy the Cloud Compliance instance
+
+[role="quick-margin-para"]
+Deploy Cloud Compliance in Cloud Manager.
+
+==== image:number3.png[Number 3] Add the database server
+
+[role="quick-margin-para"]
+* Add the database server.
+
+==== image:number4.png[Number 4] Select the schemas that you want to scan
+
+[role="quick-margin-para"]
+Select the schemas.
+
+== Reviewing prerequisites
+
+Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Compliance.
+
+=== Database requirements
+
+Cloud Compliance can scan schemas from the following databases:
+
+* Oracle
+* MongoDB
+* SAP HANA
+* SQL Server (MSSQL)
+
+IMPORTANT: The statistics gathering feature *must be enabled* in the database.
+
+You must have the following information to connect to the database:
+
+* IP Address or host name
+* Port
+* Credentials that allow read access to the schemas
+* Service name (only for accessing an Oracle DB)
+
+== Adding the database server
+
+When configuring a new DB server, when choosing a user+password, it’;s important to choose one that has full read permissions to all the schemas and tables they wish to scan. We recommend creating a dedicated user for the Cloud Compliance system with all the desired permissions.
+
+== Selecting the schemas you want to scan
+
+You can stop or start scanning schemas at any time from the Scan Configuration page.
