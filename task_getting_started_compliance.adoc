@@ -287,4 +287,6 @@ If you want to scan these data protection volumes:
 
 . Activate each DP volume that you want to scan, or use the *Activate Compliance for all Volumes* control to enable all volumes, including all DP volumes.
 
-Once enabled, Cloud Compliance creates an NFS share from each DP volume so that it can be scanned. The share export policies only allow access from the Cloud Compliance instance.
+Once enabled, Cloud Compliance creates an NFS share from each DP volume that was activated for Compliance so that it can be scanned. The share export policies only allow access from the Cloud Compliance instance.
+
+NOTE: Only volumes that were initially created as NFS volumes in the source ONTAP system are shown in the volume list. Source volumes that were created initially as SMB do not currently appear in Cloud Compliance.

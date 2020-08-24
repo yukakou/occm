@@ -56,7 +56,7 @@ Deploy Cloud Compliance in Cloud Manager.
 [role="quick-margin-para"]
 Select the Amazon S3 working environment, click *Enable Compliance*, and select an IAM role that includes the required permissions.
 
-==== image:number6.png[Number 6] Configure buckets
+==== image:number6.png[Number 6] Select the buckets to scan
 
 [role="quick-margin-para"]
 Select the buckets that you'd like to scan and Cloud Compliance will start scanning them.
@@ -264,13 +264,13 @@ image:screenshot_s3_compliance_iam_role.gif[]
 
 . Click *Enable Compliance*.
 
-TIP: You can also enable compliance scans for a working environment from the Scan Configuration page by clicking the image:screenshot_gallery_options.gif[] icon and selecting *Activate Compliance*.
+TIP: You can also enable compliance scans for a working environment from the Scan Configuration page by clicking the image:screenshot_gallery_options.gif[] button and selecting *Activate Compliance*.
 
 .Result
 
 Cloud Manager assigns the IAM role to the instance.
 
-== Configuring buckets
+== Enabling and disabling compliance scans on S3 buckets
 
 After Cloud Manager enables Cloud Compliance on Amazon S3, the next step is to configure the buckets that you want to scan.
 

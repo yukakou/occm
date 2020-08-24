@@ -13,19 +13,19 @@ summary: If you need to, you can stop Cloud Compliance from scanning one or more
 :imagesdir: ./media/
 
 [.lead]
-If you need to, you can stop Cloud Compliance from scanning one or more working environments. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your working environments.
+If you need to, you can stop Cloud Compliance from scanning one or more working environments or databases. You can also delete the Cloud Compliance instance if you no longer want to use Cloud Compliance with your working environments.
 
 == Deactivating compliance scans for a working environment
 
-When you deactivate scans, Cloud Compliance no longer scans the data on the system and it removes the indexed compliance insights from the Cloud Compliance instance (the data from the working environment itself isn't deleted).
+When you deactivate scans, Cloud Compliance no longer scans the data on the system and it removes the indexed compliance insights from the Cloud Compliance instance (the data from the working environment or database itself isn't deleted).
 
 .Steps
 
 . At the top of Cloud Manager, click *Working Environments*.
 
-. Select the working environment.
+. Select the working environment or database.
 
-. In the right panel, click the action icon for the Cloud Compliance service and select *Deactivate scan*.
+. In the right panel, click the action icon for the Cloud Compliance service and select *Deactivate Compliance*.
 +
 image:screenshot_deactivate_compliance_scan.png[A screenshot of the action icon where you can select Deactivate scan. This option is available after you select a working environment from the Working Environments page.]
 

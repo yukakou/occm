@@ -22,28 +22,28 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Review database prerequisites
 
 [role="quick-margin-para"]
-Ensure that your database is supported and that you have the information necessary to connect to the datatase.
+Ensure that your database is supported and that you have the information necessary to connect to the database.
 
 ==== image:number2.png[Number 2] Deploy the Cloud Compliance instance
 
 [role="quick-margin-para"]
-Deploy Cloud Compliance in Cloud Manager.
+Deploy Cloud Compliance in Cloud Manager if there isn't already an instance deployed.
 
 ==== image:number3.png[Number 3] Add the database server
 
 [role="quick-margin-para"]
-* Add the database server.
+Add the database server that you want to access.
 
-==== image:number4.png[Number 4] Select the schemas that you want to scan
+==== image:number4.png[Number 4] Select the schemas
 
 [role="quick-margin-para"]
-Select the schemas.
+Select the schemas that you want to scan.
 
 == Reviewing prerequisites
 
 Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Compliance.
 
-=== Database requirements
+=== Supported databases
 
 Cloud Compliance can scan schemas from the following databases:
 
@@ -54,17 +54,56 @@ Cloud Compliance can scan schemas from the following databases:
 
 IMPORTANT: The statistics gathering feature *must be enabled* in the database.
 
+=== Database requirements
+
 You must have the following information to connect to the database:
 
 * IP Address or host name
 * Port
-* Credentials that allow read access to the schemas
 * Service name (only for accessing an Oracle DB)
+* Credentials that allow read access to the schemas
++
+When choosing a user name and password, it’s important to choose one that has full read permissions to all the schemas and tables you want to scan. We recommend that you create a dedicated user for the Cloud Compliance system with all the required permissions.
 
 == Adding the database server
 
 When configuring a new DB server, when choosing a user+password, it’;s important to choose one that has full read permissions to all the schemas and tables they wish to scan. We recommend creating a dedicated user for the Cloud Compliance system with all the desired permissions.
 
-== Selecting the schemas you want to scan
+. From the _Scan Configuration_ page, click the *Add DB Server* button.
++
+image:screenshot_compliance_add_db_server_button.png[A screenshot of the Scan Configuration page where you can click the Add DB Server button.]
 
-You can stop or start scanning schemas at any time from the Scan Configuration page.
+. Enter the required information to identify the database server.
+.. Select the database type.
+.. Enter the port and the host name or IP address to connect to the database.
+.. For Oracle databases, enter the Service name.
+.. Enter the credentials so that Cloud Compliance can access the server.
+.. Click *Add DB Server*.
++
+image:screenshot_compliance_add_db_server_dialog.png[A screenshot of the Add DB Server page so you can identify the database.]
+
+The database is added to the list of working directories.
+
+== Enabling and disabling compliance scans on database schemas
+
+You can stop or start scanning schemas at any time.
+
+. From the _Scan Configuration_ page, click the *Configuration* button for the database you want to configure.
++
+image:screenshot_compliance_db_server_config.png[A screenshot of the Scan Configuration page where you can select the Configuration button.]
+
+. Select the schemas that you want to scan by moving the slider to the right.
++
+image:screenshot_compliance_select_schemas.png[A screenshot of the Scan Configuration page where you can choose the schemas to be scanned.]
+
+.Result
+
+Cloud Compliance starts scanning the database schemas that you enabled. If there are any errors, they’ll appear in the Status column, alongside the required action to fix the error.
+
+== Removing a database from Cloud Manager
+
+If you no longer want to scan a certain database, you can delete it from the Cloud Manager interface and stop all scans.
+
+From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[] button in the row for the database, and then click *Remove DB Server*.
+
+image:screenshot_compliance_remove_db.png[A screenshot of the Remove DB Server button from the Scan Configuration page.]
