@@ -128,7 +128,7 @@ Backup to Cloud is enabled on the system and backs up volumes every day and reta
 
 .What's next?
 
-link:task_managing_backups.html[You can manage backups by changing the backup schedule, restoring volumes, and more].
+link:task_managing_backups.html[You can manage backups by changing the backup schedule, restoring volumes, and more^].
 
 == Enabling Backup to Cloud on an existing system
 
@@ -144,7 +144,7 @@ image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Clo
 +
 image:screenshot_backup_settings.png[A screenshot that shows the Backup to Cloud settings where you can choose your schedule and backup retention.]
 +
-See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-combination[the list of existing policies].
+See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-combination[the list of existing policies^].
 
 . Select the volumes that you want to back up and click *Activate*.
 +
@@ -156,4 +156,4 @@ Backup to Cloud starts taking the initial backups of each selected volume.
 
 .What's next?
 
-link:task_managing_backups.html[You can manage backups by changing the backup schedule, restoring volumes, and more].
+link:task_managing_backups.html[You can manage backups by changing the backup schedule, restoring volumes, and more^].
