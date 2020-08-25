@@ -15,7 +15,7 @@ summary: Cloud Compliance provides reports that you can use to better understand
 [.lead]
 Cloud Compliance provides reports that you can use to better understand the status of your organization's data privacy program.
 
-By default, the Cloud Compliance dashboard displays compliance data for all working environments. If you want to view reports that contain data for only some of the working environments, <<Selecting the working environments for reports,select those working environments>>.
+By default, the Cloud Compliance dashboard displays compliance data for all working environments and databases. If you want to view reports that contain data for only some of the working environments, <<Selecting the working environments for reports,select those working environments>>.
 
 NOTE: NetApp can't guarantee 100% accuracy of the personal data and sensitive personal data that Cloud Compliance identifies. You should always validate the information by reviewing the data.
 
@@ -145,7 +145,7 @@ Cloud Compliance generates a PDF report that you can review and send to other gr
 
 == Selecting the working environments for reports
 
-You can filter the contents of the Cloud Compliance dashboard to see compliance data for all or for just specific working environments.
+You can filter the contents of the Cloud Compliance dashboard to see compliance data for all working environments and databases, or for just specific working environments.
 
 When you filter the dashboard, Cloud Compliance scopes the compliance data and reports to just those working environments that you selected.
 

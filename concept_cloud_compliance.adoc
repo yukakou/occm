@@ -32,7 +32,7 @@ Cloud Compliance can scan data from the following types of working environments:
 * Cloud Volumes ONTAP in AWS and Azure
 * Azure NetApp Files
 * Amazon S3
-* Databases that reside anywhere (no requirement to be in a working environment)
+* Databases that reside anywhere (there is no requirement that the database resides in a working environment)
 
 For Azure NetApp Files, Cloud Compliance can scan volumes that are in the same region as Cloud Manager. When you activate compliance scans on an Azure NetApp Files working environment, Cloud Compliance scans _all_ of the volumes in the region.
 
@@ -40,7 +40,7 @@ For Azure NetApp Files, Cloud Compliance can scan volumes that are in the same r
 
 The cost to use Cloud Compliance depends on the type of data that you're scanning. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
 
-Activating Cloud Compliance requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed.
+Installing Cloud Compliance requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed.
 
 === Cloud Volumes ONTAP and Azure NetApp Files
 
@@ -57,8 +57,7 @@ A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A
 
 === Databases
 
-You need to pay to scan your databases.
-
+You do not need to pay to scan your databases at this time. However, you do need to pay the cloud provider for the deployed Cloud Compliance instance.
 
 == How Cloud Compliance works
 
@@ -107,7 +106,7 @@ image:diagram_cloud_compliance_scan.png[A diagram that shows a Cloud Manager ins
 
 After the initial scan, Cloud Compliance continuously scans each volume to detect incremental changes (this is why it's important to keep the instance running).
 
-You can turn scans on and off at the working environment level link:task_managing_compliance.html#deactivating-compliance-scans-for-a-working-environment[learn how], at the volume level link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-individual-volumes[learn how], at the bucket level link:task/scanning_s3.html#configuring-buckets[learn how], and at the database schema level.
+You can enable and disable scans at the link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-volumes[volume level^], at the link:task_scanning_s3.html#enabling-and-disabling-compliance-scans-on-s3-buckets[bucket level^], and at the link:task_scanning_databases.html#enabling-and-disabling-compliance-scans-on-database-schemas[database schema level^].
 
 == Information that Cloud Compliance indexes
 

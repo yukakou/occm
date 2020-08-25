@@ -67,7 +67,7 @@ When choosing a user name and password, it’s important to choose one that has 
 
 == Adding the database server
 
-When configuring a new DB server, when choosing a user+password, it’;s important to choose one that has full read permissions to all the schemas and tables they wish to scan. We recommend creating a dedicated user for the Cloud Compliance system with all the desired permissions.
+Add the database server where the schemas reside.
 
 . From the _Scan Configuration_ page, click the *Add DB Server* button.
 +
@@ -104,6 +104,6 @@ Cloud Compliance starts scanning the database schemas that you enabled. If there
 
 If you no longer want to scan a certain database, you can delete it from the Cloud Manager interface and stop all scans.
 
-From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[] button in the row for the database, and then click *Remove DB Server*.
+From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the database, and then click *Remove DB Server*.
 
 image:screenshot_compliance_remove_db.png[A screenshot of the Remove DB Server button from the Scan Configuration page.]
