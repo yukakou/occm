@@ -38,7 +38,12 @@ For Azure NetApp Files, Cloud Compliance can scan volumes that are in the same r
 
 == Cost
 
-The cost to use Cloud Compliance depends on the type of data that you're scanning. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
+The cost to use Cloud Compliance depends on the amount of data that you're scanning. The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. This includes data from Cloud Volumes ONTAP volumes, Azure NetApp Files volumes, Amazon S3 buckets, and database schemas. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
+
+NOTE: Throughout September 2020 licensing to scan more than 1 TB is not required. This licensing will go into affect in October 2020.
+
+AWS Marketplace: link:task_scanning_s3.html#subscribing-to-aws-marketplace[Learn how to subscribe^].
+Azure Marketplace: link:task_scanning_s3.html#subscribing-to-aws-marketplace[Learn how to subscribe^].
 
 Installing Cloud Compliance requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed.
 
@@ -48,16 +53,6 @@ Data transfer costs depend on your setup. If the Cloud Compliance instance and C
 
 * https://aws.amazon.com/ec2/pricing/on-demand/[AWS: Amazon EC2 Pricing^]
 * https://azure.microsoft.com/en-us/pricing/details/bandwidth/[Microsoft Azure: Bandwidth Pricing Details^]
-
-=== Amazon S3
-
-You need to pay to scan your Amazon S3 buckets. https://cloud.netapp.com/cloud-compliance#pricing[Learn about pricing^].
-
-A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends. link:task_scanning_s3.html#subscribing-to-aws-marketplace[Learn how to subscribe^].
-
-=== Databases
-
-You do not need to pay to scan your databases at this time. However, you do need to pay the cloud provider for the deployed Cloud Compliance instance.
 
 == How Cloud Compliance works
 

@@ -18,9 +18,9 @@ This FAQ can help if you’re just looking for a quick answer to a question.
 
 == What is Cloud Compliance?
 
-Cloud Compliance is a new NetApp cloud offering. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data across your Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS or Azure, and Amazon S3 buckets.
+Cloud Compliance is a new NetApp cloud offering. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data across your Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS or Azure, Amazon S3 buckets, and databases.
 
-Cloud Compliance provides pre-defined parameters (such as sensitive information types and categories) to address new data compliance regulations for data privacy and sensitivity, such as GDPR, CCPA, and more.
+Cloud Compliance provides pre-defined parameters (such as sensitive information types and categories) to address new data compliance regulations for data privacy and sensitivity, such as GDPR, CCPA, HIPAA, and more.
 
 == Why should I use Cloud Compliance?
 
@@ -40,9 +40,9 @@ https://cloud.netapp.com/cloud-compliance[Learn more about the use cases for Clo
 
 == What types of data can be scanned with Cloud Compliance?
 
-Cloud Compliance supports scanning of unstructured data over NFS and CIFS protocols that are managed by Cloud Volumes ONTAP and Azure NetApp Files.
+Cloud Compliance supports scanning of unstructured data over NFS and CIFS protocols that are managed by Cloud Volumes ONTAP and Azure NetApp Files. Cloud Compliance can also scan data stored on Amazon S3 buckets.
 
-Cloud Compliance can also scan data stored on Amazon S3 buckets.
+Additionally, Cloud Compliance can scan databases that are located anywhere - they are not required to be managed by Cloud Manager.
 
 link:concept_cloud_compliance.html#how-scans-work[Learn how scans work].
 
@@ -62,11 +62,7 @@ link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works].
 
 == How much does Cloud Compliance cost?
 
-The cost depends on the type of working environment that you're scanning.
-
-* Cloud Compliance is offered as part of Cloud Volumes ONTAP and Azure NetApp Files. There are no additional charges from NetApp, but you will incur costs from your cloud provider. link:concept_cloud_compliance.html#cost[Learn more].
-
-* You need to pay to scan your Amazon S3 buckets. https://cloud.netapp.com/cloud-compliance#pricing[Learn about pricing^].
+The cost to use Cloud Compliance depends on the amount of data that you're scanning. The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
 
 == How often does Cloud Compliance scan my data?
 
@@ -137,7 +133,7 @@ The compliance scan doesn't heat up the cold data--it stays cold and tiered to o
 
 == Can I use Cloud Compliance to scan on-premise ONTAP storage?
 
-No. Scanning the data directly from an on-premises ONTAP working environment isn’t supported. But you can scan your on-premises ONTAP data by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then enabling compliance. We're planning to support Cloud Compliance with additional cloud offerings such as Cloud Volumes Service. 
+Scanning the data directly from an on-premises ONTAP working environment isn’t supported. But you can scan your on-premises ONTAP data by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then enabling compliance. We're planning to support Cloud Compliance with additional cloud offerings such as Cloud Volumes Service. 
 
 link:task_scanning_onprem.html[Learn more].
 

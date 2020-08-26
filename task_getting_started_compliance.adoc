@@ -31,10 +31,8 @@ Deploy Cloud Compliance in Cloud Manager.
 
 ==== image:number3.png[Number 3] Enable Cloud Compliance in your working environments
 
-[role="quick-margin-list"]
-* New working environments: Be sure to keep Cloud Compliance enabled when you create the working environment (it's enabled by default).
-
-* Existing working environments: Click *Compliance*, optionally edit the list of working environments, and click *Show Compliance Dashboard*.
+[role="quick-margin-para"]
+Existing working environments: Click *Compliance*, optionally edit the list of working environments, and click *Show Compliance Dashboard*.
 
 ==== image:number4.png[Number 4] Ensure access to volumes
 
@@ -121,7 +119,7 @@ This is required because the Cloud Compliance instance uses the Connector as a p
 NOTE: This port is open by default on all new Connector instances, starting with version 3.7.5. It's not open on instances created prior to that.
 
 Set up discovery of Azure NetApp Files::
-Before you can scan volumes for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration].
+Before you can scan volumes for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
 
 Ensure that you can keep Cloud Compliance running::
 The Cloud Compliance instance needs to stay on to continuously scan your data.
@@ -147,39 +145,13 @@ image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the
 +
 image:screenshot_cloud_compliance_wizard_start.png[A screenshot of the Cloud Compliance wizard to deploy a new instance.]
 
-. When the instance in deployed, click *Continue to configuration* to go to the _Scan Configuration_ page.
+. When the instance is deployed, click *Continue to configuration* to go to the _Scan Configuration_ page.
 
 .Result
 
 Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
 
-From the Scan Configuration page you can select the working environments, volumes, and buckets that you want to scan for compliance. You can also connect to a database server in order to scan specific schemas.
-
-== Enabling Cloud Compliance on a new working environment
-
-Cloud Compliance is enabled by default in the Cloud Volumes ONTAP working environment wizard. Be sure to keep the option enabled.
-
-As long as you already deployed an instance of Cloud Compliance, Cloud Compliance starts scanning the data in the Cloud Volumes ONTAP instance as soon as it is available.
-
-.Steps
-
-. Click *Create Cloud Volumes ONTAP*.
-
-. Select Amazon Web Services or Microsoft Azure as the cloud provider and then choose a single node or HA system.
-
-. Fill out the Details & Credentials page.
-
-. On the Services page, leave Cloud Compliance enabled and click *Continue*.
-+
-image:screenshot_cloud_compliance.gif[A screenshot that shows the Services page in the working environment wizard.]
-
-. Complete the pages in the wizard to deploy the system.
-+
-For help, see link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS] and link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure].
-
-.Result
-
-Cloud Compliance is enabled on the Cloud Volumes ONTAP system and it starts scanning the data in the working environment. Results will be available in the Compliance dashboard as soon as Cloud Compliance finishes the initial scans.
+From the Scan Configuration page you can select the working environments, volumes, and buckets that you want to scan for compliance. You can also connect to a database server in order to scan specific database schemas.
 
 == Enabling Cloud Compliance on existing working environments
 

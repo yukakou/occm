@@ -15,12 +15,6 @@ summary: Cloud Compliance can scan your Amazon S3 buckets to identify the person
 [.lead]
 Cloud Compliance can scan your Amazon S3 buckets to identify the personal and sensitive data that resides in S3 object storage. Cloud Compliance can scan any bucket in the account, regardless if it was created for a NetApp solution.
 
-== Pricing
-
-You need to pay to scan your Amazon S3 buckets. https://cloud.netapp.com/cloud-compliance#pricing[Learn about pricing^].
-
-A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends. <<Subscribing from the AWS Marketplace,Learn how to subscribe>>.
-
 == Quick start
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
@@ -41,7 +35,7 @@ Ensure that your cloud environment can meet the requirements for Cloud Complianc
 ==== image:number3.png[Number 3] Subscribe from the AWS Marketplace
 
 [role="quick-margin-para"]
-A subscription to the AWS Marketplace is required to scan Amazon S3 after the 30-day free trial ends.
+A subscription to the AWS Marketplace is required to scan Amazon S3 after the initial 1 TB of capacity; which is free.
 
 [role="quick-margin-para"]
 Click *Settings > Credentials* and click *Add Subscription* for the Instance Profile.
@@ -115,7 +109,7 @@ NOTE: You can't use a proxy to get to S3 over the internet.
 
 === General requirements
 
-The requirements in this section apply to Cloud Compliance in general, whether you're scanning Amazon S3, Cloud Volumes ONTAP, or Azure NetApp Files. If you've already enabled Cloud Compliance (for Cloud Volumes ONTAP or Azure NetApp Files), then you can skip these requirements and <<Subscribing from the AWS Marketplace,Subscribe from the AWS Marketplace>>.
+The requirements in this section apply to Cloud Compliance in general, whether you're scanning Amazon S3, Cloud Volumes ONTAP, or Azure NetApp Files. If you've already deployed a Cloud Compliance instance (for Cloud Volumes ONTAP or Azure NetApp Files), then you can skip these requirements and <<Subscribing from the AWS Marketplace,Subscribe from the AWS Marketplace>>.
 
 Enable outbound internet access::
 Cloud Compliance requires outbound internet access. If your virtual network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. Note that Cloud Manager deploys the Cloud Compliance instance in the same subnet as the Connector.
@@ -190,7 +184,7 @@ The Cloud Compliance instance uses a private IP address to ensure that the index
 [[subscribing-to-aws-marketplace]]
 == Subscribing from the AWS Marketplace
 
-A 30-day free trial is available to scan Amazon S3 data with Cloud Compliance. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 after the free trial ends.
+The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 data after that point.
 
 These steps must be completed by a user who has the _Account Admin_ role.
 
