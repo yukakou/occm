@@ -38,12 +38,12 @@ For Azure NetApp Files, Cloud Compliance can scan volumes that are in the same r
 
 == Cost
 
-The cost to use Cloud Compliance depends on the amount of data that you're scanning. The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. This includes data from Cloud Volumes ONTAP volumes, Azure NetApp Files volumes, Amazon S3 buckets, and database schemas. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
-
-NOTE: Throughout September 2020 licensing to scan more than 1 TB is not required. This licensing will go into affect in October 2020.
+The cost to use Cloud Compliance depends on the amount of data that you're scanning. The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. This includes data from Cloud Volumes ONTAP volumes, Azure NetApp Files volumes, Amazon S3 buckets, and database schemas. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
 
 AWS Marketplace: link:task_scanning_s3.html#subscribing-to-aws-marketplace[Learn how to subscribe^].
 Azure Marketplace: link:task_scanning_s3.html#subscribing-to-aws-marketplace[Learn how to subscribe^].
+
+NOTE: Throughout September 2020, licensing to scan more than 1 TB is not required. This licensing model will go into affect in October 2020.
 
 Installing Cloud Compliance requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed.
 
@@ -109,14 +109,14 @@ Cloud Compliance collects, indexes, and assigns categories to unstructured data 
 
 Standard metadata:: Cloud Compliance collects standard metadata about files: the file type, its size, creation and modification dates, and so on.
 
-Personal data:: Personally identifiable information such as email addresses, identification numbers, or credit card numbers. link:task_controlling_private_data.html#personal-data[Learn more about personal data].
+Personal data:: Personally identifiable information such as email addresses, identification numbers, or credit card numbers. link:task_controlling_private_data.html#personal-data[Learn more about personal data^].
 
-Sensitive personal data:: Special types of sensitive information, such as health data, ethnic origin, or political opinions, as defined by GDPR and other privacy regulations. link:task_controlling_private_data.html#sensitive-personal-data[Learn more about sensitive personal data].
+Sensitive personal data:: Special types of sensitive information, such as health data, ethnic origin, or political opinions, as defined by GDPR and other privacy regulations. link:task_controlling_private_data.html#sensitive-personal-data[Learn more about sensitive personal data^].
 
-Categories:: Cloud Compliance takes the data that it scanned and divides it into different types of categories. Categories are topics based on AI analysis of the content and metadata of each file. link:task_controlling_private_data.html#categories[Learn more about categories].
+Categories:: Cloud Compliance takes the data that it scanned and divides it into different types of categories. Categories are topics based on AI analysis of the content and metadata of each file. link:task_controlling_private_data.html#categories[Learn more about categories^].
 
 Name entity recognition::
-Cloud Compliance uses AI to extract natural persons’ names from documents. link:task_responding_to_dsar.html[Learn about responding to Data Subject Access Requests].
+Cloud Compliance uses AI to extract natural persons’ names from documents. link:task_responding_to_dsar.html[Learn about responding to Data Subject Access Requests^].
 
 == Networking overview
 
@@ -124,7 +124,7 @@ Cloud Manager deploys the Cloud Compliance instance with a security group that e
 
 Outbound rules are completely open. The instance connects to the internet through a proxy from Cloud Manager. Internet access is needed to upgrade the Cloud Compliance software and to send usage metrics.
 
-If you have strict networking requirements, link:task_getting_started_compliance.html#reviewing-prerequisites[learn about the endpoints that Cloud Compliance contacts].
+If you have strict networking requirements, link:task_getting_started_compliance.html#reviewing-prerequisites[learn about the endpoints that Cloud Compliance contacts^].
 
 == User access to compliance information
 
@@ -132,4 +132,4 @@ Cloud Manager Admins can view compliance information for all working environment
 
 Workspace Admins can view compliance information only for systems that they have permissions to access. If a Workspace Admin can't access a working environment in Cloud Manager, then they can't see any compliance information for the working environment in the Compliance tab.
 
-link:reference_user_roles.html[Learn more about Cloud Manager roles].
+link:reference_user_roles.html[Learn more about Cloud Manager roles^].

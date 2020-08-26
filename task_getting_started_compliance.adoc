@@ -19,22 +19,17 @@ Complete a few steps to get started with Cloud Compliance for Cloud Volumes ONTA
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Review prerequisites
+==== image:number1.png[Number 1] Deploy the Cloud Compliance instance
 
 [role="quick-margin-para"]
-Ensure that your cloud environment can meet the prerequisites, which includes 16 vCPUs for the Cloud Compliance instance, outbound internet access for the instance, connectivity between the Connector and Cloud Compliance over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
+link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance in Cloud Manager^] if there isn't already an instance deployed.
 
-==== image:number2.png[Number 2] Deploy the Cloud Compliance instance
-
-[role="quick-margin-para"]
-Deploy Cloud Compliance in Cloud Manager.
-
-==== image:number3.png[Number 3] Enable Cloud Compliance in your working environments
+==== image:number2.png[Number 2] Enable Cloud Compliance in your working environments
 
 [role="quick-margin-para"]
-Existing working environments: Click *Compliance*, optionally edit the list of working environments, and click *Show Compliance Dashboard*.
+Click *Compliance*, select the *Configuration* tab, and activate compliance scans for specific working environments.
 
-==== image:number4.png[Number 4] Ensure access to volumes
+==== image:number3.png[Number 3] Ensure access to volumes
 
 [role="quick-margin-para"]
 Now that Cloud Compliance is enabled, ensure that it can access volumes.
@@ -47,119 +42,16 @@ Now that Cloud Compliance is enabled, ensure that it can access volumes.
 +
 Click *Compliance* > *Scan Configuration* > *Edit CIFS Credentials* and provide the credentials. The credentials can be read-only, but providing admin credentials ensures that Cloud Compliance can read data that requires elevated permissions.
 
-==== image:number5.png[Number 5] Configure volumes to scan
+==== image:number4.png[Number 4] Configure volumes to scan
 
 [role="quick-margin-para"]
 Select the volume that you'd like to scan and Cloud Compliance will start scanning them.
 
-== Reviewing prerequisites
-
-Review the following prerequisites to make sure that you have a supported configuration before you enable Cloud Compliance. You'll need to ensure connectivity to volumes after you enable Cloud Compliance. That's covered below.
-
-Enable outbound internet access::
-Cloud Compliance requires outbound internet access. If your virtual network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. Note that Cloud Manager deploys the Cloud Compliance instance in the same subnet as the Connector.
-+
-[cols="43,57",options="header"]
-|===
-| Endpoints
-| Purpose
-
-| \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
-
-|
-\https://netapp-cloud-account.auth0.com
-\https://auth0.com
-
-| Communication with NetApp Cloud Central for centralized user authentication.
-
-|
-\https://cloud-compliance-support-netapp.s3.us-west-2.amazonaws.com
-\https://hub.docker.com
-\https://auth.docker.io
-\https://registry-1.docker.io
-\https://index.docker.io/
-\https://dseasb33srnrn.cloudfront.net/
-\https://production.cloudflare.docker.com/
-
-| Provides access to software images, manifests, and templates.
-
-| \https://kinesis.us-east-1.amazonaws.com	| Enables NetApp to stream data from audit records.
-
-|
-\https://cognito-idp.us-east-1.amazonaws.com
-\https://cognito-identity.us-east-1.amazonaws.com
-| Enables Cloud Compliance to access and download manifests and templates, and to send logs and metrics.
-
-|===
-
-Ensure that Cloud Manager has the required permissions::
-Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Compliance instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^].
-
-Check your vCPU limits::
-Ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running.
-+
-In AWS, the instance family is _On-Demand Standard instances_. In Azure, the instance family is _Standard DSv3 Family_.
-+
-For more details on vCPU limits, see the following:
-+
-* https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html[AWS documentation: Amazon EC2 Service Limits^]
-* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quotas[Azure documentation: Virtual machine vCPU quotas^]
-
-Ensure that Cloud Manager can access Cloud Compliance::
-Ensure connectivity between the Connector and the Cloud Compliance instance:
-
-* The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Cloud Compliance instance.
-+
-This connection enables deployment of the Cloud Compliance instance and enables you to view information in the Compliance tab.
-
-* If your AWS network doesn’t use a NAT or proxy for internet access, modify the security group for the Connector to allow inbound traffic over TCP port 3128 from the Cloud Compliance instance.
-+
-This is required because the Cloud Compliance instance uses the Connector as a proxy to access the internet.
-+
-NOTE: This port is open by default on all new Connector instances, starting with version 3.7.5. It's not open on instances created prior to that.
-
-Set up discovery of Azure NetApp Files::
-Before you can scan volumes for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
-
-Ensure that you can keep Cloud Compliance running::
-The Cloud Compliance instance needs to stay on to continuously scan your data.
-
-Ensure web browser connectivity to Cloud Compliance::
-After Cloud Compliance is enabled, ensure that users access the Cloud Manager interface from a host that has a connection to the Cloud Compliance instance.
-+
-The Cloud Compliance instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to AWS or Azure (for example, a VPN), or from a host that's inside the same network as the Cloud Compliance instance.
-
 == Deploying the Cloud Compliance instance
 
-You deploy an instance of Cloud Compliance for each Cloud Manager instance.
-
-.Steps
-
-. In Cloud Manager, click *Compliance*.
-
-. Click *Activate Cloud Compliance* to start the deployment wizard.
-+
-image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the Activate Cloud Compliance button to deploy Cloud Compliance.]
-
-. The wizard displays progress as it goes through the deployment steps. It will stop and ask for input if it runs into any issues.
-+
-image:screenshot_cloud_compliance_wizard_start.png[A screenshot of the Cloud Compliance wizard to deploy a new instance.]
-
-. When the instance is deployed, click *Continue to configuration* to go to the _Scan Configuration_ page.
-
-.Result
-
-Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
-
-From the Scan Configuration page you can select the working environments, volumes, and buckets that you want to scan for compliance. You can also connect to a database server in order to scan specific database schemas.
+link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance in Cloud Manager^] if there isn't already an instance deployed.
 
 == Enabling Cloud Compliance on existing working environments
-
-If you haven't enabled Cloud Compliance yet, enable it on existing Cloud Volumes ONTAP or Azure NetApp Files working environments from the *Scan Configuration* page in Cloud Manager.
-
-Another option is to enable Cloud Compliance from the *Working Environments* tab by selecting each working environment individually.
-
-.Steps for multiple working environments (first time only)
 
 . At the top of Cloud Manager, click *Compliance* and then select the *Configuration* tab.
 +
@@ -170,16 +62,6 @@ image:screenshot_cloud_compliance_we_scan_config.png[A screenshot of the Scan Co
 To scan only certain volumes in a working environment, click *or select Volumes* and then choose the volumes you want to scan.
 
 See <<Enabling and disabling compliance scans on volumes,Enabling and disabling compliance scans on volumes>> for details.
-
-.Steps for a single working environment
-
-. At the top of Cloud Manager, click *Working Environments*.
-
-. Select a working environment.
-
-. In the pane on the right, click *Enable Compliance*.
-+
-image:screenshot_enable_compliance.gif[A screenshot that shows the Enable Compliance icon which is available in the Working Environments tab after you select a working environment.]
 
 .Result
 

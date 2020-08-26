@@ -215,14 +215,18 @@ entries:
         url: /concept_cloud_compliance.html
       - title: Get started
         entries:
-          - title: Cloud Volumes ONTAP and Azure NetApp Files
-            url: /task_getting_started_compliance.html
-          - title: Amazon S3
-            url: /task_scanning_s3.html
-          - title: On-premises ONTAP data
-            url: /task_scanning_onprem.html
-          - title: Database schemas
-            url: /task_scanning_databases.html
+          - title: Deploy Cloud Compliance
+            url: /task_deploy_cloud_compliance.html
+          - title: Activate scanning on your data sources
+            entries:
+              - title: Cloud Volumes ONTAP and Azure NetApp Files
+                url: /task_getting_started_compliance.html
+              - title: Amazon S3
+                url: /task_scanning_s3.html
+              - title: On-premises ONTAP data
+                url: /task_scanning_onprem.html
+              - title: Database schemas
+                url: /task_scanning_databases.html
       - title: Gain visibility and control of data
         url: /task_controlling_private_data.html
       - title: Generate reports

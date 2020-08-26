@@ -15,6 +15,8 @@ summary: You can scan your on-premises ONTAP data with Cloud Compliance by repli
 [.lead]
 You can scan your on-premises ONTAP data with Cloud Compliance by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then enabling compliance. Scanning the data directly from an on-premises ONTAP working environment isn't supported.
 
+You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Compliance in Cloud Manager already^].
+
 .Steps
 
 . From Cloud Manager, create a SnapMirror relationship between the on-premises ONTAP cluster and Cloud Volumes ONTAP.
@@ -32,8 +34,8 @@ This is not required for NFS volumes because data access is enabled automaticall
 .. Click *Working Environments*.
 .. Select the working environment that contains the SnapMirror data and click *Enable Compliance*.
 +
-link:task_getting_started_compliance.html[Click here if you need help with enabling Cloud Compliance on a Cloud Volumes ONTAP system].
+link:task_getting_started_compliance.html[Click here if you need help with enabling Cloud Compliance on a Cloud Volumes ONTAP system^].
 .. Click the *Enable Access to DP volumes* button at the top of the _Scan Configuration_ page.
 .. Activate each DP volume that you want to scan, or use the *Activate Compliance for all Volumes* control to enable all volumes, including all DP volumes.
 
-See link:task_getting_started_compliance.html#scanning-data-protection-volumes[Scanning data protection volumes] for more information about scanning DP volumes.
+See link:task_getting_started_compliance.html#scanning-data-protection-volumes[Scanning data protection volumes^] for more information about scanning DP volumes.
