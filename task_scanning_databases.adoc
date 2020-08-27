@@ -60,12 +60,14 @@ You must have the following information to connect to the database:
 
 * IP Address or host name
 * Port
-* Service name (only for accessing an Oracle DB)
+* Service name (only for accessing Oracle databases)
 * Credentials that allow read access to the schemas
 +
 When choosing a user name and password, it’s important to choose one that has full read permissions to all the schemas and tables you want to scan. We recommend that you create a dedicated user for the Cloud Compliance system with all the required permissions.
 
 == Adding the database server
+
+You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Compliance in Cloud Manager already^].
 
 Add the database server where the schemas reside.
 

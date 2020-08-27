@@ -25,16 +25,17 @@ Cloud Compliance provides several tools that can help you with your compliance e
 * Identify a wide scope of sensitive information as required by GDPR, CCPA, PCI, and HIPAA privacy regulations
 * Respond to Data Subject Access Requests (DSAR)
 
-== Supported working environments
+== Supported working environments and data sources
 
-Cloud Compliance can scan data from the following types of working environments:
+Cloud Compliance can scan data from the following types of data sources:
 
-* Cloud Volumes ONTAP in AWS and Azure
+* Cloud Volumes ONTAP in AWS
+* Cloud Volumes ONTAP in Azure
 * Azure NetApp Files
 * Amazon S3
 * Databases that reside anywhere (there is no requirement that the database resides in a working environment)
 
-For Azure NetApp Files, Cloud Compliance can scan volumes that are in the same region as Cloud Manager. When you activate compliance scans on an Azure NetApp Files working environment, Cloud Compliance scans _all_ of the volumes in the region.
+For Azure NetApp Files, Cloud Compliance can scan any volumes that are in the same region as Cloud Manager.
 
 == Cost
 

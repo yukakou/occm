@@ -126,7 +126,5 @@ image:screenshot_cloud_compliance_wizard_start.png[A screenshot of the Cloud Com
 
 Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
 
-From the Scan Configuration page you can select the working environments, volumes, and buckets that you want to scan for compliance. You can also connect to a database server in order to scan specific database schemas.
-
 .What's Next
-Activate Cloud Compliance on any working environments or databases in Cloud Manager.
+From the Scan Configuration page you can select the working environments, volumes, and buckets that you want to scan for compliance. You can also connect to a database server in order to scan specific database schemas. Activate Cloud Compliance on any of these data sources.
