@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_connectors.html
 keywords: managing connectors, uninstall connector, switch connectors, switch between connectors, go to local UI, local interface, local connector, local cloud manager
-summary: After you create one or more Connectors, you can manage them by switching between Connectors, connecting to the local user interface running on a Connector, and by uninstalling the Connector software.
+summary: After you create one or more Connectors, you can manage them by switching between Connectors, connecting to the local user interface running on a Connector, and more.
 ---
 
 = Managing existing Connectors
@@ -13,7 +13,7 @@ summary: After you create one or more Connectors, you can manage them by switchi
 :imagesdir: ./media/
 
 [.lead]
-After you create one or more Connectors, you can manage them by switching between Connectors, connecting to the local user interface running on a Connector, and by uninstalling the Connector software.
+After you create one or more Connectors, you can manage them by switching between Connectors, connecting to the local user interface running on a Connector, and more.
 
 == Switching between Connectors
 
@@ -49,7 +49,30 @@ image:screenshot_connector_local_ui.gif[A screenshot that shows the Connector ic
 +
 The Cloud Manager interface running on the Connector loads in a new browser tab.
 
-== Uninstall the Connector software
+== Removing Connectors from Cloud Manager
+
+If a Connector is inactive, you can remove it from the list of Connectors in Cloud Manager. You might do this if you deleted the Connector virtual machine or if you uninstalled the Connector software.
+
+Note the following about removing a Connector:
+
+* This action doesn't delete the virtual machine.
+* This action can't be reverted--once you remove a Connector from Cloud Manager, you can't add it back to Cloud Manager.
+
+.Steps
+
+. Click the Connector drop-down from the Cloud Manager header.
+
+. Hover over an inactive Connector and click the trash icon to remove it.
++
+image:screenshot_connector_remove.gif[A screenshot of the Connector widget where you can remove an inactive Connector.]
+
+. Enter the name of the Connector to confirm and then click Remove.
+
+.Result
+
+Cloud Manager removes the Connector from its records.
+
+== Uninstalling the Connector software
 
 The Connector includes an uninstallation script that you can use to uninstall the software to troubleshoot issues or to permanently remove the software from the host.
 
