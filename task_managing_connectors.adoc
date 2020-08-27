@@ -60,3 +60,8 @@ The Connector includes an uninstallation script that you can use to uninstall th
 */opt/application/netapp/cloudmanager/bin/uninstall.sh [silent]*
 +
 _silent_ runs the script without prompting you for confirmation.
+
+.What about software upgrades?
+****
+The Connector automatically updates its software to the latest version, as long as it has link:reference_networking_cloud_manager.html[outbound internet access] to obtain the software update.
+****
