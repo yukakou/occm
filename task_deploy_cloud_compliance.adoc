@@ -153,7 +153,6 @@ Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
 .What's Next
 From the Scan Configuration page you can select the working environments, volumes, and buckets that you want to scan for compliance. You can also connect to a database server in order to scan specific database schemas. Activate Cloud Compliance on any of these data sources.
 
-[[subscribing-to-aws-marketplace]]
 == Subscribing to the Cloud Compliance service
 
 The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point.
