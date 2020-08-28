@@ -56,11 +56,7 @@ Disassociating a user makes it so they can no longer access the resources in a C
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down.
-+
-image:screenshot_account_settings_menu.gif[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
-
-. Click *Manage Account Settings* next to the currently selected account.
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
 +
 image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
@@ -80,13 +76,9 @@ You can associate and disassociate Workspace Admins with workspaces at any time.
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down.
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
 +
-image:screenshot_account_settings_menu.gif[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
-
-. Click *Manage Account Settings* next to the currently selected account.
-+
-image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]the Manage Account Settings option that's available from the Account drop-down.]
 
 . From the Users tab, click the action menu in the row that corresponds to the user.
 +
@@ -106,13 +98,7 @@ Manage your workspaces by creating, renaming, and deleting them. Note that you c
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down.
-+
-image:screenshot_account_settings_menu.gif[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
-
-. Click *Manage Account Settings* next to the currently selected account.
-+
-image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
 
 . Click *Workspaces*.
 
@@ -132,13 +118,7 @@ link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down.
-+
-image:screenshot_account_settings_menu.gif[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
-
-. Click *Manage Account Settings* next to the currently selected account.
-+
-image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
 
 . Click *Connector*.
 
@@ -156,13 +136,7 @@ link:concept_cloud_central_accounts.html[Learn more about subscriptions].
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down.
-+
-image:screenshot_account_settings_menu.gif[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
-
-. Click *Manage Account Settings* next to the currently selected account.
-+
-image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
 
 . Click *Subscriptions*.
 +
