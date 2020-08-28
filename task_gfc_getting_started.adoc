@@ -124,7 +124,7 @@ If your configuration requires more than one Global File Cache Core to be instal
 
 When deploying Edge instances, you will configure some to connect to the first Core and others to the second Core. Both Core instances access the same backend storage (your Cloud Volumes ONTAP instance) in the working environment.
 
-. From the Global File Cache Dashboard, click *Add Core instance*.
+. From the Global File Cache Dashboard, click *Add Core Instance*.
 +
 image:screenshot_gfc_add_another_core.png[A screenshot of the GFC Dashboard and the button to add an additional Core instance.]
 
