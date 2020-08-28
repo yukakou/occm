@@ -78,7 +78,7 @@ You can associate and disassociate Workspace Admins with workspaces at any time.
 
 . From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
 +
-image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]the Manage Account Settings option that's available from the Account drop-down.]
+image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
 . From the Users tab, click the action menu in the row that corresponds to the user.
 +
