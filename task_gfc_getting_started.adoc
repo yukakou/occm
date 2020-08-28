@@ -46,19 +46,19 @@ Deploy an instance of the Global File Cache Management Server in the same workin
 [role="quick-margin-para"]
 Deploy an instance, or multiple instances, of the Global File Cache Core in the same working environment as the instance of Cloud Volumes ONTAP and join it to your Active Directory domain.
 
-==== image:number4.png[Number 4] Deploy the Global File Cache Edge instances (this is not done using Cloud Manager)
+==== image:number4.png[Number 4] Deploy the Global File Cache Edge instances
 
 [role="quick-margin-para"]
-See link:task_deploy_gfc_edge_instances.html[Deploying Global File Cache Edge instances^] to deploy the Global File Cache Edge instances in each remote location.
+See link:task_deploy_gfc_edge_instances.html[Deploying Global File Cache Edge instances^] to deploy the Global File Cache Edge instances in each remote location. This step is not done using Cloud Manager,
 
 === Deploy Cloud Volumes ONTAP as your storage platform
 
-In the current release,  Global File Cache supports Cloud Volumes ONTAP deployed as an HA pair in Azure or AWS.  For detailed prerequisites, requirements, and deployment instructions, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^] or link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^].
+In the current release, Global File Cache supports Cloud Volumes ONTAP deployed as an HA pair in Azure or AWS.  For detailed prerequisites, requirements, and deployment instructions, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^] or link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^].
 
-Note the following additional Global File Cache requirements:
+Note the following additional Global File Cache requirement:
 
 * You should configure SMB file shares on the instance of Cloud Volumes ONTAP.
-
++
 If no SMB file shares are set up on the instance, then you are prompted to configure the SMB shares during the installation of the Global File Cache components.
 
 === Enable Global File Cache in your working environment
@@ -117,3 +117,30 @@ The Dashboard shows that the Management Server instance and the Core instance ar
 If you have determined that you need to deploy multiple Global File Cache Cores to support your configuration, click *Add Core Instance* from the Dashboard and follow the deployment wizard.
 
 After you have completed your Core deployment, you need to link:download_gfc_resources.html[deploy the Global File Cache Edge instances^] in each of your remote offices.
+
+== Deploy additional Core instances
+
+If your configuration requires more than one Global File Cache Core to be installed because of a large number of Edge instances, you can add another Core to the working environment.
+
+When deploying Edge instances, you will configure some to connect to the first Core and others to the second Core. Both Core instances access the same backend storage (your Cloud Volumes ONTAP instance) in the working environment.
+
+. From the Global File Cache Dashboard, click *Add Core instance*.
++
+image:screenshot_gfc_add_another_core.png[A screenshot of the GFC Dashboard and the button to add an additional Core instance.]
+
+. Enter the admin user credentials to join the Active Directory domain, and the service account user credentials. Then click *Continue*.
++
+* The Global File Cache Core instance must be in the same Active Directory domain as the Cloud Volumes ONTAP instance.
+* The service account is a domain user and it is part of the BUILTIN\Backup Operators group on the Cloud Volumes ONTAP instance.
++
+image:screenshot_gfc_install6.png[A screenshot showing the configuration information necessary to set up the Global File Cache Core active directory and service account.]
+
+. Enter the admin credentials you will use to access to the Global File Cache Core VM and click *Deploy GFC Core*. For Azure you enter the credentials as a user name and password; for AWS you select the appropriate key pair. You can change the VM name if you want.
++
+image:screenshot_gfc_install7.png[A screenshot showing the configuration information necessary to set up the Global File Cache Core instance.]
+
+. After the Global File Cache Core is successfully deployed, click *Go to Dashboard*.
++
+image:screenshot_gfc_dashboard_2cores.png[A screenshot showing the Global File Cache dashboard after installation is complete.]
+
+The Dashboard reflects the second Core instance for the working environment.

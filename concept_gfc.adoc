@@ -70,7 +70,7 @@ This configuration lets you deploy and manage the entire Global File Cache serve
 
 === Manual deployment options
 
-Global File Cache configurations are also supported with Cloud Volumes ONTAP, Cloud Volumes Service, or Azure NetApp Files installed on Microsoft Azure, Google Cloud Platform, or Amazon Web Services public cloud storage infrastructure. In these installations the Global File Cache server-side components must be configured and deployed manually, not using Cloud Manager.
+Global File Cache configurations are also supported with Cloud Volumes ONTAP, Cloud Volumes Service, or Azure NetApp Files installed on Microsoft Azure, Google Cloud Platform, or Amazon Web Services public cloud storage infrastructure. On-premises solutions are also available one NetApp AFF and FAS platforms. In these installations the Global File Cache server-side components must be configured and deployed manually, not using Cloud Manager.
 
 See the link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Guide.pdf[NetApp Global File Cache User Guide^] for details.
 
@@ -111,23 +111,19 @@ The cost to use Global File Cache depends on the type of installation you have c
 +
 In Azure, this runs on a D2s_V3 or equivalent (2 vCPU/8GB RAM) VM with 127GB premium SSD
 +
-In AWS, this runs on a m4.large or equivalent (2 vCPU/8GB RAM) instance with 127GB premium SSD
+In AWS, this runs on a m4.large or equivalent (2 vCPU/8GB RAM) instance with 127GB general purpose SSD
 
 ** Global File Cache Core:
 +
 In Azure, this runs on a D4s_V3 or equivalent (4 vCPU/16GB RAM) VM with 127GB premium SSD
 +
-In AWS, this runs on a m4.xlarge or equivalent (4 vCPU/16GB RAM) instance with 127GB premium SSD
+In AWS, this runs on a m4.xlarge or equivalent (4 vCPU/16GB RAM) instance with 127GB general purpose SSD
 
-* When installed with Cloud Volumes ONTAP as an HA pair in Azure or AWS (the supported configurations deployed completely through Cloud Manager), your first 10 remote office Global File Cache Edge instances are free. Additional Edge installations are $3,000 per site, per year.
+* When installed with Cloud Volumes ONTAP as an HA pair in Azure or AWS (the supported configurations deployed completely through Cloud Manager), there is a charge of $3,000 per site (for each Global File Cache Edge instance), per year.
 
-* When installed using the manual deployment options the pricing is different. To see a high-level estimate of costs, see  https://cloud.netapp.com/global-file-cache/roi[Calculate Your Savings Potential^] or consult your Global File Cache Solutions Engineer to discuss the best options for your enterprise deployment.
+* When installed using the manual deployment options the pricing is different. To see a high-level estimate of costs, see https://cloud.netapp.com/global-file-cache/roi[Calculate Your Savings Potential^] or consult your Global File Cache Solutions Engineer to discuss the best options for your enterprise deployment.
 
 == Licensing
-
-If you already have a license for Cloud Volumes ONTAP as an HA pair in Azure or AWS, you automatically get access to Global File Cache, including 10 free Edge licenses.
-
-When installed using different storage options, such as Cloud Volumes Service or Azure NetApp Files, you are entitled to one additional Edge instance for every 2TB of storage capacity over 20TB.
 
 When you purchase additional Edge licenses, in most cases Cloud Manager uses your NetApp Support Site account to obtain the license file from NetApp and to install it on the Cloud Volumes ONTAP system. See https://docs.netapp.com/us-en/occm/concept_licensing.html[Licensing^] for details.
 
