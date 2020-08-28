@@ -19,38 +19,22 @@ Cloud Compliance can scan your Amazon S3 buckets to identify the personal and se
 
 Get started quickly by following these steps, or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Create a Connector in AWS
-
-[role="quick-margin-para"]
-link:task_creating_connectors_aws.html[Create a Connector] in the AWS account where you want to view your Amazon S3 buckets.
-
-[role="quick-margin-para"]
-Cloud Manager automatically discovers the S3 buckets in this AWS account and displays them in an Amazon S3 working environment.
-
-==== image:number2.png[Number 2] Set up the S3 requirements in your cloud environment
+==== image:number1.png[Number 1] Set up the S3 requirements in your cloud environment
 
 [role="quick-margin-para"]
 Ensure that your cloud environment can meet the requirements for Cloud Compliance, including preparing an IAM role and setting up connectivity from Cloud Compliance to S3. <<Reviewing S3 prerequisites,See the complete list>>.
 
-==== image:number3.png[Number 3] Deploy the Cloud Compliance instance
+==== image:number2.png[Number 2] Deploy the Cloud Compliance instance
 
 [role="quick-margin-para"]
 link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance in Cloud Manager^] if there isn't already an instance deployed.
 
-==== image:number4.png[Number 4] Subscribe from the AWS Marketplace
-
-[role="quick-margin-para"]
-A subscription to the AWS Marketplace is required to scan Amazon S3 data.
-
-[role="quick-margin-para"]
-Click *Settings > Credentials* and click *Add Subscription* for the Instance Profile.
-
-==== image:number5.png[Number 5] Enable Cloud Compliance in your working environment
+==== image:number3.png[Number 3] Activate Compliance on your S3 working environment
 
 [role="quick-margin-para"]
 Select the Amazon S3 working environment, click *Enable Compliance*, and select an IAM role that includes the required permissions.
 
-==== image:number6.png[Number 6] Select the buckets to scan
+==== image:number4.png[Number 4] Select the buckets to scan
 
 [role="quick-margin-para"]
 Select the buckets that you'd like to scan and Cloud Compliance will start scanning them.
@@ -107,38 +91,9 @@ NOTE: You can't use a proxy to get to S3 over the internet.
 
 link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance in Cloud Manager^] if there isn't already an instance deployed.
 
-[[subscribing-to-aws-marketplace]]
-== Subscribing from the AWS Marketplace
+You need to deploy the instance in an AWS Connector so that Cloud Manager automatically discovers the S3 buckets in this AWS account and displays them in an Amazon S3 working environment.
 
-The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. A subscription to the AWS Marketplace is required to continue scanning Amazon S3 data after that point.
-
-These steps must be completed by a user who has the _Account Admin_ role.
-
-.Steps
-
-. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
-+
-image:screenshot_settings_icon.gif[A screenshot of Cloud Manager's top right banner where you can select the Settings icon.]
-
-. Find the credentials for the AWS Instance Profile.
-+
-The subscription must be added to the Instance Profile. Charging won't work otherwise.
-+
-If you already have a subscription, then you're all set--there's nothing else that you need to do.
-+
-image:screenshot_profile_subscription.gif[A screenshot from the Credentials page that shows the AWS Instance Profile with an active subscription.]
-
-. If you don't have a subscription yet, hover over the credentials and click the action menu.
-
-. Click *Add Subscription*.
-+
-image:screenshot_add_subscription.gif[A screenshot of the menu in the Credentials page. It shows a button to add a subscription to the credentials.]
-
-. Click *Add Subscription*, click *Continue*, and follow the steps.
-+
-video::video_subscribing_aws.mp4[width=848, height=480]
-
-== Enabling Cloud Compliance
+== Activating Compliance on your S3 working environment
 
 Enable Cloud Compliance on Amazon S3 after you verify the prerequisites.
 

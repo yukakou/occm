@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_scanning_databases.html
-keywords: cloud compliance, enable cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, databases, database schemas
+keywords: cloud compliance, enable cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, databases, database schemas, Oracle, SAP HANA, SQL Server
 summary: Complete a few steps to start scanning your database schemas with Cloud Compliance.
 ---
 
@@ -48,7 +48,6 @@ Review the following prerequisites to make sure that you have a supported config
 Cloud Compliance can scan schemas from the following databases:
 
 * Oracle
-* MongoDB
 * SAP HANA
 * SQL Server (MSSQL)
 
@@ -56,7 +55,7 @@ IMPORTANT: The statistics gathering feature *must be enabled* in the database.
 
 === Database requirements
 
-You must have the following information to connect to the database:
+Any database with connectivity to the Cloud Compliance instance can be scanned, regardless of where it is hosted. You just need the following information to connect to the database:
 
 * IP Address or host name
 * Port

@@ -27,7 +27,7 @@ link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance in Cloud Manager^
 ==== image:number2.png[Number 2] Enable Cloud Compliance in your working environments
 
 [role="quick-margin-para"]
-Click *Compliance*, select the *Configuration* tab, and activate compliance scans for specific working environments.
+Click *Cloud Compliance*, select the *Configuration* tab, and activate compliance scans for specific working environments.
 
 ==== image:number3.png[Number 3] Ensure access to volumes
 
@@ -40,7 +40,7 @@ Now that Cloud Compliance is enabled, ensure that it can access volumes.
 * NFS volume export policies must allow access from the Cloud Compliance instance.
 * Cloud Compliance needs Active Directory credentials to scan CIFS volumes.
 +
-Click *Compliance* > *Scan Configuration* > *Edit CIFS Credentials* and provide the credentials. The credentials can be read-only, but providing admin credentials ensures that Cloud Compliance can read data that requires elevated permissions.
+Click *Cloud Compliance* > *Scan Configuration* > *Edit CIFS Credentials* and provide the credentials. The credentials can be read-only, but providing admin credentials ensures that Cloud Compliance can read data that requires elevated permissions.
 
 ==== image:number4.png[Number 4] Configure volumes to scan
 
@@ -53,7 +53,7 @@ link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance in Cloud Manager^
 
 == Enabling Cloud Compliance in your working environments
 
-. At the top of Cloud Manager, click *Compliance* and then select the *Configuration* tab.
+. At the top of Cloud Manager, click *Cloud Compliance* and then select the *Configuration* tab.
 +
 image:screenshot_cloud_compliance_we_scan_config.png[A screenshot of the Scan Configuration tab immediately after deploying the Cloud Compliance instance.]
 
@@ -85,7 +85,7 @@ You can either open the security group for traffic from the IP address of the Cl
 
 . If you use CIFS, provide Cloud Compliance with Active Directory credentials so it can scan CIFS volumes.
 
-.. At the top of Cloud Manager, click *Compliance*.
+.. At the top of Cloud Manager, click *Cloud Compliance*.
 
 .. Click the *Configuration* tab.
 +
@@ -99,7 +99,7 @@ After you enter the credentials, you should see a message that all CIFS volumes 
 +
 image:screenshot_cifs_status.gif[A screenshot that shows the Scan Configuration page and one Cloud Volumes ONTAP system for which CIFS credentials were successfully provided.]
 
-. On the *Scan Configuration* page, click *View Details* to review the status for each CIFS and NFS volume and correct any errors.
+. On the _Scan Configuration_ page, click *View Details* to review the status for each CIFS and NFS volume and correct any errors.
 +
 For example, the following image shows three volumes; one of which Cloud Compliance can't scan due to network connectivity issues between the Cloud Compliance instance and the volume.
 +

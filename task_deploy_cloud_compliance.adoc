@@ -19,15 +19,39 @@ Complete a few steps to deploy the Cloud Compliance instance in your Cloud Manag
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Review prerequisites
+==== image:number1.png[Number 1] Create a Connector
+
+[role="quick-margin-para"]
+If you don't already have a Connector, create a Connector in Azure or AWS. See link:task_creating_connectors_aws.html[creating a Connector in AWS] or link:task_creating_connectors_azure.html[creating a Connector in Azure].
+
+==== image:number2.png[Number 2] Review prerequisites
 
 [role="quick-margin-para"]
 Ensure that your cloud environment can meet the prerequisites, which includes 16 vCPUs for the Cloud Compliance instance, outbound internet access for the instance, connectivity between the Connector and Cloud Compliance over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
 
-==== image:number2.png[Number 2] Deploy Cloud Compliance
+==== image:number3.png[Number 3] Deploy Cloud Compliance
 
 [role="quick-margin-para"]
 Launch the installation wizard to deploy the Cloud Compliance instance in Cloud Manager.
+
+==== image:number4.png[Number 4] Subscribe to the Cloud Compliance service
+
+[role="quick-margin-para"]
+The first 1 TB of data that Cloud Compliance scans in Cloud Manager is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point.
+
+== Creating a Connector
+
+If you don't already have a Connector, create a Connector in Azure or AWS. See link:task_creating_connectors_aws.html[creating a Connector in AWS] or link:task_creating_connectors_azure.html[creating a Connector in Azure]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Compliance because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases when you need to set one up now.
+
+There are some scenarios where you have to use a Connector in AWS or Azure for Cloud Compliance.
+
+* When scanning data in Cloud Volumes ONTAP in AWS or in AWS S3 buckets, you use a connector in AWS.
+* When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a connector in Azure.
+* Databases can be scanned using either Connector.
+
+As you can see, there may be some situations where you need to use link:concept_connectors.html#when-to-use-multiple-connectors[multiple Connectors].
+
+NOTE: If you are planning on scanning Azure NetApp Files, you need to make sure you're deploying in the same region as the volumes you wish to scan.
 
 == Reviewing prerequisites
 
@@ -110,7 +134,7 @@ You deploy an instance of Cloud Compliance for each Cloud Manager instance.
 
 .Steps
 
-. In Cloud Manager, click *Compliance*.
+. In Cloud Manager, click *Cloud Compliance*.
 
 . Click *Activate Cloud Compliance* to start the deployment wizard.
 +
@@ -128,3 +152,40 @@ Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
 
 .What's Next
 From the Scan Configuration page you can select the working environments, volumes, and buckets that you want to scan for compliance. You can also connect to a database server in order to scan specific database schemas. Activate Cloud Compliance on any of these data sources.
+
+[[subscribing-to-aws-marketplace]]
+== Subscribing to the Cloud Compliance service
+
+The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point.
+
+These steps must be completed by a user who has the _Account Admin_ role.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
++
+image:screenshot_settings_icon.gif[A screenshot of Cloud Manager's top right banner where you can select the Settings icon.]
+
+. Find the credentials for the AWS Instance Profile.
++
+The subscription must be added to the Instance Profile. Charging won't work otherwise.
++
+If you already have a subscription, then you're all set--there's nothing else that you need to do.
++
+image:screenshot_profile_subscription.gif[A screenshot from the Credentials page that shows the Instance Profile with an active subscription.]
+
+. If you don't have a subscription yet, hover over the credentials and click the action menu.
+
+. Click *Add Subscription*.
++
+image:screenshot_add_subscription.gif[A screenshot of the menu in the Credentials page. It shows a button to add a subscription to the credentials.]
+
+. Click *Add Subscription*, click *Continue*, and follow the steps.
++
+The following video shows how to associate a Marketplace subscription to an AWS subscription:
++
+video::video_subscribing_aws.mp4[width=848, height=480]
++
+The following video shows how to associate a Marketplace subscription to an Azure subscription:
++
+video::video_subscribing_azure.mp4[width=848, height=480]

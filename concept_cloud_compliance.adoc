@@ -41,8 +41,7 @@ For Azure NetApp Files, Cloud Compliance can scan any volumes that are in the sa
 
 The cost to use Cloud Compliance depends on the amount of data that you're scanning. The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. This includes data from Cloud Volumes ONTAP volumes, Azure NetApp Files volumes, Amazon S3 buckets, and database schemas. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
 
-AWS Marketplace: link:task_scanning_s3.html#subscribing-to-aws-marketplace[Learn how to subscribe^].
-Azure Marketplace: link:task_scanning_s3.html#subscribing-to-aws-marketplace[Learn how to subscribe^].
+link:task_deploy_cloud_compliance#subscribing-to-the-cloud-compliance-service[Learn how to subscribe^].
 
 NOTE: Throughout September 2020, licensing to scan more than 1 TB is not required. This licensing model will go into affect in October 2020.
 
