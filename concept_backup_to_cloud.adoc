@@ -22,9 +22,9 @@ NOTE: You must use Cloud Manager for all backup and restore operations. Any acti
 == Features
 
 * Back up independent copies of your data volumes to low-cost object storage in the cloud.
-+
-Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
-* Back up from cloud to cloud, and from on-premises ONTAP systems to cloud
+* Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
+* Back up from cloud to cloud, and from on-premises ONTAP systems to cloud.
+* Support for up to 4,000 backups of a single volume.
 * Restore data from a specific point in time.
 * Restore the data to the source system or to a different system.
 
@@ -34,7 +34,7 @@ Backup to Cloud is supported with the following types of working environments:
 
 * Cloud Volumes ONTAP in AWS
 * Cloud Volumes ONTAP in Azure
-* On-premises ONTAP clusters in Azure
+* On-premises ONTAP clusters
 
 == Cost
 
@@ -50,7 +50,7 @@ For PAYGO you'll need to pay your cloud provider for object storage costs and Ne
 
 === Free trial
 
-A 30-day free trial is available. When using the trial version, you are notified about the number of free trial days that remain. At the end of your free trial, backups stop being created and you will not have the ability to restore a volume. You must subscribe to the service or purchase a license to continue using the service.
+A 30-day free trial is available. When using the trial version, you are notified about the number of free trial days that remain. At the end of your free trial, backups stop being created. You must subscribe to the service or purchase a license to continue using the service.
 
 Backup are not deleted when the service is disabled. You'll continue to be charged by your cloud provider for object storage costs for the capacity that your backups use unless you delete the backups.
 
@@ -146,24 +146,24 @@ Systems that were shifted over to a PAYGO license are returned to the BYOL licen
 
 == Supported volumes
 
-Backup to Cloud supports read-write volumes only.
+Backup to Cloud supports read-write volumes and data protection (DP) volumes.
 
 FlexGroup volumes aren't currently supported.
 
 == Limitations
+
+* WORM storage (SnapLock) is not supported on a Cloud Volumes ONTAP or on-premises system when Backup to Cloud is enabled.
+
+* Backup to Cloud restrictions when making backups from on-premises ONTAP systems:
+** The on-prem cluster must be running ONTAP 9.7 or later.
+** Cloud Manager must be deployed on Azure. There is no support for on-premises Cloud Manager deployments.
+** The destination location for backups is only object storage on Azure.
+** Backups can be restored only to Cloud Volumes ONTAP systems deployed on Azure. You cannot restore a backup to an on-premises ONTAP system or to a Cloud Volumes ONTAP system that is using a different cloud provider.
+
+* In Azure, if you enable Backup to Cloud when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Backup to Cloud, *disable* Backup to Cloud when deploying Cloud Volumes ONTAP and then enable Backup to Cloud and choose the resource group from the Backup to Cloud Settings page.
 
 * When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up.
 +
 For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up.
 +
 If you want to back up these volumes, you would need to disable Backup to Cloud and then enable it again.
-
-* Backups created from on-premises ONTAP systems can be restored only to Cloud Volumes ONTAP systems that use the same cloud provider.
-+
-You cannot restore a backup to an on-premises ONTAP system or to a Cloud Volumes ONTAP system that is using a different cloud provider.
-
-* Backup to Cloud can maintain up to 1,019 total backups of a volume.
-
-* In Azure, if you enable Backup to Cloud when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Backup to Cloud, *disable* Backup to Cloud when deploying Cloud Volumes ONTAP and then enable Backup to Cloud and choose the resource group from the Backup to Cloud Settings page.
-
-* WORM storage is not supported on a Cloud Volumes ONTAP system when Backup to Cloud is enabled.
