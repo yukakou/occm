@@ -217,7 +217,7 @@ image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting bet
 
 After you add your Azure credentials to Cloud Manager, you can associate an Azure Marketplace subscription to those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
 
-There are two scenarios in which you might associate an Azure Marketplace subscription with Azure credentials:
+There are two scenarios in which you might associate an Azure Marketplace subscription after you've already added the credentials to Cloud Manager:
 
 * You didn't associate a subscription when you initially added the credentials to Cloud Manager.
 * You want to replace an existing Azure Marketplace subscription with a new subscription.
@@ -237,6 +237,8 @@ You need to create a Connector before you can change Cloud Manager settings. lin
 image:screenshot_azure_add_subscription.gif[A screenshot of the Credentials page where you can add a subscription to Azure credentials from the menu.]
 
 . Select a subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
++
+The following video starts from the context of the working environment wizard, but shows you the same workflow after you click *Add Subscription*:
 +
 video::video_subscribing_azure.mp4[width=848, height=480]
 

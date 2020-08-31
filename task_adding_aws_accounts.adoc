@@ -119,9 +119,9 @@ image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting betwe
 
 == Associating an AWS subscription to credentials
 
-After you add your AWS credentials to Cloud Manager, you can associate an AWS Marketplace subscription to those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
+After you add your AWS credentials to Cloud Manager, you can associate an AWS Marketplace subscription with those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
 
-There are two scenarios in which you might associate an AWS Marketplace subscription with AWS credentials:
+There are two scenarios in which you might associate an AWS Marketplace subscription after you've already added the credentials to Cloud Manager:
 
 * You didn't associate a subscription when you initially added the credentials to Cloud Manager.
 * You want to replace an existing AWS Marketplace subscription with a new subscription.
