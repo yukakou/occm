@@ -77,6 +77,10 @@ Just click *Discover Clusters* and Cloud Manager will discover your managed clus
 
 * We've added resource and error checking to ensure that communication is available between the cluster and Cloud Volumes ONTAP. And if it isn't, then we'll let you know.
 
+These enhancements require additional permissions in Google Cloud.
+
+<add details here>
+
 === Refreshed navigation
 
 We've refreshed the header in Cloud Manager to make it easier for you to navigate between NetApp cloud services.
