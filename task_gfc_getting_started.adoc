@@ -89,7 +89,7 @@ image:screenshot_gfc_install4.png[A screenshot showing the prerequisites before 
 
 . After you have verified that the requirements have been met, or that you have the information to meet these requirements, click *Continue*.
 
-. Enter the admin credentials you will use to access to the Global File Cache Management Server VM and click *Enable GFC Service*. For Azure you enter the credentials as a user name and password; for AWS you select the appropriate key pair. You can change the VM name if you want.
+. Enter the admin credentials you will use to access to the Global File Cache Management Server VM and click *Enable GFC Service*. For Azure you enter the credentials as a user name and password; for AWS you select the appropriate key pair. You can change the VM/instance name if you want.
 +
 image:screenshot_gfc_install5.png[A screenshot showing the configuration information necessary to set up the Global File Cache Management Server.]
 
@@ -102,7 +102,7 @@ image:screenshot_gfc_install5.png[A screenshot showing the configuration informa
 +
 image:screenshot_gfc_install6.png[A screenshot showing the configuration information necessary to set up the Global File Cache Core active directory and service account.]
 
-. Enter the admin credentials you will use to access to the Global File Cache Core VM and click *Deploy GFC Core*. For Azure you enter the credentials as a user name and password; for AWS you select the appropriate key pair. You can change the VM name if you want.
+. Enter the admin credentials you will use to access to the Global File Cache Core VM and click *Deploy GFC Core*. For Azure you enter the credentials as a user name and password; for AWS you select the appropriate key pair. You can change the VM/instance name if you want.
 +
 image:screenshot_gfc_install7.png[A screenshot showing the configuration information necessary to set up the Global File Cache Core instance.]
 
