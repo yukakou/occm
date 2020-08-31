@@ -21,9 +21,9 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 ==== image:number1.png[Number 1] Review prerequisites
 
-[role="quick-margin-para"]
-. Ensure connectivity between Connectors and Kubernetes clusters, and from Kubernetes clusters to Cloud Volumes ONTAP.
-. Ensure that the Connector has an outbound internet connection to install Trident on Kubernetes clusters.
+[role="quick-margin-list"]
+.. Ensure connectivity between Connectors and Kubernetes clusters, and from Kubernetes clusters to Cloud Volumes ONTAP.
+.. Ensure that the Connector has an outbound internet connection to install Trident on Kubernetes clusters.
 
 ==== image:number2.png[Number 2] Add your Kubernetes clusters to Cloud Manager
 
@@ -72,7 +72,7 @@ Discover clusters directly from your cloud provider or import a cluster by provi
 
 . Choose one of the available options:
 +
-* Click *Discover Clusters* to discover the clusters that Cloud Manager has access to from the permissions provided to the selected Connector.
+* Click *Discover Clusters* to discover the clusters that Cloud Manager has access to based on permissions that you provided to the Connector.
 +
 For example, if your Connector is running in Google Cloud, Cloud Manager uses the permissions from the Connector's service account to discover GKE clusters.
 
