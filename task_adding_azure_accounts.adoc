@@ -213,6 +213,33 @@ You can now switch to different set of credentials from the Details and Credenti
 
 image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between credentials after clicking Edit Credentials in the Details & Credentials page.]
 
+== Associating an Azure Marketplace subscription to credentials
+
+After you add your Azure credentials to Cloud Manager, you can associate an Azure Marketplace subscription to those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
+
+There are two scenarios in which you might associate an Azure Marketplace subscription with Azure credentials:
+
+* You didn't associate a subscription when you initially added the credentials to Cloud Manager.
+* You want to replace an existing Azure Marketplace subscription with a new subscription.
+
+.What you'll need
+
+You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html#how-to-create-a-connector[Learn how].
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+
+. Hover over a set of credentials and click the action menu.
+
+. From the menu, click *Associate Subscription*.
++
+image:screenshot_azure_add_subscription.gif[A screenshot of the Credentials page where you can add a subscription to Azure credentials from the menu.]
+
+. Select a subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
++
+video::video_subscribing_azure.mp4[width=848, height=480]
+
 == Associating additional Azure subscriptions with a managed identity
 
 Cloud Manager enables you to choose the Azure credentials and Azure subscription in which you want to deploy Cloud Volumes ONTAP. You can't select a different Azure subscription for the managed identity profile unless you associate the https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview[managed identity^] with those subscriptions.
