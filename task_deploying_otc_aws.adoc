@@ -228,6 +228,10 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 * If you want to use CIFS, you must have set up DNS and Active Directory. For details, see link:reference_networking_aws.html[Networking requirements for Cloud Volumes ONTAP in AWS].
 
+.Limitation
+
+At this time, HA pairs are not supported with AWS Outposts.
+
 .About this task
 
 Immediately after you create the working environment, Cloud Manager launches a test instance in the specified VPC to verify connectivity. If successful, Cloud Manager immediately terminates the instance and then starts deploying the Cloud Volumes ONTAP system. If Cloud Manager cannot verify connectivity, creation of the working environment fails. The test instance is either a t2.nano (for default VPC tenancy) or m3.medium (for dedicated VPC tenancy).
