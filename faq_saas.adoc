@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: faq_saas.html
 keywords: faq, frequently asked questions, questions
-summary: This FAQ aims to answer key questions associated with the new Cloud Manager SaaS release.
+summary: This FAQ answers key questions associated with the new Cloud Manager SaaS release.
 ---
 
 = Frequently asked questions about Cloud Manager SaaS
