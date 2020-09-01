@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_adding_azure_accounts.html
 keywords: permissions, microsoft, azure, permissions, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, managed identity, iam, operator, role, virtual machine
-summary: There are two ways to manage Azure accounts in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
+summary: When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials and Marketplace subscription to use with that system. If you manage multiple Azure Marketplace subscriptions, you can assign each one of them to different Azure credentials from the Credentials page.
 ---
 
-= Setting up and adding Azure credentials to Cloud Manager
+= Managing Azure credentials and subscriptions for Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,6 +13,8 @@ summary: There are two ways to manage Azure accounts in Cloud Manager. First, if
 :imagesdir: ./media/
 
 [.lead]
+When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials and Marketplace subscription to use with that system. If you manage multiple Azure Marketplace subscriptions, you can assign each one of them to different Azure credentials from the Credentials page.
+
 There are two ways to manage Azure credentials in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
 
 NOTE: When you deploy a Connector from Cloud Manager, Cloud Manager automatically adds the Azure account in which you deployed the Connector. An initial account is not added if you manually installed the Connector software on an existing system. link:concept_accounts_azure.html[Learn about Azure accounts and permissions].

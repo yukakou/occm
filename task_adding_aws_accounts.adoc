@@ -5,7 +5,7 @@ keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam p
 summary: If you want to deploy Cloud Volumes ONTAP in different AWS accounts, then you need to provide the required permissions to those accounts and then add the details to Cloud Manager. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
 ---
 
-= Adding AWS credentials and subscriptions in Cloud Manager
+= Managing AWS credentials and subscriptions for Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
