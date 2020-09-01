@@ -13,9 +13,9 @@ summary: This FAQ aims to answer key questions associated with the new Cloud Man
 :imagesdir: ./media/
 
 [.lead]
-This FAQ aims to answer key questions associated with the new Cloud Manager SaaS release.
+This FAQ answers key questions associated with the new Cloud Manager SaaS release.
 
-== What capabilities were introduced as part of the Cloud Manager SaaS release on August 3, 2020?
+== What capabilities were introduced with the Cloud Manager SaaS release on August 3, 2020?
 
 * *A unified API and UI*
 +
@@ -50,7 +50,7 @@ The role of the Connector hasn't changed. It has the same purpose as before--to 
 
 No, you should not. The Connector is the same software that was used to manage resources and processes within your public cloud environments, such as deploying and managing Cloud Volumes ONTAP, enabling Cloud Backup Service, deploying Cloud Compliance, and more.
 
-==  I still use my Cloud Manager the same way that I did prior to this change (locally through the instance deployed in my VPC)?
+== Can I still use my Cloud Manager the same way that I did before (locally through the instance deployed in my VPC)?
 
 Yes, you can do that by clicking the *Connector* menu and clicking *Go to local UI* or by entering the Connector’s IP address directly into your web browser.
 
@@ -60,7 +60,7 @@ Nothing is needed. Just browse to https://cloudmanager.netapp.com and start work
 
 == Did Cloud Volumes ONTAP or the data that it stores change or move anywhere?
 
-No. It’s where it always has been--in your VPC or VNet, under your management.
+No. It’s where it's always been--in your VPC or VNet, under your management.
 
 == Where is the endpoint for the Cloud Manager SaaS platform?
 
