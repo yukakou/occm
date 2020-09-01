@@ -15,8 +15,8 @@ summary: This FAQ answers key questions associated with the new Cloud Manager Sa
 [.lead]
 This FAQ answers key questions associated with the new Cloud Manager SaaS release.
 
-== What capabilities were introduced with the Cloud Manager SaaS release on August 3, 2020?
-
+== What capabilities were introduced with the Cloud Manager SaaS release on Aug 3, 2020?
+ 
 * *A unified API and UI*
 +
 A unified and centralized API control plane for all NetApp ONTAP-based storage solutions, providing customers with management and control of the following:
