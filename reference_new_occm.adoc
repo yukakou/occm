@@ -77,7 +77,9 @@ Just click *Discover Clusters* and Cloud Manager will discover your managed clus
 
 * We've added resource and error checking to ensure that communication is available between the cluster and Cloud Volumes ONTAP. And if it isn't, then we'll let you know.
 
-These enhancements require additional permissions in Google Cloud.
+link:task_connecting_kubernetes.html[Learn how to get started].
+
+Note that these enhancements require additional permissions in Google Cloud:
 
 <add details here>
 
@@ -93,11 +95,11 @@ As you can see, we've also refreshed the Account, Workspace, and Connector drop-
 
 === Administration improvements
 
-* You can now remove inactive Connectors from Cloud Manager.
+* You can now remove inactive Connectors from Cloud Manager. link:task_managing_connectors.html[Learn how].
 +
 image:screenshot_connector_remove.gif[A screenshot of the Connector widget where you can remove an inactive Connector.]
 
-* You can now replace the Marketplace subscription that's currently associated with your cloud provider credentials.
+* You can now replace the Marketplace subscription that's currently associated with your cloud provider credentials. Learn how link:task_adding_aws_accounts.html[in AWS], link:task_adding_azure_accounts.html[in Azure], and link:task_adding_gcp_accounts.html[in GCP].
 +
 If you ever need to change how you're charged, this change can help you ensure that you're being charged through the right Marketplace subscription.
 
