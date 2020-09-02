@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_connecting_kubernetes.html
 keywords: kubernetes, persistent volumes, containers, persistent storage, kubeconfig, trident, kubernetes cluster, storage classes, classes, cvo-single, cvo-ha, thick provisioning, trident_trident, connect, disconnect, provision
-summary: Cloud Manager can automate the deployment of [NetApp Trident on Kubernetes clusters so you can use Cloud Volumes ONTAP as persistent storage for containers.
+summary: Cloud Manager can automate the deployment of NetApp Trident on Kubernetes clusters so you can use Cloud Volumes ONTAP as persistent storage for containers.
 ---
 
 = Using Cloud Volumes ONTAP as persistent storage for Kubernetes
@@ -13,7 +13,9 @@ summary: Cloud Manager can automate the deployment of [NetApp Trident on Kuberne
 :imagesdir: ./media/
 
 [.lead]
-Cloud Manager can automate the deployment of https://netapp-trident.readthedocs.io/en/stable-v18.10/introduction.html[NetApp Trident^] on Kubernetes clusters so you can use Cloud Volumes ONTAP as persistent storage for containers.
+Cloud Manager can automate the deployment of NetApp Trident on Kubernetes clusters so you can use Cloud Volumes ONTAP as persistent storage for containers.
+
+Trident is a fully-supported open source project maintained by NetApp. Trident integrates natively with Kubernetes and its Persistent Volume framework to seamlessly provision and manage volumes from systems running any combination of NetApp's storage platforms. https://netapp-trident.readthedocs.io/en/latest/introduction.html[Learn more about Trident^].
 
 == Quick start
 
@@ -21,14 +23,13 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 ==== image:number1.png[Number 1] Review prerequisites
 
-[role="quick-margin-list"]
-.. Ensure connectivity between Connectors and Kubernetes clusters, and from Kubernetes clusters to Cloud Volumes ONTAP.
-.. Ensure that the Connector has an outbound internet connection to install Trident on Kubernetes clusters.
+[role="quick-margin-para"]
+Ensure that your environment can meet the prerequisites, which includes connectivity between Kubernetes clusters and Cloud Volumes ONTAP, connectivity between Kubernetes clusters and Connectors, a minimum Kubernetes version of 1.15, at least one worker node in a cluster, and more. <<Reviewing prerequisites,See the complete list>>.
 
 ==== image:number2.png[Number 2] Add your Kubernetes clusters to Cloud Manager
 
 [role="quick-margin-para"]
-Discover clusters directly from your cloud provider or import a cluster by providing a kubeconfig file.
+In Cloud Manager, click *Kubernetes* and discover clusters directly from your cloud provider's managed service or import a cluster by providing a kubeconfig file.
 
 ==== image:number3.png[Number 3] Connect your clusters to Cloud Volumes ONTAP
 
@@ -51,18 +52,40 @@ https://netapp-trident.readthedocs.io/[Learn more about provisioning your first 
 
 == Reviewing prerequisites
 
-* A network connection must be available between the Connector and the Kubernetes clusters, and from the Kubernetes clusters to ONTAP systems.
+Before you get started, ensure that your Kubernetes clusters and Connector meet specific requirements.
 
-* The Connector needs an outbound internet connection to access the following endpoints when installing Trident:
+=== Kubernetes cluster requirements
+
+* Network connectivity is required between the following:
+** A Kubernetes cluster and the Connector
+** A Kubernetes cluster and Cloud Volumes ONTAP
+
+* A Kubernetes cluster can be in any location that has the network connectivity listed above.
+
+* A Kubernetes cluster must be running version 1.15 at a minimum
 +
+The maximum supported version is defined by Trident. https://netapp-trident.readthedocs.io/en/stable-v20.07/support/requirements.html#supported-frontends-orchestrators[Click here to see the maximum supported Kubernetes version^].
+
+* A Kubernetes cluster must have at least one worker node.
+
+* If you want to provide a note to anticipate that in order to add an EKS Cluster to Cloud Manager they should prepare to run the command provided. Additional info about the command and the concept of IAM Permissions Boundary they can see this link:
+
+* If you have clusters running in Amazon Elastic Kubernetes Service (Amazon EKS), each cluster needs an IAM role added in order to resolve a permissions error. Cloud Manager will prompt you with the exact eksctl command that resolves the error.
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html[Learn about IAM permissions boundaries^].
+
+=== Connector requirements
+
+The Connector needs an outbound internet connection to access the following endpoints when installing Trident:
+
 \https://packages.cloud.google.com/yum
 \https://github.com/NetApp/trident/releases/download/
-+
+
 Cloud Manager installs Trident on a Kubernetes cluster when you connect a working environment to the cluster.
 
 == Adding Kubernetes clusters to Cloud Manager
 
-Discover clusters directly from your cloud provider or import a cluster by providing a kubeconfig file.
+Add Kubernetes clusters to Cloud Manager by discovering the clusters running in your cloud provider's managed Kubernetes service or by importing a cluster's kubeconfig file.
 
 .Steps
 
@@ -72,9 +95,9 @@ Discover clusters directly from your cloud provider or import a cluster by provi
 
 . Choose one of the available options:
 +
-* Click *Discover Clusters* to discover the clusters that Cloud Manager has access to based on permissions that you provided to the Connector.
+* Click *Discover Clusters* to discover the managed clusters that Cloud Manager has access to based on permissions that you provided to the Connector.
 +
-For example, if your Connector is running in Google Cloud, Cloud Manager uses the permissions from the Connector's service account to discover GKE clusters.
+For example, if your Connector is running in Google Cloud, Cloud Manager uses the permissions from the Connector's service account to discover clusters running in Google Kubernetes Engine (GKE).
 
 * Click *Import Cluster* to import a cluster using a kubeconfig file.
 +
@@ -86,7 +109,7 @@ Cloud Manager adds the Kubernetes cluster. You can now connect a cluster to Clou
 
 == Connecting a cluster to Cloud Volumes ONTAP
 
-Connect Kubernetes clusters to different Cloud Volumes ONTAP systems and multiple clusters to the same Cloud Volumes ONTAP system.
+Connect a Kubernetes cluster to Cloud Volumes ONTAP so you can use Cloud Volumes ONTAP as persistent storage for containers.
 
 .Steps
 
@@ -100,7 +123,7 @@ Connect Kubernetes clusters to different Cloud Volumes ONTAP systems and multipl
 
 . Choose the NetApp storage class to use as the default storage class for the Kubernetes cluster and click *Continue*.
 +
-When a user creates a persistent volume, the Kubernetes cluster can use connected Cloud Volumes ONTAP systems as the backend storage by default.
+When a user creates a persistent volume, the Kubernetes cluster can use this storage class as the backend storage by default.
 
 . Choose whether to use default auto export policies or whether to add a custom CIDR block.
 
@@ -110,9 +133,37 @@ When a user creates a persistent volume, the Kubernetes cluster can use connecte
 
 Cloud Manager connects the working environment to the cluster, which can take up to 15 minutes.
 
+== Changing the default storage class
+
+Make sure that you've set a Cloud Volumes ONTAP storage class as the default storage class so clusters use Cloud Volumes ONTAP as the backend storage.
+
+.Steps
+
+. At the top of Cloud Manager, click *Kubernetes*.
+
+. Click the name of the Kubernetes cluster.
+
+. Scroll down to the Storage Class table.
+
+. Choose the storage class that you'd like to set as the default.
+
+. Click ???
+
+== Upgrading Trident on a Kubernetes cluster
+
+You can upgrade Trident from Cloud Manager when a new version of Trident is available.
+
+.Steps
+
+. At the top of Cloud Manager, click *Kubernetes*.
+
+. Click the name of the Kubernetes cluster.
+
+. If a new version is available, click *Upgrade* next to the Trident version.
+
 == Updating Cloud Manager with the latest kubeconfig file
 
-<why do this>
+If you added your cluster to Cloud Manager, you can update the latest kubeconfig file at any time. You might do this if you've updated the credentials, if you've changed users or roles, or if something changed that affects the cluster, user, namespaces, or authentication.
 
 .Steps
 
@@ -147,6 +198,20 @@ When you disconnect a cluster from Cloud Volumes ONTAP, you can no longer use th
 .Result
 
 Cloud Manager disconnects the cluster from the Cloud Volumes ONTAP system.
+
+== Removing a Kubernetes cluster from Cloud Manager
+
+The “Remove” button shows up at the top of the Cluster Details view only when there are NO working environments connected to the Cluster. You can disconnect the Working Environment and once the cluster finishes the operation it should display the “Remove” button.
+
+Remove decommissioned clusters from Cloud Manager if no working environments are connected to the cluster.
+
+.Steps
+
+. At the top of Cloud Manager, click *Kubernetes*.
+
+. Click the name of the Kubernetes cluster.
+
+. ???
 
 == Default Trident provisioning options
 
