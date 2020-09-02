@@ -68,8 +68,6 @@ The maximum supported version is defined by Trident. https://netapp-trident.read
 
 * A Kubernetes cluster must have at least one worker node.
 
-* If you want to provide a note to anticipate that in order to add an EKS Cluster to Cloud Manager they should prepare to run the command provided. Additional info about the command and the concept of IAM Permissions Boundary they can see this link:
-
 * If you have clusters running in Amazon Elastic Kubernetes Service (Amazon EKS), each cluster needs an IAM role added in order to resolve a permissions error. Cloud Manager will prompt you with the exact eksctl command that resolves the error.
 +
 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html[Learn about IAM permissions boundaries^].
@@ -83,7 +81,7 @@ The Connector needs an outbound internet connection to access the following endp
 
 Cloud Manager installs Trident on a Kubernetes cluster when you connect a working environment to the cluster.
 
-== Adding Kubernetes clusters to Cloud Manager
+== Adding Kubernetes clusters
 
 Add Kubernetes clusters to Cloud Manager by discovering the clusters running in your cloud provider's managed Kubernetes service or by importing a cluster's kubeconfig file.
 
@@ -133,7 +131,11 @@ When a user creates a persistent volume, the Kubernetes cluster can use this sto
 
 Cloud Manager connects the working environment to the cluster, which can take up to 15 minutes.
 
-== Changing the default storage class
+== Managing your clusters
+
+Cloud Manager enables you to manage your Kubernetes clusters by changing the default storage class, upgrading Trident, and more.
+
+=== Changing the default storage class
 
 Make sure that you've set a Cloud Volumes ONTAP storage class as the default storage class so clusters use Cloud Volumes ONTAP as the backend storage.
 
@@ -149,7 +151,7 @@ Make sure that you've set a Cloud Volumes ONTAP storage class as the default sto
 
 . Click ???
 
-== Upgrading Trident on a Kubernetes cluster
+=== Upgrading Trident
 
 You can upgrade Trident from Cloud Manager when a new version of Trident is available.
 
@@ -161,9 +163,9 @@ You can upgrade Trident from Cloud Manager when a new version of Trident is avai
 
 . If a new version is available, click *Upgrade* next to the Trident version.
 
-== Updating Cloud Manager with the latest kubeconfig file
+=== Updating the kubeconfig file
 
-If you added your cluster to Cloud Manager, you can update the latest kubeconfig file at any time. You might do this if you've updated the credentials, if you've changed users or roles, or if something changed that affects the cluster, user, namespaces, or authentication.
+If you added your cluster to Cloud Manager by importing the kubeconfig file, you can upload the latest kubeconfig file to Cloud Manager at any time. You might do this if you've updated the credentials, if you've changed users or roles, or if something changed that affects the cluster, user, namespaces, or authentication.
 
 .Steps
 
@@ -179,7 +181,7 @@ If you added your cluster to Cloud Manager, you can update the latest kubeconfig
 
 Cloud Manager updates information about the Kubernetes cluster based on the latest kubeconfig file.
 
-== Disconnecting a cluster from Cloud Volumes ONTAP
+=== Disconnecting a cluster
 
 You can disconnect a Kubernetes cluster from Cloud Volumes ONTAP if you no longer need to use it with that system.
 
@@ -199,9 +201,7 @@ When you disconnect a cluster from Cloud Volumes ONTAP, you can no longer use th
 
 Cloud Manager disconnects the cluster from the Cloud Volumes ONTAP system.
 
-== Removing a Kubernetes cluster from Cloud Manager
-
-The “Remove” button shows up at the top of the Cluster Details view only when there are NO working environments connected to the Cluster. You can disconnect the Working Environment and once the cluster finishes the operation it should display the “Remove” button.
+=== Removing a Kubernetes cluster
 
 Remove decommissioned clusters from Cloud Manager if no working environments are connected to the cluster.
 
