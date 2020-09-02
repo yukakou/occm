@@ -201,7 +201,7 @@ When you disconnect a cluster from Cloud Volumes ONTAP, you can no longer use th
 
 Cloud Manager disconnects the cluster from the Cloud Volumes ONTAP system.
 
-=== Removing a Kubernetes cluster
+=== Removing a cluster
 
 Remove decommissioned clusters from Cloud Manager if no working environments are connected to the cluster.
 
