@@ -113,9 +113,9 @@ Connect a Kubernetes cluster to Cloud Volumes ONTAP so you can use Cloud Volumes
 
 . At the top of Cloud Manager, click *Kubernetes*.
 
-. Click the name of the Kubernetes cluster.
-
-. Click *Connect to Working Environment*.
+. Click *Connect to Working Environment* for the cluster that you just added.
++
+image:screenshot_kubernetes_connect.gif[A screenshot of the Kubernetes cluster list where you can click Connect to Working Environment.]
 
 . Select a working environment and click *Continue*.
 
@@ -124,6 +124,8 @@ Connect a Kubernetes cluster to Cloud Volumes ONTAP so you can use Cloud Volumes
 When a user creates a persistent volume, the Kubernetes cluster can use this storage class as the backend storage by default.
 
 . Choose whether to use default auto export policies or whether to add a custom CIDR block.
++
+image:screenshot_kubernetes_confirm.gif[A screenshot of the Confirm page where you review your options and set up an export policy.]
 
 . Click *Add Working Environment*.
 
@@ -145,7 +147,7 @@ Make sure that you've set a Cloud Volumes ONTAP storage class as the default sto
 
 . Click the name of the Kubernetes cluster.
 
-. Scroll down to the Storage Class table.
+. Scroll down to the Storage Classes table.
 
 . Choose the storage class that you'd like to set as the default.
 
@@ -194,6 +196,8 @@ When you disconnect a cluster from Cloud Volumes ONTAP, you can no longer use th
 . Click the name of the Kubernetes cluster.
 
 . In the *Working Environments* table, click the actions menu on the far right for the working environment that you want to disconnect.
++
+image:screenshot_kubernetes_disconnect.gif[A screenshot of the Working Environments table where the Disconnect action appears after you click the menu in the far right of the table.]
 
 . Click *Disconnect*.
 
@@ -212,11 +216,3 @@ Remove decommissioned clusters from Cloud Manager if no working environments are
 . Click the name of the Kubernetes cluster.
 
 . ???
-
-== Default Trident provisioning options
-
-Cloud Manager configures Trident to use the following provisioning options by default:
-
-* Thin volumes
-* The default Snapshot policy
-* Accessible Snapshot directory
