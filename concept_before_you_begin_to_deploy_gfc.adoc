@@ -87,6 +87,18 @@ Newly created instances will have all the required permissions by default. If yo
 "Microsoft.Network/networkSecurityGroups/delete",
 "Microsoft.Resources/deployments/delete",
 
+=== Storage platform (volumes)
+
+The back-end storage platform – in this case, your deployed Cloud Volumes ONTAP instance - should present SMB file shares.  Any shares that will be exposed through Global File Cache must allow the Everyone group Full Control at the share level, while restricting permissions through NTFS permissions.
+
+If you have not set up at least one SMB file share on the Cloud Volumes ONTAP instance, then you need to have the following information ready so you can configure this information during installation:
+
+* Active Directory domain name, name server IP address, Active Directory admin credentials.
+
+* The name and size of the volume you want to create, the name of the aggregate on which the volume will be created, and the share name.
+
+We recommend that the volume is large enough to accommodate the total data set for the application along with the ability to scale accordingly as the data set grows. If you have multiple aggregates in the working environment, see link:task_managing_storage.html[Managing existing aggregates^] to determine which aggregate has the most available space for the new volume.
+
 === Global File Cache Management Server
 
 This Global File Cache Management Server requires external access over HTTPS (TCP port 443) to connect to the cloud provider subscription service and to access these URLs:
@@ -129,17 +141,15 @@ Depending on the level of restrictions and GPOs in the network environment, this
 
 ** It must be a member of the back-end file server Built-in Backup Operators group (this is automatically enabled when deployed through Cloud Manager).
 
-=== Storage platform (volumes)
+=== License Management Server
 
-The back-end storage platform – in this case, your deployed Cloud Volumes ONTAP instance - should present SMB file shares.  Any shares that will be exposed through Global File Cache must allow the Everyone group Full Control at the share level, while restricting permissions through NTFS permissions.
+* The Global File Cache License Management Server (LMS) should be configured on a Microsoft Windows Server 2016 Standard or Datacenter edition or Windows Server 2019 Standard or Datacenter edition, preferably on the Global File Cache Core instance in the datacenter or cloud.
 
-If you have not set up at least one SMB file share on the Cloud Volumes ONTAP instance, then you need to have the following information ready so you can configure this information during installation:
+* If you require a separate Global File Cache LMS instance, you need to install the latest Global File Cache software installation package on a pristine Microsoft Windows Server instance.
 
-* Active Directory domain name, name server IP address, Active Directory admin credentials.
+* The LMS instance needs to be able to connect to the subscription service (Azure Services / public internet) using HTTPS (TCP port 443).
 
-* The name and size of the volume you want to create, the name of the aggregate on which the volume will be created, and the share name.
-
-We recommend that the volume is large enough to accommodate the total data set for the application along with the ability to scale accordingly as the data set grows. If you have multiple aggregates in the working environment, see link:task_managing_storage.html[Managing existing aggregates^] to determine which aggregate has the most available space for the new volume.
+* The Core and Edge instances need to connect to the LMS instance using HTTPS (TCP port 443).
 
 === Networking
 

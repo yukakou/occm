@@ -125,11 +125,13 @@ In AWS, this runs on a m4.xlarge or equivalent (4 vCPU/16GB RAM) instance with 1
 
 == Licensing
 
-When you purchase additional Edge licenses, in most cases Cloud Manager uses your NetApp Support Site account to obtain the license file from NetApp and to install it on the Cloud Volumes ONTAP system. See https://docs.netapp.com/us-en/occm/concept_licensing.html[Licensing^] for details.
+Global File Cache includes a software-based License Management Server (LMS), which allows you to consolidate your license management and deploy licenses to all Core and Edge instances using an automated mechanism.
 
-Global File Cache licenses are automatically obtained by enabling Global File Cache Service through Cloud Manager or by deploying a Global File Cache Management Server VM in your preferred environment. If you choose to deploy manually, additional steps are required to configure the Global File Cache Management Server services.
+When you deploy your first Core instance in the datacenter or cloud, you can choose to designate that instance as the LMS for your organization. This LMS instance is configured once, connects to the subscription service (over HTTPS) and validates your subscription using the customer ID provided by our support/operations department upon enablement of the subscription. After you have made this designation, you associate your Edge instances with the LMS by providing your customer ID and the IP address of the LMS instance.
 
-See the link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Guide.pdf[NetApp Global File Cache User Guide^] for details around manual licensing.
+When you purchase additional Edge licenses or renew your subscription, our support/operations department updates the license details, for example, the number of sites or subscription end date. After the LMS queries the subscription service, the license details are automatically updated on the LMS instance and will apply to your GFC Core and Edge instances. 
+
+See the link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Guide.pdf[NetApp Global File Cache User Guide^] for additional details about licensing.
 
 == Limitations
 

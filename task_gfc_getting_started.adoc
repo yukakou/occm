@@ -46,10 +46,15 @@ Deploy an instance of the Global File Cache Management Server in the same workin
 [role="quick-margin-para"]
 Deploy an instance, or multiple instances, of the Global File Cache Core in the same working environment as the instance of Cloud Volumes ONTAP and join it to your Active Directory domain.
 
-==== image:number4.png[Number 4] Deploy the Global File Cache Edge instances
+==== image:number4.png[Number 4] License Global File Cache
 
 [role="quick-margin-para"]
-See link:task_deploy_gfc_edge_instances.html[Deploying Global File Cache Edge instances^] to deploy the Global File Cache Edge instances in each remote location. This step is not done using Cloud Manager,
+Configure the Global File Cache License Management Server (LMS) service on a Global File Cache Core instance. You will need your NSS Credentials or a customer ID provided by NetApp to activate your subscription.
+
+==== image:number5.png[Number 5] Deploy the Global File Cache Edge instances
+
+[role="quick-margin-para"]
+See link:task_deploy_gfc_edge_instances.html[Deploying Global File Cache Edge instances^] to deploy the Global File Cache Edge instances in each remote location. This step is not done using Cloud Manager.
 
 === Deploy Cloud Volumes ONTAP as your storage platform
 
@@ -111,6 +116,33 @@ image:screenshot_gfc_install7.png[A screenshot showing the configuration informa
 image:screenshot_gfc_install8.png[A screenshot showing the Global File Cache dashboard after installation is complete.]
 
 The Dashboard shows that the Management Server instance and the Core instance are both *On* and working.
+
+=== License your Global File Cache installation
+
+Before you can use Global File Cache, you need to configure the Global File Cache License Management Server (LMS) service on a Global File Cache Core instance. You will need your NSS Credentials or a customer ID provided NetApp to activate your subscription.
+
+In this example, we will configure the LMS service on a Core instance that you just deployed in the public cloud. This is a one-time process that sets up your LMS service.
+
+.Steps
+
+. Open the Global File Cache License Registration page on the Global File Cache Core (the Core you are designating as your LMS service) using the following URL. Replace _<ip_address>_ with the IP address of the Global File Cache Core:
+https://<ip_address>/lms/api/v1/config/lmsconfig.html
+
+. Click “Continue to this website (not recommended)” to continue. A page that allows you to configure the LMS, or check existing license information, is displayed.
++
+image:screenshot_gfc_license1.png[A screenshot of the Global File Cache License Registration page.]
+
+. Choose the mode of registration by selecting “On-Premise LMS” or “Cloud MS”.
+* “On-Premise LMS” is used for existing or trial customers who have received a Customer ID through NetApp Support.
+* “Cloud MS” is used for customers who have purchased NetApp Global File Cache Edge licenses from NetApp or its certified partners and have their NetApp credentials.
+
+. For Cloud MS, click *Cloud MS*, enter your NSS Credentials, and click *Submit*.
++
+image:screenshot_gfc_license3.png[A screenshot of entering a Cloud MS NSS Credentials in the Global File Cache License Registration page.]
+
+. For On-Premise LMS, click *On-Premise LMS*, enter your Customer ID, and click *Register LMS*.
++
+image:screenshot_gfc_license2.png[A screenshot of entering an On-Premise LMS Customer ID in the Global File Cache License Registration page.]
 
 .What’s Next?
 
