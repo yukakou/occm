@@ -83,6 +83,12 @@ The Connector needs an outbound internet connection to access the following endp
 
 Cloud Manager installs Trident on a Kubernetes cluster when you connect a working environment to the cluster.
 
+=== Example setup
+
+The following image shows an example of a Kubernetes cluster running in Amazon Elastic Kubernetes Service (Amazon EKS) and its connections to the Connector and Cloud Volumes ONTAP.
+
+image:diagram_kubernetes.png[A architectural diagram of a Kubernetes cluster running in AWS and its connection to a Connecter and Cloud Volumes ONTAP which are also running in AWS.]
+
 == Adding Kubernetes clusters
 
 Add Kubernetes clusters to Cloud Manager by discovering the clusters running in your cloud provider's managed Kubernetes service or by importing a cluster's kubeconfig file.
