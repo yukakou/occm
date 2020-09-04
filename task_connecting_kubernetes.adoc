@@ -158,11 +158,11 @@ Make sure that you've set a Cloud Volumes ONTAP storage class as the default sto
 
 . Click the name of the Kubernetes cluster.
 
-. Scroll down to the Storage Classes table.
+. In the *Storage Classes* table, click the actions menu on the far right for the storage class that you'd like to set as the default.
++
+image:screenshot_kubernetes_storage_class.gif[A screenshot of the Storage Classes table where you can click the action menu and select Set as Default.]
 
-. Choose the storage class that you'd like to set as the default.
-
-. Click ???
+. Click *Set as Default*.
 
 === Upgrading Trident
 
@@ -175,6 +175,8 @@ You can upgrade Trident from Cloud Manager when a new version of Trident is avai
 . Click the name of the Kubernetes cluster.
 
 . If a new version is available, click *Upgrade* next to the Trident version.
++
+image:screenshot_kubernetes_upgrade.gif[A screenshot of the Cluster Details page where the Upgrade button appears next to the Trident version.]
 
 === Updating the kubeconfig file
 
@@ -224,4 +226,6 @@ Remove decommissioned clusters from Cloud Manager after you disconnect all worki
 
 . Click the name of the Kubernetes cluster.
 
-. ???
+. Click *Remove Cluster*.
++
+image:screenshot_kubernetes_remove.gif[A screenshot of the Remove Cluster button that appears at the top of the cluster details page.]
