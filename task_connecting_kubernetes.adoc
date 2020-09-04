@@ -41,13 +41,7 @@ After you add a Kubernetes cluster, click *Connect to Working Environment* to co
 ==== image:number4.png[Number 4] Start provisioning Persistent Volumes
 
 [role="quick-margin-para"]
-Request and manage Persistent Volumes using native Kubernetes interfaces and constructs. Cloud Manager creates four Kubernetes storage classes that you can use when provisioning Persistent Volumes:
-
-[role="quick-margin-list"]
-* *netapp-file*: for binding Persistent Volumes to single-node ONTAP systems
-* *netapp-file-san*: for binding iSCSI Persistent Volumes to single-node ONTAP systems
-* *netapp-file-redundant*: for binding Persistent Volumes to ONTAP HA pairs
-* *netapp-file-redundant-san*: for binding iSCSI Persistent Volumes to ONTAP HA pairs
+Request and manage Persistent Volumes using native Kubernetes interfaces and constructs. Cloud Manager creates NFS and iSCSI storage classes that you can use when provisioning Persistent Volumes.
 
 [role="quick-margin-para"]
 https://netapp-trident.readthedocs.io/[Learn more about provisioning your first volume with Trident for Kubernetes^].
