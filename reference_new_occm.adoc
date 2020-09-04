@@ -74,14 +74,16 @@ We enhanced the Kubernetes service to make it easier to use and to provide addit
 Just click *Discover Clusters* and Cloud Manager will discover your managed clusters using the cloud provider permissions that you've already provided.
 
 * You can now view more information about a discovered Kubernetes cluster, including its state, the number of volumes, storage classes, and more.
-+
-<screenshot to be added once a bug is fixed>
 
 * We've added resource and error checking to ensure that communication is available between the cluster and Cloud Volumes ONTAP. And if it isn't, then we'll let you know.
 
 link:task_connecting_kubernetes.html[Learn how to get started].
 
-Note that these enhancements require additional permissions in Google Cloud:
+Important notes about this enhancement:
+
+* If you previously discovered your Kubernetes clusters through Cloud Manager, then you'll need to rediscover them.
+* This Kubernetes feature isn't supported with on-prem ONTAP clusters. It’s supported with Cloud Volumes ONTAP only.
+* These enhancements require additional permissions in Google Cloud:
 
 <add details here>
 
