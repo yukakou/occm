@@ -58,9 +58,12 @@ Before you get started, ensure that your Kubernetes clusters and Connector meet 
 
 === Kubernetes cluster requirements
 
-* Network connectivity is required between the following:
-** A Kubernetes cluster and the Connector
-** A Kubernetes cluster and Cloud Volumes ONTAP
+* Network connectivity is required between a Kubernetes cluster and the Connector and between a Kubernetes cluster and Cloud Volumes ONTAP.
++
+Both the Connector and Cloud Volumes ONTAP need a connection to the Kubernetes API endpoint:
++
+** For managed clusters, set up a route between a cluster's VPC and the VPC where the Connector and Cloud Volumes ONTAP reside.
+** For other clusters, the IP address of the master node or load balancer (as listed in the kubeconfig file) must be reachable by the Connector and Cloud Volumes ONTAP, and it must present a valid TLS certificate.
 
 * A Kubernetes cluster can be in any location that has the network connectivity listed above.
 
