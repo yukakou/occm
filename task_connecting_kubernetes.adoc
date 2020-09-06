@@ -26,7 +26,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Review prerequisites
 
 [role="quick-margin-para"]
-Ensure that your environment can meet the prerequisites, which includes connectivity between Kubernetes clusters and Cloud Volumes ONTAP, connectivity between Kubernetes clusters and a Connector, a minimum Kubernetes version of 1.15, at least one worker node in a cluster, and more. <<Reviewing prerequisites,See the complete list>>.
+Ensure that your environment can meet the prerequisites, which includes connectivity between Kubernetes clusters and Cloud Volumes ONTAP, connectivity between Kubernetes clusters and a Connector, a minimum Kubernetes version of 1.14, at least one worker node in a cluster, and more. <<Reviewing prerequisites,See the complete list>>.
 
 ==== image:number2.png[Number 2] Add your Kubernetes clusters to Cloud Manager
 
@@ -61,7 +61,7 @@ Both the Connector and Cloud Volumes ONTAP need a connection to the Kubernetes A
 
 * A Kubernetes cluster can be in any location that has the network connectivity listed above.
 
-* A Kubernetes cluster must be running version 1.15 at a minimum.
+* A Kubernetes cluster must be running version 1.14 at a minimum.
 +
 The maximum supported version is defined by Trident. https://netapp-trident.readthedocs.io/en/stable-v20.07/support/requirements.html#supported-frontends-orchestrators[Click here to see the maximum supported Kubernetes version^].
 
