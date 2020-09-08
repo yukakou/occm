@@ -341,12 +341,14 @@ entries:
             url: /reference_permissions.html
           - title: AWS Marketplace pages
             url: /reference_aws_marketplace.html
-  - title: APIs and automation
+  - title: Use APIs and automation
     entries:
       - title: API Developer Guide
         url: https://docs.netapp.com/us-en/occm/api.html
       - title: Automation samples
         url: /reference_infrastructure_as_code.html
+  - title: Troubleshoot issues
+    url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services
   - title: Related links
     url: /reference_additional_info.html
   - title: Earlier versions
