@@ -71,6 +71,12 @@ Read the following requirements to make sure you have a supported configuration 
 Supported ONTAP versions::
 ONTAP 9.7 and later.
 
+Cluster networking requirements::
+
+An intercluster LIF is required on each ONTAP node that hosts the volumes you want to back up. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage. The Admin SVM must reside on the IPspace. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-69120CF0-F188-434F-913E-33ACB8751A5D.html[Learn more about IPspaces^].
++
+When you set up backup to cloud, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
+
 Supported Azure regions::
 Backup to Cloud is supported in all Azure regions https://cloud.netapp.com/cloud-volumes-global-regions[where cloud volumes are supported^].
 

@@ -31,13 +31,13 @@ link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 
 
 === Support for Cloud Volumes Service for Google Cloud
 
-*	Add a working environment to manage existing Cloud Volumes Service for GCP volumes and to create new volumes. link:task_setup_cvs_gcp.html[Learn how].
+*	Add a working environment to manage existing Cloud Volumes Service for GCP volumes and to create new volumes. link:task_setup_cvs_gcp.html[Learn how^].
 *	Create and manage NFSv3 and NFSv4.1 volumes for Linux and UNIX clients, and SMB 3.x volumes for Windows clients.
 *	Create, delete, and restore volume snapshots.
 
 === Backup to Cloud now supports on-premises ONTAP clusters
 
-Start backing up data from your on-premises ONTAP systems to the cloud. Enable Backup to Cloud on your on-prem working environments to back up volumes to Azure Blob storage. link:task_backup_from_onprem.html[Learn more].
+Start backing up data from your on-premises ONTAP systems to the cloud. Enable Backup to Cloud on your on-prem working environments to back up volumes to Azure Blob storage. link:task_backup_from_onprem.html[Learn more^].
 
 === Backup to Cloud enhancements
 
@@ -48,13 +48,13 @@ We revised the user interface for better usability:
 
 === Cloud Compliance enhancements
 
-*	Ability to scan data within databases
+*	Ability to scan data from databases
 +
-Scan your databases to identify the personal and sensitive data that reside in each schema. Supported databases include Oracle, SAP HANA, and SQL Server (MSSQL). link:task_scanning_databases.html[Learn more about scanning databases].
+Scan your databases to identify the personal and sensitive data that resides in each schema. Supported databases include Oracle, SAP HANA, and SQL Server (MSSQL). link:task_scanning_databases.html[Learn more about scanning databases^].
 
 *	Ability to scan data protection (DP) volumes
 +
-DP volumes are destination volumes from SnapMirror operations typically from on-premises ONTAP clusters. Now you can easily identify the personal and sensitive data that resides in those on-prem files. link:task_getting_started_compliance.html#scanning-data-protection-volumes[See how].
+DP volumes are destination volumes from SnapMirror operations typically from on-premises ONTAP clusters. Now you can easily identify the personal and sensitive data that resides in those on-prem files. link:task_getting_started_compliance.html#scanning-data-protection-volumes[See how^].
 
 === Refreshed navigation
 
