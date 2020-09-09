@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_adding_gcp_accounts.html
 keywords: permissions, gcp, data tiering, tiering, setup, requirements, account for data tiering, account for tiering, interoperable, interoperability, interoperable storage access keys, access keys
-summary: You can manage two types of Google Cloud Platform credentials from Cloud Manager: the credentials that are associated with the Connector VM instance and storage access keys used with a Cloud Volumes ONTAP 9.6 system for data tiering.
+summary: You can manage two types of Google Cloud Platform credentials from Cloud Manager the credentials that are associated with the Connector VM instance and storage access keys used with a Cloud Volumes ONTAP 9.6 system for data tiering.
 ---
 
 = Managing GCP credentials and subscriptions for Cloud Manager
