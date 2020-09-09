@@ -45,7 +45,7 @@ entries:
             url: /task_creating_connectors_azure.html
           - title: Create a Connector in GCP
             url: /task_creating_connectors_gcp.html
-      - title: Where to get next
+      - title: Where to go next
         url: /reference_whats_next.html
   - title: Manage Cloud Volumes ONTAP
     entries:
@@ -219,7 +219,7 @@ entries:
             url: /task_backup_to_s3.html
           - title: Back up to Azure Blob storage
             url: /task_backup_to_azure.html
-          - title: Back up from an on-premises ONTAP system
+          - title: Back up from on-premises ONTAP systems
             url: /task_backup_from_onprem.html
       - title: Manage backups and restore data
         url: /task_managing_backups.html
