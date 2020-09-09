@@ -143,18 +143,6 @@ entries:
             url: /task_encrypting_volumes.html
       - title: Replicate data
         url: /task_replicating_data.html
-      - title: Back up to the cloud
-        entries:
-          - title: Learn about Backup to Cloud
-            url: /concept_backup_to_cloud.html
-          - title: Get started
-            entries:
-              - title: Back up to Amazon S3
-                url: /task_backup_to_s3.html
-              - title: Back up to Azure Blob storage
-                url: /task_backup_to_azure.html
-          - title: Manage backups and restore data
-            url: /task_managing_backups.html
       - title: Monitor performance
         entries:
           - title: Learn about Monitoring
@@ -211,6 +199,20 @@ entries:
                 url: /reference_cvs_service_levels_and_quotas.html
               - title: AWS security group settings for Windows AD servers
                 url: /reference_security_groups_windows_ad_servers.html
+  - title: Back up to the cloud
+    entries:
+      - title: Learn about Backup to Cloud
+        url: /concept_backup_to_cloud.html
+      - title: Get started
+        entries:
+          - title: Back up to Amazon S3
+            url: /task_backup_to_s3.html
+          - title: Back up to Azure Blob storage
+            url: /task_backup_to_azure.html
+          - title: Back up from an on-premises ONTAP system
+            url: /task_backup_from_onprem.html
+      - title: Manage backups and restore data
+        url: /task_managing_backups.html
   - title: Gain insight into data privacy
     entries:
       - title: Learn about Cloud Compliance
