@@ -50,7 +50,7 @@ The following table describes fields for which you might need guidance:
 
 | Resource Group Name | If you uncheck *Use Default*, you can enter the name of a new resource group. If you want to use an existing resource group, then you must use the API.
 
-| Tags | Tags are metadata for your Azure resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP system and each Azure resource associated with the system.
+| Tags | Tags are metadata for your Azure resources. When you enter tags in this field, Cloud Manager adds them to the resource group associated with the Cloud Volumes ONTAP system.
 
 You can add up to four tags from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four tags when creating a working environment.
 
