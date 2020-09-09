@@ -15,7 +15,7 @@ summary: Gain control of your private data by viewing details about the personal
 [.lead]
 Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Compliance found in your data.
 
-By default, the Cloud Compliance dashboard displays compliance data for all working environments. If you want to see data for only some of the working environments, <<Viewing data from specific working environments,select those working environments>>.
+By default, the Cloud Compliance dashboard displays compliance data for all working environments and databases. If you want to see data for only some of the working environments, <<Viewing data from specific working environments,select those working environments>>.
 
 == Personal data
 
@@ -27,7 +27,7 @@ For some types of personal data, Cloud Compliance uses _proximity validation_ to
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance* and click the *Dashboard* tab.
+. At the top of Cloud Manager, click *Cloud Compliance* and click the *Dashboard* tab.
 
 . To investigate the details for all personal data, click the icon next to the personal data percentage.
 +
@@ -39,11 +39,13 @@ image:screenshot_personal_files.gif[A screenshot of the personal files dialog bo
 
 . Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
 +
-image:screenshot_compliance_investigation_page.gif[]
+image:screenshot_compliance_investigation_page.gif[A screenshot of details information after clicking Investigate Results.]
 
-. You can also filter the contents of the investigation page to display only the results you want to see. Filters include working environment, category, private data, file type, last modified date, and whether the S3 object's permissions are open to public access.
+. You can also filter the contents of the investigation page to display only the results you want to see. The top-level tabs allow you to view data from files (unstructured data) or from databases (structured data).
 +
-image:screenshot_compliance_investigation_filtered.png[]
+Then you have filters for working environment, storage repository, category, private data, file type, last modified date, and whether the S3 object's permissions are open to public access.
++
+image:screenshot_compliance_investigation_filtered.png[A screenshot of the filters available when refining the results in the investigation page.]
 
 === Types of personal data
 
@@ -107,7 +109,7 @@ NOTE: Only English is supported when scanning for sensitive personal data. Suppo
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Cloud Compliance*.
 
 . To investigate the details for all sensitive personal data, click the icon next to the sensitive personal data percentage.
 +
@@ -144,7 +146,7 @@ NOTE: Only English is supported for categories. Support for more languages will 
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Cloud Compliance*.
 
 . Click the *Investigate Results* icon for one of the top 4 categories directly from the main screen, or click *View All* and then click the icon for any of the categories.
 +
@@ -223,7 +225,7 @@ For example, you might be storing CAD files that include very sensitive informat
 
 .Steps
 
-. At the top of Cloud Manager, click *Compliance*.
+. At the top of Cloud Manager, click *Cloud Compliance*.
 
 . Click the *Investigate Results* icon for one of the top 4 file types directly from the main screen, or click *View All* and then click the icon for any of the file types.
 +
@@ -240,7 +242,7 @@ But when Cloud Compliance detects Personal Identifiable Information (PII), or wh
 
 == Viewing data from specific working environments
 
-You can filter the contents of the Cloud Compliance dashboard to see compliance data for specific working environments.
+You can filter the contents of the Cloud Compliance dashboard to see compliance data for all working environments and databases, or for just specific working environments.
 
 When you filter the dashboard, Cloud Compliance scopes the compliance data and reports to just those working environments that you selected.
 

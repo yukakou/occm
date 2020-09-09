@@ -1,0 +1,219 @@
+---
+sidebar: sidebar
+permalink: task_manage_cvs_gcp.html
+keywords: cloud volumes service for gcp, google cloud, cloud volumes, create cloud volumes, delete cloud volumes, discover region, service level, allowed clients, create snapshots
+summary: Cloud Manager enables you to create cloud volumes based on your Cloud Volumes Service for Google Cloud subscription. You can also edit certain attributes of a volume, get the relevant mount commands, create snapshot copies, and delete cloud volumes.
+---
+
+= Create and manage volumes for Cloud Volumes Service for Google Cloud
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Manager enables you to create cloud volumes based on your link:https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com?q=cloud%20volumes%20service[Cloud Volumes Service for Google Cloud^] subscription. You can also edit certain attributes of a volume, get the relevant mount commands, create snapshot copies, and delete cloud volumes.
+
+== Create cloud volumes
+
+You can create NFS or SMB volumes in a new or existing Cloud Volumes Service for Google Cloud account. Cloud volumes currently support NFSv3 and NFSv4.1 for Linux and UNIX clients, and SMB 3.x for Windows clients.
+
+.Before you begin
+
+* If you want to use SMB in GCP, you must have set up DNS and Active Directory.
+
+* When planning to create an SMB volume, you must have a Windows Active Directory server available to which you can connect. You will enter this information when creating the volume. Also, make sure that the Admin user is able to create a machine account in the Organizational unit (OU) path specified.
+
+.Steps
+
+. Select the working environment and click *Add New Volume*.
+
+. In the Details & Location page, enter details about the volume:
+.. Enter a name for the volume.
+.. Specify a size within the range of 1 TiB (1024 GiB) to 100 TiB.
++
+link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#allocated_capacity[Learn more about allocated capacity^].
+.. Specify a service level: Standard, Premium, or Extreme.
++
+link:https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels[Learn more about service levels^].
+.. Select the Google Cloud region.
+.. Select the VPC Network from which the volume will be accessible. Note that the VPC cannot be changed or edited after the volume is created.
+.. Click *Continue*.
++
+image:screenshot_cvs_gcp_vol_details_page.png[A screenshot of the volume details page where you supply the name, size, and service level]
+
+. In the Protocol page, select NFS or SMB and then define the details. Required entries for NFS and SMB are shown in separate sections below.
+
+. For NFS:
+.. In the Volume Path field, specify the name of the volume export you will see when you mount the volume.
+.. Select NFSv3, NFSv4.1, or both depending on your requirements.
+.. Optionally, you can create an export policy to identify the clients that can access the volume. Specify the:
+* Allowed clients by using an IP address or Classless Inter-Domain Routing (CIDR).
+* Access rights as Read & Write or Read Only.
+* Access protocol (or protocols if the volume allows both NFSv3 and NFSv4.1 access) used for users.
+* Click *+ Add Export Policy Rule* if you want to define additional export policy rules.
++
+The following image shows the Volume page filled out for the NFS protocol:
++
+image:screenshot_cvs_gcp_nfs_details.png[A screenshot that shows the volume page filled out for an NFS Cloud Volumes Service volume.]
+
+. For SMB:
+.. In the Volume Path field, specify the name of the volume export you will see when you mount the volume and click *Continue*.
+.. If Active Directory has been set up, you see the configuration. If it is the first volume being set up and no Active Directory has been set up, you can enable SMB session encryption in the SMB Connectivity Setup page:
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| DNS Primary IP Address | The IP addresses of the DNS servers that provide name resolution for the SMB server. Use a comma to separate the IP addresses when referencing multiple servers, for example, 172.31.25.223, 172.31.2.74..
+
+| Active Directory Domain to join | The FQDN of the Active Directory (AD) domain that you want the SMB server to join.
+
+| SMB Server NetBIOS name | A NetBIOS name for the SMB server that will be created.
+
+| Credentials authorized to join the domain | The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
+
+| Organizational Unit | The organizational unit within the AD domain to associate with the SMB server. The default is CN=Computers for connections to your own Windows Active Directory server.
+
+|===
++
+The following image shows the Volume page filled out for the SMB protocol:
++
+image:screenshot_cvs_smb_details.png[A screenshot that shows the volume page filled out for an SMB Cloud Volumes Service volume.]
+
+. Click *Continue*.
+
+. If you want to create the volume based on a snapshot of an existing volume, select the snapshot from the Snapshot Name drop-down list. Otherwise just click *Continue*.
+
+. In the Snapshot Policy page, you can enable Cloud Volumes Service to create snapshot copies of your volumes based on a schedule. You can do this now by moving the selector to the right, or you can edit the volume later to define the snapshot policy.
++
+See link:task_manage_cloud_volumes_gcp_snapshots.html#create_or_modify_a_snapshot_policy[Creating a snapshot policy^] for more information about snapshot functionality.
+
+. Click *Add Volume*.
+
+The new volume is added to the working environment.
+
+Continue with link:task_manage_cvs_gcp.html#mount-the-cloud-volume[Mounting the cloud volume].
+
+== Mount cloud volumes
+
+Access mounting instructions from within Cloud Manager so you can mount the volume to a host.
+
+*Note:* Please use the highlighted protocol/dialect supported by your client.
+
+.Steps
+. Open the working environment.
+. Hover over the volume and click *Mount the volume*.
++
+NFS and SMB volumes display mount instructions for that protocol.
+. Hover over the commands and copy them to your clipboard to make this process easier. Just add the destination directory/mount point at the end of the command.
++
+*NFS example:*
++
+image:screenshot_cvs_aws_nfs_mount.png[Mount instructions for NFS volumes]
++
+The maximum I/O size defined by the `rsize` and `wsize` options is 1048576, however 65536 is the recommended default for most use cases.
++
+Note that Linux clients will default to NFSv4.1 unless the version is specified with the `vers=<nfs_version>` option.
++
+*SMB example:*
++
+image:screenshot_cvs_aws_smb_mount.png[Mount instructions for SMB volumes]
+. Map your network drive by following the mount instructions for your instance.
++
+After completing the steps in the mount instructions, you have successfully mounted the cloud volume to your GCP instance.
+
+== Manage existing volumes
+
+You can manage existing volumes as your storage needs change. You can view, edit, restore, and delete volumes.
+
+.Steps
+
+. Open the working environment.
+. Hover over the volume.
++
+image:screenshot_cvs_gcp_volume_hover_menu.png[A screenshot of the volume hover menu that allows you to perform volume tasks]
+. Manage your volumes:
++
+[cols=2*,options="header",cols="30,70"]
+|===
+
+| Task
+| Action
+
+| View information about a volume | Click *Info*.
+
+| Edit a volume (including snapshot policy)
+a|
+.. Click *Edit*.
+.. Modify the volume's properties and then click *Update*.
+
+| Get the NFS or SMB mount command
+a|
+.. Click *Mount the volume*.
+.. Click *Copy* to copy the command(s).
+
+| Create a Snapshot copy on demand
+a|
+.. Click *Create a Snapshot copy*.
+.. Change the name, if needed, and then click *Create*.
+
+| Replace the volume with the contents of a Snapshot copy
+a|
+.. Click *Revert volume to snapshot*.
+.. Select a Snapshot copy and click *Restore*.
+
+| Delete a Snapshot copy
+a|
+.. Click *Delete a Snapshot copy*.
+.. Select the snapshot and click *Delete*.
+.. Click *Delete* again when prompted to confirm.
+
+| Delete a volume
+a|
+.. Unmount the volume from all clients:
+* On Linux clients, use the `umount` command.
+* On Windows clients, click *Disconnect network drive*.
+.. Select a volume, and then click *Delete*.
+.. Click *Delete* again to confirm.
+
+|===
+
+== Remove Cloud Volumes Service from Cloud Manager
+
+You can remove a Cloud Volumes Service for Google Cloud subscription and all existing volumes from Cloud Manager. The volumes are not deleted, they are just removed from the Cloud Manager interface.
+
+.Steps
+ . Open the working environment.
+ . Click the image:screenshot_gallery_options.gif[] button at the top of the page and click *Remove Cloud Volumes Service*.
+. In the confirmation dialog box, click *Remove*.
+
+== Manage Active Directory configuration
+
+If you change your DNS servers or Active Directory domain, you need to modify the SMB server in Cloud Volumes Services so that it can continue to serve storage to clients.
+
+.Steps
+. Open the working environment.
+. Click the image:screenshot_gallery_options.gif[] button at the top of the page and click *Manage Active Directory*.
+If no Active Directory is configured, you can add one now. If one is configured, you can modify or delete the settings using the image:screenshot_gallery_options.gif[] button.
+. Specify the settings for the SMB server:
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| DNS Primary IP Address | The IP addresses of the DNS servers that provide name resolution for the SMB server. Use a comma to separate the IP addresses when referencing multiple servers, for example, 172.31.25.223, 172.31.2.74.
+
+| Active Directory Domain to join | The FQDN of the Active Directory (AD) domain that you want the SMB server to join.
+
+| SMB Server NetBIOS name | A NetBIOS name for the SMB server that will be created.
+
+| Credentials authorized to join the domain | The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
+
+| Organizational Unit | The organizational unit within the AD domain to associate with the SMB server. The default is CN=Computers for connections to your own Windows Active Directory server.
+
+|===
+. Click *Save* to save your settings.

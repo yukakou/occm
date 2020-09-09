@@ -15,32 +15,26 @@ summary: You can scan your on-premises ONTAP data with Cloud Compliance by repli
 [.lead]
 You can scan your on-premises ONTAP data with Cloud Compliance by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then enabling compliance. Scanning the data directly from an on-premises ONTAP working environment isn't supported.
 
+You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Compliance in Cloud Manager already^].
+
 .Steps
 
 . From Cloud Manager, create a SnapMirror relationship between the on-premises ONTAP cluster and Cloud Volumes ONTAP.
 
-.. https://docs.netapp.com/us-en/occm/task_discovering_ontap.html[Discover the on-premises cluster in Cloud Manager].
+.. https://docs.netapp.com/us-en/occm/task_discovering_ontap.html[Discover the on-premises cluster in Cloud Manager^].
 
-.. https://docs.netapp.com/us-en/occm/task_replicating_data.html[Create a SnapMirror replication between the on-premises ONTAP cluster and Cloud Volumes ONTAP from Cloud Manager].
+.. https://docs.netapp.com/us-en/occm/task_replicating_data.html[Create a SnapMirror replication between the on-premises ONTAP cluster and Cloud Volumes ONTAP from Cloud Manager^].
 
-. From the ONTAP CLI, configure the destination volume for data access.
-+
-.. https://docs.netapp.com/ontap-9/topic/com.netapp.doc.cdot-famg-nfs/GUID-8E400D78-B405-4682-8F33-143783F2D580.html[Mount destination volumes to the NAS namespace^].
+. For DP volumes that were created from SMB source volumes, from the ONTAP CLI, configure the SMB destination volumes for data access. (This is not required for NFS volumes because data access is enabled automatically through Cloud Compliance.)
+.. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-cifs-cg/GUID-371B7797-B5BE-4B19-BDE4-BBC938F109BF.html[Create a SMB share on the destination volume^].
+.. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-cifs-cg/GUID-90FCFDB3-F60C-4685-9BBD-6D648F75701C.html[Apply the appropriate ACLs to the SMB share at the destination volume^].
 
-.. If you're using CIFS:
-+
-* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-cifs-cg/GUID-371B7797-B5BE-4B19-BDE4-BBC938F109BF.html[Create a CIFS share on the destination volume^].
-
-* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-cifs-cg/GUID-90FCFDB3-F60C-4685-9BBD-6D648F75701C.html[Apply the appropriate ACLs to the CIFS share at the destination volume^].
-
-.. If you're using NFS:
-
-* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nfs-cg/GUID-8601CCB6-DACF-4FDE-9C2D-44DE60911293.html[Assign NFS export policies to the destination volume^].
-
-.	From Cloud Manager, activate Cloud Compliance on the Cloud Volumes ONTAP working environment that contains the SnapMirror data.
-
+.	From Cloud Manager, activate Cloud Compliance on the Cloud Volumes ONTAP working environment that contains the SnapMirror data:
 .. Click *Working Environments*.
-.. Select the working environment that contains the SnapMirror data.
-.. In the pane on the right, click *Enable Compliance*.
+.. Select the working environment that contains the SnapMirror data and click *Enable Compliance*.
 +
-link:task_getting_started_compliance.html[Click here if you need help with enabling Cloud Compliance on a Cloud Volumes ONTAP system].
+link:task_getting_started_compliance.html[Click here if you need help with enabling Cloud Compliance on a Cloud Volumes ONTAP system^].
+.. Click the *Enable Access to DP volumes* button at the top of the _Scan Configuration_ page.
+.. Activate each DP volume that you want to scan, or use the *Activate Compliance for all Volumes* control to enable all volumes, including all DP volumes.
+
+See link:task_getting_started_compliance.html#scanning-data-protection-volumes[Scanning data protection volumes^] for more information about scanning DP volumes.
