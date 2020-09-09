@@ -23,7 +23,7 @@ For example, let's say that you're working in a multi-cloud environment. You mig
 
 .Step
 
-. Click the Connector icon, select another Connector, and then click *Switch*.
+. Click the *Connector* drop-down, select another Connector, and then click *Switch*.
 +
 image:screenshot_connector_switch.gif[A screenshot that shows the Connector icon in the header and the Switch action.]
 +
@@ -43,7 +43,7 @@ While you should perform almost all tasks from the SaaS user interface, a local 
 +
 If the Connector doesn't have a public IP address, you'll need a VPN connection or you'll need to connect from a jump host that's in the same network as the Connector.
 
-. Click the Connector icon and then click *Go to local UI* for a specific Connector.
+. Click the *Connector* drop-down and then click *Go to local UI* for a specific Connector.
 +
 image:screenshot_connector_local_ui.gif[A screenshot that shows the Connector icon in the header and the Go to local UI action.]
 +
