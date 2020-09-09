@@ -20,14 +20,12 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
-== Cloud Manager 3.8.8 (6 Sept 2020)
+== Cloud Manager 3.8.8 (9 Sept 2020)
 
 * <<Support for Cloud Volumes Service for Google Cloud>>
 * <<Backup to Cloud now supports on-premises ONTAP clusters>>
 * <<Backup to Cloud enhancements>>
 * <<Cloud Compliance enhancements>>
-* <<Global File Cache enhancements>>
-* <<Kubernetes enhancements>>
 * <<Refreshed navigation>>
 * <<Administration improvements>>
 
@@ -57,35 +55,6 @@ Scan your databases to identify the personal and sensitive data that reside in e
 *	Ability to scan data protection (DP) volumes
 +
 DP volumes are destination volumes from SnapMirror operations typically from on-premises ONTAP clusters. Now you can easily identify the personal and sensitive data that resides in those on-prem files. link:task_getting_started_compliance.html#scanning-data-protection-volumes[See how].
-
-=== Global File Cache enhancements
-
-The following enhancements are available when deploying Global File Cache through Cloud Manager:
-
-*	A Cloud Volumes ONTAP HA pair in AWS is now supported as the backend storage platform for your central storage.
-*	Multiple Global File Cache Core instances can be deployed in a Load Distributed design.
-
-=== Kubernetes enhancements
-
-We enhanced the Kubernetes service to make it easier to use and to provide additional capabilities:
-
-* We've made it easier to discover the Kubernetes clusters running in your cloud provider's managed Kubernetes service.
-+
-Just click *Discover Clusters* and Cloud Manager will discover your managed clusters using the cloud provider permissions that you've already provided.
-
-* You can now view more information about a discovered Kubernetes cluster, including its state, the number of volumes, storage classes, and more.
-
-* We've added resource and error checking to ensure that communication is available between the cluster and Cloud Volumes ONTAP. And if it isn't, then we'll let you know.
-
-link:task_connecting_kubernetes.html[Learn how to get started].
-
-Important notes about this enhancement:
-
-* If you previously discovered your Kubernetes clusters through Cloud Manager, then you'll need to rediscover them.
-* This Kubernetes feature isn't supported with on-prem ONTAP clusters. It’s supported with Cloud Volumes ONTAP only.
-* These enhancements require additional permissions in Google Cloud:
-
-<add details here>
 
 === Refreshed navigation
 
