@@ -71,6 +71,10 @@ The maximum supported version is defined by Trident. https://netapp-trident.read
 +
 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html[Learn about IAM permissions boundaries^].
 
+* If you have clusters running in Google Kubernetes Engine (GKE), those clusters must not use the default Container Optimized OS. You should switch them to use Ubuntu.
++
+GKE defaults to using the Google https://cloud.google.com/container-optimized-os[container-optimized image^], which doesn't have the utilities that Trident needs to mount volumes.
+
 === Connector requirements
 
 The Connector needs an outbound internet connection to access the following endpoints when installing Trident:
