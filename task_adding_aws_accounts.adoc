@@ -5,7 +5,7 @@ keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam p
 summary: If you want to deploy Cloud Volumes ONTAP in different AWS accounts, then you need to provide the required permissions to those accounts and then add the details to Cloud Manager. How you provide the permissions depends on whether you want to provide Cloud Manager with AWS keys or the ARN of a role in a trusted account.
 ---
 
-= Adding AWS credentials and subscriptions in Cloud Manager
+= Managing AWS credentials and subscriptions for Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -109,7 +109,7 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 +
 To create a pay-as-you-go Cloud Volumes ONTAP system, AWS credentials must be associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace.
 
-. Click *Go*.
+. Click *Add*.
 
 .Result
 
@@ -117,9 +117,14 @@ You can now switch to a different set of credentials from the Details and Creden
 
 image:screenshot_accounts_switch_aws.gif[A screenshot that shows selecting between cloud provider accounts after clicking Switch Account in the Details & Credentials page.]
 
-== Assigning an AWS subscription to credentials
+== Associating an AWS subscription to credentials
 
-If you haven't yet added an AWS subscription to a set of AWS credentials, you can do so any time from the Credentials page. To create a pay-as-you-go Cloud Volumes ONTAP system, AWS credentials must be associated with a subscription to Cloud Volumes ONTAP from the AWS Marketplace.
+After you add your AWS credentials to Cloud Manager, you can associate an AWS Marketplace subscription with those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
+
+There are two scenarios in which you might associate an AWS Marketplace subscription after you've already added the credentials to Cloud Manager:
+
+* You didn't associate a subscription when you initially added the credentials to Cloud Manager.
+* You want to replace an existing AWS Marketplace subscription with a new subscription.
 
 .What you'll need
 
@@ -131,10 +136,10 @@ You need to create a Connector before you can change Cloud Manager settings. lin
 
 . Hover over a set of credentials and click the action menu.
 
-. From the menu, click *Add Subscription*.
+. From the menu, click *Associate Subscription*.
 +
 image:screenshot_aws_add_subscription.gif[A screenshot of the Credentials page where you can add a subscription to AWS credentials from the menu.]
 
-. Click *Add Subscription*, click *Continue*, and follow the steps.
+. Select a subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
 +
 video::video_subscribing_aws.mp4[width=848, height=480]
