@@ -47,7 +47,7 @@ link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Guide.pdf[N
 
 Depending on your requirements, you might need to deploy one or multiple Global File Cache Edge instances based on the concurrent user sessions in a branch office. The Edge instance presents the virtual file share to the end users within the branch office, which has been transparently extended from the associated Global File Cache Core instance. The Global File Cache Edge should contain a `D:\` NTFS volume, which contains the cached files within the branch office.
 
-NOTE: For the Global File Cache Edge, it is important to understand the link:concept_before_you_begin_to_deploy_gfc.html#sizing-guidelines[sizing guidelines]. This will assist you in making the correct design for your Global File Cache deployment. You would also need to determine what’s right for your environment in terms of scale, availability of resources, and in terms of redundancy.
+NOTE: For the Global File Cache Edge, it is important to understand the link:concept_before_you_begin_to_deploy_gfc.html#sizing-guidelines[sizing guidelines^]. This will assist you in making the correct design for your Global File Cache deployment. You would also need to determine what’s right for your environment in terms of scale, availability of resources, and in terms of redundancy.
 
 === Global File Cache Edge instance
 
@@ -67,21 +67,21 @@ When deploying a Global File Cache Edge instance, you need to provision a single
 
 == Global File Cache Edge requirements
 
-Global File Cache Edge is designed to function across all platforms supporting Windows Server 2016 and 2019, bringing simplified IT to corporate remote offices and beyond. Critically, Global File Cache can be deployed on customers' existing hardware infrastructure, virtualization, or hybrid/public cloud environments in almost every case if they meet a few base-level requirements.
+Global File Cache Edge is designed to function across all platforms supporting Windows Server 2016 and 2019, bringing simplified IT to corporate remote offices and beyond. Critically, Global File Cache can be deployed on your existing hardware infrastructure, virtualization, or hybrid/public cloud environments in almost every case if they meet a few base-level requirements.
 
 Global File Cache Edge requires the following hardware and software resources to function optimally. For more information about overall sizing guidelines, see link:concept_before_you_begin_to_deploy_gfc.html#sizing-guidelines[Sizing guidelines].
 
 === Hardened server appliance
 
-The Global File Cache installation package creates a hardened software appliance on any Microsoft Windows Server instance. Do Not Uninstall the Global File Cache Package. Uninstalling Global File Cache will impact the functionality of the server instance and might require a full rebuild of the server instance.
+The Global File Cache installation package creates a hardened software appliance on any Microsoft Windows Server instance. _Do Not Uninstall_ the Global File Cache Package. Uninstalling Global File Cache will impact the functionality of the server instance and might require a full rebuild of the server instance.
 
 === Physical hardware requirements
 
-* Minimum 4 CPU Cores
+* Minimum 4 CPU cores
 
-* Minimum 16GB RAM
+* Minimum 16 GB RAM
 
-* Dedicated single or redundant 1Gbps NIC
+* Dedicated single or redundant 1 Gbps NIC
 
 * 10k RPM SAS HDD or SSD (preferred)
 
@@ -95,29 +95,29 @@ For best performance in virtual environments, in addition to the physical host r
 
 Microsoft Hyper-V 2012 R2 and later:
 
-* Processor (CPU):  CPUs must be set as Static: Minimum: 4 vCPU Cores.
+* Processor (CPU):  CPUs must be set as *Static*: Minimum: 4 vCPU cores.
 
-* Memory (RAM):  Minimum: 16GB set as Static.
+* Memory (RAM):  Minimum: 16 GB set as *Static*.
 
-* Hard-disk provisioning:  Hard Disks must be configured as Fixed Disk.
+* Hard-disk provisioning:  Hard Disks must be configured as *Fixed Disk*.
 
 VMware vSphere 6.x and later:
 
-* Processor (CPU): Reservation of CPU Cycles must be set. Minimum: 4 vCPU Cores @ 10000MHz.
+* Processor (CPU): Reservation of CPU Cycles must be set. Minimum: 4 vCPU cores @ 10000 MHz.
 
-* Memory (RAM): Minimum: Reservation of 16GB.
+* Memory (RAM): Minimum: Reservation of 16 GB.
 
 * Hard-disk provisioning:
 
-** Disk Provisioning must be set as Thick Provisioned Eager Zeroed.
+** Disk Provisioning must be set as *Thick Provisioned Eager Zeroed*.
 
-** Hard Disk Shares must be set to High.
+** Hard Disk Shares must be set to *High*.
 
-** Devices.hotplug must be set to False using the vSphere Client to prevent Microsoft Windows from presenting Global File Cache drives as removable.
+** Devices.hotplug must be set to *False* using the vSphere Client to prevent Microsoft Windows from presenting Global File Cache drives as removable.
 
-* Networking: Network Interface must be set to VMXNET3 (requires VMTools).
+* Networking: Network Interface must be set to *VMXNET3* (requires VM Tools).
 
-Global File Cache runs on Windows Server 2016 and 2019, hence the virtualization platform needs to support the operating system, as well as integration with utilities enhancing the performance of the VM's guest operating system and management of the VM, such as VMTools.
+Global File Cache runs on Windows Server 2016 and 2019, hence the virtualization platform needs to support the operating system, as well as integration with utilities enhancing the performance of the VM's guest operating system and management of the VM, such as VM Tools.
 
 === Partition sizing requirements
 
@@ -125,11 +125,11 @@ Global File Cache runs on Windows Server 2016 and 2019, hence the virtualization
 
 * D:\ -  minimum 1TB (separate data volume for Global File Cache Intelligent File Cache*)
 
-*Minimum size is 2x the active data set. The cache volume (`D:\`) can be extended and is only restricted by the limitations of the Microsoft Windows NTFS file system.
+*Minimum size is 2x the active data set. The cache volume (D:\) can be extended and is only restricted by the limitations of the Microsoft Windows NTFS file system.
 
 === Global File Cache Intelligent File Cache disk requirements
 
-Disk Latency on the Global File Cache Intelligent File Cache disk (`D:\`) should deliver < 0.5ms average I/O disk latency and 1MiBps throughput per concurrent user.
+Disk Latency on the Global File Cache Intelligent File Cache disk (D:\) should deliver < 0.5ms average I/O disk latency and 1MiBps throughput per concurrent user.
 
 For more information, see the link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Guide.pdf[NetApp Global File Cache User Guide^].
 
@@ -143,7 +143,7 @@ Global File Cache TCP Ports: 443 (HTTPS - LMS), 6618 – 6630.
 
 === Client workstation and application best practices
 
-Global File Cache transparently integrates into customer’s environments, allowing users to access centralized data using their client workstations, running enterprise applications. Using Global File Cache, data is accessed through a direct drive mapping or through a DFS namespace. For more information about the Global File Cache Fabric, Intelligent File Caching, and key aspects of the software, consult the link:concept_before_you_begin_to_deploy_gfc.html[Before you begin to Deploy Global File Cache] section.
+Global File Cache transparently integrates into customer’s environments, allowing users to access centralized data using their client workstations, running enterprise applications. Using Global File Cache, data is accessed through a direct drive mapping or through a DFS namespace. For more information about the Global File Cache Fabric, Intelligent File Caching, and key aspects of the software, consult the link:concept_before_you_begin_to_deploy_gfc.html[Before you begin to Deploy Global File Cache^] section.
 
 To ensure an optimal experience and performance, it is important to comply with the Microsoft Windows Client requirements and best practices as outlined in the Global File Cache User Guide. This applies to all versions of Microsoft Windows.
 
@@ -184,9 +184,9 @@ For more information, see the link:https://repo.cloudsync.netapp.com/gfc/NetApp%
 
 ==== Configure exclusions
 
-Antivirus software or other third-party indexing or scanning utilities should never scan drive  `D:\`  on the Edge instance. These scans of Edge server drive  `D:\`  will result in numerous file open requests for the entire cache namespace. This will result in file fetches over the WAN to all file servers being optimized at the data center. WAN connection flooding and unnecessary load on the Edge instance will occur resulting in performance degradation.
+Antivirus software or other third-party indexing or scanning utilities should never scan drive D:\ on the Edge instance. These scans of Edge server drive D:\  will result in numerous file open requests for the entire cache namespace. This will result in file fetches over the WAN to all file servers being optimized at the data center. WAN connection flooding and unnecessary load on the Edge instance will occur resulting in performance degradation.
 
-In addition to the  `D:\`  drive, the following Global File Cache directory and processes should generally be excluded from all antivirus applications:
+In addition to the D:\ drive, the following Global File Cache directory and processes should generally be excluded from all antivirus applications:
 
 *  `C:\Program Files\TalonFAST\`
 

@@ -28,10 +28,12 @@ In order to prepare and streamline the end user on-boarding process, use the ema
 Customize and forward the following resources to end users to prepare them for roll-out:
 
 * User Training video
-link:https://www.youtube.com/watch?v=RYvhnTz4bEA[End user training video]
+link:https://www.youtube.com/watch?v=RYvhnTz4bEA[End user training video^]
 
 * Email Template
-link:https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%20Onboarding%20Email.emltpl[Email Template (.emltpl)]
+link:https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%20Onboarding%20Email.emltpl[Mac Email Template (.emltpl)]
++
+link:https://docs.netapp.com/us-en/occm/media/Global_File_Cache_Onboarding_Email.msg[Windows Email Template (.msg)]
 
 * Onboarding Communications
 link:https://repo.cloudsync.netapp.com/gfc/Global%20File%20Cache%20Customer%20Onboarding%20-%20Draft.docx[Word Document (.docx)]
