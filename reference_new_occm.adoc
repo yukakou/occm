@@ -20,6 +20,15 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager 3.8.8 update (10 Sept 2020)
+
+The following enhancements are available when deploying Global File Cache through Cloud Manager:
+
+*	A Cloud Volumes ONTAP HA pair in AWS is now supported as the backend storage platform for your central storage.
+*	Multiple Global File Cache Core instances can be deployed in a Load Distributed design.
+
+link:concept_gfc.html[Learn more about Global File Cache].
+
 == Cloud Manager 3.8.8 (9 Sept 2020)
 
 * <<Support for Cloud Volumes Service for Google Cloud>>
