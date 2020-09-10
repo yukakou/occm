@@ -24,7 +24,7 @@ NOTE: You must use Cloud Manager for all backup and restore operations. Any acti
 * Back up independent copies of your data volumes to low-cost object storage in the cloud.
 * Backup data is secured with AES-256 bit encryption at-rest and TLS 1.2 HTTPS connections in-flight.
 * Back up from cloud to cloud, and from on-premises ONTAP systems to cloud.
-* Support for up to 4,000 backups of a single volume.
+* Support for up to 1,019 backups of a single volume.
 * Restore data from a specific point in time.
 * Restore the data to the source system or to a different system.
 
