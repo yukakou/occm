@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_adding_azure_accounts.html
 keywords: permissions, microsoft, azure, permissions, custom role, role, json, active directory, ad, service principal, key, tenant id, application key, application id, operator role, managed identity, iam, operator, role, virtual machine
-summary: There are two ways to manage Azure accounts in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
+summary: When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials and Marketplace subscription to use with that system. If you manage multiple Azure Marketplace subscriptions, you can assign each one of them to different Azure credentials from the Credentials page.
 ---
 
-= Setting up and adding Azure credentials to Cloud Manager
+= Managing Azure credentials and subscriptions for Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,6 +13,8 @@ summary: There are two ways to manage Azure accounts in Cloud Manager. First, if
 :imagesdir: ./media/
 
 [.lead]
+When you create a Cloud Volumes ONTAP system, you need to select the Azure credentials and Marketplace subscription to use with that system. If you manage multiple Azure Marketplace subscriptions, you can assign each one of them to different Azure credentials from the Credentials page.
+
 There are two ways to manage Azure credentials in Cloud Manager. First, if you want to deploy Cloud Volumes ONTAP in different Azure accounts, then you need to provide the required permissions and add the credentials to Cloud Manager. The second way is to associate additional subscriptions with the Azure managed identity.
 
 NOTE: When you deploy a Connector from Cloud Manager, Cloud Manager automatically adds the Azure account in which you deployed the Connector. An initial account is not added if you manually installed the Connector software on an existing system. link:concept_accounts_azure.html[Learn about Azure accounts and permissions].
@@ -199,13 +201,48 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 * Directory (tenant) ID: See <<Getting the application ID and directory ID>>.
 * Client Secret: See <<Creating a client secret>>.
 
-. Confirm that the policy requirements have been met and then click *Create Account*.
+. Confirm that the policy requirements have been met and then click *Continue*.
+
+. Choose the pay-as-you-go subscription that you want to associate with the credentials, or click *Add Subscription* if you don't have one yet.
++
+To create a pay-as-you-go Cloud Volumes ONTAP system, Azure credentials must be associated with a subscription to Cloud Volumes ONTAP from the Azure Marketplace.
+
+. Click *Add*.
 
 .Result
 
 You can now switch to different set of credentials from the Details and Credentials page link:task_deploying_otc_azure.html[when creating a new working environment]:
 
 image:screenshot_accounts_switch_azure.gif[A screenshot that shows selecting between credentials after clicking Edit Credentials in the Details & Credentials page.]
+
+== Associating an Azure Marketplace subscription to credentials
+
+After you add your Azure credentials to Cloud Manager, you can associate an Azure Marketplace subscription to those credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
+
+There are two scenarios in which you might associate an Azure Marketplace subscription after you've already added the credentials to Cloud Manager:
+
+* You didn't associate a subscription when you initially added the credentials to Cloud Manager.
+* You want to replace an existing Azure Marketplace subscription with a new subscription.
+
+.What you'll need
+
+You need to create a Connector before you can change Cloud Manager settings. link:concept_connectors.html#how-to-create-a-connector[Learn how].
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+
+. Hover over a set of credentials and click the action menu.
+
+. From the menu, click *Associate Subscription*.
++
+image:screenshot_azure_add_subscription.gif[A screenshot of the Credentials page where you can add a subscription to Azure credentials from the menu.]
+
+. Select a subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
++
+The following video starts from the context of the working environment wizard, but shows you the same workflow after you click *Add Subscription*:
++
+video::video_subscribing_azure.mp4[width=848, height=480]
 
 == Associating additional Azure subscriptions with a managed identity
 

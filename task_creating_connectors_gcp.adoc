@@ -77,7 +77,7 @@ Cloud Manager enables you to create a Connector in GCP directly from its user in
 
 .Steps
 
-. If you're creating you first Working Environment, click *Add Working Environment* and follow the prompts. Otherwise, click the Connector icon and select *Add Connector*.
+. If you're creating your first Working Environment, click *Add Working Environment* and follow the prompts. Otherwise, click the *Connector* drop-down and select *Add Connector*.
 +
 image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
 
