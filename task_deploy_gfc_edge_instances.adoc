@@ -23,7 +23,7 @@ After you have verified that your environment meets all the requirements, you in
 
 == Before you begin
 
-To complete basic Global File Cache configuration tasks, you need the following information:
+To complete Global File Cache Edge configuration tasks, you need the following information:
 
 * Static IP addresses for each Global File Cache instance
 
@@ -53,7 +53,7 @@ There are several TCP ports used by Global File Cache services. It is mandatory 
 
 The virtual template (`.OVA` and `.VHD`) images contain the latest release of the Global File Cache software. If you are deploying Global File Cache using the `.OVA` or `.VHD` virtual machine (VM) template, follow the steps as outlined in this section. It is assumed that you understand how to deploy the `.OVA` or `.VHD` template on the designated hypervisor platform.
 
-Ensure that VM preferences, including resource reservations, are in line with the requirements as outlined in link:download_gfc_resources.html#physical-hardware-requirements[Virtual deployment requirements].
+Ensure that VM preferences, including resource reservations, are in line with the requirements as outlined in link:download_gfc_resources.html#physical-hardware-requirements[Virtual deployment requirements^].
 
 .Steps
 
@@ -82,17 +82,19 @@ Ensure that VM preferences, including resource reservations, are in line with th
 The Global File Cache Edge instance connects to a Global File Cache Core to provide users at the branch office access to data center file server resources.
 
 [NOTE]
-The Edge instance must be licensed as part of your Cloud Volumes ONTAP deployment prior to beginning the configuration. See link:concept_gfc.html#licensing[Licensing] for more information about licensing.
+The Edge instance must be licensed as part of your Cloud Volumes ONTAP deployment prior to beginning the configuration. See link:concept_gfc.html#licensing[Licensing^] for more information about licensing.
+
+If your configuration requires more than one Global File Cache Core to be installed because of a large number of Edge instances, you will configure some Edge instances to connect to the first Core and others to connect to the second Core. Make sure you have the FQDN or IP address, and other required information, for the correct Core instance.
 
 To configure the Edge instance, complete the following steps:
 
 .Steps
 
-. Click *Perform* next to the unchecked Core Configuration step listed in the "Edge Configuration Steps" section of the Initial Configuration assistant. This opens a new tab, GFC Edge, and shows the section Core Instances.
+. Click *Perform* next to the unchecked Core Configuration step listed in the "Edge Configuration Steps" section of the Initial Configuration assistant. This opens a new tab, GFC Edge, and shows the section _Core Instances_.
 
 . Provide the *Cloud Fabric ID* of the Global File Cache Core server. The Cloud Fabric ID is typically the NetBIOS name or the geographical location of the backend file server.
 
-. Provide the *FQDN/IP Address* of the Global File Cache Core server or cluster:
+. Provide the *FQDN/IP Address* of the Global File Cache Core server:
 .. (Optional) Check the *SSL* box to enable SSL support for enhanced encryption from the Edge to the Core.
 .. Enter the User Name and Password, which are the credentials of the Service Account used on the Core.
 
