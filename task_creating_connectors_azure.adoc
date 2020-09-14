@@ -46,7 +46,7 @@ TIP: Right-click the link and click *Save link as...* to download the file.
 +
 The following example shows how to create a custom role using the Azure CLI 2.0:
 +
-*az role definition create --role-definition C:\Policy_for_Setup_As_Service_Azure.json*
+`az role definition create --role-definition C:\Policy_for_Setup_As_Service_Azure.json`
 +
 You should now have a custom role called _Azure SetupAsService_.
 
