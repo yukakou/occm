@@ -124,13 +124,13 @@ Cloud Compliance uses AI to extract natural persons’ names from documents. lin
 
 Cloud Manager deploys the Cloud Compliance instance with a security group that enables inbound HTTP connections from the Connector instance.
 
-When using Cloud Manager in SaaS mode, the connection to Cloud Manager is served over HTTPS, and the data sent between your browser and the Cloud Compliance instance are secured with end-to-end encryption, which means NetApp and third parties can’t read it.
+When using Cloud Manager in SaaS mode, the connection to Cloud Manager is served over HTTPS, and the private data sent between your browser and the Cloud Compliance instance are secured with end-to-end encryption, which means NetApp and third parties can’t read it.
 
 If you need to use the local user interface instead of the SaaS user interface for any reason, you can still link:task_managing_connectors.html#accessing-the-local-ui[access the local UI^].
 
-Outbound rules are completely open. The instance connects to the internet through a proxy from Cloud Manager. Internet access is needed to upgrade the Cloud Compliance software and to send usage metrics.
+Outbound rules are completely open. Internet access is needed to install and upgrade the Cloud Compliance software and to send usage metrics.
 
-If you have strict networking requirements, link:task_getting_started_compliance.html#reviewing-prerequisites[learn about the endpoints that Cloud Compliance contacts^].
+If you have strict networking requirements, link:task_deploy_cloud_compliance.html#reviewing-prerequisites[learn about the endpoints that Cloud Compliance contacts^].
 
 == User access to compliance information
 
