@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: reference_user_roles.html
-keywords: user, users, roles, role, task, permission, permissions, tasks, admin, Account Admin, Workspace Admin
-summary: The Account Admin and Workspace Admin roles provide specific permissions to users.
+keywords: user, users, roles, role, task, permission, permissions, tasks, admin, Account Admin, Workspace Admin, Cloud Compliance Viewer
+summary: The Account Admin, Workspace Admin, and Cloud Compliance Viewer roles provide specific permissions to users.
 translate: false
 ---
 
@@ -14,48 +14,51 @@ translate: false
 :imagesdir: ./media/
 
 [.lead]
-The Account Admin and Workspace Admin roles provide specific permissions to users.
+The Account Admin, Workspace Admin, and Cloud Compliance Viewer roles provide specific permissions to users.
 
-[cols=3*,options="header",cols="34,33,33"]
+[cols=4*,options="header",cols="31,23,23,23"]
 |===
 
 | Task
 | Account Admin
 | Workspace Admin
+| Cloud Compliance Viewer
 
-| Manage working environments |	Yes |	Yes
+| Manage working environments |	Yes |	Yes | No
 
-| Enable services on working environments | Yes | Yes
+| Enable services on working environments | Yes | Yes | No
 
-| View data replication status |	Yes |	Yes
+| View data replication status | Yes |	Yes | No
 
-| View the timeline |	Yes |	Yes
+| View the timeline |	Yes |	Yes | No
 
-| Switch between workspaces | Yes | Yes
+| Switch between workspaces | Yes | Yes | Yes
 
-| Delete working environments | Yes | No
+| Delete working environments | Yes | No | No
 
-| Connect Kubernetes clusters to working environments | Yes | No
+| Connect Kubernetes clusters to working environments | Yes | No | No
 
-| Receive the Cloud Volumes ONTAP report | Yes | No
+| Receive the Cloud Volumes ONTAP report | Yes | No | No
 
-| Create Connectors | Yes | No
+| Create Connectors | Yes | No | No
 
-| Manage Cloud Central accounts |	Yes |	No
+| Manage Cloud Central accounts |	Yes |	No | No
 
-| Manage credentials | Yes | No
+| Manage credentials | Yes | No | No
 
-| Modify Cloud Manager settings |	Yes |	No
+| Modify Cloud Manager settings |	Yes |	No | No
 
-| View and manage the Support Dashboard |	Yes |	No
+| View and manage the Support Dashboard |	Yes |	No | No
 
-| Remove working environments from Cloud Manager |	Yes |	No
+| Remove working environments from Cloud Manager | Yes |	No | No
 
-| Install an HTTPS certificate |	Yes |	No
+| Install an HTTPS certificate | Yes |	No | No
+
+| View Compliance scan results | Yes | Yes | Yes
 
 |===
 
 .Related links
 
-* link:task_setting_up_cloud_central_accounts.html[Setting up workspaces and users in the Cloud Central account]
-* link:task_managing_cloud_central_accounts.html[Managing workspaces and users in the Cloud Central account]
+* link:task_setting_up_cloud_central_accounts.html[Setting up workspaces and users in the Cloud Central account^]
+* link:task_managing_cloud_central_accounts.html[Managing workspaces and users in the Cloud Central account^]

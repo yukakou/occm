@@ -35,15 +35,13 @@ Cloud Compliance can scan data from the following types of data sources:
 * Amazon S3
 * Databases that reside anywhere (there is no requirement that the database resides in a working environment)
 
-For Azure NetApp Files, Cloud Compliance can scan any volumes that are in the same region as Cloud Manager.
+*Note:* For Azure NetApp Files, Cloud Compliance can scan any volumes that are in the same region as Cloud Manager.
 
 == Cost
 
 * The cost to use Cloud Compliance depends on the amount of data that you're scanning. The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. This includes data from Cloud Volumes ONTAP volumes, Azure NetApp Files volumes, Amazon S3 buckets, and database schemas. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
 +
 link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-compliance-service[Learn how to subscribe^].
-+
-NOTE: Throughout September 2020, licensing to scan more than 1 TB of data is not required. This new licensing model will go into affect in October 2020.
 
 * Installing Cloud Compliance requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed.
 
@@ -134,8 +132,12 @@ If you have strict networking requirements, link:task_deploy_cloud_compliance.ht
 
 == User access to compliance information
 
-Cloud Manager Admins can view compliance information for all working environments.
+The role each user has been assigned provides different capabilities within Cloud Manager and within Cloud Compliance:
 
-Workspace Admins can view compliance information only for systems that they have permissions to access. If a Workspace Admin can't access a working environment in Cloud Manager, then they can't see any compliance information for the working environment in the Compliance tab.
+* _Account Admins_ can view and manage compliance information for all working environments.
+
+* _Workspace Admins_ can view and manage compliance information only for systems that they have permissions to access. If a Workspace Admin can't access a working environment in Cloud Manager, then they can't see any compliance information for the working environment in the Compliance tab.
+
+* Users with the _Cloud Compliance Viewer_ role can only view compliance information for systems that they have permissions to access.
 
 link:reference_user_roles.html[Learn more about Cloud Manager roles^].
