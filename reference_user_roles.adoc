@@ -34,6 +34,8 @@ The Account Admin, Workspace Admin, and Cloud Compliance Viewer roles provide sp
 
 | Switch between workspaces | Yes | Yes | Yes
 
+| View Compliance scan results | Yes | Yes | Yes
+
 | Delete working environments | Yes | No | No
 
 | Connect Kubernetes clusters to working environments | Yes | No | No
@@ -53,8 +55,6 @@ The Account Admin, Workspace Admin, and Cloud Compliance Viewer roles provide sp
 | Remove working environments from Cloud Manager | Yes |	No | No
 
 | Install an HTTPS certificate | Yes |	No | No
-
-| View Compliance scan results | Yes | Yes | Yes
 
 |===
 

@@ -132,10 +132,10 @@ If you have strict networking requirements, link:task_deploy_cloud_compliance.ht
 
 The role each user has been assigned provides different capabilities within Cloud Manager and within Cloud Compliance:
 
-* _Account Admins_ can view and manage compliance information for all working environments.
+* _Account Admins_ can manage compliance settings and view compliance information for all working environments.
 
-* _Workspace Admins_ can view and manage compliance information only for systems that they have permissions to access. If a Workspace Admin can't access a working environment in Cloud Manager, then they can't see any compliance information for the working environment in the Compliance tab.
+* _Workspace Admins_ can manage compliance settings and view compliance information only for systems that they have permissions to access. If a Workspace Admin can't access a working environment in Cloud Manager, then they can't see any compliance information for the working environment in the Compliance tab.
 
-* Users with the _Cloud Compliance Viewer_ role can only view compliance information for systems that they have permissions to access.
+* Users with the _Cloud Compliance Viewer_ role can only view compliance information and generate reports for systems that they have permission to access. These users cannot enable/disable scanning of volumes, buckets, or database schemas.
 
 link:reference_user_roles.html[Learn more about Cloud Manager roles^].
