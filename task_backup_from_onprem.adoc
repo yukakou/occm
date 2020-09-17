@@ -23,7 +23,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 [role="quick-margin-list"]
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
-* You're running ONTAP 9.7 or later on the cluster.
+* You're running ONTAP 9.7P5 or later on the cluster.
 * You have a valid cloud provider subscription for the storage space where your backups will be located.
 * You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Backup to Cloud BYOL license from NetApp.
 
@@ -69,7 +69,7 @@ image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon 
 Read the following requirements to make sure you have a supported configuration before you start backing up volumes to Azure Blob storage.
 
 Supported ONTAP versions::
-ONTAP 9.7 and later.
+ONTAP 9.7P5 and later.
 
 Cluster networking requirements::
 
