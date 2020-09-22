@@ -79,12 +79,16 @@ GKE defaults to using the Google https://cloud.google.com/container-optimized-os
 
 === Connector requirements
 
-The Connector needs an outbound internet connection to access the following endpoints when installing Trident:
-
+* The Connector needs an outbound internet connection to access the following endpoints when installing Trident:
++
 \https://packages.cloud.google.com/yum
 \https://github.com/NetApp/trident/releases/download/
-
++
 Cloud Manager installs Trident on a Kubernetes cluster when you connect a working environment to the cluster.
+
+* The Connector requires the following permissions to discover and manage Kubernetes clusters running in Google Kubernetes Engine (GKE):
++
+container.*
 
 === Example setup
 
