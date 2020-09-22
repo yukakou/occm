@@ -36,9 +36,10 @@ image:screenshot_kubernetes_info.gif[A screenshot of a Kubernetes cluster where 
 
 link:task_connecting_kubernetes.html[Learn how to get started].
 
-Note that the service group for a Connector requires the following permissions to discover and manage Kubernetes clusters running in Google Kubernetes Engine (GKE):
+Note that the service account for a Connector requires the following permissions to discover and manage Kubernetes clusters running in Google Kubernetes Engine (GKE):
 
-container.*
+[source,yaml]
+- container.*
 
 == Cloud Manager 3.8.8 update (10 Sept 2020)
 
