@@ -20,6 +20,26 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager 3.8.8 update (22 Sept 2020)
+
+We enhanced the Kubernetes service to make it easier to use and to provide additional capabilities:
+
+*	We've made it easier to discover the Kubernetes clusters running in your cloud provider’s managed Kubernetes service.
++
+Just click *Discover Clusters* and Cloud Manager will discover your managed clusters using the cloud provider permissions that you’ve already provided.
+
+* You can now view more information about a discovered Kubernetes cluster, including its state, the number of volumes, storage classes, and more.
++
+image:screenshot_kubernetes_info.gif[A screenshot of a Kubernetes cluster where you get information about its state, number of volumes, storage classes, and more.]
+
+* We've added resource and error checking to ensure that communication is available between the cluster and Cloud Volumes ONTAP. And if it isn't, then we'll let you know.
+
+link:task_connecting_kubernetes.html[Learn how to get started].
+
+Note that the service group for a Connector requires the following permissions to discover and manage Kubernetes clusters running in Google Kubernetes Engine (GKE):
+
+container.*
+
 == Cloud Manager 3.8.8 update (10 Sept 2020)
 
 The following enhancements are available when deploying Global File Cache through Cloud Manager:
