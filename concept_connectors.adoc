@@ -59,7 +59,7 @@ An Account Admin can create a Connector in a number of ways:
 * Directly from Cloud Manager (recommended)
 **
 **
-** 
+**
 * link:task_launching_aws_mktp.html[From the AWS Marketplace]
 * link:task_launching_azure_mktp.html[From the Azure Marketplace]
 * link:task_installing_linux.html[By downloading and installing the software on an existing Linux host]
@@ -93,8 +93,6 @@ In some cases, you might only need one Connector, but you might find yourself ne
 Here are a few examples:
 
 * You're using a multi-cloud environment (AWS and Azure), so you have one Connector in AWS and another in Azure. Each manages the Cloud Volumes ONTAP systems running in those environments.
-
-* You need to deploy Cloud Volumes ONTAP systems in separate regions, so you'll need a Connector in each region since they'll need connectivity to Cloud Volumes ONTAP.
 
 * A service provider might use one Cloud Central account to provide services for their customers, while using another account to provide disaster recovery for one of their business units. Each account would have separate Connectors.
 
