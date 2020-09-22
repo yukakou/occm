@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_adding_gcp_accounts.html
 keywords: permissions, gcp, data tiering, tiering, setup, requirements, account for data tiering, account for tiering, interoperable, interoperability, interoperable storage access keys, access keys
-summary: Adding a Google Cloud Platform account to Cloud Manager is required to enable data tiering on a Cloud Volumes ONTAP system. Data tiering automatically tiers cold data to low-cost object storage, enabling you to reclaim space on your primary storage and shrink secondary storage.
+summary: You can manage two types of Google Cloud Platform credentials from Cloud Manager the credentials that are associated with the Connector VM instance and storage access keys used with a Cloud Volumes ONTAP 9.6 system for data tiering.
 ---
 
-= Setting up and adding GCP accounts for data tiering with 9.6
+= Managing GCP credentials and subscriptions for Cloud Manager
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,37 @@ summary: Adding a Google Cloud Platform account to Cloud Manager is required to 
 :imagesdir: ./media/
 
 [.lead]
-If you want to enable link:concept_data_tiering.html[data tiering] on a Cloud Volumes ONTAP 9.6 system, you need to provide Cloud Manager with a storage access key for a service account that has Storage Admin permissions. Cloud Manager uses the access keys to set up and manage a Cloud Storage bucket for data tiering.
+You can manage two types of Google Cloud Platform credentials from Cloud Manager: the credentials that are associated with the Connector VM instance and storage access keys used with a Cloud Volumes ONTAP 9.6 system for link:concept_data_tiering.html[data tiering].
+
+== Associating a Marketplace subscription with GCP credentials
+
+When you deploy a Connector in GCP, Cloud Manager creates a default set of credentials that are associated with the Connector VM instance. These are the credentials that Cloud Manager uses to deploy Cloud Volumes ONTAP.
+
+At any time, you can change the Marketplace subscription that's associated with these credentials. The subscription enables you to create a pay-as-you-go Cloud Volumes ONTAP system, and to use other NetApp cloud services.
+
+.Steps
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+
+. Hover over a set of credentials and click the action menu.
+
+. From the menu, click *Associate Subscription*.
++
+image:screenshot_gcp_add_subscription.gif[A screenshot of the Credentials page where you can add a subscription to GCP credentials from the menu.]
+
+. Select a Google Cloud project and subscription from the down-down list or click *Add Subscription* and follow the steps to create a new subscription.
++
+image:screenshot_gcp_associate.gif[A screenshot of a Google Cloud project and subscription selected for Google Cloud credentials.]
+
+. Click *Associate*.
+
+== Setting up and adding GCP accounts for data tiering with Cloud Volumes ONTAP 9.6
+
+If you want to enable a Cloud Volumes ONTAP 9.6 system for link:concept_data_tiering.html[data tiering], you need to provide Cloud Manager with a storage access key for a service account that has Storage Admin permissions. Cloud Manager uses the access keys to set up and manage a Cloud Storage bucket for data tiering.
 
 TIP: If you want to use data tiering with Cloud Volumes ONTAP 9.7, then follow step 4 in link:task_getting_started_gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud Platform].
 
-== Setting up a service account and access keys for Google Cloud Storage
+=== Setting up a service account and access keys for Google Cloud Storage
 
 A service account enables Cloud Manager to authenticate and access Cloud Storage buckets used for data tiering. The keys are required so that Google Cloud Storage knows who is making the request.
 
@@ -47,7 +73,7 @@ image:screenshot_gcp_access_key.gif[A screenshot of the GCP storage console that
 +
 You'll need to enter this information in Cloud Manager when you add the GCP account for data tiering.
 
-== Adding a GCP account to Cloud Manager
+=== Adding a GCP account to Cloud Manager
 
 Now that you have an access key for a service account, you can add it to Cloud Manager.
 

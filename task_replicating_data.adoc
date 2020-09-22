@@ -117,7 +117,7 @@ After you set up data replication between two systems, you can manage the data r
 | Action
 
 | All working environments in the workspace
-a| At the top of Cloud Manager, click *Replication Status*.
+a| At the top of Cloud Manager, click *Replication*.
 
 | A specific working environment
 a| Open the working environment and click *Replications*.

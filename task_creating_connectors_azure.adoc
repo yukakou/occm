@@ -46,7 +46,7 @@ TIP: Right-click the link and click *Save link as...* to download the file.
 +
 The following example shows how to create a custom role using the Azure CLI 2.0:
 +
-*az role definition create --role-definition C:\Policy_for_Setup_As_Service_Azure.json*
+`az role definition create --role-definition C:\Policy_for_Setup_As_Service_Azure.json`
 +
 You should now have a custom role called _Azure SetupAsService_.
 
@@ -86,7 +86,7 @@ Cloud Manager enables you to create a Connector in Azure directly from its user 
 
 .Steps
 
-. If you're creating you first Working Environment, click *Add Working Environment* and follow the prompts. Otherwise, click the Connector icon and select *Add Connector*.
+. If you're creating your first Working Environment, click *Add Working Environment* and follow the prompts. Otherwise, click the *Connector* drop-down and select *Add Connector*.
 +
 image:screenshot_connector_add.gif[A screenshot that shows the Connector icon in the header and the Add Connector action.]
 
@@ -103,6 +103,8 @@ link:reference_networking_cloud_manager.html[Learn more about networking require
 . If you're prompted, log in to your Microsoft account, which should have the required permissions to create the virtual machine.
 +
 The form is owned and hosted by Microsoft. Your credentials are not provided to NetApp.
++
+TIP: If you're already logged in to an Azure account, then Cloud Manager will automatically use that account. If you have multiple accounts, then you might need to log out first to ensure that you're using the right account.
 
 . Provide the required information:
 

@@ -35,8 +35,8 @@ Use the following links to learn more about Global File Cache and other NetApp p
 
 * Customer support for Global File Cache users with Cloud Volumes ONTAP is available through these channels:
 +
-** Guided Problem Solving, Case Management, Knowledgebase, Downloads, Tools, and more go link:https://cloud.netapp.com/gfc-support[here]
+** Guided Problem Solving, Case Management, Knowledgebase, Downloads, Tools, and more go link:https://cloud.netapp.com/gfc-support[here^]
 ** Login to the NetApp Support at https://mysupport.netapp.com with your NSS credentials
 ** For immediate assistance for a P1 issue call: +1 856.481.3990 (Option 2)
-+
-Customer support for Global File Cache users utilizing Cloud Volumes Services and Azure NetApp Files is available through standard support from your provider. Please contact Google Customer Support or Microsoft Customer Support respectively.
+
+* Customer support for Global File Cache users utilizing Cloud Volumes Services and Azure NetApp Files is available through standard support from your provider. Please contact Google Customer Support or Microsoft Customer Support respectively.
