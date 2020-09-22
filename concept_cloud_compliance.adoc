@@ -49,9 +49,9 @@ NOTE: Throughout September 2020, licensing to scan more than 1 TB of data is not
 
 * Cloud Compliance requires that you have deployed a Connector. In many cases you already have a Connector because of other storage and services you are using in Cloud Manager. The Connector instance results in charges from the cloud provider where it is deployed. See the link:reference_cloud_mgr_reqs.html[type of instance that is deployed for each cloud provider^].
 
-=== Cloud Volumes ONTAP and Azure NetApp Files
+=== Data transfer costs
 
-Data transfer costs depend on your setup. If the Cloud Compliance instance and Cloud Volumes ONTAP are in the same Availability Zone and region, then there are no data transfer costs. But if Cloud Volumes ONTAP is in a _different_ Availability Zone or region, then you'll be charged by your cloud provider for data transfer costs. See these links for more details:
+Data transfer costs depend on your setup. If the Cloud Compliance instance and data source are in the same Availability Zone and region, then there are no data transfer costs. But if the data source, such as a Cloud Volumes ONTAP cluster or S3 Bucket, is in a _different_ Availability Zone or region, then you'll be charged by your cloud provider for data transfer costs. See these links for more details:
 
 * https://aws.amazon.com/ec2/pricing/on-demand/[AWS: Amazon EC2 Pricing^]
 * https://azure.microsoft.com/en-us/pricing/details/bandwidth/[Microsoft Azure: Bandwidth Pricing Details^]
