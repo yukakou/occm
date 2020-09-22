@@ -111,3 +111,7 @@ While you should perform almost all tasks from the https://cloudmanager.netapp.c
 * Downloading AutoSupport messages (usually directed by NetApp personnel when you have issues)
 
 link:task_managing_connectors.html#accessing-the-local-ui[Learn how to access the local UI].
+
+== Connector upgrades
+
+The Connector automatically updates its software to the latest version, as long as it has link:reference_networking_cloud_manager.html[outbound internet access] to obtain the software update.

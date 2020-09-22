@@ -25,9 +25,13 @@ In Cloud Manager, workspaces enable you to isolate a set of working environments
 
 .Steps
 
-. Click *Account Settings*.
+. From the top of Cloud Manager, click the *Account* drop-down.
 +
 image:screenshot_account_settings_menu.gif[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
+
+. Click *Manage Account Settings* next to the currently selected account.
++
+image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
 . Click *Workspaces*.
 
@@ -37,7 +41,7 @@ image:screenshot_account_settings_menu.gif[A screenshot that shows the Account S
 
 .After you finish
 
-You can now associate users and Connectors with the workspace.
+If a Workspace Admin needs access to this workspace, then you'll need to associate the user. You'll also need to associate Connectors with the workspace so Workspace Admins can use those Connectors.
 
 == Adding users
 
@@ -45,11 +49,13 @@ Associate Cloud Central users with the Cloud Central account so those users can 
 
 .Steps
 
-. If the user has not already done so, ask the user to go to https://cloud.netapp.com[NetApp Cloud Central^] and sign up.
+. If the user hasn't already done so, ask the user to go to https://cloud.netapp.com[NetApp Cloud Central^] and sign up.
 
-. In Cloud Manager, click *Account Settings*.
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
++
+image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
-. In the Users tab, click *Associate User*.
+. From the Users tab, click *Associate User*.
 
 . Enter the user's email address and select a role for the user:
 +
@@ -72,9 +78,11 @@ You can associate Workspace Admins with additional workspaces at any time. Assoc
 
 .Steps
 
-. Click *Account Settings*.
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
++
+image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
-. Click the action menu in the row that corresponds to the user.
+. From the Users tab, click the action menu in the row that corresponds to the user.
 +
 image:screenshot_associate_user_workspace.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
 
@@ -96,7 +104,9 @@ link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors
 
 .Steps
 
-. Click *Account Settings*.
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
++
+image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
 . Click *Connector*.
 

@@ -44,4 +44,6 @@ NOTE: Cloud Volumes ONTAP support for WORM storage is equivalent to SnapLock Ent
 
 * If you delete or move a disk directly from AWS or Azure, then a volume can be deleted before its expiry date.
 
-* When WORM storage is activated, data tiering to object storage cannot be enabled.
+* When WORM storage is activated, data tiering to object storage can't be enabled.
+
+* Backup to Cloud must be disabled in order to enable WORM storage.
