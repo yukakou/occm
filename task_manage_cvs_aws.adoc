@@ -265,11 +265,13 @@ image:screenshot_cvs_aws_remove.png[A screenshot of selecting the option to remo
 
 If you change your DNS servers or Active Directory domain, you need to modify the SMB server in Cloud Volumes Services so that it can continue to serve storage to clients.
 
+You can also delete the link to an Active Directory if you no longer need it.
+
 .Steps
 . Open the working environment.
 . Click the image:screenshot_gallery_options.gif[] button at the top of the page and click *Manage Active Directory*.
-. If no Active Directory is configured, you can add one now. If one is configured, you can modify or delete the settings using the image:screenshot_gallery_options.gif[] button.
-. Specify the settings for the SMB server:
+. If no Active Directory is configured, you can add one now. If one is configured, you can modify the settings or delete it using the image:screenshot_gallery_options.gif[] button.
+. Specify the settings for the Active Directory that you want to join:
 +
 [cols=2*,options="header",cols="25,75"]
 |===
