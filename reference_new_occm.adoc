@@ -71,7 +71,7 @@ You can quickly view the number of users, workspaces, Connectors, and subscripti
 Copying these IDs will help with automation features that we're planning.
 * You can disable use of the SaaS platform.
 +
-We don't recommend disabling the SaaS platform unless you need to in order to comply with your company's security policies. Disabling the SaaS platform limits your ability to use NetApp's integrated cloud services. Learn more. (link coming soon)
+We don't recommend disabling the SaaS platform unless you need to in order to comply with your company's security policies. Disabling the SaaS platform limits your ability to use NetApp's integrated cloud services. link:task_managing_cloud_central_accounts[Learn more].
 
 image:screenshot_account_management.gif[]
 
