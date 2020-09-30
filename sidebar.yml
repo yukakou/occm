@@ -223,6 +223,44 @@ entries:
             url: /task_backup_from_onprem.html
       - title: Manage backups and restore data
         url: /task_managing_backups.html
+  - title: Copy and synchronize data
+    entries:
+      - title: Learn about Cloud Sync
+        url: /concept_cloud_sync.html
+      - title: Get started
+        entries:
+          - title: Quick start
+          - url: /task_sync_quick_start.html
+          - title: Prepare networking
+          - url: /reference_sync_networking
+          - title: Prepare the source and target
+          - url: /reference_sync_requirements.html
+          - title: How to install a data broker
+            entries:
+              - title: Install in AWS
+                url: /
+              - title: Install in Azure
+                url: /
+              - title: Install in GCP
+                url: /
+              - title: Install on a Linux host
+                url: /
+          - title: Create a sync relationship
+          - url: /
+          - title: Pay for sync relationships
+          - url: /
+      - title: Tutorials
+        entries:
+          - title:
+          - url: /
+          - title:
+          - url: /
+      - title: Manage sync relationships
+        url: /task_managing_relationships.html
+      - title: API
+        url: /api_cloud_sync.html
+      - title: FAQ
+        url: /faq_cloud_sync.html
   - title: Gain insight into data privacy
     entries:
       - title: Learn about Cloud Compliance
