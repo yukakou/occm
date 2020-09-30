@@ -37,7 +37,7 @@ Users who are assigned this role can only view compliance information and genera
 
 * Added support to scan MongoDB and PostgreSQL database schemas. See link:task_scanning_databases.html[scanning database schemas] for more information.
 
-* Cloud Compliance pricing has changed as of October 1st.
+* Cloud Compliance pricing is changing as of October 7th.
 +
 The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. This includes data from Cloud Volumes ONTAP volumes, Azure NetApp Files volumes, Amazon S3 buckets, and database schemas. A subscription is required to scan any additional data after you reach 1 TB. See link:https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
 
