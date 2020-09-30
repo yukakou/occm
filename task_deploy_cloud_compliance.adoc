@@ -107,15 +107,9 @@ For more details on vCPU limits, see the following:
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quotas[Azure documentation: Virtual machine vCPU quotas^]
 
 Ensure that Cloud Manager can access Cloud Compliance::
-Ensure connectivity between the Connector and the Cloud Compliance instance:
-
-* The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Cloud Compliance instance.
+Ensure connectivity between the Connector and the Cloud Compliance instance. The security group for the Connector must allow inbound and outbound traffic over port 80 to and from the Cloud Compliance instance.
 +
 This connection enables deployment of the Cloud Compliance instance and enables you to view information in the Compliance tab.
-
-* If your AWS network doesn’t use a NAT or proxy for internet access, modify the security group for the Connector to allow inbound traffic over TCP port 3128 from the Cloud Compliance instance.
-+
-This is required because the Cloud Compliance instance uses the Connector as a proxy to access the internet.
 
 Set up discovery of Azure NetApp Files::
 Before you can scan volumes for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
