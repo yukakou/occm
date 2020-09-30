@@ -238,29 +238,29 @@ entries:
           - title: How to install a data broker
             entries:
               - title: Install in AWS
-                url: /
+                url: /task_sync_installing_aws.html
               - title: Install in Azure
-                url: /
+                url: /task_sync_installing_azure.html
               - title: Install in GCP
-                url: /
+                url: /task_sync_installing_gcp.html
               - title: Install on a Linux host
-                url: /
+                url: /task_sync_installing_linux.html
           - title: Create a sync relationship
-            url: /
+            url: /task_sync_creating_relationships.html
           - title: Pay for sync relationships
-            url: /
+            url: /task_sync_licensing.html
       - title: Tutorials
         entries:
           - title: Copy ACLs between shares
-            url: /
+            url: /task_sync_copying_acls.html
           - title: Encrypt NFS data in flight
-            url: /
+            url: /task_sync_nfs_encryption.html
       - title: Manage sync relationships
-        url: /task_managing_relationships.html
+        url: /task_sync_managing_relationships.html
       - title: API
-        url: /api_cloud_sync.html
+        url: /api_sync.html
       - title: FAQ
-        url: /faq_cloud_sync.html
+        url: /faq_sync.html
   - title: Gain insight into data privacy
     entries:
       - title: Learn about Cloud Compliance
