@@ -230,11 +230,11 @@ entries:
       - title: Get started
         entries:
           - title: Quick start
-          - url: /task_sync_quick_start.html
+            url: /task_sync_quick_start.html
           - title: Prepare networking
-          - url: /reference_sync_networking
+            url: /reference_sync_networking
           - title: Prepare the source and target
-          - url: /reference_sync_requirements.html
+            url: /reference_sync_requirements.html
           - title: How to install a data broker
             entries:
               - title: Install in AWS
@@ -246,15 +246,15 @@ entries:
               - title: Install on a Linux host
                 url: /
           - title: Create a sync relationship
-          - url: /
+            url: /
           - title: Pay for sync relationships
-          - url: /
+            url: /
       - title: Tutorials
         entries:
-          - title:
-          - url: /
-          - title:
-          - url: /
+          - title: Copy ACLs between shares
+            url: /
+          - title: Encrypt NFS data in flight
+            url: /
       - title: Manage sync relationships
         url: /task_managing_relationships.html
       - title: API
