@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: apis_sync.html
+permalink: api_sync.html
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis, 202, https status code 202, status code 202, id, id field
 summary: The Cloud Sync capabilities that are available through the web UI are also available through RESTful APIs.
 ---
