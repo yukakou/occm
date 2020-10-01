@@ -232,7 +232,7 @@ entries:
           - title: Quick start
             url: /task_sync_quick_start.html
           - title: Prepare networking
-            url: /reference_sync_networking
+            url: /reference_sync_networking.html
           - title: Prepare the source and target
             url: /reference_sync_requirements.html
           - title: How to install a data broker

@@ -1,0 +1,132 @@
+---
+sidebar: sidebar
+permalink: concept_cloud_sync.html
+keywords: cloud sync, overview, conceptual, how, data broker, service
+summary: The NetApp Cloud Sync service offers a simple, secure, and automated way to migrate your data to any target, in the cloud or on your premises.
+---
+
+= Cloud Sync overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+The NetApp Cloud Sync service offers a simple, secure, and automated way to migrate your data to any target, in the cloud or on your premises. Whether it’s a file-based NAS dataset (NFS or SMB), Amazon Simple Storage Service (S3) object format, a NetApp StorageGRID® appliance, or any other cloud provider object store, Cloud Sync can convert and move it for you.
+
+== Features
+
+Watch the following video for an overview of Cloud Sync:
+
+video::oZNJtLvgNfQ[youtube, width=848, height=480]
+
+== Supported storage types
+
+* Any NFS server
+* Any SMB server
+* AWS EFS
+* AWS S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes Service
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* On-premises ONTAP cluster
+* ONTAP S3 Storage
+* StorageGRID
+
+== Cost
+
+There are two types of costs associated with using Cloud Sync: resource charges and service charges.
+
+Resource charges:: The resource charges are related to the compute and storage costs for running the data broker in the cloud.
+
+Service charges:: There are two ways to pay for sync relationships after your 14-day free trial ends. The first option is to subscribe from AWS or Azure, which enables you to pay hourly or annually. The second option is to purchase licenses directly from NetApp. Read the following sections for more details.
+
+=== AWS or Azure subscriptions
+
+Subscribing to the Cloud Sync service from AWS or Azure enables you to pay at an hourly rate, or to pay annually. You can subscribe through either AWS or Azure, depending on where you want to be billed.
+
+Hourly subscriptions::
+With an hourly pay-as-you-go subscription, the Cloud Sync service charges hourly based on the number of sync relationships that you create. For pricing details, go to the https://cloud.netapp.com/cloud-sync-service[Cloud Sync service page^].
+
+Annual subscriptions::
+An annual subscription provides a license for 20 sync relationships that you pay for up front.
++
+If you go above 20 sync relationships and you've subscribed through Azure, you pay for the additional relationships by the hour.
+
+* https://aws.amazon.com/marketplace/pp/B01LZV5DUJ[View pay-as-you-go pricing in AWS^]
+* https://aws.amazon.com/marketplace/pp/B06XX5V3M2[View annual pricing in AWS^]
+* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice[View pricing in Azure^]
+* link:task_licensing.html[Learn how to subscribe through AWS or Azure]
+
+=== Licenses from NetApp
+
+Another way to pay for sync relationships up front is by purchasing licenses directly from NetApp. Each license enables you to create up to 20 sync relationships.
+
+You can use these licenses with an AWS or Azure subscription. For example, if you have 25 sync relationships, you can pay for the first 20 sync relationships using a license and then pay-as-you-go from AWS or Azure with the remaining 5 sync relationships.
+
+link:task_licensing.html[Learn how to purchase licenses and add them to Cloud Sync].
+
+=== License terms
+
+Customers who purchase a Bring Your Own License (BYOL) to the Cloud Sync service should be aware of limitations associated with the license entitlement.
+
+* Customers are entitled to leverage the BYOL license for a term not to exceed one year from the date of delivery.
+
+* Customers are entitled to leverage the BYOL license to establish and not to exceed a total of 20 individual connections between a source and a target (each a “sync relationship”).
+
+* A customer’s entitlement expires at the conclusion of the one-year license term, irrespective as to whether Customer has reached the 20 sync relationship limitation.
+
+* In the event the Customer chooses to renew its license, unused sync relationships associated from the previous license grant DO NOT roll over to the license renewal.
+
+== How Cloud Sync works
+
+Cloud Sync is a software-as-a-service (SaaS) platform that consists of a data broker, a cloud-based portal, and a source and target.
+
+The following image shows the relationship between Cloud Sync components:
+
+image:diagram_cloud_sync_overview.gif[Conceptual image that shows data flowing from a source to a target. The data broker software acts as a mediator and polls the Cloud Sync service for tasks.]
+
+The NetApp data broker software syncs data from a source to a target (this is called a _sync relationship_). You can run the data broker in AWS, Azure, Google Cloud Platform, or on your premises. The data broker needs an outbound internet connection over port 443 so it can communicate with the Cloud Sync service and contact a few other services and repositories. link:reference_endpoints.html[View the list of endpoints].
+
+After the initial copy, the service syncs any changed data based on the schedule that you set.
+
+== Data privacy
+
+NetApp doesn't have access to any credentials that you provide while using the Cloud Sync service. The credentials are stored directly on the data broker machine, which resides in your network.
+
+Depending on the configuration that you choose, Cloud Sync might prompt you for credentials when you create a new relationship. For example, when setting up a relationship that includes an SMB server, or when deploying the data broker in AWS.
+
+These credentials are always saved directly to the data broker itself. The data broker resides on a machine in your network, whether it's on premises or in your cloud account. The credentials are never made available to NetApp.
+
+The credentials are locally encrypted on the data broker machine using HashiCorp Vault.
+
+== Limitations
+
+These known limitations identify platforms or features that are not supported.
+
+=== Unsupported regions
+
+* Cloud Sync is not supported in China.
+
+* In addition to China, the Cloud Sync data broker is not supported in the following regions:
+** AWS GovCloud (US)
+** Azure US Gov
+** Azure US DoD
+
+=== SMB limitation for hidden directories and files
+
+An SMB limitation affects hidden directories and files when syncing data between SMB servers. If any of the directories or files on the source SMB server were hidden through Windows, the hidden attribute isn't copied to the target SMB server.
+
+=== SMB sync behavior due to case-insensitivity limitation
+
+The SMB protocol is case-insensitive, which means uppercase and lowercase letters are treated as being the same. This behavior can result in overwritten files and directory copy errors, if a sync relationship includes an SMB server and data already exists on the target.
+
+For example, let's say that there's a file named "a" on the source and a file named "A" on the target. When Cloud Sync copies the file named "a" to the target, file "A" is overwritten by file "a" from the source.
+
+In the case of directories, let's say that there's a directory named "b" on the source and a directory named "B" on the target. When Cloud Sync tries to copy the directory named "b" to the target, Cloud Sync receives an error that says the directory already exists. As a result, Cloud Sync always fails to copy the directory named “b.”
+
+The best way to avoid this limitation is to ensure that you sync data to an empty directory.
