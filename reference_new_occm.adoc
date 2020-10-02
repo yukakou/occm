@@ -56,7 +56,7 @@ When creating a new volume, you can choose to base that volume on an existing Sn
 
 NetApp’s Cloud Sync service is now available from within Cloud Manager. Cloud Sync offers a simple, secure, and automated way to migrate your data from any source destination to any target destination, in the cloud or on your premises.
 
-Learn more. (link coming soon)
+link:concept_cloud_sync.html[Learn more].
 
 === Account management enhancements
 
