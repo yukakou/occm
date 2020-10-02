@@ -31,7 +31,7 @@ image:diagram_networking_onprem.png["A diagram that shows the Cloud Sync service
 
 .Related link
 
-link:reference_endpoints.html[Endpoints that the data broker contacts]
+link:reference_sync_networking.html[Endpoints that the data broker contacts]
 
 == Networking requirements
 

@@ -234,8 +234,8 @@ Make sure that your AWS S3 bucket meets the following requirements.
 
 Sync relationships that include S3 storage require a data broker deployed in AWS or on your premises. In either case, Cloud Sync prompts you to associate the data broker with an AWS account during installation.
 
-* link:task_installing_aws.html[Learn how to deploy the AWS data broker]
-* link:task_installing_linux.html[Learn how to install the data broker on a Linux host]
+* link:task_sync_installing_aws.html[Learn how to deploy the AWS data broker]
+* link:task_sync_installing_linux.html[Learn how to install the data broker on a Linux host]
 
 ==== Supported AWS regions
 
@@ -295,8 +295,8 @@ Make sure that your Google Cloud Storage bucket meets the following requirements
 
 Sync relationships that include Google Cloud Storage require a data broker deployed in GCP or on your premises. Cloud Sync guides you through the data broker installation process when you create a sync relationship.
 
-* link:task_installing_gcp.html[Learn how to deploy the GCP data broker]
-* link:task_installing_linux.html[Learn how to install the data broker on a Linux host]
+* link:task_sync_installing_gcp.html[Learn how to deploy the GCP data broker]
+* link:task_sync_installing_linux.html[Learn how to install the data broker on a Linux host]
 
 ==== Supported GCP regions
 

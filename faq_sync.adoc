@@ -45,7 +45,7 @@ For pay-as-you-go pricing, Cloud Sync service charges are hourly, based on the n
 
 Cloud Sync licenses are also available through your NetApp representative. Each license enables 20 sync relationships for 12 months.
 
-link:concept_licensing.html[Learn more about licenses].
+link:concept_cloud_sync.html[Learn more about licenses].
 
 *Resource charges*
 
@@ -111,10 +111,7 @@ The Cloud Sync environment requires that the data broker is connected with the s
 
 In addition, the data broker needs an outbound internet connection over port 443 so it can communicate with the Cloud Sync service and contact a few other services and repositories.
 
-For more details:
-
-* link:reference_networking_overview.html[Review the networking overview]
-* link:reference_endpoints.html[Review the list of endpoints that the data broker contacts]
+For more details, link:reference_sync_networking.html[review networking requirements].
 
 === Are there networking limitations related to data broker connectivity?
 
@@ -140,7 +137,7 @@ You can schedule a relationship to sync data as often as every 1 minute.
 
 The data broker doesn't timeout when a single file fails to transfer. Instead, the data broker retries 3 times before skipping the file. The retry value is configurable in the settings for a sync relationship.
 
-link:task_managing_relationships.html#changing-the-settings-for-a-sync-relationship[Learn how to change the settings for a sync relationship].
+link:task_sync_managing_relationships.html#changing-the-settings-for-a-sync-relationship[Learn how to change the settings for a sync relationship].
 
 === What if I have a very large dataset?
 
@@ -168,7 +165,7 @@ Any of these methods establishes a secure connection between your on-premises NA
 
 === Is data encrypted by Cloud Sync?
 
-* Cloud Sync supports data-in-flight encryption between source and target NFS servers. link:task_nfs_encryption.html[Learn more].
+* Cloud Sync supports data-in-flight encryption between source and target NFS servers. link:task_sync_nfs_encryption.html[Learn more].
 
 * Encryption is not supported with SMB.
 
@@ -180,7 +177,7 @@ The following questions relate to data permissions.
 
 === Are SMB data permissions synced to the target location?
 
-You can set up Cloud Sync to preserve access control lists (ACLs) between a source SMB share and a target SMB share. Or you can manually copy the ACLs yourself. link:task_copying_acls.html[Learn how to copy ACLs between SMB shares].
+You can set up Cloud Sync to preserve access control lists (ACLs) between a source SMB share and a target SMB share. Or you can manually copy the ACLs yourself. link:task_sync_copying_acls.html[Learn how to copy ACLs between SMB shares].
 
 === Are NFS data permissions synced to the target location?
 
@@ -225,7 +222,7 @@ Multiple factors can impact data transfer performance. The overall sync performa
 
 So be sure to check the performance of your networking and the disk throughput on the target.
 
-Then you can consider accelerating sync performance by adding an additional data broker to share the load of that relationship. link:task_managing_relationships.html#accelerating-sync-performance[Learn how to accelerate sync performance].
+Then you can consider accelerating sync performance by adding an additional data broker to share the load of that relationship. link:task_sync_managing_relationships.html#accelerating-sync-performance[Learn how to accelerate sync performance].
 
 == Deleting things
 
@@ -239,7 +236,7 @@ Deleting a relationship stops all future data syncs and terminates payment. Any 
 
 By default, if you have an active sync relationship, the item deleted on the source server is not deleted from the target during the next synchronization. But there is an option in the sync settings for each relationship, where you can define that Cloud Sync will delete files in the target location if they were deleted from the source.
 
-link:task_managing_relationships.html#changing-the-settings-for-a-sync-relationship[Learn how to change the settings for a sync relationship].
+link:task_sync_managing_relationships.html#changing-the-settings-for-a-sync-relationship[Learn how to change the settings for a sync relationship].
 
 === What happens if I delete something from my target? Is it removed from my source too?
 

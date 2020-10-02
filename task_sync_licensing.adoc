@@ -16,7 +16,7 @@ There are two ways to pay for sync relationships after your 14-day free trial en
 
 You can use licenses from NetApp with an AWS or Azure subscription. For example, if you have 25 sync relationships, you can pay for the first 20 sync relationships using a license and then pay-as-you-go from AWS or Azure with the remaining 5 sync relationships.
 
-link:concept_licensing[Learn more about how licenses work].
+link:concept_cloud_sync.html[Learn more about how licenses work].
 
 .What if I don't immediately pay after my free trial ends?
 ****

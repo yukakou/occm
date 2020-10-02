@@ -38,7 +38,7 @@ Here's how in-flight encryption works:
 
 . After the initial copy, the service syncs any changed data every 24 hours. If there is data to sync, the process starts with the initiator opening an encrypted connection with the other data broker.
 +
-If you prefer to sync data more frequently, link:task_managing_relationships.html#changing-the-settings-for-a-sync-relationship[you can change the schedule after you create the relationship].
+If you prefer to sync data more frequently, link:task_sync_managing_relationships.html#changing-the-settings-for-a-sync-relationship[you can change the schedule after you create the relationship].
 
 == Supported NFS versions
 
@@ -57,12 +57,12 @@ Be sure to have the following:
 +
 You can select an existing data broker but it must function as the initiator. The listener data broker must be a _new_ data broker.
 +
-If you have not yet deployed a data broker, review the data broker requirements. Because you have strict security policies, be sure to review the networking requirements, which includes outbound traffic from port 443 and the link:reference_endpoints.html[internet endpoints] that the data broker contacts.
+If you have not yet deployed a data broker, review the data broker requirements. Because you have strict security policies, be sure to review the networking requirements, which includes outbound traffic from port 443 and the link:reference_sync_networking.html[internet endpoints] that the data broker contacts.
 +
-** link:task_installing_aws.html[Review AWS installation]
-** link:task_installing_azure.html[Review Azure installation]
-** link:task_installing_gcp.html[Review GCP installation]
-** link:task_installing_linux.html[Review Linux host installation]
+** link:task_sync_installing_aws.html[Review AWS installation]
+** link:task_sync_installing_azure.html[Review Azure installation]
+** link:task_sync_installing_gcp.html[Review GCP installation]
+** link:task_sync_installing_linux.html[Review Linux host installation]
 
 == Syncing NFS data using data-in-flight encryption
 

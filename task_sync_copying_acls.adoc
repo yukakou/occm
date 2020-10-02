@@ -32,7 +32,7 @@ Note that this feature is available for new sync relationships created after the
 
 * Any type of data broker.
 +
-This feature works with _any_ type of data broker: the AWS, Azure, Google Cloud Platform, or on-prem data broker. The on-prem data broker can run link:task_installing_linux.html[any supported operating system].
+This feature works with _any_ type of data broker: the AWS, Azure, Google Cloud Platform, or on-prem data broker. The on-prem data broker can run link:task_sync_installing_linux.html[any supported operating system].
 
 .Steps for a new relationship
 

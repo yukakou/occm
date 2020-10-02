@@ -15,7 +15,7 @@ summary: When you create a sync relationship, choose the GCP Data Broker option 
 [.lead]
 When you create a sync relationship, choose the GCP Data Broker option to deploy the data broker software on a new virtual machine instance in a VPC. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
 
-You also have the option to install the data broker on an existing Linux host in the cloud or on your premises. link:task_installing_linux.html[Learn more].
+You also have the option to install the data broker on an existing Linux host in the cloud or on your premises. link:task_sync_installing_linux.html[Learn more].
 
 == Supported GCP regions
 
@@ -27,7 +27,7 @@ All regions are supported.
 +
 When Cloud Sync deploys the data broker in GCP, it creates a security group that enables the required outbound communication.
 +
-If you need to limit outbound connectivity, see link:reference_endpoints.html[the list of endpoints that the data broker contacts].
+If you need to limit outbound connectivity, see link:reference_sync_networking.html[the list of endpoints that the data broker contacts].
 
 * NetApp recommends configuring the source, target, and data broker to use a Network Time Protocol (NTP) service. The time difference between the three components should not exceed 5 minutes.
 
