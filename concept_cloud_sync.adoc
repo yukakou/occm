@@ -23,7 +23,7 @@ video::oZNJtLvgNfQ[youtube, width=848, height=480]
 
 == How Cloud Sync works
 
-Cloud Sync is a software-as-a-service (SaaS) platform that consists of a data broker, a cloud-based portal, and a source and target.
+Cloud Sync is a software-as-a-service (SaaS) platform that consists of a data broker, a cloud-based interface available through Cloud Manager, and a source and target.
 
 The following image shows the relationship between Cloud Sync components:
 

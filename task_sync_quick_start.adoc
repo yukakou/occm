@@ -17,7 +17,7 @@ Getting started with the Cloud Sync service includes a few steps.
 ==== image:number1.png[number 1] Prepare your source and target
 
 [role="quick-margin-para"]
-Verify that your source and target are supported and setup. The most important requirement is to verify connectivity between the data broker and the source and target locations. link:reference_sync_requirements.html[Learn more].
+Verify that your source and target are supported and set up. The most important requirement is to verify connectivity between the data broker and the source and target locations. link:reference_sync_requirements.html[Learn more].
 
 ==== image:number2.png[number 2] Prepare a location for the NetApp data broker
 

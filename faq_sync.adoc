@@ -67,7 +67,7 @@ Note the following key points about using Cloud Sync outside of the cloud:
 
 === How do I access Cloud Sync?
 
-Go to the https://cloud.netapp.com/cloud-sync-service[Cloud Sync page on NetApp Cloud Central^] and click *Start Free Trial*. Log in or sign up to Cloud Central. After you’ve authenticated, you’re ready to get started using the Cloud Sync service.
+Cloud Sync is available from Cloud Manager in the *Sync* tab.
 
 == Supported sources and targets
 

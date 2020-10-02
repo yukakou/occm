@@ -52,7 +52,7 @@ You can install a data broker in AWS when you create a sync relationship.
 
 .Steps
 
-. Click *Create New Sync Relationship*.
+. Click *Create New Sync*.
 
 . On the *Define Sync Relationship* page, choose a source and target and click *Continue*.
 +

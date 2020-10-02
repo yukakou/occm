@@ -30,10 +30,12 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * AWS S3
 * Azure Blob
 * Azure NetApp Files (NFS)
+* Cloud Volumes ONTAP (NFS)
 * Cloud Volumes Service (NFS)
 * IBM Cloud Object Storage
 * Google Cloud Storage
 * NFS server
+* On-premises ONTAP cluster
 * StorageGRID
 
 | AWS S3 a|
@@ -41,12 +43,13 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * AWS EFS
 * AWS S3
 * Azure Blob
-* Azure NetApp Files (SMB)
-* Azure NetApp Files (NFS)
-* Cloud Volumes Service (NFS)
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
 * IBM Cloud Object Storage
 * Google Cloud Storage
 * NFS server
+* On-premises ONTAP cluster
 * SMB Server
 * StorageGRID
 
@@ -55,22 +58,13 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * AWS EFS
 * AWS S3
 * Azure Blob
-* Azure NetApp Files (SMB)
-* Azure NetApp Files (NFS)
-* Cloud Volumes Service (NFS)
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
 * Google Cloud Storage
 * IBM Cloud Object Storage
 * NFS server
-* SMB Server
-* StorageGRID
-
-| Azure NetApp Files (SMB) a|
-
-* AWS S3
-* Azure Blob
-* Azure NetApp Files (SMB)
-* IBM Cloud Object Storage
-* Google Cloud Storage
+* On-premises ONTAP cluster
 * SMB Server
 * StorageGRID
 
@@ -80,10 +74,52 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * AWS S3
 * Azure Blob
 * Azure NetApp Files (NFS)
+* Cloud Volumes ONTAP (NFS)
 * Cloud Volumes Service (NFS)
 * IBM Cloud Object Storage
 * Google Cloud Storage
 * NFS server
+* On-premises ONTAP cluster
+* StorageGRID
+
+| Azure NetApp Files (SMB) a|
+
+* AWS S3
+* Azure Blob
+* Azure NetApp Files (SMB)
+* Cloud Volumes ONTAP (SMB)
+* Cloud Volumes Service (SMB)
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* On-premises ONTAP cluster
+* SMB Server
+* StorageGRID
+
+| Cloud Volumes ONTAP (NFS) a|
+
+* AWS EFS
+* AWS S3
+* Azure Blob
+* Azure NetApp Files (NFS)
+* Cloud Volumes ONTAP (NFS)
+* Cloud Volumes Service (NFS)
+* IBM Cloud Object Storage
+* Google Cloud Storage
+* NFS server
+* On-premises ONTAP cluster
+* StorageGRID
+
+| Cloud Volumes ONTAP (SMB) a|
+
+* AWS S3
+* Azure Blob
+* Azure NetApp Files (SMB)
+* Cloud Volumes ONTAP (SMB)
+* Cloud Volumes Service (SMB)
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* On-premises ONTAP cluster
+* SMB Server
 * StorageGRID
 
 | Cloud Volumes Service (NFS) a|
@@ -92,10 +128,25 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * AWS S3
 * Azure Blob
 * Azure NetApp Files (NFS)
+* Cloud Volumes ONTAP (NFS)
 * Cloud Volumes Service (NFS)
 * IBM Cloud Object Storage
 * Google Cloud Storage
 * NFS server
+* On-premises ONTAP cluster
+* StorageGRID
+
+| Cloud Volumes Service (SMB) a|
+
+* AWS S3
+* Azure Blob
+* Azure NetApp Files (SMB)
+* Cloud Volumes ONTAP (SMB)
+* Cloud Volumes Service (SMB)
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* On-premises ONTAP cluster
+* SMB Server
 * StorageGRID
 
 | Google Cloud Storage a|
@@ -103,12 +154,13 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * AWS EFS
 * AWS S3
 * Azure Blob
-* Azure NetApp Files (SMB)
-* Azure NetApp Files (NFS)
-* Cloud Volumes Service (NFS)
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
 * Google Cloud Storage
 * IBM Cloud Object Storage
 * NFS server
+* On-premises ONTAP cluster
 * SMB Server
 * StorageGRID
 
@@ -117,12 +169,13 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * AWS EFS
 * AWS S3
 * Azure Blob
-* Azure NetApp Files (SMB)
-* Azure NetApp Files (NFS)
-* Cloud Volumes Service (NFS)
-* IBM Cloud Object Storage
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
 * Google Cloud Storage
+* IBM Cloud Object Storage
 * NFS server
+* On-premises ONTAP cluster
 * SMB Server
 * StorageGRID
 
@@ -132,10 +185,37 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * AWS S3
 * Azure Blob
 * Azure NetApp Files (NFS)
+* Cloud Volumes ONTAP (NFS)
 * Cloud Volumes Service (NFS)
 * IBM Cloud Object Storage
 * Google Cloud Storage
 * NFS server
+* On-premises ONTAP cluster
+* StorageGRID
+
+| On-prem ONTAP cluster (NFS) a|
+* AWS EFS
+* AWS S3
+* Azure Blob
+* Azure NetApp Files (NFS)
+* Cloud Volumes ONTAP (NFS)
+* Cloud Volumes Service (NFS)
+* IBM Cloud Object Storage
+* Google Cloud Storage
+* NFS server
+* On-premises ONTAP cluster
+* StorageGRID
+
+| On-prem ONTAP cluster (SMB) a|
+* AWS S3
+* Azure Blob
+* Azure NetApp Files (SMB)
+* Cloud Volumes ONTAP (SMB)
+* Cloud Volumes Service (SMB)
+* Google Cloud Storage
+* IBM Cloud Object Storage
+* On-premises ONTAP cluster
+* SMB Server
 * StorageGRID
 
 | ONTAP S3 Storage a|
@@ -146,8 +226,11 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * AWS S3
 * Azure Blob
 * Azure NetApp Files (SMB)
+* Cloud Volumes ONTAP (NFS)
+* Cloud Volumes Service (NFS)
 * IBM Cloud Object Storage
 * Google Cloud Storage
+* On-premises ONTAP cluster
 * SMB Server
 * StorageGRID
 
@@ -156,12 +239,13 @@ Cloud Sync enables you to sync data from a source to a target (this is called a 
 * AWS EFS
 * AWS S3
 * Azure Blob
-* Azure NetApp Files (SMB)
-* Azure NetApp Files (NFS)
-* Cloud Volumes Service (NFS)
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
 * IBM Cloud Object Storage
 * Google Cloud Storage
 * NFS server
+* On-premises ONTAP cluster
 * ONTAP S3 Storage
 * SMB Server
 * StorageGRID
@@ -184,7 +268,7 @@ Notes:
 *	Glacier
 *	Glacier Deep Archive
 
-== Networking requirements
+== Networking for the source and target
 
 * The source and target must have a network connection to the data broker.
 +
@@ -282,7 +366,7 @@ All regions are supported.
 
 === NFS server requirements
 
-* The NFS server can be a NetApp system or a non-NetApp system. For example, Cloud Volumes ONTAP or an AFF cluster.
+* The NFS server can be a NetApp system or a non-NetApp system.
 * The file server must allow the data broker host to access the exports.
 * NFS versions 3, 4.0, 4.1, and 4.2 are supported.
 +
@@ -302,7 +386,7 @@ When you set up a sync relationship that includes ONTAP S3 Storage, you'll need 
 
 === SMB server requirements
 
-* The SMB server can be a NetApp system or a non-NetApp system. For example, Cloud Volumes ONTAP or an AFF cluster.
+* The SMB server can be a NetApp system or a non-NetApp system.
 * The file server must allow the data broker host to access the exports.
 * SMB versions 1.0, 2.0, 2.1, 3.0 and 3.11 are supported.
 * Grant the "Administrators" group with "Full Control" permissions to the source and target folders.

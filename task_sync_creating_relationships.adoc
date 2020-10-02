@@ -48,8 +48,6 @@ image:screenshot_created_instance.gif[This screenshot shows a successfully deplo
 +
 If Cloud Sync is unable to retrieve the exports, click *Add Export Manually* and enter the name of an NFS export.
 +
-image:screenshot_add_export_manually.gif[A screenshot of the Add Export Manually button that appears in the top right of the screen.]
-+
 NOTE: If you want to sync more than one directory on the NFS server, then you must create additional sync relationships after you are done.
 
 . On the *AWS S3 Bucket* page, select a bucket:
@@ -78,7 +76,7 @@ If you enable this option, you also need to change a parameter in the local.json
 
 Delete Files on Target:: Choose to delete files from the target location, if they were deleted from the source. The default is to never deletes files from the target location.
 
-Object tagging:: When AWS S3 is the target in a sync relationship, Cloud Sync tags S3 objects with metadata that’s relevant to the sync operation. You can disable tagging of S3 objects, if it’s not desired in your environment. There’s no impact to Cloud Sync if you disable tagging—-Cloud Sync just stores the sync metadata in a different way.
+Object tagging:: When AWS S3 is the target in a sync relationship, Cloud Sync tags S3 objects with metadata that’s relevant to the sync operation. You can disable tagging of S3 objects, if it’s not desired in your environment. There’s no impact to Cloud Sync if you disable tagging—Cloud Sync just stores the sync metadata in a different way.
 
 File Types:: Define the file types to include in each sync: files, directories, and symbolic links.
 
