@@ -70,9 +70,7 @@ Create a new sync relationship between two NFS servers or between Azure NetApp F
 
 .Steps
 
-. Log in to http://cloud.netapp.com[NetApp Cloud Central^] and select Cloud Sync.
-
-. Click *Create New Sync Relationship*.
+. Click *Create New Sync*.
 
 . Drag and drop *NFS Server* to the source and target locations or *Azure NetApp Files* to the source and target locations and select *Yes* to enable data-in-flight encryption.
 +
@@ -118,7 +116,7 @@ image:screenshot_nfs_encryption_listener.gif["A screenshot showing the option to
 
 .. *Settings*: Define how source files and folders are synced and maintained in the target location.
 
-.. *Review*: Review the details of the sync relationship and then click **Create Relationship**.
+.. *Review*: Review the details of the sync relationship and then click *Create Relationship*.
 +
 image:screenshot_nfs_encryption_review.gif["A screenshot showing the review screen. It shows the NFS servers, data brokers, and networking information about each."]
 

@@ -36,7 +36,7 @@ This feature works with _any_ type of data broker: the AWS, Azure, Google Cloud 
 
 .Steps for a new relationship
 
-. From Cloud Sync, click *Create New Sync Relationship*.
+. From Cloud Sync, click *Create New Sync*.
 
 . Drag and drop *SMB Server* to the source and target and click *Continue*.
 

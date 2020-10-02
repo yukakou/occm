@@ -29,7 +29,7 @@ AWS enables you to pay-as-you-go or to pay annually.
 
 .Steps to pay-as-you-go
 
-. Go to the https://cloudsync.netapp.com/license[License Settings^] page.
+. Click *Sync > Licensing*.
 
 . Select *AWS Marketplace*
 
@@ -59,7 +59,7 @@ An Azure user account that has Contributor or Owner permissions in the relevant 
 
 .Steps
 
-. Go to the https://cloudsync.netapp.com/license[License Settings^] page.
+. Click *Sync > Licensing*.
 
 . Select *Azure Marketplace*.
 

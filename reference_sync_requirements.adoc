@@ -19,8 +19,6 @@ Prepare to sync data by verifying that your source and target are supported and 
 
 Cloud Sync enables you to sync data from a source to a target (this is called a _sync relationship_). You should understand the supported relationships before you get started.
 
-TIP: An NFS server or SMB server can be a NetApp system or a non-NetApp system. For example, Cloud Volumes ONTAP or an AFF cluster.
-
 [cols=2*,options="header",cols="20,25"]
 |===
 | Source location
@@ -172,10 +170,6 @@ TIP: An NFS server or SMB server can be a NetApp system or a non-NetApp system. 
 
 Notes:
 
-. An NFS server or SMB server can be a NetApp system or a non-NetApp system. For example, Cloud Volumes ONTAP or an AFF cluster.
-
-. To sync SMB data between Cloud Volumes Service and an SMB server, you'll need to choose SMB to SMB.
-
 . You can choose a specific Azure Blob storage tier when a Blob container is the target:
 +
 * Hot storage
@@ -198,49 +192,11 @@ For example, if an NFS server is in your data center and the data broker is in A
 
 * NetApp recommends configuring the source, target, and data broker to use a Network Time Protocol (NTP) service. The time difference between the three components should not exceed 5 minutes.
 
-== Azure NetApp Files requirement
+== Source and target requirements
 
-Use the Premium or Ultra service level when you sync data to or from Azure NetApp Files. You might experience failures and performance issues if the disk service level is Standard.
+Verify that your source and targets meet the following requirements.
 
-TIP: Consult a solutions architect if you need help determining the right service level. The volume size and volume tier determines the throughput that you can get.
-
-https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels#throughput-limits[Learn more about Azure NetApp Files service levels and throughput].
-
-== NFS server requirements
-
-* The NFS server can be a NetApp system or a non-NetApp system. For example, Cloud Volumes ONTAP or an AFF cluster.
-* The file server must allow the data broker host to access the exports.
-* NFS versions 3, 4.0, 4.1, and 4.2 are supported.
-+
-The desired version must be enabled on the server.
-* If you want to sync NFS data from an ONTAP system, ensure that access to the NFS export list for an SVM is enabled (vserver nfs modify -vserver _svm_name_ -showmount enabled).
-+
-NOTE: The default setting for showmount is _enabled_ starting with ONTAP 9.2.
-
-== SMB server requirements
-
-* The SMB server can be a NetApp system or a non-NetApp system. For example, Cloud Volumes ONTAP or an AFF cluster.
-* The file server must allow the data broker host to access the exports.
-* SMB versions 1.0, 2.0, 2.1, 3.0 and 3.11 are supported.
-* Grant the "Administrators" group with "Full Control" permissions to the source and target folders.
-+
-If you don’t grant this permission, then the data broker might not have sufficient permissions to get the ACLs on a file or directory. If this occurs, you’ll receive the following error: "getxattr error 95"
-
-=== SMB limitation for hidden directories and files
-
-An SMB limitation affects hidden directories and files when syncing data between SMB servers. If any of the directories or files on the source SMB server were hidden through Windows, the hidden attribute isn't copied to the target SMB server.
-
-=== SMB sync behavior due to case-insensitivity limitation
-
-The SMB protocol is case-insensitive, which means uppercase and lowercase letters are treated as being the same. This behavior can result in overwritten files and directory copy errors, if a sync relationship includes an SMB server and data already exists on the target.
-
-For example, let's say that there's a file named "a" on the source and a file named "A" on the target. When Cloud Sync copies the file named "a" to the target, file "A" is overwritten by file "a" from the source.
-
-In the case of directories, let's say that there's a directory named "b" on the source and a directory named "B" on the target. When Cloud Sync tries to copy the directory named "b" to the target, Cloud Sync receives an error that says the directory already exists. As a result, Cloud Sync always fails to copy the directory named “b.”
-
-The best way to avoid this limitation is to ensure that you sync data to an empty directory.
-
-== [[s3]]AWS S3 bucket requirements
+=== [[s3]]AWS S3 bucket requirements
 
 Make sure that your AWS S3 bucket meets the following requirements.
 
@@ -274,7 +230,7 @@ You can find the Role ARN by going to the EC2 console, selecting the data broker
 +
 image:screenshot_iam_role_arn.gif[A screenshot of the AWS IAM console showing a Role ARN.]
 
-== [[blob]]Azure Blob storage requirements
+=== [[blob]]Azure Blob storage requirements
 
 Make sure that your Azure Blob storage meets the following requirements.
 
@@ -301,7 +257,15 @@ The SAS must allow access to the Blob service and all resource types (Service, C
 
 image:screenshot_connection_string_sas.gif["Shows a shared access signature, which is available from the Azure portal by selecting a storage account and then clicking Shared access signature."]
 
-== Google Cloud Storage bucket requirements
+=== Azure NetApp Files requirement
+
+Use the Premium or Ultra service level when you sync data to or from Azure NetApp Files. You might experience failures and performance issues if the disk service level is Standard.
+
+TIP: Consult a solutions architect if you need help determining the right service level. The volume size and volume tier determines the throughput that you can get.
+
+https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels#throughput-limits[Learn more about Azure NetApp Files service levels and throughput].
+
+=== Google Cloud Storage bucket requirements
 
 Make sure that your Google Cloud Storage bucket meets the following requirements.
 
@@ -316,7 +280,18 @@ Sync relationships that include Google Cloud Storage require a data broker deplo
 
 All regions are supported.
 
-== ONTAP S3 Storage requirements
+=== NFS server requirements
+
+* The NFS server can be a NetApp system or a non-NetApp system. For example, Cloud Volumes ONTAP or an AFF cluster.
+* The file server must allow the data broker host to access the exports.
+* NFS versions 3, 4.0, 4.1, and 4.2 are supported.
++
+The desired version must be enabled on the server.
+* If you want to sync NFS data from an ONTAP system, ensure that access to the NFS export list for an SVM is enabled (vserver nfs modify -vserver _svm_name_ -showmount enabled).
++
+NOTE: The default setting for showmount is _enabled_ starting with ONTAP 9.2.
+
+=== ONTAP S3 Storage requirements
 
 ONTAP 9.7 supports the Amazon Simple Storage Service (Amazon S3) as a public preview. link:https://www.netapp.com/us/media/tr-4814.pdf[Learn more about ONTAP support for Amazon S3^].
 
@@ -324,3 +299,26 @@ When you set up a sync relationship that includes ONTAP S3 Storage, you'll need 
 
 * The IP address of the LIF that's connected to ONTAP S3
 * The access key and secret key that ONTAP is configured to use
+
+=== SMB server requirements
+
+* The SMB server can be a NetApp system or a non-NetApp system. For example, Cloud Volumes ONTAP or an AFF cluster.
+* The file server must allow the data broker host to access the exports.
+* SMB versions 1.0, 2.0, 2.1, 3.0 and 3.11 are supported.
+* Grant the "Administrators" group with "Full Control" permissions to the source and target folders.
++
+If you don’t grant this permission, then the data broker might not have sufficient permissions to get the ACLs on a file or directory. If this occurs, you’ll receive the following error: "getxattr error 95"
+
+==== SMB limitation for hidden directories and files
+
+An SMB limitation affects hidden directories and files when syncing data between SMB servers. If any of the directories or files on the source SMB server were hidden through Windows, the hidden attribute isn't copied to the target SMB server.
+
+==== SMB sync behavior due to case-insensitivity limitation
+
+The SMB protocol is case-insensitive, which means uppercase and lowercase letters are treated as being the same. This behavior can result in overwritten files and directory copy errors, if a sync relationship includes an SMB server and data already exists on the target.
+
+For example, let's say that there's a file named "a" on the source and a file named "A" on the target. When Cloud Sync copies the file named "a" to the target, file "A" is overwritten by file "a" from the source.
+
+In the case of directories, let's say that there's a directory named "b" on the source and a directory named "B" on the target. When Cloud Sync tries to copy the directory named "b" to the target, Cloud Sync receives an error that says the directory already exists. As a result, Cloud Sync always fails to copy the directory named “b.”
+
+The best way to avoid this limitation is to ensure that you sync data to an empty directory.

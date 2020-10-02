@@ -19,23 +19,17 @@ The steps below provide an example that shows how to set up a sync relationship 
 
 .Steps
 
-. Go to http://cloud.netapp.com[NetApp Cloud Central^].
+. In Cloud Manager, click *Sync*.
 
-. Sign up or log in and then start a free trial of Cloud Sync.
-
-. After you log in, review details about using the service after the free trial ends, and then click **OK**.
-
-. On the **Select Source & Target** page, choose a source and target.
+. On the *Define Sync Relationship* page, choose a source and target.
 +
 The following steps provide an example of how to create a sync relationship from an NFS server to an S3 bucket.
 +
 image:screenshot_nfs_to_s3.gif[A screenshot that shows NFS as a source and S3 as a target in a new sync relationship.]
 
-. Review the details about how the service works and then click **Continue**.
+. On the *NFS Server* page, enter the IP address or fully qualified domain name of the NFS server that you want to sync to AWS.
 
-. On the **NFS Server** page, enter the IP address or fully qualified domain name of the NFS server that you want to sync to AWS.
-
-. On the **Data Broker** page, follow the prompts to create a data broker virtual machine in AWS, Azure, or Google Cloud Platform, or to install the data broker software an existing Linux host.
+. On the *Data Broker* page, follow the prompts to create a data broker virtual machine in AWS, Azure, or Google Cloud Platform, or to install the data broker software an existing Linux host.
 +
 For more details, refer to the following pages:
 +
@@ -44,13 +38,13 @@ For more details, refer to the following pages:
 * link:task_sync_installing_gcp.html[Installing the data broker in GCP]
 * link:task_sync_installing_linux.html[Installing the data broker on a Linux host]
 
-. After you install the data broker, click **Continue**.
+. After you install the data broker, click *Continue*.
 +
 The following image shows a successfully deployed data broker in AWS:
 +
 image:screenshot_created_instance.gif[This screenshot shows a successfully deployed instance. The interface shows details about the instance including AWS networking.]
 
-. [[filter]]On the **Directories** page, select a top-level directory or subdirectory.
+. [[filter]]On the *Directories* page, select a top-level directory or subdirectory.
 +
 If Cloud Sync is unable to retrieve the exports, click *Add Export Manually* and enter the name of an NFS export.
 +
@@ -58,7 +52,7 @@ image:screenshot_add_export_manually.gif[A screenshot of the Add Export Manually
 +
 NOTE: If you want to sync more than one directory on the NFS server, then you must create additional sync relationships after you are done.
 
-. On the **AWS S3 Bucket** page, select a bucket:
+. On the *AWS S3 Bucket* page, select a bucket:
 +
 * Drill down to select an existing folder within the bucket or to select a new folder that you create inside the bucket.
 * Click *Add to the list* to select an S3 bucket that is not associated with your AWS account. link:reference_sync_requirements.html#s3[Specific permissions must be applied to the S3 bucket].
@@ -70,7 +64,7 @@ NOTE: If you want to sync more than one directory on the NFS server, then you mu
 +
 image:screenshot_bucket_setup.gif[This screenshot shows the Bucket Setup page which enables you to choose Yes or No for encryption and to select a specific S3 storage class for the synced data.]
 
-. On the **Settings** page, define how source files and folders are synced and maintained in the target location:
+. On the *Settings* page, define how source files and folders are synced and maintained in the target location:
 +
 Schedule:: Choose a recurring schedule for future syncs or turn off the sync schedule. You can schedule a relationship to sync data as often as every 1 minute.
 
@@ -96,14 +90,12 @@ File Size:: Choose to sync all files regardless of their size or just files that
 
 Date Modified:: Choose all files regardless of their last modified date, files modified after a specific date, before a specific date, or between a time range.
 
-. On the **Relationship Tags** page, enter up to 9 relationship tags and then click **Continue**.
+. On the *Relationship Tags* page, enter up to 9 relationship tags and then click *Continue*.
 +
 The Cloud Sync service assigns the tags to each object that it syncs to the S3 bucket.
 
-. Review the details of the sync relationship and then click **Create Relationship**.
+. Review the details of the sync relationship and then click *Create Relationship*.
 
-. After the Cloud Sync service successfully creates the relationship, click **View in Dashboard** to view details about the data sync relationship.
-
-**Result**
+*Result*
 
 Cloud Sync starts syncing data between the source and target.

@@ -22,7 +22,7 @@ Rather than wait for the next scheduled sync, you can press a button to immediat
 
 .Steps
 
-. Hover over the sync relationship and click the action menu.
+. From the *Sync Dashboard*, hover over the sync relationship and click the action menu.
 +
 image:screenshot_relationship_menu.gif[A screenshot that shows the action menu that appears when you hover your mouse over a sync relationship.]
 
@@ -51,8 +51,6 @@ For example, let's say you have three relationships:
 You want to accelerate the performance of relationship 1 so you add a new data broker to that relationship (data broker C). Because data broker A is also used in relationship 3, the new data broker is automatically added to relationship 3, as well.
 
 .Steps
-
-. Go to the *Sync Relationships* dashboard.
 
 . Ensure that at least one of the existing data brokers in the relationship are online.
 
