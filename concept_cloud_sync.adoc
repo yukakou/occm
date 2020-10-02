@@ -60,7 +60,7 @@ If you go above 20 sync relationships and you've subscribed through Azure, you p
 * https://aws.amazon.com/marketplace/pp/B01LZV5DUJ[View pay-as-you-go pricing in AWS^]
 * https://aws.amazon.com/marketplace/pp/B06XX5V3M2[View annual pricing in AWS^]
 * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice[View pricing in Azure^]
-* link:task_licensing.html[Learn how to subscribe through AWS or Azure]
+* link:task_sync_licensing.html[Learn how to subscribe through AWS or Azure]
 
 === Licenses from NetApp
 
@@ -68,7 +68,7 @@ Another way to pay for sync relationships up front is by purchasing licenses dir
 
 You can use these licenses with an AWS or Azure subscription. For example, if you have 25 sync relationships, you can pay for the first 20 sync relationships using a license and then pay-as-you-go from AWS or Azure with the remaining 5 sync relationships.
 
-link:task_licensing.html[Learn how to purchase licenses and add them to Cloud Sync].
+link:task_sync_licensing.html[Learn how to purchase licenses and add them to Cloud Sync].
 
 === License terms
 
@@ -90,7 +90,7 @@ The following image shows the relationship between Cloud Sync components:
 
 image:diagram_cloud_sync_overview.gif[Conceptual image that shows data flowing from a source to a target. The data broker software acts as a mediator and polls the Cloud Sync service for tasks.]
 
-The NetApp data broker software syncs data from a source to a target (this is called a _sync relationship_). You can run the data broker in AWS, Azure, Google Cloud Platform, or on your premises. The data broker needs an outbound internet connection over port 443 so it can communicate with the Cloud Sync service and contact a few other services and repositories. link:reference_endpoints.html[View the list of endpoints].
+The NetApp data broker software syncs data from a source to a target (this is called a _sync relationship_). You can run the data broker in AWS, Azure, Google Cloud Platform, or on your premises. The data broker needs an outbound internet connection over port 443 so it can communicate with the Cloud Sync service and contact a few other services and repositories. link:reference_sync_networking.html[View the list of endpoints].
 
 After the initial copy, the service syncs any changed data based on the schedule that you set.
 
