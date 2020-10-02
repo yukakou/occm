@@ -31,9 +31,9 @@ AWS enables you to pay-as-you-go or to pay annually.
 
 . Click *Sync > Licensing*.
 
-. Select *AWS Marketplace*
+. Select *AWS*
 
-. Click **Subscribe** and then click **Continue**.
+. Click *Subscribe* and then click *Continue*.
 
 . Subscribe from the AWS Marketplace, and then log back in to the Cloud Sync service to complete the registration.
 +
@@ -61,7 +61,7 @@ An Azure user account that has Contributor or Owner permissions in the relevant 
 
 . Click *Sync > Licensing*.
 
-. Select *Azure Marketplace*.
+. Select *Azure*.
 
 . Click *Subscribe* and then click *Continue*.
 
@@ -85,4 +85,6 @@ To pay for your sync relationships up front, you must purchase one or more licen
 
 . Purchase a license by mailto:ng-cloudsync-contact@netapp.com?subject=Cloud%20Sync%20Service%20-%20BYOL%20License%20Purchase%20Request[contacting NetApp].
 
-. Go to the https://cloudsync.netapp.com/license[License Settings^] page and add the license.
+. In Cloud Manager, click *Sync > Licensing*.
+
+. Click *Add License* and add the license.
