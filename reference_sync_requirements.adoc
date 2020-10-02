@@ -226,6 +226,20 @@ NOTE: The default setting for showmount is _enabled_ starting with ONTAP 9.2.
 +
 If you don’t grant this permission, then the data broker might not have sufficient permissions to get the ACLs on a file or directory. If this occurs, you’ll receive the following error: "getxattr error 95"
 
+=== SMB limitation for hidden directories and files
+
+An SMB limitation affects hidden directories and files when syncing data between SMB servers. If any of the directories or files on the source SMB server were hidden through Windows, the hidden attribute isn't copied to the target SMB server.
+
+=== SMB sync behavior due to case-insensitivity limitation
+
+The SMB protocol is case-insensitive, which means uppercase and lowercase letters are treated as being the same. This behavior can result in overwritten files and directory copy errors, if a sync relationship includes an SMB server and data already exists on the target.
+
+For example, let's say that there's a file named "a" on the source and a file named "A" on the target. When Cloud Sync copies the file named "a" to the target, file "A" is overwritten by file "a" from the source.
+
+In the case of directories, let's say that there's a directory named "b" on the source and a directory named "B" on the target. When Cloud Sync tries to copy the directory named "b" to the target, Cloud Sync receives an error that says the directory already exists. As a result, Cloud Sync always fails to copy the directory named “b.”
+
+The best way to avoid this limitation is to ensure that you sync data to an empty directory.
+
 == [[s3]]AWS S3 bucket requirements
 
 Make sure that your AWS S3 bucket meets the following requirements.

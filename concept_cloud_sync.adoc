@@ -23,6 +23,8 @@ video::oZNJtLvgNfQ[youtube, width=848, height=480]
 
 == Supported storage types
 
+Cloud Sync supports the following storage types:
+
 * Any NFS server
 * Any SMB server
 * AWS EFS
@@ -37,6 +39,8 @@ video::oZNJtLvgNfQ[youtube, width=848, height=480]
 * ONTAP S3 Storage
 * StorageGRID
 
+link:reference_sync_requirements.html[Review the supported sync relationships].
+
 == Cost
 
 There are two types of costs associated with using Cloud Sync: resource charges and service charges.
@@ -45,22 +49,24 @@ Resource charges:: The resource charges are related to the compute and storage c
 
 Service charges:: There are two ways to pay for sync relationships after your 14-day free trial ends. The first option is to subscribe from AWS or Azure, which enables you to pay hourly or annually. The second option is to purchase licenses directly from NetApp. Read the following sections for more details.
 
-=== AWS or Azure subscriptions
+=== Marketplace subscription
 
 Subscribing to the Cloud Sync service from AWS or Azure enables you to pay at an hourly rate, or to pay annually. You can subscribe through either AWS or Azure, depending on where you want to be billed.
 
 Hourly subscriptions::
-With an hourly pay-as-you-go subscription, the Cloud Sync service charges hourly based on the number of sync relationships that you create. For pricing details, go to the https://cloud.netapp.com/cloud-sync-service[Cloud Sync service page^].
+With an hourly pay-as-you-go subscription, the Cloud Sync service charges hourly based on the number of sync relationships that you create.
++
+* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice[View pricing in Azure^]
+* https://aws.amazon.com/marketplace/pp/B01LZV5DUJ[View pay-as-you-go pricing in AWS^]
 
 Annual subscriptions::
 An annual subscription provides a license for 20 sync relationships that you pay for up front.
 +
 If you go above 20 sync relationships and you've subscribed through Azure, you pay for the additional relationships by the hour.
++
+https://aws.amazon.com/marketplace/pp/B06XX5V3M2[View annual pricing in AWS^]
 
-* https://aws.amazon.com/marketplace/pp/B01LZV5DUJ[View pay-as-you-go pricing in AWS^]
-* https://aws.amazon.com/marketplace/pp/B06XX5V3M2[View annual pricing in AWS^]
-* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-sync-service?tab=PlansAndPrice[View pricing in Azure^]
-* link:task_sync_licensing.html[Learn how to subscribe through AWS or Azure]
+link:task_sync_licensing.html[Learn how to subscribe through AWS or Azure]
 
 === Licenses from NetApp
 
@@ -106,27 +112,9 @@ The credentials are locally encrypted on the data broker machine using HashiCorp
 
 == Limitations
 
-These known limitations identify platforms or features that are not supported.
-
-=== Unsupported regions
-
 * Cloud Sync is not supported in China.
 
 * In addition to China, the Cloud Sync data broker is not supported in the following regions:
 ** AWS GovCloud (US)
 ** Azure US Gov
 ** Azure US DoD
-
-=== SMB limitation for hidden directories and files
-
-An SMB limitation affects hidden directories and files when syncing data between SMB servers. If any of the directories or files on the source SMB server were hidden through Windows, the hidden attribute isn't copied to the target SMB server.
-
-=== SMB sync behavior due to case-insensitivity limitation
-
-The SMB protocol is case-insensitive, which means uppercase and lowercase letters are treated as being the same. This behavior can result in overwritten files and directory copy errors, if a sync relationship includes an SMB server and data already exists on the target.
-
-For example, let's say that there's a file named "a" on the source and a file named "A" on the target. When Cloud Sync copies the file named "a" to the target, file "A" is overwritten by file "a" from the source.
-
-In the case of directories, let's say that there's a directory named "b" on the source and a directory named "B" on the target. When Cloud Sync tries to copy the directory named "b" to the target, Cloud Sync receives an error that says the directory already exists. As a result, Cloud Sync always fails to copy the directory named “b.”
-
-The best way to avoid this limitation is to ensure that you sync data to an empty directory.
