@@ -43,7 +43,7 @@ While you should perform almost all tasks from the SaaS user interface, a local 
 +
 If the Connector doesn't have a public IP address, you'll need a VPN connection or you'll need to connect from a jump host that's in the same network as the Connector.
 
-. Click the *Connector* drop-down and then click *Go to local UI* for a specific Connector.
+. Click the *Connector* drop-down, click the action menu for a Connector, and then click *Go to Local UI*.
 +
 image:screenshot_connector_local_ui.gif[A screenshot that shows the Connector icon in the header and the Go to local UI action.]
 +
@@ -62,7 +62,7 @@ Note the following about removing a Connector:
 
 . Click the Connector drop-down from the Cloud Manager header.
 
-. Hover over an inactive Connector and click the trash icon to remove it.
+. Click the action menu for an inactive Connector and click *Remove Connector*.
 +
 image:screenshot_connector_remove.gif[A screenshot of the Connector widget where you can remove an inactive Connector.]
 
