@@ -343,9 +343,9 @@ entries:
                 url: /task_adding_gcp_accounts.html
           - title: NetApp Support Site credentials
             url: /task_adding_nss_accounts.html
-      - title: Manage the Cloud Central account
+      - title: Manage your account
         url: /task_managing_cloud_central_accounts.html
-      - title: Manage an HTTPS certificate
+      - title: Install an HTTPS certificate
         url: /task_installing_https_cert.html
       - title: Remove working environments
         url: /task_removing.html
