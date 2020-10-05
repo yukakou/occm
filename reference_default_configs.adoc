@@ -89,17 +89,23 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 
 === Azure (single node)
 
-* Two Premium SSD disks:
-** One 90 GB disk for boot data
+* Three Premium SSD disks:
+** One 10 GB disk for boot data
 ** One 140 GB disk for root data
+** One 128 GB disk for NVRAM
++
+If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSDs, then the system uses an Ultra SSD for NVRAM, rather than a Premium SSD.
+
+* One 1024 GB Standard HDD disk for saving cores
 
 * One Azure snapshot for each boot disk and root disk
 
 === Azure (HA pairs)
 
-*	Two 90 GB Premium SSD disks for the boot volume (one per node)
+*	Two 10 GB Premium SSD disks for the boot volume (one per node)
 * Two 140 GB Premium Storage page blobs for the root volume (one per node)
-* Two 128 GB Standard HDD disks for saving cores (one per node)
+* Two 1024 GB Standard HDD disks for saving cores (one per node)
+* Two 128 GB Premium SSD disks for NVRAM (one per node)
 * One Azure snapshot for each boot disk and root disk
 
 === GCP
