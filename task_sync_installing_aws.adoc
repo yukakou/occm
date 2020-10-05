@@ -1,0 +1,95 @@
+---
+sidebar: sidebar
+permalink: task_sync_installing_aws.html
+keywords: data broker, install, aws, networking, permissions, regions, install data broker in aws, install in aws, deploy in aws, deploy data broker in aws, cft, template, iam role, use your own iam role, regions, supported regions, networking requirements, port, ports, 443, port 443, ntp, network time protocol, permissions, iam role, iam permissions, aws data broker
+summary: When you create a sync relationship, choose the AWS Data Broker option to deploy the data broker software on a new EC2 instance in a VPC. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
+---
+
+= Installing the data broker in AWS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+When you create a sync relationship, choose the AWS Data Broker option to deploy the data broker software on a new EC2 instance in a VPC. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
+
+You also have the option to install the data broker on an existing Linux host in the cloud or on your premises. link:task_sync_installing_linux.html[Learn more].
+
+== Supported AWS regions
+
+All regions are supported except for the China and GovCloud (US) regions.
+
+== Networking requirements
+
+* The data broker needs an outbound internet connection so it can poll the Cloud Sync service for tasks over port 443.
++
+When Cloud Sync deploys the data broker in AWS, it creates a security group that enables the required outbound communication. Note that you can configure the data broker to use a proxy server during the installation process.
++
+If you need to limit outbound connectivity, see link:reference_sync_networking.html[the list of endpoints that the data broker contacts].
+
+* NetApp recommends configuring the source, target, and data broker to use a Network Time Protocol (NTP) service. The time difference between the three components should not exceed 5 minutes.
+
+== Permissions required to deploy the data broker in AWS
+
+The AWS user account that you use to deploy the data broker must have the permissions included in https://s3.amazonaws.com/metadata.datafabric.io/docs/aws_iam_policy.json[this NetApp-provided policy^].
+
+== [[iam]]Requirements to use your own IAM role with the AWS data broker
+
+When Cloud Sync deploys the data broker, it creates an IAM role for the data broker instance. You can deploy the data broker using your own IAM role, if you prefer. You might use this option if your organization has strict security policies.
+
+The IAM role must meet the following requirements:
+
+* The EC2 service must be allowed to assume the IAM role as a trusted entity.
+* link:media/aws_iam_policy_data_broker.json[The permissions defined in this JSON file^] must be attached to the IAM role so the data broker can function properly.
+
+Follow the steps below to specify the IAM role when deploying the data broker.
+
+== Installing the data broker
+
+You can install a data broker in AWS when you create a sync relationship.
+
+.Steps
+
+. Click *Create New Sync*.
+
+. On the *Define Sync Relationship* page, choose a source and target and click *Continue*.
++
+Complete the steps until you reach the *Data Broker* page.
+
+. On the *Data Broker* page, click *Create Data Broker* and then select *Amazon Web Services*.
++
+If you already have a data broker, you'll need to click the image:screenshot_plus_icon.gif[A screenshot if the plus icon] icon first.
++
+image:screenshot_create_data_broker.gif[A screenshot of the Data Broker page that enables you to choose between an AWS, Azure, GCP, and On-Prem data broker.]
+
+. Enter a name for the data broker and click *Continue*.
+
+. Enter an AWS access key so Cloud Sync can create the data broker in AWS on your behalf.
++
+The keys aren't saved or used for any other purposes.
++
+If you'd rather not provide access keys, click the link at the bottom of the page to use a CloudFormation template instead. When you use this option, you don't need to provide credentials because you are logging in directly to AWS.
++
+[[cft]]The following video shows how to launch the data broker instance using a CloudFormation template:
++
+video::video_cloud_sync.mp4[width=848, height=480]
+
+. If you entered an AWS access key, select a location for the instance, select a key pair, choose whether to enable a public IP address, and then select an existing IAM role, or leave the field blank so Cloud Sync creates the role for you.
++
+If you choose your own IAM role, <<iam,you'll need to provide the required permissions>>.
++
+image:screenshot_aws_data_broker.gif[A screenshot of the information that you need to provide when deploying a data broker in AWS.]
+
+. After the data broker is available, click *Continue* in Cloud Sync.
++
+The following image shows a successfully deployed instance in AWS:
++
+image:screenshot_created_instance.gif[This screenshot shows a successfully deployed instance. The interface shows details about the instance including AWS networking.]
+
+. Complete the pages in the wizard to create the new sync relationship.
+
+.Result
+
+You have deployed a data broker in AWS and created a new sync relationship. You can use this data broker with additional sync relationships.

@@ -88,7 +88,7 @@ A Connector is required to tier data to the cloud. When tiering data to AWS S3, 
 * link:concept_connectors.html[Learn about Connectors]
 * link:task_creating_connectors_aws.html[Creating a Connector in AWS]
 * link:reference_cloud_mgr_reqs.html[Connector host requirements]
-* link:task_installing_linux.html[Installing the Connector on an existing Linux host]
+* link:task_sync_installing_linux.html[Installing the Connector on an existing Linux host]
 * link:task_managing_connectors.html[Switching between Connectors]
 
 === Preparing networking for the Connector

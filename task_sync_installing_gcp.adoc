@@ -1,0 +1,93 @@
+---
+sidebar: sidebar
+permalink: task_sync_installing_gcp.html
+keywords: data broker, install, gcp, google, networking, permissions, regions, install data broker in gcp, install in gcp, deploy in gcp, deploy data broker in gcp, install data broker in google, install in google, deploy in google, deploy data broker in google, networking requirements, port, ports, 443, port 443, ntp, network time protocol, gcp data broker, service account
+summary: When you create a sync relationship, choose the GCP Data Broker option to deploy the data broker software on a new virtual machine instance in a VPC. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
+---
+
+= Installing the data broker in Google Cloud Platform
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+When you create a sync relationship, choose the GCP Data Broker option to deploy the data broker software on a new virtual machine instance in a VPC. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
+
+You also have the option to install the data broker on an existing Linux host in the cloud or on your premises. link:task_sync_installing_linux.html[Learn more].
+
+== Supported GCP regions
+
+All regions are supported.
+
+== Networking requirements
+
+* The data broker needs an outbound internet connection so it can poll the Cloud Sync service for tasks over port 443.
++
+When Cloud Sync deploys the data broker in GCP, it creates a security group that enables the required outbound communication.
++
+If you need to limit outbound connectivity, see link:reference_sync_networking.html[the list of endpoints that the data broker contacts].
+
+* NetApp recommends configuring the source, target, and data broker to use a Network Time Protocol (NTP) service. The time difference between the three components should not exceed 5 minutes.
+
+== Permissions required to deploy the data broker in GCP
+
+Ensure that the GCP user who deploys the data broker has the following permissions:
+
+[source,yaml]
+- compute.networks.list
+- compute.regions.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.operations.get
+- iam.serviceAccounts.list
+
+== Permissions required for the service account
+
+When you deploy the data broker, you need to select a service account that has the following permissions:
+
+[source,yaml]
+- logging.logEntries.create
+- resourcemanager.projects.get
+- storage.buckets.get
+- storage.buckets.list
+- storage.objects.*
+
+== Installing the data broker
+
+You can install a data broker in GCP when you create a sync relationship.
+
+.Steps
+
+. Click *Create New Sync*.
+
+. On the *Define Sync Relationship* page, choose a source and target and click *Continue*.
++
+Complete the steps until you reach the *Data Broker* page.
+
+. On the *Data Broker* page, click *Create Data Broker* and then select *Google Cloud Platform*.
++
+If you already have a data broker, you'll need to click the image:screenshot_plus_icon.gif[A screenshot if the plus icon] icon first.
++
+image:screenshot_create_data_broker.gif["A screenshot of the Data Broker page that enables you to choose between an AWS, Azure, GCP, and On-Prem data broker."]
+
+. Enter a name for the data broker and click *Continue*.
+
+. If you're prompted, log in with your Google account.
++
+The form is owned and hosted by Google. Your credentials are not provided to NetApp.
+
+. Select a project and service account and then choose a location for the data broker.
++
+image:screenshot_data_broker_gcp.gif[A screenshot that shows the information required to deploy a data broker in Google Cloud.]
+
+. Once the data broker is available, click *Continue* in Cloud Sync.
++
+The instance takes approximately 5 to 10 minutes to deploy. You can monitor the progress from the Cloud Sync service, which automatically refreshes when the instance is available.
+
+. Complete the pages in the wizard to create the new sync relationship.
+
+.Result
+
+You've deployed a data broker in GCP and created a new sync relationship. You can use this data broker with additional sync relationships.

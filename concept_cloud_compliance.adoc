@@ -35,15 +35,13 @@ Cloud Compliance can scan data from the following types of data sources:
 * Amazon S3
 * Databases that reside anywhere (there is no requirement that the database resides in a working environment)
 
-For Azure NetApp Files, Cloud Compliance can scan any volumes that are in the same region as Cloud Manager.
+*Note:* For Azure NetApp Files, Cloud Compliance can scan any volumes that are in the same region as Cloud Manager.
 
 == Cost
 
-* The cost to use Cloud Compliance depends on the amount of data that you're scanning. The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. This includes data from Cloud Volumes ONTAP volumes, Azure NetApp Files volumes, Amazon S3 buckets, and database schemas. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
+* The cost to use Cloud Compliance depends on the amount of data that you're scanning. As of October 7th, 2020, the first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. This includes data from Cloud Volumes ONTAP volumes, Azure NetApp Files volumes, Amazon S3 buckets, and database schemas. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
 +
 link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-compliance-service[Learn how to subscribe^].
-+
-NOTE: Throughout September 2020, licensing to scan more than 1 TB of data is not required. This new licensing model will go into affect in October 2020.
 
 * Installing Cloud Compliance requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed.
 
@@ -81,7 +79,7 @@ Note the following about the instance:
 +
 In regions where m5.4xlarge isn't available, Cloud Compliance runs on an m4.4xlarge instance instead.
 +
-NOTE: Changing or resizing the instance/VM type isn't supported. You need to use the default size that's provided.
+NOTE: Changing or resizing the instance/VM type isn't supported. You need to use the size that's provided.
 
 * The instance is named _CloudCompliance_ with a generated hash (UUID) concatenated to it. For example: _CloudCompliance-16bb6564-38ad-4080-9a92-36f5fd2f71c7_
 
@@ -93,13 +91,11 @@ TIP: The instance should remain running at all times because Cloud Compliance co
 
 == How scans work
 
-After you enable Cloud Compliance, it immediately starts scanning your data to identify personal and sensitive data.
+After you enable Cloud Compliance and select the volumes, buckets, or database schemas you want to scan, it immediately starts scanning the data to identify personal and sensitive data. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, and data categories.
 
 Cloud Compliance connects to the data like any other client by mounting NFS and CIFS volumes. NFS volumes are automatically accessed as read-only, while you need to provide Active Directory credentials to scan CIFS volumes.
 
-Cloud Compliance scans the unstructured data on each volume and the structured data in databases for a range of personal information. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, and data categories.
-
-image:diagram_cloud_compliance_scan.png[A diagram that shows a Cloud Manager instance and a Cloud Compliance instance running in your cloud provider. The Cloud Compliance instance connects to NFS and CIFS volumes to scan them.]
+image:diagram_cloud_compliance_scan.png[A diagram that shows a Cloud Manager instance and a Cloud Compliance instance running in your cloud provider. The Cloud Compliance instance connects to NFS and CIFS volumes, S3 buckets, and databases to scan them.]
 
 After the initial scan, Cloud Compliance continuously scans each volume to detect incremental changes (this is why it's important to keep the instance running).
 
@@ -134,8 +130,12 @@ If you have strict networking requirements, link:task_deploy_cloud_compliance.ht
 
 == User access to compliance information
 
-Cloud Manager Admins can view compliance information for all working environments.
+The role each user has been assigned provides different capabilities within Cloud Manager and within Cloud Compliance:
 
-Workspace Admins can view compliance information only for systems that they have permissions to access. If a Workspace Admin can't access a working environment in Cloud Manager, then they can't see any compliance information for the working environment in the Compliance tab.
+* *Account Admins* can manage compliance settings and view compliance information for all working environments.
 
-link:reference_user_roles.html[Learn more about Cloud Manager roles^].
+* *Workspace Admins* can manage compliance settings and view compliance information only for systems that they have permissions to access. If a Workspace Admin can't access a working environment in Cloud Manager, then they can't see any compliance information for the working environment in the Compliance tab.
+
+* Users with the *Cloud Compliance Viewer* role can only view compliance information and generate reports for systems that they have permission to access. These users cannot enable/disable scanning of volumes, buckets, or database schemas.
+
+link:reference_user_roles.html[Learn more about Cloud Manager roles^] and how to link:task_managing_cloud_central_accounts.html#adding-users[add users with specific roles^].

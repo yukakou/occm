@@ -1,0 +1,158 @@
+---
+sidebar: sidebar
+permalink: task_sync_installing_linux.html
+keywords: data broker, install, linux, on-prem data broker, on-prem, on prem, on premises, networking, permissions, os, operating system, rhel, red hat, ram, cpu, disk space, install data broker, installing data broker, install a data broker, data broker installation, linux installation, linux operating system, aws access, aws keys, keys, gcp access, aws permissions, gcp permissions, google permissions
+summary: When you create a sync relationship, choose the On-Prem Data Broker option to install the data broker software on an on-premises Linux host, or on an existing Linux host in the cloud. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
+---
+
+= Installing the data broker on a Linux host
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+When you create a sync relationship, choose the On-Prem Data Broker option to install the data broker software on an on-premises Linux host, or on an existing Linux host in the cloud. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
+
+== Linux host requirements
+
+* *Operating system*:
+** CentOS 7.0, 7.7, and 8.0
+** Red Hat Enterprise Linux 7.7 and 8.0
+** Ubuntu Server 18.04 LTS
+** SUSE Linux Enterprise Server 15 SP1
++
+The command `yum update all` must be run on the host before you install the data broker.
++
+A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during installation.
+* *RAM*: 16 GB
+* *CPU*: 4 cores
+* *Free disk space*: 10 GB
+* *SELinux*: We recommend that you disable https://selinuxproject.org/[SELinux^] on the host.
++
+SELinux enforces a policy that blocks data broker software updates and can block the data broker from contacting endpoints required for normal operation.
+
+* *OpenSSL*: OpenSSL must be installed on the Linux host.
+
+== Networking requirements
+
+* The Linux host must have a connection to the source and target.
+
+* The file server must allow the Linux host to access the exports.
+
+* Port 443 must be open on the Linux host for outbound traffic to AWS (the data broker constantly communicates with the Amazon SQS service).
+
+* NetApp recommends configuring the source, target, and data broker to use a Network Time Protocol (NTP) service. The time difference between the three components should not exceed 5 minutes.
+
+== Enabling access to AWS
+
+If you plan to use the data broker with a sync relationship that includes an S3 bucket, then you should prepare the Linux host for AWS access. When you install the data broker, you'll need to provide AWS keys for an AWS user that has programmatic access and specific permissions.
+
+.Steps
+
+. Create an IAM policy using https://s3.amazonaws.com/metadata.datafabric.io/docs/on_prem_iam_policy.json[this NetApp-provided policy^]. https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html[View AWS instructions^].
+
+. Create an IAM user that has programmatic access. https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html[View AWS instructions^].
++
+Be sure to copy the AWS keys because you need to specify them when you install the data broker software.
+
+== Enabling access to Google Cloud
+
+If you plan to use the data broker with a sync relationship that includes a Google Cloud Storage bucket, then you should prepare the Linux host for GCP access. When you install the data broker, you'll need to provide a key for a service account that has specific permissions.
+
+.Steps
+
+. Create a GCP service account that has Storage Admin permissions, if you don't already have one.
+
+. Create a service account key saved in JSON format. https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys[View GCP instructions^].
++
+The file should contain at least the following properties: "project_id", "private_key", and "client_email"
++
+NOTE: When you create a key, the file gets generated and downloaded to your machine.
+
+. Save the JSON file to the Linux host.
+
+== Enabling access to Microsoft Azure
+
+Access to Azure is defined per relationship by providing a storage account and a connection string in the Sync Relationship wizard.
+
+== Installing the data broker
+
+You can install a data broker on a Linux host when you create a sync relationship.
+
+.Steps
+
+. Click *Create New Sync*.
+
+. On the *Define Sync Relationship* page, choose a source and target and click *Continue*.
++
+Complete the steps until you reach the *Data Broker* page.
+
+. On the *Data Broker* page, click *Create Data Broker* and then select *On-Prem Data Broker*.
++
+If you already have a data broker, you'll need to click the image:screenshot_plus_icon.gif[A screenshot if the plus icon] icon first.
++
+image:screenshot_create_data_broker.gif["A screenshot of the Data Broker page that enables you to choose between an AWS, Azure, GCP, and On-Prem data broker."]
++
+NOTE: Even though the option is labeled *_On-Prem_ Data Broker*, it applies to a Linux host on your premises or in the cloud.
+
+. Enter a name for the data broker and click *Continue*.
++
+The instructions page loads shortly. You'll need to follow these instructions--they include a unique link to download the installer.
+
+. On the instructions page:
++
+.. Select whether to enable access to *AWS*, *Google Cloud*, or both.
+
+.. Select an installation option: *No proxy*, *Use proxy server*, or *Use proxy server with authentication*.
+
+.. Use the commands to download and install the data broker.
++
+The following steps provide details about each possible installation option. Follow the instructions page to get the exact command based on your installation option.
+
+.. Download the installer:
++
+* No proxy:
++
+`curl <URI> -o data_broker_installer.sh`
+
+* Use proxy server:
++
+`curl <URI> -o data_broker_installer.sh -x <proxy_host>:<proxy_port>`
+
+* Use proxy server with authentication:
++
+`curl <URI> -o data_broker_installer.sh -x <proxy_username>:<proxy_password>@<proxy_host>:<proxy_port>`
++
+URI:: Cloud Sync displays the URI of the installation file on the instructions page, which loads when you follow the prompts to deploy the On-Prem Data Broker. That URI isn't repeated here because the link is generated dynamically and can be used only once. <<Installing the data broker,Follow these steps to obtain the URI from Cloud Sync>>.
+
+.. Switch to superuser, make the installer executable and install the software:
++
+NOTE: Each command listed below includes parameters for AWS access and GCP access. Follow the instructions page to get the exact command based on your installation option.
++
+* No proxy configuration:
++
+`sudo -s
+chmod +x data_broker_installer.sh
+./data_broker_installer.sh -a <aws_access_key> -s <aws_secret_key> -g <absolute_path_to_the_json_file>`
+
+* Proxy configuration:
++
+`sudo -s
+chmod +x data_broker_installer.sh
+./data_broker_installer.sh -a <aws_access_key> -s <aws_secret_key> -g <absolute_path_to_the_json_file> -h <proxy_host> -p <proxy_port>`
+
+* Proxy configuration with authentication:
++
+`sudo -s
+chmod +x data_broker_installer.sh
+./data_broker_installer.sh -a <aws_access_key> -s <aws_secret_key> -g <absolute_path_to_the_json_file> -h <proxy_host> -p <proxy_port> -u <proxy_username> -w <proxy_password>`
++
+AWS keys:: These are the keys for the user that you should have prepared <<Enabling access to AWS,following these steps>>. The AWS keys are stored on the data broker, which runs in your on-premises or cloud network. NetApp doesn't use the keys outside of the data broker.
+
+JSON file:: This is the JSON file that contains a service account key that you should have prepared <<Enabling access to Google Cloud,following these steps>>.
+
+. Once the data broker is available, click *Continue* in Cloud Sync.
+
+. Complete the pages in the wizard to create the new sync relationship.

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_cloud_central_accounts.html
 keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector
-summary: After you perform initial setup, you might need to later manage users, workspaces, and Connectors.
+summary: After you perform initial setup, you might need to later manage users, workspaces, Connectors, and subscriptions.
 ---
 
 = Managing users, workspaces, Connectors, and subscriptions
@@ -29,7 +29,7 @@ Associate Cloud Central users with the Cloud Central account so those users can 
 +
 image:screenshot_account_settings_menu.gif[A screenshot that shows the Account Settings option in the top banner of Cloud Manager.]
 
-. Click *Manage Account Settings* next to the currently selected account.
+. Click *Manage Account* next to the currently selected account.
 +
 image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
@@ -39,8 +39,9 @@ image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage 
 +
 * *Account Admin*: Can perform any action in Cloud Manager.
 * *Workspace Admin*: Can create and manage resources in assigned workspaces.
+* *Compliance Viewer*: Can only view compliance information and generate reports for workspaces that they have permission to access.
 
-. If you selected Workspace Admin, select one or more workspaces to associate with that user.
+. If you selected Workspace Admin or Compliance Viewer, select one or more workspaces to associate with that user.
 +
 image:screenshot_associate_user.gif[A screenshot that shows how to associate a user by selecting a role and the associated workspaces.]
 
@@ -56,7 +57,7 @@ Disassociating a user makes it so they can no longer access the resources in a C
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
 +
 image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
@@ -76,7 +77,7 @@ You can associate and disassociate Workspace Admins with workspaces at any time.
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
 +
 image:screenshot_manage_account_settings.gif[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
 
@@ -98,7 +99,7 @@ Manage your workspaces by creating, renaming, and deleting them. Note that you c
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
 
 . Click *Workspaces*.
 
@@ -118,7 +119,7 @@ link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
 
 . Click *Connector*.
 
@@ -136,7 +137,7 @@ link:concept_cloud_central_accounts.html[Learn more about subscriptions].
 
 .Steps
 
-. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account Settings*.
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
 
 . Click *Subscriptions*.
 +
@@ -147,3 +148,27 @@ You'll only see the subscriptions that are associated with the account that you'
 image:screenshot_subscription_menu.gif[A screenshot of the action menu for a subscription.]
 
 . Choose to rename the subscription or to manage the accounts that are associated with the subscription.
+
+== Changing the account name
+
+Change you account name at any time to change it to something meaningful for you.
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+
+. In the *Overview* tab, click the edit icon next to the account name.
+
+. Type a new account name and click *Save*.
+
+== Enabling or disabling the SaaS platform
+
+We don't recommend disabling the SaaS platform unless you need to in order to comply with your company’s security policies. Disabling the SaaS platform limits your ability to use NetApp’s integrated cloud services.
+
+The following services aren't available from Cloud Manager if you disable the SaaS platform:
+
+*	Cloud Compliance
+*	Kubernetes
+*	Cloud Tiering
+*	Global File Cache
+*	Monitoring (Cloud Insights)

@@ -25,8 +25,6 @@ You can create an on-demand snapshot of a cloud volume if you want to create a s
 . Enter a name for the snapshot, or use the automatically generated name, and click *Create*.
 +
 image:screenshot_cvs_ondemand_snapshot.png[Screenshot of selecting the snapshot copy to be restored to a new volume]
-+
-The snapshot is created.
 
 == Create or modify a snapshot policy
 
@@ -80,28 +78,7 @@ Note that clients do not need to remount the volume after the revert operation.
 
 .Steps
 . Open the working environment.
-. Hover over the volume and click *Restore the volume*.
-. Select the snapshot that you want to use to restore the existing volume from the drop-down list and click *Restore*.
+. Hover over the volume and click *Revert volume to Snapshot*.
+. Select the snapshot that you want to use to restore the existing volume from the drop-down list and click *Revert*.
 +
 image:screenshot_cvs_revert_snapshot.png[Screenshot of selecting the snapshot copy to be used to overwrite the existing volume]
-
-== Restore a snapshot to a new volume
-
-You can restore a snapshot to a new volume as necessary.
-
-.Steps
-. Open the working environment.
-. Hover over the volume and click *Restore to a new volume*.
-. Select the snapshot that you want to use to create the new volume from the drop-down list.
-. Enter a name for the new volume and click *Restore*.
-+
-image:screenshot_cvs_restore_snapshot.png[Screenshot of selecting the snapshot copy to be restored to a new volume]
-+
-The volume is created in the working environment.
-. If you need to change any of the volume attributes, such as volume path or service level:
-.. Hover over the volume and click *Edit*.
-.. Make your changes and click *Update volume*.
-
-.After you finish
-
-Continue with link:task_manage_cvs_aws.html#mount-the-cloud-volume[Mounting the cloud volume^].
