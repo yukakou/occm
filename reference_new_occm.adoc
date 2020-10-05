@@ -20,6 +20,61 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== Cloud Manager 3.8.9 (4 Oct 2020)
+
+* <<Cloud Compliance enhancements>>
+* <<Cloud Volumes Service for AWS enhancements>>
+* <<Cloud Sync integration>>
+* <<Account management enhancements>>
+* <<Changes for Government regions>>
+
+=== Cloud Compliance enhancements
+
+* A new *Cloud Compliance Viewer* role is available in Cloud Manager.
++
+Users who are assigned this role can only view compliance information and generate reports for workspaces that they have permission to access. They cannot manage Cloud Compliance settings and they cannot access any other Cloud Manager features and services. This may be the perfect role for your legal team so they can monitor Cloud Compliance scan results. See link:reference_user_roles.html[user roles] for details.
+
+* Added support to scan MongoDB and PostgreSQL database schemas. See link:task_scanning_databases.html[scanning database schemas] for more information.
+
+* Cloud Compliance pricing is changing as of October 7th.
++
+The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. This includes data from Cloud Volumes ONTAP volumes, Azure NetApp Files volumes, Amazon S3 buckets, and database schemas. A subscription is required to scan any additional data after you reach 1 TB. See link:https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
+
+=== Cloud Volumes Service for AWS enhancements
+
+When creating a new volume, you can choose to base that volume on an existing Snapshot copy of another volume.
+
+=== Cloud Sync integration
+
+NetApp’s Cloud Sync service is now available from within Cloud Manager. Cloud Sync offers a simple, secure, and automated way to migrate your data from any source destination to any target destination, in the cloud or on your premises.
+
+link:concept_cloud_sync.html[Learn more].
+
+=== Account management enhancements
+
+We've added more ways to manage your account.
+
+* An overview of your account resources is now available.
++
+You can quickly view the number of users, workspaces, Connectors, and subscriptions in your account.
+* You can change the name of your account.
+* You can copy your account ID, workspace ID, or Connector ID.
++
+Copying these IDs will help with automation features that we're planning.
+* You can disable use of the SaaS platform.
++
+We don't recommend disabling the SaaS platform unless you need to in order to comply with your company's security policies. Disabling the SaaS platform limits your ability to use NetApp's integrated cloud services. link:task_managing_cloud_central_accounts[Learn more].
+
+image:screenshot_account_management.gif[]
+
+=== Changes for Government regions
+
+If you deploy a Connector in an AWS GovCloud region, an Azure Gov region, or an Azure DoD region, access to Cloud Manager is now available only through a Connector's host IP address. Access to the SaaS platform is disabled for the entire account.
+
+This means that only privileged users who can access the end-user internal VPC/VNet can use Cloud Manager's UI or API.
+
+link:reference_limitations.html[Learn more about this limitation].
+
 == Cloud Manager 3.8.8 update (22 Sept 2020)
 
 We enhanced the Kubernetes service to make it easier to use and to provide additional capabilities:
