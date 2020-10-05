@@ -61,10 +61,9 @@ The personal data found in files can be general personal data or national identi
 | Identifier
 | Proximity validation?
 
-.4+| General | Email address | No
+.3+| General | Email address | No
 | Credit card number | No
 | IBAN number (International Bank Account Number) | No
-| IP address | Yes
 
 .31+| National Identifiers | Belgian ID (Numero National) | Yes
 | Brazilian ID (CPF) | Yes
