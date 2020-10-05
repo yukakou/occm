@@ -1,0 +1,90 @@
+---
+sidebar: sidebar
+permalink: task_sync_licensing.html
+keywords: license, subscription, registering, subscribing, subscribing in aws, subscribing in azure, subscribing to aws, subscribing to azure, aws marketplace, azure marketplace, netapp license, byol license, purchase a license, license settings, pay for relationships, paygo, annual, pay-as-you-go
+summary: There are two ways to pay for sync relationships after your 14-day free trial ends. The first option is to pay-as-you-go. The second option is to purchase licenses directly from NetApp.
+---
+
+= Paying for sync relationships after your free trial ends
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+There are two ways to pay for sync relationships after your 14-day free trial ends. The first option is to subscribe from AWS or Azure to pay-as-you-go or to pay annually. The second option is to purchase licenses directly from NetApp.
+
+You can use licenses from NetApp with an AWS or Azure subscription. For example, if you have 25 sync relationships, you can pay for the first 20 sync relationships using a license and then pay-as-you-go from AWS or Azure with the remaining 5 sync relationships.
+
+link:concept_cloud_sync.html[Learn more about how licenses work].
+
+.What if I don't immediately pay after my free trial ends?
+****
+You won't be able to create any additional relationships. Existing relationships are not deleted, but you cannot make any changes to them until you subscribe or enter a license.
+****
+
+== [[aws]]Subscribing from AWS
+
+AWS enables you to pay-as-you-go or to pay annually.
+
+.Steps to pay-as-you-go
+
+. Click *Sync > Licensing*.
+
+. Select *AWS*
+
+. Click *Subscribe* and then click *Continue*.
+
+. Subscribe from the AWS Marketplace, and then log back in to the Cloud Sync service to complete the registration.
++
+The following video shows the process:
++
+video::video_cloud_sync_registering.mp4[width=848, height=480]
+
+.Steps to pay annually
+
+. https://aws.amazon.com/marketplace/pp/B06XX5V3M2[Go to the AWS Marketplace page^].
+
+. Click *Continue to Subscribe*.
+
+. Select your contract options and click *Create contract*.
+
+== [[azure]]Subscribing from Azure
+
+Azure enables you to pay-as-you-go or to pay annually.
+
+.What you'll need
+
+An Azure user account that has Contributor or Owner permissions in the relevant subscription.
+
+.Steps
+
+. Click *Sync > Licensing*.
+
+. Select *Azure*.
+
+. Click *Subscribe* and then click *Continue*.
+
+. In the Azure portal, click *Create*, select your options, and click *Subscribe*.
++
+Select *Monthly* to pay by the hour, or *Yearly* to pay for a year up front.
+
+. When deployment is complete, click the name of the SaaS resource in the notification pop-up.
+
+. Click *Configure Account* to return to Cloud Sync.
++
+The following video shows the process:
++
+video::video_cloud_sync_registering_azure.mp4[width=848, height=480]
+
+== [[licenses]]Purchasing licenses from NetApp and adding them to Cloud Sync
+
+To pay for your sync relationships up front, you must purchase one or more licenses and add them to the Cloud Sync service.
+
+.Steps
+
+. Purchase a license by mailto:ng-cloudsync-contact@netapp.com?subject=Cloud%20Sync%20Service%20-%20BYOL%20License%20Purchase%20Request[contacting NetApp].
+
+. In Cloud Manager, click *Sync > Licensing*.
+
+. Click *Add License* and add the license.
