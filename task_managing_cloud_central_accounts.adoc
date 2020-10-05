@@ -172,3 +172,9 @@ The following services aren't available from Cloud Manager if you disable the Sa
 *	Cloud Tiering
 *	Global File Cache
 *	Monitoring (Cloud Insights)
+
+.Steps
+
+. From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
+
+. In the *Overview* tab, toggle the option to enable use the SaaS platform.
