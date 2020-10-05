@@ -23,7 +23,6 @@ link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 
 == Cloud Manager 3.8.9 (4 Oct 2020)
 
 * <<Cloud Compliance enhancements>>
-* <<Azure NetApp Files enhancements>>
 * <<Cloud Volumes Service for AWS enhancements>>
 * <<Cloud Sync integration>>
 * <<Account management enhancements>>
@@ -40,13 +39,6 @@ Users who are assigned this role can only view compliance information and genera
 * Cloud Compliance pricing is changing as of October 7th.
 +
 The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. This includes data from Cloud Volumes ONTAP volumes, Azure NetApp Files volumes, Amazon S3 buckets, and database schemas. A subscription is required to scan any additional data after you reach 1 TB. See link:https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
-
-=== Azure NetApp Files enhancements
-
-This release includes two Snapshot enhancements:
-
-* When creating a new volume you can choose to base that volume on an existing Snapshot copy of another volume.
-* If a volume gets corrupted for any reason you can revert it to an image from an existing Snapshot copy.
 
 === Cloud Volumes Service for AWS enhancements
 
