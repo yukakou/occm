@@ -15,7 +15,11 @@ summary: Gain control of your private data by viewing details about the personal
 [.lead]
 Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Compliance found in your data.
 
-By default, the Cloud Compliance dashboard displays compliance data for all working environments and databases. If you want to see data for only some of the working environments, <<Viewing data from specific working environments,select those working environments>>.
+By default, the Cloud Compliance dashboard displays compliance data for all working environments and databases.
+
+image:screenshot_compliance_dashboard.png[A screenshot of the Cloud Compliance dashboard]
+
+If you want to see data for only some of the working environments, <<Viewing data from specific working environments,select those working environments>>.
 
 == Personal data
 

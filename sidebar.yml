@@ -183,8 +183,6 @@ entries:
             url: /task_manage_anf.html
           - title: Create and manage volumes
             url: /task_manage_anf_volumes.html
-          - title: Migrate data to Azure NetApp Files
-            url: /task_sync_azure_netapp_files.html
       - title: Cloud Volumes Service for AWS
         entries:
           - title: Learn about Cloud Volumes Service for AWS
@@ -223,6 +221,44 @@ entries:
             url: /task_backup_from_onprem.html
       - title: Manage backups and restore data
         url: /task_managing_backups.html
+  - title: Copy and synchronize data
+    entries:
+      - title: Learn about Cloud Sync
+        url: /concept_cloud_sync.html
+      - title: Get started
+        entries:
+          - title: Quick start
+            url: /task_sync_quick_start.html
+          - title: Prepare the source and target
+            url: /reference_sync_requirements.html
+          - title: Prepare networking
+            url: /reference_sync_networking.html
+          - title: How to install a data broker
+            entries:
+              - title: Install in AWS
+                url: /task_sync_installing_aws.html
+              - title: Install in Azure
+                url: /task_sync_installing_azure.html
+              - title: Install in GCP
+                url: /task_sync_installing_gcp.html
+              - title: Install on a Linux host
+                url: /task_sync_installing_linux.html
+          - title: Create a sync relationship
+            url: /task_sync_creating_relationships.html
+          - title: Pay for sync relationships
+            url: /task_sync_licensing.html
+      - title: Tutorials
+        entries:
+          - title: Copy ACLs between shares
+            url: /task_sync_copying_acls.html
+          - title: Encrypt NFS data in flight
+            url: /task_sync_nfs_encryption.html
+      - title: Manage sync relationships
+        url: /task_sync_managing_relationships.html
+      - title: API
+        url: /api_sync.html
+      - title: FAQ
+        url: /faq_sync.html
   - title: Gain insight into data privacy
     entries:
       - title: Learn about Cloud Compliance
@@ -343,9 +379,9 @@ entries:
                 url: /task_adding_gcp_accounts.html
           - title: NetApp Support Site credentials
             url: /task_adding_nss_accounts.html
-      - title: Manage the Cloud Central account
+      - title: Manage your account
         url: /task_managing_cloud_central_accounts.html
-      - title: Manage an HTTPS certificate
+      - title: Install an HTTPS certificate
         url: /task_installing_https_cert.html
       - title: Remove working environments
         url: /task_removing.html

@@ -1,0 +1,99 @@
+---
+sidebar: sidebar
+permalink: task_sync_creating_relationships.html
+keywords: sync, relationship, create, tags, settings, create a relationship, creating relationships, bucket setup, tags
+summary: When you create a sync relationship, the Cloud Sync service copies files from the source to the target. After the initial copy, the service syncs any changed data every 24 hours.
+---
+
+= Creating a sync relationship
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+When you create a sync relationship, the Cloud Sync service copies files from the source to the target. After the initial copy, the service syncs any changed data every 24 hours.
+
+The steps below provide an example that shows how to set up a sync relationship from an NFS server to an S3 bucket.
+
+.Steps
+
+. In Cloud Manager, click *Sync*.
+
+. On the *Define Sync Relationship* page, choose a source and target.
++
+The following steps provide an example of how to create a sync relationship from an NFS server to an S3 bucket.
++
+image:screenshot_nfs_to_s3.gif[A screenshot that shows NFS as a source and S3 as a target in a new sync relationship.]
+
+. On the *NFS Server* page, enter the IP address or fully qualified domain name of the NFS server that you want to sync to AWS.
+
+. On the *Data Broker* page, follow the prompts to create a data broker virtual machine in AWS, Azure, or Google Cloud Platform, or to install the data broker software an existing Linux host.
++
+For more details, refer to the following pages:
++
+* link:task_sync_installing_aws.html[Installing the data broker in AWS]
+* link:task_sync_installing_azure.html[Installing the data broker in Azure]
+* link:task_sync_installing_gcp.html[Installing the data broker in GCP]
+* link:task_sync_installing_linux.html[Installing the data broker on a Linux host]
+
+. After you install the data broker, click *Continue*.
++
+The following image shows a successfully deployed data broker in AWS:
++
+image:screenshot_created_instance.gif[This screenshot shows a successfully deployed instance. The interface shows details about the instance including AWS networking.]
+
+. [[filter]]On the *Directories* page, select a top-level directory or subdirectory.
++
+If Cloud Sync is unable to retrieve the exports, click *Add Export Manually* and enter the name of an NFS export.
++
+NOTE: If you want to sync more than one directory on the NFS server, then you must create additional sync relationships after you are done.
+
+. On the *AWS S3 Bucket* page, select a bucket:
++
+* Drill down to select an existing folder within the bucket or to select a new folder that you create inside the bucket.
+* Click *Add to the list* to select an S3 bucket that is not associated with your AWS account. link:reference_sync_requirements.html#s3[Specific permissions must be applied to the S3 bucket].
+
+. On the *Bucket Setup* page, set up the bucket:
++
+* Choose whether to enable S3 bucket encryption and then select an AWS KMS key, enter the ARN of a KMS key, or select AES-256 encryption.
+* Select an S3 storage class. link:reference_sync_requirements.html#storage-classes[View the supported storage classes].
++
+image:screenshot_bucket_setup.gif[This screenshot shows the Bucket Setup page which enables you to choose Yes or No for encryption and to select a specific S3 storage class for the synced data.]
+
+. On the *Settings* page, define how source files and folders are synced and maintained in the target location:
++
+Schedule:: Choose a recurring schedule for future syncs or turn off the sync schedule. You can schedule a relationship to sync data as often as every 1 minute.
+
+Retries:: Define the number of times that Cloud Sync should retry to sync a file before skipping it.
+
+Recently Modified Files:: Choose to exclude files that were recently modified prior to the scheduled sync.
+
+Delete Files on Source:: Choose to delete files from the source location after Cloud Sync copies the files to the target location. This option includes the risk of data loss because the source files are deleted after they're copied.
++
+If you enable this option, you also need to change a parameter in the local.json file on the data broker. Open the file and change the parameter named _workers.transferrer.delete-on-source_ to *true*.
+
+Delete Files on Target:: Choose to delete files from the target location, if they were deleted from the source. The default is to never deletes files from the target location.
+
+Object tagging:: When AWS S3 is the target in a sync relationship, Cloud Sync tags S3 objects with metadata that’s relevant to the sync operation. You can disable tagging of S3 objects, if it’s not desired in your environment. There’s no impact to Cloud Sync if you disable tagging—Cloud Sync just stores the sync metadata in a different way.
+
+File Types:: Define the file types to include in each sync: files, directories, and symbolic links.
+
+Exclude File Extensions:: Specify file extensions to exclude from the sync by typing the file extension and pressing *Enter*. For example, type _log_ or _.log_ to exclude *.log files. A separator isn't required for multiple extensions. The following video provides a short demo:
++
+video::video_file_extensions.mp4[width=840, height=240]
+
+File Size:: Choose to sync all files regardless of their size or just files that are in a specific size range.
+
+Date Modified:: Choose all files regardless of their last modified date, files modified after a specific date, before a specific date, or between a time range.
+
+. On the *Relationship Tags* page, enter up to 9 relationship tags and then click *Continue*.
++
+The Cloud Sync service assigns the tags to each object that it syncs to the S3 bucket.
+
+. Review the details of the sync relationship and then click *Create Relationship*.
+
+*Result*
+
+Cloud Sync starts syncing data between the source and target.

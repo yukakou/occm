@@ -21,6 +21,22 @@ A Connector should remain running at all times. It's important for the continued
 
 For example, a Connector is a key component in the health and operation of Cloud Volumes ONTAP PAYGO systems. If a Connector is powered down, Cloud Volumes ONTAP PAYGO systems will shut down after losing communication with a Connector for longer than 14 days.
 
+== SaaS platform is disabled for Government regions
+
+If you deploy a Connector in an AWS GovCloud region, an Azure Gov region, or an Azure DoD region, access to Cloud Manager is available only through a Connector's host IP address. Access to the SaaS platform is disabled for the entire account.
+
+This means that only privileged users who can access the end-user internal VPC/VNet can use Cloud Manager's UI or API.
+
+It also means that the following services aren't available from Cloud Manager:
+
+* Cloud Compliance
+* Kubernetes
+* Cloud Tiering
+* Global File Cache
+* Monitoring (Cloud Insights)
+
+The SaaS platform is required to use these services.
+
 == Shared Linux hosts are not supported
 
 The Connector isn't supported on a host that is shared with other applications. The host must be a dedicated host.
@@ -28,7 +44,3 @@ The Connector isn't supported on a host that is shared with other applications. 
 == Cloud Manager does not support FlexGroup volumes
 
 While Cloud Volumes ONTAP supports FlexGroup volumes, Cloud Manager does not. If you create a FlexGroup volume from System Manager or from the CLI, then you should set Cloud Manager's Capacity Management mode to Manual. Automatic mode might not work properly with FlexGroup volumes.
-
-== Limitation with the AWS GovCloud (US) region
-
-A Connector must be deployed in the AWS GovCloud (US) region if you want to launch Cloud Volumes ONTAP instances in the AWS GovCloud (US) region. You can't use a Connector that's installed in a different location.

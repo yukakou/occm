@@ -18,7 +18,7 @@ This FAQ can help if you’re just looking for a quick answer to a question.
 
 == What is Cloud Compliance?
 
-Cloud Compliance is a new NetApp cloud offering. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data across your Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS or Azure, Amazon S3 buckets, and databases.
+Cloud Compliance is a cloud offering that uses Artificial Intelligence (AI) driven technology to help organizations understand data context and identify sensitive data across your Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS or Azure, Amazon S3 buckets, and databases.
 
 Cloud Compliance provides pre-defined parameters (such as sensitive information types and categories) to address new data compliance regulations for data privacy and sensitivity, such as GDPR, CCPA, HIPAA, and more.
 
@@ -56,7 +56,7 @@ Cloud Compliance is operated and managed through Cloud Manager. You can access C
 
 == How does Cloud Compliance work?
 
-Cloud Compliance deploys another layer of Artificial Intelligence alongside your Cloud Manager system and Cloud Volumes ONTAP instances. It then scans the data on volumes, buckets, and databases and indexes the data insights that are found.
+Cloud Compliance deploys another layer of Artificial Intelligence alongside your Cloud Manager system and storage systems. It then scans the data on volumes, buckets, and databases and indexes the data insights that are found.
 
 link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works].
 
@@ -106,7 +106,7 @@ Scan performance can vary based on the network bandwidth and the average file si
 
 Cloud Compliance scans all files for category and metadata insights and displays all file types in the file types section of the dashboard.
 
-But when Cloud Compliance detects Personal Identifiable Information (PII), or when it performs a DSAR search, only the following file formats are supported:
+When Cloud Compliance detects Personal Identifiable Information (PII), or when it performs a DSAR search, only the following file formats are supported:
 .PDF, .DOCX, .DOC, .PPTX, .XLS, .XLSX, .CSV, .TXT, .RTF, and .JSON.
 
 == How do I enable Cloud Compliance?
@@ -133,7 +133,7 @@ The compliance scan doesn't heat up the cold data--it stays cold and tiered to o
 
 == Can I use Cloud Compliance to scan on-premise ONTAP storage?
 
-Scanning the data directly from an on-premises ONTAP working environment isn’t supported. But you can scan your on-premises ONTAP data by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then enabling compliance. We're planning to support Cloud Compliance with additional cloud offerings such as Cloud Volumes Service. 
+Scanning the data directly from an on-premises ONTAP working environment isn’t supported. But you can scan your on-premises ONTAP data by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then activating compliance on those volumes. We're planning to support Cloud Compliance with additional cloud offerings such as Cloud Volumes Service. 
 
 link:task_scanning_onprem.html[Learn more].
 
@@ -148,5 +148,7 @@ Cloud Compliance provides out-of-the-box insights to your data. These insights c
 == Can I limit Cloud Compliance information to specific users?
 
 Yes, Cloud Compliance is fully integrated with Cloud Manager. Cloud Manager users can only see information for the working environments they are eligible to view according to their workspace privileges.
+
+Additionally, if you want to allow certain users to just view Cloud Compliance scan results without having the ability to manage Cloud Compliance settings, you can assign those users the _Cloud Compliance Viewer_ role.
 
 link:concept_cloud_compliance.html#user-access-to-compliance-information[Learn more].

@@ -1,0 +1,128 @@
+---
+sidebar: sidebar
+permalink: task_sync_managing_relationships.html
+keywords: sync, immediate, now, schedule, minutes, hours, on, off, delete, group, accelerate, accelerating, grouping, multiple data brokers, sync now, turn off, turn on, sync schedule, settings, change settings, recently modified files, delete files on target, retries, retry, file types, exclude file type, include file type, delete relationship
+summary: You can manage sync relationships at any time by immediately syncing data, changing schedules, and more.
+---
+
+= Managing sync relationships
+:toc: macro
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can manage sync relationships at any time by immediately syncing data, changing schedules, and more.
+
+== Performing an immediate data sync
+
+Rather than wait for the next scheduled sync, you can press a button to immediately sync data between the source and target.
+
+.Steps
+
+. From the *Sync Dashboard*, hover over the sync relationship and click the action menu.
++
+image:screenshot_relationship_menu.gif[A screenshot that shows the action menu that appears when you hover your mouse over a sync relationship.]
+
+. Click *Sync Now* and then click *Sync* to confirm.
++
+image:screenshot_dashboard_actions.gif[This screenshot shows the actions that you can perform on a sync relationship.]
+
+.Result
+
+Cloud Sync starts the data sync process for the relationship.
+
+== Accelerating sync performance
+
+Accelerate the performance of a sync relationship by adding an additional data broker to the relationship. The additional data broker must be a _new_ data broker.
+
+.How this works
+
+If the existing data brokers in the relationship are used in other sync relationships, then Cloud Sync automatically adds the new data broker to those relationships, as well.
+
+For example, let's say you have three relationships:
+
+* Relationship 1 uses data broker A
+* Relationship 2 uses data broker B
+* Relationship 3 uses data broker A
+
+You want to accelerate the performance of relationship 1 so you add a new data broker to that relationship (data broker C). Because data broker A is also used in relationship 3, the new data broker is automatically added to relationship 3, as well.
+
+.Steps
+
+. Ensure that at least one of the existing data brokers in the relationship are online.
+
+. Hover over the sync relationship and click the action menu.
+
+. Click *Accelerate*.
++
+image:screenshot_accelerate.gif[A screenshot of Cloud Sync that shows the action menu for a sync relationship. Accelerate is highlighted with the mouse pointer.]
+
+. Follow the prompts to create a new data broker.
+
+.Result
+
+Cloud Sync adds the new data broker to the sync relationships. The performance of the next data sync should be accelerated.
+
+== Changing the settings for a sync relationship
+
+Modify settings that define how source files and folders are synced and maintained in the target location.
+
+. Hover over the sync relationship and click the action menu.
+
+. Click *Settings*.
+
+. Modify any of the settings.
++
+image:screenshot_sync_settings.gif[A screenshot that shows the settings for a sync relationship.]
++
+[[deleteonsource]] Here's a brief description of each setting:
++
+Schedule:: Choose a recurring schedule for future syncs or turn off the sync schedule. You can schedule a relationship to sync data as often as every 1 minute.
+
+Retries:: Define the number of times that Cloud Sync should retry to sync a file before skipping it.
+
+Recently Modified Files:: Choose to exclude files that were recently modified prior to the scheduled sync.
+
+Delete Files on Source::
+Choose to delete files from the source location after Cloud Sync copies the files to the target location. This option includes the risk of data loss because the source files are deleted after they're copied.
++
+If you enable this option, you also need to change a parameter in the local.json file on the data broker. Open the file and change the parameter named _workers.transferrer.delete-on-source_ to *true*.
+
+Delete Files on Target:: Choose to delete files from the target location, if they were deleted from the source. The default is to never deletes files from the target location.
+
+Object tagging:: When AWS S3 is the target in a sync relationship, Cloud Sync tags S3 objects with metadata that’s relevant to the sync operation. You can disable tagging of S3 objects, if it’s not desired in your environment. There’s no impact to Cloud Sync if you disable tagging—Cloud Sync just stores the sync metadata in a different way.
+
+File Types:: Define the file types to include in each sync: files, directories, and symbolic links.
+
+Exclude File Extensions:: Specify file extensions to exclude from the sync by typing the file extension and pressing *Enter*. For example, type _log_ or _.log_ to exclude *.log files. A separator isn't required for multiple extensions. The following video provides a short demo:
++
+video::video_file_extensions.mp4[width=840, height=240]
+
+File Size:: Choose to sync all files regardless of their size or just files that are in a specific size range.
+
+Date Modified:: Choose all files regardless of their last modified date, files modified after a specific date, before a specific date, or between a time range.
+
+Copy Access Control Lists to the target:: Choose to copy access control lists (ACLs) between source SMB shares and target SMB shares. Note that this option is only available for sync relationships created after the 23 Feb 2020 release.
+
+. Click *Save Settings*.
+
+.Result
+
+Cloud Sync modifies the sync relationship with the new settings.
+
+== Deleting relationships
+
+You can delete a sync relationship, if you no longer need to sync data between the source and target. This action does not delete the data broker instance and it does not delete data from the target.
+
+.Steps
+
+. Hover over the sync relationship and click the action menu.
+
+. Click *Delete* and then click *Delete* again to confirm.
+
+.Result
+
+Cloud Sync deletes the sync relationship.

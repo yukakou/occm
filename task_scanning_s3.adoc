@@ -103,15 +103,15 @@ Enable Cloud Compliance on Amazon S3 after you verify the prerequisites.
 
 . Select the Amazon S3 working environment.
 +
-image:screenshot_s3_we.gif[]
+image:screenshot_s3_we.gif[A screenshot of an Amazon S3 working environment icon]
 
 . In the pane on the right, click *Enable Compliance*.
 +
-image:screenshot_s3_enable_compliance.gif[]
+image:screenshot_s3_enable_compliance.gif[A screenshot of enabling the Cloud Compliance service from the Services panel]
 
 . When prompted, assign an IAM role to the Cloud Compliance instance that has <<Requirements specific to S3,the required permissions>>.
 +
-image:screenshot_s3_compliance_iam_role.gif[]
+image:screenshot_s3_compliance_iam_role.gif[A screenshot of entering the AWS IAM role for Cloud Compliance]
 
 . Click *Enable Compliance*.
 
@@ -135,11 +135,11 @@ Cloud Compliance can also <<Scanning buckets from additional AWS accounts,scan S
 
 . In the pane on the right, click *Configure Buckets*.
 +
-image:screenshot_s3_configure_buckets.gif[]
+image:screenshot_s3_configure_buckets.gif[A screenshot of clicking Configure Buckets to choose the S3 buckets you want to scan]
 
 . Enable compliance on the buckets that you want to scan.
 +
-image:screenshot_s3_select_buckets.gif[]
+image:screenshot_s3_select_buckets.gif[A screenshot of selecting the S3 buckets you want to scan]
 
 .Result
 
