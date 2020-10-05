@@ -46,9 +46,7 @@ When creating a new volume, you can choose to base that volume on an existing Sn
 
 === Cloud Sync integration
 
-NetApp’s Cloud Sync service is now available from within Cloud Manager. Cloud Sync offers a simple, secure, and automated way to migrate your data from any source destination to any target destination, in the cloud or on your premises.
-
-link:concept_cloud_sync.html[Learn more].
+NetApp’s Cloud Sync service is now available from within Cloud Manager. Cloud Sync offers a simple, secure, and automated way to migrate your data from any source destination to any target destination, in the cloud or on your premises. link:concept_cloud_sync.html[Learn more].
 
 === Account management enhancements
 
@@ -63,7 +61,7 @@ You can quickly view the number of users, workspaces, Connectors, and subscripti
 Copying these IDs will help with automation features that we're planning.
 * You can disable use of the SaaS platform.
 +
-We don't recommend disabling the SaaS platform unless you need to in order to comply with your company's security policies. Disabling the SaaS platform limits your ability to use NetApp's integrated cloud services. link:task_managing_cloud_central_accounts[Learn more].
+We don't recommend disabling the SaaS platform unless you need to in order to comply with your company's security policies. Disabling the SaaS platform limits your ability to use NetApp's integrated cloud services. link:task_managing_cloud_central_accounts.html[Learn more].
 
 image:screenshot_account_management.gif[]
 
