@@ -33,12 +33,16 @@ You need the following:
 ==== image:number2.png[number 2] Set up tiering
 
 [role="quick-margin-para"]
-Select an on-prem working environment, click *Setup Tiering* and follow the prompts to tier data to Amazon S3.
+In Cloud Manager, select an on-prem working environment, click *Setup Tiering* and follow the prompts to tier data to Amazon S3.
 
 ==== image:number3.png[number 3] Set up licensing
 
 [role="quick-margin-para"]
-Pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP tiering license, or a combination of both. Licensing isn't available from within Cloud Manager, link:task_licensing_cloud_tiering.html[but you can go directly to the Cloud Tiering service to set it up].
+After your free trial ends, pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP tiering license, or a combination of both:
+
+[role="quick-margin-list"]
+* To subscribe from the AWS Marketplace, click *Tiering > Licensing*, click *Subscribe*, and then follow the prompts.
+* To pay using a tiering license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task_licensing_cloud_tiering.html[add it to your cluster from Cloud Tiering].
 
 == Requirements
 

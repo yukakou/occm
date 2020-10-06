@@ -32,13 +32,15 @@ NOTE: While Cloud Tiering can significantly reduce storage footprints, it is not
 
 == Supported object storage providers
 
-You can tier inactive data from an ONTAP cluster to Amazon S3, Microsoft Azure Blob storage, Google Cloud Storage, or StorageGRID.
+You can tier inactive data from an ONTAP cluster to Amazon S3, Microsoft Azure Blob storage, Google Cloud Storage, or StorageGRID (private cloud).
 
-== Cost
+== Pricing and licenses
 
 Pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP tiering license called _FabricPool_, or a combination of both. A 30-day free trial is available for your first cluster if you don’t have a license.
 
 There are no charges when tiering data to StorageGRID. Neither a BYOL license or PAYGO registration is required.
+
+https://cloud.netapp.com/cloud-tiering[View pricing details^].
 
 === 30-day free trial
 
