@@ -171,7 +171,7 @@ If you already have a subscription, then you're all set--there's nothing else th
 +
 image:screenshot_profile_subscription.gif[A screenshot from the Credentials page that shows the Instance Profile with an active subscription.]
 +
-*Note:* If you are using the old *Cloud Manager* subscription in Azure, you need to change to the new *NetApp Cloud Manager* subscription. See
+*Note:* If you are prompted by Cloud Compliance to subscribe, but you already have an Azure subscription, you’re probably using the old *Cloud Manager* subscription and you need to change to the new *NetApp Cloud Manager* subscription. See
 <<Changing to the new Cloud Manager plan in Azure,Changing to the new NetApp Cloud Manager plan in Azure>> for details.
 
 . If you don't have a subscription yet, hover over the credentials and click the action menu.
@@ -218,8 +218,8 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 
 . Return to Cloud Manager, select the new subscription, and click *Associate*.
 
-. To verify your subscription has changed, hover the “i” above subscription in the Credentials card.
+. To verify your subscription has changed, hover over the “i” above subscription in the Credentials card.
 +
 Now you can unsubscribe your old subscription from the Azure portal.
 
-. Go to Software as a Service (SaaS), select the subscription and click *Unsubscribe*.
+. In the Azure portal, go to Software as a Service (SaaS), select the subscription, and click *Unsubscribe*.
