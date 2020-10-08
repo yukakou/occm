@@ -33,7 +33,6 @@ An evaluation BYOL license is an option for customers who expect to pay for Clou
 
 The evaluation key is good for 30 days, and can be used multiple times, each for 30 days (regardless of the creation day).
 
-At the end of 30 days, daily shutdowns will occur, so it's best to plan ahead. You can apply a new BYOL license on top of the evaluation license for an in-place upgrade
-(this requires a restart of single node systems). Your hosted data is *not* deleted at the end of the trial period.
+At the end of 30 days, daily shutdowns will occur, so it's best to plan ahead. You can apply a new BYOL license on top of the evaluation license for an in-place upgrade (this requires a restart of single node systems). Your hosted data is *not* deleted at the end of the trial period.
 
 TIP: You can't upgrade Cloud Volumes ONTAP software when using an evaluation license.
