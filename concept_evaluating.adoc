@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: concept_evaluating.html
-keywords: free trial, evaluation, evaluate
-summary: You can evaluate Cloud Volumes ONTAP before you pay for the software.
+keywords: free trial, evaluation, evaluate, eval license, evaluation license, 30-day trial, 30 day trial, 30 day free trial
+summary: You can evaluate Cloud Volumes ONTAP before you pay for the software. The most common way is to launch the PAYGO version of your first Cloud Volumes ONTAP system to get a 30-day free trial. An evaluation BYOL license is also an option.
 ---
 
 = Evaluating
@@ -13,8 +13,27 @@ summary: You can evaluate Cloud Volumes ONTAP before you pay for the software.
 :imagesdir: ./media/
 
 [.lead]
-You can evaluate Cloud Volumes ONTAP before you pay for the software.
-
-A 30-day free trial of Cloud Volumes ONTAP is available from https://cloud.netapp.com[NetApp Cloud Central^]. There are no hourly software charges, but infrastructure charges still apply. A free trial automatically converts to a paid hourly subscription when it expires.
+You can evaluate Cloud Volumes ONTAP before you pay for the software. The most common way is to launch the PAYGO version of your first Cloud Volumes ONTAP system to get a 30-day free trial. An evaluation BYOL license is also an option.
 
 If you need assistance with your proof of concept, contact https://cloud.netapp.com/contact-cds[the Sales team^] or reach out through the chat option available from https://cloud.netapp.com[NetApp Cloud Central^] and from within Cloud Manager.
+
+== 30-day free trials for PAYGO
+
+A 30-day free trial is available if you plan to pay for Cloud Volumes ONTAP as you go. You can start a 30-day free trial of Cloud Volumes ONTAP from Cloud Manager by creating your first Cloud Volumes ONTAP system in a payer's account.
+
+There are no hourly software license charges for the instance, but infrastructure charges from your cloud provider still apply.
+
+A free trial automatically converts to a paid hourly subscription when it expires. If you terminate the instance within the time limit, the next instance that you deploy is not part of the free trial (even if it's deployed within those 30 days).
+
+Pay-as-you-go trials are awarded through a cloud provider and are not extendable by any means.
+
+== Evaluation licenses for BYOL
+
+An evaluation BYOL license is an option for customers who expect to pay for Cloud Volumes ONTAP by purchasing a termed license from NetApp. You can obtain an evaluation license from your account team, your Sales Engineer, or your partner.
+
+The evaluation key is good for 30 days, and can be used multiple times, each for 30 days (regardless of the creation day).
+
+At the end of 30 days, daily shutdowns will occur, so it's best to plan ahead. You can apply a new BYOL license on top of the evaluation license for an in-place upgrade
+(this requires a restart of single node systems). Your hosted data is *not* deleted at the end of the trial period.
+
+TIP: You can't upgrade Cloud Volumes ONTAP software when using an evaluation license.
