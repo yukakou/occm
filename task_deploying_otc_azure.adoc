@@ -36,7 +36,7 @@ When Cloud Manager creates a Cloud Volumes ONTAP system in Azure, it creates sev
 ====
 Deploying Cloud Volumes ONTAP in an existing, shared resource group is not recommended due to the risk of data loss. While rollback is currently disabled by default when using the API to deploy into an existing resource group, deleting Cloud Volumes ONTAP will potentially delete other resources from that shared group.
 
-The best practice is to use a new, dedicated resource group for Cloud Volumes ONTAP.
+The best practice is to use a new, dedicated resource group for Cloud Volumes ONTAP. This is the default and only option when deploying Cloud Volumes ONTAP in Azure from the Cloud Manager user interface.
 ====
 
 .Steps
@@ -57,7 +57,7 @@ The following table describes fields for which you might need guidance:
 | Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the Azure virtual machine. It also uses the name as the prefix for the predefined security group, if you select that option.
 
 | Resource Group Name | Keep the default name for the new resource group or uncheck *Use Default* and enter your own name for the new resource group.
-+
+
 The best practice is to use a new, dedicated resource group for Cloud Volumes ONTAP. While it is possible to deploy Cloud Volumes ONTAP in an existing, shared resource group by using the API, it's not recommended due to the risk of data loss. See the warning above for more details.
 
 | Tags | Tags are metadata for your Azure resources. Cloud Manager adds the tags to the Cloud Volumes ONTAP system and each Azure resource associated with the system.
