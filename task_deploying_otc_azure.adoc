@@ -36,7 +36,7 @@ When Cloud Manager creates a Cloud Volumes ONTAP system in Azure, it creates sev
 ====
 Deploying Cloud Volumes ONTAP in an existing, shared resource group is not recommended due to the risk of data loss. While rollback is currently disabled by default when using the API to deploy into an existing resource group, deleting Cloud Volumes ONTAP will potentially delete other resources from that shared group.
 
-The best practice is to use a new, dedicated resource group for Cloud Volumes ONTAP. This is the default and only option when deploying Cloud Volumes ONTAP in Azure from the Cloud Manager user interface.
+The best practice is to use a new, dedicated resource group for Cloud Volumes ONTAP. This is the default and only recommended option when deploying Cloud Volumes ONTAP in Azure from Cloud Manager.
 ====
 
 .Steps
