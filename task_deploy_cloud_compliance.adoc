@@ -155,6 +155,9 @@ You can subscribe at any time and you will not be charged until the amount of da
 
 image:screenshot_compliance_subscribe.png[A screenshot showing how much data is being scanned and the Subscribe button to subscribe to the service.]
 
+*Note:* If you are prompted by Cloud Compliance to subscribe, but you already have an Azure subscription, you’re probably using the old *Cloud Manager* subscription and you need to change to the new *NetApp Cloud Manager* subscription. See
+<<Changing to the new Cloud Manager plan in Azure,Changing to the new NetApp Cloud Manager plan in Azure>> for details.
+
 .Steps
 
 These steps must be completed by a user who has the _Account Admin_ role.
@@ -170,9 +173,6 @@ The subscription must be added to the Instance Profile or Managed Service Identi
 If you already have a subscription, then you're all set--there's nothing else that you need to do.
 +
 image:screenshot_profile_subscription.gif[A screenshot from the Credentials page that shows the Instance Profile with an active subscription.]
-+
-*Note:* If you are prompted by Cloud Compliance to subscribe, but you already have an Azure subscription, you’re probably using the old *Cloud Manager* subscription and you need to change to the new *NetApp Cloud Manager* subscription. See
-<<Changing to the new Cloud Manager plan in Azure,Changing to the new NetApp Cloud Manager plan in Azure>> for details.
 
 . If you don't have a subscription yet, hover over the credentials and click the action menu.
 
