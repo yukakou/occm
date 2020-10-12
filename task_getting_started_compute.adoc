@@ -62,7 +62,7 @@ You can take the following actions to further optimize your accounts:
 
 Top AWS Accounts:: This is a bar graph showing your top ten accounts by cost. The graph is based on the last 30 days of spend activity.
 
-https://help.spot.io/cloud-analyzer/cost-analysis/[Learn more about the Cost Analysis page available from Spot's Cloud Analyzer^].
+https://help.spot.io/cloud-analyzer/cost-analysis/[Learn more about the Cost Analysis page that's available in Spot's Cloud Analyzer^].
 
 == Go to Cloud Analyzer for more analysis and recommendations
 
