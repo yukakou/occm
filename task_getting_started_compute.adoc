@@ -1,0 +1,71 @@
+---
+sidebar: sidebar
+permalink: task_getting_started_compute.html
+keywords: compute, cloud insights, cloud analyzer, connect cloud analyzer, connect master payer account, connect payer account, aws payer account
+summary: Complete a few steps to get in-depth analysis of your cloud compute costs from Spot's Cloud Analyzer.
+---
+
+= Start optimizing your cloud compute costs
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Complete a few steps to get in-depth analysis of your cloud compute costs from Spot's Cloud Analyzer.
+
+== Connect Cloud Analyzer to your AWS account
+
+Click *Compute* and connect your AWS payer account.
+
+.Steps
+
+. Click *Compute*.
+
+. Click *Add AWS Credentials to Start*.
+
+. Follow the steps to connect your AWS account:
+.. Log in to your AWS master payer account.
+.. Set up cost and usage reports on the AWS account.
+.. Run the CloudFormation template.
+.. Copy the Spot RoleARN.
++
+https://help.spot.io/cloud-analyzer/connect-your-aws-account-2/[View more details about these steps^].
++
+image:screenshot_compute_add_account.gif[A screenshot that shows each field available on the connection page.]
+
+.Result
+
+Cloud Analyzer starts processing your AWS account data. If you have multiple accounts, Cloud Analyzer starts with read-only capabilities for all linked accounts under the master payer account. If you want to get more details about the potential savings for those accounts, then you'll need to connect them, as well. You can find more details about that in the section below.
+
+== Analyze your compute costs
+
+After Cloud Analyzer processes your account data, the Compute tab shows you insights on past, current, and future cloud costs.
+
+image:screenshot_compute_dashboard.gif[A screenshot that shows the Cost Analysis page in Cloud Manager. This page includes the information described in the text below.]
+
+Month to Date Costs:: The total cost of your workloads from the beginning of the current month to present.
+
+Projected Costs:: The forecasted cost at the end of the month based on analysis of your usage pattern.
+
+Last Week Missed Savings:: Savings that could have been achieved in the previous seven days using optimization of spot instances and reservations.
+
+Top AWS Account Spend Efficiency:: The top 10 accounts according to the greatest amount of estimated additional savings.
+Each account is assigned an efficiency score based on current and additional potential savings. The estimated additional savings indicates how much can be further saved by leveraging the use of Spot and reserved instances. You can take the following actions to further optimize your accounts:
++
+* View details: View your cost optimization opportunities by going to Spot's Cloud Analyzer.
+* Connect: Connect an account that is not yet managed. You will be directed to the wizard that connects the account.
+
+Top AWS Accounts:: This is a bar graph showing your top ten accounts by cost. The graph is based on the last 30 days of spend activity.
+
+https://help.spot.io/cloud-analyzer/cost-analysis/[Learn more about the Cost Analysis page available from Spot's Cloud Analyzer^].
+
+== Go to Cloud Analyzer for more analysis and recommendations
+
+The Top AWS Account Spend Efficiency report includes a *View Details* link for each account that brings you to Spot's Cloud Analyzer. From there, you can access more charts and analysis, in-depth recommendations, a use case optimization breakdown (containers, ElasticApps, and reservations), and more.
+
+image:screenshot_compute_dashboard_spot.gif[A screenshot that shows the Cost Analysis page in Spot's Cloud Analyzer.]
+
+* https://spot.io/products/cloud-analyzer/[View the product page for Cloud Analyzer to learn more about its capabilities^].
+* https://help.spot.io/cloud-analyzer/[View the documentation for Spot to get help using Cloud Analyzer^].

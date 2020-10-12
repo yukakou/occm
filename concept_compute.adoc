@@ -1,0 +1,48 @@
+---
+sidebar: sidebar
+permalink: concept_compute.html
+keywords: concepts, how cloud analyzer works, compute, compute costs, compute savings
+summary: By leveraging Spot's Cloud Analyzer service, Cloud Manager can provide a high-level cost analysis of your cloud compute spending and identify potential savings.
+---
+
+= Learn about the Compute service
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+By leveraging https://spot.io/products/cloud-analyzer/[Spot's Cloud Analyzer service^], Cloud Manager can provide a high-level cost analysis of your cloud compute spending and identify potential savings.
+
+Cloud Analyzer is a cloud infrastructure management solution that uses advanced analytics to provide visibility and insights into your cloud costs. It shows you where you can optimize those costs and lets you implement that optimization using Spot’s portfolio of continuous optimization products in just a few clicks.
+
+== Features
+
+* A cost analysis that shows current cost for the month, projected monthly costs, and missed savings
+* A view of spend efficiency by account, including the estimated additional savings
+* A link to Spot's Cloud Analyzer for more in-depth details about the spending for all accounts
+
+== Supported cloud providers
+
+Cloud Analyzer is supported with AWS.
+
+== Cost
+
+???
+
+== How Cloud Analyzer works with Cloud Manager
+
+At a high-level, Cloud Analyzer integration with Cloud Manager works like this:
+
+. You click Compute and connect your AWS master payer account.
+
+. NetApp configures your environment as follows:
+
+.. Creates an organization in the Spot platform.
+.. Sends an email welcoming you to Spot.
++
+You can log in to the Spot service using the same credentials that you use for Cloud Central and Cloud Manager.
+.. Cloud Analyzer starts processing your AWS account data.
+
+. In Cloud Manager, the Compute page refreshes and you use the information to gain insights on past, current, and future cloud costs.
