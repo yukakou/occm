@@ -35,14 +35,16 @@ Cloud Analyzer is supported with AWS.
 
 At a high-level, Cloud Analyzer integration with Cloud Manager works like this:
 
-. You click Compute and connect your AWS master payer account.
+. You click *Compute* and connect your AWS master payer account.
 
 . NetApp configures your environment as follows:
 
 .. Creates an organization in the Spot platform.
 .. Sends an email welcoming you to Spot.
 +
-You can log in to the Spot service using the same credentials that you use for Cloud Central and Cloud Manager.
+You can log in to the Spot service using the same single-sign on credentials that you use with Cloud Central and Cloud Manager.
 .. Cloud Analyzer starts processing your AWS account data.
 
 . In Cloud Manager, the Compute page refreshes and you use the information to gain insights on past, current, and future cloud costs.
+
+. You click a link to go to Spot's Cloud Analyzer, which provides a full analysis of your cloud spend and savings opportunities.
