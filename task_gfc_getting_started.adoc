@@ -23,7 +23,7 @@ You use Cloud Manager to deploy the Global File Cache Management Server and Glob
 
 == Enable Global File Cache using Cloud Manager
 
-In this configuration you will deploy the Global File Cache Management Server and Global File Cache Core in the same working environment where you created your Cloud Volumes ONTAP HA pair using Cloud Manager.
+In this configuration you will deploy the Global File Cache Management Server and Global File Cache Core in the same working environment where you created your Cloud Volumes ONTAP system using Cloud Manager.
 
 Watch link:https://www.youtube.com/watch?v=TGIQVssr43A[this video^] to see the steps from start to finish.
 
@@ -31,10 +31,10 @@ Watch link:https://www.youtube.com/watch?v=TGIQVssr43A[this video^] to see the s
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details:
 
-==== image:number1.png[Number 1] Deploy Cloud Volumes ONTAP as an HA pair
+==== image:number1.png[Number 1] Deploy Cloud Volumes ONTAP
 
 [role="quick-margin-para"]
-Deploy Cloud Volumes ONTAP as an HA pair in Azure or AWS and configure SMB file shares. For more information, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^] or link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^].
+Deploy Cloud Volumes ONTAP in Azure or AWS and configure SMB file shares. For more information, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^] or link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^].
 
 ==== image:number2.png[Number 2] Deploy the Global File Cache Management Server
 
@@ -58,7 +58,7 @@ See link:task_deploy_gfc_edge_instances.html[Deploying Global File Cache Edge in
 
 === Deploy Cloud Volumes ONTAP as your storage platform
 
-In the current release, Global File Cache supports Cloud Volumes ONTAP deployed as an HA pair in Azure or AWS.  For detailed prerequisites, requirements, and deployment instructions, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^] or link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^].
+In the current release, Global File Cache supports Cloud Volumes ONTAP deployed in Azure or AWS.  For detailed prerequisites, requirements, and deployment instructions, see link:task_deploying_otc_azure.html[Launching Cloud Volumes ONTAP in Azure^] or link:task_deploying_otc_aws.html[Launching Cloud Volumes ONTAP in AWS^].
 
 Note the following additional Global File Cache requirement:
 
@@ -74,7 +74,7 @@ image:screenshot_gfc_install1.png[A screenshot of the initial Global File Cache 
 
 .Steps
 
-. Select the working environment where you deployed the Cloud Volumes ONTAP HA pair.
+. Select the working environment where you deployed Cloud Volumes ONTAP.
 
 . In the Services panel, click *Enable GFC*.
 +
