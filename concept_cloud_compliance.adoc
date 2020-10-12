@@ -43,7 +43,7 @@ Cloud Compliance can scan data from the following types of data sources:
 +
 link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-compliance-service[Learn how to subscribe^].
 
-* Installing Cloud Compliance requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed.
+* Installing Cloud Compliance requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed. See the <<The Cloud Compliance instance,the type of instance that is deployed for each cloud provider>>
 
 * Cloud Compliance requires that you have deployed a Connector. In many cases you already have a Connector because of other storage and services you are using in Cloud Manager. The Connector instance results in charges from the cloud provider where it is deployed. See the link:reference_cloud_mgr_reqs.html[type of instance that is deployed for each cloud provider^].
 

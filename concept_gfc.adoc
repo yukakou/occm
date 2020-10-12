@@ -119,7 +119,7 @@ In Azure, this runs on a D4s_V3 or equivalent (4 vCPU/16GB RAM) VM with 127GB pr
 +
 In AWS, this runs on a m4.xlarge or equivalent (4 vCPU/16GB RAM) instance with 127GB general purpose SSD
 
-* When installed with Cloud Volumes ONTAP as an HA pair in Azure or AWS (the supported configurations deployed completely through Cloud Manager), there is a charge of $3,000 per site (for each Global File Cache Edge instance), per year.
+* When installed with Cloud Volumes ONTAP in Azure or AWS (the supported configurations deployed completely through Cloud Manager), there is a charge of $3,000 per site (for each Global File Cache Edge instance), per year.
 
 * When installed using the manual deployment options the pricing is different. To see a high-level estimate of costs, see https://cloud.netapp.com/global-file-cache/roi[Calculate Your Savings Potential^] or consult your Global File Cache Solutions Engineer to discuss the best options for your enterprise deployment.
 
@@ -135,7 +135,7 @@ See the link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Gui
 
 == Limitations
 
-* The initial version of Global File Cache supported within Cloud Manager requires that the backend storage platform used as your central storage must be a working environment where you have deployed a Cloud Volumes ONTAP HA pair in Azure or AWS.
+* The initial version of Global File Cache supported within Cloud Manager requires that the backend storage platform used as your central storage must be a working environment where you have deployed a Cloud Volumes ONTAP in Azure or AWS.
 +
 Other storage platforms and other cloud providers are not supported at this time using Cloud Manager, but can be deployed using legacy deployment procedures.
 
