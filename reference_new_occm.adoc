@@ -20,9 +20,9 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
-== Cloud Manager 3.8.9 update (11 Oct 2020)
+== Cloud Manager 3.8.9 update (13 Oct 2020)
 
-We have two Cloud Tiering updates for you:
+We have released two Cloud Tiering updates:
 
 * Licensing for Cloud Tiering is now available from Cloud Manager.
 +
