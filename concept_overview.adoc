@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_overview.html
-keywords: overview, concepts, features, use case
+keywords: overview, concepts, features, use case, days, 14 days
 summary: Cloud Manager enables you to deploy Cloud Volumes ONTAP, which provides enterprise-class features for your cloud storage, and to easily replicate data across hybrid clouds built on NetApp.
 ---
 
