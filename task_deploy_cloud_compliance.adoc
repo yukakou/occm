@@ -151,17 +151,24 @@ From the Scan Configuration page you can select the working environments, volume
 
 The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point.
 
-These steps must be completed by a user who has the _Account Admin_ role.
+You can subscribe at any time and you will not be charged until the amount of data exceeds 1 TB. You can always see the total amount of data that is being scanned from the Cloud Compliance Dashboard. And the _Subscribe Now_ button makes it easy to subscribe when you are ready.
+
+image:screenshot_compliance_subscribe.png[A screenshot showing how much data is being scanned and the Subscribe button to subscribe to the service.]
+
+*Note:* If you are prompted by Cloud Compliance to subscribe, but you already have an Azure subscription, you’re probably using the old *Cloud Manager* subscription and you need to change to the new *NetApp Cloud Manager* subscription. See
+<<Changing to the new Cloud Manager plan in Azure,Changing to the new NetApp Cloud Manager plan in Azure>> for details.
 
 .Steps
+
+These steps must be completed by a user who has the _Account Admin_ role.
 
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 +
 image:screenshot_settings_icon.gif[A screenshot of Cloud Manager's top right banner where you can select the Settings icon.]
 
-. Find the credentials for the AWS Instance Profile.
+. Find the credentials for the AWS Instance Profile or Azure Managed Service Identity.
 +
-The subscription must be added to the Instance Profile. Charging won't work otherwise.
+The subscription must be added to the Instance Profile or Managed Service Identity. Charging won't work otherwise.
 +
 If you already have a subscription, then you're all set--there's nothing else that you need to do.
 +
@@ -182,3 +189,37 @@ video::video_subscribing_aws.mp4[width=848, height=480]
 The following video shows how to associate a Marketplace subscription to an Azure subscription:
 +
 video::video_subscribing_azure.mp4[width=848, height=480]
+
+== Changing to the new Cloud Manager plan in Azure
+
+Cloud Compliance was added to the Azure Marketplace subscription named *NetApp Cloud Manager* as of October 7, 2020. If you already have the original Azure *Cloud Manager* subscription it will not allow you to use Cloud Compliance.
+
+You need to follow these steps and select the new *NetApp Cloud Manager* subscription and then remove the old *Cloud Manager* subscription.
+
+NOTE: If your existing Subscription was issued with a special private offer, you need to contact NetApp so that we can issue a new special private offer with Compliance included.
+
+.Steps
+
+These steps are similar to adding a new subscription as described above, but vary in a few places.
+
+. In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
+
+. Find the credentials for the Azure Managed Service Identity that you want to change the subscription for and hover over the credentials and click *Associate Subscription*.
++
+The details for your current Marketplace Subscription are displayed.
+
+. Click *Add Subscription*, click *Continue*, and follow the steps. You are redirected to Azure portal in order to create the new subscription.
+
+. Make sure you select the plan *NetApp Cloud Manager* that provides access to Cloud Compliance and not *Cloud Manager*.
+
+. Go through the steps in the video to associate a Marketplace subscription to an Azure subscription:
++
+video::video_subscribing_azure.mp4[width=848, height=480]
+
+. Return to Cloud Manager, select the new subscription, and click *Associate*.
+
+. To verify your subscription has changed, hover over the “i” above subscription in the Credentials card.
++
+Now you can unsubscribe your old subscription from the Azure portal.
+
+. In the Azure portal, go to Software as a Service (SaaS), select the subscription, and click *Unsubscribe*.
