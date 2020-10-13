@@ -47,7 +47,7 @@ image:screenshot_compliance_investigation_page.gif[A screenshot of details infor
 
 . You can also filter the contents of the investigation page to display only the results you want to see. The top-level tabs allow you to view data from files (unstructured data) or from databases (structured data).
 +
-Then you have filters for working environment, storage repository, category, private data, file type, last modified date, and whether the S3 object's permissions are open to public access.
+Then you have filters for working environment, storage repository, category, private data, file type, last modified date, file path, and whether the S3 object's permissions are open to public access.
 +
 image:screenshot_compliance_investigation_filtered.png[A screenshot of the filters available when refining the results in the investigation page.]
 

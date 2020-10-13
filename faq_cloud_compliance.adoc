@@ -145,6 +145,8 @@ No, but you can download status reports that you can share internally in your or
 
 Cloud Compliance provides out-of-the-box insights to your data. These insights can be extracted and used for your organization's needs.
 
+Additionally, you can use the "Data Fusion" capability to have Cloud Compliance scan your volumes and S3 buckets based on criteria found in specific columns in databases you are scanning -- essentially allowing you to make your own customizable personal data type.
+
 == Can I limit Cloud Compliance information to specific users?
 
 Yes, Cloud Compliance is fully integrated with Cloud Manager. Cloud Manager users can only see information for the working environments they are eligible to view according to their workspace privileges.
