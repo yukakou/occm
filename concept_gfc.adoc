@@ -135,7 +135,7 @@ See the link:https://repo.cloudsync.netapp.com/gfc/NetApp%20GFC%20-%20User%20Gui
 
 == Limitations
 
-* The initial version of Global File Cache supported within Cloud Manager requires that the backend storage platform used as your central storage must be a working environment where you have deployed a Cloud Volumes ONTAP in Azure or AWS.
+* The version of Global File Cache supported within Cloud Manager requires that the backend storage platform used as your central storage must be a working environment where you have deployed a Cloud Volumes ONTAP single node or HA pair in Azure or AWS.
 +
 Other storage platforms and other cloud providers are not supported at this time using Cloud Manager, but can be deployed using legacy deployment procedures.
 
