@@ -19,14 +19,12 @@ Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can 
 
 The following requirements must be met in GCP.
 
-Shared VPC::
-The Connector and Cloud Volumes ONTAP are supported in a Google Cloud Platform shared VPC.
+Virtual Private Cloud::
+Cloud Volumes ONTAP and the Connector are supported in Google Cloud VPCs and shared VPCs.
 +
 A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Connector and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
 +
-The only requirement is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account.
-+
-Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
+The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
 
 Outbound internet access for Cloud Volumes ONTAP::
 Cloud Volumes ONTAP requires outbound internet access to send messages to NetApp AutoSupport, which proactively monitors the health of your storage.
