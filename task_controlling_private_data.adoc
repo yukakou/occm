@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_controlling_private_data.html
-keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy
+keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, filter data, csv file
 summary: Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Compliance found in your data.
 ---
 
@@ -259,30 +259,30 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 
 * The top-level tabs allow you to view data from files (unstructured data) or from databases (structured data).
 
-* The controls at the top of each column allow you to sort the results by the values in that column.
+* The controls at the top of each column allow you to sort the results in numerical or alphabetical order.
 
 * The left-pane filters enable you to refine the results by working environment, storage repository, category, private data, file type, last modified date, and whether the S3 object’s permissions are open to public access.
 
-* _Highlight filters_ at the bottom of the Filters pane list a group of predefined filters that provide commonly requested combinations of filters; like a saved query.
+* The _Highlights_ filters at the bottom of the Filters pane list a group of predefined filters that provide commonly requested combinations of filters; like a saved database query.
 
 === Predefined Highlights filters
 
 The provided Highlights filters include:
 
-[cols="25,35,30",width=85%,options="header"]
+[cols="25,35,35",width=85%,options="header"]
 |===
 | Name
 | Description
 | Logic
 
 | S3 publicly-exposed private data | S3 Objects containing personal or sensitive personal information, with open Public read access. | (S3 Public) AND (contains personal OR sensitive personal info)
-| PCI DSS - Stale data over 30 days | Files containing Credit Card information, last modified over 30 days ago. | Contains credit card AND last modified over 30 days
-| HIPAA - Stale data over 30 days | Files containing Health information, last modified over 30 days ago. | Contains health data (defined same way as in HIPAA report) AND last modified over 30 days
+| PCI DSS – Stale data over 30 days | Files containing Credit Card information, last modified over 30 days ago. | Contains credit card AND last modified over 30 days
+| HIPAA – Stale data over 30 days | Files containing Health information, last modified over 30 days ago. | Contains health data (defined same way as in HIPAA report) AND last modified over 30 days
 | Private data – Stale over 7 years | Files containing personal or sensitive personal information, last modified over 7 years ago. | Files containing personal or sensitive personal information, last modified over 7 years ago
 | GDPR – European citizens | Files and DB Tables containing over 10 identifiers of EU citizens. | Files and DB Tables containing over 10 identifiers of EU citizens (any one of the national identifiers of the European countries. Does not include Brazil, California, USA SSN, Israel, South Africa)
 | CCPA – California residents | Files containing over 10 California Driver’s License identifiers or DB Tables with this identifier. | Files containing over 10 California Driver’s License identifiers OR DB Tables containing California Driver’s license
-| Data Subject names – high risk | Files with over 50 Data Subject names. | Files with over 50 Data Subject names
-| Email Addresses – high risk | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses
+| Data Subject names – High risk | Files with over 50 Data Subject names. | Files with over 50 Data Subject names
+| Email Addresses – High risk | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses
 | Private data – High risk | Files with over 50 PIIs (Personal or Sensitive Personal information), or DB Columns with over 50% of their rows containing PIIs. | Files with over 50 PIIs (Personal or Sensitive Personal information), or DB Columns with over 50% of their rows containing PIIs
 |===
 
