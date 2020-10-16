@@ -403,7 +403,7 @@ entries:
     entries:
       - title: API Developer Guide
         url: https://docs.netapp.com/us-en/occm/api.html
-      - title: Automation samples
+      - title: Automate using DevOps tools
         url: /reference_infrastructure_as_code.html
   - title: Troubleshoot issues
     url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services
