@@ -137,10 +137,10 @@ image:screenshot_cloud_compliance_dp_volumes.png[A screenshot showing the Enable
 
 If you want to scan these data protection volumes:
 
-. Click the *Enable Access to DP volumes* button at the top of the page.
+. Click the *Enable Access to DP volumes* button at the top of the page, and then click the button again for confirmation.
++
+Volumes that were initially created as CIFS volumes in the source ONTAP system require that you enter CIFS credentials to scan those DP volumes. You can use the same credential you used initially so that Cloud Compliance can scan CIFS volumes, or you can specify a different set of Admin credentials.
 
 . Activate each DP volume that you want to scan, or use the *Activate Compliance for all Volumes* control to enable all volumes, including all DP volumes.
 
 Once enabled, Cloud Compliance creates an NFS share from each DP volume that was activated for Compliance so that it can be scanned. The share export policies only allow access from the Cloud Compliance instance.
-
-Volumes that were initially created as CIFS volumes in the source ONTAP system ...

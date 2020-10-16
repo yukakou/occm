@@ -61,7 +61,7 @@ At a high-level, Cloud Compliance works like this:
 . You deploy an instance of Cloud Compliance in Cloud Manager.
 . You enable it on one or more working environments, or on your databases.
 . Cloud Compliance scans the data using an AI learning process.
-. In Cloud Manager, you click *Compliance* and use the provided dashboard and reporting tools to help in your compliance efforts.
+. You click *Compliance* and use the provided dashboard and reporting tools to help in your compliance efforts.
 
 == The Cloud Compliance instance
 
@@ -91,7 +91,7 @@ TIP: The instance should remain running at all times because Cloud Compliance co
 
 == How scans work
 
-After you enable Cloud Compliance and select the volumes, buckets, or database schemas you want to scan, it immediately starts scanning the data to identify personal and sensitive data. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, and data categories.
+After you enable Cloud Compliance and select the volumes, buckets, or database schemas you want to scan, it immediately starts scanning the data to identify personal and sensitive data. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, data categories, and file types.
 
 Cloud Compliance connects to the data like any other client by mounting NFS and CIFS volumes. NFS volumes are automatically accessed as read-only, while you need to provide Active Directory credentials to scan CIFS volumes.
 

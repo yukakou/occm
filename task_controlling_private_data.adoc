@@ -241,9 +241,9 @@ But when Cloud Compliance detects Personal Identifiable Information (PII), or wh
 
 == Viewing files that contain unique identifiers from your databases
 
-A feature we call _data fusion_ allows you to scan your files to identify whether unique identifiers from your databases are found in those files - kind of like making your own list of "private data" that is identified in a Cloud Compliance scan. You can choose the identifiers by selecting a specific column, or columns, in a database table. This gives you the full picture about where important data resides in _all_ your files.
+A feature we call _data fusion_ allows you to scan your files to identify whether unique identifiers from your databases are found in those files - kind of like making your own list of "personal sensitive data" that is identified in Cloud Compliance scans. You can choose the identifiers by selecting a specific column, or columns, in a database table. This gives you the full picture about where potential sensitive data resides in _all_ your files.
 
-For example, the diagram below shows how data fusion is used to scan your volumes and buckets for occurrences of the Customer IDs in your Oracle database.
+For example, the diagram below shows how data fusion is used to scan your volumes and buckets for occurrences of all your Customer IDs in your Oracle database.
 
 image:diagram_compliance_data_fusion.png[A diagram showing how content from your databases can be used as a source to identify files that contain the same data.]
 
@@ -257,7 +257,7 @@ image:screenshot_compliance_manage_data_fusion.png[A screenshot of selecting the
 
 . Click *Add your first Data Fusion sources* on the next page.
 
-. In the _Add Data Fusion Source_ page, identify the Database Schema, the Table in that schema, and the Column, or Columns, that contain the unique identifiers.
+. In the _Add Data Fusion Source_ page, identify the Database Schema (in the format `DatabaseName,SchemaName`), the Table name in that schema, and the Column, or Columns, that contain the unique identifiers.
 +
 When adding multiple columns, enter each column name, or table view name, on a separate line.
 +
@@ -268,10 +268,12 @@ image:screenshot_compliance_add_data_fusion.png[A screenshot of identifying the 
 The Data Fusion inventory page displays the database source columns you have configured for Cloud Compliance to scan.
 +
 image:screenshot_compliance_data_fusion_list.png[A screenshot of all the data source references you have configured with Data Fusion.]
-
++
 Note that if you later decide not to scan your files using a specific Data Fusion source, you can select the source row and click *Delete Data Fusion Source*.
-
++
 image:screenshot_compliance_delete_data_fusion.png[A screenshot showing how to remove a data fusion source.]
+
+. View the results of these scans in the Dashboard under the "Personal" results section, or in the Investigation page in the "Personal Data" filter. Each source column you added appears in the filter list as "Database.Schema.Table.Column", for example `Oracle1.Accounts.Customers.Customer ID`.
 
 == Viewing Dashboard data for specific working environments
 
