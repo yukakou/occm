@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_controlling_private_data.html
-keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, filter data, csv file
+keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, filter data, csv file, highlight, data fusion
 summary: Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Compliance found in your data.
 ---
 
@@ -19,7 +19,7 @@ By default, the Cloud Compliance dashboard displays compliance data for all work
 
 image:screenshot_compliance_dashboard.png[A screenshot of the Cloud Compliance dashboard]
 
-If you want to see data for only some of the working environments, <<Viewing data from specific working environments,select those working environments>>.
+If you want to see data for only some of the working environments, <<Viewing Dashboard data for specific working environments,select those working environments>>.
 
 You can also filter the results from the Data Investigation page and download a report of the results. See <<Filtering data in the Data Investigation page,Filtering data in the Data Investigation page>> for details.
 
@@ -239,7 +239,41 @@ Cloud Compliance scans all files for category and metadata insights and displays
 But when Cloud Compliance detects Personal Identifiable Information (PII), or when it performs a DSAR search, only the following file formats are supported:
 .PDF, .DOCX, .DOC, .PPTX, .XLS, .XLSX, .CSV, .TXT, .RTF, and .JSON.
 
-== Viewing data from specific working environments
+== Viewing files that contain unique identifiers from your databases
+
+A feature we call _data fusion_ allows you to scan your files to identify whether unique identifiers from your databases are found in those files - kind of like making your own list of "private data" that is identified in a Cloud Compliance scan. You can choose the identifiers by selecting a specific column, or columns, in a database table. This gives you the full picture about where important data resides in _all_ your files.
+
+For example, the diagram below shows how data fusion is used to scan your volumes and buckets for occurrences of the Customer IDs in your Oracle database.
+
+image:diagram_compliance_data_fusion.png[A diagram showing how content from your databases can be used as a source to identify files that contain the same data.]
+
+.Steps
+
+You must have added at least one database server to Cloud Compliance before you can add data fusion sources.
+
+. In the Scan Configuration page, click *Manage Data Fusion* in the database where the source data resides.
++
+image:screenshot_compliance_manage_data_fusion.png[A screenshot of selecting the Manage Data Fusion button to add a source column.]
+
+. Click *Add your first Data Fusion sources* on the next page.
+
+. In the _Add Data Fusion Source_ page, identify the Database Schema, the Table in that schema, and the Column, or Columns, that contain the unique identifiers.
++
+When adding multiple columns, enter each column name, or table view name, on a separate line.
++
+image:screenshot_compliance_add_data_fusion.png[A screenshot of identifying the schema, table, and column for the data fusion source.]
+
+. Click *Add Data Fusion Source*.
++
+The Data Fusion inventory page displays the database source columns you have configured for Cloud Compliance to scan.
++
+image:screenshot_compliance_data_fusion_list.png[A screenshot of all the data source references you have configured with Data Fusion.]
+
+Note that if you later decide not to scan your files using a specific Data Fusion source, you can select the source row and click *Delete Data Fusion Source*.
+
+image:screenshot_compliance_delete_data_fusion.png[A screenshot showing how to remove a data fusion source.]
+
+== Viewing Dashboard data for specific working environments
 
 You can filter the contents of the Cloud Compliance dashboard to see compliance data for all working environments and databases, or for just specific working environments.
 
