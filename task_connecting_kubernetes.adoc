@@ -79,6 +79,10 @@ GKE defaults to using the Google https://cloud.google.com/container-optimized-os
 
 === Connector requirements
 
+Ensure that the following networking and permissions are in place for the Connector.
+
+==== Networking
+
 * The Connector needs an outbound internet connection to access the following endpoints when installing Trident:
 +
 \https://packages.cloud.google.com/yum
@@ -86,8 +90,28 @@ GKE defaults to using the Google https://cloud.google.com/container-optimized-os
 +
 Cloud Manager installs Trident on a Kubernetes cluster when you connect a working environment to the cluster.
 
-* The Connector requires the following permissions to discover and manage Kubernetes clusters running in Google Kubernetes Engine (GKE):
-+
+==== Required permissions to discover and manage EKS clusters
+
+The Connector needs Admin permissions to discover and manage Kubernetes clusters running in Amazon Elastic Kubernetes Service (EKS):
+
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "eks:*",
+            "Resource": "*"
+       }
+    ]
+}
+
+==== Required permissions to discover and manage GKE clusters
+
+The Connector needs the following permissions to discover and manage Kubernetes clusters running in Google Kubernetes Engine (GKE):
+
+[source,yaml]
 container.*
 
 === Example setup
