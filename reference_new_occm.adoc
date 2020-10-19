@@ -20,6 +20,18 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 link:https://docs.netapp.com/us-en/occm36/reference_new_occm.html[What's new in 3.6^]
 link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 3.5^]
 
+== New Terraform provider (19 Oct 2020)
+
+We have developed a new Terraform provider that DevOps teams can use with Cloud Manager to automate and integrate Cloud Volumes ONTAP with infrastructure as code.
+
+https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest[View the netapp-cloudmmanager provider^].
+
+== Cloud Manager 3.8.9 update (18 Oct 2020)
+
+By leveraging https://spot.io/products/cloud-analyzer/[Spot's Cloud Analyzer^], Cloud Manager can now provide a high-level cost analysis of your cloud compute spending and identify potential savings. This information is available from the *Compute* service in Cloud Manager. link:concept_compute.html[Learn more].
+
+image:screenshot_compute_dashboard.gif[A screenshot that shows the Cost Analysis page in Cloud Manager]
+
 == Cloud Manager 3.8.9 update (13 Oct 2020)
 
 We have released two Cloud Tiering updates:

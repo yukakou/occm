@@ -309,6 +309,12 @@ entries:
         url: /concept_gfc_enduser_training.html
       - title: Additional information
         url: /reference_gfc_additional_information.html
+  - title: Optimize cloud compute costs
+    entries:
+      - title: Learn about the Compute service
+        url: /concept_compute.html
+      - title: Get started
+        url: /task_getting_started_compute.html
   - title: Tier on-prem data to the cloud
     entries:
       - title: Learn about Cloud Tiering
@@ -403,7 +409,7 @@ entries:
     entries:
       - title: API Developer Guide
         url: https://docs.netapp.com/us-en/occm/api.html
-      - title: Automation samples
+      - title: Automate using DevOps tools
         url: /reference_infrastructure_as_code.html
   - title: Troubleshoot issues
     url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services
