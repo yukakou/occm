@@ -207,6 +207,12 @@ entries:
             url: /task_manage_cvs_gcp.html
           - title: Manage cloud volumes snapshots
             url: /task_manage_cloud_volumes_gcp_snapshots.html
+  - title: Manage ONTAP clusters
+    entries:
+      - title: Discover ONTAP clusters
+        url: /task_discovering_ontap.html
+      - title: Manage ONTAP volumes
+        url: /task_provisioning_ontap.html
   - title: Back up to the cloud
     entries:
       - title: Learn about Backup to Cloud
@@ -309,16 +315,12 @@ entries:
         url: /concept_compute.html
       - title: Get started
         url: /task_getting_started_compute.html
-  - title: Manage ONTAP clusters
+  - title: Tier on-prem data to the cloud
     entries:
-      - title: Discover ONTAP clusters
-        url: /task_discovering_ontap.html
-      - title: Manage ONTAP volumes
-        url: /task_provisioning_ontap.html
-      - title: Tier on-prem data to the cloud
+      - title: Learn about Cloud Tiering
+        url: /concept_cloud_tiering.html
+      - title: Get started
         entries:
-          - title: Learn about Cloud Tiering
-            url: /concept_cloud_tiering.html
           - title: Tier data to Amazon S3
             url: /task_tiering_onprem_aws.html
           - title: Tier data to Azure Blob storage
@@ -327,20 +329,20 @@ entries:
             url: /task_tiering_onprem_gcp.html
           - title: Tier data to StorageGRID
             url: /task_tiering_onprem_storagegrid.html
-          - title: Licensing
-            url: /task_licensing_cloud_tiering.html
-          - title: Manage data tiering
-            url: /task_managing_tiering.html
-          - title: FAQ
-            url: /faq_cloud_tiering.html
-          - title: Reference
-            entries:
-              - title: Supported Amazon S3 storage classes and regions
-                url: /reference_aws_support.html
-              - title: Supported Azure access tiers and regions
-                url: /reference_azure_support.html
-              - title: Supported Google Cloud storage classes and regions
-                url: /reference_google_support.html
+      - title: Set up licensing
+        url: /task_licensing_cloud_tiering.html
+      - title: Manage data tiering
+        url: /task_managing_tiering.html
+      - title: FAQ
+        url: /faq_cloud_tiering.html
+      - title: Reference
+        entries:
+          - title: Supported Amazon S3 storage classes and regions
+            url: /reference_aws_support.html
+          - title: Supported Azure access tiers and regions
+            url: /reference_azure_support.html
+          - title: Supported Google Cloud storage classes and regions
+            url: /reference_google_support.html
   - title: View Amazon S3 buckets
     url: /task_viewing_amazon_s3.html
   - title: Administer Cloud Manager

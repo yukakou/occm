@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_connectors.html
-keywords: concept, connectors, learn about connectors, service connectors, what are connectors, what is a connector, what's a connector
+keywords: concept, connectors, learn about connectors, service connectors, what are connectors, what is a connector, what's a connector, days, 14 days
 summary: In most cases, you will need to deploy a Connector in your cloud or on-premises network. The Connector enables Cloud Manager to manage resources and processes within your public cloud environment.
 ---
 
@@ -57,9 +57,9 @@ An Account Admin needs to create a Connector before a Workspace Admin can create
 An Account Admin can create a Connector in a number of ways:
 
 * Directly from Cloud Manager (recommended)
-**
-**
-**
+** link:task_creating_connectors_aws.html[Create in AWS]
+** link:task_creating_connectors_azure.html[Create in Azure]
+** link:task_creating_connectors_gcp.html[Create in GCP]
 * link:task_launching_aws_mktp.html[From the AWS Marketplace]
 * link:task_launching_azure_mktp.html[From the Azure Marketplace]
 * link:task_installing_linux.html[By downloading and installing the software on an existing Linux host]
