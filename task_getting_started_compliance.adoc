@@ -137,10 +137,16 @@ image:screenshot_cloud_compliance_dp_volumes.png[A screenshot showing the Enable
 
 If you want to scan these data protection volumes:
 
-. Click the *Enable Access to DP volumes* button at the top of the page, and then click the button again for confirmation.
-+
-Volumes that were initially created as CIFS volumes in the source ONTAP system require that you enter CIFS credentials to scan those DP volumes. You can use the same credential you used initially so that Cloud Compliance can scan CIFS volumes, or you can specify a different set of Admin credentials.
+. Click the *Enable Access to DP volumes* button at the top of the page.
 
-. Activate each DP volume that you want to scan, or use the *Activate Compliance for all Volumes* control to enable all volumes, including all DP volumes.
+. Review the confirmation message and click *Enable Access to DP volumes* again.
+- Volumes that were initially created as NFS volumes in the source ONTAP system are enabled.
+- Volumes that were initially created as CIFS volumes in the source ONTAP system require that you enter CIFS credentials to scan those DP volumes. If you already entered Active Directory credentials so that Cloud Compliance can scan CIFS volumes you can use those credentials, or you can specify a different set of Admin credentials.
++
+image:screenshot_compliance_dp_cifs_volumes.png[A screenshot of the two options for enabling CIFS data protection volumes.]
+
+. Activate each DP volume that you want to scan <<Enabling and disabling compliance scans on volumes,the same way you enabled other volumes>>, or use the *Activate Compliance for all Volumes* control to enable all volumes, including all DP volumes.
 
 Once enabled, Cloud Compliance creates an NFS share from each DP volume that was activated for Compliance so that it can be scanned. The share export policies only allow access from the Cloud Compliance instance.
+
+*Note:* If you had no CIFS data protection volumes when you initially enabled access to DP volumes, and later add some, the button *Enable Access to CIFS DP* appears at the top of the Scan Configuration page. Click this button and add CIFS credentials to enable access to these CIFS DP volumes.
