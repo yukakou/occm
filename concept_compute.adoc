@@ -27,9 +27,9 @@ Cloud Analyzer is a cloud infrastructure management solution that uses advanced 
 
 Cloud Analyzer is supported with AWS.
 
-== Cost
+//== Cost
 
-???
+//???
 
 == How Cloud Analyzer works with Cloud Manager
 
