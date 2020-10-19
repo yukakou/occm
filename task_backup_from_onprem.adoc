@@ -25,7 +25,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
 * You're running ONTAP 9.7P5 or later on the cluster.
 * You have a valid cloud provider subscription for the storage space where your backups will be located.
-* You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Backup to Cloud BYOL license from NetApp.
+* You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure NetApp Cloud Manager Marketplace offering^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS Cloud Manager Marketplace offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Backup to Cloud BYOL license from NetApp.
 
 ==== image:number2.png[Number 2] Enable Backup to Cloud on the system
 
@@ -38,7 +38,7 @@ image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Clo
 ==== image:number3.png[Number 3] Select the cloud provider and enter provider details
 
 [role="quick-margin-para"]
-Select the provider and then select the provider subscription, the region, and resource group. You also need to specify the IPspace in the ONTAP cluster where the volumes reside.
+Select the provider and then enter the provider details. You also need to specify the IPspace in the ONTAP cluster where the volumes reside.
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to an Azure Blob tier]
@@ -66,7 +66,7 @@ image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon 
 
 == Requirements
 
-Read the following requirements to make sure you have a supported configuration before you start backing up volumes to Azure Blob storage.
+Read the following requirements to make sure you have a supported configuration before you start backing up on-prem volumes to object storage.
 
 Supported ONTAP versions::
 ONTAP 9.7P5 and later.
@@ -77,15 +77,16 @@ An intercluster LIF is required on each ONTAP node that hosts the volumes you wa
 +
 When you set up backup to cloud, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
 
-Supported Azure regions::
-Backup to Cloud is supported in all Azure regions https://cloud.netapp.com/cloud-volumes-global-regions[where cloud volumes are supported^].
+Supported regions::
+Azure: On-prem backup is supported in all Azure regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
+AWS: On-prem backup is supported in all AWS regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
 
 License requirements::
-For Backup to Cloud PAYGO licensing, a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure Marketplace Cloud Manager Backup offering^] is required before you enable Backup to Cloud. Billing for Backup to Cloud is done through this subscription.
+For Backup to Cloud PAYGO licensing, a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure Marketplace Cloud Manager Backup offering^] or https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS Marketplace Cloud Manager Backup offering^] is required before you enable Backup to Cloud. Billing for Backup to Cloud is done through this subscription.
 +
 For Backup to Cloud BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
 +
-And you need to have a Microsoft Azure subscription for the storage space where your backups will be located.
+And you need to have a Microsoft Azure or Amazon AWS subscription for the storage space where your backups will be located.
 
 == Enabling Backup to Cloud
 
@@ -98,15 +99,22 @@ Enable Backup to Cloud at any time directly from the working environment.
 image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Activate button which is available after you select a working environment.]
 
 . Select the provider, and then enter the provider details:
+- For Azure, enter:
 .. The Azure subscription used to store the backups.
 .. The Azure region.
 .. The resource group - you can create a new resource group or select and existing resource group.
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
-.. And then click *Continue*.
 +
 image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to an Azure Blob tier]
+- For AWS, enter:
+.. The AWS credentials (Access Key and Secret Key) used to store the backups.
+.. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 +
-Note that you cannot change the subscription or the resource group after the services has started.
+image:screenshot_backup_onprem_to_aws.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to an AWS S3 tier]
++
+Note that you cannot change this information after the service has started.
+
+. Then click *Continue*.
 
 . In the _Define Policy_ page, select the backup schedule and retention value and click *Continue*.
 +
@@ -114,7 +122,7 @@ image:screenshot_backup_onprem_policy.png[A screenshot that shows the Backup to 
 +
 See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-combination[the list of existing policies^].
 
-. Select the volumes that you want to back up and click *Activate*.
+. Select the volumes that you want to back up and click *Save*.
 +
 image:screenshot_backup_select_onprem_volumes.png[A screenshot of selecting the volumes that will be backed up.]
 
