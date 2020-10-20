@@ -1,0 +1,65 @@
+---
+sidebar: sidebar
+permalink: task_managing_ontap.html
+keywords: ontap, cluster, manage, fas, aff, active iq, update firmware, ontap licenses
+summary: Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering an ONTAP cluster enables you to provision storage, replicate data, and tier cold data from an on-prem cluster to the cloud.
+---
+
+= Managing ONTAP clusters
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering an ONTAP cluster enables you to provision storage, replicate data, back up data, and tier cold data from an on-prem cluster to the cloud. You can also see if any clusters require new firmware to be installed and if they are using all the licenses that you have paid for.
+
+== Checking for undiscovered on-prem clusters
+
+The Active IQ page shows a list of all the on-prem clusters you are able to manage based on your NetApp Support Site (NSS) credentials. It also lists those clusters that have been discovered within Cloud Manager, and those that have not been discovered.
+
+.Steps
+
+. Click the *Active IQ* tab, enter your NetApp Support Site user name and password, and click *Save*.
++
+The clusters that have a valid support contract are displayed along with a status of whether they have been discovered in Cloud Manager.
+
+. If you want to manage the clusters that are listed as "Undiscovered" in Cloud Manager, click *Discover* and follow the prompts to add them.
+
+See link:task_discovering_ontap.html#discovering-clusters-from-the-Active-IQ-page[Discovering clusters from the Active IQ page].
+
+== Checking for new disk and shelf firmware
+
+You can see whether any of your discovered ONTAP clusters need to have their shelf or disk firmware updated. And you can download the zip file that you can use to update the firmware.
+
+.Steps
+
+. From the Active IQ page, click the *Firmware Updates* tab.
++
+A *Download* button appears for the clusters that are not using the most recent firmware.
+
+. Click *Download* and save the zip file to the location you want.
+
+. See the following instructions to link:https://docs.netapp.com/us-en/active-iq/task_update_AFF_FAS_firmware.html[update your storage system firmware].
+
+.Result
+
+Your firmware is updated. The next time your ONTAP system sends an AutoSupport message to Active IQ, the status in the _Firmware Updates_ pages will show that no updates are needed.
+
+== Viewing unused ONTAP licenses
+
+You can see whether any of your discovered ONTAP clusters have licenses that you are not using.
+
+.Steps
+
+. From the Active IQ page, click the *Licenses* tab.
++
+A *Use License* button appears for each node (based on serial number) where you have purchased a license, but are not using the license.
+
+. If you want to activate and start using the license, click *Use License*.
+
+. See xxx
+
+.Result
+
+Your license xxx.
