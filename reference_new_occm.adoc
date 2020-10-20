@@ -24,7 +24,7 @@ link:https://docs.netapp.com/us-en/occm35/reference_new_occm.html[What's new in 
 
 We have developed a new Terraform provider that DevOps teams can use with Cloud Manager to automate and integrate Cloud Volumes ONTAP with infrastructure as code.
 
-https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest[View the netapp-cloudmmanager provider^].
+https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest[View the netapp-cloudmanager provider^].
 
 == Cloud Manager 3.8.9 update (18 Oct 2020)
 
