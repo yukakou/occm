@@ -98,7 +98,7 @@ You must bind the service principal to your Azure subscription and assign it a c
 
 .Steps
 
-. https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/roles-create-custom[Create a custom role^] that includes the following permissions:
+. https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles[Create a custom role^] that includes the following permissions:
 +
 [source,json]
 "Microsoft.NetApp/*"
@@ -108,7 +108,6 @@ You must bind the service principal to your Azure subscription and assign it a c
 "Microsoft.Resources/subscriptions/resourceGroups/write"
 "Microsoft.Network/virtualNetworks/read"
 "Microsoft.Insights/Metrics/Read"
-
 
 . Assign the application to the role:
 
