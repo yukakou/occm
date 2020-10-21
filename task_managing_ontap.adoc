@@ -1,18 +1,18 @@
 ---
 sidebar: sidebar
 permalink: task_managing_ontap.html
-keywords: ontap, cluster, manage, fas, aff, active iq, update firmware, ontap licenses
-summary: Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering an ONTAP cluster enables you to provision storage, replicate data, and tier cold data from an on-prem cluster to the cloud.
+keywords: ontap, cluster, manage, fas, aff, active iq, update firmware
+summary: The Active IQ page in Cloud Manager can show you any undiscovered ONTAP clusters in your on-premises environment, whether any clusters require new firmware to be installed, and if they are using all the licenses that you have paid for. This information is provided to Cloud Manager from the Active IQ Digital Advisor.
 ---
 
-= Managing ONTAP clusters
+= Monitoring ONTAP clusters
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
 
-Cloud Manager can discover the ONTAP clusters in your on-premises environment, in a NetApp Private Storage configuration, and in the IBM Cloud. Discovering an ONTAP cluster enables you to provision storage, replicate data, back up data, and tier cold data from an on-prem cluster to the cloud. You can also see if any clusters require new firmware to be installed and if they are using all the licenses that you have paid for.
+The Active IQ page in Cloud Manager can show you any undiscovered ONTAP clusters in your on-premises environment, whether any clusters require new firmware to be installed, and if they are using all the licenses that you have paid for. This information is provided to Cloud Manager from the link:https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor^].
 
 == Checking for undiscovered on-prem clusters
 
@@ -44,7 +44,7 @@ A *Download* button appears for the clusters that are not using the most recent 
 
 .Result
 
-Your firmware is updated. The next time your ONTAP system sends an AutoSupport message to Active IQ, the status in the _Firmware Updates_ pages will show that no updates are needed.
+Your firmware is updated. The next time your ONTAP system sends an AutoSupport message to Active IQ, the status in the _Firmware Updates_ pages will be updated to show that updates are no longer needed.
 
 == Viewing unused ONTAP licenses
 
