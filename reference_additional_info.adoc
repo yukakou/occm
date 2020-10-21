@@ -3,7 +3,6 @@ sidebar: sidebar
 permalink: reference_additional_info.html
 keywords: community, forums, help, support, videos, policies, json, api, ontap, release notes, bugs, limitations, known issues, permissions, apis, flexcache, common vulnerabilities and exposures, cve, security
 summary: You can get help and find more information about Cloud Manager and Cloud Volumes ONTAP through various resources, including videos, forums, and support.
-translate: false
 ---
 
 = Where to get help and find more information

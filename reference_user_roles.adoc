@@ -3,7 +3,6 @@ sidebar: sidebar
 permalink: reference_user_roles.html
 keywords: user, users, roles, role, task, permission, permissions, tasks, admin, Account Admin, Workspace Admin, Cloud Compliance Viewer
 summary: The Account Admin, Workspace Admin, and Cloud Compliance Viewer roles provide specific permissions to users.
-translate: false
 ---
 
 = Roles
