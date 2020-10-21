@@ -25,11 +25,11 @@ Cloud Analyzer is a cloud infrastructure management solution that uses advanced 
 
 == Supported cloud providers
 
-Cloud Analyzer is supported with AWS.
+This service is supported with AWS.
 
-//== Cost
+== Cost
 
-//???
+There's no cost to use this service through Cloud Manager.
 
 == How Cloud Analyzer works with Cloud Manager
 
@@ -48,3 +48,7 @@ You can log in to the Spot service using the same single-sign on credentials tha
 . In Cloud Manager, the Compute page refreshes and you use the information to gain insights on past, current, and future cloud costs.
 
 . You click *Get Full Analysis* at any time to go to Spot's Cloud Analyzer, which provides a full analysis of your cloud spend and savings opportunities.
+
+== Data security
+
+Cloud Analyzer data is encrypted at rest and no credentials are stored for any account.
