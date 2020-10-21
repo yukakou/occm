@@ -3,7 +3,6 @@ sidebar: sidebar
 permalink: reference_aws_marketplace.html
 keywords: aws marketplace, marketplace pages, marketplace offerings, subscribe, subscribing
 summary: Several offerings are available in the AWS Marketplace for Cloud Manager and Cloud Volumes ONTAP. If you're not sure which page you need to use, read below and we'll direct you to the right page based on your goal.
-translate: false
 ---
 
 = AWS Marketplace pages for Cloud Manager and Cloud Volumes ONTAP
