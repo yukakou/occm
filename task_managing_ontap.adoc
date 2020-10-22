@@ -14,7 +14,7 @@ summary: The Active IQ page in Cloud Manager can show you any undiscovered ONTAP
 
 The Active IQ page in Cloud Manager can show you any undiscovered ONTAP clusters in your on-premises environment, whether any clusters require new firmware to be installed, and if they are using all the licenses that you have paid for. This information is provided to Cloud Manager from the link:https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor^].
 
-== Checking for undiscovered on-prem clusters
+== Checking for on-premises clusters that have not been added to Cloud Manager
 
 The Active IQ page shows a list of all the on-prem clusters you are able to manage based on your NetApp Support Site (NSS) credentials. It also lists those clusters that have been discovered within Cloud Manager, and those that have not been discovered.
 
@@ -32,19 +32,21 @@ See link:task_discovering_ontap.html#discovering-clusters-from-the-Active-IQ-pag
 
 You can see whether any of your discovered ONTAP clusters need to have their shelf or disk firmware updated. And you can download the zip file that you can use to update the firmware.
 
+*Note:* The ability to view and download new firmware is available only when you have subscribed to certain support plans.
+
 .Steps
 
 . From the Active IQ page, click the *Firmware Updates* tab.
 +
 A *Download* button appears for the clusters that are not using the most recent firmware.
 
-. Click *Download* and save the zip file to the location you want.
+. Click *Download* for each cluster that needs updated firmware and save the zip file.
 
-. See the following instructions to link:https://docs.netapp.com/us-en/active-iq/task_update_AFF_FAS_firmware.html[update your storage system firmware].
+. See the following instructions to link:https://aiq.netapp.com/assets/docs/Quick_Reference_Guide.pdf[update your storage system firmware].
 
 .Result
 
-Your firmware is updated. The next time your ONTAP system sends an AutoSupport message to Active IQ, the status in the _Firmware Updates_ pages will be updated to show that updates are no longer needed.
+Your firmware is updated. The next time your ONTAP system sends an AutoSupport message to Active IQ, the status in the _Firmware Updates_ page will be updated to show that updates are no longer needed.
 
 == Viewing unused ONTAP licenses
 
@@ -58,8 +60,6 @@ A *Use License* button appears for each node (based on serial number) where you 
 
 . If you want to activate and start using the license, click *Use License*.
 
-. See xxx
-
 .Result
 
-Your license xxx.
+Your license is activated.
