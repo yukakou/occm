@@ -3,7 +3,6 @@ sidebar: sidebar
 permalink: reference_infrastructure_as_code.html
 keywords: terraform, terraform provider, automation, automating
 summary: Use the resources on this page to get help integrating Cloud Manager and Cloud Volumes ONTAP with your infrastructure as code.
-translate: false
 ---
 
 = Automation resources for infrastructure as code
