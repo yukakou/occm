@@ -21,9 +21,21 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9 (1 Nov 2020)
 
-*
-*
+* <<Cloud Tiering enhancements>>
+* <<Azure Private Link connection for Cloud Volumes ONTAP>>
 
-===
+=== Cloud Tiering enhancements
 
-===
+* When you set up data tiering from your volumes, Cloud Tiering now identifies the Snapshot used size for each volume.
++
+image:screenshot_volumes_select_snapshot.gif[A screenshot that shows the Snapshot used size in the Tier Volumes page.]
+
+* Cloud Tiering now enables inactive data reporting on HDD aggregates, if the cluster is running ONTAP 9.6 or later.
++
+This enhancement makes it easier for Cloud Tiering to show you the potential savings from tiering cold data.
+
+* Cloud Tiering now prompts you to change thick-provisioned volumes to thin-provisioned volumes, in order to enable data tiering on the volumes in an aggregate.
+
+=== Azure Private Link connection for Cloud Volumes ONTAP
+
+By default, Cloud Manager now enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure. https://docs.microsoft.com/en-us/azure/private-link/private-link-overview[Learn more^].
