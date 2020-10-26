@@ -26,7 +26,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 === Cloud Tiering enhancements
 
-* When you set up data tiering from your volumes, Cloud Tiering now identifies the Snapshot used size for each volume. This data can help you decide which volume tiering policy to use.
+* When you set up data tiering from your volumes, Cloud Tiering now identifies the Snapshot used size for each volume. This information can help you decide which type of data to tier to the cloud.
 +
 image:screenshot_volumes_select_snapshot.gif[A screenshot that shows the Snapshot used size in the Tier Volumes page.]
 
@@ -34,7 +34,7 @@ image:screenshot_volumes_select_snapshot.gif[A screenshot that shows the Snapsho
 +
 This enhancement makes it easier for Cloud Tiering to show you the potential savings from tiering cold data.
 
-* Cloud Tiering now prompts you to change thick-provisioned volumes to thin-provisioned volumes, in order to enable data tiering on the volumes in an aggregate.
+* Cloud Tiering now prompts you to change thick-provisioned volumes to thin-provisioned volumes, if that's required to enable data tiering on the volumes in an aggregate.
 
 === Azure Private Link connection for Cloud Volumes ONTAP
 
