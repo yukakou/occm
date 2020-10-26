@@ -26,7 +26,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 === Cloud Tiering enhancements
 
-* When you set up data tiering from your volumes, Cloud Tiering now identifies the Snapshot used size for each volume.
+* When you set up data tiering from your volumes, Cloud Tiering now identifies the Snapshot used size for each volume. This data can help you decide which volume tiering policy to use.
 +
 image:screenshot_volumes_select_snapshot.gif[A screenshot that shows the Snapshot used size in the Tier Volumes page.]
 
