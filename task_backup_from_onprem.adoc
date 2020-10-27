@@ -25,8 +25,9 @@ Get started quickly by following these steps or scroll down to the remaining sec
 * You have discovered the on-premises cluster and added it to a working environment in Cloud Manager. See link:task_discovering_ontap.html[Discovering ONTAP clusters^] for details.
 ** The cluster is running ONTAP 9.7P5 or later.
 ** The cluster has a SnapMirror license -- which is included as part of the PREM or Data Protection bundle.
-* You have a valid cloud provider subscription for the storage space where your backups will be located.
 * You have subscribed to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure NetApp Cloud Manager Marketplace offering^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS Cloud Manager Marketplace offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Backup to Cloud BYOL license from NetApp.
+* You have a valid cloud provider subscription for the storage space where your backups will be located.
+* For AWS, you need to have an account that has an access key and the required permissions so the ONTAP cluster can back up data to S3.
 
 ==== image:number2.png[Number 2] Enable Backup to Cloud on the system
 
@@ -40,9 +41,6 @@ image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Clo
 
 [role="quick-margin-para"]
 Select the provider and then enter the provider details. You also need to specify the IPspace in the ONTAP cluster where the volumes reside.
-
-[role="quick-margin-para"]
-image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to an Azure Blob tier]
 
 ==== image:number4.png[Number 4] Define the backup policy
 
@@ -75,7 +73,6 @@ ONTAP 9.7P5 and later.
 A SnapMirror license (included as part of the PREM or Data Protection bundle).
 
 Cluster networking requirements::
-
 An intercluster LIF is required on each ONTAP node that hosts the volumes you want to back up. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage. The Admin SVM must reside on the IPspace. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-69120CF0-F188-434F-913E-33ACB8751A5D.html[Learn more about IPspaces^].
 +
 When you set up backup to cloud, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
@@ -89,6 +86,54 @@ For Backup to Cloud PAYGO licensing, a subscription to the https://azuremarketpl
 For Backup to Cloud BYOL licensing, you need the serial number from NetApp that enables you to use the service for the duration and capacity of the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
 +
 And you need to have a Microsoft Azure or Amazon AWS subscription for the storage space where your backups will be located.
+
+=== Preparing Amazon S3
+
+When using Amazon S3, the IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^], plus two additional permissions.
+
+.Steps
+
+. Provide the standard permissions to the IAM user:
++
+Here are the specific permissions from the policy:
++
+[source,json]
+{
+            "Sid": "backupPolicy",
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteBucket",
+                "s3:GetLifecycleConfiguration",
+                "s3:PutLifecycleConfiguration",
+                "s3:PutBucketTagging",
+                "s3:ListBucketVersions",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketTagging",
+                "s3:GetBucketLocation",
+                "s3:GetBucketPolicyStatus",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:GetBucketAcl",
+                "s3:GetBucketPolicy",
+                "s3:PutBucketPublicAccessBlock"
+            ],
+            "Resource": [
+                "arn:aws:s3:::netapp-backup-*"
+            ]
+        },
+
+. Add two additional permissions:
++
+[source,json]
+"s3:PutObject",
+"s3:DeleteObject"
++
+See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html[AWS Documentation: Creating a Role to Delegate Permissions to an IAM User^] for details.
+
+. Create or locate an access key.
++
+See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html[AWS Documentation: Managing Access Keys for IAM Users^] for details.
 
 == Enabling Backup to Cloud
 
