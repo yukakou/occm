@@ -21,8 +21,15 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9 (1 Nov 2020)
 
+* <<Azure Private Link for Cloud Volumes ONTAP>>
 * <<Cloud Tiering enhancements>>
-* <<Azure Private Link connection for Cloud Volumes ONTAP>>
+* <<Cloud Compliance enhancements>>
+* <<Backup to Cloud enhancements>>
+* <<Active IQ cluster insights>>
+
+=== Azure Private Link for Cloud Volumes ONTAP
+
+By default, Cloud Manager now enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure. https://docs.microsoft.com/en-us/azure/private-link/private-link-overview[Learn more^].
 
 === Cloud Tiering enhancements
 
@@ -36,6 +43,40 @@ This enhancement makes it easier for Cloud Tiering to show you the potential sav
 
 * Cloud Tiering now prompts you to change thick-provisioned volumes to thin-provisioned volumes, if that's required to enable data tiering on the volumes in an aggregate.
 
-=== Azure Private Link connection for Cloud Volumes ONTAP
+=== Cloud Compliance enhancements
 
-By default, Cloud Manager now enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure. https://docs.microsoft.com/en-us/azure/private-link/private-link-overview[Learn more^].
+* Ability to easily scan CIFS data protection volumes
++
+Scanning NFS DP volumes that reside on your Cloud Volumes ONTAP systems was available in an earlier release. This release allows you to easily scan CIFS DP volumes directly within Cloud Compliance. link:task_getting_started_compliance.html#scanning-data-protection-volumes[Learn how].
+
+* Now you can create custom personal data identifiers from your databases
++
+A feature we call "Data Fusion" allows you to scan your files to identify whether unique identifiers from your databases are found in those files - basically making your own list of "personal data" that is identified in Cloud Compliance scans. You choose the identifiers by selecting columns in your databases. This gives you the full picture about where potentially sensitive data resides in all your files.
++
+link:task_controlling_private_data.html#creating-custom-personal-data-identifiers-from-your-databases[Learn how to create custom personal identifiers from your databases].
+
+* New "Highlights" filter option in the Investigation page provides commonly used combinations of filters
++
+The Data Investigation page has a new filter called “Highlights” that includes predefined queries. For example, the "HIPAA – Stale data over 30 days" highlight identifies files that contain Health information that is over 30 days old. The "S3 publicly-exposed private data" highlight identifies S3 objects that contain personal or sensitive personal information that have open Public read access.
++
+link:task_controlling_private_data.html#predefined-highlights-filters[View the list of predefined highlights].
+
+* Added support for scanning MySQL database schemas.
++
+Go to link:task_scanning_databases.html[scanning database schemas] for the list of all supported databases and for instructions.
+
+=== Backup to Cloud enhancements
+
+Support has been added so you can back up data from your on-premises ONTAP systems to Amazon S3. link:task_backup_from_onprem.html[Learn more].
+
+=== Active IQ cluster insights
+
+Active IQ cluster insights are now available within Cloud Manager. This initial release provides the following functionality:
+
+* Shows a list of your on-prem clusters based on your NetApp Support Site (NSS) credentials.
+* Identifies which of those clusters have been discovered within Cloud Manager, and those that have not been discovered.
+* Enables you to add undiscovered clusters into Cloud Manager.
+* Identifies if any of your discovered ONTAP clusters need to have their shelf or disk firmware updated.
+* Enables you to download the firmware zip file so you can update the firmware on the cluster.
+
+Go to link:task_managing_ontap.html[Monitoring ONTAP clusters] for details. This information is provided to Cloud Manager from the link:https://www.netapp.com/services/support/active-iq/[Active IQ Digital Advisor].
