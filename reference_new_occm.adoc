@@ -51,7 +51,7 @@ Scanning NFS DP volumes that reside on your Cloud Volumes ONTAP systems was avai
 
 * Now you can create custom personal data identifiers from your databases
 +
-A feature we call "Data Fusion" allows you to scan your files to identify whether unique identifiers from your databases are found in those files - basically making your own list of "personal data" that is identified in Cloud Compliance scans. You choose the identifiers by selecting columns in your databases. This gives you the full picture about where potentially sensitive data resides in all your files.
+A feature we call "Data Fusion" allows you to scan your files to identify whether unique identifiers from your databases are found in those files--basically making your own list of "personal data" that is identified in Cloud Compliance scans. You choose the identifiers by selecting columns in your databases. This gives you the full picture about where potentially sensitive data resides in all your files.
 +
 link:task_controlling_private_data.html#creating-custom-personal-data-identifiers-from-your-databases[Learn how to create custom personal identifiers from your databases].
 
