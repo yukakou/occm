@@ -55,12 +55,6 @@ A feature we call "Data Fusion" allows you to scan your files to identify whethe
 +
 link:task_controlling_private_data.html#creating-custom-personal-data-identifiers-from-your-databases[Learn how to create custom personal identifiers from your databases].
 
-* New "Highlights" filter option in the Investigation page provides commonly used combinations of filters
-+
-The Data Investigation page has a new filter called “Highlights” that includes predefined queries. For example, the "HIPAA – Stale data over 30 days" highlight identifies files that contain Health information that is over 30 days old. The "S3 publicly-exposed private data" highlight identifies S3 objects that contain personal or sensitive personal information that have open Public read access.
-+
-link:task_controlling_private_data.html#predefined-highlights-filters[View the list of predefined highlights].
-
 * Added support for scanning MySQL database schemas.
 +
 Go to link:task_scanning_databases.html[scanning database schemas] for the list of all supported databases and for instructions.
