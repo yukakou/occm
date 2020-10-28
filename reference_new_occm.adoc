@@ -59,10 +59,6 @@ link:task_controlling_private_data.html#creating-custom-personal-data-identifier
 +
 Go to link:task_scanning_databases.html[scanning database schemas] for the list of all supported databases and for instructions.
 
-=== Backup to Cloud enhancements
-
-Support has been added so you can back up data from your on-premises ONTAP systems to Amazon S3. link:task_backup_from_onprem.html[Learn more].
-
 === Active IQ cluster insights
 
 Active IQ cluster insights are now available within Cloud Manager. This initial release provides the following functionality:
