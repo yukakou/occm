@@ -89,13 +89,11 @@ And you need to have a Microsoft Azure or Amazon AWS subscription for the storag
 
 === Preparing Amazon S3
 
-When using Amazon S3, the IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^], plus two additional permissions.
+When using Amazon S3, you must configure permissions for Cloud Manager to access the S3 bucket, and you must configure permissions so the on-prem ONTAP cluster can access the S3 bucket.
 
 .Steps
 
-. Provide the standard permissions to the IAM user:
-+
-Here are the specific permissions from the policy:
+. Provide the following S3 permissions (from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^]) to the IAM role that provides Cloud Manager with permissions:
 +
 [source,json]
 {
@@ -123,15 +121,21 @@ Here are the specific permissions from the policy:
             ]
         },
 
-. Add two additional permissions:
+. Provide the following permissions to the IAM user so that the ONTAP cluster can back up data to S3.
 +
 [source,json]
+"s3:ListAllMyBuckets",
+"s3:ListBucket",
+"s3:GetBucketLocation",
+"s3:GetObject",
 "s3:PutObject",
 "s3:DeleteObject"
 +
 See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html[AWS Documentation: Creating a Role to Delegate Permissions to an IAM User^] for details.
 
 . Create or locate an access key.
++
+Backup to Cloud passes the access key on to the ONTAP cluster. The credentials are not stored in the Cloud Tiering service.
 +
 See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html[AWS Documentation: Managing Access Keys for IAM Users^] for details.
 
@@ -153,7 +157,7 @@ image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Clo
 +
 image:screenshot_backup_onprem_to_azure.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to an Azure Blob tier]
 - For AWS, enter:
-.. The AWS credentials (Access Key and Secret Key) used to store the backups.
+.. The AWS Access Key and Secret Key used to store the backups.
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 +
 image:screenshot_backup_onprem_to_aws.png[A screenshot that shows the cloud provider details when backing up volumes from an on-premises cluster to an AWS S3 tier]
