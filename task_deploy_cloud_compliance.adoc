@@ -128,7 +128,7 @@ You deploy an instance of Cloud Compliance for each Cloud Manager instance.
 
 .Steps
 
-. In Cloud Manager, click *Cloud Compliance*.
+. In Cloud Manager, click *Compliance*.
 
 . Click *Activate Cloud Compliance* to start the deployment wizard.
 +
