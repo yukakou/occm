@@ -78,7 +78,10 @@ An intercluster LIF is required on each ONTAP node that hosts the volumes you wa
 When you set up backup to cloud, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
 
 Supported regions::
-On-prem backup is supported in all Azure and AWS regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
+Backups from on-prem systems are supported in all regions https://cloud.netapp.com/cloud-volumes-global-regions[where Cloud Volumes ONTAP is supported^].
++
+* For Azure, you specify the region where the backups will be stored when you set up the service.
+* For AWS, backups are stored in the region where Cloud Manager is installed.
 
 License requirements::
 For Backup to Cloud PAYGO licensing, a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure Marketplace Cloud Manager Backup offering^] or https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS Marketplace Cloud Manager Backup offering^] is required before you enable Backup to Cloud. Billing for Backup to Cloud is done through this subscription.
@@ -135,7 +138,7 @@ See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-use
 
 . Create or locate an access key.
 +
-Backup to Cloud passes the access key on to the ONTAP cluster. The credentials are not stored in the Cloud Tiering service.
+Backup to Cloud passes the access key on to the ONTAP cluster. The credentials are not stored in the Backup to Cloud service.
 +
 See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html[AWS Documentation: Managing Access Keys for IAM Users^] for details.
 
@@ -151,7 +154,7 @@ image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Clo
 
 . Select the provider, and then enter the provider details:
 - For Azure, enter:
-.. The Azure subscription used to store the backups and the Azure region.
+.. The Azure subscription used for backups and the Azure region where the backups will be stored.
 .. The resource group - you can create a new resource group or select and existing resource group.
 .. The IPspace in the ONTAP cluster where the volumes you want to back up reside.
 +
