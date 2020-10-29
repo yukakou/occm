@@ -293,7 +293,7 @@ entries:
         url: /task_managing_compliance.html
       - title: FAQ
         url: /faq_cloud_compliance.html
-  - title: Global File Cache
+  - title: Enable real-time global file sharing
     entries:
       - title: Learn about Global File Cache
         url: /concept_gfc.html
