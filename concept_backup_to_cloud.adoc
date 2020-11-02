@@ -26,7 +26,7 @@ NOTE: You must use Cloud Manager for all backup and restore operations. Any acti
 * Back up from cloud to cloud, and from on-premises ONTAP systems to cloud.
 * Support for up to 1,019 backups of a single volume.
 * Restore data from a specific point in time.
-* Restore the data to the source system or to a different system.
+* Restore the data to a volume on the source system or to a different system.
 
 == Supported working environments and object storage providers
 
@@ -56,7 +56,7 @@ Backup are not deleted when the service is disabled. You'll continue to be charg
 
 == How Backup to Cloud works
 
-When you enable Backup to Cloud on a Cloud Volumes ONTAP or on-premises ONTAP system, the service performs a full backup of your data. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up.
+When you enable Backup to Cloud on a Cloud Volumes ONTAP or on-premises ONTAP system, the service performs a full backup of your data. Volume snapshots are not included in the backup image. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up.
 
 === Where backups reside
 

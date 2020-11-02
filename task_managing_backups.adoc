@@ -61,7 +61,7 @@ image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where yo
 
 == Restoring a volume from a backup
 
-When you restore data from a backup, Cloud Manager performs a full volume restore to a _new_ volume. You can restore the data to the same working environment or to a different working environment that's located in the same cloud account as the source working environment.
+When you restore data from a backup, Cloud Manager creates a _new_ volume using the data from the backup. You can restore the data to a volume in the same working environment or to a different working environment that's located in the same cloud account as the source working environment. Because the backup does not contain any snapshots, the newly restored volume does not either.
 
 TIP: Backups created from on-premises ONTAP systems can be restored only to Cloud Volumes ONTAP systems that use the same cloud provider as where the backup resides.
 
