@@ -397,6 +397,8 @@ entries:
         url: /task_configuring_proxy.html
       - title: Override CIFS locks in Azure
         url: /task_overriding_cifs_locks.html
+      - title: Use an Azure Private Link
+        url: /task_enabling_private_link.html
       - title: Reference
         entries:
           - title: User roles
