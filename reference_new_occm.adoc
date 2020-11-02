@@ -24,6 +24,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Azure Private Link for Cloud Volumes ONTAP>>
 * <<Cloud Tiering enhancements>>
 * <<Cloud Compliance enhancements>>
+* <<Active IQ cluster insights>>
 
 === Azure Private Link for Cloud Volumes ONTAP
 
@@ -56,3 +57,14 @@ link:task_controlling_private_data.html#creating-custom-personal-data-identifier
 * Added support for scanning MySQL database schemas.
 +
 Go to link:task_scanning_databases.html[scanning database schemas] for the list of all supported databases and for instructions.
+
+=== Active IQ cluster insights
+
+Active IQ cluster insights are now available within Cloud Manager. This initial release provides the following functionality:
+
+* Shows a list of your on-prem clusters based on your NetApp Support Site (NSS) credentials.
+* Identifies which of those clusters have been discovered within Cloud Manager, and those that have not been discovered.
+* Enables you to view unused Cloud Volumes ONTAP licenses.
+* Identifies if any of your discovered ONTAP clusters need to have their shelf or disk firmware updated.
+
+Go to link:task_managing_ontap.html[Monitoring ONTAP clusters] for details. This information is provided to Cloud Manager from the link:https://www.netapp.com/services/support/active-iq/[Active IQ Digital Advisor].
