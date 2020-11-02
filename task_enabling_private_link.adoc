@@ -13,15 +13,15 @@ summary: By default, Cloud Manager enables an Azure Private Link connection betw
 :imagesdir: ./media/
 
 [.lead]
-By default, Cloud Manager enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure. https://docs.microsoft.com/en-us/azure/private-link/private-link-overview[Learn more^].
+By default, Cloud Manager enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure and provides performance benefits. https://docs.microsoft.com/en-us/azure/private-link/private-link-overview[Learn more^].
 
-In most cases, there’s nothing that you need to do--Cloud Manager manages the Azure Private Link for you. But if you use a private DNS server, then you’ll need to edit a configuration file. You can also disable the Private Link connection, if desired.
+In most cases, there’s nothing that you need to do--Cloud Manager manages the Azure Private Link for you. But if you use Azure Private DNS, then you’ll need to edit a configuration file. You can also disable the Private Link connection, if desired.
 
-== Providing Cloud Manager with details about your private DNS server
+== Providing Cloud Manager with details about your Azure Private DNS
 
-If you use your own private DNS server in Azure and not the default Microsoft DNS server, then you need to modify a configuration file on each Connector. Otherwise, Cloud Manager can't enable the Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts.
+If you use https://docs.microsoft.com/en-us/azure/dns/private-dns-overview[Azure Private DNS^], then you need to modify a configuration file on each Connector. Otherwise, Cloud Manager can't enable the Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts.
 
-Note that the DNS name of the private DNS server must match Azure DNS naming requirements https://docs.microsoft.com/en-us/azure/storage/common/storage-private-endpoints#dns-changes-for-private-endpoints[as shown in Azure documentation^].
+Note that the DNS name must match Azure DNS naming requirements https://docs.microsoft.com/en-us/azure/storage/common/storage-private-endpoints#dns-changes-for-private-endpoints[as shown in Azure documentation^].
 
 .Steps
 
