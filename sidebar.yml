@@ -171,6 +171,10 @@ entries:
             url: /task_connecting_to_otc.html
           - title: Add existing systems
             url: /task_adding_ontap_cloud.html
+          - title: Override CIFS locks in Azure
+            url: /task_overriding_cifs_locks.html
+          - title: Use an Azure Private Link
+            url: /task_enabling_private_link.html
           - title: Delete systems
             url: /task_deleting_working_env.html
   - title: Provision volumes using a file service
@@ -397,8 +401,6 @@ entries:
         url: /task_removing.html
       - title: Configure proxy settings
         url: /task_configuring_proxy.html
-      - title: Override CIFS locks in Azure
-        url: /task_overriding_cifs_locks.html
       - title: Reference
         entries:
           - title: User roles
