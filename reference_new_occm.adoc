@@ -22,12 +22,26 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 == Cloud Manager 3.9 (3 Nov 2020)
 
 * <<Azure Private Link for Cloud Volumes ONTAP>>
-* <<Cloud Tiering enhancements>>
 * <<Active IQ cluster insights>>
+* <<Cloud Tiering enhancements>>
 
 === Azure Private Link for Cloud Volumes ONTAP
 
-By default, Cloud Manager now enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure. https://docs.microsoft.com/en-us/azure/private-link/private-link-overview[Learn more^].
+By default, Cloud Manager now enables an Azure Private Link connection between Cloud Volumes ONTAP and its associated storage accounts. A Private Link secures connections between endpoints in Azure.
+
+* https://docs.microsoft.com/en-us/azure/private-link/private-link-overview[Learn more about Azure Private Links^]
+* link:task_enabling_private_link.html[Learn more about using an Azure Private Link with Cloud Volumes ONTAP]
+
+=== Active IQ cluster insights
+
+Active IQ cluster insights are now available within Cloud Manager. This initial release provides the following functionality:
+
+* Shows a list of your on-prem clusters based on your NetApp Support Site (NSS) credentials.
+* Identifies which of those clusters have been discovered within Cloud Manager, and those that have not been discovered.
+* Enables you to view unused Cloud Volumes ONTAP licenses.
+* Identifies if any of your discovered ONTAP clusters need to have their shelf or disk firmware updated.
+
+Go to link:task_managing_ontap.html[Monitoring ONTAP clusters] for details. This information is provided to Cloud Manager from the link:https://www.netapp.com/services/support/active-iq/[Active IQ Digital Advisor^].
 
 === Cloud Tiering enhancements
 
@@ -40,14 +54,3 @@ image:screenshot_volumes_select_snapshot.gif[A screenshot that shows the Snapsho
 This enhancement makes it easier for Cloud Tiering to show you the potential savings from tiering cold data.
 
 * Cloud Tiering now prompts you to change thick-provisioned volumes to thin-provisioned volumes, if that's required to enable data tiering on the volumes in an aggregate.
-
-=== Active IQ cluster insights
-
-Active IQ cluster insights are now available within Cloud Manager. This initial release provides the following functionality:
-
-* Shows a list of your on-prem clusters based on your NetApp Support Site (NSS) credentials.
-* Identifies which of those clusters have been discovered within Cloud Manager, and those that have not been discovered.
-* Enables you to view unused Cloud Volumes ONTAP licenses.
-* Identifies if any of your discovered ONTAP clusters need to have their shelf or disk firmware updated.
-
-Go to link:task_managing_ontap.html[Monitoring ONTAP clusters] for details. This information is provided to Cloud Manager from the link:https://www.netapp.com/services/support/active-iq/[Active IQ Digital Advisor].

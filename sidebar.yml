@@ -409,11 +409,11 @@ entries:
             url: /reference_permissions.html
           - title: AWS Marketplace pages
             url: /reference_aws_marketplace.html
-  - title: Automate with the API and DevOps tools
+  - title: Automate with the API and IaC tools
     entries:
       - title: API Developer Guide
         url: https://docs.netapp.com/us-en/occm/api.html
-      - title: Automate using DevOps tools
+      - title: Automate using IaC tools
         url: /reference_infrastructure_as_code.html
   - title: Troubleshoot issues
     url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services
