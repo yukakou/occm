@@ -61,7 +61,7 @@ You must complete the following tasks so that Cloud Manager can access your Goog
 .. Add these roles:
 * _NetApp Cloud Volumes Admin_
 * _Compute Network Viewer_
-* _Viewer_
+* _Folder Viewer_
 .. Click *Save*.
 
 . From the _Service account details_ page click *Add key > Create new key*.
