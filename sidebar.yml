@@ -1,5 +1,5 @@
 entries:
-  - title: Cloud Manager docs
+  - title: Cloud Manager 3.9 docs
     url: /index.html
   - title: Release notes
     entries:
@@ -215,6 +215,8 @@ entries:
     entries:
       - title: Discover ONTAP clusters
         url: /task_discovering_ontap.html
+      - title: Monitor ONTAP clusters
+        url: /task_managing_ontap.html
       - title: Manage ONTAP volumes
         url: /task_provisioning_ontap.html
   - title: Back up to the cloud
@@ -407,7 +409,7 @@ entries:
             url: /reference_permissions.html
           - title: AWS Marketplace pages
             url: /reference_aws_marketplace.html
-  - title: Use APIs and automation
+  - title: Automate with the API and DevOps tools
     entries:
       - title: API Developer Guide
         url: https://docs.netapp.com/us-en/occm/api.html
