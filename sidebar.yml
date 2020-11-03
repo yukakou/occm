@@ -1,5 +1,5 @@
 entries:
-  - title: Cloud Manager docs
+  - title: Cloud Manager 3.9 docs
     url: /index.html
   - title: Release notes
     entries:
@@ -407,7 +407,7 @@ entries:
             url: /reference_permissions.html
           - title: AWS Marketplace pages
             url: /reference_aws_marketplace.html
-  - title: Use APIs and automation
+  - title: Automate with the API and DevOps tools
     entries:
       - title: API Developer Guide
         url: https://docs.netapp.com/us-en/occm/api.html

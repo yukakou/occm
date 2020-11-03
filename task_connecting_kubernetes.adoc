@@ -31,7 +31,7 @@ Ensure that your environment can meet the prerequisites, which includes connecti
 ==== image:number2.png[Number 2] Add your Kubernetes clusters to Cloud Manager
 
 [role="quick-margin-para"]
-In Cloud Manager, click *Kubernetes* and discover clusters directly from your cloud provider's managed service or import a cluster by providing a kubeconfig file.
+In Cloud Manager, click *K8s* and discover clusters directly from your cloud provider's managed service or import a cluster by providing a kubeconfig file.
 
 ==== image:number3.png[Number 3] Connect your clusters to Cloud Volumes ONTAP
 
@@ -126,7 +126,7 @@ Add Kubernetes clusters to Cloud Manager by discovering the clusters running in 
 
 .Steps
 
-. At the top of Cloud Manager, click *Kubernetes*.
+. At the top of Cloud Manager, click *K8s*.
 
 . Click *Add Cluster*.
 
@@ -150,7 +150,7 @@ Connect a Kubernetes cluster to Cloud Volumes ONTAP so you can use Cloud Volumes
 
 .Steps
 
-. At the top of Cloud Manager, click *Kubernetes*.
+. At the top of Cloud Manager, click *K8s*.
 
 . Click *Connect to Working Environment* for the cluster that you just added.
 +
@@ -182,7 +182,7 @@ Make sure that you've set a Cloud Volumes ONTAP storage class as the default sto
 
 .Steps
 
-. At the top of Cloud Manager, click *Kubernetes*.
+. At the top of Cloud Manager, click *K8s*.
 
 . Click the name of the Kubernetes cluster.
 
@@ -198,7 +198,7 @@ You can upgrade Trident from Cloud Manager when a new version of Trident is avai
 
 .Steps
 
-. At the top of Cloud Manager, click *Kubernetes*.
+. At the top of Cloud Manager, click *K8s*.
 
 . Click the name of the Kubernetes cluster.
 
@@ -212,7 +212,7 @@ If you added your cluster to Cloud Manager by importing the kubeconfig file, you
 
 .Steps
 
-. At the top of Cloud Manager, click *Kubernetes*.
+. At the top of Cloud Manager, click *K8s*.
 
 . Click the name of the Kubernetes cluster.
 
@@ -230,7 +230,7 @@ When you disconnect a cluster from Cloud Volumes ONTAP, you can no longer use th
 
 .Steps
 
-. At the top of Cloud Manager, click *Kubernetes*.
+. At the top of Cloud Manager, click *K8s*.
 
 . Click the name of the Kubernetes cluster.
 
@@ -250,7 +250,7 @@ Remove decommissioned clusters from Cloud Manager after you disconnect all worki
 
 .Steps
 
-. At the top of Cloud Manager, click *Kubernetes*.
+. At the top of Cloud Manager, click *K8s*.
 
 . Click the name of the Kubernetes cluster.
 
