@@ -211,6 +211,8 @@ entries:
     entries:
       - title: Discover ONTAP clusters
         url: /task_discovering_ontap.html
+      - title: Monitor ONTAP clusters
+        url: /task_managing_ontap.html
       - title: Manage ONTAP volumes
         url: /task_provisioning_ontap.html
   - title: Back up to the cloud
