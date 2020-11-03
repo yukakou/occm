@@ -29,7 +29,7 @@ Set up data tiering for additional volumes at any time--for example, after creat
 +
 link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
 +
-image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_volumes_select.gif[A screenshot that shows volumes selected in the Select Source Volumes page.]
+image:screenshot_volumes_select_snapshot.gif[A screenshot that shows the Snapshot used size in the Tier Volumes page.]
 +
 TIP: You don't need to configure the object storage because it was already configured when you initially set up tiering for the cluster. ONTAP will tier inactive data from these volumes to the same object store.
 

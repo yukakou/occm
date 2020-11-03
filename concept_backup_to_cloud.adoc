@@ -156,16 +156,13 @@ FlexGroup volumes aren't currently supported.
 
 * Backup to Cloud restrictions when making backups from on-premises ONTAP systems:
 ** The on-prem cluster must be running ONTAP 9.7P5 or later.
-** Cloud Manager must be deployed on Azure. There is no support for on-premises Cloud Manager deployments.
-** The destination location for backups is only object storage on Azure.
-** Backups can be restored only to Cloud Volumes ONTAP systems deployed on Azure. You cannot restore a backup to an on-premises ONTAP system or to a Cloud Volumes ONTAP system that is using a different cloud provider.
+** Cloud Manager must be deployed in the cloud (Azure or AWS). There is no support for on-premises Cloud Manager deployments.
+** Backups can be restored only to Cloud Volumes ONTAP systems deployed on the same cloud provider. You cannot restore a backup to an on-premises ONTAP system or to a Cloud Volumes ONTAP system that is using a different cloud provider.
++
+*Note that Restoring a backup is not currently supported using the Cloud Manager UI. You can use the API if you need to restore a backup at this time. Restore using the UI will be addressed shortly.*
 
 * When backing up data protection (DP) volumes, the rule that is defined for the SnapMirror policy on the source volume must use a label that matches the allowed Backup to Cloud policy names of *daily*, *weekly*, or *monthly*. Otherwise the backup will fail for that DP volume.
 
 * In Azure, if you enable Backup to Cloud when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Backup to Cloud, *disable* Backup to Cloud when deploying Cloud Volumes ONTAP and then enable Backup to Cloud and choose the resource group from the Backup to Cloud Settings page.
 
-* When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up.
-+
-For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up.
-+
-If you want to back up these volumes, you would need to disable Backup to Cloud and then enable it again.
+* When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up. For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up. If you want to back up these volumes, you would need to disable Backup to Cloud and then enable it again.
