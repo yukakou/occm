@@ -19,11 +19,10 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9 (1 Nov 2020)
+== Cloud Manager 3.9 (3 Nov 2020)
 
 * <<Azure Private Link for Cloud Volumes ONTAP>>
 * <<Cloud Tiering enhancements>>
-* <<Cloud Compliance enhancements>>
 * <<Active IQ cluster insights>>
 
 === Azure Private Link for Cloud Volumes ONTAP
@@ -41,22 +40,6 @@ image:screenshot_volumes_select_snapshot.gif[A screenshot that shows the Snapsho
 This enhancement makes it easier for Cloud Tiering to show you the potential savings from tiering cold data.
 
 * Cloud Tiering now prompts you to change thick-provisioned volumes to thin-provisioned volumes, if that's required to enable data tiering on the volumes in an aggregate.
-
-=== Cloud Compliance enhancements
-
-* Ability to easily scan CIFS data protection volumes
-+
-Scanning NFS DP volumes that reside on your Cloud Volumes ONTAP systems was available in an earlier release. This release allows you to easily scan CIFS DP volumes directly within Cloud Compliance. link:task_getting_started_compliance.html#scanning-data-protection-volumes[Learn how].
-
-* Now you can create custom personal data identifiers from your databases
-+
-A feature we call "Data Fusion" allows you to scan your files to identify whether unique identifiers from your databases are found in those files--basically making your own list of "personal data" that is identified in Cloud Compliance scans. You choose the identifiers by selecting columns in your databases. This gives you the full picture about where potentially sensitive data resides in all your files.
-+
-link:task_controlling_private_data.html#creating-custom-personal-data-identifiers-from-your-databases[Learn how to create custom personal identifiers from your databases].
-
-* Added support for scanning MySQL database schemas.
-+
-Go to link:task_scanning_databases.html[scanning database schemas] for the list of all supported databases and for instructions.
 
 === Active IQ cluster insights
 
