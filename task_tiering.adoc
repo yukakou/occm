@@ -152,8 +152,7 @@ If you want to enable data tiering on an existing volume, then you'll need to en
 .. Enter a name.
 .. Choose a disk type and keep tiering enabled.
 .. Choose your disk size and number of disks.
-
-. Click *Go* and then click *Approve and Purchase*.
+.. Click *Go* and then click *Approve and Purchase*.
 
 . If needed, move existing volumes to the new aggregate by http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html[following the ONTAP 9 Volume Move Express Guide^].
 
