@@ -75,7 +75,7 @@ NOTE: Data tiering is not supported in Azure with the DS3_v2 virtual machine typ
 
 * Thin provisioning must be enabled on volumes.
 
-== Cloud provider requirements
+== Requirements
 
 Depending on your cloud provider, certain connections and permissions must be set up so Cloud Volumes ONTAP can tier cold data to object storage.
 
@@ -120,7 +120,7 @@ Cloud Manager creates an object store for cold data when the system is created, 
 
 .Steps
 
-. <<Cloud provider requirements,Ensure that you've met all requirements>>.
+. <<Requirements,Ensure that you've met all requirements>>.
 
 . On the Working Environments page, double-click the name of the Cloud Volumes ONTAP instance.
 
