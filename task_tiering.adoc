@@ -50,7 +50,7 @@ Cloud Manager prompts you to choose a tiering policy when you create, modify, or
 * You don't need to create the capacity tier (an S3 bucket, Azure Blob container, or GCP bucket). Cloud Manager does that for you.
 * You don't need to enable data tiering at the system level.
 +
-Cloud Manager creates an object store for cold data when the system is created, as long as there are no connectivity or permissions issues. After that, you just need to enable data tiering on volumes (and in some cases, <<Ensuring that tiering is enabled on aggregates,on aggregates>>).
+Cloud Manager creates an object store for cold data when the system is created, <<Enabling data tiering after implementing the requirements,as long as there are no connectivity or permissions issues>>. After that, you just need to enable data tiering on volumes (and in some cases, <<Ensuring that tiering is enabled on aggregates,on aggregates>>).
 ====
 
 == Configurations that support data tiering
@@ -114,9 +114,9 @@ You'll need to select the tiering service account later when you create a Cloud 
 +
 If you don't enable data tiering and select a service account when you create the Cloud Volumes ONTAP system, then you'll need to turn off the system and add the service account to Cloud Volumes ONTAP from the GCP console.
 
-=== Enabling data tiering after fixing an issue
+=== Enabling data tiering after implementing the requirements
 
-Cloud Manager creates an object store for cold data when the system is created, as long as there are no connectivity or permissions issues. You can implement the requirements described above and then enable tiering, which creates the object store.
+Cloud Manager creates an object store for cold data when the system is created, as long as there are no connectivity or permissions issues. If you didn't implement the requirements listed above until after you created the system, then you'll need to manually enable tiering, which creates the object store.
 
 .Steps
 
