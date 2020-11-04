@@ -32,13 +32,15 @@ It depends on where you tier the cold data. Refer to the following:
 
 Yes, Cloud Tiering enables inactive data reporting on each aggregate. This setting enables us to identify the amount of inactive data that can be tiered to low-cost object storage.
 
+NOTE: Cloud Tiering enables inactive data reporting on HDD aggregates if the cluster is running ONTAP 9.6 or later.
+
 === Can I tier data from NAS volumes and SAN volumes?
 
 You can use Cloud Tiering to tier data from NAS volumes to the public cloud and from SAN volumes to a private cloud using StorageGRID.
 
 === What about Cloud Volumes ONTAP?
 
-If you have Cloud Volumes ONTAP systems, you'll find them in the Cluster Dashboard so you see a full view of data tiering in your hybrid cloud infrastructure.
+If you have Cloud Volumes ONTAP systems, you'll find them in the Cluster Dashboard so you get a full view of data tiering in your hybrid cloud infrastructure.
 
 From the Cluster Dashboard, you can view tiering information similar to an on-prem ONTAP cluster: operational health, current savings, savings opportunities, details about volumes and aggregates, and more.
 

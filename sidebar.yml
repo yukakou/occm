@@ -1,5 +1,5 @@
 entries:
-  - title: Cloud Manager docs
+  - title: Cloud Manager 3.9 docs
     url: /index.html
   - title: Release notes
     entries:
@@ -171,6 +171,10 @@ entries:
             url: /task_connecting_to_otc.html
           - title: Add existing systems
             url: /task_adding_ontap_cloud.html
+          - title: Override CIFS locks in Azure
+            url: /task_overriding_cifs_locks.html
+          - title: Use an Azure Private Link
+            url: /task_enabling_private_link.html
           - title: Delete systems
             url: /task_deleting_working_env.html
   - title: Provision volumes using a file service
@@ -211,6 +215,8 @@ entries:
     entries:
       - title: Discover ONTAP clusters
         url: /task_discovering_ontap.html
+      - title: Monitor ONTAP clusters
+        url: /task_managing_ontap.html
       - title: Manage ONTAP volumes
         url: /task_provisioning_ontap.html
   - title: Back up to the cloud
@@ -293,7 +299,7 @@ entries:
         url: /task_managing_compliance.html
       - title: FAQ
         url: /faq_cloud_compliance.html
-  - title: Global File Cache
+  - title: Enable real-time global file sharing
     entries:
       - title: Learn about Global File Cache
         url: /concept_gfc.html
@@ -315,7 +321,7 @@ entries:
         url: /concept_compute.html
       - title: Get started
         url: /task_getting_started_compute.html
-  - title: Tier on-prem data to the cloud
+  - title: Tier data to the cloud
     entries:
       - title: Learn about Cloud Tiering
         url: /concept_cloud_tiering.html
@@ -395,8 +401,6 @@ entries:
         url: /task_removing.html
       - title: Configure proxy settings
         url: /task_configuring_proxy.html
-      - title: Override CIFS locks in Azure
-        url: /task_overriding_cifs_locks.html
       - title: Reference
         entries:
           - title: User roles
@@ -405,11 +409,11 @@ entries:
             url: /reference_permissions.html
           - title: AWS Marketplace pages
             url: /reference_aws_marketplace.html
-  - title: Use APIs and automation
+  - title: Automate with the API and IaC tools
     entries:
       - title: API Developer Guide
         url: https://docs.netapp.com/us-en/occm/api.html
-      - title: Automate using DevOps tools
+      - title: Automate using IaC tools
         url: /reference_infrastructure_as_code.html
   - title: Troubleshoot issues
     url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_tiering.html
 keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, S3 tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, azure tiering, blob tiering, azure blob, container, inactive, gcp, tiering in gcp, tiering requirements
-summary: You can reduce storage costs by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data.
+summary: You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data.
 ---
 
 = Tiering inactive data to low-cost object storage
@@ -13,7 +13,7 @@ summary: You can reduce storage costs by combining an SSD or HDD performance tie
 :imagesdir: ./media/
 
 [.lead]
-You can reduce storage costs by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. For a high-level overview, see link:concept_data_tiering.html[Data tiering overview].
+You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. For a high-level overview, see link:concept_data_tiering.html[Data tiering overview].
 
 To set up data tiering, you simply need to do the following:
 
@@ -163,3 +163,9 @@ For information about supported storage classes, see link:concept_data_tiering.h
 . From the working environment, click the menu icon and then click *Storage Classes* or *Blob Storage Tiering*.
 
 . Choose a storage class and then click *Save*.
+
+== Can I enable data tiering on an existing aggregate?
+
+No, you can't enable data tiering on an existing aggregate. You can only enable data tiering on new aggregates.
+
+You can enable data tiering on a new aggregate either link:task_provisioning_storage.html#creating-aggregates[by creating an aggregate yourself] or <<Tiering data from read-write volumes,by creating a new volume with data tiering enabled>>. Cloud Manager would then create a new aggregate for the volume if a data tiering-enabled aggregate doesn't already exist.

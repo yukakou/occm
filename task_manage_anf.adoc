@@ -98,25 +98,38 @@ You must bind the service principal to your Azure subscription and assign it a c
 
 .Steps
 
-. https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/roles-create-custom[Create a custom role^] that includes the following permissions:
+. https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles[Create a custom role in Azure^].
++
+The following steps describe how to create the role form the Azure portal.
+
+.. Open the subscription and click *Access control (IAM)*.
+
+.. Click *Add > Add custom role*.
++
+image:screenshot_azure_access_control.gif[]
+
+.. In the *Basics* tab, enter a name and description for the role.
+
+.. Click *JSON* and click *Edit* which appears at the top right of the JSON format.
+
+.. Add the following permissions under _actions_:
 +
 [source,json]
-"Microsoft.NetApp/*"
-"Microsoft.Resources/resources/read"
-"Microsoft.Resources/subscriptions/resourceGroups/read"
-"Microsoft.Resources/subscriptions/resourcegroups/resources/read"
-"Microsoft.Resources/subscriptions/resourceGroups/write"
-"Microsoft.Network/virtualNetworks/read"
-"Microsoft.Insights/Metrics/Read"
+"actions": [
+    "Microsoft.NetApp/*",
+    "Microsoft.Resources/resources/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/read",
+    "Microsoft.Resources/subscriptions/resourcegroups/resources/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/write",
+    "Microsoft.Network/virtualNetworks/read",
+    "Microsoft.Insights/Metrics/Read"
+    ],
 
+.. Click *Save*, click *Next*, and then click *Create*.
 
-. Assign the application to the role:
+. Now assign the application to the role that you just created:
 
-.. From the Azure portal, open the *Subscriptions* service.
-
-.. Select the subscription.
-
-.. Click *Access control (IAM) > Add > Add role assignment*.
+.. From the Azure portal, open the subscription and click *Access control (IAM) > Add > Add role assignment*.
 
 .. Select the custom role that you created.
 
