@@ -77,7 +77,7 @@ NOTE: Data tiering is not supported in Azure with the DS3_v2 virtual machine typ
 
 == Requirements
 
-Depending on your cloud provider, certain connections and permissions must be set up so Cloud Volumes ONTAP can tier cold data to object storage.
+Depending on your cloud provider, certain connections and permissions must be set up so that Cloud Volumes ONTAP can tier cold data to object storage.
 
 === Requirements to tier cold data to AWS S3
 
@@ -140,7 +140,7 @@ If you're enabling data tiering on a new volume, then you don't need to worry ab
 
 * *Existing volumes*
 +
-If you want to enable data tiering on an existing volume, then you'll need to ensure that data tiering is enabled on the underlying aggregate. If data tiering isn't enabled on the aggregate, then you'll need to enable data tiering on a _new_ aggregate and then move the volume to that aggregate. You can't enable data tiering on an existing aggregate.
+If you want to enable data tiering on an existing volume, then you'll need to ensure that data tiering is enabled on the underlying aggregate. If data tiering isn't enabled on the existing aggregate, then you'll need to enable data tiering on a _new_ aggregate and then move the volume to that aggregate. You can't enable data tiering on an existing aggregate.
 
 .Steps
 
@@ -152,8 +152,6 @@ If you want to enable data tiering on an existing volume, then you'll need to en
 .. Enter a name.
 .. Choose a disk type and keep tiering enabled.
 .. Choose your disk size and number of disks.
-+
-For help with disk type and disk size, see link:task_planning_your_config.html[Planning your configuration].
 
 . Click *Go* and then click *Approve and Purchase*.
 
