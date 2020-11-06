@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_updating_ontap_cloud.html
-keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image
+keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image, revert, reverting, downgrading
 summary: Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release or to downgrade Cloud Volumes ONTAP to an earlier release. You should prepare Cloud Volumes ONTAP systems before you upgrade or downgrade the software.
 ---
 
@@ -18,6 +18,16 @@ Cloud Manager includes several options that you can use to upgrade to the curren
 == Software updates must be completed by Cloud Manager
 
 Upgrades of Cloud Volumes ONTAP must be completed from Cloud Manager. You should not upgrade Cloud Volumes ONTAP by using System Manager or the CLI. Doing so can impact system stability.
+
+== Downgrade notes and requirements
+
+* You can start the downgrade process from Cloud Manager, but it almost always requires manual intervention from the CLI.
+
+* In many cases, you might need help from NetApp support to complete the process. So we recommend that you call NetApp support for assistance when downgrading a production Cloud Volumes ONTAP system to an earlier version.
+
+* You can downgrade Cloud Volumes ONTAP but only by one version at a time.
++
+For example, you can downgrade from 9.7 to 9.6, but not from 9.7 to 9.5. So to go from 9.7 to 9.5, you'd need to downgrade from 9.7 to 9.6 and then from 9.6 to 9.5.
 
 == Ways to update Cloud Volumes ONTAP
 
@@ -49,23 +59,25 @@ For details, see <<Downgrading Cloud Volumes ONTAP by using a local image>>.
 
 Before performing an upgrade or downgrade, you must verify that your systems are ready and make any required configuration changes.
 
+* <<Understanding supported upgrade paths>>
 * <<Planning for downtime>>
-* <<Reviewing version requirements>>
 * <<Verifying that automatic giveback is still enabled>>
 * <<Suspending SnapMirror transfers>>
 * <<Verifying that aggregates are online>>
+
+=== Understanding supported upgrade and downgrade paths
+
+You need to upgrade or downgrade Cloud Volumes ONTAP by one release at a time. You can't upgrade or downgrade by skipping a release.
+
+For example, if you're currently running Cloud Volumes ONTAP 9.6 and you want to upgrade to 9.8, then you first need to upgrade to 9.7. From there, you can upgrade to 9.8.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/[Refer to the "Upgrade notes" in the Cloud Volumes ONTAP Release Notes for more details].
 
 === Planning for downtime
 
 When you upgrade a single-node system, the upgrade process takes the system offline for up to 25 minutes, during which I/O is interrupted.
 
 Upgrading an HA pair is nondisruptive and I/O is uninterrupted. During this nondisruptive upgrade process, each node is upgraded in tandem to continue serving I/O to clients.
-
-=== Reviewing version requirements
-
-The version of ONTAP that you can upgrade or downgrade to varies based on the version of ONTAP currently running on your system.
-
-To understand version requirements, refer to http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-dot-upgrade/GUID-AC0EB781-583F-4C90-A4C4-BC7B14CEFD39.html[ONTAP 9 Documentation: Cluster update requirements^].
 
 === Verifying that automatic giveback is still enabled
 
