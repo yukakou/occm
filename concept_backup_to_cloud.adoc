@@ -34,6 +34,7 @@ Backup to Cloud is supported with the following types of working environments:
 
 * Cloud Volumes ONTAP in AWS
 * Cloud Volumes ONTAP in Azure
+* Cloud Volumes ONTAP in Google Cloud
 * On-premises ONTAP clusters
 
 == Cost
@@ -48,6 +49,8 @@ For PAYGO you'll need to pay your cloud provider for object storage costs and Ne
 
 * Azure: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Go to the Cloud Manager Marketplace offering for pricing details^].
 
+* GCP:
+
 === Free trial
 
 A 30-day free trial is available. When using the trial version, you are notified about the number of free trial days that remain. At the end of your free trial, backups stop being created. You must subscribe to the service or purchase a license to continue using the service.
@@ -60,7 +63,7 @@ When you enable Backup to Cloud on a Cloud Volumes ONTAP or on-premises ONTAP sy
 
 === Where backups reside
 
-Backup copies are stored in an S3 bucket or Azure Blob container that Cloud Manager creates in your cloud account. For Cloud Volumes ONTAP systems the object store is created in the same region where the Cloud Volumes ONTAP system is located. For on-premises ONTAP systems you identify the region when you enable the service.
+Backup copies are stored in an S3 bucket, Azure Blob container, or Google Cloud Storage bucket that Cloud Manager creates in your cloud account. For Cloud Volumes ONTAP systems the object store is created in the same region where the Cloud Volumes ONTAP system is located. For on-premises ONTAP systems you identify the region when you enable the service.
 
 There's one object store per Cloud Volumes ONTAP or on-premises ONTAP system. Cloud Manager names the object store as follows: netapp-backup-_clusteruuid_
 
@@ -72,6 +75,8 @@ Notes:
 
 * In Azure, Cloud Manager uses a new or existing resource group with a storage account for the Blob container.
 
+* In GCP, Cloud Manager uses a new or existing project with a storage account for the Google Cloud Storage bucket.
+
 === Supported S3 storage classes
 
 In Amazon S3, backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
@@ -79,6 +84,10 @@ In Amazon S3, backups start in the _Standard_ storage class and transition to th
 === Supported Azure Blob access tiers
 
 In Azure, each backup is associated with the _cold_ access tier.
+
+=== Supported GCP storage classes
+
+In GCP, backups are associated with the _Standard_ storage class.
 
 === Backup settings are system wide
 
