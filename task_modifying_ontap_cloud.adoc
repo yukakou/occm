@@ -93,13 +93,13 @@ link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP]
 
 == Changing write speed to normal or high
 
-Cloud Manager enables you to choose a write speed setting for single node Cloud Volumes ONTAP systems. The default write speed is normal. You can change to high write speed if fast write performance is required for your workload. Before you change the write speed, you should link:task_planning_your_config.html#choosing-a-write-speed[understand the differences between the normal and high settings].
+Cloud Manager enables you to choose a write speed setting for Cloud Volumes ONTAP, except for high availability (HA) pairs in Google Cloud. The default write speed is normal. You can change to high write speed if fast write performance is required for your workload. Before you change the write speed, you should link:concept_write_speed.html[understand the differences between the normal and high settings].
 
 .About this task
 
 * Ensure that operations such as volume or aggregate creation are not in progress.
 
-* Be aware that this change restarts Cloud Volumes ONTAP, which means I/O is interrupted.
+* Be aware that this change restarts Cloud Volumes ONTAP.
 
 .Steps
 
