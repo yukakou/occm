@@ -40,7 +40,7 @@ Cloud Volumes ONTAP can reside in the same project as the Connector, or in a dif
 
 == Account for data tiering
 
-TIP: Cloud Manager requires a GCP account for Cloud Volumes ONTAP 9.6, but not for 9.7 and later. If you want to use data tiering with Cloud Volumes ONTAP 9.7, then follow step 4 in link:task_getting_started_gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud Platform].
+TIP: Cloud Manager requires a GCP account for Cloud Volumes ONTAP 9.6, but not for 9.7 and later. If you want to use data tiering with Cloud Volumes ONTAP 9.7 or later, then follow step 4 in link:task_getting_started_gcp.html[Getting started with Cloud Volumes ONTAP in Google Cloud Platform].
 
 Adding a Google Cloud account to Cloud Manager is required to enable data tiering on a Cloud Volumes ONTAP 9.6 system. Data tiering automatically tiers cold data to low-cost object storage, enabling you to reclaim space on your primary storage and shrink secondary storage.
 

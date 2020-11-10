@@ -19,13 +19,13 @@ When you deploy Cloud Volumes ONTAP in AWS, you can choose a preconfigured syste
 
 Cloud Volumes ONTAP is available in two pricing options: pay-as-you-go and Bring Your Own License (BYOL). For pay-as-you-go, you can choose from three licenses: Explore, Standard, or Premium. Each license provides different capacity and compute options.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_97.html[Supported configurations for Cloud Volumes ONTAP 9.7 in AWS^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_98.html[Supported configurations for Cloud Volumes ONTAP 9.8 in AWS^]
 
 == Understanding storage limits
 
 The raw capacity limit for a Cloud Volumes ONTAP system is tied to the license. Additional limits impact the size of aggregates and volumes. You should be aware of these limits as you plan your configuration.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_97.html[Storage limits for Cloud Volumes ONTAP 9.7 in AWS]
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_limits_aws_98.html[Storage limits for Cloud Volumes ONTAP 9.8 in AWS]
 
 == Sizing your system in AWS
 
@@ -105,23 +105,7 @@ When you launch Cloud Volumes ONTAP in AWS, you need to specify details about yo
 
 == Choosing a write speed
 
-Cloud Manager enables you to choose a write speed setting for single node Cloud Volumes ONTAP systems. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed.
-
-==== Difference between normal write speed and high write speed
-
-When you choose normal write speed, data is written directly to disk, thereby reducing the likelihood of data loss in the event of an unplanned system outage.
-
-When you choose high write speed, data is buffered in memory before it is written to disk, which provides faster write performance. Due to this caching, there is the potential for data loss if an unplanned system outage occurs.
-
-The amount of data that can be lost in the event of an unplanned system outage is the span of the last two consistency points. A consistency point is the act of writing buffered data to disk. A consistency point occurs when the write log is full or after 10 seconds (whichever comes first). However, AWS EBS volume performance can affect consistency point processing time.
-
-==== When to use high write speed
-
-High write speed is a good choice if fast write performance is required for your workload and you can withstand the risk of data loss in the event of an unplanned system outage.
-
-==== Recommendations when using high write speed
-
-If you enable high write speed, you should ensure write protection at the application layer.
+Cloud Manager enables you to choose a write speed setting for Cloud Volumes ONTAP. Before you choose a write speed, you should understand the differences between the normal and high settings and risks and recommendations when using high write speed. link:concept_write_speed.html[Learn more about write speed].
 
 == Choosing a volume usage profile
 
