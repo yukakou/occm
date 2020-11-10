@@ -78,7 +78,7 @@ If you use a single node system, Cloud Volumes ONTAP supports high write speed w
 
 Cloud Volumes ONTAP doesn’t support high write speed with HA pairs in Google Cloud.
 
-== How to choose a write speed
+== How to select a write speed
 
 You can choose a write speed when you create a new working environment and you can link:task_modifying_ontap_cloud.html#changing-write-speed-to-normal-or-high.html[change the write speed for an existing system].
 
