@@ -377,9 +377,7 @@ NOTE: The default setting for showmount is _enabled_ starting with ONTAP 9.2.
 
 === ONTAP S3 Storage requirements
 
-ONTAP 9.7 supports the Amazon Simple Storage Service (Amazon S3) as a public preview. link:https://www.netapp.com/us/media/tr-4814.pdf[Learn more about ONTAP support for Amazon S3^].
-
-When you set up a sync relationship that includes ONTAP S3 Storage, you'll need to provide the following:
+When you set up a sync relationship that includes http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html[ONTAP S3 Storage^], you'll need to provide the following:
 
 * The IP address of the LIF that's connected to ONTAP S3
 * The access key and secret key that ONTAP is configured to use

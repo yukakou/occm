@@ -123,7 +123,7 @@ a| Various third-party locations, for example:
 
 * \https://repo1.maven.org/maven2
 * \https://oss.sonatype.org/content/repositories
-* \https://repo.typesafe.org
+* \https://repo.typesafe.com
 
 Third-party locations are subject to change.
 
