@@ -61,6 +61,8 @@ entries:
                   url: /concept_data_tiering.html
                 - title: Storage management
                   url: /concept_storage_management.html
+                - title: Write speed
+                  url: /concept_write_speed.html
                 - title: Flash Cache
                   url: /concept_flash_cache.html
                 - title: WORM storage
