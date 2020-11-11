@@ -27,7 +27,7 @@ Ensure that your database is supported and that you have the information necessa
 ==== image:number2.png[Number 2] Deploy the Cloud Compliance instance
 
 [role="quick-margin-para"]
-link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance in Cloud Manager^] if there isn't already an instance deployed.
+link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance^] if there isn't already an instance deployed.
 
 ==== image:number3.png[Number 3] Add the database server
 

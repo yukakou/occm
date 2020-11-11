@@ -32,7 +32,7 @@ Ensure that your cloud environment can meet the prerequisites, which includes 16
 ==== image:number3.png[Number 3] Deploy Cloud Compliance
 
 [role="quick-margin-para"]
-Launch the installation wizard to deploy the Cloud Compliance instance in Cloud Manager.
+Launch the installation wizard to deploy the Cloud Compliance instance. You can deploy Cloud Compliance in Cloud Manager or in an on-premises location.
 
 ==== image:number4.png[Number 4] Subscribe to the Cloud Compliance service
 
@@ -48,6 +48,7 @@ There are some scenarios where you have to use a Connector in AWS or Azure for C
 * When scanning data in Cloud Volumes ONTAP in AWS or in AWS S3 buckets, you use a connector in AWS.
 * When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a connector in Azure.
 * Databases can be scanned using either Connector.
+* On-prem ONTAP systems can be scanned using either Connector.
 
 As you can see, there may be some situations where you need to use link:concept_connectors.html#when-to-use-multiple-connectors[multiple Connectors].
 
@@ -122,7 +123,7 @@ After Cloud Compliance is enabled, ensure that users access the Cloud Manager in
 +
 The Cloud Compliance instance uses a private IP address to ensure that the indexed data isn't accessible to the internet. As a result, the web browser that you use to access Cloud Manager must have a connection to that private IP address. That connection can come from a direct connection to AWS or Azure (for example, a VPN), or from a host that's inside the same network as the Cloud Compliance instance.
 
-== Deploying the Cloud Compliance instance
+== Deploying the Cloud Compliance instance in the cloud
 
 You deploy an instance of Cloud Compliance for each Cloud Manager instance.
 
@@ -130,9 +131,9 @@ You deploy an instance of Cloud Compliance for each Cloud Manager instance.
 
 . In Cloud Manager, click *Compliance*.
 
-. Click *Activate Cloud Compliance* to start the deployment wizard.
+. Click *Deploy Compliance in the Cloud* to start the deployment wizard.
 +
-image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the Activate Cloud Compliance button to deploy Cloud Compliance.]
+image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to deploy Cloud Compliance in the cloud.]
 
 . The wizard displays progress as it goes through the deployment steps. It will stop and ask for input if it runs into any issues.
 +
@@ -146,6 +147,92 @@ Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
 
 .What's Next
 From the Scan Configuration page you can select the working environments, volumes, and buckets that you want to scan for compliance. You can also connect to a database server in order to scan specific database schemas. Activate Cloud Compliance on any of these data sources.
+
+== Deploying the Cloud Compliance instance on premises
+
+The most common way to deploy Cloud Compliance is to <<Deploying the Cloud Compliance instance in the cloud,deploy it in the cloud>>. But you have the option to download and install the Compliance software on an existing Linux host in your network or in the cloud.
+
+NOTE: Cloud Compliance is currently unable to scan S3 buckets and ANF files if the Compliance instance is installed on premises.
+
+.Requirements
+
+* Operating system: Red Hat Enterprise Linux or CentOS version 8.0
+** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
+** The OS must be capable of installing the docker engine (for example, disable the firewalld service if needed)
+* RAM: Minimum of 60 GB
+* CPU: Minimum 8 core CPU; 16 cores recommended
+* Capacity: 500 GB of disk space
+
+* A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during installation.
+
+*	Network connectivity between the host machine and the Connector over port 80. And if you want to see the installation progress in Cloud Manager, make sure port 8080 is also open.
+
+See <<Reviewing prerequisites,Reviewing prerequisites>> for the list of endpoints that must be reachable from the host over the internet.
+
+*Do we need any of these below that were listed in the Connector requirements?*
+* The Compliance installer accesses several URLs during the installation process. You must ensure that outbound internet access is allowed to these endpoints:
+
+** \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+** \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+** \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
++
+The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
+
+.About this task
+
+* Root privileges are not required to install the Connector.
+
+* The installer that is available on the NetApp Support Site might be an earlier version. After installation, Cloud Compliance automatically updates itself if a new version is available.
+
+.Steps
+
+. In Cloud Manager, click *Compliance*.
+
+. Click *Deploy Compliance On Premises*.
++
+image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting the button to deploy Cloud Compliance on premises.]
+
+. In the Deploying Cloud Compliance On Premises dialog:
+.. Follow the steps to install Compliance on a Linux host.
+.. Copy the provided command and paste it in a text file so you can use it later. For example:
++
+ mount1576503200537-OCCMIAMRole-11JMPLIW9EEC0
+
+. Download the Cloud Compliance software from the https://mysupport.netapp.com/site/products/all/details/cloud-compliance/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
++
+For help with connecting and copying the file to an EC2 instance in AWS, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html[AWS Documentation: Connecting to Your Linux Instance Using SSH^].
+
+. Unzip the installer file on the host machine:
++
+ tar -xzf cc_onprem_installer.tar.gz
+
+. When prompted to by the installer, run these commands:
+.. Enter the information you copied from step 3 after you clicked “Deploy Compliance On Premises”.
+ sudo ./install.sh -a <account_id> -c <agent_id> -t <token>
+.. IP or host name of the host machine, as it will be accessed by the Connector instance
+.. Proxy details if you want, not mandatory. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Cloud Compliance will automatically use the proxy used by Cloud Manager:
+ --proxy_host <proxy_host> --proxy_port <proxy_port> --proxy_scheme <proxy_scheme> --proxy_user <proxy_user> --proxy_password <proxy_password>
+
++
+ ./OnCommandCloudManager-V3.8.4.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
++
+_proxy_host_ is required if the host is behind a proxy server.
++
+_proxy_port_ is the port for the proxy server.
++
+_proxy_user_ is the user name for the proxy server, if basic authentication is required.
++
+_proxy_pwd_ is the password for the user name that you specified.
++
+_proxy_scheme_ is the connection schema (https or http. Default http).
+
+. Unless you specified the silent parameter, type *Y* to continue the script, and then enter the HTTP and HTTPS ports when prompted.
++
+Cloud Manager is now installed. At the end of the installation, the Cloud Manager service (occm) restarts twice if you specified a proxy server.
+
+.Result
+
+The Connector is now installed and set up with your Cloud Central account. Cloud Manager will automatically use this Connector when you create new working environments.
 
 == Subscribing to the Cloud Compliance service
 

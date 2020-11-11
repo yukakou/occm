@@ -126,12 +126,14 @@ image:screenshot_sensitive_personal_files.gif[A screenshot of the sensitive pers
 
 The sensitive personal data that Cloud Compliance can find in files includes the following:
 
+Civil Law Reference:: Data concerning a natural person’s
 Criminal Procedures Reference::	Data concerning a natural person’s criminal convictions and offenses.
 Ethnicity Reference::	Data concerning a natural person’s racial or ethnic origin.
 Health Reference:: Data concerning a natural person’s health.
 ICD-9-CM Medical Codes:: Codes used in the medical and health industry.
 ICD-10-CM Medical Codes:: Codes used in the medical and health industry.
 Philosophical Beliefs Reference::	Data concerning a natural person’s philosophical beliefs.
+Political Opinions Reference:: Data concerning a natural person’s political opinions.
 Religious Beliefs Reference::	Data concerning a natural person’s religious beliefs.
 Sex Life or Orientation Reference::	Data concerning a natural person’s sex life or sexual orientation.
 
@@ -305,31 +307,31 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 
 * The controls at the top of each column allow you to sort the results in numerical or alphabetical order.
 
-* The left-pane filters enable you to refine the results by working environment, storage repository, category, private data, file type, last modified date, whether the S3 object’s permissions are open to public access, etc...
+* The left-pane filters enable you to refine the results by working environment, storage repository, category, private data, file type, file size, last modified date, whether the S3 object’s permissions are open to public access, etc...
 
-// * The _Highlights_ filters at the bottom of the Filters pane list a group of predefined filters that provide commonly requested combinations of filters; like a saved database query.
-//
-// === Predefined Highlights filters
-//
-// The provided Highlights filters include:
-//
-// [cols="25,35,35",width=85%,options="header"]
-// |===
-// | Name
-// | Description
-// | Logic
-//
-// | S3 publicly-exposed private data | S3 Objects containing personal or sensitive personal information, with open Public read access. | (S3 Public) AND (contains personal OR sensitive personal info)
-// | PCI DSS – Stale data over 30 days | Files containing Credit Card information, last modified over 30 days ago. | Contains credit card AND last modified over 30 days
-// | HIPAA – Stale data over 30 days | Files containing Health information, last modified over 30 days ago. | Contains health data (defined same way as in HIPAA report) AND last modified over 30 days
-// | Private data – Stale over 7 years | Files containing personal or sensitive personal information, last modified over 7 years ago. | Files containing personal or sensitive personal information, last modified over 7 years ago
-// | GDPR – European citizens | Files and DB Tables containing over 10 identifiers of EU citizens. | Files and DB Tables containing over 10 identifiers of EU citizens (any one of the national identifiers of the European countries. Does not include Brazil, California, USA SSN, Israel, South Africa)
-// | CCPA – California residents | Files containing over 10 California Driver’s License identifiers or DB Tables with this identifier. | Files containing over 10 California Driver’s License identifiers OR DB Tables containing California Driver’s license
-// | Data Subject names – High risk | Files with over 50 Data Subject names. | Files with over 50 Data Subject names
-// | Email Addresses – High risk | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses
-// | Private data – High risk | Files with over 50 PIIs (Personal or Sensitive Personal information), or DB Columns with over 50% of their rows containing PIIs. | Files with over 50 PIIs (Personal or Sensitive Personal information), or DB Columns with over 50% of their rows containing PIIs
-// |===
-//
+* The _Highlights_ filters at the bottom of the Filters pane list a group of predefined filters that provide commonly requested combinations of filters; like a saved database query.
+
+=== Predefined Highlights filters
+
+The provided Highlights filters include:
+
+[cols="25,35,35",width=85%,options="header"]
+|===
+| Name
+| Description
+| Logic
+| S3 publicly-exposed private data | S3 Objects containing personal or sensitive personal information, with open Public read access. | (S3 Public) AND contains personal OR sensitive personal info)
+| PCI DSS – Stale data over 30 days | Files containing Credit Card information, last modified over 30 days ago. | Contains credit card AND last modified over 30 days
+| HIPAA – Stale data over 30 days | Files containing Health information, last modified over 30 days ago. | Contains health data (defined same way as in HIPAA report) AND last modified over 30 days
+| Private data – Stale over 7 years | Files containing personal or sensitive personal information, last modified over 7 years ago. | Files containing personal or sensitive personal information, last modified over 7 years ago
+| GDPR – European citizens | Files containing more than 5 identifiers of an EU country’s citizens or DB Tables containing identifiers of an EU country’s citizens. | Files containing over 5 identifiers of an (one) EU citizens or DB Tables containing rows with over 15% of columns with one country’s EU identifiers. (any one of the national identifiers of the European countries. Does not include Brazil, California, USA SSN, Israel, South Africa)
+| CCPA – California residents | Files containing over 10 California Driver’s License identifiers or DB Tables with this identifier. | Files containing over 10 California Driver’s License identifiers OR DB Tables containing California Driver’s license
+| Data Subject names – High risk | Files with over 50 Data Subject names. | Files with over 50 Data Subject names
+| Email Addresses – High risk | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses
+| Personal data – High risk | Files with over 20 Personal data identifiers, or DB Columns with over 50% of their rows containing Personal data identifiers. | Files with over 20 personal, or DB Columns with over 50% of their rows containing personal
+| Sensitive Personal data – High risk | Files with over 20 Sensitive Personal data identifiers, or DB Columns with over 50% of their rows containing Sensitive Personal data. | Files with over 20 sensitive personal, or DB Columns with over 50% of their rows containing sensitive personal
+|===
+
 == What’s included in each file list report (CSV file)
 
 From each Investigation page you can download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list.
@@ -343,6 +345,7 @@ Each file list includes the following information:
 * Protocol
 * File path
 * File type
+* File size
 * Category
 * Personal information
 * Sensitive personal information
