@@ -35,7 +35,7 @@ Go to the Compliance tab to generate the report.
 
 .Steps
 
-. At the top of Cloud Manager, click *Cloud Compliance*.
+. At the top of Cloud Manager, click *Compliance*.
 
 . Under *Reports*, click the download icon next to *Privacy Risk Assessment*.
 +
@@ -95,7 +95,7 @@ Go to the Compliance tab to generate the report.
 
 .Steps
 
-. At the top of Cloud Manager, click *Cloud Compliance*.
+. At the top of Cloud Manager, click *Compliance*.
 
 . Under *Reports*, click the download icon next to *PCI DSS Report*.
 +
@@ -133,7 +133,7 @@ Go to the Compliance tab to generate the report.
 
 .Steps
 
-. At the top of Cloud Manager, click *Cloud Compliance*.
+. At the top of Cloud Manager, click *Compliance*.
 
 . Under *Reports*, click the download icon next to *HIPAA Report*.
 +

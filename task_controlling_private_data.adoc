@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_controlling_private_data.html
-keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy
+keywords: personal files, personal data, sensitive personal files, sensitive personal data, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, filter data, csv file, highlight, data fusion
 summary: Gain control of your private data by viewing details about the personal data and sensitive personal data in your organization. You can also gain visibility by reviewing the categories and file types that Cloud Compliance found in your data.
 ---
 
@@ -19,11 +19,15 @@ By default, the Cloud Compliance dashboard displays compliance data for all work
 
 image:screenshot_compliance_dashboard.png[A screenshot of the Cloud Compliance dashboard]
 
-If you want to see data for only some of the working environments, <<Viewing data from specific working environments,select those working environments>>.
+If you want to see data for only some of the working environments, <<Viewing Dashboard data for specific working environments,select those working environments>>.
+
+You can also filter the results from the Data Investigation page and download a report of the results. See <<Filtering data in the Data Investigation page,Filtering data in the Data Investigation page>> for details.
 
 == Personal data
 
 Cloud Compliance automatically identifies specific words, strings, and patterns (Regex) inside the data. For example, Personal Identification Information (PII), credit card numbers, social security numbers, bank account numbers, and more. <<Types of personal data,See the full list>>.
+
+Additionally, if you have added a database server to be scanned, the _Data Fusion_ feature allows you to scan your files to identify whether unique identifiers from your databases are found in those files or other databases. See <<Creating custom personal data identifiers from your databases,Creating custom personal data identifiers from your databases>> for details.
 
 For some types of personal data, Cloud Compliance uses _proximity validation_ to validate its findings. The validation occurs by looking for one or more predefined keywords in proximity to the personal data that was found. For example, Cloud Compliance identifies a U.S. social security number (SSN) as a SSN if it sees a proximity word next to it--for example, _SSN_ or _social security_. <<Types of personal data,The list below>> shows when Cloud Compliance uses proximity validation.
 
@@ -31,7 +35,7 @@ For some types of personal data, Cloud Compliance uses _proximity validation_ to
 
 .Steps
 
-. At the top of Cloud Manager, click *Cloud Compliance* and click the *Dashboard* tab.
+. At the top of Cloud Manager, click *Compliance* and click the *Dashboard* tab.
 
 . To investigate the details for all personal data, click the icon next to the personal data percentage.
 +
@@ -44,12 +48,6 @@ image:screenshot_personal_files.gif[A screenshot of the personal files dialog bo
 . Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
 +
 image:screenshot_compliance_investigation_page.gif[A screenshot of details information after clicking Investigate Results.]
-
-. You can also filter the contents of the investigation page to display only the results you want to see. The top-level tabs allow you to view data from files (unstructured data) or from databases (structured data).
-+
-Then you have filters for working environment, storage repository, category, private data, file type, last modified date, and whether the S3 object's permissions are open to public access.
-+
-image:screenshot_compliance_investigation_filtered.png[A screenshot of the filters available when refining the results in the investigation page.]
 
 === Types of personal data
 
@@ -112,7 +110,7 @@ NOTE: Only English is supported when scanning for sensitive personal data. Suppo
 
 .Steps
 
-. At the top of Cloud Manager, click *Cloud Compliance*.
+. At the top of Cloud Manager, click *Compliance*.
 
 . To investigate the details for all sensitive personal data, click the icon next to the sensitive personal data percentage.
 +
@@ -149,7 +147,7 @@ NOTE: Only English is supported for categories. Support for more languages will 
 
 .Steps
 
-. At the top of Cloud Manager, click *Cloud Compliance*.
+. At the top of Cloud Manager, click *Compliance*.
 
 . Click the *Investigate Results* icon for one of the top 4 categories directly from the main screen, or click *View All* and then click the icon for any of the categories.
 +
@@ -228,7 +226,7 @@ For example, you might be storing CAD files that include very sensitive informat
 
 .Steps
 
-. At the top of Cloud Manager, click *Cloud Compliance*.
+. At the top of Cloud Manager, click *Compliance*.
 
 . Click the *Investigate Results* icon for one of the top 4 file types directly from the main screen, or click *View All* and then click the icon for any of the file types.
 +
@@ -243,7 +241,49 @@ Cloud Compliance scans all files for category and metadata insights and displays
 But when Cloud Compliance detects Personal Identifiable Information (PII), or when it performs a DSAR search, only the following file formats are supported:
 .PDF, .DOCX, .DOC, .PPTX, .XLS, .XLSX, .CSV, .TXT, .RTF, and .JSON.
 
-== Viewing data from specific working environments
+== Creating custom personal data identifiers from your databases
+
+A feature we call _Data Fusion_ allows you to scan your organizations' data to identify whether unique identifiers from your databases are found in files or other databases - basically making your own list of "personal data" that is identified in Cloud Compliance scans. This gives you the full picture about where potentially sensitive data resides in _all_ your files.
+
+You can choose the identifiers by selecting a specific column, or columns, in a database table. For example, the diagram below shows how data fusion is used to scan your volumes and buckets for occurrences of all your Customer IDs from your Oracle database.
+
+image:diagram_compliance_data_fusion.png[A diagram showing how content from your databases can be used as a source to identify files that contain the same data.]
+
+As you can see, two unique Customer IDs have been found in two volumes and in one S3 bucket. Any matches in database tables will also identified.
+
+.Steps
+
+You must have link:task_scanning_databases.html#adding-the-database-server[added at least one database server] to Cloud Compliance before you can add data fusion sources.
+
+. In the Scan Configuration page, click *Manage Data Fusion* in the database where the source data resides.
++
+image:screenshot_compliance_manage_data_fusion.png[A screenshot of selecting the Manage Data Fusion button to add a source column.]
+
+. Click *Add Data Fusion source* on the next page.
+
+. In the _Add Data Fusion Source_ page:
+.. Select the Database Schema from the drop-down menu.
+.. Enter the Table name in that schema.
+.. Enter the Column, or Columns, that contain the unique identifiers you want to use.
++
+When adding multiple columns, enter each column name, or table view name, on a separate line.
++
+image:screenshot_compliance_add_data_fusion.png[A screenshot of identifying the schema, table, and column for the data fusion source.]
+
+. Click *Add Data Fusion Source*.
++
+The Data Fusion inventory page displays the database source columns that you have configured for Cloud Compliance to scan.
++
+image:screenshot_compliance_data_fusion_list.png[A screenshot of all the data source references you have configured with Data Fusion.]
+
+.Results
+After the next scan, the results will include this new information in the Dashboard under the "Personal" results section, and in the Investigation page in the "Personal Data" filter. Each source column you added appears in the filter list as "Table.Column", for example `Customers.Customer ID`.
+
+NOTE: If you later decide not to scan your files using a certain Data Fusion source, you can select the source row from the Data Fusion inventory page and click *Delete Data Fusion Source*.
+
+image:screenshot_compliance_delete_data_fusion.png[A screenshot showing how to remove a data fusion source.]
+
+== Viewing Dashboard data for specific working environments
 
 You can filter the contents of the Cloud Compliance dashboard to see compliance data for all working environments and databases, or for just specific working environments.
 
@@ -254,6 +294,61 @@ When you filter the dashboard, Cloud Compliance scopes the compliance data and r
 . Click the filter drop-down, select the working environments that you'd like to view data for, and click *View*.
 +
 image:screenshot_cloud_compliance_filter.gif[]
+
+== Filtering data in the Data Investigation page
+
+You can filter the contents of the investigation page to display only the results you want to see. If you want to save a CSV version of the content as a report after you have refined it, click the image:button_download.png[The Download Report button.] button.
+
+image:screenshot_compliance_investigation_filtered.png[A screenshot of the filters available when refining the results in the investigation page.]
+
+* The top-level tabs allow you to view data from files (unstructured data) or from databases (structured data).
+
+* The controls at the top of each column allow you to sort the results in numerical or alphabetical order.
+
+* The left-pane filters enable you to refine the results by working environment, storage repository, category, private data, file type, last modified date, whether the S3 object’s permissions are open to public access, etc...
+
+// * The _Highlights_ filters at the bottom of the Filters pane list a group of predefined filters that provide commonly requested combinations of filters; like a saved database query.
+//
+// === Predefined Highlights filters
+//
+// The provided Highlights filters include:
+//
+// [cols="25,35,35",width=85%,options="header"]
+// |===
+// | Name
+// | Description
+// | Logic
+//
+// | S3 publicly-exposed private data | S3 Objects containing personal or sensitive personal information, with open Public read access. | (S3 Public) AND (contains personal OR sensitive personal info)
+// | PCI DSS – Stale data over 30 days | Files containing Credit Card information, last modified over 30 days ago. | Contains credit card AND last modified over 30 days
+// | HIPAA – Stale data over 30 days | Files containing Health information, last modified over 30 days ago. | Contains health data (defined same way as in HIPAA report) AND last modified over 30 days
+// | Private data – Stale over 7 years | Files containing personal or sensitive personal information, last modified over 7 years ago. | Files containing personal or sensitive personal information, last modified over 7 years ago
+// | GDPR – European citizens | Files and DB Tables containing over 10 identifiers of EU citizens. | Files and DB Tables containing over 10 identifiers of EU citizens (any one of the national identifiers of the European countries. Does not include Brazil, California, USA SSN, Israel, South Africa)
+// | CCPA – California residents | Files containing over 10 California Driver’s License identifiers or DB Tables with this identifier. | Files containing over 10 California Driver’s License identifiers OR DB Tables containing California Driver’s license
+// | Data Subject names – High risk | Files with over 50 Data Subject names. | Files with over 50 Data Subject names
+// | Email Addresses – High risk | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses | Files with over 50 Email Addresses, or DB Columns with over 50% of their rows containing Email Addresses
+// | Private data – High risk | Files with over 50 PIIs (Personal or Sensitive Personal information), or DB Columns with over 50% of their rows containing PIIs. | Files with over 50 PIIs (Personal or Sensitive Personal information), or DB Columns with over 50% of their rows containing PIIs
+// |===
+//
+== What’s included in each file list report (CSV file)
+
+From each Investigation page you can download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list.
+
+Each file list includes the following information:
+
+* File name
+* Location type
+* Working environment
+* Storage repository
+* Protocol
+* File path
+* File type
+* Category
+* Personal information
+* Sensitive personal information
+* Deletion detection date
++
+A deletion detection date identifies the date that the file was deleted or moved. This enables you to identify when sensitive files have been moved. Deleted files aren't part of the file number count that appears in the dashboard or on the Investigation page. The files only appear in the CSV reports.
 
 == Accuracy of information found
 
@@ -278,23 +373,3 @@ Cloud Compliance is in a Controlled Availability release and we are constantly i
 | Sensitive personal data | 80%-95% | 20%-30%
 | Categories | 90%-97% | 60%-80%
 |===
-
-== What’s included in each file list report (CSV file)
-
-From each Investigation page you can download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list.
-
-Each file list includes the following information:
-
-* File name
-* Location type
-* Working environment
-* Storage repository
-* Protocol
-* File path
-* File type
-* Category
-* Personal information
-* Sensitive personal information
-* Deletion detection date
-+
-A deletion detection date identifies the date that the file was deleted or moved. This enables you to identify when sensitive files have been moved. Deleted files aren't part of the file number count that appears in the dashboard or on the Investigation page. The files only appear in the CSV reports.
