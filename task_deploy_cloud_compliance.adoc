@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_deploy_cloud_compliance.html
-keywords: cloud compliance, get started, deploy cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance
-summary: Complete a few steps to deploy the Cloud Compliance instance in your Cloud Manager workspace.
+keywords: cloud compliance, get started, deploy cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises
+summary: Complete a few steps to deploy the Cloud Compliance instance in your Cloud Manager workspace. You can deploy Cloud Compliance in the cloud or on an on-premises system.
 ---
 
 = Deploy Cloud Compliance
@@ -13,7 +13,7 @@ summary: Complete a few steps to deploy the Cloud Compliance instance in your Cl
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to deploy the Cloud Compliance instance in your Cloud Manager workspace.
+Complete a few steps to deploy the Cloud Compliance instance in your Cloud Manager workspace. You can deploy Cloud Compliance in the cloud or on an on-premises system.
 
 == Quick start
 
@@ -32,7 +32,7 @@ Ensure that your cloud environment can meet the prerequisites, which includes 16
 ==== image:number3.png[Number 3] Deploy Cloud Compliance
 
 [role="quick-margin-para"]
-Launch the installation wizard to deploy the Cloud Compliance instance. You can deploy Cloud Compliance in Cloud Manager or in an on-premises location.
+Launch the installation wizard to deploy the Cloud Compliance instance. You can deploy Cloud Compliance in the cloud or in an on-premises location.
 
 ==== image:number4.png[Number 4] Subscribe to the Cloud Compliance service
 
@@ -47,8 +47,8 @@ There are some scenarios where you have to use a Connector in AWS or Azure for C
 
 * When scanning data in Cloud Volumes ONTAP in AWS or in AWS S3 buckets, you use a connector in AWS.
 * When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a connector in Azure.
-* Databases can be scanned using either Connector.
-* On-prem ONTAP systems can be scanned using either Connector.
+* Databases can be scanned when using either Connector.
+* On-prem ONTAP systems can be scanned when using either Connector.
 
 As you can see, there may be some situations where you need to use link:concept_connectors.html#when-to-use-multiple-connectors[multiple Connectors].
 
@@ -180,7 +180,7 @@ The host might try to update operating system packages during installation. The 
 
 .About this task
 
-* Root privileges are not required to install the Connector.
+* Root privileges are not required to install Cloud Compliance.
 
 * The installer that is available on the NetApp Support Site might be an earlier version. After installation, Cloud Compliance automatically updates itself if a new version is available.
 
@@ -207,28 +207,41 @@ For help with connecting and copying the file to an EC2 instance in AWS, see htt
  tar -xzf cc_onprem_installer.tar.gz
 
 . When prompted to by the installer, run these commands:
-.. Enter the information you copied from step 3 after you clicked “Deploy Compliance On Premises”.
+.. Paste the information you copied from step 3 after you clicked “Deploy Compliance On Premises”.
++
  sudo ./install.sh -a <account_id> -c <agent_id> -t <token>
+
 .. IP or host name of the host machine, as it will be accessed by the Connector instance
-.. Proxy details if you want, not mandatory. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Cloud Compliance will automatically use the proxy used by Cloud Manager:
+.. Proxy details if needed. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Cloud Compliance will automatically use the proxy used by Cloud Manager:
++
  --proxy_host <proxy_host> --proxy_port <proxy_port> --proxy_scheme <proxy_scheme> --proxy_user <proxy_user> --proxy_password <proxy_password>
++
+_account_id_ = NetApp Account ID
++
+_agent_id_ = Connector ID
++
+_token_ = jwt user token
++
+_cc_host_ = IP or host name of the host machine, as it will be accessed by the Connector instance
++
+_proxy_host_ IP or host name of the proxy server if the host is behind a proxy server.
++
+_proxy_port_ Port to connect to the proxy server (default 80).
++
+_proxy_user_ Authenticated user to connect to the proxy server, if basic authentication is required.
++
+_proxy_password_ Password for the user name that you specified.
++
+_proxy_scheme_ the connection schema: https or http (default http).
 
+. Alternatively, you can create the whole command in advance and input it in the first prompt:
 +
- ./OnCommandCloudManager-V3.8.4.sh [silent] [proxy=ipaddress] [proxyport=port] [proxyuser=user_name] [proxypwd=password]
-+
-_proxy_host_ is required if the host is behind a proxy server.
-+
-_proxy_port_ is the port for the proxy server.
-+
-_proxy_user_ is the user name for the proxy server, if basic authentication is required.
-+
-_proxy_pwd_ is the password for the user name that you specified.
-+
-_proxy_scheme_ is the connection schema (https or http. Default http).
+ sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <cc_host> --proxy_host <proxy_host> --proxy_port <proxy_port> --proxy_scheme <proxy_scheme> --proxy_user <proxy_user> --proxy_password <proxy_password>
 
-. Unless you specified the silent parameter, type *Y* to continue the script, and then enter the HTTP and HTTPS ports when prompted.
-+
-Cloud Manager is now installed. At the end of the installation, the Cloud Manager service (occm) restarts twice if you specified a proxy server.
+The installer will start installing Cloud Compliance (installs packages, installs docker, registers the installation, downloads the Cloud Compliance artifact, and installs Cloud Compliance).
+
+* If there is connectivity over port 8080 between the host machine and the Connector instance, you should see the installation progress in the “Compliance” tab in Cloud Manager.
+* Installation takes up to 10 minutes. When it’s done, the “Compliance” tab should show the Cloud Compliance UI’s Configuration page, where you can now select which data sources to scan.
 
 .Result
 
@@ -236,7 +249,7 @@ The Connector is now installed and set up with your Cloud Central account. Cloud
 
 == Subscribing to the Cloud Compliance service
 
-The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point.
+The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. This is true even when you have deployed Cloud Compliance on an on-premises system.
 
 You can subscribe at any time and you will not be charged until the amount of data exceeds 1 TB. You can always see the total amount of data that is being scanned from the Cloud Compliance Dashboard. And the _Subscribe Now_ button makes it easy to subscribe when you are ready.
 
