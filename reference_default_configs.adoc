@@ -112,8 +112,10 @@ If the virtual machine that you chose for Cloud Volumes ONTAP supports Ultra SSD
 * One 10 GB Standard persistent disk for boot data
 * One 64 GB Standard persistent disk for root data
 * One 500 GB Standard persistent disk for NVRAM
-* One 216 GB Standard persistent disk for saving cores
+* One 315 GB Standard persistent disk for saving cores
 * One GCP snapshot each for the boot disk and root disk
+
+For an HA pair, there are two disks per node for root data.
 
 === Where the disks reside
 
