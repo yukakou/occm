@@ -17,7 +17,7 @@ Understanding how Cloud Volumes ONTAP is configured by default can help you set 
 
 == Defaults
 
-* Cloud Volumes ONTAP is available as a single-node system in AWS, Azure, and GCP, and as an HA pair in AWS and Azure.
+* Cloud Volumes ONTAP is available as a single-node system and as an HA pair in AWS, Azure, and GCP.
 
 * Cloud Manager creates one data-serving storage VM when it deploys Cloud Volumes ONTAP. Some configurations support additional storage VMs. link:task_managing_svms.html[Learn more about managing storage VMs].
 
@@ -35,7 +35,7 @@ Understanding how Cloud Volumes ONTAP is configured by default can help you set 
 * Several network interfaces are created by default:
 ** A cluster management LIF
 ** An intercluster LIF
-** An SVM management LIF on HA systems in Azure, single node systems in AWS, and optionally on HA systems in multiple AWS Availability Zones
+** An SVM management LIF on HA systems in Azure and in GCP, on single node systems in AWS, and optionally on HA systems in multiple AWS Availability Zones
 ** A node management LIF
 ** An iSCSI data LIF
 ** A CIFS and NFS data LIF
