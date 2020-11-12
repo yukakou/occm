@@ -15,6 +15,8 @@ summary: Set up your Google Cloud Platform networking so Cloud Volumes ONTAP sys
 [.lead]
 Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
 
+If you want to deploy an HA pair, you should link:concept_ha_google_cloud.html[learn how HA pairs work in GCP].
+
 == Requirements for Cloud Volumes ONTAP
 
 The following requirements must be met in GCP.
