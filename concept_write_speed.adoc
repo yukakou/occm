@@ -29,7 +29,7 @@ The amount of data that can be lost in the event of an unplanned system outage i
 
 === When to use high write speed
 
-High write speed is a good choice if fast write performance is required for your workload and you can withstand the risk of data loss in the event of an unplanned system outage.
+High write speed is a good choice if fast write performance is required for your workload and you can withstand the risk of data loss in the event of an unplanned system outage, or a cascading failure involving an unplanned system outage (HA pairs only).
 
 === Recommendations when using high write speed
 
