@@ -29,9 +29,7 @@ A shared VPC enables you to configure and centrally manage virtual networks acro
 The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
 
 Virtual Private Clouds for HA pairs::
-Four VPCs are required for an HA pair and its four network interfaces.
-+
-Four VPCs are required because GCP requires that each network interface resides in a separate VPC network.
+Four VPCs and four subnets are required for an HA pair, the mediator, and the HA pair's four network interfaces. Four VPCs are required because GCP requires that each network interface resides in a separate VPC network.
 +
 Cloud Manager will prompt you to choose four VPCs when you create the HA pair:
 +
@@ -39,6 +37,8 @@ Cloud Manager will prompt you to choose four VPCs when you create the HA pair:
 * VPC-1, VPC-2, and VPC-3 for internal communication between the nodes and the HA mediator
 +
 Similar to a single node system, an HA pair is supported in a shared VPC and also in non-shared VPCs. However, only VPC-0 can be a shared VPC. All other VPCs must be a non-shared VPC.
++
+The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
 
 Outbound internet access for Cloud Volumes ONTAP::
 Cloud Volumes ONTAP requires outbound internet access to send messages to NetApp AutoSupport, which proactively monitors the health of your storage.
@@ -55,13 +55,13 @@ TIP: If you're using an HA pair, the HA mediator doesn't require outbound intern
 Number of IP addresses::
 Cloud Manager allocates the following number of IP addresses to Cloud Volumes ONTAP in GCP:
 
-* Single node: 5 IP addresses
+* *Single node*: 5 IP addresses
 +
 Cloud Manager doesn't create an SVM management LIF for single node systems in GCP.
 +
 A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
 
-* HA pair: 17 IP addresses
+* *HA pair*: 17 IP addresses
 +
 ** 10 IP addresses for VPC-0
 ** Two IP addresses for VPC-1
@@ -73,8 +73,8 @@ You don't need to create firewall rules because Cloud Manager does that for you.
 +
 Note that two sets of firewall rules are required for an HA configuration:
 +
-* One set for HA components in VPC-0 that includes rules that enable data access to Cloud Volumes ONTAP. <<Firewall rules for Cloud Volumes ONTAP,Learn more>>.
-* Another set for HA components in VPC-1, VPC-2, and VPC-3 that are open for inbound & outbound communication between the HA components. <<Firewall rules for VPC-1, VPC-2, and VPC-3,Learn more>>.
+* One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP. <<Firewall rules for Cloud Volumes ONTAP,Learn more>>.
+* Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Firewall rules for VPC-1 VPC-2 and VPC-3,Learn more>>.
 
 Connection from Cloud Volumes ONTAP to Google Cloud Storage for data tiering::
 If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you're using an HA pair, this is the subnet in VPC-0). For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
@@ -191,7 +191,7 @@ In any case, you should secure network access by ensuring that security group ru
 
 == Firewall rules for Cloud Volumes ONTAP
 
-Cloud Manager creates GCP firewall rules that include the inbound and outbound rules that Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
+Cloud Manager creates GCP firewall rules that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own firewall rules.
 
 The firewall rules for Cloud Volumes ONTAP requires both inbound and outbound rules.
 

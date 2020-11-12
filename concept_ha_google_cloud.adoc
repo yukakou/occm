@@ -15,9 +15,9 @@ summary: A Cloud Volumes ONTAP high availability configuration provides nondisru
 [.lead]
 A Cloud Volumes ONTAP high availability (HA) configuration provides nondisruptive operations and fault tolerance. In Google Cloud Platform, data is synchronously mirrored between the two nodes.
 
-== Overview
+== HA components
 
-In GCP, Cloud Volumes ONTAP HA configurations include the following components:
+Cloud Volumes ONTAP HA configurations in GCP include the following components:
 
 * Two Cloud Volumes ONTAP nodes whose data is synchronously mirrored between each other.
 
@@ -27,17 +27,17 @@ The mediator runs the Linux operating system on a f1-micro instance and uses two
 
 * Four Google Cloud internal load balancers (TCP/UDP) that manage incoming traffic to the Cloud Volumes ONTAP HA pair.
 
-* Four Virtual Private Clouds (VPCs) for the HA pair's four network interfaces.
+* Four Virtual Private Clouds (VPCs) for the HA pair, the mediator, and the HA pair's four network interfaces.
 +
-Four VPCs are required because GCP requires that each network interface resides in a separate VPC network.
+The configuration uses four VPCs because GCP requires that each network interface resides in a separate VPC network.
 
-=== Storage takeover and giveback
+== Storage takeover and giveback
 
 If a node goes down, the other node can serve data for its partner to provide continued data service. Clients can access the same data from the partner node because the data was synchronously mirrored to the partner.
 
 After the node reboots, the partner must resync data before it can return the storage. The time that it takes to resync data depends on how much data was changed while the node was down.
 
-=== RPO and RTO
+== RPO and RTO
 
 An HA configuration maintains high availability of your data as follows:
 
@@ -49,9 +49,9 @@ Your data is transactionally consistent with no data loss.
 +
 In the event of an outage, data should be available by the RTO.
 
-=== HA deployment models
+== HA deployment models
 
-You can ensure the high availability of your data by deploying an HA configuration in multiple zones or a single zone.
+You can ensure the high availability of your data by deploying an HA configuration in multiple zones or in a single zone.
 
 Multiple zones (recommended)::
 Deploying an HA configuration across three zones ensures continuous data availability if a failure occurs within a zone. Note that write performance is slightly lower compared to using a single zone, but it's minimal.

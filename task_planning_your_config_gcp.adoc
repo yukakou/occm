@@ -60,6 +60,8 @@ Refer to the following for more details:
 
 When you deploy Cloud Volumes ONTAP in GCP, you need to specify details about your virtual network. You can use a worksheet to collect the information from your administrator.
 
+*Network information for a single-node system*
+
 [cols=2*,options="header",cols="30,70"]
 |===
 
@@ -70,6 +72,44 @@ When you deploy Cloud Volumes ONTAP in GCP, you need to specify details about yo
 | Zone |
 | VPC network |
 | Subnet |
+| Firewall policy (if using your own) |
+
+|===
+
+*Network information for an HA pair in multiple zones*
+
+[cols=2*,options="header",cols="30,70"]
+|===
+
+| GCP information
+| Your value
+
+| Region |
+| Zone for Node 1 |
+| Zone for Node 2 |
+| Zone for the mediator |
+| VPC-0 and subnet |
+| VPC-1 and subnet |
+| VPC-2 and subnet |
+| VPC-3 and subnet |
+| Firewall policy (if using your own) |
+
+|===
+
+*Network information for an HA pair in a single zone*
+
+[cols=2*,options="header",cols="30,70"]
+|===
+
+| GCP information
+| Your value
+
+| Region |
+| Zone | 
+| VPC-0 and subnet |
+| VPC-1 and subnet |
+| VPC-2 and subnet |
+| VPC-3 and subnet |
 | Firewall policy (if using your own) |
 
 |===
