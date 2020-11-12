@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_deploying_gcp.html
-keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, gcp, BYOL, license key, serial number, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree
-summary: You can launch a single node Cloud Volumes ONTAP system in GCP by creating a working environment.
+keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, gcp, BYOL, license key, serial number, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, high availability, gcp ha, ha in gcp, ha pair
+summary: You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA pair in Google Cloud Platform.
 ---
 
 = Launching Cloud Volumes ONTAP in GCP
@@ -13,7 +13,11 @@ summary: You can launch a single node Cloud Volumes ONTAP system in GCP by creat
 :imagesdir: ./media/
 
 [.lead]
-You can launch a single node Cloud Volumes ONTAP system in GCP by creating a working environment.
+You can launch Cloud Volumes ONTAP in a single-system configuration or as an HA pair in Google Cloud Platform.
+
+== Launching a single-node system in GCP
+
+Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in GCP.
 
 .What you'll need
 
@@ -23,9 +27,9 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 * link:concept_connectors.html[You should be prepared to leave the Connector running at all times].
 
-* You should have chose a configuration and obtained GCP networking information from your administrator. For details, see link:task_planning_your_config_gcp.html[Planning your Cloud Volumes ONTAP configuration].
+* You should have chosen a configuration and obtained GCP networking information from your administrator. For details, see link:task_planning_your_config_gcp.html[Planning your Cloud Volumes ONTAP configuration].
 
-* To deploy a BYOL system, you need the 20-digit serial number (license key) for each node.
+* To deploy a BYOL system, you need the 20-digit serial number (license key).
 
 * The following Google Cloud APIs should be https://cloud.google.com/apis/docs/getting-started#enabling_apis[enabled in your project^]:
 +
@@ -121,8 +125,185 @@ link:concept_worm.html[Learn more about WORM storage].
 +
 Note the following:
 +
-* Cloud Manager sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Cloud Manager service account as a user of the tiering service account, otherwise, you can't select it from Cloud Manager.
+* Cloud Manager sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can't select it from Cloud Manager.
 * For help with adding a GCP account, see link:task_adding_gcp_accounts.html[Setting up and adding GCP accounts for data tiering with 9.6].
+* You can choose a specific volume tiering policy when you create or edit a volume.
+* If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the GCP console.
++
+link:concept_data_tiering.html[Learn more about data tiering].
+
+. *Create Volume*: Enter details for the new volume or click *Skip*.
++
+Some of the fields in this page are self-explanatory. The following table describes fields for which you might need guidance:
++
+include::_include/create_volume.adoc[]
++
+The following image shows the Volume page filled out for the CIFS protocol:
++
+image:screenshot_cot_vol.gif[Screen shot: Shows the Volume page filled out for a Cloud Volumes ONTAP instance.]
+
+. *CIFS Setup*: If you chose the CIFS protocol, set up a CIFS server.
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| DNS Primary and Secondary IP Address | The IP addresses of the DNS servers that provide name resolution for the CIFS server.
+The listed DNS servers must contain the service location records (SRV) needed to locate the Active Directory LDAP servers and domain controllers for the domain that the CIFS server will join.
+
+| Active Directory Domain to join | The FQDN of the Active Directory (AD) domain that you want the CIFS server to join.
+
+| Credentials authorized to join the domain | The name and password of a Windows account with sufficient privileges to add computers to the specified Organizational Unit (OU) within the AD domain.
+
+| CIFS server NetBIOS name | A CIFS server name that is unique in the AD domain.
+
+| Organizational Unit | The organizational unit within the AD domain to associate with the CIFS server. The default is CN=Computers.
+
+| DNS Domain | The DNS domain for the Cloud Volumes ONTAP storage virtual machine (SVM). In most cases, the domain is the same as the AD domain.
+
+| NTP Server | Select *Use Active Directory Domain* to configure an NTP server using the Active Directory DNS. If you need to configure an NTP server using a different address, then you should use the API. See the link:api.html[Cloud Manager API Developer Guide^] for details.
+|===
+
+. *Usage Profile, Disk Type, and Tiering Policy*: Choose whether you want to enable storage efficiency features and change the volume tiering policy, if needed.
++
+For more information, see link:task_planning_your_config_gcp.html#choosing-a-volume-usage-profile[Understanding volume usage profiles] and link:concept_data_tiering.html[Data tiering overview].
+
+. *Review & Approve*: Review and confirm your selections.
+
+.. Review details about the configuration.
+
+.. Click *More information* to review details about support and the GCP resources that Cloud Manager will purchase.
+
+.. Select the *I understand...* check boxes.
+
+.. Click *Go*.
+
+.Result
+
+Cloud Manager deploys the Cloud Volumes ONTAP system. You can track the progress in the timeline.
+
+If you experience any issues deploying the Cloud Volumes ONTAP system, review the failure message. You can also select the working environment and click *Re-create environment*.
+
+For additional help, go to https://mysupport.netapp.com/GPS/ECMLS2588181.html[NetApp Cloud Volumes ONTAP Support^].
+
+.After you finish
+
+* If you provisioned a CIFS share, give users or groups permissions to the files and folders and verify that those users can access the share and create a file.
+
+* If you want to apply quotas to volumes, use System Manager or the CLI.
++
+Quotas enable you to restrict or track the disk space and number of files used by a user, group, or qtree.
+
+== Launching an HA pair in GCP
+
+Create a working environment in Cloud Manager to launch Cloud Volumes ONTAP in GCP.
+
+.What you'll need
+
+* You should have a link:task_creating_connectors_aws.html[Connector that is associated with your workspace].
++
+NOTE: You must be an Account Admin to create a Connector. When you create your first Cloud Volumes ONTAP working environment, Cloud Manager prompts you to create a Connector if you don’t have one yet.
+
+* link:concept_connectors.html[You should be prepared to leave the Connector running at all times].
+
+* You should have chosen a configuration and obtained GCP networking information from your administrator. For details, see link:task_planning_your_config_gcp.html[Planning your Cloud Volumes ONTAP configuration].
+
+* To deploy a BYOL system, you need the 20-digit serial number (license key) for each node.
+
+* The following Google Cloud APIs should be https://cloud.google.com/apis/docs/getting-started#enabling_apis[enabled in your project^]:
++
+** Cloud Deployment Manager V2 API
+** Cloud Logging API
+** Cloud Resource Manager API
+** Compute Engine API
+** Identity and Access Management (IAM) API
+
+.Steps
+
+. On the Working Environments page, click *Add Working Environment* and follow the prompts.
+
+. *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP HA*.
+
+. *Details & Credentials*: Select a project, specify a cluster name, optionally add labels, and then specify credentials.
++
+The following table describes fields for which you might need guidance:
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
+
+| Working Environment Name | Cloud Manager uses the working environment name to name both the Cloud Volumes ONTAP system and the GCP VM instance. It also uses the name as the prefix for the predefined security group, if you select that option.
+
+| Add Labels |	Labels are metadata for your GCP resources. Cloud Manager adds the labels to the Cloud Volumes ONTAP system and GCP resources associated with the system.
+
+You can add up to four labels from the user interface when creating a working environment, and then you can add more after its created. Note that the API does not limit you to four labels when creating a working environment.
+
+For information about labels, refer to https://cloud.google.com/compute/docs/labeling-resources[Google Cloud Documentation: Labeling Resources^].
+
+| User name and password |	These are the credentials for the Cloud Volumes ONTAP cluster admin account. You can use these credentials to connect to Cloud Volumes ONTAP through System Manager or its CLI.
+
+| Edit Project a| Select the project where you want Cloud Volumes ONTAP to reside. The default project is the project where Cloud Manager resides.
+
+If you don't see any additional projects in the drop-down list, then you haven't yet associated the Cloud Manager service account with other projects. Go to the Google Cloud console, open the IAM service, and select the project. Add the service account with the Cloud Manager role to that project. You'll need to repeat this step for each project.
+
+NOTE: This is the service account that you set up for Cloud Manager, link:task_getting_started_gcp.html#service-account[as described in step 2b on this page].
+
+Click *Add Subscription* to associate the selected credentials with a subscription.
+
+To create a pay-as-you-go Cloud Volumes ONTAP system, you need to select a GCP project that's associated with a subscription to Cloud Volumes ONTAP from the GCP Marketplace.
+
+|===
++
+[[subscribe]]
+The following video shows how to associate a pay-as-you-go Marketplace subscription to your GCP project:
++
+video::video_subscribing_gcp.mp4[width=848, height=480]
+
+. *HA Deployment Models*: Choose multiple zones (recommended) or a single zone for the HA configuration. Then select a region and zones.
++
+link:concept_ha_google_cloud.html[Learn more about HA deployment models].
+
+. *Connectivity*: Select four different VPCs for the HA configuration, a subnet in each VPC, and then choose a firewall policy.
++
+link:reference_networking_gcp.html[Learn more about networking requirements].
+
+. *License & Support Site Account*: Specify whether you want to use pay-as-you-go or BYOL, and then specify a NetApp Support Site account.
++
+To understand how licenses work, see link:concept_licensing.html[Licensing].
++
+A NetApp Support Site Account is optional for pay-as-you-go, but required for BYOL systems. link:task_adding_nss_accounts.html[Learn how to add NetApp Support Site accounts].
+
+. *Preconfigured Packages*: Select one of the packages to quickly deploy a Cloud Volumes ONTAP system, or click *Create my own configuration*.
++
+If you choose one of the packages, you only need to specify a volume and then review and approve the configuration.
+
+. *Licensing*: Change the Cloud Volumes ONTAP version as needed, select a license, and select a virtual machine type.
++
+image:screenshot_cvo_licensing_gcp.gif[A screenshot of the Licensing page. It shows the Cloud Volumes ONTAP version, license (either Explore, Standard, or Premium), and the machine type.]
++
+If your needs change after you launch the system, you can modify the license or virtual machine type later.
++
+NOTE: If a newer Release Candidate, General Availability, or patch release is available for the selected version, then Cloud Manager updates the system to that version when creating the working environment. For example, the update occurs if you select Cloud Volumes ONTAP 9.8 RC1 and 9.8 GA is available. The update does not occur from one release to another—for example, from 9.7 to 9.8.
+
+. *Underlying Storage Resources*: Choose settings for the initial aggregate: a disk type and the size for each disk.
++
+The disk type is for the initial volume. You can choose a different disk type for subsequent volumes.
++
+The disk size is for all disks in the initial aggregate and for any additional aggregates that Cloud Manager creates when you use the simple provisioning option. You can create aggregates that use a different disk size by using the advanced allocation option.
++
+For help choosing a disk type and size, see link:task_planning_your_config_gcp.html#sizing-your-system-in-gcp[Sizing your system in GCP].
+
+. *WORM*: Activate write once, read many (WORM) storage, if desired.
++
+WORM can't be enabled if data tiering was enabled. link:concept_worm.html[Learn more about WORM storage].
+
+. *Data Tiering in Google Cloud Platform*: Choose whether to enable data tiering on the initial aggregate, choose a storage class for the tiered data, and then select a service account that has the predefined Storage Admin role.
++
+Note the following:
++
+* Cloud Manager sets the service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket. Be sure to add the Connector service account as a user of the tiering service account, otherwise, you can't select it from Cloud Manager.
 * You can choose a specific volume tiering policy when you create or edit a volume.
 * If you disable data tiering, you can enable it on subsequent aggregates, but you'll need to turn off the system and add a service account from the GCP console.
 +
