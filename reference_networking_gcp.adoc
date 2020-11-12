@@ -70,6 +70,11 @@ A LIF is an IP address associated with a physical port. An SVM management LIF is
 
 Firewall rules::
 You don't need to create firewall rules because Cloud Manager does that for you. If you need to use your own, refer to the firewall rules listed below.
++
+Note that two sets of firewall rules are required for an HA configuration:
++
+* One set for HA components in VPC-0 that includes rules that enable data access to Cloud Volumes ONTAP. <<Firewall rules for Cloud Volumes ONTAP,Learn more>>.
+* Another set for HA components in VPC-1, VPC-2, and VPC-3 that are open for inbound & outbound communication between the HA components. <<Firewall rules for VPC-1, VPC-2, and VPC-3,Learn more>>.
 
 Connection from Cloud Volumes ONTAP to Google Cloud Storage for data tiering::
 If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you're using an HA pair, this is the subnet in VPC-0). For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
@@ -186,9 +191,11 @@ In any case, you should secure network access by ensuring that security group ru
 
 == Firewall rules for Cloud Volumes ONTAP
 
-Cloud Manager creates GCP firewall rules that include the inbound and outbound rules that Cloud Manager and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
+Cloud Manager creates GCP firewall rules that include the inbound and outbound rules that Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
 
 The firewall rules for Cloud Volumes ONTAP requires both inbound and outbound rules.
+
+If you're deploying an HA configuration, these are the firewall rules for Cloud Volumes ONTAP in VPC-0.
 
 === Inbound rules
 
@@ -218,6 +225,7 @@ The source for inbound rules in the predefined security group is 0.0.0.0/0.
 | TCP |	10000 |	Backup using NDMP
 | TCP |	11104 |	Management of intercluster communication sessions for SnapMirror
 | TCP | 11105 | SnapMirror data transfer using intercluster LIFs
+| TCP | 63001-63050 | Load balance probe ports to determine which node is healthy (required for HA pairs only)
 | UDP |	111 | Remote procedure call for NFS
 | UDP |	161-162 |	Simple network management protocol
 | UDP |	635 |	NFS mount
@@ -300,6 +308,12 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 | Syslog | UDP | 514 | Node management LIF | Syslog server | Syslog forward messages
 
 |===
+
+== Firewall rules for VPC-1, VPC-2, and VPC-3
+
+In GCP, an HA configuration is deployed across four VPCs. The firewall rules needed for the HA configuration in VPC-0 are <<Firewall rules for Cloud Volumes ONTAP,listed above for Cloud Volumes ONTAP>>.
+
+Meanwhile, the predefined firewall policy that Cloud Manager creates for instances in VPC-1, VPC-2, and VPC-3 enables ingress communication over all protocols and ports. These rules enable communication between the HA nodes and the HA mediator.
 
 == Firewall rules for the Connector
 
