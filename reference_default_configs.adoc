@@ -71,9 +71,9 @@ UNIX for NFS volumes
 +
 See the _volume create_ man page for information about these attributes.
 
-== Boot and root data for Cloud Volumes ONTAP
+== Internal disks for system data
 
-In addition to the storage for user data, Cloud Manager also purchases cloud storage for boot and root data on each Cloud Volumes ONTAP system.
+In addition to the storage for user data, Cloud Manager also purchases cloud storage for system data.
 
 === AWS
 
@@ -81,6 +81,8 @@ In addition to the storage for user data, Cloud Manager also purchases cloud sto
 **	9.7: 160 GB io1 disk for boot data and a 220 GB gp2 disk for root data
 **	9.6: 93 GB io1 disk for boot data and a 140 GB gp2 disk for root data
 **	9.5: 45 GB io1 disk for boot data and a 140 GB gp2 disk for root data
+
+* A 540 GB General Purpose SSD for the core disk
 
 * One EBS snapshot for each boot disk and root disk
 
