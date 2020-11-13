@@ -69,6 +69,8 @@ The form is owned and hosted by Microsoft. Your credentials are not provided to 
 +
 image:screenshot_azure_data_broker.gif["A screenshot of the Azure deployment page that shows the following fields: Subscription, Azure region, VNet, Subnet, VM Name, User Name, Authentication Method, and Resource Group."]
 
+. Specify a proxy configuration, if a proxy is required for internet access in the VNet.
+
 . Click *Continue* and keep the page open until the deployment is complete.
 +
 The process can take up to 7 minutes.
