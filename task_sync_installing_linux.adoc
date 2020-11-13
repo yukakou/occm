@@ -20,7 +20,7 @@ When you create a sync relationship, choose the On-Prem Data Broker option to in
 * *Operating system*:
 ** CentOS 7.0, 7.7, and 8.0
 ** Red Hat Enterprise Linux 7.7 and 8.0
-** Ubuntu Server 18.04 LTS
+** Ubuntu Server 20.04 LTS
 ** SUSE Linux Enterprise Server 15 SP1
 +
 The command `yum update all` must be run on the host before you install the data broker.
