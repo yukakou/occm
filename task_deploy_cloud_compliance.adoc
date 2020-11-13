@@ -39,7 +39,7 @@ Ensure that your environment can meet the prerequisites. This includes outbound 
 Launch the installation wizard to deploy the Cloud Compliance instance.
 
 [role="quick-margin-para"]
-You can deploy Cloud Compliance in the cloud or in an on-premises location. The only difference you will notice in the UI is the words "On-Premises Deployment".
+You can deploy Cloud Compliance in the cloud or in an on-premises location. The only difference you'll notice in the UI is the words "On-Premises Deployment".
 
 image:screenshot_compliance_onprem_notprem.png[A screenshot indicating a Cloud Compliance on-prem deployment versus a cloud deployment.]
 
@@ -160,6 +160,8 @@ Cloud Manager deploys the Cloud Compliance instance in your cloud provider.
 .What's Next
 From the Scan Configuration page you can select the working environments, volumes, and buckets that you want to scan for compliance. You can also connect to a database server in order to scan specific database schemas. Activate Cloud Compliance on any of these data sources.
 
+You can also <<Subscribing to the Cloud Compliance service,subscribe to the Cloud Compliance service>>. You will not be charged until the amount of data exceeds 1 TB.
+
 == Deploying the Cloud Compliance instance on premises
 
 The most common way to deploy Cloud Compliance is to <<Deploying the Cloud Compliance instance in the cloud,deploy it in the cloud>>. But you have the option to download and install the Compliance software on a Linux host in your network or in the cloud.
@@ -209,7 +211,7 @@ image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting th
 . In the _Deploying Cloud Compliance On Premises_ dialog:
 .. Copy the provided command and paste it in a text file so you can use it later. For example:
 +
- mount1576503200537-OCCMIAMRole-11JMPLIW9EEC0
+ sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
 +
 .. Follow the steps from the link to install Compliance on a Linux host.
 
@@ -252,11 +254,12 @@ Variable values:
 
 .Result
 
-The Cloud Compliance installer installs packages, installs docker, registers the installation, downloads the Cloud Compliance artifact, and installs Cloud Compliance.
+The Cloud Compliance installer installs packages, installs docker, registers the installation, downloads the Cloud Compliance artifact, and installs Cloud Compliance. Installation can take up to 10 minutes. If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Compliance tab in Cloud Manager.
 
-If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Compliance tab in Cloud Manager.
+.What's Next
+From the Scan Configuration page you can select the working environments, volumes, and buckets that you want to scan for compliance. You can also connect to a database server in order to scan specific database schemas. Activate Cloud Compliance on any of these data sources.
 
-Installation takes up to 10 minutes. When it’s done, the Compliance tab will show the Cloud Compliance Configuration page, where you can select the data sources you want to scan.
+You can also <<Subscribing to the Cloud Compliance service,subscribe to the Cloud Compliance service>>. You will not be charged until the amount of data exceeds 1 TB.
 
 == Subscribing to the Cloud Compliance service
 
