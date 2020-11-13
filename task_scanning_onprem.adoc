@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: task_scanning_onprem.html
 keywords: cloud compliance, on-prem, scan on prem data, scan on-prem data
-summary: You can scan your on-premises ONTAP data with Cloud Compliance by replicating the on-prem data to a Cloud Volumes ONTAP working environment and then enabling compliance. Scanning the data directly from an on-premises ONTAP working environment isn't supported.
+summary: You can scan data on your on-premises ONTAP systems directly using Cloud Compliance, or you can replicate the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then enable compliance for those data protection volumes. Choose whichever way works best for you.
 ---
 
-= Scanning on-premises ONTAP data with Cloud Compliance by using SnapMirror
+= Scanning on-premises ONTAP data with Cloud Compliance
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,58 @@ summary: You can scan your on-premises ONTAP data with Cloud Compliance by repli
 :imagesdir: ./media/
 
 [.lead]
-You can scan your on-premises ONTAP data with Cloud Compliance by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then enabling compliance. Scanning the data directly from an on-premises ONTAP working environment isn't supported.
+You can scan data on your on-premises ONTAP systems directly using Cloud Compliance, or you can replicate the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then enable compliance for those data protection volumes. Choose whichever way works best for you.
+
+== Scanning data in on-premises ONTAP working environments
+
+If you have link:task_discovering_ontap.html[discovered your ONTAP clusters^] and added them to a working environment in Cloud Manager, you can scan volume data directly from those on-prem clusters.
+
+Complete a few steps to get started with Cloud Compliance for on-premises ONTAP clusters.
+
+== Quick start
+
+Get started quickly by following these steps or scroll down to the remaining sections for full details.
+
+==== image:number1.png[Number 1] Deploy the Cloud Compliance instance
+
+[role="quick-margin-para"]
+link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance in Cloud Manager^] if there isn't already an instance deployed.
+
+==== image:number2.png[Number 2] Enable Cloud Compliance in your working environments
+
+[role="quick-margin-para"]
+Click *Compliance*, select the *Configuration* tab, and activate compliance scans for specific working environments.
+
+==== image:number3.png[Number 3]  Configure volumes to scan
+
+[role="quick-margin-para"]
+Select the volumes that you'd like to scan and Cloud Compliance will start scanning them.
+
+== Deploying the Cloud Compliance instance
+
+link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance^] if there isn't already an instance deployed.
+
+Cloud Compliance can be deployed in the cloud or in an on-premises location when scanning on-premises ONTAP clusters.
+
+== Enabling Cloud Compliance in your working environments
+
+. At the top of Cloud Manager, click *Compliance* and then select the *Configuration* tab.
++
+image:screenshot_cloud_compliance_we_scan_config.png[A screenshot of the Scan Configuration tab immediately after deploying the Cloud Compliance instance.]
+
+. To scan all volumes in a working environment, click *Activate Compliance for All Volumes*.
++
+To scan only certain volumes in a working environment, click *or select Volumes* and then choose the volumes you want to scan.
+
+See link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-volumes[Enabling and disabling compliance scans on volumes] for details.
+
+.Result
+
+Cloud Compliance starts scanning the data on each working environment. Results will be available in the Compliance dashboard as soon as Cloud Compliance finishes the initial scans. The time that it takes depends on the amount of data--it could be a few minutes or hours.
+
+== Scanning on-premises ONTAP data by using SnapMirror
+
+You can scan your on-premises ONTAP data with Cloud Compliance by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then enabling compliance on those data protection volumes.
 
 You must have link:task_deploy_cloud_compliance.html[deployed an instance of Cloud Compliance in Cloud Manager already^].
 

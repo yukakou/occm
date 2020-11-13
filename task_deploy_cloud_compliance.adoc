@@ -22,12 +22,16 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Create a Connector
 
 [role="quick-margin-para"]
-If you don't already have a Connector, create a Connector in Azure or AWS. See link:task_creating_connectors_aws.html[creating a Connector in AWS] or link:task_creating_connectors_azure.html[creating a Connector in Azure].
+If you don't already have a Connector, create a Connector in Azure or AWS. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^].
 
 ==== image:number2.png[Number 2] Review prerequisites
 
 [role="quick-margin-para"]
-Ensure that your cloud environment can meet the prerequisites, which includes 16 vCPUs for the Cloud Compliance instance, outbound internet access for the instance, connectivity between the Connector and Cloud Compliance over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
+Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Compliance over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
+
+* When installed on the cloud, you need 16 vCPUs for the Cloud Compliance instance. See link:concept_cloud_compliance.html#the-cloud-compliance-instance[more details about the instance type^].
+
+* When installed on premises, you need a Linux system with the appropriate link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[OS, CPUs, RAM, and capacity^].
 
 ==== image:number3.png[Number 3] Deploy Cloud Compliance
 
@@ -41,14 +45,13 @@ The first 1 TB of data that Cloud Compliance scans in Cloud Manager is free. A s
 
 == Creating a Connector
 
-If you don't already have a Connector, create a Connector in Azure or AWS. See link:task_creating_connectors_aws.html[creating a Connector in AWS] or link:task_creating_connectors_azure.html[creating a Connector in Azure]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Compliance because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases when you need to set one up now.
+If you don't already have a Connector, create a Connector in Azure or AWS. See link:task_creating_connectors_aws.html[creating a Connector in AWS^] or link:task_creating_connectors_azure.html[creating a Connector in Azure^]. In most cases you will probably have a Connector set up before you attempt to activate Cloud Compliance because most link:concept_connectors.html#when-a-connector-is-required[Cloud Manager features require a Connector], but there are cases when you need to set one up now.
 
 There are some scenarios where you have to use a Connector in AWS or Azure for Cloud Compliance.
 
 * When scanning data in Cloud Volumes ONTAP in AWS or in AWS S3 buckets, you use a connector in AWS.
 * When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a connector in Azure.
-* Databases can be scanned when using either Connector.
-* On-prem ONTAP systems can be scanned when using either Connector.
+* Databases and on-prem ONTAP systems can be scanned when using either Connector.
 
 As you can see, there may be some situations where you need to use link:concept_connectors.html#when-to-use-multiple-connectors[multiple Connectors].
 
@@ -100,7 +103,7 @@ Ensure that Cloud Manager has permissions to deploy resources and create securit
 Check your vCPU limits::
 Ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running.
 +
-In AWS, the instance family is _On-Demand Standard instances_. In Azure, the instance family is _Standard DSv3 Family_.
+In AWS, the instance family is _On-Demand Standard instances_. In Azure, the instance family is _Standard Dsv3 Family_.
 +
 For more details on vCPU limits, see the following:
 +
@@ -127,6 +130,10 @@ The Cloud Compliance instance uses a private IP address to ensure that the index
 
 You deploy an instance of Cloud Compliance for each Cloud Manager instance.
 
+Deploying the instance in the cloud is the most common way to deploy Cloud Compliance. But you have the option to <<Deploying the Cloud Compliance instance on premises,deploy the Compliance software on a Linux host>> in your network or in the cloud.
+
+The Compliance software functions exactly the same regardless of which installation method you choose.
+
 .Steps
 
 . In Cloud Manager, click *Compliance*.
@@ -150,22 +157,24 @@ From the Scan Configuration page you can select the working environments, volume
 
 == Deploying the Cloud Compliance instance on premises
 
-The most common way to deploy Cloud Compliance is to <<Deploying the Cloud Compliance instance in the cloud,deploy it in the cloud>>. But you have the option to download and install the Compliance software on an existing Linux host in your network or in the cloud.
+The most common way to deploy Cloud Compliance is to <<Deploying the Cloud Compliance instance in the cloud,deploy it in the cloud>>. But you have the option to download and install the Compliance software on a Linux host in your network or in the cloud.
 
-NOTE: Cloud Compliance is currently unable to scan S3 buckets and ANF files if the Compliance instance is installed on premises.
+The Compliance software functions exactly the same regardless of which installation method you choose.
+
+IMPORTANT: Cloud Compliance is currently unable to scan S3 buckets and ANF files if the Compliance instance is installed on premises.
 
 .Requirements
 
 * Operating system: Red Hat Enterprise Linux or CentOS version 8.0
 ** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
-** The OS must be capable of installing the docker engine (for example, disable the firewalld service if needed)
+** The OS must be capable of installing the docker engine (for example, disable the _firewalld_ service if needed)
 * RAM: Minimum of 60 GB
-* CPU: Minimum 8 core CPU; 16 cores recommended
-* Capacity: 500 GB of disk space
+* CPU: Minimum 8 CPU cores; 16 cores recommended
+* Capacity: 500 GB
 
 * A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during installation.
 
-*	Network connectivity between the host machine and the Connector over port 80. And if you want to see the installation progress in Cloud Manager, make sure port 8080 is also open.
+*	Network connectivity between the host machine and the Connector over port 80. And make sure port 8080 is also open so you can see the installation progress in Cloud Manager.
 
 See <<Reviewing prerequisites,Reviewing prerequisites>> for the list of endpoints that must be reachable from the host over the internet.
 
@@ -182,7 +191,7 @@ The host might try to update operating system packages during installation. The 
 
 * Root privileges are not required to install Cloud Compliance.
 
-* The installer that is available on the NetApp Support Site might be an earlier version. After installation, Cloud Compliance automatically updates itself if a new version is available.
+* The installer that is available on the NetApp Support Site might be an earlier version. After installation, Cloud Compliance automatically updates itself whenever a newer version is available.
 
 .Steps
 
@@ -192,60 +201,57 @@ The host might try to update operating system packages during installation. The 
 +
 image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting the button to deploy Cloud Compliance on premises.]
 
-. In the Deploying Cloud Compliance On Premises dialog:
-.. Follow the steps to install Compliance on a Linux host.
+. In the _Deploying Cloud Compliance On Premises_ dialog:
 .. Copy the provided command and paste it in a text file so you can use it later. For example:
 +
  mount1576503200537-OCCMIAMRole-11JMPLIW9EEC0
++
+.. Follow the steps from the link to install Compliance on a Linux host.
 
 . Download the Cloud Compliance software from the https://mysupport.netapp.com/site/products/all/details/cloud-compliance/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
 +
-For help with connecting and copying the file to an EC2 instance in AWS, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html[AWS Documentation: Connecting to Your Linux Instance Using SSH^].
+For help with connecting and copying the file to:
++
+* An EC2 instance in AWS, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html[AWS Documentation: Connecting to Your Linux Instance Using SSH^].
+* A VM in Azure, see link:https://docs.microsoft.com/en-us/azure/virtual-machines/linux/copy-files-to-linux-vm-using-scp[Azure Documentation: Moving files to a Linux VM using SCP^].
 
 . Unzip the installer file on the host machine:
 +
  tar -xzf cc_onprem_installer.tar.gz
 
-. When prompted to by the installer, run these commands:
-.. Paste the information you copied from step 3 after you clicked “Deploy Compliance On Premises”.
+. When prompted to by the installer, enter the following information:
+.. Paste the information you copied from step 3.
 +
  sudo ./install.sh -a <account_id> -c <agent_id> -t <token>
 
-.. IP or host name of the host machine, as it will be accessed by the Connector instance
-.. Proxy details if needed. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Cloud Compliance will automatically use the proxy used by Cloud Manager:
+.. Enter the IP address or host name of the Compliance host machine, as it will be accessed by the Connector instance.
+.. Enter proxy details if needed. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Cloud Compliance will automatically use the proxy used by Cloud Manager:
 +
  --proxy_host <proxy_host> --proxy_port <proxy_port> --proxy_scheme <proxy_scheme> --proxy_user <proxy_user> --proxy_password <proxy_password>
 +
-_account_id_ = NetApp Account ID
-+
-_agent_id_ = Connector ID
-+
-_token_ = jwt user token
-+
-_cc_host_ = IP or host name of the host machine, as it will be accessed by the Connector instance
-+
-_proxy_host_ IP or host name of the proxy server if the host is behind a proxy server.
-+
-_proxy_port_ Port to connect to the proxy server (default 80).
-+
-_proxy_user_ Authenticated user to connect to the proxy server, if basic authentication is required.
-+
-_proxy_password_ Password for the user name that you specified.
-+
-_proxy_scheme_ the connection schema: https or http (default http).
-
-. Alternatively, you can create the whole command in advance and input it in the first prompt:
+Alternatively, you can create the whole command in advance and input it in the first prompt:
 +
  sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <cc_host> --proxy_host <proxy_host> --proxy_port <proxy_port> --proxy_scheme <proxy_scheme> --proxy_user <proxy_user> --proxy_password <proxy_password>
 
-The installer will start installing Cloud Compliance (installs packages, installs docker, registers the installation, downloads the Cloud Compliance artifact, and installs Cloud Compliance).
+Variable values:
 
-* If there is connectivity over port 8080 between the host machine and the Connector instance, you should see the installation progress in the “Compliance” tab in Cloud Manager.
-* Installation takes up to 10 minutes. When it’s done, the “Compliance” tab should show the Cloud Compliance UI’s Configuration page, where you can now select which data sources to scan.
+* _account_id_ = NetApp Account ID
+* _agent_id_ = Connector ID
+* _token_ = jwt user token
+* _cc_host_ = IP address or host name of the host Linux machine.
+* _proxy_host_ IP or host name of the proxy server if the host is behind a proxy server.
+* _proxy_port_ Port to connect to the proxy server (default 80).
+* _proxy_user_ Authenticated user to connect to the proxy server, if basic authentication is required.
+* _proxy_password_ Password for the user name that you specified.
+* _proxy_scheme_ the connection schema: https or http (default http).
 
 .Result
 
-The Connector is now installed and set up with your Cloud Central account. Cloud Manager will automatically use this Connector when you create new working environments.
+The Cloud Compliance installer installs packages, installs docker, registers the installation, downloads the Cloud Compliance artifact, and installs Cloud Compliance.
+
+If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Compliance tab in Cloud Manager.
+
+Installation takes up to 10 minutes. When it’s done, the Compliance tab will show the Cloud Compliance Configuration page, where you can select the data sources you want to scan.
 
 == Subscribing to the Cloud Compliance service
 
