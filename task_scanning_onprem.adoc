@@ -21,7 +21,7 @@ If you have link:task_discovering_ontap.html[discovered your ONTAP clusters^] an
 
 Complete a few steps to get started with Cloud Compliance for on-premises ONTAP clusters.
 
-== Quick start
+=== Quick start
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
@@ -40,27 +40,27 @@ Click *Compliance*, select the *Configuration* tab, and activate compliance scan
 [role="quick-margin-para"]
 Select the volumes that you'd like to scan and Cloud Compliance will start scanning them.
 
-== Deploying the Cloud Compliance instance
+=== Deploying the Cloud Compliance instance
 
 link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance^] if there isn't already an instance deployed.
 
 Cloud Compliance can be deployed in the cloud or in an on-premises location when scanning on-premises ONTAP clusters.
 
-== Enabling Cloud Compliance in your working environments
+=== Enabling Cloud Compliance in your working environments
 
 . At the top of Cloud Manager, click *Compliance* and then select the *Configuration* tab.
 +
-image:screenshot_cloud_compliance_we_scan_config.png[A screenshot of the Scan Configuration tab immediately after deploying the Cloud Compliance instance.]
+image:screenshot_compliance_ontap_we_scan_config.png[A screenshot of the Scan Configuration tab immediately after deploying the Cloud Compliance instance.]
 
 . To scan all volumes in a working environment, click *Activate Compliance for All Volumes*.
 +
 To scan only certain volumes in a working environment, click *or select Volumes* and then choose the volumes you want to scan.
-
++
 See link:task_getting_started_compliance.html#enabling-and-disabling-compliance-scans-on-volumes[Enabling and disabling compliance scans on volumes] for details.
 
 .Result
 
-Cloud Compliance starts scanning the data on each working environment. Results will be available in the Compliance dashboard as soon as Cloud Compliance finishes the initial scans. The time that it takes depends on the amount of data--it could be a few minutes or hours.
+Cloud Compliance starts scanning the volumes you selected in the working environment. Results will be available in the Compliance dashboard as soon as Cloud Compliance finishes the initial scans. The time that it takes depends on the amount of data--it could be a few minutes or hours.
 
 == Scanning on-premises ONTAP data by using SnapMirror
 

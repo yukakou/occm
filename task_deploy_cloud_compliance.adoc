@@ -36,7 +36,12 @@ Ensure that your environment can meet the prerequisites. This includes outbound 
 ==== image:number3.png[Number 3] Deploy Cloud Compliance
 
 [role="quick-margin-para"]
-Launch the installation wizard to deploy the Cloud Compliance instance. You can deploy Cloud Compliance in the cloud or in an on-premises location.
+Launch the installation wizard to deploy the Cloud Compliance instance.
+
+[role="quick-margin-para"]
+You can deploy Cloud Compliance in the cloud or in an on-premises location. The only difference you will notice in the UI is the words "On-Premises Deployment".
+
+image:screenshot_compliance_onprem_notprem.png[A screenshot indicating a Cloud Compliance on-prem deployment versus a cloud deployment.]
 
 ==== image:number4.png[Number 4] Subscribe to the Cloud Compliance service
 
