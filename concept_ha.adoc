@@ -45,7 +45,7 @@ In the event of an outage, data should be available in 60 seconds or less.
 
 You can ensure the high availability of your data by deploying an HA configuration across multiple Availability Zones (AZs) or in a single AZ. You should review more details about each configuration to choose which best fits your needs.
 
-== Cloud Volumes ONTAP HA in multiple Availability Zones
+== Multiple Availability Zones
 
 Deploying an HA configuration in multiple Availability Zones (AZs) ensures high availability of your data if a failure occurs with an AZ or an instance that runs a Cloud Volumes ONTAP node. You should understand how NAS IP addresses impact data access and storage failover.
 
@@ -63,13 +63,13 @@ For details, see link:reference_networking_aws.html#aws-networking-requirements-
 
 Cross-VPC data communication is not an issue since iSCSI does not use floating IP addresses.
 
-=== Storage takeover and giveback for iSCSI
+=== Takeover and giveback for iSCSI
 
 For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical Unit Access (ALUA) to manage path failover between the active-optimized and non-optimized paths.
 
 NOTE: For information about which specific host configurations support ALUA, see the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the Host Utilities Installation and Setup Guide for your host operating system.
 
-=== Storage takeover and giveback for NAS
+=== Takeover and giveback for NAS
 
 When takeover occurs in a NAS configuration using floating IPs, the node's floating IP address that clients use to access data moves to the other node. The following image depicts storage takeover in a NAS configuration using floating IPs. If node 2 goes down, the floating IP address for node 2 moves to node 1.
 
@@ -95,7 +95,7 @@ The following image shows an HA configuration in a single AZ. Data is accessible
 
 image:diagram_single_az.png[Conceptual image that shows an ONTAP HA configuration in a single Availability Zone that allows data access from outside of the VPC.]
 
-=== Storage takeover and giveback
+=== Takeover and giveback
 
 For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical Unit Access (ALUA) to manage path failover between the active-optimized and non-optimized paths.
 
@@ -117,7 +117,7 @@ You can use an  HA pair as an active-active configuration, in which both nodes s
 
 NOTE: You can set up an active-active configuration only when using Cloud Manager in the Storage System View.
 
-=== Performance expectations for an HA configuration
+=== Performance expectations
 
 A Cloud Volumes ONTAP HA configuration synchronously replicates data between nodes, which consumes network bandwidth. As a result, you can expect the following performance in comparison to a single-node Cloud Volumes ONTAP configuration:
 

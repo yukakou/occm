@@ -73,6 +73,8 @@ entries:
                   url: /concept_ha.html
                 - title: HA pairs in Azure
                   url: /concept_ha_azure.html
+                - title: HA pairs in GCP
+                  url: /concept_ha_google_cloud.html
             - title: Evaluating
               url: /concept_evaluating.html
             - title: Licensing
@@ -269,6 +271,8 @@ entries:
             url: /task_sync_nfs_encryption.html
       - title: Manage sync relationships
         url: /task_sync_managing_relationships.html
+      - title: Uninstall the data broker
+        url: /task_sync_uninstalling.html
       - title: API
         url: /api_sync.html
       - title: FAQ

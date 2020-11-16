@@ -33,6 +33,10 @@ Cloud Manager offers preconfigured packages that match your workload requirement
 [role="quick-margin-list"]
 .. Ensure that your VPC and subnets will support connectivity between the Connector and Cloud Volumes ONTAP.
 
+.. If you're deploying an HA pair, ensure that you have four VPCs, each with their own subnet.
+
+.. If you're using a shared VPC, provide the Compute Network User role to the Connector service account.
+
 .. Enable outbound internet access from the target VPC so the Connector and Cloud Volumes ONTAP can contact several endpoints.
 +
 This step is important because the Connector can't manage Cloud Volumes ONTAP without outbound internet access. If you need to limit outbound connectivity, refer to the list of endpoints for link:reference_networking_gcp.html[the Connector and Cloud Volumes ONTAP].
