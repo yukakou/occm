@@ -24,21 +24,21 @@ The following requirements must be met in GCP.
 Virtual Private Cloud for single node systems::
 One VPC is required for a single node system.
 +
-Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in non-shared VPCs.
+Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in standalone VPCs.
 +
 A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Connector and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
 +
 The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
 
 Virtual Private Clouds for HA pairs::
-Four VPCs and four subnets are required for an HA pair, the mediator, and the HA pair's four network interfaces. Four VPCs are required because GCP requires that each network interface resides in a separate VPC network.
+Four Virtual Private Clouds (VPCs) are required for the HA configuration. Four VPCs are required because GCP requires that each network interface resides in a separate VPC network.
 +
 Cloud Manager will prompt you to choose four VPCs when you create the HA pair:
 +
 * VPC-0 for inbound connections to the data and nodes
 * VPC-1, VPC-2, and VPC-3 for internal communication between the nodes and the HA mediator
 +
-Similar to a single node system, an HA pair is supported in a shared VPC and also in non-shared VPCs. However, only VPC-0 can be a shared VPC. All other VPCs must be a non-shared VPC.
+Similar to a single node system, an HA pair is supported in a shared VPC and also in standalone VPCs. However, only VPC-0 can be a shared VPC. All other VPCs must be a standalone VPC.
 +
 The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
 

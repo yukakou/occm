@@ -25,7 +25,7 @@ Cloud Volumes ONTAP HA configurations in GCP include the following components:
 +
 The mediator runs the Linux operating system on a f1-micro instance and uses two standard persistent disks that are 10 GB each.
 
-* Four Virtual Private Clouds (VPCs) for the HA pair, the mediator, and the HA pair's four network interfaces.
+* Four Virtual Private Clouds (VPCs) are required for the HA configuration.
 +
 The configuration uses four VPCs because GCP requires that each network interface resides in a separate VPC network.
 
