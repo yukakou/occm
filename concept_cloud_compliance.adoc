@@ -43,7 +43,7 @@ Cloud Compliance can scan data from the following types of data sources:
 +
 link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-compliance-service[Learn how to subscribe^].
 
-* Installing Cloud Compliance requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed. See the <<The Cloud Compliance instance,the type of instance that is deployed for each cloud provider>>
+* Installing Cloud Compliance requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed. See the <<The Cloud Compliance instance,the type of instance that is deployed for each cloud provider>>.
 
 * Cloud Compliance requires that you have deployed a Connector. In many cases you already have a Connector because of other storage and services you are using in Cloud Manager. The Connector instance results in charges from the cloud provider where it is deployed. See the link:reference_cloud_mgr_reqs.html[type of instance that is deployed for each cloud provider^].
 
@@ -61,7 +61,7 @@ At a high-level, Cloud Compliance works like this:
 . You deploy an instance of Cloud Compliance in Cloud Manager.
 . You enable it on one or more working environments, or on your databases.
 . Cloud Compliance scans the data using an AI learning process.
-. In Cloud Manager, you click *Compliance* and use the provided dashboard and reporting tools to help in your compliance efforts.
+. You click *Compliance* and use the provided dashboard and reporting tools to help in your compliance efforts.
 
 == The Cloud Compliance instance
 
@@ -91,7 +91,7 @@ TIP: The instance should remain running at all times because Cloud Compliance co
 
 == How scans work
 
-After you enable Cloud Compliance and select the volumes, buckets, or database schemas you want to scan, it immediately starts scanning the data to identify personal and sensitive data. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, and data categories.
+After you enable Cloud Compliance and select the volumes, buckets, or database schemas you want to scan, it immediately starts scanning the data to identify personal and sensitive data. It maps your organizational data, categorizes each file, and identifies and extracts entities and predefined patterns in the data. The result of the scan is an index of personal information, sensitive personal information, data categories, and file types.
 
 Cloud Compliance connects to the data like any other client by mounting NFS and CIFS volumes. NFS volumes are automatically accessed as read-only, while you need to provide Active Directory credentials to scan CIFS volumes.
 
@@ -103,7 +103,7 @@ You can enable and disable scans at the link:task_getting_started_compliance.htm
 
 == Information that Cloud Compliance indexes
 
-Cloud Compliance collects, indexes, and assigns categories to unstructured data (files). The data that Cloud Compliance indexes includes the following:
+Cloud Compliance collects, indexes, and assigns categories to your data (files). The data that Cloud Compliance indexes includes the following:
 
 Standard metadata:: Cloud Compliance collects standard metadata about files: the file type, its size, creation and modification dates, and so on.
 

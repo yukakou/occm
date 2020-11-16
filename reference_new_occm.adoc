@@ -25,6 +25,22 @@ Cloud Volumes ONTAP 9.8 is available in AWS, Azure, and Google Cloud Platform. T
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_98.html[Learn what else is new in Cloud Volumes ONTAP 9.8^].
 
+== Cloud Manager 3.9 update (8 Nov 2020)
+
+We released an enhancement to Cloud Manager 3.9.
+
+=== Cloud Compliance enhancements
+
+*	Now you can create custom personal data identifiers from your databases. This gives you the full picture about where potentially sensitive data resides in *all* your files.
++
+A feature we call "Data Fusion" allows you to scan your files to identify whether unique identifiers from your databases are found in those files—basically making your own list of "personal data" that is identified in Cloud Compliance scans.
++
+link:task_controlling_private_data.html#creating-custom-personal-data-identifiers-from-your-databases[Learn how to create custom personal identifiers from your databases].
+
+*	Added support for scanning MySQL database schemas.
++
+Go to link:task_scanning_databases.html#quick-start[scanning database schemas] for the list of all supported databases and for instructions.
+
 == Cloud Manager 3.9 (3 Nov 2020)
 
 * <<Azure Private Link for Cloud Volumes ONTAP>>

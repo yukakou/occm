@@ -48,6 +48,7 @@ Review the following prerequisites to make sure that you have a supported config
 Cloud Compliance can scan schemas from the following databases:
 
 * MongoDB
+* MySQL
 * Oracle
 * PostgreSQL
 * SAP HANA
