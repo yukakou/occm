@@ -126,7 +126,7 @@ image:screenshot_sensitive_personal_files.gif[A screenshot of the sensitive pers
 
 The sensitive personal data that Cloud Compliance can find in files includes the following:
 
-Civil Law Reference:: Data concerning a natural person’s
+Civil Law Reference:: Data concerning a natural person’s civil law suits, offences, and procedures.
 Criminal Procedures Reference::	Data concerning a natural person’s criminal convictions and offenses.
 Ethnicity Reference::	Data concerning a natural person’s racial or ethnic origin.
 Health Reference:: Data concerning a natural person’s health.
