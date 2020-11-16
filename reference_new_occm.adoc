@@ -19,6 +19,12 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Volumes ONTAP 9.8 (16 Nov 2020)
+
+Cloud Volumes ONTAP 9.8 is available in AWS, Azure, and Google Cloud Platform. This release includes support for link:concept_ha_google_cloud.html[HA pairs in GCP].
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_98.html[Learn what else is new in Cloud Volumes ONTAP 9.8^].
+
 == Cloud Manager 3.9 (3 Nov 2020)
 
 * <<Azure Private Link for Cloud Volumes ONTAP>>
