@@ -82,6 +82,10 @@ The form is owned and hosted by Google. Your credentials are not provided to Net
 +
 image:screenshot_data_broker_gcp.gif[A screenshot that shows the information required to deploy a data broker in Google Cloud.]
 
+. Specify a proxy configuration, if a proxy is required for internet access in the VPC.
++
+If a proxy is required for internet access, then the proxy must be in Google Cloud and use the same service account as the data broker.
+
 . Once the data broker is available, click *Continue* in Cloud Sync.
 +
 The instance takes approximately 5 to 10 minutes to deploy. You can monitor the progress from the Cloud Sync service, which automatically refreshes when the instance is available.
