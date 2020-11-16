@@ -5,7 +5,7 @@ keywords: networking, network, requirements, connection, connections, vnet, secu
 summary: Set up your Azure networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
 ---
 
-= Networking requirements to deploy and manage Cloud Volumes ONTAP in Azure
+= Networking requirements for Cloud Volumes ONTAP in Azure
 :hardbreaks:
 :nofooter:
 :icons: font
