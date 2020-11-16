@@ -47,9 +47,9 @@ An HA configuration maintains high availability of your data as follows:
 +
 Your data is transactionally consistent with no data loss.
 
-* The recovery time objective (RTO) is 60 seconds for NFS/CIFS and 120 seconds for iSCSI.
+* The recovery time objective (RTO) is 120 seconds.
 +
-In the event of an outage, data should be available by the RTO.
+In the event of an outage, data should be available in 120 seconds or less.
 
 == HA deployment models
 
