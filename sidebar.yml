@@ -73,6 +73,8 @@ entries:
                   url: /concept_ha.html
                 - title: HA pairs in Azure
                   url: /concept_ha_azure.html
+                - title: HA pairs in GCP
+                  url: /concept_ha_google_cloud.html
             - title: Evaluating
               url: /concept_evaluating.html
             - title: Licensing
