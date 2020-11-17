@@ -73,7 +73,7 @@ ONTAP 9.7P5 and later.
 A SnapMirror license (included as part of the PREM or Data Protection bundle).
 
 Cluster networking requirements::
-An intercluster LIF is required on each ONTAP node that hosts the volumes you want to back up. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage. The Admin SVM must reside on the IPspace. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-69120CF0-F188-434F-913E-33ACB8751A5D.html[Learn more about IPspaces^].
+An intercluster LIF is required on each ONTAP node that hosts the volumes you want to back up. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-nmg/GUID-69120CF0-F188-434F-913E-33ACB8751A5D.html[Learn more about IPspaces^].
 +
 When you set up backup to cloud, you are prompted for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created.
 
@@ -178,6 +178,9 @@ See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-
 . Select the volumes that you want to back up and click *Save*.
 +
 image:screenshot_backup_select_onprem_volumes.png[A screenshot of selecting the volumes that will be backed up.]
++
+* To back up all volumes, check the box in the title row (image:button_backup_all_volumes.png[]).
+* To back up individual volumes, check the box for each volume (image:button_backup_1_volume.png[]).
 
 .Result
 
