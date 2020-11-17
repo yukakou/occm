@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: task_getting_started_compliance.html
-keywords: cloud compliance, get started, enable cloud compliance, cifs credentials, smb credentials, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, dp volumes, data protection volumes
-summary: Complete a few steps to get started with Cloud Compliance for Cloud Volumes ONTAP or Azure NetApp Files.
+keywords: cloud compliance, get started, enable cloud compliance, cifs credentials, smb credentials, cloud compliance access, privacy, compliance, dp volumes, data protection volumes, ANF, Azure NetApp Files, CVO, Cloud Volumes ONTAP
+summary: Complete a few steps to get started with Cloud Compliance for Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files.
 ---
 
-= Getting started with Cloud Compliance for Cloud Volumes ONTAP and Azure NetApp Files
+= Getting started with Cloud Compliance for Cloud Volumes ONTAP, on-premises ONTAP, or Azure NetApp Files
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,45 +13,61 @@ summary: Complete a few steps to get started with Cloud Compliance for Cloud Vol
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started with Cloud Compliance for Cloud Volumes ONTAP or Azure NetApp Files.
+Complete a few steps to get started with Cloud Compliance for Cloud Volumes ONTAP, on-premises ONTAP systems, or Azure NetApp Files.
 
 == Quick start
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
 
-==== image:number1.png[Number 1] Deploy the Cloud Compliance instance
+==== image:number1.png[Number 1] Discover the data sources that contain the data you want to scan
+
+[role="quick-margin-para"]
+Before you can scan volumes, you must add the systems to working environments in Cloud Manager:
+
+[role="quick-margin-list"]
+* For Cloud Volumes ONTAP systems, these working environments should already be available in Cloud Manager
+* For on-premises ONTAP systems, link:task_discovering_ontap.html[Cloud Manager must discover the ONTAP clusters^]
+* For Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
+
+==== image:number2.png[Number 2] Deploy the Cloud Compliance instance
 
 [role="quick-margin-para"]
 link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance in Cloud Manager^] if there isn't already an instance deployed.
 
-==== image:number2.png[Number 2] Enable Cloud Compliance in your working environments
+==== image:number3.png[Number 3] Enable Cloud Compliance in your working environments and select the volumes to scan
 
 [role="quick-margin-para"]
-Click *Compliance*, select the *Configuration* tab, and activate compliance scans for specific working environments.
+Click *Compliance*, select the *Configuration* tab, and activate compliance scans for volumes in specific working environments.
 
-==== image:number3.png[Number 3] Ensure access to volumes
+==== image:number4.png[Number 4] Ensure access to volumes
 
 [role="quick-margin-para"]
 Now that Cloud Compliance is enabled, ensure that it can access volumes.
 
 [role="quick-margin-list"]
-* The Cloud Compliance instance needs a network connection to each Cloud Volumes ONTAP subnet or Azure NetApp Files subnet.
+* The Cloud Compliance instance needs a network connection to each Cloud Volumes ONTAP subnet, Azure NetApp Files subnet, or on-prem ONTAP system.
 * Security groups for Cloud Volumes ONTAP must allow inbound connections from the Cloud Compliance instance.
 * NFS volume export policies must allow access from the Cloud Compliance instance.
 * Cloud Compliance needs Active Directory credentials to scan CIFS volumes.
 +
-Click *Compliance* > *Scan Configuration* > *Edit CIFS Credentials* and provide the credentials. The credentials can be read-only, but providing admin credentials ensures that Cloud Compliance can read data that requires elevated permissions.
+Click *Compliance* > *Scan Configuration* > *Edit CIFS Credentials* and provide the credentials.
 
-==== image:number4.png[Number 4] Configure volumes to scan
+==== image:number5.png[Number 5] Manage the volumes you want to scan
 
 [role="quick-margin-para"]
-Select the volumes that you'd like to scan and Cloud Compliance will start scanning them.
+Select or deselect the volumes that you want to scan and Cloud Compliance will start or stop scanning them.
+
+== Discovering the data sources that you want to scan
+
+If the data sources you want to scan at not already in your Cloud Manager environment, you can add them to working environments at this time.
+
+Your Cloud Volumes ONTAP systems should already be available in working environments in Cloud Manager. For on-premises ONTAP systems you need to have link:task_discovering_ontap.html[Cloud Manager discover these clusters^]. And for Azure NetApp Files, link:task_manage_anf.html[Cloud Manager must be set up to discover the configuration^].
 
 == Deploying the Cloud Compliance instance
 
 link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance^] if there isn't already an instance deployed.
 
-Note that Cloud Compliance must be deployed in the cloud when scanning ANF volumes. Cloud Compliance can be deployed in the cloud or in an on-premises location when scanning Cloud Volumes ONTAP systems.
+Note that Cloud Compliance must be deployed in the cloud when scanning Azure NetApp Files volumes. Cloud Compliance can be deployed in the cloud or in an on-premises location when scanning Cloud Volumes ONTAP or on-premises ONTAP systems.
 
 == Enabling Cloud Compliance in your working environments
 
@@ -67,7 +83,7 @@ See <<Enabling and disabling compliance scans on volumes,Enabling and disabling 
 
 .Result
 
-Cloud Compliance starts scanning the data on each working environment. Results will be available in the Compliance dashboard as soon as Cloud Compliance finishes the initial scans. The time that it takes depends on the amount of data--it could be a few minutes or hours.
+Cloud Compliance starts scanning the volumes you selected in the working environment. Results will be available in the Compliance dashboard as soon as Cloud Compliance finishes the initial scans. The time that it takes depends on the amount of data--it could be a few minutes or hours.
 
 == Verifying that Cloud Compliance has access to volumes
 
@@ -75,7 +91,7 @@ Make sure that Cloud Compliance can access volumes by checking your networking, 
 
 .Steps
 
-. Make sure that there's a network connection between the Cloud Compliance instance and each network that includes volumes for Cloud Volumes ONTAP or Azure NetApp Files.
+. Make sure that there's a network connection between the Cloud Compliance instance and each network that includes volumes for Cloud Volumes ONTAP, Azure NetApp Files, or on-prem ONTAP clusters.
 +
 NOTE: For Azure NetApp Files, Cloud Compliance can only scan volumes that are in the same region as Cloud Manager.
 

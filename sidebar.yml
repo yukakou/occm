@@ -287,7 +287,7 @@ entries:
             url: /task_deploy_cloud_compliance.html
           - title: Activate scanning on your data sources
             entries:
-              - title: Cloud Volumes ONTAP and Azure NetApp Files
+              - title: Cloud Volumes ONTAP, on-prem ONTAP, and Azure NetApp Files
                 url: /task_getting_started_compliance.html
               - title: Amazon S3 buckets
                 url: /task_scanning_s3.html
