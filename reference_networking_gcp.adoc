@@ -5,7 +5,7 @@ keywords: networking, network, requirements, connection, connections, subnet, vp
 summary: Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
 ---
 
-= Networking requirements to deploy and manage Cloud Volumes ONTAP in GCP
+= Networking requirements for Cloud Volumes ONTAP in GCP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,14 +15,30 @@ summary: Set up your Google Cloud Platform networking so Cloud Volumes ONTAP sys
 [.lead]
 Set up your Google Cloud Platform networking so Cloud Volumes ONTAP systems can operate properly. This includes networking for the Connector and Cloud Volumes ONTAP.
 
+If you want to deploy an HA pair, you should link:concept_ha_google_cloud.html[learn how HA pairs work in GCP].
+
 == Requirements for Cloud Volumes ONTAP
 
 The following requirements must be met in GCP.
 
-Virtual Private Cloud::
-Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in non-shared VPCs.
+Virtual Private Cloud for single node systems::
+One VPC is required for a single node system.
++
+Cloud Volumes ONTAP and the Connector are supported in a Google Cloud shared VPC and also in standalone VPCs.
 +
 A shared VPC enables you to configure and centrally manage virtual networks across multiple projects. You can set up shared VPC networks in the _host project_ and deploy the Connector and Cloud Volumes ONTAP virtual machine instances in a _service project_. https://cloud.google.com/vpc/docs/shared-vpc[Google Cloud documentation: Shared VPC overview^].
++
+The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
+
+Virtual Private Clouds for HA pairs::
+Four Virtual Private Clouds (VPCs) are required for the HA configuration. Four VPCs are required because GCP requires that each network interface resides in a separate VPC network.
++
+Cloud Manager will prompt you to choose four VPCs when you create the HA pair:
++
+* VPC-0 for inbound connections to the data and nodes
+* VPC-1, VPC-2, and VPC-3 for internal communication between the nodes and the HA mediator
++
+Similar to a single node system, an HA pair is supported in a shared VPC and also in standalone VPCs. However, only VPC-0 can be a shared VPC. All other VPCs must be a standalone VPC.
 +
 The only requirement when using a shared VPC is to provide the https://cloud.google.com/compute/docs/access/iam#compute.networkUser[Compute Network User role^] to the Connector service account. Cloud Manager needs these permissions to query the firewalls, VPC, and subnets in the host project.
 
@@ -35,19 +51,35 @@ Routing and firewall policies must allow HTTP/HTTPS traffic to the following end
 * \https://support.netapp.com/asupprod/post/1.0/postAsup
 +
 link:task_setting_up_ontap_cloud.html[Learn how to configure AutoSupport].
++
+TIP: If you're using an HA pair, the HA mediator doesn't require outbound internet access.
 
 Number of IP addresses::
-Cloud Manager allocates 5 IP addresses to Cloud Volumes ONTAP in GCP.
+Cloud Manager allocates the following number of IP addresses to Cloud Volumes ONTAP in GCP:
+
+* *Single node*: 5 IP addresses
 +
-Note that Cloud Manager doesn't create an SVM management LIF for Cloud Volumes ONTAP in GCP.
+Cloud Manager doesn't create an SVM management LIF for single node systems in GCP.
 +
-TIP: A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
+A LIF is an IP address associated with a physical port. An SVM management LIF is required for management tools like SnapCenter.
+
+* *HA pair*: 17 IP addresses
++
+** 10 IP addresses for VPC-0
+** Two IP addresses for VPC-1
+** Two IP addresses for VPC-2
+** Three IP addresses for VPC-3
 
 Firewall rules::
 You don't need to create firewall rules because Cloud Manager does that for you. If you need to use your own, refer to the firewall rules listed below.
++
+Note that two sets of firewall rules are required for an HA configuration:
++
+* One set of rules for HA components in VPC-0. These rules enable data access to Cloud Volumes ONTAP. <<Firewall rules for Cloud Volumes ONTAP,Learn more>>.
+* Another set of rules for HA components in VPC-1, VPC-2, and VPC-3. These rules are open for inbound & outbound communication between the HA components. <<Firewall rules for VPC-1 VPC-2 and VPC-3,Learn more>>.
 
 Connection from Cloud Volumes ONTAP to Google Cloud Storage for data tiering::
-If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access. For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
+If you want to tier cold data to a Google Cloud Storage bucket, the subnet in which Cloud Volumes ONTAP resides must be configured for Private Google Access (if you're using an HA pair, this is the subnet in VPC-0). For instructions, refer to https://cloud.google.com/vpc/docs/configure-private-google-access[Google Cloud documentation: Configuring Private Google Access^].
 +
 For additional steps required to set up data tiering in Cloud Manager, see link:task_tiering.html[Tiering cold data to low-cost object storage].
 
@@ -64,9 +96,7 @@ TIP: If your network uses a proxy server for all communication to the internet, 
 
 === Connection to target networks
 
-A Connector requires a network connection to the VPCs and VNets in which you want to deploy Cloud Volumes ONTAP.
-
-For example, if you install a Connector in your corporate network, then you must set up a VPN connection to the VPC or VNet in which you launch Cloud Volumes ONTAP.
+A Connector requires a network connection to the VPCs in which you want to deploy Cloud Volumes ONTAP. If you're deploying an HA pair, then the Connector needs a connection to all four VPCs.
 
 === Outbound internet access
 
@@ -163,9 +193,11 @@ In any case, you should secure network access by ensuring that security group ru
 
 == Firewall rules for Cloud Volumes ONTAP
 
-Cloud Manager creates GCP firewall rules that include the inbound and outbound rules that Cloud Manager and Cloud Volumes ONTAP need to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own security groups.
+Cloud Manager creates GCP firewall rules that include the inbound and outbound rules that Cloud Volumes ONTAP needs to operate successfully. You might want to refer to the ports for testing purposes or if you prefer your to use own firewall rules.
 
 The firewall rules for Cloud Volumes ONTAP requires both inbound and outbound rules.
+
+If you're deploying an HA configuration, these are the firewall rules for Cloud Volumes ONTAP in VPC-0.
 
 === Inbound rules
 
@@ -195,6 +227,7 @@ The source for inbound rules in the predefined security group is 0.0.0.0/0.
 | TCP |	10000 |	Backup using NDMP
 | TCP |	11104 |	Management of intercluster communication sessions for SnapMirror
 | TCP | 11105 | SnapMirror data transfer using intercluster LIFs
+| TCP | 63001-63050 | Load balance probe ports to determine which node is healthy (required for HA pairs only)
 | UDP |	111 | Remote procedure call for NFS
 | UDP |	161-162 |	Simple network management protocol
 | UDP |	635 |	NFS mount
@@ -277,6 +310,12 @@ NOTE: The source is the interface (IP address) on the Cloud Volumes ONTAP system
 | Syslog | UDP | 514 | Node management LIF | Syslog server | Syslog forward messages
 
 |===
+
+== Firewall rules for VPC-1, VPC-2, and VPC-3
+
+In GCP, an HA configuration is deployed across four VPCs. The firewall rules needed for the HA configuration in VPC-0 are <<Firewall rules for Cloud Volumes ONTAP,listed above for Cloud Volumes ONTAP>>.
+
+Meanwhile, the predefined firewall policy that Cloud Manager creates for instances in VPC-1, VPC-2, and VPC-3 enables ingress communication over all protocols and ports. These rules enable communication between the HA nodes and the HA mediator.
 
 == Firewall rules for the Connector
 

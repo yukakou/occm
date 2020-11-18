@@ -82,6 +82,8 @@ If you choose your own IAM role, <<iam,you'll need to provide the required permi
 +
 image:screenshot_aws_data_broker.gif[A screenshot of the information that you need to provide when deploying a data broker in AWS.]
 
+. Specify a proxy configuration, if a proxy is required for internet access in the VPC.
+
 . After the data broker is available, click *Continue* in Cloud Sync.
 +
 The following image shows a successfully deployed instance in AWS:
