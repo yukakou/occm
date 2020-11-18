@@ -309,11 +309,19 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 
 * The left-pane filters enable you to refine the results by working environment, storage repository, category, private data, file type, file size, last modified date, whether the S3 object’s permissions are open to public access, etc...
 
-* The _Highlights_ filters at the bottom of the Filters pane list a group of predefined filters that provide commonly requested combinations of filters; like a saved database query.
+* The _Highlights_ filter at the bottom of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list.
+
+== Using Highlights to quickly view results in the Investigation page
+
+Highlights are like a Favorites list of custom filters that provide commonly requested combinations of filters. In addition to appearing in the list of Filters in the Investigation page, the Highlights tab lists all the Highlights available on this instance of Cloud Compliance.
+
+image:screenshot_compliance_highlights_tab.png[A screenshot of the Highlights tab in the Cloud Compliance dashboard.]
+
+Click the image:screenshot_gallery_options.gif[More button] button for a specific highlight, and then click *Investigate Results* to display the results from the highlight in the Investigation page.
 
 === Predefined Highlights filters
 
-The provided Highlights filters include:
+Cloud Compliance provides the following system-defined highlights:
 
 [cols="25,35,35",width=85%,options="header"]
 |===

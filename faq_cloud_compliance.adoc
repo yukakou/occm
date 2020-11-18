@@ -94,9 +94,9 @@ Reports on a specific information type:: Reports are available that include deta
 +
 In regions where m5.4xlarge isn't available, Cloud Compliance runs on an m4.4xlarge instance instead.
 
-Starting in December 2020, you can download and install Compliance software on a Linux host in your network or in the cloud. Everything works the same and you continue to manage your scan configuration and results through Cloud Manager. See <<Deploying the Cloud Compliance instance on premises,Deploying Cloud Compliance on premises>> for system requirements and installation details.
+Starting in December 2020, you can download and install Compliance software on a Linux host in your network or in the cloud. Everything works the same and you continue to manage your scan configuration and results through Cloud Manager. See link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[Deploying Cloud Compliance on premises^] for system requirements and installation details.
 
-NOTE: Cloud Compliance is currently unable to scan S3 buckets and ANF files if the Compliance instance is installed on premises.
+NOTE: Cloud Compliance is currently unable to scan S3 buckets and ANF files when the Compliance instance is installed on premises.
 
 link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works^].
 
@@ -139,7 +139,7 @@ Yes. As long as you have discovered the on-prem ONTAP cluster as a working envir
 
 You can also scan your on-premises ONTAP data by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then activating compliance on the data protection volumes.  
 
-link:task_scanning_onprem.html[Learn more^].
+link:task_getting_started_compliance.html[Learn more^].
 
 == Can Cloud Compliance send notifications to my organization?
 
