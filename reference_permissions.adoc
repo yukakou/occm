@@ -585,4 +585,17 @@ The Cloud Manager policy for GCP includes the permissions that Cloud Manager nee
 
 | To set a service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket.
 
+|
+- compute.addresses.list
+- compute.backendServices.create
+- compute.networks.updatePolicy
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+- iam.serviceAccounts.actAs
+- storage.objects.get
+- storage.objects.list
+
+| To deploy HA pairs.
+
 |===
