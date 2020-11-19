@@ -114,4 +114,4 @@ Note the following:
 
 Cloud Manager is in the process of obtaining SOC2 certification.
 
-To comply with FedRAMP certification, the SaaS-based UI is not enabled for customers who require FedRAMP.
+To comply with FedRAMP certification, the SaaS-based UI is not enabled for customers who deploy a Cloud Manager Connector in Gov Cloud regions.
