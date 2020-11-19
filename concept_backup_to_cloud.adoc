@@ -48,8 +48,8 @@ For PAYGO you'll need to pay your cloud provider for object storage costs and Ne
 * AWS: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
 
 * Azure: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Go to the Cloud Manager Marketplace offering for pricing details^].
-
-* GCP:
+//
+// * GCP:
 
 === Free trial
 
