@@ -233,6 +233,8 @@ entries:
             url: /task_backup_to_s3.html
           - title: Back up to Azure Blob storage
             url: /task_backup_to_azure.html
+          - title: Back up to Google Cloud storage
+            url: /task_backup_to_gcp.html
           - title: Back up from on-premises ONTAP systems
             url: /task_backup_from_onprem.html
       - title: Manage backups and restore data
