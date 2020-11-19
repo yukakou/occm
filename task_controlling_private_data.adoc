@@ -323,7 +323,7 @@ Click the image:screenshot_gallery_options.gif[More button] button for a specifi
 
 Cloud Compliance provides the following system-defined highlights:
 
-[cols="25,35,35",width=85%,options="header"]
+[cols="25,40,40",width=90%,options="header"]
 |===
 | Name
 | Description

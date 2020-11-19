@@ -96,7 +96,7 @@ In regions where m5.4xlarge isn't available, Cloud Compliance runs on an m4.4xla
 
 Starting in December 2020, you can download and install Compliance software on a Linux host in your network or in the cloud. Everything works the same and you continue to manage your scan configuration and results through Cloud Manager. See link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[Deploying Cloud Compliance on premises^] for system requirements and installation details.
 
-NOTE: Cloud Compliance is currently unable to scan S3 buckets and ANF files when the Compliance instance is installed on premises.
+NOTE: Cloud Compliance is currently unable to scan S3 buckets and ANF files when it is installed on premises.
 
 link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works^].
 

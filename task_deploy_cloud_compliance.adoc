@@ -30,8 +30,8 @@ If you don't already have a Connector, create a Connector in Azure or AWS. See l
 Ensure that your environment can meet the prerequisites. This includes outbound internet access for the instance, connectivity between the Connector and Cloud Compliance over port 80, and more. <<Reviewing prerequisites,See the complete list>>.
 
 [role="quick-margin-list"]
-* When installed on the cloud, you need 16 vCPUs for the Cloud Compliance instance. See link:concept_cloud_compliance.html#the-cloud-compliance-instance[more details about the instance type^].
-* When installed on premises, you need a Linux system with the appropriate link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[OS, CPUs, RAM, and capacity^].
+* When installed in the cloud, you need 16 vCPUs for the Cloud Compliance instance. See link:concept_cloud_compliance.html#the-cloud-compliance-instance[more details about the instance type^].
+* When installed on premises, you need a Linux system that meets the link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[following requirements^].
 
 ==== image:number3.png[Number 3] Deploy Cloud Compliance
 
@@ -101,12 +101,27 @@ Cloud Compliance requires outbound internet access. If your virtual or physical 
 | Enables Cloud Compliance to access and download manifests and templates, and to send logs and metrics.
 
 |===
++
+Additionally, when installing Cloud Compliance on premises, you need to have access to these additional endpoints:
++
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+
+| \https://github.com/docker | Enables
+
+| \https://download.docker.com | Enables
+
+| \http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.107-3.el7.noarch.rpm | Enables
+
+|===
 
 Ensure that Cloud Manager has the required permissions::
 Ensure that Cloud Manager has permissions to deploy resources and create security groups for the Cloud Compliance instance. You can find the latest Cloud Manager permissions in https://mysupport.netapp.com/site/info/cloud-manager-policies[the policies provided by NetApp^].
 
 Check your vCPU limits::
-Ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running.
+When installed in the cloud, ensure that your cloud provider's vCPU limit allows for the deployment of an instance with 16 cores. You'll need to verify the vCPU limit for the relevant instance family in the region where Cloud Manager is running.
 +
 In AWS, the instance family is _On-Demand Standard instances_. In Azure, the instance family is _Standard Dsv3 Family_.
 +
@@ -163,9 +178,9 @@ The most common way to deploy Cloud Compliance is to <<Deploying the Cloud Compl
 
 The Compliance software functions exactly the same regardless of which installation method you choose.
 
-*Note:* Cloud Compliance is currently unable to scan S3 buckets and Azure NetApp Files when the Compliance instance is installed on premises. In these cases you'll need to deploy a separate Connector and instance of Compliance in the cloud and link:concept_connectors.html#when-to-switch-between-connectors[switch between Connectors] for your different data sources.
+NOTE: Cloud Compliance is currently unable to scan S3 buckets and Azure NetApp Files when the Compliance instance is installed on premises. In these cases you'll need to deploy a separate Connector and instance of Compliance in the cloud and link:concept_connectors.html#when-to-switch-between-connectors[switch between Connectors] for your different data sources.
 
-.Requirements
+.Host requirements
 
 * Operating system: Red Hat Enterprise Linux or CentOS version 8.0 or 8.1
 ** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
@@ -178,22 +193,13 @@ The Compliance software functions exactly the same regardless of which installat
 
 *	Network connectivity between the host machine and the Connector over port 80. And make sure port 8080 is also open so you can see the installation progress in Cloud Manager.
 
-See <<Reviewing prerequisites,Reviewing prerequisites>> for the list of endpoints that must be reachable from the host over the internet.
-
-*Do we need any of these below that were listed in the Connector requirements?*
-* The Compliance installer accesses several URLs during the installation process. You must ensure that outbound internet access is allowed to these endpoints:
-
-** \http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
-** \https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-** \https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
-+
-The host might try to update operating system packages during installation. The host can contact different mirroring sites for these OS packages.
+See <<Reviewing prerequisites,Reviewing prerequisites>> for the list of endpoints that Cloud Compliance must be able to reach over the internet.
 
 .About this task
 
-* Root privileges are not required to install Cloud Compliance.
+* Root privileges are required to install Cloud Compliance.
 
-* The installer that is available on the NetApp Support Site might be an earlier version. After installation, Cloud Compliance automatically updates itself whenever a newer version is available.
+* The installer that is available on the NetApp Support Site is the most recent version. If new Compliance features require an updated version in the future, we will let you know.
 
 .Steps
 
@@ -203,12 +209,9 @@ The host might try to update operating system packages during installation. The 
 +
 image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting the button to deploy Cloud Compliance on premises.]
 
-. In the _Deploying Cloud Compliance On Premises_ dialog:
-.. Copy the provided command and paste it in a text file so you can use it later. For example:
+. In the _Deploying Cloud Compliance On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later. For example:
 +
  sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
-+
-.. Follow the steps from the link to install Compliance on a Linux host.
 
 . Download the Cloud Compliance software from the https://mysupport.netapp.com/site/products/all/details/cloud-compliance/downloads-tab[NetApp Support Site^], and then copy it to the Linux host.
 +
@@ -221,7 +224,7 @@ For help with connecting and copying the file to:
 +
  tar -xzf cc_onprem_installer.tar.gz
 
-. When prompted to by the installer, enter the following information:
+. When prompted by the installer, enter the following information:
 .. Paste the information you copied from step 3.
 +
  sudo ./install.sh -a <account_id> -c <agent_id> -t <token>
@@ -249,7 +252,7 @@ Variable values:
 
 .Result
 
-The Cloud Compliance installer installs packages, installs docker, registers the installation, downloads the Cloud Compliance artifact, and installs Cloud Compliance. Installation can take up to 10 minutes. If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Compliance tab in Cloud Manager.
+The Cloud Compliance installer installs packages, installs docker, registers the installation, and installs Cloud Compliance. Installation can take up to 10 minutes. If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Compliance tab in Cloud Manager.
 
 .What's Next
 From the Scan Configuration page you can select the data sources that you want to scan.
