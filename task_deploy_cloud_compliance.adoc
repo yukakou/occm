@@ -199,7 +199,7 @@ See <<Reviewing prerequisites,Reviewing prerequisites>> for the list of endpoint
 
 * Root privileges are required to install Cloud Compliance.
 
-* The installer that is available on the NetApp Support Site is the most recent version. If new Compliance features require an updated version in the future, we will let you know.
+* The installer that is available on the NetApp Support Site might be an earlier version. After installation, the Compliance instance automatically updates itself if a new version is available.
 
 .Steps
 
