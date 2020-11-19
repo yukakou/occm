@@ -107,16 +107,31 @@ Starting with the 3.8.1 release, the following permissions are required to use B
 
 === GCP
 
+==== New permissions for HA pairs
+
+Starting with the 3.9 release, the service account for a Connector requires additional permissions to deploy a Cloud Volumes ONTAP HA pair in GCP:
+
+[source,yaml]
+- compute.addresses.list
+- compute.backendServices.create
+- compute.networks.updatePolicy
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+- iam.serviceAccounts.actAs
+- storage.objects.get
+- storage.objects.list
+
 ==== New permissions for Kubernetes management
 
-Starting with the 3.8.8 release, the service account for a Connector requires the following permissions to discover and manage Kubernetes clusters running in Google Kubernetes Engine (GKE):
+Starting with the 3.8.8 release, the service account for a Connector requires additional permissions to discover and manage Kubernetes clusters running in Google Kubernetes Engine (GKE):
 
 [source,yaml]
 - container.*
 
 ==== New permissions for data tiering
 
-Starting with the 3.8 release, the following permissions are required to use a service account for data tiering. link:reference_new_occm.html#data-tiering-enhancements-in-gcp[Learn more].
+Starting with the 3.8 release, the following permissions are now required to use a service account for data tiering. link:reference_new_occm.html#data-tiering-enhancements-in-gcp[Learn more about this change].
 
 [source,yaml]
 - storage.buckets.update
