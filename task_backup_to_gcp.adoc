@@ -27,23 +27,15 @@ Get started quickly by following these steps or scroll down to the remaining sec
 * You have a Service Account in your Google Cloud Project that has the predefined Storage Admin role.
 * You have subscribed to the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Backup to Cloud BYOL license from NetApp.
 
-==== image:number2.png[Number 2] Enable Backup to Cloud on your existing system
+==== image:number2.png[Number 2] Enable Backup to Cloud on your new or existing system
 
-[role="quick-margin-para"]
-Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel, and then follow the setup wizard.
+[role="quick-margin-list"]
+* New systems: Backup to Cloud can be enabled when you complete the new working environment wizard.
 
-[role="quick-margin-para"]
+* Existing systems: Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel, and then follow the setup wizard.
++
 image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Activate button which is available after you select a working environment.]
 
-// ==== image:number2.png[Number 2] Enable Backup to Cloud on your new or existing system
-//
-// [role="quick-margin-list"]
-// * New systems: Backup to Cloud can be enabled when you complete the working environment wizard.
-//
-// * Existing systems: Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel, and then follow the setup wizard.
-// +
-// image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Activate button which is available after you select a working environment.]
-//
 ==== image:number3.png[Number 3] Enter the provider details
 
 [role="quick-margin-para"]
@@ -95,39 +87,42 @@ And you need to have a Google subscription for the storage space where your back
 GCP Service Account::
 You need to have a Service Account in your Google Cloud Project that has the predefined Storage Admin role. See https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[creating a service account that has the Storage Admin role^].
 
-// == Enabling Backup to Cloud on a new system
-//
-// Backup to Cloud can be enabled when you complete the working environment wizard. You must have a Service Account already configured.
-//
-// See link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP] for complete details for creating your Cloud Volumes ONTAP system.
-//
-// .Steps
-//
-// . Click *Create Cloud Volumes ONTAP*.
-//
-// . Select Google Cloud Platform as the cloud provider and then choose a single node or HA system.
-//
-// . Fill out the Details & Credentials page:
-// .. Make sure that a GCP Marketplace subscription is in place.
-// .. Enable the Service Account switch (you must have a Service Account).
-// .. Fill in the credentials and click *Continue*.
-// +
-// image:screenshot_backup_to_gcp_new_env.png[Shows how to enable a Service Account in the working environment wizard.]
-//
-// . On the Services page, leave the Backup to Cloud service enabled and click *Continue*.
-// +
-// image:screenshot_backup_to_gcp.png[Shows the Backup to Cloud option in the working environment wizard.]
-//
-// . Complete the pages in the wizard to deploy the system.
-//
-// .Result
-//
-// Backup to Cloud is enabled on the system and backs up volumes every day and retains the most recent 30 backup copies.
-//
-// .What's next?
-//
-// link:task_managing_backups.html[You can manage backups by changing the backup schedule, restoring volumes, and more^].
-//
+== Enabling Backup to Cloud on a new system
+
+Backup to Cloud can be enabled when you complete the working environment wizard. You must have a Service Account already configured.
+
+See link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP] for requirements and details for creating your Cloud Volumes ONTAP system.
+
+.Steps
+
+. On the Working Environments page, click *Add Working Environment* and follow the prompts.
+
+. *Choose a Location*: Select *Google Cloud Platform*.
+
+. *Choose Type*: Select *Cloud Volumes ONTAP*.
++
+Select a single node system at this time. HA systems are not currently supported.
+
+. *Details & Credentials*: Select the project if different than the default Project (where Cloud Manager resides), specify a cluster name, enable the Service Account switch and select the Service Account (to enable backups and tiering), and then specify credentials.
++
+Make sure that a GCP Marketplace subscription is in place.
++
+image:screenshot_backup_to_gcp_new_env.png[Screenshot that shows how to enable a Service Account in the working environment wizard.]
+
+. *Services*: Leave the Backup to Cloud service enabled and click *Continue*.
++
+image:screenshot_backup_to_gcp.png[Shows the Backup to Cloud option in the working environment wizard.]
+
+. Complete the pages in the wizard to deploy the system as described in link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP].
+
+.Result
+
+Backup to Cloud is enabled on the system and backs up volumes every day and retains the most recent 30 backup copies.
+
+.What's next?
+
+link:task_managing_backups.html[You can manage backups by changing the backup schedule, restoring volumes, and more^].
+
 == Enabling Backup to Cloud on an existing system
 
 You can enable Backup to Cloud at any time directly from the working environment.

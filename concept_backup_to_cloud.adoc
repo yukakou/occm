@@ -168,8 +168,6 @@ FlexGroup volumes aren't currently supported.
 * Backup to Cloud restrictions when making backups from on-premises ONTAP systems:
 ** Cloud Manager must be deployed in the cloud (Azure or AWS). There is no support for on-premises Cloud Manager deployments.
 ** Backups can be restored only to Cloud Volumes ONTAP systems deployed on the same cloud provider. You cannot restore a backup to an on-premises ONTAP system or to a Cloud Volumes ONTAP system that is using a different cloud provider.
-+
-*Note that Restoring a backup is not currently supported using the Cloud Manager UI. You can use the API if you need to restore a backup at this time. Restore using the UI will be addressed shortly.*
 
 * When backing up data protection (DP) volumes, the rule that is defined for the SnapMirror policy on the source volume must use a label that matches the allowed Backup to Cloud policy names of *daily*, *weekly*, or *monthly*. Otherwise the backup will fail for that DP volume.
 
@@ -179,8 +177,6 @@ FlexGroup volumes aren't currently supported.
 
 * ILM (tiering) from the object storage, or direct write to Glacier or similar lower tier object storage, is not supported.
 
-* MetroCluster (MCC) and SVM-DR configurations not supported.
+* MetroCluster (MCC) and SVM-DR configurations are not supported.
 
-* SnapLock volumes not supported.
-
-* WORM/Compliance mode on object store is not supported.
+* WORM/Compliance mode on an object store is not supported.

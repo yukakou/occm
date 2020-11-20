@@ -1,0 +1,53 @@
+---
+sidebar: sidebar
+permalink: task_restore_backups.html
+keywords: restoring, restore, restore volumes, restore files, Backup to Cloud, cloud backup service,
+summary: Restore entire volumes or up to 8 individual files from a backup file.
+---
+
+= Restoring data from Cloud Volumes ONTAP and on-premises ONTAP backup files
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Restore entire volumes or up to 8 individual files from a backup file.
+
+== Restoring a volume from a backup
+
+When you restore a volume from a backup file, Cloud Manager creates a _new_ volume using the data from the backup. You can restore the data to a volume in the same working environment or to a different working environment that's located in the same cloud account as the source working environment. Because the backup does not contain any snapshots, the newly restored volume does not either.
+
+TIP: Backups created from on-premises ONTAP systems can be restored only to Cloud Volumes ONTAP systems that use the same cloud provider as where the backup resides.
+
+.Steps
+
+. Select the working environment.
+
+. Click image:screenshot_gallery_options.gif[More icon] and select *View Backups*.
++
+image:screenshot_view_backups_selection.png[A screenshot of selecting the View Backups button for a working environment.]
+
+. Select the row for the volume that you want to restore and click *View Backup List*.
++
+image:screenshot_backup_to_s3_volume.gif[A screenshot of the Backup and Restore tab showing a volume that has backups.]
+
+. Find the backup that you want to restore and click the *Restore* icon.
++
+image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon for a backup after you select a volume.]
+
+. Fill out the _Restore Backup to new volume_ page:
+.. Select the working environment to which you want to restore the volume.
+.. Enter a name for the volume.
+.. Click *Restore*.
++
+image:screenshot_backup_to_s3_restore_options.gif[A screenshot that shows the restore options: a working environment to restore to, the name of the volume, and the volume info.]
+
+.Result
+
+Cloud Manager creates a new volume based on the backup you selected. You can link:task_managing_storage.html#managing-existing-volumes[manage this new volume^] as required.
+
+== Restoring files from a backup
+
+You can restore up to 8 files from a backup file.

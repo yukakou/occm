@@ -237,8 +237,10 @@ entries:
             url: /task_backup_to_gcp.html
           - title: Back up from on-premises ONTAP systems
             url: /task_backup_from_onprem.html
-      - title: Manage backups and restore data
+      - title: Manage backups
         url: /task_managing_backups.html
+      - title: Restore from backups
+        url: /task_restore_backups.html
   - title: Copy and synchronize data
     entries:
       - title: Learn about Cloud Sync
