@@ -140,25 +140,29 @@ If you're enabling data tiering on a new volume, then you don't need to worry ab
 
 * *Existing volumes*
 +
-If you want to enable data tiering on an existing volume, then you'll need to ensure that data tiering is enabled on the underlying aggregate. If data tiering isn't enabled on the existing aggregate, then you'll need to enable data tiering on a _new_ aggregate and then move the volume to that aggregate. You can't enable data tiering on an existing aggregate.
+If you want to enable data tiering on an existing volume, then you'll need to ensure that data tiering is enabled on the underlying aggregate. If data tiering isn't enabled on the existing aggregate, then you'll need to use System Manager to attach an existing aggregate to the object store.
 
-.Steps
+.Steps to confirm whether tiering is enabled on an aggregate
 
-. On the Working Environments page, double-click the name of the Cloud Volumes ONTAP instance on which you want to manage aggregates.
+. Open the working environment in Cloud Manager.
 
-. Click the menu icon, and then click *Advanced > Advanced allocation*.
+. Click the menu icon, click *Advanced*, and then click *Advanced allocation*.
 
-. Click *Add Aggregate* and then specify details for the aggregate.
-.. Enter a name.
-.. Choose a disk type and keep tiering enabled.
-.. Choose your disk size and number of disks.
-.. Click *Go* and then click *Approve and Purchase*.
+. Verify whether tiering is enabled or disabled on the aggregate.
++
+image:screenshot_aggr_tiering.gif[A screenshot that shows information about an aggregate in Cloud Manager which includes the tiering status.]
 
-. If needed, move existing volumes to the new aggregate by http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html[following the ONTAP 9 Volume Move Express Guide^].
+.Steps to enable tiering on an aggregate
+
+. In System Manager, click *Storage > Tiers*.
+
+. Click the action menu for the aggregate and select *Attach Cloud Tiers*.
+
+. Select the cloud tier to attach and click *Save*.
 
 .What's next?
 
-You can now enable data tiering on your volumes, as explained in the next section.
+You can now enable data tiering on new and existing volumes, as explained in the next section.
 
 == Tiering data from read-write volumes
 
