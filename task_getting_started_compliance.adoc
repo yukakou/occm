@@ -145,29 +145,15 @@ TIP: New volumes added to the working environment are automatically scanned only
 
 == Scanning data protection volumes
 
-By default, data protection (DP) volumes are not scanned because they are not exposed externally and Cloud Compliance cannot access them. These volumes are typically the destination volumes for SnapMirror operations from an on-premises ONTAP cluster.
+By default, data protection (DP) volumes are not scanned because they are not exposed externally and Cloud Compliance cannot access them. These are the destination volumes for SnapMirror operations from an on-premises ONTAP system or from a Cloud Volumes ONTAP system.
 
-You can scan data on your on-premises ONTAP systems directly using Cloud Compliance. You can also replicate the on-prem NFS or CIFS data by using SnapMirror to a Cloud Volumes ONTAP working environment and then enable compliance for those data protection volumes. Choose whichever way works best for you.
-
-TIP:: We recommend that you link:task_discovering_ontap.html[discover your on-prem ONTAP systems^] in Cloud Manager to add them to a working environment so that you can  scan data on those system directly from Cloud Compliance.
-
-.Steps
-
-. From Cloud Manager, create a SnapMirror relationship between the on-premises ONTAP cluster and Cloud Volumes ONTAP.
-
-.. https://docs.netapp.com/us-en/occm/task_discovering_ontap.html[Discover the on-premises cluster in Cloud Manager^].
-
-.. https://docs.netapp.com/us-en/occm/task_replicating_data.html[Create a SnapMirror replication between the on-premises ONTAP cluster and Cloud Volumes ONTAP from Cloud Manager^].
-
-.	From Cloud Manager, activate Cloud Compliance on the Cloud Volumes ONTAP working environment that contains the SnapMirror data:
-.. Click *Working Environments*.
-.. Select the working environment that contains the SnapMirror data and click *Enable Compliance*.
-+
-link:task_getting_started_compliance.html[Click here if you need help with enabling Cloud Compliance on a Cloud Volumes ONTAP system^].
-+
 Initially, the volume list identifies these volumes as _Type_ *DP* with the _Status_ *Not Scanning* and the _Required Action_ *Enable Access to DP volumes*.
 +
 image:screenshot_cloud_compliance_dp_volumes.png[A screenshot showing the Enable Access to DP Volumes button that you can select to scan data protection volumes.]
+
+.Steps
+
+If you want to scan these data protection volumes:
 
 . Click the *Enable Access to DP volumes* button at the top of the page.
 

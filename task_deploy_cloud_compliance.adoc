@@ -15,6 +15,8 @@ summary: Complete a few steps to deploy the Cloud Compliance instance in your Cl
 [.lead]
 Complete a few steps to deploy the Cloud Compliance instance in your Cloud Manager workspace. You can deploy Cloud Compliance in the cloud or on an on-premises system.
 
+The on-prem installation may be a good option if you prefer to scan on-premises ONTAP working environments using a Compliance instance that is also located on premises. But this this not a requirement. The Compliance software functions exactly the same way regardless of which installation method you choose.
+
 == Quick start
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
@@ -109,11 +111,12 @@ Additionally, when installing Cloud Compliance on premises, you need to have acc
 | Endpoints
 | Purpose
 
-| \https://github.com/docker | Enables
+|
+\https://github.com/docker
+\https://download.docker.com
+\http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.107-3.el7.noarch.rpm
 
-| \https://download.docker.com | Enables
-
-| \http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.107-3.el7.noarch.rpm | Enables
+| Provides access to software images and templates.
 
 |===
 
@@ -191,9 +194,9 @@ NOTE: Cloud Compliance is currently unable to scan S3 buckets and Azure NetApp F
 
 * A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during installation.
 
-*	Network connectivity between the host machine and the Connector over port 80. And make sure port 8080 is also open so you can see the installation progress in Cloud Manager.
+*	Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
 
-See <<Reviewing prerequisites,Reviewing prerequisites>> for the list of endpoints that Cloud Compliance must be able to reach over the internet.
+See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Compliance must be able to reach over the internet.
 
 .About this task
 
@@ -244,11 +247,11 @@ Variable values:
 * _agent_id_ = Connector ID
 * _token_ = jwt user token
 * _cc_host_ = IP address or host name of the host Linux machine.
-* _proxy_host_ IP or host name of the proxy server if the host is behind a proxy server.
-* _proxy_port_ Port to connect to the proxy server (default 80).
-* _proxy_scheme_ the connection schema: https or http (default http).
-* _proxy_user_ Authenticated user to connect to the proxy server, if basic authentication is required.
-* _proxy_password_ Password for the user name that you specified.
+* _proxy_host_ = IP or host name of the proxy server if the host is behind a proxy server.
+* _proxy_port_ = Port to connect to the proxy server (default 80).
+* _proxy_scheme_ = The connection schema: https or http (default http).
+* _proxy_user_ = Authenticated user to connect to the proxy server, if basic authentication is required.
+* _proxy_password_ = Password for the user name that you specified.
 
 .Result
 

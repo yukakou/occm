@@ -40,11 +40,11 @@ Cloud Compliance can scan data from the following types of data sources:
 
 == Cost
 
-* The cost to use Cloud Compliance depends on the amount of data that you're scanning. The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. This includes data from Cloud Volumes ONTAP volumes, Azure NetApp Files volumes, Amazon S3 buckets, and database schemas. A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
+* The cost to use Cloud Compliance depends on the amount of data that you're scanning. The first 1 TB of data that Cloud Compliance scans in a Cloud Manager workspace is free. This includes all data from Cloud Volumes ONTAP volumes, on-prem ONTAP volumes, Azure NetApp Files volumes, Amazon S3 buckets, and database schemas (all your data sources). A subscription to the AWS or Azure Marketplace is required to continue scanning data after that point. See https://cloud.netapp.com/cloud-compliance#pricing[pricing^] for details.
 +
 link:task_deploy_cloud_compliance.html#subscribing-to-the-cloud-compliance-service[Learn how to subscribe^].
 
-* Installing Cloud Compliance in the cloud requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed. See the <<The Cloud Compliance instance,the type of instance that is deployed for each cloud provider>>. There is no cost when installing Cloud Compliance on an on-premises system.
+* Installing Cloud Compliance in the cloud requires deploying a cloud instance, which results in charges from the cloud provider where it is deployed. See the <<The Cloud Compliance instance,the type of instance that is deployed for each cloud provider>>. There is no cost if you install Cloud Compliance on an on-premises system.
 
 * Cloud Compliance requires that you have deployed a Connector. In many cases you already have a Connector because of other storage and services you are using in Cloud Manager. The Connector instance results in charges from the cloud provider where it is deployed. See the link:reference_cloud_mgr_reqs.html[type of instance that is deployed for each cloud provider^].
 
