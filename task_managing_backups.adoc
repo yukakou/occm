@@ -94,9 +94,9 @@ Cloud Manager creates a new volume based on the backup you selected. You can lin
 
 == Deleting backups
 
-Backup to Cloud enables you to delete _all_ backups of a specific volume. You can't delete _individual_ backups.
+Backup to Cloud enables you to delete _all_ backups of a specific volume. You can't delete _individual_ backups. You might do this if you no longer need the backups or if you deleted the source volume and want to remove all backups.
 
-You might do this if you no longer need the backups or if you deleted the source volume and want to remove all backups.
+Note that deleting all backups also disables any further backups of this volume. If you later want to start creating backups of that volume, you can re-enable backups <<Starting and stopping backups of volumes,as described here>>.
 
 IMPORTANT: If you plan to delete a Cloud Volumes ONTAP or on-premises ONTAP system that has backups, you must delete the backups *before* deleting the system.  Backup to Cloud doesn’t automatically delete backups when you delete a system, and there is no current support in the UI to delete the backups after the system has been deleted.
 
