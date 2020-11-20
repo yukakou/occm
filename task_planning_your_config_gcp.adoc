@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_planning_your_config_gcp.html
-keywords: license, disk, ebs, storage, size, write speed, volume usage, explore, standard, premium, byol, capacity, limit, configurations, virtual machine, vm, regions, supported disks, disk types, use profile, thin provisioning, deduplication, compression, Cloud Volumes ONTAP explore, Cloud Volumes ONTAP standard, Cloud Volumes ONTAP premium, Cloud Volumes ONTAP byol, shared instance, dedicated instance, write speed, high write speed, normal write speed, network information, worksheet, limit, limits, storage limits, volume limit, aggregate limit, maximum volume size, maximum aggregate size
+keywords: license, disk, ebs, storage, size, write speed, volume usage, explore, standard, premium, byol, capacity, limit, configurations, virtual machine, vm, regions, supported disks, disk types, use profile, thin provisioning, deduplication, compression, Cloud Volumes ONTAP explore, Cloud Volumes ONTAP standard, Cloud Volumes ONTAP premium, Cloud Volumes ONTAP byol, shared instance, dedicated instance, write speed, high write speed, normal write speed, network information, worksheet, limit, limits, storage limits, volume limit, aggregate limit, maximum volume size, maximum aggregate size, supported machine types, supported virtual machines, supported vms, supported instances
 summary: When you deploy Cloud Volumes ONTAP, you can choose a preconfigured system that matches your workload requirements, or you can create your own configuration. If you choose your own configuration, you should understand the options available to you.
 ---
 
@@ -18,6 +18,12 @@ When you deploy Cloud Volumes ONTAP in Google Cloud, you can choose a preconfigu
 == Choosing a license type
 
 Cloud Volumes ONTAP is available in two pricing options: pay-as-you-go and Bring Your Own License (BYOL). For pay-as-you-go, you can choose from three licenses: Explore, Standard, or Premium. Each license provides different capacity and compute options.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_98.html[Supported configurations for Cloud Volumes ONTAP 9.8 in GCP^]
+
+== Supported machine types
+
+Cloud Volumes ONTAP supports several machine types, depending on the license type that you choose.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_gcp_98.html[Supported configurations for Cloud Volumes ONTAP 9.8 in GCP^]
 
@@ -105,7 +111,7 @@ When you deploy Cloud Volumes ONTAP in GCP, you need to specify details about yo
 | Your value
 
 | Region |
-| Zone | 
+| Zone |
 | VPC-0 and subnet |
 | VPC-1 and subnet |
 | VPC-2 and subnet |
