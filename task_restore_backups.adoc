@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_restore_backups.html
-keywords: restoring, restore, restore volumes, restore files, Backup to Cloud, cloud backup service,
-summary: Restore entire volumes or up to 8 individual files from a backup file.
+keywords: restoring, restore, restore volumes, restore files, Backup to Cloud, cloud backup service, single file restore
+summary: Backups are stored in an object store in your cloud account so that you can restore data from a specific point in time. You can restore entire volumes or up to 8 individual files (at a time) from a saved backup file.
 ---
 
 = Restoring data from Cloud Volumes ONTAP and on-premises ONTAP backup files
@@ -13,13 +13,17 @@ summary: Restore entire volumes or up to 8 individual files from a backup file.
 :imagesdir: ./media/
 
 [.lead]
-Restore entire volumes or up to 8 individual files from a backup file.
+Backups are stored in an object store in your cloud account so that you can restore data from a specific point in time. You can restore entire volumes or up to 8 individual files (at a time) from a saved backup file.
+
+Restoring an entire volume is part of the Backup to Cloud service that you used to create the backup file. Once you have activated the Backup to Cloud service in a working environment, you can restore an entire volume in the same working environment, or to a different working environment, that's using the same cloud account. See <<Restoring a volume from a backup,Restoring a volume from a backup>>.
+
+Restoring individual files from a backup file actually uses two services. It uses the Backup to Cloud service to create the backup file just like described above. But when you initiate a single file restore it uses the Restore service to perform the operation. Again, you can restore files to a volume in the same working environment, or to a different working environment, that's using the same cloud account. See <<Restoring files from a backup,Restoring files from a backup>>.
+
+TIP: Backups created from on-premises ONTAP systems can be restored only to Cloud Volumes ONTAP systems that use the same cloud provider as where the backup resides.
 
 == Restoring a volume from a backup
 
 When you restore a volume from a backup file, Cloud Manager creates a _new_ volume using the data from the backup. You can restore the data to a volume in the same working environment or to a different working environment that's located in the same cloud account as the source working environment. Because the backup does not contain any snapshots, the newly restored volume does not either.
-
-TIP: Backups created from on-premises ONTAP systems can be restored only to Cloud Volumes ONTAP systems that use the same cloud provider as where the backup resides.
 
 .Steps
 
@@ -50,4 +54,73 @@ Cloud Manager creates a new volume based on the backup you selected. You can lin
 
 == Restoring files from a backup
 
-You can restore up to 8 files from a backup file.
+Restoring individual files from a backup file uses the Restore service to perform the operation. You can restore files to a volume in the same working environment, or to a different working environment, that's using the same cloud account. You can restore up to 8 files from a backup file.
+
+The process goes like this:
+
+. You activate the Restore service from the Services panel.
++
+A Restore instance is deployed in your cloud providers' environment, but then it is shut down.
+
+. When you need to restore one or more files from a volume (from a backup file), you click the Restore tab and select the backup file (the snapshot) where the file reside.
++
+The Restore instance starts up and displays the folders and files that exist in the backup file.
+
+. You choose the file (or up to 8 files) from that backup, select the location where you want the file(s) to be written (working environment, volume, folder), and click Restore.
++
+The Restore instance restores the file(s), and then the instance is shut down after a short inactivity period.
+
+.Requirements
+
+* The Backup to Cloud service must already be activated for this working environment.
+
+* At least one backup file must exist for the working environment.
+
+* dfg
+
+.Costs
+
+* The Restore instance
+
+=== Activating the Restore service
+
+This is a one-time operation to create the Restore instance.
+
+.Steps
+
+. Select the working environment.
+
+. Click the *Activate* button from the Restore service.
++
+image:screenshot_restore_activate_button.png[A screenshot of the Activate button to enable the single file restore functionality.]
+
+A Restore instance is deployed in your cloud providers' environment, and then it is shut down.
+
+=== Restoring a single file from a backup file
+
+Follow these steps to restore up to 8 files from a volume backup to a new volume. Note that the wording in the UI calls each backup files a "snapshot" because backup files are created using NetApp Snapshot technology.
+
+.Steps
+
+. Click the *Restore* tab.
++
+The Restore inventory page appears.
++
+image:screenshot_restore_inventory_page.png[A screenshot of the Restore inventory page that shows all restore operations that have completed. It also shows the Restore Files button.]
+
+. Click the *Restore Files* button.
+
+. Select the *Working Environment*, the *Volume*, and the *Snapshot* that has the date/time stamp from which you want to restore files.
++
+image:screenshot_restore_select_source.png[A screenshot of selecting the volume and snapshot for the files you want to restore.]
+
+. Click *Continue* and the Restore instance is started. After a few minutes the Restore instance displays the list of folders and files from the volume snapshot.
++
+image:screenshot_restore_select_files.png[A screenshot of the Select Files page so you can navigate to the files you want to restore.]
+
+. Select the file or files that you want to restore.
+* You can click the search icon and enter the name of the file to navigate directly to the file.
+* You can click the file name if you see it.
+* You can navigate down level in folder to find the file.
+
+. Then
