@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_backup_to_cloud.html
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, back up volumes, Backup to Cloud, restore volumes, billing, cost, on-premises ONTAP, onprem
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, back up volumes, Backup to Cloud, restore volumes, billing, cost, on-premises ONTAP, onprem, restore files
 summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
@@ -14,6 +14,12 @@ summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP and on-pre
 
 [.lead]
 Backup to Cloud is an add-on service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+
+There are two services that provide the full suite of backup and restore functionality:
+
+* The *Backup to Cloud service* enables you to create backup files and to restore an entire volume to the same or different working environment.
+
+* The *Restore service* enables you to use the same backup file to restore one or more *files* to a volume in the same or different working environment. This is also called Single File Restore.
 
 Backup to Cloud is powered by the https://cloud.netapp.com/cloud-backup-service[Cloud Backup Service^].
 
@@ -37,6 +43,8 @@ Backup to Cloud is supported with the following types of working environments:
 * Cloud Volumes ONTAP in Google Cloud (Only single-node systems are currently supported.)
 * On-premises ONTAP clusters
 
+Single File Restore is supported only in AWS at this time.
+
 == Cost
 
 Backup to Cloud is available in two pricing options: Bring Your Own License (BYOL) and Pay As You Go (PAYGO).
@@ -50,6 +58,10 @@ For PAYGO you'll need to pay your cloud provider for object storage costs and Ne
 * Azure: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Go to the Cloud Manager Marketplace offering for pricing details^].
 
 * GCP: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Go to the Cloud Manager Marketplace offering for pricing details^]
+
+The only cost for the Restore service (for the single file restore functionality) is the cost to your cloud provider for the deployed instance.
+
+* In AWS, the Restore instance runs on an m5n.xlarge instance with 4 CPUs, 16 GiB Memory, and EBS Only instance storage. In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
 
 === Free trial
 
@@ -77,17 +89,13 @@ Notes:
 
 * In GCP, Cloud Manager uses a new or existing project with a storage account for the Google Cloud Storage bucket.
 
-=== Supported S3 storage classes
+=== Supported storage classes or access tiers
 
-In Amazon S3, backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
+* In Amazon S3, backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
 
-=== Supported Azure Blob access tiers
+* In Azure, each backup is associated with the _cool_ access tier.
 
-In Azure, each backup is associated with the _cool_ access tier.
-
-=== Supported GCP storage classes
-
-In GCP, backups are associated with the _Standard_ storage class.
+* In GCP, backups are associated with the _Standard_ storage class.
 
 === Backup settings are system wide
 

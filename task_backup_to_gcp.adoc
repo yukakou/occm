@@ -145,7 +145,7 @@ image:screenshot_backup_policy_gcp.png[A screenshot that shows the Backup to Clo
 +
 See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-combination[the list of existing policies^].
 
-. Select the volumes that you want to back up and click *Save*.
+. Select the volumes that you want to back up and click *Activate*.
 +
 image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
 +
