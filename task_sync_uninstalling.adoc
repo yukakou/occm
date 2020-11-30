@@ -24,6 +24,6 @@ If needed, run an uninstall script to remove the data broker and the packages an
 . Run the following commands:
 +
 `chmod +x uninstaller-DataBroker.sh`
-`./uninstaller-DataBroker.shd`
+`./uninstaller-DataBroker.sh`
 
 . Press ‘y’ to confirm the uninstallation.
