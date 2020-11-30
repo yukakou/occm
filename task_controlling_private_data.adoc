@@ -309,7 +309,7 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 
 * The left-pane filters enable you to refine the results by working environment, storage repository, category, private data, file type, file size, last modified date, whether the S3 object’s permissions are open to public access, etc...
 
-* The _Highlights_ filter at the bottom of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list.
+* The _Highlights_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list.
 
 == Using Highlights to quickly view results in the Investigation page
 
