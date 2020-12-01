@@ -188,3 +188,17 @@ FlexGroup volumes aren't currently supported.
 * MetroCluster (MCC) and SVM-DR configurations are not supported.
 
 * WORM/Compliance mode on an object store is not supported.
+
+=== Single File Restore limitations
+
+* Cross account restore requires manual action in the cloud provider console. See the AWS topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions^] for details.
+
+* Single File Restore is supported only with AWS at this time.
+
+* The ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP system.
+
+* Non supported Configurations:
+** Gov Cloud is not supported.
+** Same account with different Cloud Managers in different subnets.
+
+* We can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are not supported.

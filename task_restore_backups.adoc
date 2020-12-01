@@ -17,7 +17,7 @@ Backups are stored in an object store in your cloud account so that you can rest
 
 _Restoring an entire volume_ is part of the Backup to Cloud service that you used to create the backup file. Once you have activated the Backup to Cloud service in a working environment, you can restore an entire volume in the same working environment, or to a different working environment, that's using the same cloud account. See <<Restoring a volume from a backup,Restoring a volume from a backup>>.
 
-_Restoring individual files_ from a backup file actually uses two services. It uses the Backup to Cloud service to create the backup file just like described above. But when you initiate a single file restore it uses the Restore service to perform the operation. Again, you can restore files to a volume in the same working environment, or to a volume in a different working environment, that's using the same cloud account. See <<Restoring files from a backup,Restoring files from a backup>>.
+_Restoring individual files_ from a backup file actually uses two services. It uses the Backup to Cloud service to create the backup file just like described above. But when you initiate a single file restore it uses the Restore service to restore the files. Again, you can restore files to a volume in the same working environment, or to a volume in a different working environment, that's using the same cloud account. See <<Restoring files from a backup,Restoring files from a backup>>.
 
 TIP: Backups created from on-premises ONTAP systems can be restored only to Cloud Volumes ONTAP systems that use the same cloud provider as where the backup resides.
 
@@ -78,11 +78,11 @@ The Restore instance restores the file(s), and then the instance is shut down af
 
 .Costs
 
-See link:concept_backup_to_cloud.html#cost[this topic] for the cost of both the Backup to Cloud service and the Restore service.
+See link:concept_backup_to_cloud.html#cost[this topic^] for the cost of both the Backup to Cloud service and the Restore service.
 
 .AWS permissions required
 
-The IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^] as described in link:task_backup_to_s3.html#requirements[AWS requirements].
+The IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^] as described in link:task_backup_to_s3.html#requirements[AWS requirements^].
 
 Additionally, the following permissions are needed in the policy for single file restore:
 
@@ -112,7 +112,7 @@ NOTE: The Backup to Cloud service must already be activated for this working env
 +
 image:screenshot_restore_activate_button.png[A screenshot of the Activate button to enable the single file restore functionality.]
 
-A Restore instance is deployed in your cloud providers' environment, and then it is shut down. It is shut down to save on costs so that you incur restore costs only when the instance is active.
+A Restore instance is deployed in your cloud providers' environment, and then it is shut down. The instance is stopped to save you money so that you incur restore costs only when the instance is active.
 
 === Restoring a single file from a backup file
 
@@ -130,7 +130,7 @@ image:screenshot_restore_inventory_page.png[A screenshot of the Restore inventor
 
 . Click the *Restore Files* button.
 
-. Select the *Working Environment*, the *Volume*, and the *Snapshot* that has the date/time stamp from which you want to restore files.
+. In the _Select Source_ page, select the *Working Environment*, the *Volume*, and the *Snapshot* that has the date/time stamp from which you want to restore files.
 +
 image:screenshot_restore_select_source.png[A screenshot of selecting the volume and snapshot for the files you want to restore.]
 
@@ -138,23 +138,23 @@ image:screenshot_restore_select_source.png[A screenshot of selecting the volume 
 +
 image:screenshot_restore_select_files.png[A screenshot of the Select Files page so you can navigate to the files you want to restore.]
 
-. Select the file or files that you want to restore and click *Continue*.
+. In the _Select Files_ page, select the file or files that you want to restore and click *Continue*.
 * You can click the search icon and enter the name of the file to navigate directly to the file.
 * You can click the file name if you see it.
 * You can navigate down levels in folders using the  image:button_subfolder.png[] button at the end of the row to find the file.
 +
 As you select files they are added to the left side of the page so you can see the files that you have already chosen. You can delete a file from this list if you added a file in error.
 
-. Select the *Working Environment*, the *Volume*, and the *Folder* where you want to restore the files.
+. In the _Select Destination_ page, select the *Working Environment*, the *Volume*, and the *Folder* where you want to restore the files.
 +
 image:screenshot_restore_select_dest.png[A screenshot of selecting the volume and snapshot for the files you want to restore.]
 +
 You have a few options for the location when restoring files.
 
 +
-When you have chosen *Select Target Folder*:
+When you have chosen *Select Target Folder*, as shown above:
 +
-* You can click any folder.
+* You can select any folder.
 * You can hover over a folder and click image:button_subfolder.png[] at the end of the row to drill down into subfolders, and then select a folder.
 
 +
@@ -163,17 +163,3 @@ If you have selected the same Working Environment and Volume as the source file 
 . Click *Restore* and you are returned to the Restore inventory page so you can see the progress of the restore operation.
 
 The Restore instance is shut down after a certain period of inactivity.
-
-=== Single File Restore Limitations
-
-* Cross account restore requires manual action in the cloud provider console. See the AWS topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions] for details.
-
-* Single File Restore is supported only with AWS at this time.
-
-* The ONTAP version must be 9.6 or greater in you Cloud Volumes ONTAP system.
-
-* Non supported Configurations:
-** Gov Cloud is not supported.
-** Same account with different Cloud Managers in different subnets.
-
-* We can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are not supported.
