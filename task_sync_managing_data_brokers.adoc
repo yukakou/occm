@@ -36,6 +36,10 @@ For example, let's say you have three relationships:
 
 You want to accelerate the performance of relationship 1 so you add a new data broker (data broker C) to the group. Because data broker A is also used to manage relationship 3, having two data brokers in the group also accelerates the performance of this relationship.
 
+=== New data brokers only
+
+You can only add new data brokers to a group. You can't add existing data brokers to a group.
+
 == Add a new data broker
 
 There are several ways to create a new data broker:
@@ -48,7 +52,7 @@ link:task_sync_creating_relationships.html[Learn how to create a new data broker
 
 * From the *Manage Data Brokers* page by creating a new data broker in an existing group
 
-.Steps to create a new data broker in a new group
+.Steps to create a data broker in a new group
 
 . Click *Sync > Manage Data Brokers*.
 
@@ -63,11 +67,11 @@ For help, refer to the following pages:
 * link:task_sync_installing_gcp.html[Installing the data broker in GCP]
 * link:task_sync_installing_linux.html[Installing the data broker on a Linux host]
 
-.Steps to create a new data broker in an existing group
+.Steps to create a data broker in an existing group
 
 . Click *Sync > Manage Data Brokers*.
 
-. Click the action menu and select *Edit Group Name*.
+. Click the action menu and select *Add Data Broker*.
 +
 image:screenshot_sync_group_add.gif[A screenshot of the action menu that's available for each individual data broker in a group.]
 
