@@ -76,7 +76,7 @@ Review the following prerequisites to make sure that you have a supported config
 Enable outbound internet access from Cloud Compliance::
 Cloud Compliance requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. When you deploy Cloud Compliance in the cloud, it is located in the same subnet as the Connector.
 +
-*AWS Endpoints:*
+*Required endpoints for AWS deployments:*
 +
 [cols="43,57",options="header"]
 |===
@@ -113,7 +113,7 @@ Cloud Compliance requires outbound internet access. If your virtual or physical 
 | Enables Cloud Compliance to access and download manifests and templates, and to send logs and metrics.
 |===
 +
-*Azure and On-Prem Endpoints:*
+*Required endpoints for Azure and On-Prem deployments:*
 +
 [cols="43,57",options="header"]
 |===
@@ -149,7 +149,7 @@ Cloud Compliance requires outbound internet access. If your virtual or physical 
 \https://download.docker.com
 \http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.107-3.el7.noarch.rpm
 
-| Provides access to software images and templates.
+| Provides prerequisite packages for installation.
 |===
 
 Ensure that Cloud Manager has the required permissions::
@@ -234,8 +234,6 @@ See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of req
 
 * Root privileges are required to install Cloud Compliance.
 
-* The installer that is available on the NetApp Support Site might be an earlier version. After installation, the Compliance instance automatically updates itself if a new version is available.
-
 .Steps
 
 . In Cloud Manager, click *Compliance*.
@@ -254,18 +252,34 @@ image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting th
 +
  tar -xzf cc_onprem_installer.tar.gz
 
-. When prompted by the installer, enter the following information:
-.. Paste the information you copied from step 3.
-+
- sudo ./install.sh -a <account_id> -c <agent_id> -t <token>
+. When prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt:
 
-.. Enter the IP address or host name of the Compliance host machine, as it will be accessed by the Connector instance.
-.. Enter proxy details as prompted by the installer. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Cloud Compliance will automatically use the proxy used by Cloud Manager.
 +
-Alternatively, you can create the whole command in advance and input it in the first prompt:
-+
- sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <cc_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>
+[cols="50a,50",options="header"]
+|===
+| Enter parameters as prompted:
+| Enter the full command:
 
+|
+a. Paste the information you copied from step 3:
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token>`
+b. Enter the IP address or host name of the Compliance host machine so it can be accessed by the Connector instance.
+c. Enter proxy details as prompted. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Cloud Compliance will automatically use the proxy used by Cloud Manager.
+| Alternatively, you can create the whole command in advance and enter it in the first prompt:
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <cc_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
+|===
++
+// .. Paste the information you copied from step 3.
+// +
+// sudo ./install.sh -a <account_id> -c <agent_id> -t <token>
+//
+// .. Enter the IP address or host name of the Compliance host machine, as it will be accessed by the Connector instance.
+// .. Enter proxy details as prompted by the installer. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Cloud Compliance will automatically use the proxy used by Cloud Manager.
+// +
+// Alternatively, you can create the whole command in advance and input it in the first prompt:
+// +
+//  sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <cc_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>
+//
 Variable values:
 
 * _account_id_ = NetApp Account ID
