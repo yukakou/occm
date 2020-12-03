@@ -89,7 +89,9 @@ You need to have a Service Account in your Google Cloud Project that has the pre
 
 == Enabling Backup to Cloud on a new system
 
-Backup to Cloud can be enabled when you complete the working environment wizard. You must have a Service Account already configured.
+Backup to Cloud can be enabled when you complete the working environment wizard to create a new Cloud Volumes ONTAP system.
+
+You must have a Service Account already configured.
 
 See link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP] for requirements and details for creating your Cloud Volumes ONTAP system.
 
@@ -103,7 +105,11 @@ See link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP] for requi
 +
 Select a single node system at this time. HA systems are not currently supported.
 
-. *Details & Credentials*: Select the project if different than the default Project (where Cloud Manager resides), specify a cluster name, enable the Service Account switch and select the Service Account (to enable backups and tiering), and then specify credentials.
+. *Details & Credentials*: Enter the following information:
+.. Click *Edit Project* and select a new project if the one you want to use is different than the default Project (where Cloud Manager resides).
+.. Specify the cluster name.
+.. Enable the *Service Account* switch and select the Service Account that has the predefined Storage Admin role. This is required to enable backups and tiering.
+.. Specify the credentials.
 +
 Make sure that a GCP Marketplace subscription is in place.
 +
@@ -117,11 +123,9 @@ image:screenshot_backup_to_gcp.png[Shows the Backup to Cloud option in the worki
 
 .Result
 
-Backup to Cloud is enabled on the system and backs up volumes every day and retains the most recent 30 backup copies.
+Backup to Cloud is enabled on the system and backs up the volume you created every day and retains the most recent 30 backup copies.
 
-.What's next?
-
-You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
+You can link:task_managing_backups.html[start and stop backups for additional volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
 
 == Enabling Backup to Cloud on an existing system
 
