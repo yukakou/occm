@@ -32,7 +32,8 @@ NOTE: You must use Cloud Manager for all backup and restore operations. Any acti
 * Back up from cloud to cloud, and from on-premises ONTAP systems to cloud.
 * Support for up to 1,019 backups of a single volume.
 * Restore data from a specific point in time.
-* Restore the data to a volume on the source system or to a different system.
+* Restore a volume or individual files to the source system or to a different system.
+* Browsable file catalogue for single file restore.
 
 == Supported working environments and object storage providers
 
@@ -175,7 +176,7 @@ FlexGroup volumes aren't currently supported.
 
 * Backup to Cloud restrictions when making backups from on-premises ONTAP systems:
 ** Cloud Manager must be deployed in the cloud (Azure or AWS). There is no support for on-premises Cloud Manager deployments.
-** Backups can be restored only to Cloud Volumes ONTAP systems deployed on the same cloud provider. You cannot restore a backup to an on-premises ONTAP system or to a Cloud Volumes ONTAP system that is using a different cloud provider.
+** At this time, backups can be restored only to Cloud Volumes ONTAP systems deployed on the same cloud provider. You can't restore a backup to an on-premises ONTAP system or to a Cloud Volumes ONTAP system that is using a different cloud provider.
 
 * When backing up data protection (DP) volumes, the rule that is defined for the SnapMirror policy on the source volume must use a label that matches the allowed Backup to Cloud policy names of *daily*, *weekly*, or *monthly*. Otherwise the backup will fail for that DP volume.
 
@@ -191,11 +192,13 @@ FlexGroup volumes aren't currently supported.
 
 === Single File Restore limitations
 
-* Cross account restore requires manual action in the cloud provider console. See the AWS topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions^] for details.
+* Single file restore can restore individual files. There is currently no support for restoring folders/directories.
 
 * Single File Restore is supported only with AWS at this time.
 
-* The ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP system.
+* The ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP systems.
+
+* Cross account restore requires manual action in the cloud provider console. See the AWS topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions^] for details.
 
 * Non supported Configurations:
 ** Gov Cloud is not supported.

@@ -116,9 +116,11 @@ A Restore instance is deployed in your cloud providers' environment, and then it
 
 === Restoring a single file from a backup file
 
-Follow these steps to restore up to 8 files from a volume backup to a new volume. This functionality uses Live Browsing so that you can view the current list of directories and files within the backup file and within the destination volume.
+Follow these steps to restore up to 8 files from a volume backup to a new volume. This functionality uses Live Browsing so that you can view the current list of directories and files within the backup file.
 
 Note that the wording in the UI calls each backup file a "snapshot" because backup files are created using NetApp Snapshot technology.
+
+NOTE: The ONTAP version must be 9.6 or greater in your source and destination Cloud Volumes ONTAP systems.
 
 .Steps
 
