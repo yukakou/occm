@@ -41,7 +41,7 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 .Steps
 
-. On the Working Environments page, click *Add Working Environment* and follow the prompts.
+. On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP*.
 
@@ -223,7 +223,7 @@ NOTE: You must be an Account Admin to create a Connector. When you create your f
 
 .Steps
 
-. On the Working Environments page, click *Add Working Environment* and follow the prompts.
+. On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Google Cloud* and *Cloud Volumes ONTAP HA*.
 

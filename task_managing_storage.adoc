@@ -22,7 +22,7 @@ You can manage existing volumes as your storage needs change. You can view, edit
 
 .Steps
 
-. On the Working Environments page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
+. On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
 
 . Manage your volumes:
 +
@@ -107,7 +107,7 @@ If an aggregate is running out of space, you can move volumes to another aggrega
 
 .Steps
 
-. On the Working Environments page, double-click the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
+. On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
 
 . Click the menu icon and then click *Advanced > Advanced allocation*.
 . Manage your aggregates:

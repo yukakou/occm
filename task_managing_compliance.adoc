@@ -23,7 +23,7 @@ When you deactivate scans, Cloud Compliance no longer scans the data on the syst
 
 From the _Scan Configuration_ page, click the image:screenshot_gallery_options.gif[More button] button in the row for the working environment, and then click *Deactivate Compliance*.
 
-image:screenshot_deactivate_compliance_scan.png[A screenshot of the action icon where you can select Deactivate scan. This option is available after you select a working environment from the Working Environments page.]
+image:screenshot_deactivate_compliance_scan.png[A screenshot of the action icon where you can select Deactivate scan. This option is available after you select a working environment from the Canvas page.]
 
 TIP: You can also disable compliance scans for a working environment from the Services panel when you select the working environment.
 

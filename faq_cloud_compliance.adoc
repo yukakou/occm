@@ -119,7 +119,7 @@ NOTE: Activating Cloud Compliance results in an immediate initial scan. Complian
 
 == How do I disable Cloud Compliance?
 
-You can disable Cloud Compliance from the Working Environments page after you select an individual working environment.
+You can disable Cloud Compliance from the Canvas page after you select an individual working environment.
 
 link:task_managing_compliance.html[Learn more].
 
@@ -145,7 +145,7 @@ No, but you can download status reports that you can share internally in your or
 
 Cloud Compliance provides out-of-the-box insights to your data. These insights can be extracted and used for your organization's needs.
 
-Additionally, you can use the "Data Fusion" capability to have Cloud Compliance scan your volumes and S3 buckets based on criteria found in specific columns in databases you are scanning -- essentially allowing you to make your own custom personal data types. 
+Additionally, you can use the "Data Fusion" capability to have Cloud Compliance scan your volumes and S3 buckets based on criteria found in specific columns in databases you are scanning -- essentially allowing you to make your own custom personal data types.
 
 link:task_controlling_private_data.html#creating-custom-personal-data-identifiers-from-your-databases[Learn more].
 
