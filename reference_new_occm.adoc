@@ -24,6 +24,18 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 * <<Cloud Tiering enhancements>>
 * <<Cloud Sync enhancements>>
 
+===
+
+* We've renamed the *Working Environments* tab to *Canvas*.
++
+This tab starts as a blank canvas and enables you to add working environments by deploying, allocating, and discovering storage across your hybrid cloud.
++
+image:screenshot_canvas.gif[A screenshot of the Canvas tab showing several types of working environments.]
+
+* It's now easier to navigate between Cloud Manager and Spot.
++
+A new *Storage Operations* section in Spot makes it easy to navigate to Cloud Manager. After you're done, you can get back to Spot from the *Compute* tab in Cloud Manager.
+
 === Cloud Sync enhancements
 
 * You can now manage data broker groups by adding a new data broker to a group, by viewing information about data brokers, and more.
