@@ -52,6 +52,14 @@ link:task_sync_creating_relationships.html[Learn how to create a new data broker
 
 * From the *Manage Data Brokers* page by creating a new data broker in an existing group
 
+.Things you should know
+
+* You can't add data brokers to a group that manages an encrypted sync relationship.
+
+* If you want to create a data broker in an existing group, the data broker must be an on-prem data broker or the same type of data broker.
++
+For example, if a group includes an AWS data broker, then you can create an AWS data broker or on-prem data broker in that group. You can't create an Azure data broker or GCP data broker because they aren't the same data broker type.
+
 .Steps to create a data broker in a new group
 
 . Click *Sync > Manage Data Brokers*.
@@ -109,6 +117,11 @@ image:screenshot_sync_data_broker_details.gif[A screenshot of information about 
 == Remove a data broker from a group
 
 You might remove a data broker from a group if it's no longer needed or if the initial deployment failed. This action only deletes the data broker from Cloud Sync's records. You'll need to manually delete the data broker and any additional cloud resources yourself.
+
+.Things you should know
+
+* Cloud Sync deletes a group when you remove the last data broker from the group.
+* You can't remove the last data broker from a group if there is a relationship using that group.
 
 .Steps
 
