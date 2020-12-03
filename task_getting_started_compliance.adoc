@@ -150,7 +150,7 @@ TIP: New volumes added to the working environment are automatically scanned only
 By default, data protection (DP) volumes are not scanned because they are not exposed externally and Cloud Compliance cannot access them. These are the destination volumes for SnapMirror operations from an on-premises ONTAP system or from a Cloud Volumes ONTAP system.
 
 Initially, the volume list identifies these volumes as _Type_ *DP* with the _Status_ *Not Scanning* and the _Required Action_ *Enable Access to DP volumes*.
-+
+
 image:screenshot_cloud_compliance_dp_volumes.png[A screenshot showing the Enable Access to DP Volumes button that you can select to scan data protection volumes.]
 
 .Steps
