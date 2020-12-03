@@ -33,7 +33,7 @@ NOTE: You must use Cloud Manager for all backup and restore operations. Any acti
 * Support for up to 1,019 backups of a single volume.
 * Restore data from a specific point in time.
 * Restore a volume or individual files to the source system or to a different system.
-* Browsable file catalogue for single file restore.
+* Browsable file catalog for single file restore.
 
 == Supported working environments and object storage providers
 
