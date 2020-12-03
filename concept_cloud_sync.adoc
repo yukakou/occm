@@ -110,4 +110,7 @@ The credentials are locally encrypted on the data broker machine using HashiCorp
 
 * Cloud Sync is not supported in China.
 
-* In addition to China, the Cloud Sync data broker is not supported in the Azure US DoD region.
+* In addition to China, the Cloud Sync data broker is not supported in the following regions:
+** AWS GovCloud (US)
+** Azure US Gov
+** Azure US DoD
