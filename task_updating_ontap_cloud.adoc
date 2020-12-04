@@ -65,7 +65,7 @@ For details, see <<Downgrading Cloud Volumes ONTAP by using a local image>>.
 
 Before performing an upgrade or downgrade, you must verify that your systems are ready and make any required configuration changes.
 
-* <<Understanding supported upgrade paths>>
+* <<Understanding supported upgrade and downgrade paths>>
 * <<Planning for downtime>>
 * <<Verifying that automatic giveback is still enabled>>
 * <<Suspending SnapMirror transfers>>
