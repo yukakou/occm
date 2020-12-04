@@ -15,6 +15,10 @@ summary: This page highlights _important_ changes in Cloud Manager that can help
 [.lead]
 This page highlights important changes in Cloud Manager that can help you use the service as we introduce new enhancements. You should continue to read the link:reference_new_occm.html[What's new] page to learn about all new features and enhancements.
 
+== Cloud Volumes ONTAP AMI change
+
+Starting with the 9.8 release, the Cloud Volumes ONTAP PAYGO AMI is no longer available in the AWS Marketplace. If you use the Cloud Manager API to deploy Cloud Volumes ONTAP PAYGO, you'll need to first https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to the Cloud Manager subscription in the AWS Marketplace^] before deploying a 9.8 system.
+
 == SaaS changes
 
 We have introduced a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
