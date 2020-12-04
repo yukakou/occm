@@ -50,7 +50,7 @@ image:screenshot_backup_to_s3_restore_options.gif[A screenshot that shows the de
 
 .Result
 
-Cloud Manager creates a new volume based on the backup you selected. You can link:task_managing_storage.html#managing-existing-volumes[manage this new volume^] as required.
+Cloud Manager creates a new volume based on the backup you selected and you are directed to that working environment so you can view the restore progress. You can link:task_managing_storage.html#managing-existing-volumes[manage this new volume^] as required.
 
 == Restoring files from a backup
 

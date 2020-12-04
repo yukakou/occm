@@ -91,7 +91,7 @@ You need to have a Service Account in your Google Cloud Project that has the pre
 
 Backup to Cloud can be enabled when you complete the working environment wizard to create a new Cloud Volumes ONTAP system.
 
-You must have a Service Account already configured.
+You must have a Service Account already configured. If you don’t select a service account when you create the Cloud Volumes ONTAP system, then you’ll need to turn off the system and add the service account to Cloud Volumes ONTAP from the GCP console.
 
 See link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP] for requirements and details for creating your Cloud Volumes ONTAP system.
 

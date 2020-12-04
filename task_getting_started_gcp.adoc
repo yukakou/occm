@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_getting_started_gcp.html
-keywords: google cloud platform, gcp, deploy cloud manager, launch cloud manager, create cloud manager, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, storage access key, gcp role, role, iam role, permissions, gcp permissions
+keywords: google cloud platform, gcp, deploy cloud manager, launch cloud manager, create cloud manager, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, backup to cloud, storage access key, gcp role, role, iam role, permissions, gcp permissions
 summary: Get started with Cloud Volumes ONTAP for GCP in a few steps.
 ---
 
@@ -44,10 +44,10 @@ This step is important because the Connector can't manage Cloud Volumes ONTAP wi
 [role="quick-margin-para"]
 link:reference_networking_gcp.html[Learn more about networking requirements].
 
-==== image:number4.png[Number 4] Set up GCP for data tiering
+==== image:number4.png[Number 4] Set up GCP for data tiering and Backup to Cloud
 
 [role="quick-margin-para"]
-Two requirements must be met to tier cold data from Cloud Volumes ONTAP to low-cost object storage (a Google Cloud Storage bucket):
+Two requirements must be met to tier cold data from Cloud Volumes ONTAP to low-cost object storage (a Google Cloud Storage bucket). Option b. is a requirement to backup up volumes from Cloud Volumes ONTAP to low-cost object storage:
 
 [role="quick-margin-list"]
 .. https://cloud.google.com/vpc/docs/configure-private-google-access[Configure the Cloud Volumes ONTAP subnet for Private Google Access^].
