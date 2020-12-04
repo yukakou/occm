@@ -42,14 +42,14 @@ A new *Storage Operations* section in Spot enables you to navigate directly to C
 
 === Cloud Volumes ONTAP AMI change
 
-Starting with the 9.8 release, the Cloud Volumes ONTAP PAYGO AMI is no longer available in the AWS Marketplace. If you use the Cloud Manager API to deploy Cloud Volumes ONTAP PAYGO, you'll need to first https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to the Cloud Manager subscription in the AWS Marketplace^] before deploying a 9.8 system.
+Starting with the 9.8 release, the Cloud Volumes ONTAP PAYGO AMI is no longer available in the AWS Marketplace. If you use the Cloud Manager API to deploy Cloud Volumes ONTAP PAYGO, you'll need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to the Cloud Manager subscription in the AWS Marketplace^] before deploying a 9.8 system.
 
 === Backup to Cloud enhancements
 
-* You now have the ability to restore individual files from a backup file
+* You now have the ability to restore individual files from a backup file.
 - If you need to restore a few files from a certain point in time, now you can just restore those files instead of having to restore the whole volume.
 - You can restore the files to a volume in the same working environment, or to a volume in a different working environment that’s using the same cloud account.
-- This single file restore option relies on a new Cloud Restore instance that is deployed in your environment. link:https://review.docs.netapp.com/us-en/occm_b2c_dec20_changes/task_restore_backups.html#restoring-files-from-a-backup[Go here for details about this new functionality.]
+- This single file restore option relies on a new Cloud Restore instance that is deployed in your environment. link:task_restore_backups.html#restoring-files-from-a-backup[Go here for details about this new functionality.]
 
 * You can configure Backup to Cloud in a Google Cloud environment now while deploying a new Cloud Volumes ONTAP system. In the past you could only configure Backup to Cloud on existing Cloud Volumes ONTAP systems.
 
@@ -65,15 +65,15 @@ If you have discovered your on-prem clusters in Cloud Manager, now you can run C
 +
 If you plan to scan on-premises ONTAP cluster data, now you can install Cloud Compliance on-premises as well. It is still integrated in the Cloud Manager UI and it can still be used to scan other working environments, including cloud based volumes, buckets, and databases.
 +
-link:https://review.docs.netapp.com/us-en/occm_cc_dec20_changes/task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[See the prerequisites and installation steps here].
+link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[See the prerequisites and installation steps here].
 
 * Ability to easily scan CIFS data protection volumes
 +
-In the past you have been able to scan NFS DP volumes. This release allows you to easily scan CIFS DP volumes directly within Cloud Compliance. link:https://review.docs.netapp.com/us-en/occm_cc_dec20_changes/task_getting_started_compliance.html#scanning-data-protection-volumes[Learn how].
+In the past you have been able to scan NFS DP volumes. This release allows you to easily scan CIFS DP volumes directly within Cloud Compliance. link:task_getting_started_compliance.html#scanning-data-protection-volumes[Learn how].
 
-* New "Highlights" feature provides a predefined selection of combination filters that return results in the Investigation page
+* A new "Highlights" feature provides a predefined selection of combination filters that return results in the Investigation page
 +
-Ten highlights are available with this release. For example, the "HIPAA – Stale data over 30 days" highlight identifies files that contain Health information that is over 30 days old. link:https://review.docs.netapp.com/us-en/occm_cc_dec20_changes/task_controlling_private_data.html#using-highlights-to-quickly-view-results-in-the-investigation-page[See the full list of predefined highlights].
+Ten highlights are available with this release. For example, the "HIPAA – Stale data over 30 days" highlight identifies files that contain Health information that is over 30 days old. link:task_controlling_private_data.html#using-highlights-to-quickly-view-results-in-the-investigation-page[See the full list of predefined highlights].
 +
 You can select Highlights from a tab in the Compliance Dashboard and as a filter in the Investigation page.
 
@@ -81,9 +81,9 @@ You can select Highlights from a tab in the Compliance Dashboard and as a filter
 +
 Cloud Compliance can now find Political Opinions Reference and Civil Law Reference in files.
 
-* New filter for "file size" available from the Investigation page to refine your search results for files of a certain size.
+* A new filter for "file size" is available from the Investigation page to refine your search results for files of a certain size
 +
-Note that the list of required endpoints for Cloud Compliance deployments has been revised based on cloud provider. Link: https://review.docs.netapp.com/us-en/occm_cc_dec20_changes/task_deploy_cloud_compliance.html#reviewing-prerequisites[Review this list for AWS, Azure, and on-prem requirements].
+Note that the list of required endpoints for Cloud Compliance deployments has been revised based on cloud provider. link:task_deploy_cloud_compliance.html#reviewing-prerequisites[Review this list for AWS, Azure, and on-prem requirements].
 
 === Cloud Tiering enhancements
 
@@ -91,7 +91,7 @@ Note that the list of required endpoints for Cloud Compliance deployments has be
 +
 image:screenshot_tiering_modify_volumes.gif[A screenshot that shows multiple volumes selected and the Modify selected volumes button.]
 
-* Cloud Tiering now provides an aggregated view of data tiering from each of your on-premises clusters. This overview provides a clear picture of your environment and enables you to take proper actions.
+* Cloud Tiering now provides an aggregated view of data tiering from each of your on-premises clusters. This overview provides a clear picture of your environment and enables you to take proper actions. link:task_tiering_onprem_overview.html[Learn more about this page].
 +
 image:screenshot_tiering_onprem_overview.gif[A screenshot of the On-Prem Overview page.]
 
