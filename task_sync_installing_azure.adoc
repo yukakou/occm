@@ -19,7 +19,7 @@ You also have the option to install the data broker on an existing Linux host in
 
 == Supported Azure regions
 
-All regions are supported except for the China and US DoD regions.
+All regions are supported except for the China, US Gov, and US DoD regions.
 
 == Networking requirements
 
