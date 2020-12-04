@@ -15,6 +15,10 @@ summary: Support from NetApp is included with Cloud Volumes ONTAP Explore, Stand
 [.lead]
 Support from NetApp is included with Cloud Volumes ONTAP Explore, Standard, and Premium systems, but you must first activate support by registering the systems with NetApp.
 
+Registering a PAYGO system with NetApp is required to upgrade ONTAP software using any of the methods link:task_updating_ontap_cloud.html[described on this page].
+
+TIP: A system that isn't registered for support will still receive the software update notifications that appear in Cloud Manager when a new version is available. But you will need to register the system before you can upgrade the software.
+
 .Steps
 
 . If you have not yet added your NetApp Support Site account to Cloud Manager, go to *Account Settings* and add it now.
