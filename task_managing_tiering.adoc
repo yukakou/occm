@@ -25,15 +25,15 @@ Set up data tiering for additional volumes at any time--for example, after creat
 
 . From the *Cluster Dashboard*, click *Tier Volumes* for the cluster.
 
-. For each volume, click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon, select a tiering policy, optionally adjust the cooling days, and click *Apply*.
+. On the *Tier Volumes* page, set up tiering for each volume.
 +
 link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
 +
-image:screenshot_volumes_select_snapshot.gif[A screenshot that shows the Snapshot used size in the Tier Volumes page.]
+* To select a tiering policy for just one volume, click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon, select a tiering policy, optionally adjust the cooling days.
++
+image:screenshot_tiering_modify_volume.gif[A screenshot that shows the edit icon for a volume.]
 +
 TIP: You don't need to configure the object storage because it was already configured when you initially set up tiering for the cluster. ONTAP will tier inactive data from these volumes to the same object store.
-
-. When you're done, click *Close*.
 
 == Changing a volume's tiering policy
 
