@@ -163,11 +163,11 @@ Selecting the correct IPspace ensures that Cloud Tiering can set up a connection
 +
 link:concept_cloud_tiering.html#volume-tiering-policies[Learn more about volume tiering policies].
 +
-* To select a tiering policy for just one volume, click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon, select a tiering policy, optionally adjust the cooling days.
+* To select a tiering policy for just one volume, click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon, select a tiering policy, and optionally adjust the cooling days.
 +
 image:screenshot_tiering_modify_volume.gif[A screenshot that shows the edit icon for a volume.]
 
-* To select a tiering polciy for multiple volumes, click the checkbox in the first column, click *Modify selected volumes*, select a tiering policy, and optionally adjust the cooling days.
+* To select a tiering policy for several volumes, select multiple volumes, click *Modify selected volumes*, select a tiering policy, and optionally adjust the cooling days.
 +
 image:screenshot_tiering_modify_volumes.gif[A screenshot that shows multiple volumes selected and the Modify selected volumes button.]
 
