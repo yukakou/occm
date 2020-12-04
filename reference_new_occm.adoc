@@ -22,6 +22,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 == Cloud Manager 3.9.1 (6 Dec 2020)
 
 * <<General enhancements>>
+* <<Cloud Volumes ONTAP AMI change>>
 * <<Backup to Cloud enhancements>>
 * <<Cloud Compliance enhancements>>
 * <<Cloud Tiering enhancements>>
@@ -38,6 +39,10 @@ image:screenshot_canvas.gif[A screenshot of the Canvas tab showing several types
 * It's now easier to navigate between Cloud Manager and Spot.
 +
 A new *Storage Operations* section in Spot enables you to navigate directly to Cloud Manager. After you're done, you can get back to Spot from the *Compute* tab in Cloud Manager.
+
+=== Cloud Volumes ONTAP AMI change
+
+Starting with the 9.8 release, the Cloud Volumes ONTAP PAYGO AMI is no longer available in the AWS Marketplace. If you use the Cloud Manager API to deploy Cloud Volumes ONTAP PAYGO, you'll need to first https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to the Cloud Manager subscription in the AWS Marketplace^] before deploying a 9.8 system.
 
 === Backup to Cloud enhancements
 
