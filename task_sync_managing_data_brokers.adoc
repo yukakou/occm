@@ -102,7 +102,9 @@ Cloud Sync provides the following details about a data broker:
 * Network: Region, network, subnet, private IP, etc.
 * Software: Linux distribution, data broker version, etc.
 * Hardware: CPU and RAM
-* Configuration: ??
+* Configuration: Details about the data broker's two kinds of main processes--scanner and transferrer
++
+TIP: The scanner scans the source and target and decides what should be copied. The transferrer does the actual copying. NetApp personnel might use these configuration details to suggest actions that can optimize performance.
 
 .Steps
 
