@@ -61,6 +61,8 @@ For iSCSI, Cloud Volumes ONTAP uses multipath I/O (MPIO) and Asymmetric Logical 
 
 NOTE: For information about which specific host configurations support ALUA, see the http://mysupport.netapp.com/matrix[NetApp Interoperability Matrix Tool^] and the Host Utilities Installation and Setup Guide for your host operating system.
 
+Storage takeover, resync, and giveback are all automatic by default. No user action is required.
+
 == Storage configurations
 
 You can use an HA pair as an active-active configuration, in which both nodes serve data to clients, or as an active-passive configuration, in which the passive node responds to data requests only if it has taken over storage for the active node.

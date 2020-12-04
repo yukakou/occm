@@ -39,6 +39,8 @@ If a node goes down, the other node can serve data for its partner to provide co
 
 After the node reboots, the partner must resync data before it can return the storage. The time that it takes to resync data depends on how much data was changed while the node was down.
 
+Storage takeover, resync, and giveback are all automatic by default. No user action is required.
+
 == RPO and RTO
 
 An HA configuration maintains high availability of your data as follows:
