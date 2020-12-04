@@ -21,10 +21,13 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.1 (6 Dec 2020)
 
+* <<General enhancements>>
+* <<Backup to Cloud enhancements>>
+* <<Cloud Compliance enhancements>>
 * <<Cloud Tiering enhancements>>
 * <<Cloud Sync enhancements>>
 
-===
+=== General enhancements
 
 * We've renamed the *Working Environments* tab to *Canvas*.
 +
@@ -36,6 +39,57 @@ image:screenshot_canvas.gif[A screenshot of the Canvas tab showing several types
 +
 A new *Storage Operations* section in Spot enables you to navigate directly to Cloud Manager. After you're done, you can get back to Spot from the *Compute* tab in Cloud Manager.
 
+=== Backup to Cloud enhancements
+
+* You now have the ability to restore individual files from a backup file
+- If you need to restore a few files from a certain point in time, now you can just restore those files instead of having to restore the whole volume.
+- You can restore the files to a volume in the same working environment, or to a volume in a different working environment that’s using the same cloud account.
+- This single file restore option relies on a new Cloud Restore instance that is deployed in your environment. link:https://review.docs.netapp.com/us-en/occm_b2c_dec20_changes/task_restore_backups.html#restoring-files-from-a-backup[Go here for details about this new functionality.]
+
+* You can configure Backup to Cloud in a Google Cloud environment now while deploying a new Cloud Volumes ONTAP system. In the past you could only configure Backup to Cloud on existing Cloud Volumes ONTAP systems.
+
+* Now you can restore volumes that you had backed up from on-prem ONTAP systems to Cloud Volumes ONTAP systems deployed in AWS or Azure.
+
+=== Cloud Compliance enhancements
+
+* Ability to scan data directly from your on-premises ONTAP clusters
++
+If you have discovered your on-prem clusters in Cloud Manager, now you can run Compliance scans directly on those volumes. No longer do you have to copy those volumes to a Cloud Volumes ONTAP system before you can run a Compliance scan.
+
+* Ability to install Cloud Compliance in your on-premises location
++
+If you plan to scan on-premises ONTAP cluster data, now you can install Cloud Compliance on-premises as well. It is still integrated in the Cloud Manager UI and it can still be used to scan other working environments, including cloud based volumes, buckets, and databases.
++
+link:https://review.docs.netapp.com/us-en/occm_cc_dec20_changes/task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[See the prerequisites and installation steps here].
+
+* Ability to easily scan CIFS data protection volumes
++
+In the past you have been able to scan NFS DP volumes. This release allows you to easily scan CIFS DP volumes directly within Cloud Compliance. link:https://review.docs.netapp.com/us-en/occm_cc_dec20_changes/task_getting_started_compliance.html#scanning-data-protection-volumes[Learn how].
+
+* New "Highlights" feature provides a predefined selection of combination filters that return results in the Investigation page
++
+Ten highlights are available with this release. For example, the "HIPAA – Stale data over 30 days" highlight identifies files that contain Health information that is over 30 days old. link:https://review.docs.netapp.com/us-en/occm_cc_dec20_changes/task_controlling_private_data.html#using-highlights-to-quickly-view-results-in-the-investigation-page[See the full list of predefined highlights].
++
+You can select Highlights from a tab in the Compliance Dashboard and as a filter in the Investigation page.
+
+* Two new sensitive personal data types
++
+Cloud Compliance can now find Political Opinions Reference and Civil Law Reference in files.
+
+* New filter for "file size" available from the Investigation page to refine your search results for files of a certain size.
++
+Note that the list of required endpoints for Cloud Compliance deployments has been revised based on cloud provider. Link: https://review.docs.netapp.com/us-en/occm_cc_dec20_changes/task_deploy_cloud_compliance.html#reviewing-prerequisites[Review this list for AWS, Azure, and on-prem requirements].
+
+=== Cloud Tiering enhancements
+
+* You can now change the tiering policy for multiple volumes at the same time.
++
+image:screenshot_tiering_modify_volumes.gif[A screenshot that shows multiple volumes selected and the Modify selected volumes button.]
+
+* Cloud Tiering now provides an aggregated view of data tiering from each of your on-premises clusters. This overview provides a clear picture of your environment and enables you to take proper actions.
++
+image:screenshot_tiering_onprem_overview.gif[A screenshot of the On-Prem Overview page.]
+
 === Cloud Sync enhancements
 
 * You can now manage data broker groups.
@@ -44,7 +98,9 @@ Grouping data brokers together can help improve the performance of sync relation
 +
 link:task_sync_managing_data_brokers.html[Learn how to manage data brokers].
 
-* Cloud Sync now supports ONTAP S3 Storage to ONTAP S3 Storage sync relationships.
+* Cloud Sync now supports an ONTAP S3 Storage to ONTAP S3 Storage sync relationship.
++
+link:reference_sync_requirements.html[View the entire list of supported sources and targets.]
 
 == Cloud Manager 3.9 Update (18 Nov 2020)
 
