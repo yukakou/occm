@@ -76,6 +76,8 @@ Review the following prerequisites to make sure that you have a supported config
 Enable outbound internet access from Cloud Compliance::
 Cloud Compliance requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the Cloud Compliance instance has outbound internet access to contact the following endpoints. When you deploy Cloud Compliance in the cloud, it is located in the same subnet as the Connector.
 +
+Review the appropriate table below depending on whether you are deploying Cloud Compliance in AWS, Azure, or on-premises.
++
 *Required endpoints for AWS deployments:*
 +
 [cols="43,57",options="header"]
@@ -228,13 +230,17 @@ NOTE: Cloud Compliance is currently unable to scan S3 buckets and Azure NetApp F
 
 *	Make sure port 8080 is open so you can see the installation progress in Cloud Manager.
 
-See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Compliance must be able to reach over the internet.
-
-.About this task
-
 * Root privileges are required to install Cloud Compliance.
 
+See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of requirements and endpoints that Cloud Compliance must be able to reach over the internet.
+
 .Steps
+
+// . Download the Cloud Compliance software from the https://mysupport.netapp.com/site/products/all/details/cloud-compliance/downloads-tab[NetApp Support Site^].
+//
+. Send an email to mailto:ng-contact-cloud-compliance@netapp.com?subject=Request-for-Compliance-On-Premises-Installer[the Cloud Compliance team at NetApp] and we’ll send you the link to download the installer file.
+
+. Copy the installer file to the Linux host you plan to use (using `scp` or some other method).
 
 . In Cloud Manager, click *Compliance*.
 
@@ -245,8 +251,6 @@ image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting th
 . In the _Deploying Cloud Compliance On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later. For example:
 +
  sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
-
-. Download the Cloud Compliance software from the https://mysupport.netapp.com/site/products/all/details/cloud-compliance/downloads-tab[NetApp Support Site^], and then copy it to the Linux host (using `scp` or some other method).
 
 . Unzip the installer file on the host machine:
 +
@@ -268,18 +272,8 @@ c. Enter proxy details as prompted. If your Cloud Manager already uses a proxy, 
 | Alternatively, you can create the whole command in advance and enter it in the first prompt:
 `sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <cc_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
 |===
+
 +
-// .. Paste the information you copied from step 3.
-// +
-// sudo ./install.sh -a <account_id> -c <agent_id> -t <token>
-//
-// .. Enter the IP address or host name of the Compliance host machine, as it will be accessed by the Connector instance.
-// .. Enter proxy details as prompted by the installer. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Cloud Compliance will automatically use the proxy used by Cloud Manager.
-// +
-// Alternatively, you can create the whole command in advance and input it in the first prompt:
-// +
-//  sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <cc_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>
-//
 Variable values:
 
 * _account_id_ = NetApp Account ID
@@ -294,7 +288,9 @@ Variable values:
 
 .Result
 
-The Cloud Compliance installer installs packages, installs docker, registers the installation, and installs Cloud Compliance. Installation can take up to 10 to 20 minutes. If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Compliance tab in Cloud Manager.
+The Cloud Compliance installer installs packages, installs docker, registers the installation, and installs Cloud Compliance. Installation can take 10 to 20 minutes.
+
+If there is connectivity over port 8080 between the host machine and the Connector instance, you will see the installation progress in the Compliance tab in Cloud Manager.
 
 .What's Next
 From the Scan Configuration page you can select the data sources that you want to scan.
