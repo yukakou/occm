@@ -18,7 +18,7 @@ This FAQ can help if you’re just looking for a quick answer to a question.
 
 == What is Cloud Compliance?
 
-Cloud Compliance is a cloud offering that uses Artificial Intelligence (AI) driven technology to help organizations understand data context and identify sensitive data across your Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS or Azure, Amazon S3 buckets, and databases.
+Cloud Compliance is a cloud offering that uses Artificial Intelligence (AI) driven technology to help organizations understand data context and identify sensitive data across your storage systems. The systems can be Azure NetApp Files configurations, Cloud Volumes ONTAP systems hosted in AWS or Azure, Amazon S3 buckets, on-prem ONTAP systems, and databases.
 
 Cloud Compliance provides pre-defined parameters (such as sensitive information types and categories) to address new data compliance regulations for data privacy and sensitivity, such as GDPR, CCPA, HIPAA, and more.
 
@@ -40,11 +40,11 @@ https://cloud.netapp.com/cloud-compliance[Learn more about the use cases for Clo
 
 == What types of data can be scanned with Cloud Compliance?
 
-Cloud Compliance supports scanning of unstructured data over NFS and CIFS protocols that are managed by Cloud Volumes ONTAP and Azure NetApp Files. Cloud Compliance can also scan data stored on Amazon S3 buckets.
+Cloud Compliance supports scanning of unstructured data over NFS and CIFS protocols that are managed by Cloud Volumes ONTAP and Azure NetApp Files. Cloud Compliance can also scan data stored on Amazon S3 buckets and on-prem ONTAP systems.
 
 Additionally, Cloud Compliance can scan databases that are located anywhere - they are not required to be managed by Cloud Manager.
 
-link:concept_cloud_compliance.html#how-scans-work[Learn how scans work].
+link:concept_cloud_compliance.html#how-scans-work[Learn how scans work^].
 
 == Which cloud providers are supported?
 
@@ -58,7 +58,7 @@ Cloud Compliance is operated and managed through Cloud Manager. You can access C
 
 Cloud Compliance deploys another layer of Artificial Intelligence alongside your Cloud Manager system and storage systems. It then scans the data on volumes, buckets, and databases and indexes the data insights that are found.
 
-link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works].
+link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works^].
 
 == How much does Cloud Compliance cost?
 
@@ -68,7 +68,7 @@ The cost to use Cloud Compliance depends on the amount of data that you're scann
 
 Data changes frequently, so Cloud Compliance scans your data continuously with no impact to your data. While the initial scan of your data might take longer, subsequent scans only scan the incremental changes, which reduces system scan times.
 
-link:concept_cloud_compliance.html#how-scans-work[Learn how scans work].
+link:concept_cloud_compliance.html#how-scans-work[Learn how scans work^].
 
 == Does Cloud Compliance offer reports?
 
@@ -76,15 +76,15 @@ Yes. The information offered by Cloud Compliance can be relevant to other stakeh
 
 The following reports are available for Cloud Compliance:
 
-Privacy Risk Assessment report:: Provides privacy insights from your data and a privacy risk score. link:task_generating_compliance_reports.html[Learn more].
+Privacy Risk Assessment report:: Provides privacy insights from your data and a privacy risk score. link:task_generating_compliance_reports.html[Learn more^].
 
-Data Subject Access Request report:: Enables you to extract a report of all files that contain information regarding a data subject’s specific name or personal identifier. link:task_responding_to_dsar.html[Learn more].
+Data Subject Access Request report:: Enables you to extract a report of all files that contain information regarding a data subject’s specific name or personal identifier. link:task_responding_to_dsar.html[Learn more^].
 
-PCI DSS report:: Helps you identify the distribution of credit card information across your files. link:task_generating_compliance_reports.html[Learn more].
+PCI DSS report:: Helps you identify the distribution of credit card information across your files. link:task_generating_compliance_reports.html[Learn more^].
 
-HIPAA report:: Helps you identify the distribution of health information across your files. link:task_generating_compliance_reports.html[Learn more].
+HIPAA report:: Helps you identify the distribution of health information across your files. link:task_generating_compliance_reports.html[Learn more^].
 
-Reports on a specific information type:: Reports are available that include details about the identified files that contain personal data and sensitive personal data. You can also see files broken down by category and file type. link:task_controlling_private_data.html[Learn more].
+Reports on a specific information type:: Reports are available that include details about the identified files that contain personal data and sensitive personal data. You can also see files broken down by category and file type. link:task_controlling_private_data.html[Learn more^].
 
 == What type of instance or VM is required for Cloud Compliance?
 
@@ -94,9 +94,11 @@ Reports on a specific information type:: Reports are available that include deta
 +
 In regions where m5.4xlarge isn't available, Cloud Compliance runs on an m4.4xlarge instance instead.
 
-NOTE: Changing or resizing the instance/VM type isn't supported. You need to use the default size that's provided.
+Starting in December 2020, you can download and install Compliance software on a Linux host in your network or in the cloud. Everything works the same and you continue to manage your scan configuration and results through Cloud Manager. See link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[Deploying Cloud Compliance on premises^] for system requirements and installation details.
 
-link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works].
+NOTE: Cloud Compliance is currently unable to scan S3 buckets and ANF files when it is installed on premises.
+
+link:concept_cloud_compliance.html[Learn more about how Cloud Compliance works^].
 
 == Does scan performance vary?
 
@@ -113,7 +115,7 @@ When Cloud Compliance detects Personal Identifiable Information (PII), or when i
 
 First you need to deploy an instance of Cloud Compliance in Cloud Manager. Once the instance is running, you can enable it on existing working environments and databases from the *Compliance* tab or by selecting a specific working environment.
 
-link:task_getting_started_compliance.html[Learn how to get started].
+link:task_getting_started_compliance.html[Learn how to get started^].
 
 NOTE: Activating Cloud Compliance results in an immediate initial scan. Compliance results display shortly after.
 
@@ -121,7 +123,7 @@ NOTE: Activating Cloud Compliance results in an immediate initial scan. Complian
 
 You can disable Cloud Compliance from the Working Environments page after you select an individual working environment.
 
-link:task_managing_compliance.html[Learn more].
+link:task_managing_compliance.html[Learn more^].
 
 NOTE: To completely remove the Cloud Compliance instance, you can manually remove the Cloud Compliance instance from your cloud provider's portal.
 
@@ -131,11 +133,13 @@ You might want to enable Cloud Compliance on a Cloud Volumes ONTAP system that t
 
 The compliance scan doesn't heat up the cold data--it stays cold and tiered to object storage.
 
-== Can I use Cloud Compliance to scan on-premise ONTAP storage?
+== Can I use Cloud Compliance to scan on-premises ONTAP storage?
 
-Scanning the data directly from an on-premises ONTAP working environment isn’t supported. But you can scan your on-premises ONTAP data by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then activating compliance on those volumes. We're planning to support Cloud Compliance with additional cloud offerings such as Cloud Volumes Service. 
+Yes. As long as you have discovered the on-prem ONTAP cluster as a working environment in Cloud Manager, you can scan any of the volume data.
 
-link:task_scanning_onprem.html[Learn more].
+You can also scan your on-premises ONTAP data by replicating the on-prem NFS or CIFS data to a Cloud Volumes ONTAP working environment and then activating compliance on the data protection volumes.  
+
+link:task_getting_started_compliance.html[Learn more^].
 
 == Can Cloud Compliance send notifications to my organization?
 
@@ -145,9 +149,9 @@ No, but you can download status reports that you can share internally in your or
 
 Cloud Compliance provides out-of-the-box insights to your data. These insights can be extracted and used for your organization's needs.
 
-Additionally, you can use the "Data Fusion" capability to have Cloud Compliance scan your volumes and S3 buckets based on criteria found in specific columns in databases you are scanning -- essentially allowing you to make your own custom personal data types. 
+Additionally, you can use the *Data Fusion* capability to have Cloud Compliance scan all your data based on criteria found in specific columns in databases you are scanning -- essentially allowing you to make your own custom personal data types.
 
-link:task_controlling_private_data.html#creating-custom-personal-data-identifiers-from-your-databases[Learn more].
+link:task_controlling_private_data.html#creating-custom-personal-data-identifiers-from-your-databases[Learn more^].
 
 == Can I limit Cloud Compliance information to specific users?
 
@@ -155,4 +159,4 @@ Yes, Cloud Compliance is fully integrated with Cloud Manager. Cloud Manager user
 
 Additionally, if you want to allow certain users to just view Cloud Compliance scan results without having the ability to manage Cloud Compliance settings, you can assign those users the _Cloud Compliance Viewer_ role.
 
-link:concept_cloud_compliance.html#user-access-to-compliance-information[Learn more].
+link:concept_cloud_compliance.html#user-access-to-compliance-information[Learn more^].
