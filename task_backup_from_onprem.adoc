@@ -55,14 +55,14 @@ image:screenshot_backup_onprem_policy.png[A screenshot that shows the Backup to 
 [role="quick-margin-para"]
 Identify which volumes you want to back up from the cluster.
 
-// ==== image:number6.png[Number 6] Restore your data, as needed
-//
-// [role="quick-margin-para"]
-// From the Backup List, select a volume, select a backup, and then restore data from the backup to a new volume on a Cloud Volumes ONTAP system that is using the same cloud provider.
-//
-// [role="quick-margin-para"]
-// image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon for a backup after you select a volume.]
-//
+==== image:number6.png[Number 6] Restore your data, as needed
+
+[role="quick-margin-para"]
+From the Backup List, select a volume, select a backup, and then restore data from the backup to a new volume on a Cloud Volumes ONTAP system that is using the same cloud provider.
+
+[role="quick-margin-para"]
+image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon for a backup after you select a volume.]
+
 == Requirements
 
 Read the following requirements to make sure you have a supported configuration before you start backing up on-prem volumes to object storage.
@@ -188,4 +188,4 @@ Backup to Cloud starts taking the initial backups of each selected volume.
 
 .What's next?
 
-link:task_managing_backups.html[You can manage backups by changing the backup schedule, restoring volumes, and more^].
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
