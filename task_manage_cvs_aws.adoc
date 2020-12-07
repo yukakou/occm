@@ -50,7 +50,7 @@ image:screenshot_add_cvs_aws_credentials.png[A screenshot of adding credentials 
 
 .Result
 
-Cloud Manager displays your Cloud Volumes Service for AWS configuration on the Working Environments page.
+Cloud Manager displays your Cloud Volumes Service for AWS configuration on the Canvas page.
 
 image:screenshot_cvs_aws_cloud.gif[A screenshot of Cloud Volumes Service for AWS on the working environments page.]
 

@@ -68,7 +68,7 @@ You can configure fanout and cascade configurations in Cloud Manager by setting 
 
 .Steps
 
-. On the Working Environments page, select the working environment that contains the source volume, and then drag it to the working environment to which you want to replicate the volume:
+. On the Canvas page, select the working environment that contains the source volume, and then drag it to the working environment to which you want to replicate the volume:
 +
 image:screenshot_drag_and_drop.gif[Screen shot: Shows a working environment being placed on top of another working environment to start the data replication process.]
 
@@ -108,7 +108,7 @@ After you set up data replication between two systems, you can manage the data r
 
 .Steps
 
-. On the Working Environments page, view the replication status for all working environments in the workspace or for a specific working environment:
+. On the Canvas page, view the replication status for all working environments in the workspace or for a specific working environment:
 +
 [cols=2*,options="header",cols="15,85"]
 |===

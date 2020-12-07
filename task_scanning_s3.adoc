@@ -101,7 +101,7 @@ Enable Cloud Compliance on Amazon S3 after you verify the prerequisites.
 
 .Steps
 
-. At the top of Cloud Manager, click *Working Environments*.
+. At the top of Cloud Manager, click *Canvas*.
 
 . Select the Amazon S3 working environment.
 +
