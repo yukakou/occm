@@ -55,8 +55,6 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 
 | \https://repo.cloud.support.netapp.com | Used to download Cloud Manager dependencies.
 
-| \http://repo.mysql.com/ | Used to download MySQL.
-
 |
 \https://cognito-idp.us-east-1.amazonaws.com
 \https://cognito-identity.us-east-1.amazonaws.com
@@ -71,8 +69,6 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 | \https://cloudmanager.cloud.netapp.com | Communication with the Cloud Manager service, which includes Cloud Central accounts.
 
 | \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
-
-| \https://w86yt021u5.execute-api.us-east-1.amazonaws.com/production/whitelist | Used to add your AWS account ID to the list of allowed users for Backup to S3.
 
 |
 \https://support.netapp.com/aods/asupmessage
@@ -94,11 +90,6 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 | Enables NetApp to collect information needed to troubleshoot support issues.
 
 | \https://ipa-signer.cloudmanager.netapp.com | Enables Cloud Manager to generate licenses (for example, a FlexCache license for Cloud Volumes ONTAP)
-
-|
-\https://packages.cloud.google.com/yum
-\https://github.com/NetApp/trident/releases/download/
-| Required to connect Cloud Volumes ONTAP systems with a Kubernetes cluster. The endpoints enable installation of NetApp Trident.
 
 a| Various third-party locations, for example:
 
@@ -142,8 +133,6 @@ A Connector contacts the following endpoints when managing resources in Azure:
 
 | \https://repo.cloud.support.netapp.com | Used to download Cloud Manager dependencies.
 
-| \http://repo.mysql.com/ | Used to download MySQL.
-
 |
 \https://cognito-idp.us-east-1.amazonaws.com
 \https://cognito-identity.us-east-1.amazonaws.com
@@ -175,11 +164,6 @@ A Connector contacts the following endpoints when managing resources in Azure:
 | Enables NetApp to collect information needed to troubleshoot support issues.
 
 | \https://ipa-signer.cloudmanager.netapp.com | Enables Cloud Manager to generate licenses (for example, a FlexCache license for Cloud Volumes ONTAP)
-
-|
-\https://packages.cloud.google.com/yum
-\https://github.com/NetApp/trident/releases/download/
-| Required to connect Cloud Volumes ONTAP systems with a Kubernetes cluster. The endpoints enable installation of NetApp Trident.
 
 | *.blob.core.windows.net | Required for HA pairs when using a proxy.
 
@@ -213,8 +197,6 @@ A Connector contacts the following endpoints when managing resources in GCP:
 
 | \https://repo.cloud.support.netapp.com | Used to download Cloud Manager dependencies.
 
-| \http://repo.mysql.com/ | Used to download MySQL.
-
 |
 \https://cognito-idp.us-east-1.amazonaws.com
 \https://cognito-identity.us-east-1.amazonaws.com
@@ -246,11 +228,6 @@ A Connector contacts the following endpoints when managing resources in GCP:
 | Enables NetApp to collect information needed to troubleshoot support issues.
 
 | \https://ipa-signer.cloudmanager.netapp.com | Enables Cloud Manager to generate licenses (for example, a FlexCache license for Cloud Volumes ONTAP)
-
-|
-\https://packages.cloud.google.com/yum
-\https://github.com/NetApp/trident/releases/download/
-| Required to connect Cloud Volumes ONTAP systems with a Kubernetes cluster. The endpoints enable installation of NetApp Trident.
 
 a| Various third-party locations, for example:
 
@@ -315,8 +292,6 @@ There's no incoming traffic to the Connector, unless you initiate it. HTTP and H
 The security group for the Connector requires both inbound and outbound rules.
 
 ==== Inbound rules
-
-The source for inbound rules in the predefined security group is 0.0.0.0/0.
 
 [cols="10,10,80",width=100%,options="header"]
 |===
@@ -389,8 +364,6 @@ The security group for the Connector requires both inbound and outbound rules.
 
 ==== Inbound rules
 
-The source for inbound rules in the predefined security group is 0.0.0.0/0.
-
 [cols=3*,options="header,autowidth"]
 |===
 
@@ -459,8 +432,6 @@ NOTE: The source IP address is the Connector host.
 The firewall rules for the Connector requires both inbound and outbound rules.
 
 ==== Inbound rules
-
-The source for inbound rules in the predefined firewall rules is 0.0.0.0/0.
 
 [cols="10,10,80",width=100%,options="header"]
 |===

@@ -117,8 +117,6 @@ The Connector requires outbound internet access to manage resources and processe
 
 | \https://repo.cloud.support.netapp.com | Used to download Cloud Manager dependencies.
 
-| \http://repo.mysql.com/ | Used to download MySQL.
-
 |
 \https://cognito-idp.us-east-1.amazonaws.com
 \https://cognito-identity.us-east-1.amazonaws.com
@@ -143,11 +141,6 @@ The Connector requires outbound internet access to manage resources and processe
 | Communication with NetApp for system licensing and support registration.
 
 | \https://ipa-signer.cloudmanager.netapp.com | Enables Cloud Manager to generate licenses (for example, a FlexCache license for Cloud Volumes ONTAP)
-
-|
-\https://packages.cloud.google.com/yum
-\https://github.com/NetApp/trident/releases/download/
-| Required to connect Cloud Volumes ONTAP systems with a Kubernetes cluster. The endpoints enable installation of NetApp Trident.
 
 a| Various third-party locations, for example:
 
@@ -322,8 +315,6 @@ Meanwhile, the predefined firewall policy that Cloud Manager creates for instanc
 The firewall rules for the Connector requires both inbound and outbound rules.
 
 === Inbound rules
-
-The source for inbound rules in the predefined firewall rules is 0.0.0.0/0.
 
 [cols="10,10,80",width=100%,options="header"]
 |===
