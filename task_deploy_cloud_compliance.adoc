@@ -343,13 +343,11 @@ video::video_subscribing_azure.mp4[width=848, height=480]
 
 Cloud Compliance was added to the Azure Marketplace subscription named *NetApp Cloud Manager* as of October 7, 2020. If you already have the original Azure *Cloud Manager* subscription it will not allow you to use Cloud Compliance.
 
-You need to follow these steps to select the new *NetApp Cloud Manager* subscription and then remove the old *Cloud Manager* subscription.
+You need to follow these steps to change to the new *NetApp Cloud Manager* subscription before you can start using Cloud Compliance.
 
 NOTE: If your existing Subscription was issued with a special private offer, you need to contact NetApp so that we can issue a new special private offer with Compliance included.
 
 .Steps
-
-These steps are similar to adding a new subscription as described above, but vary in a few places.
 
 . In the upper right of the Cloud Manager console, click the Settings icon, and select *Credentials*.
 
@@ -357,18 +355,13 @@ These steps are similar to adding a new subscription as described above, but var
 +
 The details for your current Marketplace Subscription are displayed.
 
-. Click *Add Subscription*, click *Continue*, and follow the steps. You are redirected to Azure portal in order to create the new subscription.
+. Log in to the link:https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.SaaS%2Fsaasresources[Azure portal^] and select *Software as a Service (SaaS)*.
 
-. Make sure you select the plan *NetApp Cloud Manager* that provides access to Cloud Compliance and not *Cloud Manager*.
-
-. Go through the steps in the video to associate a Marketplace subscription to an Azure subscription:
+. Select the subscription for which you want to change the plan and click *Change Plan*.
 +
-video::video_subscribing_azure.mp4[width=848, height=480]
+image:screenshot_compliance_azure_subscription.png[A screenshot showing the list of all your Azure subscriptions and the details for the subscription you want to change.]
 
-. Return to Cloud Manager, select the new subscription, and click *Associate*.
+. In the Change Plan page, select the *NetApp Cloud Manager* plan and click the *Change Plan* button.
+image:screenshot_compliance_azure_change_plan.png[A screenshot of changing to the new plan that supports Cloud Compliance.]
 
-. To verify your subscription has changed, hover over the “i” above subscription in the Credentials card.
-+
-Now you can unsubscribe your old subscription from the Azure portal.
-
-. In the Azure portal, go to Software as a Service (SaaS), select the subscription, and click *Unsubscribe*.
+. Return to Cloud Manager, select the subscription, and hover over the “i” above subscription in the Credentials card to verify your subscription has changed.
