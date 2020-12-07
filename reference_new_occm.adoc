@@ -19,7 +19,7 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.1 (6 Dec 2020)
+== Cloud Manager 3.9.1 (7 Dec 2020)
 
 * <<General enhancements>>
 * <<Cloud Volumes ONTAP AMI change>>
@@ -87,7 +87,7 @@ Note that the list of required endpoints for Cloud Compliance deployments has be
 
 === Cloud Tiering enhancements
 
-* You can now change the tiering policy for multiple volumes at the same time.
+* You can now change the tiering policy and minimum cooling days for multiple volumes at the same time.
 +
 image:screenshot_tiering_modify_volumes.gif[A screenshot that shows multiple volumes selected and the Modify selected volumes button.]
 
