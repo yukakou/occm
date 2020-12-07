@@ -33,7 +33,7 @@ For example, you can downgrade from 9.7 to 9.6, but not from 9.7 to 9.5. So to g
 
 Cloud Manager displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:
 
-image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available notification which displays in the Working Environments page after you select a working environment.]
+image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment.]
 
 You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system. For details, see <<Upgrading Cloud Volumes ONTAP from Cloud Manager notifications>>.
 
@@ -135,13 +135,13 @@ Cloud Manager operations such as volume or aggregate creation must not be in pro
 
 .Steps
 
-. Click *Working Environments*.
+. Click *Canvas*.
 
 . Select a working environment.
 +
 A notification appears in the right pane if a new version is available:
 +
-image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available notification which displays in the Working Environments page after you select a working environment.]
+image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment.]
 
 . If a new version is available, click *Upgrade*.
 

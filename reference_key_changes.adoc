@@ -118,6 +118,11 @@ Starting with the 3.9 release, the service account for a Connector requires addi
 - compute.regionBackendServices.create
 - compute.regionBackendServices.get
 - compute.regionBackendServices.list
+
+==== New permissions for data tiering
+
+Starting with the 3.9 release, additional permissions are required to set a service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket.
+
 - iam.serviceAccounts.actAs
 - storage.objects.get
 - storage.objects.list

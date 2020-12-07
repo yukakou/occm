@@ -40,4 +40,4 @@ image:screenshot_settings_icon.gif[A screenshot that shows the Settings icon in 
 
 .Result
 
-Cloud Manager removes the working environment. Users can rediscover this working environment from the Working Environments page at any time.
+Cloud Manager removes the working environment. Users can rediscover this working environment from the Canvas page at any time.

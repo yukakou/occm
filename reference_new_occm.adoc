@@ -19,6 +19,25 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.1 (6 Dec 2020)
+
+* <<Cloud Tiering enhancements>>
+* <<Cloud Sync enhancements>>
+
+=== Cloud Sync enhancements
+
+* You can now manage data broker groups by adding a new data broker to a group, by viewing information about data brokers, and more.
++
+Grouping data brokers together can help improve the performance of sync relationships.
++
+link:task_managing_data_brokers.html[Learn how to manage data brokers].
+
+* Cloud Sync now supports ONTAP S3 Storage to ONTAP S3 Storage sync relationships.
+
+* The data broker is now supported in the following Government regions:
+** AWS GovCloud regions
+** Azure Government regions
+
 == Cloud Manager 3.9 Update (18 Nov 2020)
 
 Backup to Cloud is now supported on Cloud Volumes ONTAP in Google Cloud. Click link:task_backup_to_gcp.html[here] for details.

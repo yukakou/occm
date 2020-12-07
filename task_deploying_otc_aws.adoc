@@ -39,7 +39,7 @@ Immediately after you create the working environment, Cloud Manager launches a t
 
 .Steps
 
-. On the Working Environments page, click *Add Working Environment* and follow the prompts.
+. On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
 
@@ -236,7 +236,7 @@ Immediately after you create the working environment, Cloud Manager launches a t
 
 .Steps
 
-. On the Working Environments page, click *Add Working Environment* and follow the prompts.
+. On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Amazon Web Services* and *Cloud Volumes ONTAP Single Node*.
 

@@ -33,7 +33,7 @@ If you want to use CIFS in AWS, you must have set up DNS and Active Directory. F
 
 .Steps
 
-. On the Working Environments page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision FlexVol volumes.
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP system on which you want to provision FlexVol volumes.
 
 . Create a new volume on any aggregate or on a specific aggregate:
 +
@@ -112,7 +112,7 @@ By default, Cloud Manager creates volumes on the first node in an HA configurati
 
 .Steps
 
-. On the Working Environments page, double-click the name of the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP working environment on which you want to manage aggregates.
 
 . Click the menu icon and then click *Advanced > Advanced allocation*.
 
@@ -136,7 +136,7 @@ You can create aggregates yourself or let Cloud Manager do it for you when it cr
 
 .Steps
 
-. On the Working Environments page, double-click the name of the Cloud Volumes ONTAP instance on which you want to manage aggregates.
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP instance on which you want to manage aggregates.
 
 . Click the menu icon, and then click *Advanced > Advanced allocation*.
 
@@ -158,7 +158,7 @@ Note the following:
 
 .Steps
 
-. On the Working Environments page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
+. On the Canvas page, double-click the Cloud Volumes ONTAP working environment on which you want to manage volumes.
 
 . Select a volume, and then click *Target iQN*.
 
