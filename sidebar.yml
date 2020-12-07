@@ -347,6 +347,8 @@ entries:
         url: /task_licensing_cloud_tiering.html
       - title: Manage data tiering
         url: /task_managing_tiering.html
+      - title: Get an overview of tiering
+        url: /task_tiering_onprem_overview.html
       - title: FAQ
         url: /faq_cloud_tiering.html
       - title: Reference
