@@ -1,12 +1,14 @@
-sudo: false
 dist: xenial
+if: branch = master OR repo =~ /-internal/ OR repo =~ /-stage/
 language: ruby
 rvm:
 - 2.4.3
-if: branch = master OR repo =~ /-internal/ OR repo =~ /-stage/
+env:
+  global:
+    - FRAMEWORK_BRANCH=master
 before_install:
 - echo -e "machine github.com\n login $GH_TOKEN" > ~/.netrc && chmod 600 ~/.netrc
-- git submodule add https://github.com/NetAppDocs/jekyll dependencies/jekyll
+- git submodule add -b $FRAMEWORK_BRANCH https://github.com/NetAppDocs/jekyll dependencies/jekyll
 - gem update --system && gem install bundler && gem update bundler
 - if [[ -z "$DEPLOY_BRANCH" ]]; then export DEPLOY_BRANCH=gh-pages; fi
 - if [[ "$TRAVIS_BRANCH" =~ master && $TRAVIS_PULL_REQUEST -eq 0 && -z "$TRAVIS_PULL_REQUEST_BRANCH" ]]; then
@@ -20,6 +22,7 @@ before_install:
 script:
 - if [[ ! -z "$FEATURE_FLAG" ]]; then bundle exec rake buildAll; fi
 - mkdir -p /tmp/output && bundle exec jekyll build --trace --destination /tmp/output
+- touch /tmp/output/.nojekyll
 deploy:
   provider: pages
   skip_cleanup: true
