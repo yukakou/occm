@@ -128,7 +128,7 @@ You must have link:task_deploy_cloud_compliance.html[deployed an instance of Clo
 .. https://docs.netapp.com/us-en/occm/task_replicating_data.html[Create a SnapMirror replication between the on-premises ONTAP cluster and Cloud Volumes ONTAP from Cloud Manager^].
 
 .	From Cloud Manager, activate Cloud Compliance on the Cloud Volumes ONTAP working environment that contains the SnapMirror data:
-.. Click *Working Environments*.
+.. Click *Canvas*.
 .. Select the working environment that contains the SnapMirror data and click *Enable Compliance*.
 +
 link:task_getting_started_compliance.html[Click here if you need help with enabling Cloud Compliance on a Cloud Volumes ONTAP system^].

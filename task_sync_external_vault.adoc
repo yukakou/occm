@@ -1,0 +1,176 @@
+---
+sidebar: sidebar
+permalink: task_external_vault.html
+keywords: hashicorp, vault, credentials, secrets, API
+summary: When you create a sync relationship that requires Amazon S3, Azure, or Google Cloud credentials, you need to specify those credentials through the Cloud Sync user interface or API. An alternative is to set up the data broker to access the credentials directly from an external HashiCorp Vault.
+---
+
+= Setting up the data broker to use an external HashiCorp Vault
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+When you create a sync relationship that requires Amazon S3, Azure, or Google Cloud credentials, you need to specify those credentials through the Cloud Sync user interface or API. An alternative is to set up the data broker to access the credentials (or _secrets_) directly from an external HashiCorp Vault.
+
+This feature is supported through the Cloud Sync API with sync relationships that require Amazon S3, Azure, or Google Cloud credentials.
+
+==== image:number1.png[number 1] Prepare the vault
+
+[role="quick-margin-para"]
+Prepare the vault to supply credentials to the data broker by setting up the URLs. The URLs to the secrets in the vault must end with _Creds_.
+
+==== image:number2.png[number 2] Prepare the data broker
+
+[role="quick-margin-para"]
+Prepare the data broker to fetch credentials from the external vault by modifying the local config file for the data broker.
+
+==== image:number3.png[number 3] Create a sync relationship using the API
+
+[role="quick-margin-para"]
+Now that everything is set up, you can send an API call to create a sync relationship that uses your vault to get the secrets.
+
+== Preparing the vault
+
+You'll need to provide Cloud Sync with the URL to the secrets in your vault. Prepare the vault by setting up those URLs. You need to set up URLs to the credentials for each source and target in the sync relationships that you plan to create.
+
+The URL must be set up as follows:
+
+`/<path>/<requestid>/<endpoint-protocol>Creds`
+
+Path:: The prefix path to the secret. This can be any value that's unique to you.
+
+Request ID:: A request ID that you need to generate. You'll need to provide the ID in one of the headers in the API POST request when you create the sync relationship.
+
+Endpoint protocol:: One of the following protocols, as defined https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2[in the post relationship v2 documentation^]: S3, AZURE, or GCP (each must be in uppercase).
+
+Creds:: The URL must end with _Creds_.
+
+==== Examples
+
+The following examples show URLs to secrets.
+
+Example for the full URL and path for source credentials::
+\http://example.vault.com:8200/my-path/all-secrets/hb312vdasr2/S3Creds
++
+As you can see in the example, the prefix path is _/my-path/all-secrets/_, the request ID is _hb312vdasr2_ and the source endpoint is S3.
+
+Example for the full URL and path for target credentials::
+\http://example.vault.com:8200/my-path/all-secrets/n32hcbnejk2/AZURECreds
++
+The prefix path is _/my-path/all-secrets/_, the request ID is _n32hcbnejk2_, and the target endpoint is Azure.
+
+== Preparing the data broker
+
+Prepare the data broker to fetch credentials from the external vault by modifying the local config file for the data broker.
+
+.Steps
+
+. SSH to the data broker.
+
+. Edit the local.json file that resides in /opt/netapp/databroker/config.
+
+. Set enable to *true* and set the config parameter fields under _external-integrations.hashicorp_ as follows:
++
+enabled::
+* Valid values: true/false
+* Type: Boolean
+* Default value: false
+* True: The data broker gets secrets from your own external HashiCorp Vault
+* False: The data broker stores credentials in its local vault
+
+url::
+* Type: string
+* Value: The URL to your external vault
+
+path::
+* Type: string
+* Value: Prefix path to the secret with your credentials
+
+Reject-unauthorized::
+* Determines if you want the data broker to reject unauthorized external vault
+* Type: Boolean
+* Default: false
+
+auth-method::
+* Your authentication method to the external vault
+* Type: string
+* Valid values: “aws-iam” / “role-app”
+
+role-name::
+* Type: string
+* Your role name (in case you use aws-iam)
+
+Secretid & rootid::
+* Type: string (in case you use app-role)
+
+Namespace::
+* Type: string
+* Your namespace (X-Vault-Namespace header if needed)
+
+==== Example
+
+[source,json]
+{
+          “external-integrations”: {
+                  “hashicorp”: {
+                         “enabled”: true,
+                         “url”: “https://example.vault.com:8200”,
+                         “path”: ““my-path/all-secrets”,
+                         “reject-unauthorized”: false,
+                         “auth-method”: “aws-role”,
+                         “aws-role”: {
+                               “role-name”: “my-role”
+                         }
+                }
+       }
+}
+
+== Creating a new sync relationship using secrets form the vault
+
+Now that everything is set up, you can send an API call to create a sync relationship that uses your vault to get the secrets.
+
+Post the relationship using the Cloud Sync REST API.
+
+ Headers:
+ Authorization: Bearer <user-token>
+ Content-Type: application/json
+ x-account-id: <accountid>
+ x-netapp-external-request-id-src: request ID as part of path for source credentials
+ x-netapp-external-request-id-trg: request ID as part of path for target credentials
+ Body: post relationship v2 body
+
+* To obtain a user token and your Cloud Central account ID, https://docs.netapp.com/us-en/cloudsync/reference_apis.html[refer to this page in the documentation^].
+
+* To build a body for your post relationship, https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2[refer to the relationships-v2 API call^].
+
+==== Example
+
+Example for the POST request:
+
+[source,json]
+url: https://api.cloudsync.netapp.com/api/relationships-v2
+headers:
+"x-account-id": "CS-SasdW"
+"x-netapp-external-request-id-src": "hb312vdasr2"
+"Content-Type": "application/json"
+"Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik…"
+Body:
+{
+"dataBrokerId": "5e6e111d578dtyuu1555sa60",
+"source": {
+        "protocol": "s3",
+        "s3": {
+                "provider": "sgws",
+                "host": "1.1.1.1",
+                "port": "443",
+                "bucket": "my-source"
+     },
+"target": {
+        "protocol": "s3",
+        "s3": {
+                "bucket": "my-target-bucket"
+        }
+    }
+}

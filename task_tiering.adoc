@@ -122,7 +122,7 @@ Cloud Manager creates an object store for cold data when the system is created, 
 
 . <<Requirements,Ensure that you've met all requirements>>.
 
-. On the Working Environments page, double-click the name of the Cloud Volumes ONTAP instance.
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP instance.
 
 . Click the menu icon and select *Enable capacity tiering*.
 +
@@ -202,7 +202,7 @@ Cloud Volumes ONTAP can tier data from a data protection volume to a capacity ti
 
 .Steps
 
-. On the Working Environments page, select the working environment that contains the source volume, and then drag it to the working environment to which you want to replicate the volume.
+. On the Canvas page, select the working environment that contains the source volume, and then drag it to the working environment to which you want to replicate the volume.
 
 . Follow the prompts until you reach the tiering page and enable data tiering to object storage.
 +

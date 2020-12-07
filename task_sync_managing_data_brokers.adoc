@@ -1,0 +1,176 @@
+---
+sidebar: sidebar
+permalink: task_sync_managing_data_brokers.html
+keywords: manage data brokers, manage data broker groups, data broker performance, data broker configuration, data broker removal, remove data broker, delete data broker, groups, data broker group, rename data broker group, add data broker, data broker cpu, data broker ram, data broker status, edit group name, change group name, modify group name
+summary: A data broker syncs data from a source location to a target location. A data broker is required for each sync relationship that you create. Manage data brokers by adding a new data broker to a group, by viewing information about data brokers, and more.
+---
+
+= Manage data brokers
+:toc: macro
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+A data broker syncs data from a source location to a target location. A data broker is required for each sync relationship that you create. Manage data brokers by adding a new data broker to a group, by viewing information about data brokers, and more.
+
+== Data broker groups
+
+Grouping data brokers together can help improve the performance of sync relationships.
+
+=== Determining the number of data brokers
+
+In many cases, a single data broker can meet the performance requirements for a sync relationship. If it doesn’t, you can accelerate sync performance by adding additional data brokers to the group. But you should first check other factors that can impact sync performance. link:faq_sync.html#how-many-data-brokers-are-required[Learn more about how to determine when multiple data brokers are required].
+
+=== Groups can manage several relationships
+
+A data broker group can manage one or more sync relationships at a time.
+
+For example, let's say you have three relationships:
+
+* Relationship 1 uses data broker A
+* Relationship 2 uses data broker B
+* Relationship 3 uses data broker A
+
+You want to accelerate the performance of relationship 1 so you add a new data broker (data broker C) to the group. Because data broker A is also used to manage relationship 3, having two data brokers in the group also accelerates the performance of this relationship.
+
+=== New data brokers only
+
+You can only add new data brokers to a group. You can't add existing data brokers to a group.
+
+== Add a new data broker
+
+There are several ways to create a new data broker:
+
+* When creating a new sync relationship
++
+link:task_sync_creating_relationships.html[Learn how to create a new data broker when creating a sync relationship].
+
+* From the *Manage Data Brokers* page by clicking *Add New Data Broker* which creates the data broker in a new group
+
+* From the *Manage Data Brokers* page by creating a new data broker in an existing group
+
+.Things you should know
+
+* You can't add data brokers to a group that manages an encrypted sync relationship.
+
+* If you want to create a data broker in an existing group, the data broker must be an on-prem data broker or the same type of data broker.
++
+For example, if a group includes an AWS data broker, then you can create an AWS data broker or on-prem data broker in that group. You can't create an Azure data broker or GCP data broker because they aren't the same data broker type.
+
+.Steps to create a data broker in a new group
+
+. Click *Sync > Manage Data Brokers*.
+
+. Click *Add New Data Broker*.
+
+. Follow the prompts to create the data broker.
++
+For help, refer to the following pages:
++
+* link:task_sync_installing_aws.html[Installing the data broker in AWS]
+* link:task_sync_installing_azure.html[Installing the data broker in Azure]
+* link:task_sync_installing_gcp.html[Installing the data broker in GCP]
+* link:task_sync_installing_linux.html[Installing the data broker on a Linux host]
+
+.Steps to create a data broker in an existing group
+
+. Click *Sync > Manage Data Brokers*.
+
+. Click the action menu and select *Add Data Broker*.
++
+image:screenshot_sync_group_add.gif[A screenshot of the action menu that's available for each individual data broker in a group.]
+
+. Follow the prompts to create the data broker.
++
+For help, refer to the following pages:
++
+* link:task_sync_installing_aws.html[Installing the data broker in AWS]
+* link:task_sync_installing_azure.html[Installing the data broker in Azure]
+* link:task_sync_installing_gcp.html[Installing the data broker in GCP]
+* link:task_sync_installing_linux.html[Installing the data broker on a Linux host]
+
+== View a data broker's configuration
+
+You might want to view details about a data broker to identify things like its host name, IP address, available CPU and RAM, and more.
+
+Cloud Sync provides the following details about a data broker:
+
+* Basic information: Instance ID, host name, etc.
+* Network: Region, network, subnet, private IP, etc.
+* Software: Linux distribution, data broker version, etc.
+* Hardware: CPU and RAM
+* Configuration: Details about the data broker's two kinds of main processes--scanner and transferrer
++
+TIP: The scanner scans the source and target and decides what should be copied. The transferrer does the actual copying. NetApp personnel might use these configuration details to suggest actions that can optimize performance.
+
+.Steps
+
+. Click *Sync > Manage Data Brokers*.
+
+. Click image:screenshot_sync_group_expand.gif[A screenshot of the button that enables you to expand the list of data brokers in a group.] to expand the list of data brokers in a group.
+
+. Click image:screenshot_sync_group_expand.gif[A screenshot of the button that enables you to expand details about a data broker.] to view details about a data broker.
++
+image:screenshot_sync_data_broker_details.gif[A screenshot of information about a data broker.]
+
+== Remove a data broker from a group
+
+You might remove a data broker from a group if it's no longer needed or if the initial deployment failed. This action only deletes the data broker from Cloud Sync's records. You'll need to manually delete the data broker and any additional cloud resources yourself.
+
+.Things you should know
+
+* Cloud Sync deletes a group when you remove the last data broker from the group.
+* You can't remove the last data broker from a group if there is a relationship using that group.
+
+.Steps
+
+. Click *Sync > Manage Data Brokers*.
+
+. Click image:screenshot_sync_group_expand.gif[A screenshot of the button that enables you to expand the list of data brokers in a group.] to expand the list of data brokers in a group.
+
+. Click the action menu for a data broker and select *Remove Data Broker*.
++
+image:screenshot_sync_group_remove.gif[A screenshot of the action menu that's available for each individual data broker group.]
+
+. Click *Remove Data Broker*.
+
+.Result
+
+Cloud Sync removes the data broker from the group.
+
+== Edit a group's name
+
+Change the name of a data broker group at any time.
+
+.Steps
+
+. Click *Sync > Manage Data Brokers*.
+
+. Click the action menu and select *Edit Group Name*.
++
+image:screenshot_sync_group_edit.gif[A screenshot of the action menu that's available for each individual data broker in a group.]
+
+. Enter a new name and click *Save*.
+
+.Result
+
+Cloud Sync updates the name of the data broker group.
+
+== Address issues with a data broker
+
+Cloud Sync displays a status for each data broker that can help you troubleshoot issues.
+
+.Steps
+
+. Identify any data brokers that have a status of "Unknown" or "Failed."
++
+image:screenshot_sync_broker_status.gif[]
+
+. Hover over the image:screenshot_sync_status_icon.gif[] icon to see the failure reason.
+
+. Correct the issue.
++
+For example, you might need to simply restart the data broker if it's offline, or you might need to remove data broker if the initial deployment failed.

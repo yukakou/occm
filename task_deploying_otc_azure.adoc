@@ -41,7 +41,7 @@ The best practice is to use a new, dedicated resource group for Cloud Volumes ON
 
 .Steps
 
-. On the Working Environments page, click *Add Working Environment* and follow the prompts.
+. On the Canvas page, click *Add Working Environment* and follow the prompts.
 
 . *Choose a Location*: Select *Microsoft Azure* and *Cloud Volumes ONTAP Single Node* or *Cloud Volumes ONTAP High Availability*.
 

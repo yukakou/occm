@@ -45,6 +45,10 @@ If you prefer to sync data more frequently, link:task_sync_managing_relationship
 * For NFS servers, data-in-flight encryption is supported with NFS versions 3, 4.0, 4.1, and 4.2.
 * For Azure NetApp Files, data-in-flight encryption is supported with NFS versions 3 and 4.1.
 
+== Proxy server limitation
+
+If you create an encrypted sync relationship, the encrypted data is sent over HTTPS and isn't routable through a proxy server.
+
 == What you'll need to get started
 
 Be sure to have the following:

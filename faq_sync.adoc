@@ -113,9 +113,13 @@ In addition, the data broker needs an outbound internet connection over port 443
 
 For more details, link:reference_sync_networking.html[review networking requirements].
 
-=== Are there networking limitations related to data broker connectivity?
+=== Can I use a proxy server with the data broker?
 
-Data brokers require internet access. We don't support a proxy server when deploying the data broker in Azure or in Google Cloud Platform.
+Yes.
+
+Cloud Sync supports proxy servers with or without basic authentication. If you specify a proxy server when you deploy a data broker, all HTTP and HTTPS traffic from the data broker is routed through the proxy. Note that non-HTTP traffic such as NFS or SMB can’t be routed through a proxy server.
+
+The only proxy server limitation is when using data-in-flight encryption with an NFS or Azure NetApp Files sync relationship. The encrypted data is sent over HTTPS and isn’t routable through a proxy server.
 
 == Data synchronization
 

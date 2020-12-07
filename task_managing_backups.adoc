@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task_managing_backups.html
-keywords: restoring, restore, restore volumes, Backup to Cloud, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable backup to cloud, turn off backup to cloud
-summary: Manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, restoring volumes, deleting backups, and more.
+keywords: Backup to Cloud, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable backup to cloud, turn off backup to cloud
+summary: You can manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, enabling/disabling volume backups, deleting backups, and more.
 ---
 
 = Managing backups for Cloud Volumes ONTAP and on-premises ONTAP systems
@@ -13,7 +13,7 @@ summary: Manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by
 :imagesdir: ./media/
 
 [.lead]
-Manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, restoring volumes, deleting backups, and more.
+You can manage backups for Cloud Volumes ONTAP and on-premises ONTAP systems by changing the backup schedule, enabling/disabling volume backups, deleting backups, and more.
 
 == Changing the schedule and backup retention
 
@@ -58,39 +58,6 @@ image:screenshot_backup_manage_volumes.png[A screenshot that shows the Manage Vo
 image:screenshot_backup_manage_volumes_page.png[The Manage Volumes page where you can select or deselect volumes.]
 
 *Note:* When stopping a volume from being backed up you’ll continue to be charged by your cloud provider for object storage costs for the capacity that the backups use unless you <<Deleting backups,delete the backups>>.
-
-== Restoring a volume from a backup
-
-When you restore data from a backup, Cloud Manager creates a _new_ volume using the data from the backup. You can restore the data to a volume in the same working environment or to a different working environment that's located in the same cloud account as the source working environment. Because the backup does not contain any snapshots, the newly restored volume does not either.
-
-TIP: Backups created from on-premises ONTAP systems can be restored only to Cloud Volumes ONTAP systems that use the same cloud provider as where the backup resides. Restoring a backup is not currently supported using the Cloud Manager UI. You can use the API if you need to restore a backup at this time. Restore using the UI will be addressed shortly.
-
-.Steps
-
-. Select the working environment.
-
-. Click image:screenshot_gallery_options.gif[More icon] and select *View Backups*.
-+
-image:screenshot_view_backups_selection.png[A screenshot of selecting the View Backups button for a working environment.]
-
-. Select the row for the volume that you want to restore and click *View Backup List*.
-+
-image:screenshot_backup_to_s3_volume.gif[A screenshot of the Backup and Restore tab showing a volume that has backups.]
-
-. Find the backup that you want to restore and click the *Restore* icon.
-+
-image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon for a backup after you select a volume.]
-
-. Fill out the _Restore Backup to new volume_ page:
-.. Select the working environment to which you want to restore the volume.
-.. Enter a name for the volume.
-.. Click *Restore*.
-+
-image:screenshot_backup_to_s3_restore_options.gif[A screenshot that shows the restore options: a working environment to restore to, the name of the volume, and the volume info.]
-
-.Result
-
-Cloud Manager creates a new volume based on the backup you selected. You can link:task_managing_storage.html#managing-existing-volumes[manage this new volume^] as required.
 
 == Deleting backups
 
