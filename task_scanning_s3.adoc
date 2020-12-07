@@ -27,7 +27,7 @@ Ensure that your cloud environment can meet the requirements for Cloud Complianc
 ==== image:number2.png[Number 2] Deploy the Cloud Compliance instance
 
 [role="quick-margin-para"]
-link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance in Cloud Manager^] if there isn't already an instance deployed.
+link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance^] if there isn't already an instance deployed.
 
 ==== image:number3.png[Number 3] Activate Compliance on your S3 working environment
 
@@ -92,6 +92,8 @@ NOTE: You can't use a proxy to get to S3 over the internet.
 link:task_deploy_cloud_compliance.html[Deploy Cloud Compliance in Cloud Manager^] if there isn't already an instance deployed.
 
 You need to deploy the instance in an AWS Connector so that Cloud Manager automatically discovers the S3 buckets in this AWS account and displays them in an Amazon S3 working environment.
+
+*Note:* Deploying Cloud Compliance in an on-premises location is not currently supported when scanning S3 buckets.
 
 == Activating Compliance on your S3 working environment
 
