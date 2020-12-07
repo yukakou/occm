@@ -294,7 +294,7 @@ Sync relationships that include S3 storage require a data broker deployed in AWS
 
 ==== Supported AWS regions
 
-All regions are supported except for China regions.
+All regions are supported except for the China and GovCloud (US) regions.
 
 ==== Permissions required for S3 buckets in other AWS accounts
 
@@ -325,7 +325,7 @@ The data broker can reside in any location when a sync relationship includes Azu
 
 ==== Supported Azure regions
 
-All regions are supported except for the China and US DoD regions.
+All regions are supported except for the China, US Gov, and US DoD regions.
 
 ==== Connection string required for relationships that include Azure Blob and NFS/SMB
 

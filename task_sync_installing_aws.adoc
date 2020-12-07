@@ -19,7 +19,7 @@ You also have the option to install the data broker on an existing Linux host in
 
 == Supported AWS regions
 
-All regions are supported except for China regions.
+All regions are supported except for the China and GovCloud (US) regions.
 
 == Networking requirements
 
