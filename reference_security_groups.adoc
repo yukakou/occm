@@ -231,8 +231,6 @@ The security group for the Connector requires both inbound and outbound rules.
 
 === Inbound rules
 
-The source for inbound rules in the predefined security group is 0.0.0.0/0.
-
 [cols="10,10,80",width=100%,options="header"]
 |===
 
