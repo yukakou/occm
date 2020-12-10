@@ -21,7 +21,7 @@ image:screenshot_compliance_dashboard.png[A screenshot of the Cloud Compliance d
 
 If you want to see data for only some of the working environments, <<Viewing Dashboard data for specific working environments,select those working environments>>.
 
-You can also filter the results from the Data Investigation page and download a report of the results. See <<Filtering data in the Data Investigation page,Filtering data in the Data Investigation page>> for details.
+You can also filter the results from the Data Investigation page and download a report of the results as a CSV file. See <<Filtering data in the Data Investigation page,Filtering data in the Data Investigation page>> for details.
 
 == Personal data
 
@@ -59,9 +59,10 @@ The personal data found in files can be general personal data or national identi
 | Identifier
 | Proximity validation?
 
-.3+| General | Email address | No
+.4+| General | Email address | No
 | Credit card number | No
 | IBAN number (International Bank Account Number) | No
+| IP address | No
 
 .31+| National Identifiers | Belgian ID (Numero National) | Yes
 | Brazilian ID (CPF) | Yes
