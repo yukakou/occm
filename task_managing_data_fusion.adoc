@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: task_controlling_private_data.html
+permalink: task_managing_data_fusion.html
 keywords: data identifiers, personal data, sensitive personal data, compliance, data fusion
 summary: A feature we call "Data Fusion" allows you to scan your organizations' data to identify whether unique identifiers from your databases are found in files or other databases - basically making your own list of "personal data" that is identified in Cloud Compliance scans. This gives you the full picture about where potentially sensitive data resides in all your files.
 ---
