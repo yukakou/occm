@@ -303,8 +303,10 @@ entries:
                 url: /task_scanning_databases.html
       - title: Gain visibility and control of data
         url: /task_controlling_private_data.html
-      - title: Add custom Highlights from your filtered searches
+      - title: Add custom search filters using Highlights
         url: /task_managing_highlights.html
+      - title: Add custom personal data identifiers
+        url: /task_managing_data_fusion.html
       - title: Generate reports
         url: /task_generating_compliance_reports.html
       - title: Respond to a DSAR

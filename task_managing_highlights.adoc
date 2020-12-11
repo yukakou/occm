@@ -5,7 +5,7 @@ keywords: compliance, privacy, filter data, highlights
 summary: Highlights are like a Favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Highlights based on common customer questions. In addition, you can create your own custom Highlights that provide results for searches specific to your organization.
 ---
 
-= Managing your custom Highlights filters
+= Managing your custom search Highlights
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,7 +15,7 @@ summary: Highlights are like a Favorites list of custom filters that provide sea
 [.lead]
 Highlights are like a Favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Highlights based on common customer questions. In addition, you can create your own custom Highlights that provide results for searches specific to your organization.
 
-The Highlights tab in the Compliance Dashboard lists all the Highlights available on this instance of Cloud Compliance.
+The *Highlights* tab in the Compliance Dashboard lists all the Highlights available on this instance of Cloud Compliance.
 
 image:screenshot_compliance_highlights_tab.png[A screenshot of the Highlights tab in the Cloud Compliance dashboard.]
 
@@ -29,11 +29,11 @@ You can create your own custom highlights that provide results for searches spec
 
 . From the Data Investigation page, define your search by selecting all the filters you want to use. See link:task_controlling_private_data.html#filtering-data-in-the-data-investigation-page[Filtering data in the Data Investigation page] for details.
 
-. Click *Save this search as a Highlight*.
+. Once you have all the filter characteristics just the way you want them, click *Save this search as a Highlight*.
 +
 image:screenshot_compliance_save_as_highlight.png[A screenshot showing how to save a filtered query as a Highlight.]
 
-. In the Create Highlight dialog, enter a name and a description for the highlight and click *Save Highlight*.
+. Enter a unique name and description for the highlight and click *Save Highlight*.
 +
 image:screenshot_compliance_save_highlight.png[A screenshot that shows how to name the highlight and save it.]
 
