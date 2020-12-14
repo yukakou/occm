@@ -151,7 +151,7 @@ Cloud Compliance provides out-of-the-box insights to your data. These insights c
 
 Additionally, you can use the *Data Fusion* capability to have Cloud Compliance scan all your data based on criteria found in specific columns in databases you are scanning -- essentially allowing you to make your own custom personal data types.
 
-link:task_controlling_private_data.html#creating-custom-personal-data-identifiers-from-your-databases[Learn more^].
+link:task_managing_data_fusion.html#creating-custom-personal-data-identifiers-from-your-databases[Learn more^].
 
 == Can I limit Cloud Compliance information to specific users?
 

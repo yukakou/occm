@@ -114,6 +114,8 @@ Sensitive personal data:: Special types of sensitive information, such as health
 
 Categories:: Cloud Compliance takes the data that it scanned and divides it into different types of categories. Categories are topics based on AI analysis of the content and metadata of each file. link:task_controlling_private_data.html#categories[Learn more about categories^].
 
+Types:: Cloud Compliance takes the data that it scanned and breaks it down by file type. link:task_controlling_private_data.html#file-types[Learn more about types^].
+
 Name entity recognition::
 Cloud Compliance uses AI to extract natural persons’ names from documents. link:task_responding_to_dsar.html[Learn about responding to Data Subject Access Requests^].
 

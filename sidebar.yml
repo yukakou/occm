@@ -301,9 +301,9 @@ entries:
                 url: /task_scanning_s3.html
               - title: Database schemas
                 url: /task_scanning_databases.html
-      - title: Gain visibility and control of data
+      - title: View details about private data in your organization
         url: /task_controlling_private_data.html
-      - title: Add custom search filters using Highlights
+      - title: Gain control of private data with Highlights
         url: /task_managing_highlights.html
       - title: Add custom personal data identifiers
         url: /task_managing_data_fusion.html
@@ -313,6 +313,8 @@ entries:
         url: /task_responding_to_dsar.html
       - title: Disable Cloud Compliance
         url: /task_managing_compliance.html
+      - title: Categories of private data
+        url: /reference_private_data_categories.html
       - title: FAQ
         url: /faq_cloud_compliance.html
   - title: Enable real-time global file sharing

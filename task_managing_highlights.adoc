@@ -5,7 +5,7 @@ keywords: compliance, privacy, filter data, highlights
 summary: Highlights are like a Favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Highlights based on common customer questions. In addition, you can create your own custom Highlights that provide results for searches specific to your organization.
 ---
 
-= Managing your custom search Highlights
+= Gaining control of private data with Highlights
 :hardbreaks:
 :nofooter:
 :icons: font
