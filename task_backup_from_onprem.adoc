@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_backup_from_onprem.html
-keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, on-prem, on-premises, back up volumes, Backup to Cloud, cloud backup service
+keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, on-prem, on-premises, back up volumes, Backup to Cloud, cloud backup service, backup and compliance
 summary: Complete a few steps to get started backing up data from your on-premises ONTAP system to low-cost object storage in the cloud.
 ---
 
@@ -32,10 +32,10 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number2.png[Number 2] Enable Backup to Cloud on the system
 
 [role="quick-margin-para"]
-Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel, and then follow the setup wizard.
+Select the working environment and click *Activate* next to the Backup & Compliance service in the right-panel, and then follow the setup wizard.
 
 [role="quick-margin-para"]
-image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Activate button which is available after you select a working environment.]
+image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup & Compliance Activate button which is available after you select an on-prem working environment.]
 
 ==== image:number3.png[Number 3] Select the cloud provider and enter provider details
 
@@ -150,7 +150,7 @@ Enable Backup to Cloud at any time directly from the working environment.
 
 . Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel.
 +
-image:screenshot_backup_to_s3_icon.gif[A screenshot that shows the Backup to Cloud Activate button which is available after you select a working environment.]
+image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup & Compliance Activate button which is available after you select an on-prem working environment.]
 
 . Select the provider, and then enter the provider details:
 - For Azure, enter:
@@ -175,12 +175,18 @@ image:screenshot_backup_onprem_policy.png[A screenshot that shows the Backup to 
 +
 See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-combination[the list of existing policies^].
 
-. Select the volumes that you want to back up and click *Save*.
-+
-image:screenshot_backup_select_onprem_volumes.png[A screenshot of selecting the volumes that will be backed up.]
+. Select the volumes that you want to back up.
 +
 * To back up all volumes, check the box in the title row (image:button_backup_all_volumes.png[]).
 * To back up individual volumes, check the box for each volume (image:button_backup_1_volume.png[]).
++
+image:screenshot_backup_select_onprem_volumes.png[A screenshot of selecting the volumes that will be backed up.]
+
+. Click *Activate* and Backup to Cloud starts taking the initial backups of each selected volume.
+
+. You are prompted whether you want to run compliance scans on the backued up volumes using Cloud Compliance.
++
+image:screenshot_compliance_on_backups.png[]
 
 .Result
 
