@@ -38,7 +38,7 @@
 
 | \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
 
-| \support.netapp.com:443 | Communication with NetApp AutoSupport.
+| support.netapp.com:443 | Communication with NetApp AutoSupport.
 |
 \https://support.netapp.com/svcgw
 \https://support.netapp.com/ServiceGW/entitlement
