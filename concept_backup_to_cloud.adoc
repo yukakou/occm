@@ -41,7 +41,7 @@ Backup to Cloud is supported with the following types of working environments:
 
 * Cloud Volumes ONTAP in AWS
 * Cloud Volumes ONTAP in Azure
-* Cloud Volumes ONTAP in Google Cloud (Only single-node systems are currently supported.)
+* Cloud Volumes ONTAP in Google Cloud
 * On-premises ONTAP clusters
 
 Single File Restore is supported only in AWS at this time.
