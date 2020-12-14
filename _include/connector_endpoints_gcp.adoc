@@ -36,6 +36,13 @@
 \https://cloud-support-netapp-com.s3.us-west-1.amazonaws.com
 | Communication with NetApp for system licensing and support registration.
 
+|
+\https://client.infra.support.netapp.com.s3.us-west-1.amazonaws.com
+\https://cloud-support-netapp-com-accelerated.s3.us-west-1.amazonaws.com
+\https://trigger.asup.netapp.com.s3.us-west-1.amazonaws.com
+
+| Enables NetApp to collect information needed to troubleshoot support issues.
+
 | \https://ipa-signer.cloudmanager.netapp.com | Enables Cloud Manager to generate licenses (for example, a FlexCache license for Cloud Volumes ONTAP)
 
 a| Various third-party locations, for example:
