@@ -23,8 +23,6 @@
 
 | \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
 
-| \https://repo.cloud.support.netapp.com | Used to download Cloud Manager dependencies.
-
 |
 \https://cognito-idp.us-east-1.amazonaws.com
 \https://cognito-identity.us-east-1.amazonaws.com
@@ -40,7 +38,7 @@
 
 | \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
 
-| \https://mysupport.netapp.com | Communication with NetApp AutoSupport.
+| \support.netapp.com:443 | Communication with NetApp AutoSupport.
 |
 \https://support.netapp.com/svcgw
 \https://support.netapp.com/ServiceGW/entitlement

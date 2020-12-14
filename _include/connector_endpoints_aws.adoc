@@ -18,8 +18,6 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 
 | \https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com	| Provides access to software images, manifests, and templates.
 
-| \https://repo.cloud.support.netapp.com | Used to download Cloud Manager dependencies.
-
 |
 \https://cognito-idp.us-east-1.amazonaws.com
 \https://cognito-identity.us-east-1.amazonaws.com
@@ -35,10 +33,8 @@ The exact endpoint depends on the region in which you deploy Cloud Volumes ONTAP
 
 | \https://netapp-cloud-account.auth0.com | Communication with NetApp Cloud Central for centralized user authentication.
 
-|
-\https://support.netapp.com/aods/asupmessage
-\https://support.netapp.com/asupprod/post/1.0/postAsup
-| Communication with NetApp AutoSupport.
+| \support.netapp.com:443 | Communication with NetApp AutoSupport.
+
 |
 \https://support.netapp.com/svcgw
 \https://support.netapp.com/ServiceGW/entitlement
