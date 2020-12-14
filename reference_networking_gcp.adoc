@@ -102,7 +102,7 @@ A Connector requires a network connection to the VPCs in which you want to deplo
 
 The Connector requires outbound internet access to manage resources and processes within your public cloud environment. A Connector contacts the following endpoints when managing resources in GCP:
 
-include::_include/connector_endpoints_azure.adoc[]
+include::_include/connector_endpoints_gcp.adoc[]
 
 While you should perform almost all tasks from the SaaS user interface, a local user interface is still available on the Connector. The machine running the web browser must have connections to the following endpoints:
 
