@@ -17,9 +17,9 @@ There are many types of private data that Cloud Compliance can identify in your 
 
 == Types of personal data
 
-The personal data found in files can be general personal data or national identifiers. The third column identifies whether Cloud Compliance uses <<Personal data,proximity validation>> to validate its findings for the identifier.
+The personal data found in files can be general personal data or national identifiers. The third column identifies whether Cloud Compliance uses link:task_controlling_private_data.html#personal-data[proximity validation^] to validate its findings for the identifier.
 
-Note that you can add to the list of personal data that is found in your files if you are scanning a database server. The _Data Fusion_ feature allows you to choose the additional identifiers that Cloud Compliance will look for in its' scans by selecting columns in a database table. See link:task_managing_data_fusion.html[Adding personal data identifiers using Data Fusion] for details.
+Note that you can add to the list of personal data that is found in your files if you are scanning a database server. The _Data Fusion_ feature allows you to choose the additional identifiers that Cloud Compliance will look for in its' scans by selecting columns in a database table. See link:task_managing_data_fusion.html[Adding personal data identifiers using Data Fusion^] for details.
 
 [cols="20,50,18",width=80%,options="header"]
 |===

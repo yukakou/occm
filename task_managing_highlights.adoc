@@ -27,7 +27,7 @@ You can create your own custom highlights that provide results for searches spec
 
 .Steps
 
-. From the Data Investigation page, define your search by selecting all the filters you want to use. See link:task_controlling_private_data.html#filtering-data-in-the-data-investigation-page[Filtering data in the Data Investigation page] for details.
+. From the Data Investigation page, define your search by selecting all the filters you want to use. See link:task_controlling_private_data.html#filtering-data-in-the-data-investigation-page[Filtering data in the Data Investigation page^] for details.
 
 . Once you have all the filter characteristics just the way you want them, click *Save this search as a Highlight*.
 +
