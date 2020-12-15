@@ -15,6 +15,8 @@ summary: Complete a few steps to get started backing up data from your on-premis
 [.lead]
 Complete a few steps to get started backing up data from your on-premises ONTAP system to low-cost object storage in the cloud.
 
+A new Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-prem systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-prem volumes, the cost for compliance scans is always free.
+
 == Quick start
 
 Get started quickly by following these steps or scroll down to the remaining sections for full details.
@@ -55,7 +57,12 @@ image:screenshot_backup_onprem_policy.png[A screenshot that shows the Backup to 
 [role="quick-margin-para"]
 Identify which volumes you want to back up from the cluster.
 
-==== image:number6.png[Number 6] Restore your data, as needed
+==== image:number6.png[Number 6] Activate Compliance scans on the backed up volumes (optional)
+
+[role="quick-margin-para"]
+Choose whether you want to run Compliance scans on the volumes that are backed up in the cloud.
+
+==== image:number7.png[Number 7] Restore your data, as needed
 
 [role="quick-margin-para"]
 From the Backup List, select a volume, select a backup, and then restore data from the backup to a new volume on a Cloud Volumes ONTAP system that is using the same cloud provider.
@@ -182,16 +189,31 @@ See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-
 +
 image:screenshot_backup_select_onprem_volumes.png[A screenshot of selecting the volumes that will be backed up.]
 
-. Click *Activate* and Backup to Cloud starts taking the initial backups of each selected volume.
-
-. You are prompted whether you want to run compliance scans on the backued up volumes using Cloud Compliance.
+. Click *Activate* and Backup to Cloud starts taking the initial backups of your volumes.
 +
-image:screenshot_compliance_on_backups.png[]
+You are prompted whether you want to run compliance scans on the backed up volumes. Cloud Compliance scans are free when you run them on the backed up volumes (except for the link:concept_cloud_compliance.html#cost[cost of the deployed Cloud Compliance instance^]).
++
+image:screenshot_compliance_on_backups.png[A screenshot of the page where you can choose to activate Cloud Compliance on your backed up volumes.]
+
+. Click *Go to Compliance* to activate compliance scans on the volumes. (If you choose *Close* and not to scan these backed up volumes, you can always enable this functionality later from Cloud Compliance.)
+
+* If an instance of Cloud Compliance is already deployed in your environment, you are directed to the Configuration page to select the volumes you want to scan. See link:task_getting_started_compliance.html#enabling-cloud-compliance-in-your-working-environments[how to choose the volumes^].
++
+image:screenshot_compliance_onprem_backups.png[A screenshot of the Compliance page to select volumes you want to scan.]
+* If Cloud Compliance has not been deployed, you are directed to the Compliance page where you can choose to deploy Compliance in the cloud or in your premises. We strongly recommend deploying it in the cloud. Go link:task_deploy_cloud_compliance.html[here^] for installation requirements and instructions.
++
+image:screenshot_cloud_compliance_deploy_options.png[A screenshot of the Compliance page to choose how you want to deploy Cloud Compliance.]
++
+After you have deployed Compliance you can choose the volumes you want to scan as described above.
 
 .Result
 
-Backup to Cloud starts taking the initial backups of each selected volume.
+Backup to Cloud backs up your volumes from the on-prem ONTAP system, and optionally, Cloud Compliance runs compliance scans on the backed up volumes.
 
 .What's next?
 
 You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
+
+You can also link:task_controlling_private_data.html[view the results of the compliance scans^] and review other features of Cloud Compliance that can help you understand data context and identify sensitive data in your organization.
+
+NOTE: The scan results are not available immediately because Backup to Cloud has to finish creating the backups before Cloud Compliance can start compliance scans.
