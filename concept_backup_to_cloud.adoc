@@ -37,14 +37,50 @@ NOTE: You must use Cloud Manager for all backup and restore operations. Any acti
 
 == Supported working environments and object storage providers
 
-Backup to Cloud is supported with the following types of working environments:
+Backup to Cloud enables you to create volume backups from the following working environments:
 
-* Cloud Volumes ONTAP in AWS
-* Cloud Volumes ONTAP in Azure
-* Cloud Volumes ONTAP in Google Cloud
-* On-premises ONTAP clusters
+[cols=2*,options="header",cols="50,50"]
+|===
 
-Single File Restore is supported only in AWS at this time.
+| Source Working Environment
+| Backup File Destination
+
+| Cloud Volumes ONTAP in AWS
+| AWS
+| Cloud Volumes ONTAP in Azure
+| Azure
+| Cloud Volumes ONTAP in Google Cloud
+| Google
+| On-premises ONTAP system
+| AWS
+Azure
+
+|===
+
+You can restore a volume or a files from a backup file to the following working environments:
+
+[cols=2*,options="header",cols="50,50"]
+|===
+
+| Backup from Source System
+| Destination Working Environment
+
+| Cloud Volumes ONTAP in AWS
+| AWS
+| Cloud Volumes ONTAP in Azure
+| Azure
+| Cloud Volumes ONTAP in Google Cloud *
+| Google
+| On-premises ONTAP backup files in AWS
+| AWS
+On-prem system
+| On-premises ONTAP backup files in Azure
+| Azure
+On-prem system
+
+|===
+
+* Only volume restore is supported from a Google backup file at this time - there is no current support for single file restore.
 
 == Cost
 
@@ -176,7 +212,7 @@ FlexGroup volumes aren't currently supported.
 
 * Backup to Cloud restrictions when making backups from on-premises ONTAP systems:
 ** Cloud Manager must be deployed in the cloud (Azure or AWS). There is no support for on-premises Cloud Manager deployments.
-** At this time, backups can be restored only to Cloud Volumes ONTAP systems deployed on the same cloud provider. You can't restore a backup to an on-premises ONTAP system or to a Cloud Volumes ONTAP system that is using a different cloud provider.
+** Backups can be restored only to Cloud Volumes ONTAP systems deployed on the same cloud provider or to an on-premises ONTAP system.
 
 * When backing up data protection (DP) volumes, the rule that is defined for the SnapMirror policy on the source volume must use a label that matches the allowed Backup to Cloud policy names of *daily*, *weekly*, or *monthly*. Otherwise the backup will fail for that DP volume.
 
@@ -193,8 +229,6 @@ FlexGroup volumes aren't currently supported.
 === Single File Restore limitations
 
 * Single file restore can restore individual files. There is currently no support for restoring folders/directories.
-
-* Single File Restore is supported only with AWS at this time.
 
 * The ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP systems.
 
