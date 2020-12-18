@@ -33,9 +33,9 @@ You can restore a volume from a backup file to the following working environment
 | Backup File Location
 | Restore Working Environment
 
-| AWS | Cloud Volumes ONTAP in AWS
-| Azure | Cloud Volumes ONTAP in Azure
-| Google | Cloud Volumes ONTAP in Google
+| Amazon S3 | Cloud Volumes ONTAP in AWS
+| Azure Blob | Cloud Volumes ONTAP in Azure
+| Google Cloud | Cloud Volumes ONTAP in Google
 
 |===
 
@@ -82,9 +82,9 @@ You can restore individual files from a backup file to the following working env
 | Backup File Location
 | Restore Working Environment
 
-| AWS | Cloud Volumes ONTAP in AWS
+| Amazon S3 | Cloud Volumes ONTAP in AWS
  On-premises ONTAP system
-| Azure | Cloud Volumes ONTAP in Azure
+| Azure Blob | Cloud Volumes ONTAP in Azure
 On-premises ONTAP system
 
 |===
@@ -182,9 +182,18 @@ image:screenshot_restore_select_files.png[A screenshot of the Select Files page 
 +
 As you select files they are added to the left side of the page so you can see the files that you have already chosen. You can remove a file from this list if needed by clicking the *x* next to the file name.
 
-. In the _Select Destination_ page, select the *Working Environment*, the *Volume*, and the *Folder* where you want to restore the files.
+. In the _Select Destination_ page, select the *Working Environment*.
 +
-image:screenshot_restore_select_dest.png[A screenshot of selecting the volume and snapshot for the files you want to restore.]
+image:screenshot_restore_select_work_env.png[A screenshot of selecting the destination working environment for the files you want to restore.]
++
+If you select an on-premises cluster and you haven't already configured the cluster connection to the object storage, you are prompted for additional information:
++
+* When restoring from Amazon S3, enter IPspace in the ONTAP cluster where the destination volumes reside, and the AWS Access Key and Secret Key needed to access the backup file.
+* When restoring from Azure Blob, enter the IPspace in the ONTAP cluster where the destination volumes reside.
+
+. Then select the *Volume* and the *Folder* where you want to restore the files.
++
+image:screenshot_restore_select_dest.png[A screenshot of selecting the volume and folder for the files you want to restore.]
 +
 You have a few options for the location when restoring files.
 

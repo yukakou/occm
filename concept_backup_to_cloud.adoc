@@ -46,14 +46,14 @@ Backup to Cloud enables you to create volume backups from the following working 
 | Backup File Destination
 
 | Cloud Volumes ONTAP in AWS
-| AWS
+| Amazon S3
 | Cloud Volumes ONTAP in Azure
-| Azure
-| Cloud Volumes ONTAP in Google Cloud
-| Google
+| Azure Blob
+| Cloud Volumes ONTAP in Google
+| Google Cloud
 | On-premises ONTAP system
-| AWS
-Azure
+| Amazon S3
+Azure Blob
 
 |===
 
@@ -66,11 +66,11 @@ You can restore a volume, or individual files, from a backup file to the followi
 2+| Restore Working Environment
 
 | | *Volume Restore* | *Single File Restore*
-| AWS | Cloud Volumes ONTAP in AWS | Cloud Volumes ONTAP in AWS
+| Amazon S3 | Cloud Volumes ONTAP in AWS | Cloud Volumes ONTAP in AWS
  On-premises ONTAP system
-| Azure | Cloud Volumes ONTAP in Azure | Cloud Volumes ONTAP in Azure
+| Azure Blob | Cloud Volumes ONTAP in Azure | Cloud Volumes ONTAP in Azure
 On-premises ONTAP system
-| Google | Cloud Volumes ONTAP in Google | Cloud Volumes ONTAP in Google
+| Google Cloud | Cloud Volumes ONTAP in Google | 
 
 |===
 
