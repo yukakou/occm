@@ -39,7 +39,7 @@ NOTE: You must use Cloud Manager for all backup and restore operations. Any acti
 
 Backup to Cloud enables you to create volume backups from the following working environments:
 
-[cols=2*,options="header",cols="50,50"]
+[cols=2*,options="header",cols="50,40",width="90%"]
 |===
 
 | Source Working Environment
@@ -57,30 +57,22 @@ Azure
 
 |===
 
-You can restore a volume or a files from a backup file to the following working environments:
+You can restore a volume, or individual files, from a backup file to the following working environments:
 
-[cols=2*,options="header",cols="50,50"]
+[cols=3*,options="header",cols="30,40,40",width="90%"]
 |===
 
-| Backup from Source System
-| Destination Working Environment
+| Backup File Location
+2+| Restore Working Environment
 
-| Cloud Volumes ONTAP in AWS
-| AWS
-| Cloud Volumes ONTAP in Azure
-| Azure
-| Cloud Volumes ONTAP in Google Cloud *
-| Google
-| On-premises ONTAP backup files in AWS
-| AWS
-On-prem system
-| On-premises ONTAP backup files in Azure
-| Azure
-On-prem system
+| | *Volume Restore* | *Single File Restore*
+| AWS | Cloud Volumes ONTAP in AWS | Cloud Volumes ONTAP in AWS
+ On-premises ONTAP system
+| Azure | Cloud Volumes ONTAP in Azure | Cloud Volumes ONTAP in Azure
+On-premises ONTAP system
+| Google | Cloud Volumes ONTAP in Google | Cloud Volumes ONTAP in Google
 
 |===
-
-* Only volume restore is supported from a Google backup file at this time - there is no current support for single file restore.
 
 == Cost
 
@@ -96,9 +88,11 @@ For PAYGO you'll need to pay your cloud provider for object storage costs and Ne
 
 * GCP: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Go to the Cloud Manager Marketplace offering for pricing details^]
 
-The only cost for the Restore service (for the single file restore functionality) is the cost to your cloud provider for the deployed instance.
+The Restore service (for the single file restore functionality) does not require a license of any type. The only requirement is that you have a valid subscription to use the Backup to Cloud service. The only cost for the Restore service is the cost to your cloud provider for the deployed instance.
 
 * In AWS, the Restore instance runs on an m5n.xlarge instance with 4 CPUs, 16 GiB Memory, and EBS Only instance storage. In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
+
+* In Azure, the Restore virtual machine runs on ...
 
 === Free trial
 
@@ -146,7 +140,7 @@ You can choose daily, or weekly, or monthly backups of all volumes. You can also
 
 [cols=5*,options="header",cols="30,20,20,20,30",width="80%"]
 |===
-| Policy Name
+| Backup Policy Name
 3+| Backups per interval...
 | Max. Backups
 
