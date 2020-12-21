@@ -153,7 +153,7 @@ TIP: New volumes added to the working environment are automatically scanned only
 
 If you don't want Cloud Compliance to scan volumes directly on your on-prem ONTAP systems, a new Beta feature released in January 2021 allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you are already creating backup files using link:concept_backup_to_cloud.html[Backup to Cloud^], you can use this new feature to run compliance scans on those backup files.
 
-*Note:* The Compliance scans you run on backup files are free - no Cloud Compliance subscription or license is needed.
+NOTE: The Compliance scans you run on backup files are free - no Cloud Compliance subscription or license is needed.
 
 .Steps
 
@@ -169,9 +169,17 @@ image:screenshot_compliance_onprem_backups.png[A screenshot of the Compliance pa
 
 . To scan all backed up volumes in a working environment, click *Activate Compliance for all backed up Volumes*.
 +
-To scan only certain volumes in a working environment, click *or select Volumes* and then choose the backup files (volumes) that you want to scan.
+To scan only certain backed up volumes in a working environment, click *or select Volumes* and then choose the backup files (volumes) that you want to scan.
 
 See <<Enabling and disabling compliance scans on volumes,Enabling and disabling compliance scans on volumes>> for details.
+
+==== Scanning on-prem volumes versus backups of those volumes
+
+When you view the entire list of working environments you will see two listings for each on-prem cluster if they have backed up files.
+
+image:screenshot_compliance_we_scan_2_onprems.png[A screenshot showing how on-prem clusters will appear twice in the list of working environments if they have backup files.]
+
+The first item is the on-prem cluster and the actual volumes. The second item is the backup files from that same on-prem cluster. Choose the first option to scan the volumes on the on-prem system. Choose the second option to scan the backup files from those volumes. Do not scan both on-prem volumes and backup files of the same cluster.
 
 == Scanning data protection volumes
 

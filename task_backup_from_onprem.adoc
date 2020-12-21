@@ -15,7 +15,7 @@ summary: Complete a few steps to get started backing up data from your on-premis
 [.lead]
 Complete a few steps to get started backing up data from your on-premises ONTAP system to low-cost object storage in the cloud.
 
-A new Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-prem systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-prem volumes, the cost for compliance scans is always free.
+A new Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-prem systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-prem volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Compliance^] can get your business applications and cloud environments privacy ready.
 
 == Quick start
 
@@ -60,7 +60,7 @@ Identify which volumes you want to back up from the cluster.
 ==== image:number6.png[Number 6] Activate Compliance scans on the backed up volumes (optional)
 
 [role="quick-margin-para"]
-Choose whether you want to run Compliance scans on the volumes that are backed up in the cloud.
+Choose whether you want to have Cloud Compliance scan the volumes that are backed up in the cloud.
 
 ==== image:number7.png[Number 7] Restore your data, as needed
 
@@ -151,15 +151,15 @@ See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-k
 
 == Enabling Backup to Cloud
 
-Enable Backup to Cloud at any time directly from the working environment.
+Enable Backup to Cloud at any time directly from the on-premises working environment.
 
 .Steps
 
-. Select the working environment and click *Activate* next to the Backup to Cloud service in the right-panel.
+. From the Canvas, select the working environment and click *Activate* next to the Backup & Compliance service in the right-panel.
 +
 image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Backup & Compliance Activate button which is available after you select an on-prem working environment.]
 
-. Select the provider, and then enter the provider details:
+. Select the provider (Azure or AWS), and then enter the provider details:
 - For Azure, enter:
 .. The Azure subscription used for backups and the Azure region where the backups will be stored.
 .. The resource group - you can create a new resource group or select and existing resource group.
@@ -195,9 +195,9 @@ You are prompted whether you want to run compliance scans on the backed up volum
 +
 image:screenshot_compliance_on_backups.png[A screenshot of the page where you can choose to activate Cloud Compliance on your backed up volumes.]
 
-. Click *Go to Compliance* to activate compliance scans on the volumes. (If you choose *Close* and not to scan these backed up volumes, you can always enable this functionality later from Cloud Compliance.)
+. Click *Go to Compliance* to activate compliance scans on the volumes. (If you choose *Close* and not to scan these backed up volumes, you can always link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[enable this functionality^] later from Cloud Compliance.)
 
-* If an instance of Cloud Compliance is already deployed in your environment, you are directed to the Configuration page to select the volumes you want to scan. See link:task_getting_started_compliance.html#enabling-cloud-compliance-in-your-working-environments[how to choose the volumes^].
+* If an instance of Cloud Compliance is already deployed in your environment, you are directed to the Configuration page to select the volumes you want to scan in each on-premises working environment that has backups. See link:task_getting_started_compliance.html#enabling-cloud-compliance-in-your-working-environments[how to choose the volumes^].
 +
 image:screenshot_compliance_onprem_backups.png[A screenshot of the Compliance page to select volumes you want to scan.]
 * If Cloud Compliance has not been deployed, you are directed to the Compliance page where you can choose to deploy Compliance in the cloud or in your premises. We strongly recommend deploying it in the cloud. Go link:task_deploy_cloud_compliance.html[here^] for installation requirements and instructions.
