@@ -15,28 +15,32 @@ summary: Cloud Manager includes several options that you can use to upgrade to t
 [.lead]
 Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.
 
-== A note about downgrades
+== Two requirements
 
-Cloud Manager doesn't support downgrading Cloud Volumes ONTAP to a previous version. Contact NetApp technical support for help with downgrades.
+You should be aware of the following requirements before you start the Cloud Volumes ONTAP upgrade process.
 
-== Software upgrades must be completed by Cloud Manager
+=== Software upgrades must be completed by Cloud Manager
 
 Upgrades of Cloud Volumes ONTAP must be completed from Cloud Manager. You should not upgrade Cloud Volumes ONTAP by using System Manager or the CLI. Doing so can impact system stability.
 
-== Cloud Volumes ONTAP must be registered with NetApp Support
+=== Cloud Volumes ONTAP must be registered with NetApp Support
 
 Cloud Volumes ONTAP must be registered with NetApp support in order to upgrade the software using any of the methods described on this page. This applies to both PAYGO and BYOL. You'll need to link:task_registering.html[manually register PAYGO systems], while BYOL systems are registered by default.
 
 TIP: A system that isn't registered for support will still receive the software update notifications that appear in Cloud Manager when a new version is available. But you will need to register the system before you can upgrade the software.
 
+== A note about downgrades
+
+Cloud Manager doesn't support downgrading Cloud Volumes ONTAP to a previous version. Contact NetApp technical support for help with downgrades.
+
 == Ways to upgrade Cloud Volumes ONTAP
 
 Cloud Manager displays a notification in Cloud Volumes ONTAP working environments when a new version of Cloud Volumes ONTAP is available:
-+
+
 image:screenshot_cot_upgrade.gif[Screen shot: Shows the New version available notification which displays in the Canvas page after you select a working environment.]
-+
+
 You can start the upgrade process from this notification, which automates the process by obtaining the software image from an S3 bucket, installing the image, and then restarting the system. For details, see <<Upgrading Cloud Volumes ONTAP from Cloud Manager notifications>>.
-+
+
 NOTE: For HA systems in AWS, Cloud Manager might upgrade the HA mediator as part of the upgrade process.
 
 Cloud Manager also provides the following advanced options for upgrading Cloud Volumes ONTAP software with both PAYGO and BYOL:
