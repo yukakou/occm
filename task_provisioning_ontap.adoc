@@ -28,7 +28,7 @@ You can create volumes on existing aggregates. You can't create new aggregates f
 
 .Steps
 
-. On the Working Environments page, double-click the name of the ONTAP cluster on which you want to provision volumes.
+. On the Canvas page, double-click the name of the ONTAP cluster on which you want to provision volumes.
 
 . Click *Add New Volume*.
 

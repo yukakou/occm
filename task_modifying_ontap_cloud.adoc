@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_modifying_ontap_cloud.html
-keywords: license, licensing, install, instance type, virtual machine type, VM type, change, modify, configuration, subscription, paygo, pay-as-you-go, pay as you go, byol, password, MTU, jumbo frames, c4.xlarge, c4.8xlarge, HA pair, file, license file, install, upload, change, modify, svm, storage virtual machine, password, route tables, nlf, gcp, machine type, virtual machine type, vm instance, write speed, high write speed, normal write speed, storage VM, storage virtual machine, SVM, modify SVM name, change SVM name
+keywords: license, licensing, install, instance type, virtual machine type, VM type, change, modify, configuration, subscription, paygo, pay-as-you-go, pay as you go, byol, password, MTU, jumbo frames, c4.xlarge, c4.8xlarge, HA pair, file, license file, install, upload, change, modify, svm, storage virtual machine, password, route tables, nlf, gcp, machine type, virtual machine type, vm instance, write speed, high write speed, normal write speed, storage VM, storage virtual machine, SVM, modify SVM name, change SVM name, write speed, high write speed, normal write speed, nvfail, writing speed, ldm, low durability mode
 summary: You might need to change the configuration of Cloud Volumes ONTAP systems as your storage needs change. For example, you can change between pay-as-you-go configurations, change the instance or VM type, and more.
 ---
 
@@ -93,7 +93,11 @@ link:task_deploying_gcp.html[Launching Cloud Volumes ONTAP in GCP]
 
 == Changing write speed to normal or high
 
-Cloud Manager enables you to choose a write speed setting for Cloud Volumes ONTAP, except for high availability (HA) pairs in Google Cloud. The default write speed is normal. You can change to high write speed if fast write performance is required for your workload. Before you change the write speed, you should link:concept_write_speed.html[understand the differences between the normal and high settings].
+Cloud Manager enables you to choose a normal or high write speed for Cloud Volumes ONTAP. The default write speed is normal. You can change to high write speed if fast write performance is required for your workload.
+
+High write speed is supported with all types of single node systems. It's also supported with HA pairs in AWS and Azure when using a specific instance or VM type (link:concept_write_speed.html[click here to see the list of supported instances and VM types]). High write speed is not supported with HA pairs in GCP.
+
+Before you change the write speed, you should link:concept_write_speed.html[understand the differences between the normal and high settings].
 
 .About this task
 

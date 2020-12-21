@@ -107,7 +107,7 @@ Backup to Cloud is enabled on the system and backs up volumes every day and reta
 
 .What's next?
 
-link:task_managing_backups.html[You can manage backups by changing the backup schedule, restoring volumes, and more^].
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].
 
 == Enabling Backup to Cloud on an existing system
 
@@ -137,6 +137,9 @@ See link:concept_backup_to_cloud.html#the-schedule-is-daily-weekly-monthly-or-a-
 . Select the volumes that you want to back up and click *Activate*.
 +
 image:screenshot_backup_select_volumes.png[A screenshot of selecting the volumes that will be backed up.]
++
+* To back up all volumes, check the box in the title row (image:button_backup_all_volumes.png[]).
+* To back up individual volumes, check the box for each volume (image:button_backup_1_volume.png[]).
 
 .Result
 
@@ -144,4 +147,4 @@ Backup to Cloud starts taking the initial backups of each selected volume.
 
 .What's next?
 
-link:task_managing_backups.html[You can manage backups by changing the backup schedule, restoring volumes, and more^].
+You can link:task_managing_backups.html[start and stop backups for volumes or change the backup schedule^] and you can link:task_restore_backups.html[restore entire volumes or individual files from a backup file^].

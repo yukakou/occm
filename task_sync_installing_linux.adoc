@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_sync_installing_linux.html
 keywords: data broker, install, linux, on-prem data broker, on-prem, on prem, on premises, networking, permissions, os, operating system, rhel, red hat, ram, cpu, disk space, install data broker, installing data broker, install a data broker, data broker installation, linux installation, linux operating system, aws access, aws keys, keys, gcp access, aws permissions, gcp permissions, google permissions
-summary: When you create a sync relationship, choose the On-Prem Data Broker option to install the data broker software on an on-premises Linux host, or on an existing Linux host in the cloud. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
+summary: When you create a new data broker, choose the On-Prem Data Broker option to install the data broker software on an on-premises Linux host, or on an existing Linux host in the cloud. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
 ---
 
 = Installing the data broker on a Linux host
@@ -13,14 +13,14 @@ summary: When you create a sync relationship, choose the On-Prem Data Broker opt
 :imagesdir: ./media/
 
 [.lead]
-When you create a sync relationship, choose the On-Prem Data Broker option to install the data broker software on an on-premises Linux host, or on an existing Linux host in the cloud. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
+When you create a new data broker, choose the On-Prem Data Broker option to install the data broker software on an on-premises Linux host, or on an existing Linux host in the cloud. Cloud Sync guides you through the installation process, but the requirements and steps are repeated on this page to help you prepare for installation.
 
 == Linux host requirements
 
 * *Operating system*:
 ** CentOS 7.0, 7.7, and 8.0
 ** Red Hat Enterprise Linux 7.7 and 8.0
-** Ubuntu Server 18.04 LTS
+** Ubuntu Server 20.04 LTS
 ** SUSE Linux Enterprise Server 15 SP1
 +
 The command `yum update all` must be run on the host before you install the data broker.

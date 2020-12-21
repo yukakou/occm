@@ -73,6 +73,8 @@ entries:
                   url: /concept_ha.html
                 - title: HA pairs in Azure
                   url: /concept_ha_azure.html
+                - title: HA pairs in GCP
+                  url: /concept_ha_google_cloud.html
             - title: Evaluating
               url: /concept_evaluating.html
             - title: Licensing
@@ -231,10 +233,14 @@ entries:
             url: /task_backup_to_s3.html
           - title: Back up to Azure Blob storage
             url: /task_backup_to_azure.html
+          - title: Back up to Google Cloud storage
+            url: /task_backup_to_gcp.html
           - title: Back up from on-premises ONTAP systems
             url: /task_backup_from_onprem.html
-      - title: Manage backups and restore data
+      - title: Manage backups
         url: /task_managing_backups.html
+      - title: Restore from backups
+        url: /task_restore_backups.html
   - title: Copy and synchronize data
     entries:
       - title: Learn about Cloud Sync
@@ -267,8 +273,14 @@ entries:
             url: /task_sync_copying_acls.html
           - title: Encrypt NFS data in flight
             url: /task_sync_nfs_encryption.html
+          - title: Use secrets from HashiCorp Vault
+            url: /task_external_vault.html
       - title: Manage sync relationships
         url: /task_sync_managing_relationships.html
+      - title: Manage data brokers
+        url: /task_sync_managing_data_brokers.html
+      - title: Uninstall the data broker
+        url: /task_sync_uninstalling.html
       - title: API
         url: /api_sync.html
       - title: FAQ
@@ -283,14 +295,12 @@ entries:
             url: /task_deploy_cloud_compliance.html
           - title: Activate scanning on your data sources
             entries:
-              - title: Cloud Volumes ONTAP and Azure NetApp Files
+              - title: Cloud Volumes ONTAP, on-prem ONTAP, and Azure NetApp Files
                 url: /task_getting_started_compliance.html
               - title: Amazon S3 buckets
                 url: /task_scanning_s3.html
               - title: Database schemas
                 url: /task_scanning_databases.html
-              - title: On-premises ONTAP data
-                url: /task_scanning_onprem.html
       - title: Gain visibility and control of data
         url: /task_controlling_private_data.html
       - title: Generate reports
@@ -341,6 +351,8 @@ entries:
         url: /task_licensing_cloud_tiering.html
       - title: Manage data tiering
         url: /task_managing_tiering.html
+      - title: Get an overview of tiering
+        url: /task_tiering_onprem_overview.html
       - title: FAQ
         url: /faq_cloud_tiering.html
       - title: Reference

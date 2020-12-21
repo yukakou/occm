@@ -15,6 +15,10 @@ summary: This page highlights _important_ changes in Cloud Manager that can help
 [.lead]
 This page highlights important changes in Cloud Manager that can help you use the service as we introduce new enhancements. You should continue to read the link:reference_new_occm.html[What's new] page to learn about all new features and enhancements.
 
+== Cloud Volumes ONTAP AMI change
+
+Starting with the 9.8 release, the Cloud Volumes ONTAP PAYGO AMI is no longer available in the AWS Marketplace. If you use the Cloud Manager API to deploy Cloud Volumes ONTAP PAYGO, you'll need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to the Cloud Manager subscription in the AWS Marketplace^] before deploying a 9.8 system.
+
 == SaaS changes
 
 We have introduced a software-as-a-service experience for Cloud Manager. This new experience makes it easier for you to use Cloud Manager and enables us to provide additional features to manage your hybrid cloud infrastructure.
@@ -107,16 +111,36 @@ Starting with the 3.8.1 release, the following permissions are required to use B
 
 === GCP
 
+==== New permissions for HA pairs
+
+Starting with the 3.9 release, the service account for a Connector requires additional permissions to deploy a Cloud Volumes ONTAP HA pair in GCP:
+
+[source,yaml]
+- compute.addresses.list
+- compute.backendServices.create
+- compute.networks.updatePolicy
+- compute.regionBackendServices.create
+- compute.regionBackendServices.get
+- compute.regionBackendServices.list
+
+==== New permissions for data tiering
+
+Starting with the 3.9 release, additional permissions are required to set a service account on the Cloud Volumes ONTAP instance. This service account provides permissions for data tiering to a Google Cloud Storage bucket.
+
+- iam.serviceAccounts.actAs
+- storage.objects.get
+- storage.objects.list
+
 ==== New permissions for Kubernetes management
 
-Starting with the 3.8.8 release, the service account for a Connector requires the following permissions to discover and manage Kubernetes clusters running in Google Kubernetes Engine (GKE):
+Starting with the 3.8.8 release, the service account for a Connector requires additional permissions to discover and manage Kubernetes clusters running in Google Kubernetes Engine (GKE):
 
 [source,yaml]
 - container.*
 
 ==== New permissions for data tiering
 
-Starting with the 3.8 release, the following permissions are required to use a service account for data tiering. link:reference_new_occm.html#data-tiering-enhancements-in-gcp[Learn more].
+Starting with the 3.8 release, the following permissions are now required to use a service account for data tiering. link:reference_new_occm.html#data-tiering-enhancements-in-gcp[Learn more about this change].
 
 [source,yaml]
 - storage.buckets.update

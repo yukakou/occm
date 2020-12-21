@@ -147,7 +147,7 @@ The service principal for Cloud Manager now has the required Azure permissions f
 
 Set up an Azure NetApp Files working environment in Cloud Manager so you can start creating volumes.
 
-. From the Working Environments page, click *Add Working Environment*.
+. From the Canvas page, click *Add Working Environment*.
 
 . Select *Microsoft Azure* and then *Azure NetApp Files*.
 

@@ -19,7 +19,111 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.1 (7 Dec 2020)
+
+* <<General enhancements>>
+* <<Cloud Volumes ONTAP AMI change>>
+* <<Backup to Cloud enhancements>>
+* <<Cloud Compliance enhancements>>
+* <<Cloud Tiering enhancements>>
+* <<Cloud Sync enhancements>>
+
+=== General enhancements
+
+* We've renamed the *Working Environments* tab to *Canvas*.
++
+This tab starts as a blank canvas and enables you to add your working environments by deploying, allocating, and discovering storage across your hybrid cloud.
++
+image:screenshot_canvas.gif[A screenshot of the Canvas tab showing several types of working environments.]
+
+* It's now easier to navigate between Cloud Manager and Spot.
++
+A new *Storage Operations* section in Spot enables you to navigate directly to Cloud Manager. After you're done, you can get back to Spot from the *Compute* tab in Cloud Manager.
+
+=== Cloud Volumes ONTAP AMI change
+
+Starting with the 9.8 release, the Cloud Volumes ONTAP PAYGO AMI is no longer available in the AWS Marketplace. If you use the Cloud Manager API to deploy Cloud Volumes ONTAP PAYGO, you'll need to https://aws.amazon.com/marketplace/pp/B07QX2QLXX[subscribe to the Cloud Manager subscription in the AWS Marketplace^] before deploying a 9.8 system.
+
+=== Backup to Cloud enhancements
+
+* You now have the ability to restore individual files from a backup file.
+- If you need to restore a few files from a certain point in time, now you can just restore those files instead of having to restore the whole volume.
+- You can restore the files to a volume in the same working environment, or to a volume in a different working environment that’s using the same cloud account.
+- This single file restore option relies on a new Cloud Restore instance that is deployed in your environment. link:task_restore_backups.html#restoring-files-from-a-backup[Go here for details about this new functionality.]
+
+* You can configure Backup to Cloud in a Google Cloud environment now while deploying a new Cloud Volumes ONTAP system. In the past you could only configure Backup to Cloud on existing Cloud Volumes ONTAP systems.
+
+* Now you can restore volumes that you had backed up from on-prem ONTAP systems to Cloud Volumes ONTAP systems deployed in AWS or Azure.
+
+=== Cloud Compliance enhancements
+
+* Ability to scan data directly from your on-premises ONTAP clusters
++
+If you have discovered your on-prem clusters in Cloud Manager, now you can run Compliance scans directly on those volumes. No longer do you have to copy those volumes to a Cloud Volumes ONTAP system before you can run a Compliance scan.
+
+* Ability to install Cloud Compliance in your on-premises location
++
+If you plan to scan on-premises ONTAP cluster data, now you can install Cloud Compliance on-premises as well. It is still integrated in the Cloud Manager UI and it can still be used to scan other working environments, including cloud based volumes, buckets, and databases.
++
+link:task_deploy_cloud_compliance.html#deploying-the-cloud-compliance-instance-on-premises[See the prerequisites and installation steps here].
+
+* Ability to easily scan CIFS data protection volumes
++
+In the past you have been able to scan NFS DP volumes. This release allows you to easily scan CIFS DP volumes directly within Cloud Compliance. link:task_getting_started_compliance.html#scanning-data-protection-volumes[Learn how].
+
+* A new "Highlights" feature provides a predefined selection of combination filters that return results in the Investigation page
++
+Ten highlights are available with this release. For example, the "HIPAA – Stale data over 30 days" highlight identifies files that contain Health information that is over 30 days old. link:task_controlling_private_data.html#using-highlights-to-quickly-view-results-in-the-investigation-page[See the full list of predefined highlights].
++
+You can select Highlights from a tab in the Compliance Dashboard and as a filter in the Investigation page.
+
+* Two new sensitive personal data types
++
+Cloud Compliance can now find Political Opinions Reference and Civil Law Reference in files.
+
+* A new filter for "file size" is available from the Investigation page to refine your search results for files of a certain size
++
+Note that the list of required endpoints for Cloud Compliance deployments has been revised based on cloud provider. link:task_deploy_cloud_compliance.html#reviewing-prerequisites[Review this list for AWS, Azure, and on-prem requirements].
+
+=== Cloud Tiering enhancements
+
+* You can now change the tiering policy and minimum cooling days for multiple volumes at the same time.
++
+image:screenshot_tiering_modify_volumes.gif[A screenshot that shows multiple volumes selected and the Modify selected volumes button.]
+
+* Cloud Tiering now provides an aggregated view of data tiering from each of your on-premises clusters. This overview provides a clear picture of your environment and enables you to take proper actions. link:task_tiering_onprem_overview.html[Learn more about this page].
++
+image:screenshot_tiering_onprem_overview.gif[A screenshot of the On-Prem Overview page.]
+
+=== Cloud Sync enhancements
+
+* You can now manage data broker groups.
++
+Grouping data brokers together can help improve the performance of sync relationships. Manage groups by adding a new data broker to a group, viewing information about data brokers, and more.
++
+link:task_sync_managing_data_brokers.html[Learn how to manage data brokers].
+
+* Cloud Sync now supports an ONTAP S3 Storage to ONTAP S3 Storage sync relationship.
++
+link:reference_sync_requirements.html[View the entire list of supported sources and targets.]
+
+== Cloud Manager 3.9 Update (18 Nov 2020)
+
+Backup to Cloud is now supported on Cloud Volumes ONTAP in Google Cloud. Click link:task_backup_to_gcp.html[here] for details.
+
+*Note:* Only single-node systems are currently supported.
+
+== Cloud Volumes ONTAP 9.8 (16 Nov 2020)
+
+Cloud Volumes ONTAP 9.8 is available in AWS, Azure, and Google Cloud Platform. This release includes support for link:concept_ha_google_cloud.html[HA pairs in GCP].
+
+TIP: The GCP service account associated with the Connector link:https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.9.0_GCP.yaml[needs the latest permissions^] to deploy an HA pair in GCP.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_98.html[Learn what else is new in Cloud Volumes ONTAP 9.8^].
+
 == Cloud Manager 3.9 (8 Nov 2020)
+
+We released an enhancement to Cloud Manager 3.9.
 
 === Cloud Compliance enhancements
 

@@ -68,13 +68,13 @@ image:screenshot_aiq_clusters.png[A screenshot of the Active IQ page showing all
 //
 // Cloud Manager discovers the cluster and adds it to the working environment. You can now create volumes, replicate data to and from the cluster, set up data tiering to the cloud, back up volumes to the cloud, and launch System Manager to perform advanced tasks.
 //
-== Discovering clusters from the Working Environments page
+== Discovering clusters from the Canvas page
 
-You can discover your ONTAP clusters and add them to a working environment from the Working Environments page.
+You can discover your ONTAP clusters and add them to a working environment from the Canvas page.
 
 .Steps
 
-. On the Working Environments page, click *Add Working Environment* and select *On-Premises ONTAP*.
+. On the Canvas page, click *Add Working Environment* and select *On-Premises ONTAP*.
 
 . If you're prompted, create a Connector.
 +

@@ -26,7 +26,7 @@ NOTE: When deployed in multiple AWS Availability Zones, Cloud Volumes ONTAP HA c
 
 .Steps
 
-. From the Working Environments page, double-click the Cloud Volumes ONTAP system that you want to manage with System Manager.
+. From the Canvas page, double-click the Cloud Volumes ONTAP system that you want to manage with System Manager.
 
 . Click the menu icon, and then click *Advanced > System Manager*.
 
@@ -54,7 +54,7 @@ NOTE: When deployed in multiple AZs, Cloud Volumes ONTAP HA configurations use a
 
 . In Cloud Manager, identify the IP address of the cluster management interface:
 
-.. On the Working Environments page, select the Cloud Volumes ONTAP system.
+.. On the Canvas page, select the Cloud Volumes ONTAP system.
 
 .. Copy the cluster management IP address that appears in the right pane.
 

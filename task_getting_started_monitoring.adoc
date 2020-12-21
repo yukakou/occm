@@ -105,13 +105,13 @@ Enable monitoring at any time from the working environment.
 
 .Steps
 
-. At the top of Cloud Manager, click *Working Environments*.
+. At the top of Cloud Manager, click *Canvas*.
 
 . Select a working environment.
 
 . In the pane on the right, click *Start Monitoring*.
 +
-image:screenshot_enable_monitoring.gif[[A screenshot that shows the Enable Monitoring icon which is available in the Working Environments tab after you select a working environment.]
+image:screenshot_enable_monitoring.gif[[A screenshot that shows the Enable Monitoring icon which is available on the Canvas page after you select a working environment.]
 
 == Monitoring your volumes
 
@@ -162,7 +162,7 @@ NOTE: If you disable monitoring from each of your working environments, you'll n
 
 .Steps
 
-. At the top of Cloud Manager, click *Working Environments*.
+. At the top of Cloud Manager, click *Canvas*.
 
 . Select a working environment.
 

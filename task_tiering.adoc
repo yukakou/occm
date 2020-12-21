@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_tiering.html
 keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, S3 tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, azure tiering, blob tiering, azure blob, container, inactive, gcp, tiering in gcp, tiering requirements
-summary: You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data.
+summary: You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. Data tiering is powered by FabricPool technology.
 ---
 
 = Tiering inactive data to low-cost object storage
@@ -13,7 +13,7 @@ summary: You can reduce storage costs for Cloud Volumes ONTAP by combining an SS
 :imagesdir: ./media/
 
 [.lead]
-You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. For a high-level overview, see link:concept_data_tiering.html[Data tiering overview].
+You can reduce storage costs for Cloud Volumes ONTAP by combining an SSD or HDD performance tier for hot data with an object storage capacity tier for inactive data. Data tiering is powered by FabricPool technology. For a high-level overview, see link:concept_data_tiering.html[Data tiering overview].
 
 To set up data tiering, you need to do the following:
 
@@ -122,13 +122,15 @@ Cloud Manager creates an object store for cold data when the system is created, 
 
 . <<Requirements,Ensure that you've met all requirements>>.
 
-. On the Working Environments page, double-click the name of the Cloud Volumes ONTAP instance.
+. On the Canvas page, double-click the name of the Cloud Volumes ONTAP instance.
 
 . Click the menu icon and select *Enable capacity tiering*.
 +
 image:screenshot_enable_capacity_tiering.gif[A screenshot of the Enable capacity tiering option that is available from the working environment menu if an issue was encountered when Cloud Manager tried to enable data tiering.]
 +
 NOTE: You'll only see this option if data tiering couldn't be enabled when Cloud Manager created the system.
+
+. Click *Enable* so Cloud Manager can create the object store that this Cloud Volumes ONTAP system will use for tiered data.
 
 == Ensuring that tiering is enabled on aggregates
 
@@ -140,25 +142,29 @@ If you're enabling data tiering on a new volume, then you don't need to worry ab
 
 * *Existing volumes*
 +
-If you want to enable data tiering on an existing volume, then you'll need to ensure that data tiering is enabled on the underlying aggregate. If data tiering isn't enabled on the existing aggregate, then you'll need to enable data tiering on a _new_ aggregate and then move the volume to that aggregate. You can't enable data tiering on an existing aggregate.
+If you want to enable data tiering on an existing volume, then you'll need to ensure that data tiering is enabled on the underlying aggregate. If data tiering isn't enabled on the existing aggregate, then you'll need to use System Manager to attach an existing aggregate to the object store.
 
-.Steps
+.Steps to confirm whether tiering is enabled on an aggregate
 
-. On the Working Environments page, double-click the name of the Cloud Volumes ONTAP instance on which you want to manage aggregates.
+. Open the working environment in Cloud Manager.
 
-. Click the menu icon, and then click *Advanced > Advanced allocation*.
+. Click the menu icon, click *Advanced*, and then click *Advanced allocation*.
 
-. Click *Add Aggregate* and then specify details for the aggregate.
-.. Enter a name.
-.. Choose a disk type and keep tiering enabled.
-.. Choose your disk size and number of disks.
-.. Click *Go* and then click *Approve and Purchase*.
+. Verify whether tiering is enabled or disabled on the aggregate.
++
+image:screenshot_aggr_tiering.gif[A screenshot that shows information about an aggregate in Cloud Manager which includes the tiering status.]
 
-. If needed, move existing volumes to the new aggregate by http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-vol-move/home.html[following the ONTAP 9 Volume Move Express Guide^].
+.Steps to enable tiering on an aggregate
+
+. In System Manager, click *Storage > Tiers*.
+
+. Click the action menu for the aggregate and select *Attach Cloud Tiers*.
+
+. Select the cloud tier to attach and click *Save*.
 
 .What's next?
 
-You can now enable data tiering on your volumes, as explained in the next section.
+You can now enable data tiering on new and existing volumes, as explained in the next section.
 
 == Tiering data from read-write volumes
 
@@ -196,7 +202,7 @@ Cloud Volumes ONTAP can tier data from a data protection volume to a capacity ti
 
 .Steps
 
-. On the Working Environments page, select the working environment that contains the source volume, and then drag it to the working environment to which you want to replicate the volume.
+. On the Canvas page, select the working environment that contains the source volume, and then drag it to the working environment to which you want to replicate the volume.
 
 . Follow the prompts until you reach the tiering page and enable data tiering to object storage.
 +
