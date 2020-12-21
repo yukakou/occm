@@ -15,7 +15,7 @@ summary: Cloud Manager includes several options that you can use to upgrade to t
 [.lead]
 Cloud Manager includes several options that you can use to upgrade to the current Cloud Volumes ONTAP release. You should prepare Cloud Volumes ONTAP systems before you upgrade the software.
 
-== Two requirements
+== Requirements
 
 You should be aware of the following requirements before you start the Cloud Volumes ONTAP upgrade process.
 
