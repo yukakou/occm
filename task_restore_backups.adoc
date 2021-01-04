@@ -35,7 +35,7 @@ You can restore a volume from a backup file to the following working environment
 
 | Amazon S3 | Cloud Volumes ONTAP in AWS
 | Azure Blob | Cloud Volumes ONTAP in Azure
-| Google Cloud | Cloud Volumes ONTAP in Google
+| Google Cloud Storage | Cloud Volumes ONTAP in Google
 
 |===
 

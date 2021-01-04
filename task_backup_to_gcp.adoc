@@ -5,7 +5,7 @@ keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud
 summary: Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Google Cloud storage.
 ---
 
-= Backing up data to Google Cloud storage
+= Backing up data to Google Cloud Storage
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,7 @@ summary: Complete a few steps to get started backing up data from Cloud Volumes 
 :imagesdir: ./media/
 
 [.lead]
-Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Google Cloud storage.
+Complete a few steps to get started backing up data from Cloud Volumes ONTAP to Google Cloud Storage.
 
 == Quick start
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_backup_to_cloud.html
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, back up volumes, Backup to Cloud, restore volumes, billing, cost, on-premises ONTAP, onprem, restore files
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, back up volumes, Backup to Cloud, restore volumes, billing, cost, on-premises ONTAP, onprem, restore files
 summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
@@ -37,7 +37,7 @@ NOTE: You must use Cloud Manager for all backup and restore operations. Any acti
 
 == Supported working environments and object storage providers
 
-Backup to Cloud enables you to create volume backups from the following working environments:
+At this time, Backup to Cloud enables you to create volume backups from the following working environments:
 
 [cols=2*,options="header",cols="50,40",width="90%"]
 |===
@@ -50,7 +50,7 @@ Backup to Cloud enables you to create volume backups from the following working 
 | Cloud Volumes ONTAP in Azure
 | Azure Blob
 | Cloud Volumes ONTAP in Google
-| Google Cloud
+| Google Cloud Storage
 | On-premises ONTAP system
 | Amazon S3
 Azure Blob
@@ -59,7 +59,7 @@ Azure Blob
 
 You can restore a volume, or individual files, from a backup file to the following working environments:
 
-[cols=3*,options="header",cols="30,40,40",width="90%"]
+[cols="<,^,<",options="header",cols="30,40,40",width="90%"]
 |===
 
 | Backup File Location
@@ -70,13 +70,13 @@ You can restore a volume, or individual files, from a backup file to the followi
  On-premises ONTAP system
 | Azure Blob | Cloud Volumes ONTAP in Azure | Cloud Volumes ONTAP in Azure
 On-premises ONTAP system
-| Google Cloud | Cloud Volumes ONTAP in Google | 
+| Google Cloud Storage | Cloud Volumes ONTAP in Google |
 
 |===
 
 == Cost
 
-Backup to Cloud is available in two pricing options: Bring Your Own License (BYOL) and Pay As You Go (PAYGO).
+Backup to Cloud is available in two licensing options: Bring Your Own License (BYOL) and Pay As You Go (PAYGO).
 
 For BYOL you'll pay NetApp to use the service for a period of time, say 6 months, and for a maximum amount backup capacity, say 10 GB (before storage efficiencies), and you'll need to pay your cloud provider for object storage costs. You'll receive a serial number that you enter in the Cloud Manager Licensing page to enable the service. When either limit is reached you'll need to renew the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^]. The Backup BYOL license applies to all Cloud Volumes ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Central account^].
 
@@ -90,9 +90,9 @@ For PAYGO you'll need to pay your cloud provider for object storage costs and Ne
 
 The Restore service (for the single file restore functionality) does not require a license of any type. The only requirement is that you have a valid subscription to use the Backup to Cloud service. The only cost for the Restore service is the cost to your cloud provider for the deployed instance.
 
-* In AWS, the Restore instance runs on an m5n.xlarge instance with 4 CPUs, 16 GiB Memory, and EBS Only instance storage. In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
+* In AWS, the Restore instance runs on an https://aws.amazon.com/ec2/instance-types/m5/[m5n.xlarge instance^] with 4 CPUs, 16 GiB Memory, and EBS Only instance storage. In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
 
-* In Azure, the Restore virtual machine runs on ...
+* In Azure, the Restore virtual machine runs on a https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D4s_v3 VM^] with 4 CPUs, 16 GiB Memory, and a 32 GB disk.
 
 === Free trial
 
@@ -198,15 +198,11 @@ Systems that were shifted over to a PAYGO license are returned to the BYOL licen
 
 Backup to Cloud supports FlexVol read-write volumes and data protection (DP) volumes.
 
-FlexGroup volumes aren't currently supported.
+FlexGroup volumes and SnapLock volumes aren't currently supported.
 
 == Limitations
 
-* WORM storage (SnapLock) is not supported on a Cloud Volumes ONTAP or on-premises system when Backup to Cloud is enabled.
-
-* Backup to Cloud restrictions when making backups from on-premises ONTAP systems:
-** Cloud Manager must be deployed in the cloud (Azure or AWS). There is no support for on-premises Cloud Manager deployments.
-** Backups can be restored only to Cloud Volumes ONTAP systems deployed on the same cloud provider or to an on-premises ONTAP system.
+* When making backups from on-premises ONTAP systems, Cloud Manager must be deployed in the cloud (Azure or AWS). There is no support for on-premises Cloud Manager deployments.
 
 * When backing up data protection (DP) volumes, the rule that is defined for the SnapMirror policy on the source volume must use a label that matches the allowed Backup to Cloud policy names of *daily*, *weekly*, or *monthly*. Otherwise the backup will fail for that DP volume.
 
@@ -214,9 +210,11 @@ FlexGroup volumes aren't currently supported.
 
 * When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up. For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up. If you want to back up these volumes, you would need to disable Backup to Cloud and then enable it again.
 
-* ILM (tiering) from the object storage, or direct write to Glacier or similar lower tier object storage, is not supported.
+* ILM (tiering) from the object storage, or direct write to AWS Glacier or similar lower tier object storage, is not supported.
 
-* MetroCluster (MCC) and SVM-DR configurations are not supported.
+* SVM-DR and SM-BC configurations are not supported.
+
+* MetroCluster (MCC) backup is supported from ONTAP secondary only: MCC -> SnapMirror -> ONTAP -> Cloud Backup Service -> object storage.
 
 * WORM/Compliance mode on an object store is not supported.
 
@@ -224,12 +222,12 @@ FlexGroup volumes aren't currently supported.
 
 * Single file restore can restore individual files. There is currently no support for restoring folders/directories.
 
-* The ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP systems.
+* The ONTAP version must be 9.6 or greater in your Cloud Volumes ONTAP or on-premises systems.
 
 * Cross account restore requires manual action in the cloud provider console. See the AWS topic https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html[granting cross-account bucket permissions^] for details.
 
-* Non supported Configurations:
-** Gov Cloud is not supported.
+* Non supported configurations:
+** Gov Cloud is currently not supported.
 ** Same account with different Cloud Managers in different subnets.
 
-* We can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are not supported.
+* Restore can browse a single directory with flat files up to a maximum of 30,000 files. Larger directories are currently not supported.
