@@ -33,13 +33,13 @@ This release of Cloud Manager introduces the following enhancements for Cloud Vo
 
 A few months ago, we announced that Cloud Volumes ONTAP had achieved the Amazon Web Services (AWS) Outposts Ready designation. Today, we're pleased to announce that we've validated Cloud Manager and Cloud Volumes ONTAP with AWS Outposts.
 
-If you have an AWS Outpost, you can deploy Cloud Volumes ONTAP in that Outpost by selecting the Outpost VPC. The experience is the same as any other VPC that resides in AWS. Note that you will need to first deploy a Connector in your AWS Outpost.
+If you have an AWS Outpost, you can deploy Cloud Volumes ONTAP in that Outpost by selecting the Outpost VPC in the Working Environment wizard. The experience is the same as any other VPC that resides in AWS. Note that you will need to first deploy a Connector in your AWS Outpost.
 
 There are a few limitations to point out:
 
 * Only single node Cloud Volumes ONTAP systems are supported at this time
-* Only General Purpose SSDs are supported at this time
 * The EC2 instances that you can use with Cloud Volumes ONTAP are limited to what's available in your Outpost
+* Only General Purpose SSDs are supported at this time
 
 ==== Support for Ultra SSD VNVRAM in all supported Azure regions
 
@@ -64,7 +64,7 @@ image:screenshot_azure_az.gif[A screenshot of the Availability Zone drop-down li
 
 === Cloud Tiering enhancements
 
-* A new Cloud Performance Test gives you the ability to measure network latency and throughput performance from an ONTAP cluster to an  object store before and after you set up data tiering.
+* A new Cloud Performance Test gives you the ability to measure network latency and throughput performance from an ONTAP cluster to an object store before and after setting up data tiering.
 +
 image:screenshot_tiering_performance_test.gif[A screenshot of the Cloud Performance Test results that shows the latency and throughput to object storage.]
 
@@ -74,7 +74,7 @@ image:screenshot_tiering_performance_test.gif[A screenshot of the Cloud Performa
 
 * New Support Dashboard
 +
-In the Help menu, a new Support Dashboard includes links to resources that can enable you to get help, submit feedback, and contact NetApp Support. Access tools in the *Connector AutoSupport* tab to send and download AutoSupport messages.
+In the Help menu, a new Support Dashboard includes links to resources that can enable you to get help, submit feedback, and contact NetApp Support. You can also send and download AutoSupport messages from the *Connector AutoSupport* tab.
 +
 image:screenshot_support_dashboard.gif[A screenshot of the Support Dashboard in Cloud Manager.]
 
@@ -82,7 +82,7 @@ image:screenshot_support_dashboard.gif[A screenshot of the Support Dashboard in 
 +
 Cloud Manager makes it easier to view the relationships between the services enabled on your working environments.
 +
-For example, the following image shows an example of two working environments where data is backed up from Cloud Volumes ONTAP to Amazon S3, and where data is synced between Amazon S3 and Cloud Volumes ONTAP.
+For example, the following image shows an example of two working environments where data is backed up from Cloud Volumes ONTAP to Amazon S3, and where data is synced between Amazon S3 and two Cloud Volumes ONTAP systems.
 +
 image:screenshot_we_relationships.png[A screenshot that shows the Canvas tab and several relationships between working environments which are depicted by lines and arrows.]
 
