@@ -19,6 +19,73 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.2 (4 Jan 2021)
+
+* <<Cloud Volumes ONTAP enhancements>>
+* <<Cloud Tiering enhancements>>
+* <<General enhancements>>
+
+=== Cloud Volumes ONTAP enhancements
+
+This release of Cloud Manager introduces the following enhancements for Cloud Volumes ONTAP.
+
+==== Support for AWS Outposts
+
+A few months ago, we announced that Cloud Volumes ONTAP had achieved the Amazon Web Services (AWS) Outposts Ready designation. Today, we're pleased to announce that we've validated Cloud Manager and Cloud Volumes ONTAP with AWS Outposts.
+
+If you have an AWS Outpost, you can deploy Cloud Volumes ONTAP in that Outpost by selecting the Outpost VPC. The experience is the same as any other VPC that resides in AWS. Note that you will need to first deploy a Connector in your AWS Outpost.
+
+There are a few limitations to point out:
+
+* Only single node Cloud Volumes ONTAP systems are supported at this time
+* Only General Purpose SSDs are supported at this time
+* The EC2 instances that you can use with Cloud Volumes ONTAP are limited to what's available in your Outpost
+
+==== Support for Ultra SSD VNVRAM in all supported Azure regions
+
+Cloud Volumes ONTAP can now use an Ultra SSD as VNVRAM when you use the E32s_v3 VM type with a single node system https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-ultra-ssd[in any supported Azure region^].
+
+VNVRAM provides better write performance.
+
+==== Ability to choose an Availability Zone in Azure
+
+You can now choose the Availability Zone in which you'd like to deploy a single node Cloud Volumes ONTAP system. If you don't select an AZ, Cloud Manager will select one for you.
+
+image:screenshot_azure_az.gif[A screenshot of the Availability Zone drop-down list that's available after choosing a region.]
+
+==== Support for bigger disks and new instances in GCP
+
+* Cloud Volumes ONTAP now supports 64 TB disks in GCP.
+
+* Cloud Volumes ONTAP now supports the following machine types:
+** n2-standard-4 with the Explore license and with BYOL
+** n2-standard-8 with the Standard license and with BYOL
+** n2-standard-32 with the Premium license and with BYOL
+
+=== Cloud Tiering enhancements
+
+* A new Cloud Performance Test gives you the ability to measure network latency and throughput performance from an ONTAP cluster to an  object store before and after you set up data tiering.
++
+image:screenshot_tiering_performance_test.gif[A screenshot of the Cloud Performance Test results that shows the latency and throughput to object storage.]
+
+* The Tiering Setup wizards were redesigned for ease of use.
+
+=== Additional enhancements
+
+* New Support Dashboard
++
+In the Help menu, a new Support Dashboard includes links to resources that can enable you to get help, submit feedback, and contact NetApp Support. Access tools in the *Connector AutoSupport* tab to send and download AutoSupport messages.
++
+image:screenshot_support_dashboard.gif[A screenshot of the Support Dashboard in Cloud Manager.]
+
+* Visual representation between working environments
++
+Cloud Manager makes it easier to view the relationships between the services enabled on your working environments.
++
+For example, the following image shows an example of two working environments where data is backed up from Cloud Volumes ONTAP to Amazon S3, and where data is synced between Amazon S3 and Cloud Volumes ONTAP.
++
+image:screenshot_we_relationships.png[A screenshot that shows the Canvas tab and several relationships between working environments which are depicted by lines and arrows.]
+
 == Cloud Manager 3.9.1 (7 Dec 2020)
 
 * <<General enhancements>>
