@@ -56,6 +56,8 @@ image:screenshot_azure_az.gif[A screenshot of the Availability Zone drop-down li
 ==== Support for bigger disks and new instances in GCP
 
 * Cloud Volumes ONTAP now supports 64 TB disks in GCP.
++
+NOTE: The maximum system capacity with disks alone remains at 256 TB due to GCP limits.
 
 * Cloud Volumes ONTAP now supports the following machine types:
 ** n2-standard-4 with the Explore license and with BYOL
