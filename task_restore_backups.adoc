@@ -111,6 +111,12 @@ The Restore instance restores the file(s), and then the instance is shut down af
 
 See link:concept_backup_to_cloud.html#cost[this topic^] for the cost of both the Backup to Cloud service and the Restore service.
 
+.Instance type
+
+* In AWS, the Restore instance runs on an https://aws.amazon.com/ec2/instance-types/m5/[m5n.xlarge instance^] with 4 CPUs, 16 GiB Memory, and EBS Only instance storage. In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
+
+* In Azure, the Restore virtual machine runs on a https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D4s_v3 VM^] with 4 CPUs, 16 GiB Memory, and a 32 GB disk.
+
 .AWS permissions required
 
 When using the Restore service with AWS, the IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^] as described in link:task_backup_to_s3.html#requirements[AWS requirements^].

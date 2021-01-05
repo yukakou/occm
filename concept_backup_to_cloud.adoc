@@ -76,11 +76,41 @@ On-premises ONTAP system
 
 == Cost
 
-Backup to Cloud is available in two licensing options: Bring Your Own License (BYOL) and Pay As You Go (PAYGO).
+There are two types of costs associated with using Backup to Cloud: resource charges and service charges.
 
-For BYOL you'll pay NetApp to use the service for a period of time, say 6 months, and for a maximum amount backup capacity, say 10 GB (before storage efficiencies), and you'll need to pay your cloud provider for object storage costs. You'll receive a serial number that you enter in the Cloud Manager Licensing page to enable the service. When either limit is reached you'll need to renew the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^]. The Backup BYOL license applies to all Cloud Volumes ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Central account^].
+*Resource charges*
 
-For PAYGO you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on used capacity (before storage efficiencies):
+Resource charges are paid to the cloud provider for running the Backup and Restore instances in the cloud.
+
+* For the Backup instance, you pay your cloud provider for compute and object storage costs.
++
+Since Backup to Cloud preserves the storage efficiencies of the source volume, you pay the cloud provider object storage costs for the data _after_ ONTAP efficiencies (for the smaller amount of data after deduplication and compression has been applied).
+
+* For the Restore instance, you pay your cloud provider for compute costs only when the instance is running.
++
+The instance is used only to browse the backup snapshots when restoring individual files. The instance is turned off when not in use to save costs. And it is not deployed at all if you never attempt to restore individual files.
+
+*Service charges*
+
+Backup service charges are paid to NetApp and cover both the cost to create backups and to restore volumes, or files, from those backups. You pay only for the data that you protect, calculated by the target backup capacity before ONTAP efficiencies.
+
+There are two ways to pay for the Backup service. The first option is to subscribe from the service provider, which enables you to pay per month based on the amount of backed up data. The second option is to purchase licenses directly from NetApp. Read the <<Licensing,Licensing>> section for details.
+
+NOTE: The Restore instance does not require a separate license - it is covered in your Backup to Cloud license.
+
+== Licensing
+
+Backup to Cloud is available in two licensing options: Bring Your Own License (BYOL) and Pay As You Go (PAYGO). A 30-day free trial is available if you don’t have a license.
+
+=== Free trial
+
+When using the 30-day free trial version, you are notified about the number of free trial days that remain. At the end of your free trial, backups stop being created. You must subscribe to the service or purchase a license to continue using the service.
+
+Backup are not deleted when the service is disabled. You'll continue to be charged by your cloud provider for object storage costs for the capacity that your backups use unless you delete the backups.
+
+=== Pay-as-you-go subscription
+
+For PAYGO you'll need to pay your cloud provider for object storage costs and NetApp for backup licensing costs. The licensing costs are based on target backup capacity (before ONTAP storage efficiencies):
 
 * AWS: https://aws.amazon.com/marketplace/pp/B07QX2QLXX[Go to the Cloud Manager Marketplace offering for pricing details^].
 
@@ -88,17 +118,27 @@ For PAYGO you'll need to pay your cloud provider for object storage costs and Ne
 
 * GCP: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Go to the Cloud Manager Marketplace offering for pricing details^]
 
-The Restore service (for the single file restore functionality) does not require a license of any type. The only requirement is that you have a valid subscription to use the Backup to Cloud service. The only cost for the Restore service is the cost to your cloud provider for the deployed instance.
+=== Bring your own license
 
-* In AWS, the Restore instance runs on an https://aws.amazon.com/ec2/instance-types/m5/[m5n.xlarge instance^] with 4 CPUs, 16 GiB Memory, and EBS Only instance storage. In regions where m5n.xlarge instance isn’t available, Restore runs on an m5.xlarge instance instead.
+BYOL is term-based (1YR/2YR/3YR) and capacity-based in 1 TB increments, based on the logical (before ONTAP storage efficiencies) backed up capacity. You pay NetApp to use the service for a period of time, say 1 year, and for a maximum amount backup capacity, say 10 GB, and you'll need to pay your cloud provider for object storage costs. You'll receive a serial number that you enter in the Cloud Manager Licensing page to enable the service. When either limit is reached you'll need to renew the license. See link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^]. The Backup BYOL license applies to all Cloud Volumes ONTAP systems associated with your link:concept_cloud_central_accounts.html[Cloud Central account^].
 
-* In Azure, the Restore virtual machine runs on a https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D4s_v3 VM^] with 4 CPUs, 16 GiB Memory, and a 32 GB disk.
+==== BYOL license considerations
 
-=== Free trial
+When using a Backup to Cloud BYOL license, Cloud Manager notifies you when backups are nearing the capacity limit or nearing the license expiration date. You receive these notifications:
 
-A 30-day free trial is available. When using the trial version, you are notified about the number of free trial days that remain. At the end of your free trial, backups stop being created. You must subscribe to the service or purchase a license to continue using the service.
+* When backups have reached 80% of licensed capacity, and again when you have reached the limit
+* 30 days before a license is due to expire, and again when the license expires
 
-Backup are not deleted when the service is disabled. You'll continue to be charged by your cloud provider for object storage costs for the capacity that your backups use unless you delete the backups.
+Use the chat icon in the lower right of the Cloud Manager interface to renew your license when you receive these notifications.
+
+Two things can happen when your license expires:
+
+* If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by your cloud provider for object storage costs, and by NetApp for backup licensing costs, for the capacity that your backups are using.
+* If the account you are using for your ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to receive the expiration message.
+
+Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
+
+Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop receiving the warning message and will be charged for backups that occurred while the license was expired.
 
 == How Backup to Cloud works
 
@@ -175,24 +215,6 @@ At this time, you can’t schedule backup operations at a user specified time.
 Backup copies are associated with the link:concept_cloud_central_accounts.html[Cloud Central account^] in which Cloud Manager resides.
 
 If you have multiple Cloud Manager systems in the same Cloud Central account, each Cloud Manager system will display the same list of backups. That includes the backups associated with Cloud Volumes ONTAP and on-premises ONTAP instances from other Cloud Manager systems.
-
-=== BYOL license considerations
-
-When using a Backup to Cloud BYOL license, Cloud Manager notifies you when backups are nearing the capacity limit or nearing the license expiration date. You receive these notifications:
-
-* when backups have reached 80% of licensed capacity, and again when you have reached the limit
-* 30 days before a license is due to expire, and again when the license expires
-
-Use the chat icon in the lower right of the Cloud Manager interface to renew your license when you receive these notifications.
-
-Two things can happen when your license expires:
-
-* If the account you are using for your ONTAP systems has a marketplace account, the backup service continues to run, but you are shifted over to a PAYGO licensing model. You are charged by your cloud provider for object storage costs, and by NetApp for backup licensing costs, for the capacity that your backups are using.
-* If the account you are using for your ONTAP systems does not have a marketplace account, the backup service continues to run, but you will continue to receive the expiration message.
-
-Once you renew your BYOL subscription, Cloud Manager automatically obtains the new license from NetApp and installs it. If Cloud Manager can't access the license file over the secure internet connection, you can obtain the file yourself and manually upload it to Cloud Manager. For instructions, see link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[Adding and updating your Backup BYOL license^].
-
-Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop receiving the warning message and will be charged for backups that occurred while the license was expired.
 
 == Supported volumes
 
