@@ -301,6 +301,8 @@ entries:
                 url: /task_scanning_s3.html
               - title: Database schemas
                 url: /task_scanning_databases.html
+              - title: OneDrive accounts
+                url: /task_scanning_onedrive.html
       - title: View details about private data in your organization
         url: /task_controlling_private_data.html
       - title: Gain control of private data with Highlights
