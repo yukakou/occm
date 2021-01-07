@@ -94,11 +94,9 @@ See the link:task_restore_backups.html#details[type of virtual machine/instance 
 
 *Service charges*
 
-Backup service charges are paid to NetApp and cover both the cost to create backups and to restore volumes, or files, from those backups. You pay only for the data that you protect, calculated by the target backup capacity _before_ ONTAP efficiencies.
+Backup service charges are paid to NetApp and cover both the cost to _create_ backups and to _restore_ volumes, or files, from those backups. You pay only for the data that you protect, calculated by the target backup capacity _before_ ONTAP efficiencies.
 
 There are two ways to pay for the Backup service. The first option is to subscribe from the service provider, which enables you to pay per month based on the amount of backed up data. The second option is to purchase licenses directly from NetApp. Read the <<Licensing,Licensing>> section for details.
-
-NOTE: The Restore instance does not require a separate license - it is covered in your Backup to Cloud license.
 
 == Licensing
 
