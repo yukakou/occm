@@ -12,12 +12,6 @@ summary: You use Cloud Manager to deploy the Global File Cache Management Server
 :linkattrs:
 :imagesdir: ./media/
 
-//
-// This file was created with NDAC Version 0.9 (July 10, 2020)
-//
-// 2020-07-29 10:32:33.407996
-//
-
 [.lead]
 You use Cloud Manager to deploy the Global File Cache Management Server and Global File Cache Core software in the working environment.
 
@@ -128,7 +122,7 @@ In this example, we will configure the LMS service on a Core instance that you j
 . Open the Global File Cache License Registration page on the Global File Cache Core (the Core you are designating as your LMS service) using the following URL. Replace _<ip_address>_ with the IP address of the Global File Cache Core:
 https://<ip_address>/lms/api/v1/config/lmsconfig.html
 
-. Click “Continue to this website (not recommended)” to continue. A page that allows you to configure the LMS, or check existing license information, is displayed.
+. Click *“Continue to this website (not recommended)”* to continue. A page that allows you to configure the LMS, or check existing license information, is displayed.
 +
 image:screenshot_gfc_license1.png[A screenshot of the Global File Cache License Registration page.]
 
