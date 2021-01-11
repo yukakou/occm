@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept_cloud_compliance.html
-keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, cloud volumes ontap, Amazon S3, database, onedrive, on-prem ontap
+keywords: artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, azure netapp files, cloud volumes ontap, Amazon S3, database, onedrive, on-prem ontap, backup files
 summary: Cloud Compliance is a data privacy and compliance service for Cloud Manager that scans your volumes, Amazon S3 buckets, and databases to identify the personal and sensitive data that resides in those files. Using Artificial Intelligence (AI) driven technology, Cloud Compliance helps organizations understand data context and identify sensitive data.
 ---
 
