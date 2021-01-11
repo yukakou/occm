@@ -19,6 +19,39 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.2 (11 Jan 2021)
+
+* <<Cloud Compliance enhancements>>
+* <<Backup to Cloud enhancements>>
+
+=== Cloud Compliance enhancements
+
+* Added support for scanning Microsoft OneDrive accounts.
++
+Now you can add your corporate OneDrive accounts to Cloud Compliance in order to scan folders and files from all your OneDrive users. See link:task_scanning_onedrive.html[scanning OneDrive accounts^] for details.
+
+* The "Highlights" feature now allows you can create your own custom Highlights that provide results for searches specific to your organization.
++
+In the last release, Cloud Compliance provided a set predefined highlight filters that all users could use. Now you can create your own Highlights to return specific scan results in the Investigation page. See how to link:task_managing_highlights.html#creating-custom-highlights[create your own custom highlights^].
+
+* Ability to scan backup files from on-premises ONTAP systems for free.
++
+If you don’t want Cloud Compliance to scan volumes directly on your on-prem ONTAP systems, a new Beta feature released this month allows you to run compliance scans on backup files created from your on-prem ONTAP volumes. So if you're already creating backups of your on-prem ONTAP volumes using link:concept_backup_to_cloud.html[Backup to Cloud^], you can use this new feature to run compliance scans on those backup files - for *FREE*.
++
+See how to link:task_backup_from_onprem.html[back up on-prem ONTAP volumes to object storage^] and how you can link:task_getting_started_compliance.html#scanning-backup-files-from-on-premises-ontap-systems[scan those backup files].
+
+* Cloud Compliance can now find the personal data type "IP Address" in files. See the list of all link:reference_private_data_categories.html#types-of-personal-data[personal data types^] that Cloud Compliance finds in scans.
+
+=== Backup to Cloud enhancements
+
+You can restore individual files to additional destination working environments:
+
+* Backup files in Azure Blob can be used to restore individual files to Cloud Volumes ONTAP systems installed on Azure, and to on-premises ONTAP systems.
+
+* Backup files in Amazon S3 can be used to restore individual files to on-premises ONTAP systems (restoring files to Cloud Volumes ONTAP systems installed on AWS was already supported).
+
+View the link:concept_backup_to_cloud.html#supported-working-environments-and-object-storage-providers[backup and restore matrix^] to see which working environments are supported for creating backups, restoring volumes, and restoring files.
+
 == Cloud Manager 3.9.2 (4 Jan 2021)
 
 * <<Cloud Volumes ONTAP enhancements>>
