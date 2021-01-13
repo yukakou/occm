@@ -357,6 +357,8 @@ entries:
             url: /task_tiering_onprem_storagegrid.html
       - title: Set up licensing
         url: /task_licensing_cloud_tiering.html
+      - title: Test cloud performance
+        url: /task_tiering_test.html
       - title: Manage data tiering
         url: /task_managing_tiering.html
       - title: Get an overview of tiering
