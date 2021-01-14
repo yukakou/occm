@@ -93,17 +93,17 @@ On-premises ONTAP system
 
 The process goes like this:
 
-. You activate the Restore service from the Services panel.
-+
-A Restore instance is deployed in your cloud providers' environment, and then it is shut down to save costs while there are no active restore jobs.
+. You enable the Restore service from the Services panel and you are directed to the Restore page under the Restore tab.
 
-. When you need to restore one or more files from a volume, you click the Restore tab and select the backup file (the snapshot) where the file resides.
+. When you want to restore one or more files from a volume, select the Restore tab and select the backup file (the snapshot) where the file resides.
 +
-The Restore instance starts up and displays the folders and files that exist in the backup file.
+The Restore instance starts up and displays the folders and files that exist within the backup file.
++
+Note that a Restore instance is deployed in your cloud providers' environment the first time you attempt to restore a file.
 
 . You choose the file (or up to 8 files) from that backup, select the location where you want the file(s) to be written (the working environment, volume, and folder), and click Restore.
 +
-The Restore instance restores the file(s), and then the instance is shut down after one hour of inactivity.
+The Restore instance restores the file(s), and then the instance is shut down to save costs after a period of inactivity.
 
 === Details
 
@@ -135,9 +135,9 @@ Additionally, the following permissions are needed in the policy for single file
 
 The Restore instance requires outbound internet access to manage resources and processes within your public cloud environment.
 
-=== Activating the Restore service
+=== Enabling the Restore service
 
-This is a one-time operation per working environment to create the Restore instance.
+This is a one-time operation per working environment.
 
 NOTE: The Backup to Cloud service must already be activated for this working environment.
 
@@ -145,15 +145,15 @@ NOTE: The Backup to Cloud service must already be activated for this working env
 
 . From and Canvas, select the working environment.
 
-. Click the *Activate* button for the Restore service.
+. Click the *Enable* button for the Restore service.
 +
-image:screenshot_restore_activate_button.png[A screenshot of the Activate button to enable the single file restore functionality.]
+image:screenshot_restore_activate_button.png[A screenshot of the Enable button to enable the single file restore functionality.]
 
-A Restore instance is deployed in your cloud providers' environment, and then it is shut down. The instance is stopped to save you money so that you incur costs only when the Restore instance is active.
+You are directed to the Restore page under the Restore tab.
 
 === Restoring a single file from a backup file
 
-Follow these steps to restore up to 8 files from a volume backup to a new volume. This functionality uses Live Browsing so that you can view the current list of directories and files within the backup file.
+Follow these steps to restore up to 8 files from a volume backup to a volume. You should know the date of the backup file you want to use to restore the file, or files. This functionality uses Live Browsing so that you can view the current list of directories and files within the backup file.
 
 Note that the wording in the UI calls each backup file a "snapshot" because backup files are created using NetApp Snapshot technology.
 
@@ -179,12 +179,14 @@ image:screenshot_restore_select_source.png[A screenshot of selecting the volume 
 
 . Click *Continue* and the Restore instance is started. After a few minutes the Restore instance displays the list of folders and files from the volume snapshot.
 +
+Note that a Restore instance is deployed in your cloud providers' environment the first time you restore a file and that this step could take a few minutes longer the first time.
++
 image:screenshot_restore_select_files.png[A screenshot of the Select Files page so you can navigate to the files you want to restore.]
 
 . In the _Select Files_ page, select the file or files that you want to restore and click *Continue*.
 * You can click the search icon and enter the name of the file to navigate directly to the file.
 * You can click the file name if you see it.
-* You can navigate down levels in folders using the  image:button_subfolder.png[] button at the end of the row to find the file.
+* You can navigate down levels in folders using the image:button_subfolder.png[] button at the end of the row to find the file.
 +
 As you select files they are added to the left side of the page so you can see the files that you have already chosen. You can remove a file from this list if needed by clicking the *x* next to the file name.
 
@@ -214,4 +216,4 @@ You have a few options for the location when restoring files.
 
 . Click *Restore* and you are returned to the Restore Dashboard so you can see the progress of the restore operation.
 
-The Restore instance is shut down after a certain period of inactivity.
+The Restore instance is shut down after a certain period of inactivity to save you money so that you incur costs only when the Restore instance is active.
