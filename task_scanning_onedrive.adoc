@@ -61,7 +61,7 @@ image:screenshot_compliance_add_onedrive_button.png[A screenshot of the Scan Con
 
 . In the Add a OneDrive account dialog, click *Sign in to OneDrive*.
 
-. In the Microsoft page that appears, enter the required Admin user and password to identify the OneDrive account.
+. In the Microsoft page that appears, select the OneDrive account and enter the required Admin user and password, then click *Accept* to allow Cloud Compliance to read data from this account.
 
 The OneDrive account is added to the list of working environments.
 
@@ -85,11 +85,13 @@ image:screenshot_compliance_onedrive_add_more_users.png[A screenshot showing the
 +
 image:screenshot_compliance_onedrive_add_email_addresses.png[A screenshot of the Add OneDrive users page where you can add users to be scanned.]
 +
-A confirmation dialog displays the number of users who were added. If the dialog lists any users who could not be added, capture this information so that you can resolve the issue. In some cases you can re-add the user with a corrected email address.
+A confirmation dialog displays the number of users who were added.
++
+If the dialog lists any users who could not be added, capture this information so that you can resolve the issue. In some cases you can re-add the user with a corrected email address.
 
 .Result
 
-Cloud Compliance starts scanning the files for the users you added.
+Cloud Compliance starts scanning the files for the users you added, and the results are displayed in the Dashboard and in other locations.
 
 == Removing OneDrive users from compliance scans
 
