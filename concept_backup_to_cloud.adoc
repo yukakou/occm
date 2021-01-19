@@ -54,7 +54,7 @@ Backup to Cloud enables you to back up volumes from the following working enviro
 | On-premises ONTAP system
 | Amazon S3
 Azure Blob
-Google Cloud Storage
+// Google Cloud Storage
 
 |===
 
