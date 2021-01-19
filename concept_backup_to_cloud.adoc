@@ -164,9 +164,9 @@ Notes:
 
 * In Amazon S3, backups start in the _Standard_ storage class and transition to the _Standard-Infrequent Access_ storage class after 30 days.
 
-* In Azure, each backup is associated with the _cool_ access tier.
+* In Azure, backups are associated with the _cool_ access tier.
 
-* In GCP, backups are associated with the _Standard_ storage class.
+* In GCP, backups are associated with the _Standard_ storage class by default. You can also use the lower cost _Nearline_ storage class. See the Google topic link:https://cloud.google.com/storage/docs/storage-classes[Storage classes^] for information about changing the storage class.
 
 === Backup settings are system wide
 
