@@ -154,9 +154,19 @@ See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-k
 //
 // === Preparing Google Cloud Storage
 //
-// When you are using Google Cloud Storage, you must configure ...
+// When you set up backup, you need to provide storage access keys for a service account that has Storage Admin permissions. A service account enables Cloud Backup to authenticate and access Cloud Storage buckets used to store backups. The keys are required so that Google Cloud Storage knows who is making the request.
 //
-// You need to have a Service Account in your Google Cloud Project that has the predefined Storage Admin role. See https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[creating a service account that has the Storage Admin role^].
+// .Steps
+//
+// . https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account[Create a service account that has the predefined Storage Admin role^].
+//
+// . Go to https://console.cloud.google.com/storage/settings[GCP Storage Settings^] and create access keys for the service account:
+//
+// .. Select a project, and click *Interoperability*. If you haven’t already done so, click *Enable interoperability access*.
+//
+// .. Under *Access keys for service accounts*, click *Create a key for a service account*, select the service account that you just created, and click *Create Key*.
+// +
+// You'll need to link:task_tiering_google.html#tiering-inactive-data-to-a-google-cloud-storage-bucket[enter the keys in Cloud Backup] later when you configure the backup service.
 
 == Enabling Backup to Cloud
 

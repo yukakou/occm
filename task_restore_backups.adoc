@@ -44,30 +44,35 @@ On-premises ONTAP system
 
 .Steps
 
-. From the Canvas, select the working environment.
-
-. From the Services panel, click image:screenshot_gallery_options.gif[More icon] and select *View Backups*.
+. Select the *Restore* tab.
 +
-image:screenshot_view_backups_selection.png[A screenshot of selecting the View Backups button for a working environment.]
+The Restore Dashboard appears.
 
-. Select the row for the volume that you want to restore and click *View Backup List*.
+. Click *Restore Volumes*.
 +
-image:screenshot_backup_to_s3_volume.gif[A screenshot of the Backup and Restore tab showing a volume that has backups.]
+image:screenshot_restore_volume_selection.png[A screenshot of selecting the Restore Volumes button from the Restore Dashboard.]
 
-. Find the backup that you want to restore based on the date/time stamp and click the *Restore* icon.
+. In the _Select Source_ page, select the *Working Environment*, the *Volume*, and the *Snapshot* that has the date/time stamp that you want to restore.
 +
-image:screenshot_backup_to_s3_restore_icon.gif[A screenshot of the restore icon for a backup after you select a volume.]
+image:screenshot_restore_select_volume_snapshot.png[A screenshot of selecting the working environment, volume, and volume snapshot that you want to restore.]
 
-. Fill out the _Restore Backup to new volume_ page:
-.. Select the working environment.
-.. Enter a name for the volume.
-.. Click *Restore*.
+. Click *Continue*.
+
+. In the _Select Destination_ page, select the *Working Environment*.
 +
-image:screenshot_backup_to_s3_restore_options.gif[A screenshot that shows the destination restore options: a working environment, a volume, and the volume info.]
+image:screenshot_restore_select_work_env_volume.png[A screenshot of selecting the destination working environment for the volume you want to restore.]
+
+. Then select the Storage VM where the volume will reside and enter the name for the new volume that you want to restore.
++
+image:screenshot_restore_new_vol_name.png[A screenshot of selecting the volume and folder for the files you want to restore.]
++
+You can specify the Aggregate that the volume will use when restoring a volume to an on-prem ONTAP system.
+
+. Click *Restore* and you are returned to the Restore Dashboard so you can see the progress of the restore operation.
 
 .Result
 
-Cloud Manager creates a new volume based on the backup you selected and you are directed to that working environment so you can view the restore progress. You can link:task_managing_storage.html#managing-existing-volumes[manage this new volume^] as required.
+Cloud Manager creates a new volume based on the backup you selected. You can link:task_managing_storage.html#managing-existing-volumes[manage this new volume^] as required.
 
 == Restoring files from a backup
 
