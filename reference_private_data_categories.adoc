@@ -13,7 +13,9 @@ summary: There are many types of private data that Cloud Compliance can identify
 :imagesdir: ./media/
 
 [.lead]
-There are many types of private data that Cloud Compliance can identify in your volumes, Amazon S3 buckets, and databases. See the categories below.
+There are many types of private data that Cloud Compliance can identify in your volumes, Amazon S3 buckets, databases, and OneDrive folders. See the categories below.
+
+TIP: If you need Cloud Compliance to identify other private data types, such as additional national ID numbers or healthcare identifiers, email ng-contact-cloud-compliance@netapp.com with your request.
 
 == Types of personal data
 
@@ -69,7 +71,7 @@ Note that you can add to the list of personal data that is found in your files i
 
 The sensitive personal data that Cloud Compliance can find in files includes the following:
 
-Civil Law Reference:: Data concerning a natural person’s civil law suits, offences, and procedures.
+// Civil Law Reference:: Data concerning a natural person’s civil law suits, offences, and procedures.
 Criminal Procedures Reference::	Data concerning a natural person’s criminal convictions and offenses.
 Ethnicity Reference::	Data concerning a natural person’s racial or ethnic origin.
 Health Reference:: Data concerning a natural person’s health.

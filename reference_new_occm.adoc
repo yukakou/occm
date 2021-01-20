@@ -179,9 +179,7 @@ Ten highlights are available with this release. For example, the "HIPAA – Stal
 +
 You can select Highlights from a tab in the Compliance Dashboard and as a filter in the Investigation page.
 
-* Two new sensitive personal data types
-+
-Cloud Compliance can now find Political Opinions Reference and Civil Law Reference in files.
+* Cloud Compliance can now find the sensitive personal data type "Political Opinions Reference" in files. See the list of all link:reference_private_data_categories.html#types-of-sensitive-personal-data[sensitive personal data types^] that Cloud Compliance finds in scans.
 
 * A new filter for "file size" is available from the Investigation page to refine your search results for files of a certain size
 +
