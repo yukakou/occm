@@ -155,6 +155,7 @@ Review the appropriate table below depending on whether you are deploying Cloud 
 \https://pypi.python.org
 \https://files.pythonhosted.org
 \https://mirror.centos.org
+\https://mirrorlist.centos.org 
 \http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.107-3.el7.noarch.rpm
 
 | Provides prerequisite packages for installation.
