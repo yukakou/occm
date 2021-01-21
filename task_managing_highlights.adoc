@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_managing_highlights.html
-keywords: compliance, privacy, filter data, highlights
+keywords: compliance, privacy, filter data, highlights, policies, email alerts
 summary: Highlights are like a Favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Highlights based on common customer questions. In addition, you can create your own custom Highlights that provide results for searches specific to your organization.
 ---
 
@@ -33,7 +33,10 @@ You can create your own custom highlights that provide results for searches spec
 +
 image:screenshot_compliance_save_as_highlight.png[A screenshot showing how to save a filtered query as a Highlight.]
 
-. Enter a unique name and description for the highlight and click *Save Highlight*.
+. Name the highlight and choose whether you want emails sent to Cloud Manager users when results are returned for this highlight:
+.. Enter a unique name and description for the highlight.
+.. Check the box if you want emails sent to Cloud Manager users, and choose the interval at which the email is sent.
+.. Click *Save Highlight*.
 +
 image:screenshot_compliance_save_highlight.png[A screenshot that shows how to name the highlight and save it.]
 
@@ -45,13 +48,16 @@ To display the results for a highlight in the Investigation page, click the imag
 
 image:screenshot_compliance_highlights_investigate.png[A screenshot of selecting Investigate Results from the Highlights tab.]
 
-==	Editing highlights
+== Editing highlights
 
-You can modify any custom highlight that you created. You can't modify any of the predefined highlights.
+You can modify certain parts of a highlight depending on the type of highlight:
 
-NOTE: At this time, you can modify only the _Name_ and _Description_ for a custom highlight. If you need to change the filter parameters, you'll need to create a new highlight with the parameters you want, and then delete the old highlight.
+* Custom highlights - You can modify the _Name_, the _Description_, and whether email alert messages are sent.
+* Predefined highlights - You can modify only whether email alert messages are sent.
 
-To modify a highlight, click the image:screenshot_gallery_options.gif[More button] button for a specific highlight, click *Edit Highlight*, enter your changes on the _Edit Highlight_ page, and click *Save Highlight*.
+NOTE: If you need to change the filter parameters for a custom highlight, you'll need to create a new highlight with the parameters you want, and then delete the old highlight.
+
+To modify a highlight, click the *Edit* button, enter your changes on the _Edit Highlight_ page, and click *Save Highlight*.
 
 ==	Deleting highlights
 
