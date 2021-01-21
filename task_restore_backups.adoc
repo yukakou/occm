@@ -15,7 +15,7 @@ summary: Backups are stored in an object store in your cloud account so that you
 [.lead]
 Backups are stored in an object store in your cloud account so that you can restore data from a specific point in time. You can restore an entire volume from a saved backup file, or if you only need to restore a few files, you can restore up to 8 individual files (at one time) from a saved backup file.
 
-You can restore an entire volume to the same working environment, to a different working environment that's using the same cloud account, or to an on-premises ONTAP system. See <<Restoring a volume from a backup,Restoring a volume from a backup>>.
+You can restore an entire volume to the same working environment, to a different working environment that's using the same cloud account, or to an on-premises ONTAP system. See <<Restoring a volume from a backup file,Restoring a volume from a backup>>.
 
 You can restore files to a volume in the same working environment, to a volume in a different working environment that's using the same cloud account, or to a volume on an on-premises ONTAP system. See <<Restoring files from a backup,Restoring files from a backup>>.
 
@@ -63,10 +63,10 @@ You are directed to the Restore Dashboard under the Restore tab.
 The Restore Dashboard provides buttons for you to restore volumes and files. Clicking these buttons starts the wizard to walk you through the steps to restore that data. The dashboard also provides a list of all the volumes and all the files you have restored in case you need to view previous restore actions. You can expand the row for each restored volume or file to view the details about the source and destination locations for the volume or file.
 
 image:screenshot_restore_dashboard.png[The Restore Dashboard showing the buttons to restore volumes and files, and showing how to view all restored data.]
-
-Note that you can also initiate a volume or file restore operation from a working environment in the Services panel. When started from this location the source working environment selection is automatically filled with the name of the current working environment.
-
-image:screenshot_restore_services_actions.png[Selecting volume and file restore operations from the Services panel.]
+//
+// Note that you can also initiate a volume or file restore operation from a working environment in the Services panel. When started from this location the source working environment selection is automatically filled with the name of the current working environment.
+//
+// image:screenshot_restore_services_actions.png[Selecting volume and file restore operations from the Services panel.]
 
 == Restoring a volume from a backup file
 
