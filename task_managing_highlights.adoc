@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_managing_highlights.html
 keywords: compliance, privacy, filter data, highlights, policies, email alerts
-summary: Highlights are like a Favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Highlights based on common customer questions. In addition, you can create your own custom Highlights that provide results for searches specific to your organization.
+summary: Highlights are like a favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Highlights based on common customer questions. You can also create custom Highlights that provide results for searches specific to your organization.
 ---
 
 = Gaining control of private data with Highlights
@@ -13,13 +13,29 @@ summary: Highlights are like a Favorites list of custom filters that provide sea
 :imagesdir: ./media/
 
 [.lead]
-Highlights are like a Favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Highlights based on common customer questions. In addition, you can create your own custom Highlights that provide results for searches specific to your organization.
+Highlights are like a favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Highlights based on common customer questions. You can also create custom Highlights that provide results for searches specific to your organization.
 
 The *Highlights* tab in the Compliance Dashboard lists all the Highlights available on this instance of Cloud Compliance.
 
 image:screenshot_compliance_highlights_tab.png[A screenshot of the Highlights tab in the Cloud Compliance dashboard.]
 
 In addition, Highlights appear in the list of Filters in the Investigation page.
+
+== Highlights features
+
+Highlights are much more than just a saved set of search filters.  Highlights provide the following functionality:
+
+* <<List of predefined highlights,Predefined highlights>> from NetApp based on user requests
+* Ability to create your own custom highlights
+* Launch the Investigation page with the results from your highlights in one click
+* Send email alerts to Cloud Manager users (daily, weekly, or monthly) when certain critical highlights return results so you can get notifications to protect your data
+* Assign AIP (Azure Information Protection) labels automatically to all files that are returned in a highlight
+
+== Viewing highlights results in the Investigation page
+
+To display the results for a highlight in the Investigation page, click the image:screenshot_gallery_options.gif[More button] button for a specific highlight, and then select *Investigate Results*.
+
+image:screenshot_compliance_highlights_investigate.png[A screenshot of selecting Investigate Results for a specific highlight from the Highlights tab.]
 
 ==	Creating custom highlights
 
@@ -35,25 +51,21 @@ image:screenshot_compliance_save_as_highlight.png[A screenshot showing how to sa
 
 . Name the highlight and choose whether you want emails sent to Cloud Manager users when results are returned for this highlight:
 .. Enter a unique name and description for the highlight.
-.. Check the box if you want emails sent to Cloud Manager users, and choose the interval at which the email is sent.
+.. Check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent.
 .. Click *Save Highlight*.
 +
 image:screenshot_compliance_save_highlight.png[A screenshot that shows how to name the highlight and save it.]
 
-The new highlight appears in the Highlights tab.
+.Result
 
-== Viewing highlights results in the Investigation page
-
-To display the results for a highlight in the Investigation page, click the image:screenshot_gallery_options.gif[More button] button for a specific highlight, and then click *Investigate Results*.
-
-image:screenshot_compliance_highlights_investigate.png[A screenshot of selecting Investigate Results from the Highlights tab.]
+The new highlight appears in the Highlights tab. Additionally, if you enabled email notifications, the first email is sent now if there are any results from the highlight - if any files meet the highlight criteria.
 
 == Editing highlights
 
 You can modify certain parts of a highlight depending on the type of highlight:
 
-* Custom highlights - You can modify the _Name_, the _Description_, and whether email alert messages are sent.
-* Predefined highlights - You can modify only whether email alert messages are sent.
+* Custom highlights - You can modify the _Name_, the _Description_, and whether email notifications are sent.
+* Predefined highlights - You can modify only whether email notifications are sent.
 
 NOTE: If you need to change the filter parameters for a custom highlight, you'll need to create a new highlight with the parameters you want, and then delete the old highlight.
 

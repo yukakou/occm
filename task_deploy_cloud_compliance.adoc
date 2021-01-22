@@ -154,8 +154,8 @@ Review the appropriate table below depending on whether you are deploying Cloud 
 \https://pypi.org
 \https://pypi.python.org
 \https://files.pythonhosted.org
-\https://mirror.centos.org
-\https://mirrorlist.centos.org 
+\http://mirror.centos.org
+\http://mirrorlist.centos.org
 \http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.107-3.el7.noarch.rpm
 
 | Provides prerequisite packages for installation.
@@ -197,9 +197,13 @@ The Compliance software functions exactly the same way regardless of which insta
 
 . In Cloud Manager, click *Compliance*.
 
-. Click *Deploy Compliance in the Cloud* to start the deployment wizard.
+. Click *Activate Cloud Compliance*.
 +
-image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to deploy Cloud Compliance in the cloud.]
+image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Compliance.]
+
+. Click *Activate Compliance* to start the deployment wizard.
++
+image:screenshot_cloud_compliance_deploy_cloud.png[A screenshot of selecting the button to deploy Cloud Compliance in the cloud.]
 
 . The wizard displays progress as it goes through the deployment steps. It will stop and ask for input if it runs into any issues.
 +
@@ -249,11 +253,15 @@ See <<Reviewing prerequisites,Reviewing prerequisites>> for the full list of req
 
 . In Cloud Manager, click *Compliance*.
 
-. Click *Deploy Compliance On Premises*.
+. Click *Activate Cloud Compliance*.
++
+image:screenshot_cloud_compliance_deploy_start.png[A screenshot of selecting the button to activate Cloud Compliance.]
+
+. Click *Activate Compliance*.
 +
 image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting the button to deploy Cloud Compliance on premises.]
 
-. In the _Deploying Cloud Compliance On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later. For example:
+. In the _Deploy Cloud Compliance On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later. For example:
 +
  sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
 
