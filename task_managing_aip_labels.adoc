@@ -1,0 +1,61 @@
+---
+sidebar: sidebar
+permalink: task_managing_aip_labels.html
+keywords: compliance, privacy, filter data, aip labels, azure information protection, integrating, adding labels
+summary: You can manage AIP labels in the files that Cloud Compliance is scanning if you have subscribed to Azure Information Protection (AIP). AIP enables you to classify and protect documents and files by applying labels to content. Cloud Compliance enables you to view the labels that are already assigned to files, add new labels to files, and change labels when a label already exists.
+---
+
+= Managing AIP labels in files
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+
+You can manage AIP labels in the files that Cloud Compliance is scanning if you have subscribed to Azure Information Protection (AIP). AIP enables you to classify and protect documents and files by applying labels to content. Cloud Compliance enables you to view the labels that are already assigned to files, add labels to files, and change labels when a label already exists.
+
+== Integrating AIP labels in your workspace
+
+Before you can manage AIP labels you need to integrate the AIP label functionality by signing into your existing Azure account.
+
+.Requirements
+
+* You must have an account and an Azure Information Protection license to integrate this functionality into Cloud Compliance.
+* You must have the login credentials for the account.
+
+.Steps
+
+The
+
+. From the Cloud Compliance Configuration page, click *Integrate AIP Labels*.
++
+image:screenshot_compliance_integrate_aip_labels.png[]
+
+. In the Integrate AIP Labels dialog, click *Sign in to Azure*.
+
+. In the Microsoft page that appears, select the account and enter the required credentials.
+
+. Return to the Cloud Compliance tab and you will see the message "AIP Labels were integrated successfully with the account <account_name>".
+
+. Click *Close* and you will see the text _AIP Labels integrated_.
++
+image:screenshot_compliance_aip_labels_int.png[A screenshot that show that AIP labels have been successfully integrated.]
+
+== Viewing AIP labels in your files
+
+You can view the current AIP label in a file
+
+== Adding AIP labels to your files
+
+If you want to insert add an AIP label to a file, or to multiple files, so that you can You can add an AIP label to a file
+
+Control and help secure email, documents, and sensitive data inside and outside your company walls. From easy classification to embedded labels and permissions, enhance data protection at all times with Azure Information Protection, no matter where it's stored or who it's shared with.
+
+
+=== Assigning AIP labels manually
+
+=== Assigning AIP Labels automatically with Highlights
+
+== Removing the AIP integration
