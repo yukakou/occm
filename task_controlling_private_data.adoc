@@ -123,7 +123,7 @@ In addition to showing you the working environment and volume where the file res
 
 There are also two items in this metadata that allow you to make changes:
 
-* If you have integrated AIP labels with Cloud Compliance you can assign a label to this file, or change to a different label if one already exists.  See   ??  Assigning AIP labels manually  ?? for details.
+* If you have integrated AIP labels with Cloud Compliance, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_aip_labels.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
 
 * You can delete the file.
 
