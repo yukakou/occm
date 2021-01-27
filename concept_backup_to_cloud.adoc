@@ -21,7 +21,7 @@ There are two services that provide the full suite of backup and restore functio
 
 * The *Restore service* enables you to use the same backup file to restore one or more *files* to a volume in the same or different working environment. This is also called Single File Restore.
 
-Cloud Backup is powered by the https://cloud.netapp.com/cloud-backup-service[Cloud Backup Service^].
+link:https://cloud.netapp.com/cloud-backup-service[Learn more about the Cloud Backup Service^].
 
 NOTE: You must use Cloud Manager for all backup and restore operations. Any actions taken directly from ONTAP or from your cloud provider results in an unsupported configuration.
 
@@ -60,7 +60,7 @@ Azure Blob
 
 You can restore a volume, or individual files, from a backup file to the following working environments:
 
-[cols=3*,options="header",cols="30,40,40",width="90%"]
+[cols=3*,options="header",cols="25,40,40",width="95%"]
 |===
 
 | Backup File Location

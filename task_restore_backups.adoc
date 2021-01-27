@@ -23,7 +23,7 @@ You can restore files to a volume in the same working environment, to a volume i
 
 You can restore a volume, or individual files, from a backup file to the following working environments:
 
-[cols=3*,options="header",cols="30,40,40",width="90%"]
+[cols=3*,options="header",cols="25,40,40",width="95%"]
 |===
 
 | Backup File Location
