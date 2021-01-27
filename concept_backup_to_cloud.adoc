@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: concept_backup_to_cloud.html
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, back up volumes, Backup to Cloud, restore volumes, billing, cost, on-premises ONTAP, onprem, restore files
-summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, back up volumes, Cloud Backup, restore volumes, billing, cost, on-premises ONTAP, onprem, restore files
+summary: Cloud Backup is an add-on service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 ---
 
-= Learn about Backup to Cloud
+= Learn about Cloud Backup
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,15 +13,15 @@ summary: Backup to Cloud is an add-on service for Cloud Volumes ONTAP and on-pre
 :imagesdir: ./media/
 
 [.lead]
-Backup to Cloud is an add-on service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+Cloud Backup is an add-on service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
 
 There are two services that provide the full suite of backup and restore functionality:
 
-* The *Backup to Cloud service* enables you to create backup files and to restore an entire volume to the same or different working environment.
+* The *Cloud Backup service* enables you to create backup files and to restore an entire volume to the same or different working environment.
 
 * The *Restore service* enables you to use the same backup file to restore one or more *files* to a volume in the same or different working environment. This is also called Single File Restore.
 
-Backup to Cloud is powered by the https://cloud.netapp.com/cloud-backup-service[Cloud Backup Service^].
+Cloud Backup is powered by the https://cloud.netapp.com/cloud-backup-service[Cloud Backup Service^].
 
 NOTE: You must use Cloud Manager for all backup and restore operations. Any actions taken directly from ONTAP or from your cloud provider results in an unsupported configuration.
 
@@ -37,7 +37,7 @@ NOTE: You must use Cloud Manager for all backup and restore operations. Any acti
 
 == Supported working environments and object storage providers
 
-Backup to Cloud enables you to back up volumes from the following working environments to object storage in the following cloud providers:
+Cloud Backup enables you to back up volumes from the following working environments to object storage in the following cloud providers:
 
 [cols=2*,options="header",cols="50,40",width="90%"]
 |===
@@ -81,7 +81,7 @@ On-premises ONTAP system |
 
 == Cost
 
-There are two types of costs associated with using Backup to Cloud: resource charges and service charges.
+There are two types of costs associated with using Cloud Backup: resource charges and service charges.
 
 *Resource charges*
 
@@ -89,7 +89,7 @@ Resource charges are paid to the cloud provider for storage and for running a vi
 
 * For Backup, you pay your cloud provider for object storage costs.
 +
-Since Backup to Cloud preserves the storage efficiencies of the source volume, you pay the cloud provider object storage costs for the data _after_ ONTAP efficiencies (for the smaller amount of data after deduplication and compression have been applied).
+Since Cloud Backup preserves the storage efficiencies of the source volume, you pay the cloud provider object storage costs for the data _after_ ONTAP efficiencies (for the smaller amount of data after deduplication and compression have been applied).
 
 * For file restore, you pay your cloud provider for compute costs only when the Restore instance is running.
 +
@@ -107,7 +107,7 @@ There are two ways to pay for the Backup service. The first option is to subscri
 
 == Licensing
 
-Backup to Cloud is available in two licensing options: Bring Your Own License (BYOL) and Pay As You Go (PAYGO). A 30-day free trial is available if you don’t have a license.
+Cloud Backup is available in two licensing options: Bring Your Own License (BYOL) and Pay As You Go (PAYGO). A 30-day free trial is available if you don’t have a license.
 
 === Free trial
 
@@ -133,7 +133,7 @@ You'll receive a serial number that you enter in the Cloud Manager Licensing pag
 
 ==== BYOL license considerations
 
-When using a Backup to Cloud BYOL license, Cloud Manager notifies you when backups are nearing the capacity limit or nearing the license expiration date. You receive these notifications:
+When using a Cloud Backup BYOL license, Cloud Manager notifies you when backups are nearing the capacity limit or nearing the license expiration date. You receive these notifications:
 
 * When backups have reached 80% of licensed capacity, and again when you have reached the limit
 * 30 days before a license is due to expire, and again when the license expires
@@ -149,9 +149,9 @@ Once you renew your BYOL subscription, Cloud Manager automatically obtains the n
 
 Systems that were shifted over to a PAYGO license are returned to the BYOL license automatically. And systems that were running without a license will stop receiving the warning message and will be charged for backups that occurred while the license was expired.
 
-== How Backup to Cloud works
+== How Cloud Backup works
 
-When you enable Backup to Cloud on a Cloud Volumes ONTAP or on-premises ONTAP system, the service performs a full backup of your data. Volume snapshots are not included in the backup image. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up.
+When you enable Cloud Backup on a Cloud Volumes ONTAP or on-premises ONTAP system, the service performs a full backup of your data. Volume snapshots are not included in the backup image. After the initial backup, all additional backups are incremental, which means that only changed blocks and new blocks are backed up.
 
 === Where backups reside
 
@@ -179,7 +179,7 @@ Notes:
 
 === Backup settings are system wide
 
-When you enable Backup to Cloud, all the volumes you identify on the system are backed up to the cloud.
+When you enable Cloud Backup, all the volumes you identify on the system are backed up to the cloud.
 
 The schedule and number of backups to retain are defined at the system level. The backup settings affect all volumes on the system.
 
@@ -227,7 +227,7 @@ If you have multiple Cloud Manager systems in the same Cloud Central account, ea
 
 == Supported volumes
 
-Backup to Cloud supports FlexVol read-write volumes and data protection (DP) volumes.
+Cloud Backup supports FlexVol read-write volumes and data protection (DP) volumes.
 
 FlexGroup volumes and SnapLock volumes aren't currently supported.
 
@@ -235,11 +235,11 @@ FlexGroup volumes and SnapLock volumes aren't currently supported.
 
 * When making backups from on-premises ONTAP systems, Cloud Manager must be deployed in the cloud. There is no support for on-premises Cloud Manager deployments.
 
-* When backing up data protection (DP) volumes, the rule that is defined for the SnapMirror policy on the source volume must use a label that matches the allowed Backup to Cloud policy names of *daily*, *weekly*, or *monthly*. Otherwise the backup will fail for that DP volume.
+* When backing up data protection (DP) volumes, the rule that is defined for the SnapMirror policy on the source volume must use a label that matches the allowed Cloud Backup policy names of *daily*, *weekly*, or *monthly*. Otherwise the backup will fail for that DP volume.
 
-* In Azure, if you enable Backup to Cloud when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Backup to Cloud, *disable* Backup to Cloud when deploying Cloud Volumes ONTAP and then enable Backup to Cloud and choose the resource group from the Backup to Cloud Settings page.
+* In Azure, if you enable Cloud Backup when Cloud Volumes ONTAP is deployed, Cloud Manager creates the resource group for you and you cannot change it. If you want to pick your own resource group when enabling Cloud Backup, *disable* Cloud Backup when deploying Cloud Volumes ONTAP and then enable Cloud Backup and choose the resource group from the Cloud Backup Settings page.
 
-* When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up. For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up. If you want to back up these volumes, you would need to disable Backup to Cloud and then enable it again.
+* When backing up volumes from Cloud Volumes ONTAP systems, volumes that you create outside of Cloud Manager aren't automatically backed up. For example, if you create a volume from the ONTAP CLI, ONTAP API, or System Manager, then the volume won't be automatically backed up. If you want to back up these volumes, you would need to disable Cloud Backup and then enable it again.
 
 * ILM (tiering) from the object storage, or direct write to AWS Glacier or similar lower tier object storage, is not supported.
 

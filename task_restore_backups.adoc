@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_restore_backups.html
-keywords: restoring, restore, restore volumes, restore files, Backup to Cloud, cloud backup service, single file restore
+keywords: restoring, restore, restore volumes, restore files, Cloud Backup, cloud backup service, single file restore
 summary: Backups are stored in an object store in your cloud account so that you can restore data from a specific point in time. You can restore an entire volume from a saved backup file, or if you only need to restore a few files, you can restore up to 8 individual files (at one time) from a saved backup file.
 ---
 
@@ -46,7 +46,7 @@ On-premises ONTAP system |
 
 You must enable the Restore service for each working environment where you plan to restore data from backups.
 
-NOTE: The Backup to Cloud service must already be activated for this working environment.
+NOTE: The Cloud Backup service must already be activated for this working environment.
 
 .Steps
 
@@ -140,7 +140,7 @@ The process goes like this:
 
 .Costs
 
-See link:concept_backup_to_cloud.html#cost[this topic^] for the cost of the Backup to Cloud service and the Restore instance.
+See link:concept_backup_to_cloud.html#cost[this topic^] for the cost of the Cloud Backup service and the Restore instance.
 
 .Instance type
 
