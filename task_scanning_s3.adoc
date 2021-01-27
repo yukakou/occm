@@ -173,6 +173,7 @@ Be sure to do the following:
           "Action": [
               "s3:Get*",
               "s3:List*",
+              "s3:PutObject",
               "s3:HeadBucket"
           ],
           "Resource": "*"

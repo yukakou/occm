@@ -61,7 +61,7 @@ There are some scenarios where you have to use a Connector in AWS or Azure for C
 
 * When scanning data in Cloud Volumes ONTAP in AWS or in AWS S3 buckets, you use a connector in AWS.
 * When scanning data in Cloud Volumes ONTAP in Azure or in Azure NetApp Files, you use a connector in Azure.
-* Databases and on-prem ONTAP systems can be scanned when using either Connector.
+* Databases, OneDrive folders, and on-prem ONTAP systems can be scanned using either Connector.
 
 Note that you can also link:task_installing_linux.html[deploy the Connector on-premises^] on an existing Linux host in your network or in the cloud. Some users planning to install Cloud Compliance on-prem may also choose to install the Connector on-prem.
 

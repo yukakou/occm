@@ -29,7 +29,7 @@ Highlights are much more than just a saved set of search filters.  Highlights pr
 * Ability to create your own custom highlights
 * Launch the Investigation page with the results from your highlights in one click
 * Send email alerts to Cloud Manager users (daily, weekly, or monthly) when certain critical highlights return results so you can get notifications to protect your data
-* Assign AIP (Azure Information Protection) labels automatically to all files that are returned in a highlight
+* Assign AIP (Azure Information Protection) labels automatically to all files that are returned in a highlight See link:task_managing_aip_labels.html#assigning-aip-labels-automatically-with-highlightsd[Assigning AIP labels automatically with highlights] for details.
 
 == Viewing highlights results in the Investigation page
 
