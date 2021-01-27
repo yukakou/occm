@@ -315,10 +315,10 @@ entries:
         url: /task_generating_compliance_reports.html
       - title: Respond to a DSAR
         url: /task_responding_to_dsar.html
-      - title: Disable Cloud Compliance
-        url: /task_managing_compliance.html
       - title: Categories of private data
         url: /reference_private_data_categories.html
+      - title: Disable Cloud Compliance
+        url: /task_managing_compliance.html
       - title: FAQ
         url: /faq_cloud_compliance.html
   - title: Enable real-time global file sharing
