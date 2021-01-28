@@ -15,7 +15,7 @@ summary: Complete a few steps to get started backing up data from your on-premis
 [.lead]
 Complete a few steps to get started backing up data from your on-premises ONTAP system to low-cost object storage in the cloud.
 
-A new Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-prem systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-prem volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Compliance^] can get your business applications and cloud environments privacy ready.
+A Beta feature released in January 2021 allows you to run Compliance scans on the backed up volumes from your on-prem systems. Typically, compliance scans are free up to 1 TB of data, and then a cost for the service is applied for data over 1 TB. When combining Backup and Compliance for your on-prem volumes, the cost for scans on those on-prem volumes is free. Learn more about how link:concept_cloud_compliance.html[Cloud Compliance^] can get your business applications and cloud environments privacy ready.
 
 == Quick start
 
@@ -44,6 +44,9 @@ image:screenshot_backup_from_onprem_activate.png[A screenshot that shows the Bac
 
 [role="quick-margin-para"]
 Select the provider and then enter the provider details. You also need to specify the IPspace in the ONTAP cluster where the volumes reside.
+
+[role="quick-margin-para"]
+*Note:* Backup to Google Cloud Storage from on-prem ONTAP systems is not currently supported from the UI.
 
 ==== image:number4.png[Number 4] Define the backup policy
 
@@ -91,6 +94,8 @@ Backups from on-prem systems are supported in all regions https://cloud.netapp.c
 * For Azure, you specify the region where the backups will be stored when you set up the service.
 * For AWS, backups are stored in the region where Cloud Manager is installed.
 // * For GCP, you specify the region where the backups will be stored when you set up the service.
++
+*Note:* Backup to Google Cloud Storage from on-prem ONTAP systems is not currently supported from the UI.
 
 License requirements::
 // For Cloud Backup PAYGO licensing, you'll need a subscription to the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure^], the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS^], or the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Google^] Cloud Manager Marketplace Backup offering before you enable Cloud Backup. Billing for Cloud Backup is done through this subscription.
