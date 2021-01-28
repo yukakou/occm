@@ -263,11 +263,11 @@ image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting th
 
 . In the _Deploy Cloud Compliance On Premises_ dialog, copy the provided command and paste it in a text file so you can use it later. For example:
 +
- sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
+sudo ./install.sh -a 12345 -c 27AG75 -t 2198qq
 
 . Unzip the installer file on the host machine:
 +
- tar -xzf cc_onprem_installer.tar.gz
+`tar -xzf cc_onprem_installer.tar.gz`
 
 . When prompted by the installer, you can enter the required values in a series of prompts, or you can enter the complete command in the first prompt:
 
@@ -278,12 +278,13 @@ image:screenshot_cloud_compliance_deploy_onprem.png[A screenshot of selecting th
 | Enter the full command:
 
 |
-a. Paste the information you copied from step 3:
+a. Paste the information you copied from step 6:
 `sudo ./install.sh -a <account_id> -c <agent_id> -t <token>`
 b. Enter the IP address or host name of the Compliance host machine so it can be accessed by the Connector instance.
-c. Enter proxy details as prompted. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Cloud Compliance will automatically use the proxy used by Cloud Manager.
+c. Enter the IP address or host name of the Cloud Manager Connector so it can be accessed by the Cloud Compliance instance.
+d. Enter proxy details as prompted. If your Cloud Manager already uses a proxy, there is no need to enter this information again here since Cloud Compliance will automatically use the proxy used by Cloud Manager.
 | Alternatively, you can create the whole command in advance and enter it in the first prompt:
-`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <cc_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
+`sudo ./install.sh -a <account_id> -c <agent_id> -t <token> --host <cc_host> --cm-host <cm_host> --proxy-host <proxy_host> --proxy-port <proxy_port> --proxy-scheme <proxy_scheme> --proxy-user <proxy_user> --proxy-password <proxy_password>`
 |===
 
 +
@@ -293,6 +294,7 @@ Variable values:
 * _agent_id_ = Connector ID
 * _token_ = jwt user token
 * _cc_host_ = IP address or host name of the host Linux machine.
+* _cm_host_ = IP address or host name of the Cloud Manager Connector.
 * _proxy_host_ = IP or host name of the proxy server if the host is behind a proxy server.
 * _proxy_port_ = Port to connect to the proxy server (default 80).
 * _proxy_scheme_ = The connection schema: https or http (default http).
