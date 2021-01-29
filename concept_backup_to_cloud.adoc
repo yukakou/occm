@@ -166,7 +166,9 @@ Notes:
 
 * In Azure, backups are associated with the _cool_ access tier.
 
-* In GCP, backups are associated with the _Standard_ storage class by default. You can also use the lower cost _Nearline_ storage class. See the Google topic link:https://cloud.google.com/storage/docs/storage-classes[Storage classes^] for information about changing the storage class.
+* In GCP, backups are associated with the _Standard_ storage class by default.
++
+You can also use the lower cost _Nearline_ storage class, or the _Coldline_ or _Archive_ storage classes. See the Google topic link:https://cloud.google.com/storage/docs/storage-classes[Storage classes^] for information about changing the storage class.
 
 === Backup settings are system wide
 
