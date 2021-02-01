@@ -19,7 +19,23 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
-== Cloud Manager 3.9.2 Update (11 Jan 2021)
+== Cloud Manager 3.9.3 (7 Feb 2021)
+
+* <<Cloud Tiering enhancements>>
+
+=== Cloud Tiering enhancements
+
+* Aggregate fullness indication
+
+* You can now add on-prem ONTAP clusters more easily from the Cloud Tiering service.
++
+When you click *Add cluster* from the Cloud Tiering page, you're now sent directly to the *Add Working Environment* wizard.
+
+* You can now filter the Timeline to show actions specific to the Cloud Tiering service.
++
+image:screenshot_tiering_timeline.gif[A screenshot of the Timeline and the filter ability by selecting the Cloud Tiering service.]
+
+== Cloud Manager 3.9.2 update (11 Jan 2021)
 
 * <<Cloud Compliance enhancements>>
 * <<Backup to Cloud enhancements>>
