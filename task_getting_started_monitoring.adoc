@@ -5,7 +5,7 @@ keywords: monitoring, cloud insights, tenant, acquisition unit, iops, throughput
 summary: Complete a few steps to get started monitoring Cloud Volumes ONTAP performance.
 ---
 
-= Monitoring Cloud Volumes ONTAP in AWS
+= Monitoring Cloud Volumes ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -22,7 +22,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 ==== image:number1.png[Number 1] Verify support for your configuration
 
 [role="quick-margin-para"]
-You need a new installation of Cloud Manager 3.8.4 or later in AWS, Cloud Volumes ONTAP in AWS, and you must be a new Cloud Insights customer.
+You need a new installation of Cloud Manager 3.8.4 or later in AWS or Azure, Cloud Volumes ONTAP in AWS or Azure, and you must be a new Cloud Insights customer.
 
 ==== image:number2.png[Number 2] Enable Monitoring on your new or existing system
 
@@ -49,7 +49,7 @@ Supported Cloud Manager versions::
 You need a new installation of Cloud Manager 3.8.4 or later. A new installation is needed because a new infrastructure is required to enable the Monitoring service. This infrastructure is available starting with new installations of Cloud Manager 3.8.4.
 
 Supported Cloud Volumes ONTAP versions::
-Any version of Cloud Volumes ONTAP in AWS.
+Any version of Cloud Volumes ONTAP in AWS or in Azure.
 
 Cloud Insights requirement::
 You must be a new Cloud Insights customer. Monitoring isn't supported if you already have a Cloud Insights tenant.
@@ -91,7 +91,7 @@ The Monitoring service is enabled by default in the working environment wizard. 
 
 . Click *Create Cloud Volumes ONTAP*.
 
-. Select Amazon Web Services as the cloud provider and then choose a single node or HA system.
+. Select Amazon Web Services or Microsoft Azure as the cloud provider and then choose a single node or HA system.
 
 . Fill out the Details & Credentials page.
 
@@ -111,7 +111,7 @@ Enable monitoring at any time from the working environment.
 
 . In the pane on the right, click *Start Monitoring*.
 +
-image:screenshot_enable_monitoring.gif[[A screenshot that shows the Enable Monitoring icon which is available on the Canvas page after you select a working environment.]
+image:screenshot_enable_monitoring.gif[[A screenshot that shows the Start Monitoring icon which is available on the Canvas page after you select a working environment.]
 
 == Monitoring your volumes
 
