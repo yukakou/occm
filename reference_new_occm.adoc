@@ -21,7 +21,14 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 == Cloud Manager 3.9.3 (7 Feb 2021)
 
+* <<Monitoring enhancements>>
 * <<Cloud Tiering enhancements>>
+
+=== Monitoring enhancements
+
+The Monitoring service is now supported with Cloud Volumes ONTAP for Azure. The Monitoring service gives you complete visibility into your Cloud Volumes ONTAP infrastructure. Enable the service to monitor, troubleshoot, and optimize your Cloud Volumes ONTAP resources.
+
+link:concept_monitoring.html[Learn more about the Monitoring service].
 
 === Cloud Tiering enhancements
 
