@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_managing_aip_labels.html
-keywords: compliance, privacy, filter data, aip labels, azure information protection, integrating, adding labels
+keywords: compliance, privacy, filter data, aip labels, azure information protection, integrating, add labels, change labels
 summary: You can manage AIP labels in the files that Cloud Compliance is scanning if you have subscribed to Azure Information Protection (AIP). AIP enables you to classify and protect documents and files by applying labels to content. Cloud Compliance enables you to view the labels that are already assigned to files, add new labels to files, and change labels when a label already exists.
 ---
 
@@ -16,7 +16,7 @@ summary: You can manage AIP labels in the files that Cloud Compliance is scannin
 
 You can manage AIP labels in the files that Cloud Compliance is scanning if you have subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^]. AIP enables you to classify and protect documents and files by applying labels to content. Cloud Compliance enables you to view the labels that are already assigned to files, add labels to files, and change labels when a label already exists.
 
-AIP labels are supported with the following file types: .PDF, .DOCX, .DOC, .PPTX, .XLS, .XLSX.
+Cloud Compliance support AIP labels within the following file types: .PDF, .DOCX, .DOC, .PPTX, .XLS, .XLSX.
 
 == Integrating AIP labels in your workspace
 
@@ -101,7 +101,7 @@ The label appears in the file metadata.
 
 === Assigning AIP labels automatically with highlights
 
-You can assign an AIP label to all the files that meet the criterial of the highlight. You can specify the AIP label when creating the highlight, or you can add the label when editing any highlight.
+You can assign an AIP label to all the files that meet the criteria of the highlight. You can specify the AIP label when creating the highlight, or you can add the label when editing any highlight.
 
 Labels are added or updated in files continuously as Cloud Compliance scans files.
 
@@ -111,11 +111,11 @@ Follow these steps to add an AIP label to an existing highlight.
 +
 image:screenshot_compliance_add_label_highlight_1.png[A screenshot showing how to edit an existing highlight.]
 
-. In the Edit Highlight page, check the box to enable automatic labels for files that match the highlight parameters, select the label (for example, *General*), and click *Save Highlight*.
+. In the Edit Highlight page, check the box to enable automatic labels for files that match the highlight parameters, and select the label (for example, *General*).
 +
-image:screenshot_compliance_add_label_highlight_2.png[]
-+
-The label appears in the highlight description.
+image:screenshot_compliance_add_label_highlight_2.png[A screenshot showing how to select the label to be assigned to files that match the highlight.]
+
+. Click *Save Highlight* and the label appears in the highlight description.
 
 NOTE: If a highlight was configured with a label, but the label has since been removed from AIP, the label name is turned to OFF and the label is not assigned anymore.
 
@@ -124,6 +124,8 @@ NOTE: If a highlight was configured with a label, but the label has since been r
 == Removing the AIP integration
 
 If you no longer want the ability to manage AIP labels in files, you can remove the AIP account from the Cloud Compliance interface.
+
+Note that no changes are made to the labels you have added using Cloud Compliance. The labels that exist in files will stay as they currently exist.
 
 .Steps
 

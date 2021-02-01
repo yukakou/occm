@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task_managing_highlights.html
-keywords: compliance, privacy, filter data, highlights, policies, email alerts
+keywords: compliance, privacy, filter data, highlights, policies, email alerts, notification, aip labels
 summary: Highlights are like a favorites list of custom filters that provide search results in the Investigation page for commonly requested compliance queries. Cloud Compliance provides a set of predefined Highlights based on common customer questions. You can also create custom Highlights that provide results for searches specific to your organization.
 ---
 
@@ -52,20 +52,23 @@ image:screenshot_compliance_save_as_highlight.png[A screenshot showing how to sa
 . Name the highlight and choose whether you want emails sent to Cloud Manager users when results are returned for this highlight:
 .. Enter a unique name and description for the highlight.
 .. Check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent.
+.. Check the box to enable automatic AIP labels for files that match the highlight parameters, and select the label. (Learn morre about link:task_managing_aip_labels.html#assigning-aip-labels-automatically-with-highlights[assigning AIP labels^].)
 .. Click *Save Highlight*.
 +
-image:screenshot_compliance_save_highlight.png[A screenshot that shows how to name the highlight and save it.]
+image:screenshot_compliance_save_highlight.png[A screenshot that shows how to configure the highlight and save it.]
 
 .Result
 
-The new highlight appears in the Highlights tab. Additionally, if you enabled email notifications, the first email is sent now if there are any results from the highlight - if any files meet the highlight criteria.
+The new highlight appears in the Highlights tab.
+
+Additionally, if you enabled email notifications, the first email is sent now if there are any results from the highlight - but only if any files meet the highlight criteria. No personal information is sent in the notification emails. The email indicates that there are files that match the highlight criteria, and it provides a link to the highlight results.
 
 == Editing highlights
 
 You can modify certain parts of a highlight depending on the type of highlight:
 
-* Custom highlights - You can modify the _Name_, the _Description_, and whether email notifications are sent.
-* Predefined highlights - You can modify only whether email notifications are sent.
+* Custom highlights - You can modify the _Name_, the _Description_, whether email notifications are sent, and whether AIP labels are added.
+* Predefined highlights - You can modify only whether email notifications are sent and whether AIP labels are added.
 
 NOTE: If you need to change the filter parameters for a custom highlight, you'll need to create a new highlight with the parameters you want, and then delete the old highlight.
 
