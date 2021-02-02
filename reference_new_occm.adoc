@@ -23,6 +23,7 @@ link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 
 
 * <<Monitoring enhancements>>
 * <<Cloud Tiering enhancements>>
+* <<Cloud Sync enhancements>>
 
 === Monitoring enhancements
 
@@ -41,6 +42,16 @@ When you click *Add cluster* from the Cloud Tiering page, you're now sent direct
 * You can now filter the Timeline to show actions specific to the Cloud Tiering service.
 +
 image:screenshot_tiering_timeline.gif[A screenshot of the Timeline and the filter ability by selecting the Cloud Tiering service.]
+
+=== Cloud Sync enhancements
+
+* We've simplified the process for syncing data to or from Cloud Volumes ONTAP. You can now select a Cloud Volumes ONTAP working environment and choose an option to sync data to or from this working environment.
++
+image:screenshot_sync_we.gif[A screenshot that shows the actions available from the Sync menu after selecting a working environment.]
+
+* In the last release, we introduced a new Reports feature that provides information that you can use with the help of NetApp personnel to tune a data broker's configuration and improve performance. These reports are now supported with object storage.
++
+image:screenshot_sync_report_object.gif[A report that shows the number of path items, objects size, modify time, and storage class.]
 
 == Cloud Manager 3.9.2 update (11 Jan 2021)
 
