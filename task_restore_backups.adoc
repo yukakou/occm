@@ -148,11 +148,15 @@ See link:concept_backup_to_cloud.html#cost[this topic^] for the cost of the Clou
 
 * In Azure, the Restore virtual machine runs on a https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series[Standard_D4s_v3 VM^] with 4 CPUs, 16 GiB Memory, and a 32 GB disk.
 //
-// *In GCP, the Restore
+// *In GCP, the Restore virtual machine runs on
 
 The instance is named _Cloud-Restore-Instance_ with your Account ID concatenated to it. For example: _Cloud-Restore-Instance-MyAccount_.
 
-.AWS permissions required
+=== Reviewing prerequisites
+
+Review the following prerequisites to make sure that you have a supported configuration before Cloud Restore is deployed.
+
+==== AWS permissions required
 
 When using file Restore with AWS, the IAM role that provides Cloud Manager with permissions must include S3 permissions from the latest https://mysupport.netapp.com/site/info/cloud-manager-policies[Cloud Manager policy^] as described in link:task_backup_to_s3.html#requirements[AWS requirements^].
 
@@ -166,9 +170,49 @@ Additionally, the following permissions are needed in the policy for file restor
     "ec2:terminateInstances"
   ],
 
-.Access
+==== Enable outbound internet access
 
-The Restore instance requires outbound internet access to manage resources and processes within your public cloud environment.
+Cloud Restore requires outbound internet access. If your virtual or physical network uses a proxy server for internet access, ensure that the instance has outbound internet access to contact the following endpoints. When you deploy Cloud Restore in the cloud, it is located in the same subnet as the Connector.
+
+Review the appropriate table depending on whether you are deploying Cloud Restore in AWS or Azure.
+
+*Required endpoints for AWS deployments:*
+
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+
+| \http://amazonlinux.us-east-1.amazonaws.com/2/extras/docker/stable/x86_64/4bf88ee77c395ffe1e0c3ca68530dfb3a683ec65a4a1ce9c0ff394be50e922b2/ | CentOS package for the Cloud Restore Instance AMI.
+
+|
+\https://.0.com
+\https://0.com
+
+| Cloud Restore Instance image repository.
+
+|===
+
+*Required endpoints for Azure deployments:*
+
+[cols="43,57",options="header"]
+|===
+| Endpoints
+| Purpose
+
+|
+\http://olcentgbl.trafficmanager.net
+\https://olcentgbl.trafficmanager.net
+
+| Provides CentOS packages for the Cloud Restore virtual machine.
+
+|
+\http://cloudmanagerinfraprod.azurecr.io
+\https://cloudmanagerinfraprod.azurecr.io
+
+| Cloud Restore Instance image repository.
+
+|===
 
 === Restoring a single file from a backup file
 
