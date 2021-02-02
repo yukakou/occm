@@ -27,7 +27,7 @@ The Monitoring service is supported with Cloud Volumes ONTAP for AWS and Cloud V
 
 == Cost
 
-Monitoring is currently available as a Preview. Activation is free, but Cloud Manager launches a virtual machine in your VPC to facilitate monitoring. This VM results in charges from your cloud provider.
+NetApp doesn't charge you for using the Monitoring service, but Cloud Manager launches a virtual machine in your VPC to facilitate monitoring. This VM results in charges from your cloud provider.
 
 == How Cloud Insights works with Cloud Manager
 
