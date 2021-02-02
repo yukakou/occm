@@ -15,9 +15,23 @@ summary: When you create a sync relationship, the Cloud Sync service copies file
 [.lead]
 When you create a sync relationship, the Cloud Sync service copies files from the source to the target. After the initial copy, the service syncs any changed data every 24 hours.
 
-The steps below provide an example that shows how to set up a sync relationship from an NFS server to an S3 bucket.
+.Steps for Cloud Volumes ONTAP or Azure NetApp Files
 
-.Steps
+Use these steps to sync data to or from Cloud Volumes ONTAP Azure NetApp Files.
+
+. In Cloud Manager, click *Canvas*.
+
+. Select a Cloud Volumes ONTAP or Azure NetApp Files working environment.
+
+. Select the action menu next to Sync.
++
+image:screenshot_sync_we.gif[A screenshot that shows the actions available from the Sync menu after selecting a working environment.]
+
+. Select *Sync data from this location* or *Sync data to this location* and follow the prompts to set up the sync relationship.
+
+.Steps for all other types of relationships
+
+Use these steps to sync data to or from any other type of supported storage. The steps below provide an example that shows how to set up a sync relationship from an NFS server to an S3 bucket.
 
 . In Cloud Manager, click *Sync*.
 
