@@ -35,13 +35,13 @@ Cloud Manager leverages https://cloud.netapp.com/cloud-insights[NetApp's Cloud I
 
 At a high-level, Cloud Insights integration with Cloud Manager works like this:
 
-1. You enable the Monitoring service on Cloud Volumes ONTAP.
-2. Cloud Manager configures your environment. It does the following:
-	a. Creates a Cloud Insights tenant (also called _environment_) and associates all users in your Cloud Central account to the tenant.
-	b. Enables a 30-day free trial of Cloud Insights.
-	c. Deploys a virtual machine in your VPC/VNet called an Acquisition Unit. The Acquisition Unit facilitates monitoring of volumes (this is the VM mentioned in the Cost section above).
-	d. Connects the Acquisition Unit to Cloud Volumes ONTAP and to the Cloud Insights tenant.
-3. In Cloud Manager, you click Monitoring and use the performance data to troubleshoot and optimize performance.
+. You enable the Monitoring service on Cloud Volumes ONTAP.
+. Cloud Manager configures your environment. It does the following:
+.. Creates a Cloud Insights tenant (also called _environment_) and associates all users in your Cloud Central account to the tenant.
+.. Enables a 30-day free trial of Cloud Insights.
+.. Deploys a virtual machine in your VPC/VNet called an Acquisition Unit. The Acquisition Unit facilitates monitoring of volumes (this is the VM mentioned in the Cost section above).
+.. Connects the Acquisition Unit to Cloud Volumes ONTAP and to the Cloud Insights tenant.
+. In Cloud Manager, you click Monitoring and use the performance data to troubleshoot and optimize performance.
 
 The following image shows the relationship between these components in an AWS VPC:
 
