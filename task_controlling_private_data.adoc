@@ -113,15 +113,17 @@ image:screenshot_file_types.gif[A screenshot of the file types dialog box where 
 
 . Investigate the data by searching, sorting, expanding details for a specific file, clicking *Investigate Results* to see masked information, or by downloading the file list.
 
-== Viewing file metadata details
+== Viewing file metadata and permissions
 
 In the Data Investigation results pane you can click image:button_subfolder.png[right-caret] for any single file to view the file metadata.
 
 image:screenshot_compliance_file_details.png[A screenshot showing the metadata details for a file in the Data Investigation page.]
 
-In addition to showing you the working environment and volume where the file resides, the metadata shows much more information. This information is useful if you are planning to create highlights because you can see all the information that you can filter your data.
+In addition to showing you the working environment and volume where the file resides, the metadata shows much more information, including the file permissions, file owner, and assigned AIP label (if you have link:task_managing_aip_labels.html[integrated AIP in Cloud Compliance^]). This information is useful if you're planning to create highlights because you can see all the information that you can use to filter your data.
 
-There are also two items in this metadata that allow you to make changes:
+Note that not all information is available for all data sources - just what is appropriate for that data source. For example, permissions and AIP labels are not relevant for database files.
+
+There are also two items in this metadata that allow you to make changes to files:
 
 * If you have integrated AIP labels with Cloud Compliance, you can assign a label to this file, or change to a different label if one already exists. See link:task_managing_aip_labels.html#assigning-aip-labels-manually[Assigning AIP labels manually^] for details.
 

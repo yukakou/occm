@@ -37,7 +37,7 @@ To display the results for a highlight in the Investigation page, click the imag
 
 image:screenshot_compliance_highlights_investigate.png[A screenshot of selecting Investigate Results for a specific highlight from the Highlights tab.]
 
-==	Creating custom highlights
+== Creating custom highlights
 
 You can create your own custom highlights that provide results for searches specific to your organization.
 
@@ -74,11 +74,27 @@ NOTE: If you need to change the filter parameters for a custom highlight, you'll
 
 To modify a highlight, click the *Edit* button, enter your changes on the _Edit Highlight_ page, and click *Save Highlight*.
 
-==	Deleting highlights
+== Deleting highlights
 
 You can delete any custom highlight that you created if you no longer need it. You can't delete any of the predefined highlights.
 
 To delete a highlight, click the image:screenshot_gallery_options.gif[More button] button for a specific highlight, click *Delete Highlight*, and then click *Delete Highlight* again in the confirmation dialog.
+
+== Deleting source files
+
+You can permanently remove source files that seem insecure or too risky to leave in your storage system. This action is permanent and there is no undo.
+
+TIP:: Files in databases and files in volume backup files cannot be deleted.
+
+.Steps
+
+. In the Data Investigation results pane, click image:button_subfolder.png[right-caret] for the file to expand the file metadata details.
++
+image:screenshot_compliance_delete_file.png[A screenshot showing selection of the Delete File button from the metadata details for a file in the Data Investigation page.]
+
+. Click *Delete this file*.
+
+. Because the delete operation is permanent, type "*permanently delete*" in the _Delete File_ dialog and click *Delete File*.
 
 == List of predefined highlights
 

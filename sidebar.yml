@@ -307,10 +307,10 @@ entries:
         url: /task_controlling_private_data.html
       - title: Gain control of private data with Highlights
         url: /task_managing_highlights.html
+      - title: Categorize data using AIP labels
+        url: /task_managing_aip_labels.html
       - title: Add custom personal data identifiers
         url: /task_managing_data_fusion.html
-      - title: Manage AIP labels in files
-        url: /task_managing_aip_labels.html
       - title: Generate reports
         url: /task_generating_compliance_reports.html
       - title: Respond to a DSAR

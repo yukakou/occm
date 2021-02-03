@@ -235,7 +235,7 @@ NOTE: Cloud Compliance is currently unable to scan S3 buckets and Azure NetApp F
 ** The OS must be capable of installing the docker engine (for example, disable the _firewalld_ service if needed)
 * RAM: Minimum of 60 GB
 * CPU: Minimum 8 CPU cores; 16 cores recommended
-* Capacity: 500 GB
+* Disk: 500 GB SSD
 
 * A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during installation.
 
