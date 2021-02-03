@@ -48,7 +48,7 @@ Read the following requirements to make sure that you have a supported configura
 Supported Connector::
 You need a new installation of a Connector running 3.8.4 or later. A new installation is needed because a new infrastructure is required to enable the Monitoring service. This infrastructure is available starting with new installations of version 3.8.4.
 
-TIP: You can view a Connector's version by clicking image:screenshot_help_icon.gif[A screenshot of the help icon in the top right of Cloud Manager] *> Support > Connector*.
+TIP: You can view a Connector's version by clicking the image:screenshot_help_icon.gif[A screenshot of the help icon in the top right of Cloud Manager] icon and then *Support > Connector*.
 
 Supported Cloud Volumes ONTAP versions::
 Any version of Cloud Volumes ONTAP in AWS or in Azure.
