@@ -226,15 +226,15 @@ The most common way to deploy Cloud Compliance is to <<Deploying the Cloud Compl
 
 The Compliance software functions exactly the same regardless of which installation method you choose.
 
-NOTE: Cloud Compliance is currently unable to scan S3 buckets and Azure NetApp Files when the Compliance instance is installed on premises. In these cases you'll need to deploy a separate Connector and instance of Compliance in the cloud and link:concept_connectors.html#when-to-switch-between-connectors[switch between Connectors] for your different data sources.
+NOTE: Cloud Compliance is currently unable to scan S3 buckets and Azure NetApp Files when the Compliance instance is installed on premises. In these cases you'll need to deploy a separate Connector and instance of Compliance in the cloud and link:concept_connectors.html#when-to-switch-between-connectors[switch between Connectors^] for your different data sources.
 
 .Host requirements
 
 * Operating system: Red Hat Enterprise Linux or CentOS version 8.0 or 8.1
 ** Version 7.8 can be used, but the Linux kernel version must be 4.14 or greater
 ** The OS must be capable of installing the docker engine (for example, disable the _firewalld_ service if needed)
-* RAM: Minimum of 60 GB
-* CPU: Minimum 8 CPU cores; 16 cores recommended
+* RAM: 64 GB (swap memory must be disabled on the host)
+* CPU: 16 cores
 * Disk: 500 GB SSD
 
 * A Red Hat Enterprise Linux system must be registered with Red Hat Subscription Management. If it is not registered, the system cannot access repositories to update required 3rd party software during installation.
