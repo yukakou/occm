@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task_getting_started_monitoring.html
 keywords: monitoring, cloud insights, tenant, acquisition unit, iops, throughput, latency, performance, cloud volumes ontap performance, volume performance
-summary: Complete a few steps to get started monitoring Cloud Volumes ONTAP performance.
+summary: Complete a few steps to start monitoring Cloud Volumes ONTAP performance.
 ---
 
 = Monitoring Cloud Volumes ONTAP
@@ -21,8 +21,11 @@ Get started quickly by following these steps or scroll down to the remaining sec
 
 ==== image:number1.png[Number 1] Verify support for your configuration
 
-[role="quick-margin-para"]
-You need a new installation of a Connector running version 3.8.4 or later in AWS or Azure, Cloud Volumes ONTAP in AWS or Azure, and you must be a new Cloud Insights customer.
+[role="quick-margin-list"]
+* You must be a new Cloud Insights customer.
+* You need a Cloud Volumes ONTAP system running in AWS or Azure
+* For AWS, you need a new installation of a Connector running version 3.8.4 or later.
+* For Azure, you need a new installation of a Connector running version 3.9.3 or later.
 
 ==== image:number2.png[Number 2] Enable Monitoring on your new or existing system
 
@@ -45,13 +48,16 @@ Subscribe before your 30-day free trial ends to continue seeing performance data
 
 Read the following requirements to make sure that you have a supported configuration.
 
-Supported Connector::
-You need a new installation of a Connector running 3.8.4 or later. A new installation is needed because a new infrastructure is required to enable the Monitoring service. This infrastructure is available starting with new installations of version 3.8.4.
-
-TIP: You can view a Connector's version by clicking the image:screenshot_help_icon.gif[A screenshot of the help icon in the top right of Cloud Manager] icon and then *Support > Connector*.
-
 Supported Cloud Volumes ONTAP versions::
 Any version of Cloud Volumes ONTAP in AWS or in Azure.
+
+Supported Connector::
+* For AWS, you need a new installation of a Connector running version 3.8.4 or later.
+* For Azure, you need a new installation of a Connector running version 3.9.3 or later.
++
+A new installation is needed because a new infrastructure is required to enable the Monitoring service. This infrastructure is available starting with new installations of version 3.8.4 in AWS and version 3.9.3 in Azure.
+
+TIP: You can view a Connector's version by clicking the image:screenshot_help_icon.gif[A screenshot of the help icon in the top right of Cloud Manager] icon and then *Support > Connector*.
 
 Cloud Insights requirement::
 You must be a new Cloud Insights customer. Monitoring isn't supported if you already have a Cloud Insights tenant.
