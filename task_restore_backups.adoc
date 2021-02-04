@@ -5,7 +5,7 @@ keywords: restoring, restore, restore volumes, restore files, Cloud Backup, clou
 summary: Backups are stored in an object store in your cloud account so that you can restore data from a specific point in time. You can restore an entire volume from a saved backup file, or if you only need to restore a few files, you can restore up to 8 individual files (at one time) from a saved backup file.
 ---
 
-= Restoring volume data from backup files
+= Restoring data from backup files
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -124,7 +124,7 @@ NOTE: Restoring individual files from a backup file uses a separate Restore inst
 
 The process goes like this:
 
-. When you want to restore one or more files from a volume, click the Restore tab and select the backup file in which the file (or files) reside.
+. When you want to restore one or more files from a volume, click the Restore tab, click *Restore Files*, and select the backup file in which the file (or files) reside.
 
 . The Restore instance starts up and displays the folders and files that exist within the backup file.
 +
@@ -132,7 +132,7 @@ The process goes like this:
 
 . Choose the file (or files) that you want to restore from that backup.
 
-. Select the location where you want the file(s) to be restored (the working environment, volume, and folder), and click Restore.
+. Select the location where you want the file(s) to be restored (the working environment, volume, and folder), and click *Restore*.
 
 . The file(s) are restored, and then the Restore instance is shut down to save costs after a period of inactivity.
 
@@ -186,8 +186,8 @@ Review the appropriate table depending on whether you are deploying Cloud Restor
 | \http://amazonlinux.us-east-1.amazonaws.com/2/extras/docker/stable/x86_64/4bf88ee77c395ffe1e0c3ca68530dfb3a683ec65a4a1ce9c0ff394be50e922b2/ | CentOS package for the Cloud Restore Instance AMI.
 
 |
-\https://.0.com
-\https://0.com
+\http://cloudmanagerinfraprod.azurecr.io
+\https://cloudmanagerinfraprod.azurecr.io
 
 | Cloud Restore Instance image repository.
 
