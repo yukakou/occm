@@ -28,11 +28,15 @@ A storage VM spans the entire Cloud Volumes ONTAP system (HA pair or single node
 
 As noted above, multiple storage VMs are supported with Cloud Volumes ONTAP in AWS. The following sections include ONTAP commands that enable you create additional storage VMs on different Cloud Volumes ONTAP configurations.
 
-=== Create storage VMs on a single node system
+=== Create on a single node system
 
 These steps create a new storage VM on a single node cluster and allocate one NFS LIF and one storage VM management LIF. Two unused secondary private IPs are required.
 
 .Steps
+
+. Make sure that you have two unused secondary private IP addresses associated with eth0 (e0a).
++
+link
 
 . Create the storage VM.
 +
@@ -41,7 +45,8 @@ network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gatew
 
 . Create an NFS LIF.
 +
-`network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node`
+[source,ONTAP CLI]
+network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node
 +
 Where _private_ip_x_ is an unused secondary private IP on e0a.
 
@@ -51,11 +56,17 @@ Where _private_ip_x_ is an unused secondary private IP on e0a.
 +
 Where _private_ip_y_ is another unused secondary private IP on e0a.
 
-=== Create storage VMs on an HA pair in a single AZ
+=== Create on an HA pair in a single AZ
 
 These steps create a new storage VM with one NFS LIF and no storage VM management LIF. This configuration requires one unused secondary private IP on eth0 (e0a).
 
 Note that floating IP addresses aren't used on an HA pair in a single AZ. Instead, secondary private IPs move between the nodes.
+
+.Steps
+
+. Make sure that you have one unused secondary private IP addresses associated with eth0 (e0a) on node 1.
++
+link
 
 . Create the storage VM.
 +
@@ -70,13 +81,17 @@ Where _private_ip_x_ is an unused secondary private IP on e0a of cvo-node1.
 +
 NOTE: private_ip_x can be relocated to the e0a of cvo-node2 in case of takeover because the service policy default-data-files indicates that IPs can migrate to the partner node.
 
-=== Create storage VMs on an HA pair in multiple AZs
+=== Create on an HA pair in multiple AZs
 
-These steps create a new SVM with one NFS LIF and one storage VM management LIF. This configuration requires one unused secondary private IP on eth0 (e0a) for each node.
+These steps create a new SVM with one NFS LIF and one storage VM management LIF. This configuration requires one unused secondary private IP on eth0 (e0a) on each node.
 
 Note that floating IP addresses are required on an HA pair in multiple AZs for LIF migration. This is required because private IP addresses on the two nodes are in different subnets. The floating IPs are configured in the AWS route table to point to a specific node's ENI in the same VPC. In order for this to work with ONTAP, a private IP address must be configured on every storage VM on each node. This is reflected in the steps below.
 
 .Steps
+
+. Make sure that you have one unused secondary private IP addresses associated with eth0 (e0a) on each node.
++
+link
 
 . Create the storage VM.
 +
@@ -139,7 +154,7 @@ image:screenshot_svm.gif[Screen shot: Shows the SVM Name field and the edit icon
 
 . In the Modify SVM Name dialog box, change the name, and then click *Save*.
 
-== Manage storage VM disaster recovery
+== Manage storage VMs for disaster recovery
 
 Cloud Manager doesn't provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.
 
