@@ -5,7 +5,7 @@ keywords: storage virtual machine, vserver, svm, storage vm, supported number, n
 summary: A storage VM is a virtual machine running within ONTAP that provides storage and data services to your clients. You might know this as an SVM or a vserver. Cloud Volumes ONTAP is configured with one storage VM by default, but some configurations support additional storage VMs.
 ---
 
-= Managing storage VMs
+= Manage storage VMs
 :toc: macro
 :hardbreaks:
 :nofooter:
@@ -24,16 +24,94 @@ All other Cloud Volumes ONTAP configurations support one data-serving storage VM
 
 A storage VM spans the entire Cloud Volumes ONTAP system (HA pair or single node).
 
-== Creating additional storage VMs
+== Create storage VMs for data access in AWS
 
-If supported by your configuration, you can create additional storage VMs using link:task_connecting_to_otc.html[System Manager or the CLI].
+As noted above, multiple storage VMs are supported with Cloud Volumes ONTAP in AWS. The following sections include ONTAP commands that enable you create additional storage VMs on different Cloud Volumes ONTAP configurations.
 
-* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-cifs-cg/GUID-CE5DE09F-3B48-48FE-A41C-9D69C3D0C402.html[Creating an SVM for SMB access^]
-* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nfs-cg/GUID-CE5DE09F-3B48-48FE-A41C-9D69C3D0C402.html[Creating an SVM for NFS access^]
-* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.exp-iscsi-cpg/GUID-0FCB46AA-DA18-417B-A9EF-B6A665DB77FC.html[Creating an SVM for iSCSI access^]
-* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[Creating a destination SVM for disaster recovery^]
+=== Create storage VMs on a single node system
 
-== Working with multiple storage VMs in Cloud Manager
+These steps create a new storage VM on a single node cluster and allocate one NFS LIF and one storage VM management LIF. Two unused secondary private IPs are required.
+
+.Steps
+
+. Create the storage VM.
++
+`vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
+network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway`
+
+. Create an NFS LIF.
++
+`network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node`
++
+Where _private_ip_x_ is an unused secondary private IP on e0a.
+
+. Create a storage VM management LIF.
++
+`network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address private_ip_y -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node`
++
+Where _private_ip_y_ is another unused secondary private IP on e0a.
+
+=== Create storage VMs on an HA pair in a single AZ
+
+These steps create a new storage VM with one NFS LIF and no storage VM management LIF. This configuration requires one unused secondary private IP on eth0 (e0a).
+
+Note that floating IP addresses aren't used on an HA pair in a single AZ. Instead, secondary private IPs move between the nodes.
+
+. Create the storage VM.
++
+`vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
+network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway`
+
+. Create an NFS LIF.
++
+`network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node1`
++
+Where _private_ip_x_ is an unused secondary private IP on e0a of cvo-node1.
++
+NOTE: private_ip_x can be relocated to the e0a of cvo-node2 in case of takeover because the service policy default-data-files indicates that IPs can migrate to the partner node.
+
+=== Create storage VMs on an HA pair in multiple AZs
+
+These steps create a new SVM with one NFS LIF and one storage VM management LIF. This configuration requires one unused secondary private IP on eth0 (e0a) for each node.
+
+Note that floating IP addresses are required on an HA pair in multiple AZs for LIF migration. This is required because private IP addresses on the two nodes are in different subnets. The floating IPs are configured in the AWS route table to point to a specific node's ENI in the same VPC. In order for this to work with ONTAP, a private IP address must be configured on every storage VM on each node. This is reflected in the steps below.
+
+.Steps
+
+. Create the storage VM.
++
+`vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
+network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway`
+
+. Create the NFS LIF.
++
+`network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address 192.168.209.27 -netmask node1Mask -lif ip_nas_floating_2 -home-node cvo-node1`
++
+* IP address 192.x.x.x is recognized as a floating IP.
+* The 192 address has to be chosen by the admin.
+* `-service-policy default-data-files` indicates that IPs can migrate to the partner node.
+
+. Create a storage VM management LIF:
++
+`network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address 192.168.209.28 -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node1`
+
+. Create an iSCSI LIF on node 1:
++
+`network interface create -vserver svm_2 -service-policy default-data-blocks -home-port e0a -address node1_local_ip_iscsi -netmask nodei1Mask -lif ip_node1_iscsi_2 -home-node cvo-node1`
++
+* This iSCSI LIF is required to support LIF migration of the floating IPs in the storage VM. It doesn't have to be an iSCSI LIF, but it can't be configured to migrate between nodes.
+* `-service-policy default-data-block` indicates that an IP address does not migrate between nodes.
+* `node1_local_ip_iscsi` is an unused secondary private IP address on eth0 (e0a) of cvo_node1.
+
+. Create an iSCSI LIF on node 2:
++
+`network interface create -vserver svm_2 -service-policy default-data-blocks -home-port e0a -address node2_local_ip_iscsi -netmaskNode2Mask -lif ip_node2_iscsi_2 -home-node cvo-node2`
++
+* This iSCSI LIF is required to support LIF migration of the floating IPs in the storage VM. It doesn't have to be an iSCSI LIF, but it can't be configured to migrate between nodes.
+* `-service-policy default-data-block` indicates that an IP address does not migrate between nodes.
+* `node2_local_ip_iscsi` is an unused secondary private IP address on eth0 (e0a) of cvo_node2.
+
+== Work with storage VMs in Cloud Manager
 
 Cloud Manager supports any additional storage VMs that you create from System Manager or the CLI.
 
@@ -45,14 +123,7 @@ And the following image shows how you can choose a storage VM when replicating a
 
 image:screenshot_replicate_volume_svm.gif[A screenshot that shows the ability to select the storage VM in which you want to replicate a volume.]
 
-== Managing storage VM disaster recovery
-
-Cloud Manager doesn't provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.
-
-* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[SVM Disaster Recovery Preparation Express Guide^]
-* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857[SVM Disaster Recovery Express Guide^]
-
-== Modifying the storage VM name
+== Modify the storage VM name
 
 Cloud Manager automatically names the single storage VM that it creates for Cloud Volumes ONTAP. You can modify the name of the storage VM if you have strict naming standards. For example, you might want the name to match how you name the storage VMs for your ONTAP clusters.
 
@@ -67,3 +138,10 @@ If you created any additional storage VMs for Cloud Volumes ONTAP, then you can'
 image:screenshot_svm.gif[Screen shot: Shows the SVM Name field and the edit icon that you must click to modify the SVM name.]
 
 . In the Modify SVM Name dialog box, change the name, and then click *Save*.
+
+== Manage storage VM disaster recovery
+
+Cloud Manager doesn't provide any setup or orchestration support for storage VM disaster recovery. You must use System Manager or the CLI.
+
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[SVM Disaster Recovery Preparation Express Guide^]
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857[SVM Disaster Recovery Express Guide^]
