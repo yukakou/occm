@@ -17,7 +17,7 @@ When you create a sync relationship, the Cloud Sync service copies files from th
 
 .Steps for Cloud Volumes ONTAP or Azure NetApp Files
 
-Use these steps to sync data to or from Cloud Volumes ONTAP Azure NetApp Files.
+Use these steps to sync data to or from Cloud Volumes ONTAP or to or from Azure NetApp Files.
 
 . In Cloud Manager, click *Canvas*.
 
