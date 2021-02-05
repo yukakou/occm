@@ -40,19 +40,21 @@ link
 
 . Create the storage VM.
 +
-`vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
-network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway`
+[source,CLI]
+vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
+network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
 
 . Create an NFS LIF.
 +
-[source,ONTAP CLI]
+[source,CLI]
 network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node
 +
 Where _private_ip_x_ is an unused secondary private IP on e0a.
 
 . Create a storage VM management LIF.
 +
-`network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address private_ip_y -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node`
+[source,CLI]
+network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address private_ip_y -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node
 +
 Where _private_ip_y_ is another unused secondary private IP on e0a.
 
@@ -70,12 +72,14 @@ link
 
 . Create the storage VM.
 +
-`vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
-network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway`
+[source,CLI]
+vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
+network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
 
 . Create an NFS LIF.
 +
-`network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node1`
+[source,CLI]
+network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node1
 +
 Where _private_ip_x_ is an unused secondary private IP on e0a of cvo-node1.
 +
@@ -95,12 +99,14 @@ link
 
 . Create the storage VM.
 +
-`vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
-network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway`
+[source,CLI]
+vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
+network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
 
 . Create the NFS LIF.
 +
-`network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address 192.168.209.27 -netmask node1Mask -lif ip_nas_floating_2 -home-node cvo-node1`
+[source,CLI]
+network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address 192.168.209.27 -netmask node1Mask -lif ip_nas_floating_2 -home-node cvo-node1
 +
 * IP address 192.x.x.x is recognized as a floating IP.
 * The 192 address has to be chosen by the admin.
@@ -108,11 +114,13 @@ network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gatew
 
 . Create a storage VM management LIF:
 +
-`network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address 192.168.209.28 -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node1`
+[source,CLI]
+network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address 192.168.209.28 -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node1
 
 . Create an iSCSI LIF on node 1:
 +
-`network interface create -vserver svm_2 -service-policy default-data-blocks -home-port e0a -address node1_local_ip_iscsi -netmask nodei1Mask -lif ip_node1_iscsi_2 -home-node cvo-node1`
+[source,CLI]
+network interface create -vserver svm_2 -service-policy default-data-blocks -home-port e0a -address node1_local_ip_iscsi -netmask nodei1Mask -lif ip_node1_iscsi_2 -home-node cvo-node1
 +
 * This iSCSI LIF is required to support LIF migration of the floating IPs in the storage VM. It doesn't have to be an iSCSI LIF, but it can't be configured to migrate between nodes.
 * `-service-policy default-data-block` indicates that an IP address does not migrate between nodes.
@@ -120,7 +128,8 @@ network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gatew
 
 . Create an iSCSI LIF on node 2:
 +
-`network interface create -vserver svm_2 -service-policy default-data-blocks -home-port e0a -address node2_local_ip_iscsi -netmaskNode2Mask -lif ip_node2_iscsi_2 -home-node cvo-node2`
+[source,CLI]
+network interface create -vserver svm_2 -service-policy default-data-blocks -home-port e0a -address node2_local_ip_iscsi -netmaskNode2Mask -lif ip_node2_iscsi_2 -home-node cvo-node2
 +
 * This iSCSI LIF is required to support LIF migration of the floating IPs in the storage VM. It doesn't have to be an iSCSI LIF, but it can't be configured to migrate between nodes.
 * `-service-policy default-data-block` indicates that an IP address does not migrate between nodes.
