@@ -157,7 +157,7 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 
 == What’s included in each file list report (CSV file)
 
-From each Investigation page you can download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list.
+From each Investigation page you can click the image:button_download.png[] button to download file lists (in CSV format) that include details about the identified files. If there are more than 10,000 results, only the top 10,000 appear in the list.
 
 Each file list includes the following information:
 

@@ -317,7 +317,7 @@ entries:
         url: /task_responding_to_dsar.html
       - title: Categories of private data
         url: /reference_private_data_categories.html
-      - title: Disable Cloud Compliance
+      - title: Remove data sources from Cloud Compliance
         url: /task_managing_compliance.html
       - title: FAQ
         url: /faq_cloud_compliance.html
