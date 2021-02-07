@@ -30,7 +30,7 @@ As noted above, multiple storage VMs are supported with Cloud Volumes ONTAP in A
 
 === Create on a single node system
 
-These steps create a new storage VM on a single node cluster and allocate one NFS LIF and one storage VM management LIF. Two unused secondary private IPs are required.
+These steps create a new storage VM on a single node cluster and allocate one NAS LIF and one storage VM management LIF. Two unused secondary private IPs are required.
 
 .Steps
 
@@ -38,7 +38,7 @@ These steps create a new storage VM on a single node cluster and allocate one NF
 +
 link
 
-. Create the storage VM.
+. Create the storage VM and route to the storage VM.
 +
 [source,cli]
 vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
@@ -46,7 +46,7 @@ vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot
 [source,cli]
 network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
 
-. Create an NFS LIF.
+. Create a NAS LIF.
 +
 [source,cli]
 network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node
@@ -62,7 +62,7 @@ Where _private_ip_y_ is another unused secondary private IP on e0a.
 
 === Create on an HA pair in a single AZ
 
-These steps create a new storage VM with one NFS LIF and no storage VM management LIF. This configuration requires one unused secondary private IP on eth0 (e0a).
+These steps create a new storage VM with one NAS LIF and no storage VM management LIF. This configuration requires one unused secondary private IP on eth0 (e0a).
 
 Note that floating IP addresses aren't used on an HA pair in a single AZ. Instead, secondary private IPs move between the nodes.
 
@@ -72,13 +72,15 @@ Note that floating IP addresses aren't used on an HA pair in a single AZ. Instea
 +
 link
 
-. Create the storage VM.
+. Create the storage VM and route to the storage VM.
 +
 [source,cli]
 vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
++
+[source,cli]
 network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
 
-. Create an NFS LIF.
+. Create a NAS LIF.
 +
 [source,cli]
 network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node1
@@ -89,7 +91,7 @@ NOTE: private_ip_x can be relocated to the e0a of cvo-node2 in case of takeover 
 
 === Create on an HA pair in multiple AZs
 
-These steps create a new SVM with one NFS LIF and one storage VM management LIF. This configuration requires one unused secondary private IP on eth0 (e0a) on each node.
+These steps create a new SVM with one NAS LIF and one storage VM management LIF. This configuration requires one unused secondary private IP on eth0 (e0a) on each node.
 
 Note that floating IP addresses are required on an HA pair in multiple AZs for LIF migration. This is required because private IP addresses on the two nodes are in different subnets. The floating IPs are configured in the AWS route table to point to a specific node's ENI in the same VPC. In order for this to work with ONTAP, a private IP address must be configured on every storage VM on each node. This is reflected in the steps below.
 
@@ -99,25 +101,28 @@ Note that floating IP addresses are required on an HA pair in multiple AZs for L
 +
 link
 
-. Create the storage VM.
+. Create the storage VM and route to the storage VM.
 +
 [source,cli]
 vserver create -rootvolume-security-style mixed -rootvolume root_svm_2 -snapshot-policy default -vserver svm_2 -aggregate aggr1
++
+[source,cli]
 network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gateway
 
-. Create the NFS LIF.
+. Create a NAS LIF.
 +
 [source,cli]
 network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address 192.168.209.27 -netmask node1Mask -lif ip_nas_floating_2 -home-node cvo-node1
 +
-* IP address 192.x.x.x is recognized as a floating IP.
-* The 192 address has to be chosen by the admin.
+* The 192.168.209.27 IP address is an example floating IP address. link:reference_networking_aws.html#requirements-for-ha-pairs-in-multiple-azs[Learn more about choosing a floating IP address].
 * `-service-policy default-data-files` indicates that IPs can migrate to the partner node.
 
 . Create a storage VM management LIF:
 +
 [source,cli]
 network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address 192.168.209.28 -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node1
++
+Again, the 192.168.209.28 IP address is an example floating IP address.
 
 . Create an iSCSI LIF on node 1:
 +
