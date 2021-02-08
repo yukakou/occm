@@ -305,10 +305,8 @@ entries:
                 url: /task_scanning_onedrive.html
       - title: View details about private data in your organization
         url: /task_controlling_private_data.html
-      - title: Gain control of private data with Highlights
+      - title: Manage your private data
         url: /task_managing_highlights.html
-      - title: Categorize data using AIP labels
-        url: /task_managing_aip_labels.html
       - title: Add custom personal data identifiers
         url: /task_managing_data_fusion.html
       - title: Generate reports
