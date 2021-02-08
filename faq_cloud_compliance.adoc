@@ -143,7 +143,7 @@ link:task_getting_started_compliance.html[Learn more^].
 
 == Can Cloud Compliance send notifications to my organization?
 
-Yes. In conjunction with the Highlights feature, you can send email alerts to Cloud Manager users (daily, weekly, or monthly) when a highlight return results so you can get notifications to protect your data. Learn more about link:task_managing_highlights.html[highlights^].
+Yes. In conjunction with the Highlights feature, you can send email alerts to Cloud Manager users (daily, weekly, or monthly) when a highlight return results so you can get notifications to protect your data. Learn more about link:task_managing_highlights.html#controlling-your-data-using-highlights[highlights^].
 
 You can also download status reports in .CSV format that you can share internally in your organization.
 
@@ -159,7 +159,7 @@ link:task_managing_data_fusion.html#creating-custom-personal-data-identifiers-fr
 
 Yes. You can manage AIP labels in the files that Cloud Compliance is scanning if you have subscribed to link:https://azure.microsoft.com/en-us/services/information-protection/[Azure Information Protection (AIP)^]. You can view the labels that are already assigned to files, add labels to files, and change labels when a label already exists.
 
-link:task_managing_aip_labels.html[Learn more^].
+link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[Learn more^].
 
 == Can I limit Cloud Compliance information to specific users?
 

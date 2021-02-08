@@ -153,7 +153,7 @@ image:screenshot_compliance_investigation_filtered.png[A screenshot of the filte
 
 * The left-pane filters enable you to refine the results by working environment, storage repository, category, private data, file type, file size, last modified date, whether the S3 object’s permissions are open to public access, etc...
 
-* The _Highlights_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go link:task_managing_highlights.html[here^] to view the list of predefined highlights and to see how you can create your own custom highlights.
+* The _Highlights_ filter at the top of the Filters pane lists the custom filters that provide commonly requested combinations of filters; like a saved database query or Favorites list. Go link:task_managing_highlights.html#controlling-your-data-using-highlights[here^] to view the list of predefined highlights and to see how you can create your own custom highlights.
 
 == What’s included in each file list report (CSV file)
 
