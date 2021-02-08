@@ -219,7 +219,7 @@ Note that the retention period for backups of data protection volumes is the sam
 
 * Monthly backups start just after midnight on the first of each month.
 
-At this time, you can’t schedule backup operations at a user specified time.
+The start time is based on the time zone set on each source ONTAP system. At this time, you can’t schedule backup operations at a user specified time.
 
 === Backup copies are associated with your Cloud Central account
 
