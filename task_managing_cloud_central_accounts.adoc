@@ -173,7 +173,7 @@ The following services aren't available from Cloud Manager if you disable the Sa
 *	Global File Cache
 *	Monitoring
 
-If you do disable the SaaS platform, you'll need to perform all tasks from the local user interface that is available on a Connector.
+If you do disable the SaaS platform, you'll need to perform all tasks from link:task_managing_connectors.html#accessing-the-local-ui[the local user interface that is available on a Connector].
 
 CAUTION: This is an irreversible action that will prevent you from using the Cloud Manager SaaS platform. You'll need to perform actions from the local Connector. You won't have the ability to use many of NetApp's integrated cloud services, and re-enabling the SaaS platform will require the help of NetApp support.
 
