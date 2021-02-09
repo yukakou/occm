@@ -171,7 +171,6 @@ The following services aren't available from Cloud Manager if you disable the Sa
 *	Kubernetes
 *	Cloud Tiering
 *	Global File Cache
-*	Monitoring
 
 If you do disable the SaaS platform, you'll need to perform all tasks from link:task_managing_connectors.html#accessing-the-local-ui[the local user interface that is available on a Connector].
 
