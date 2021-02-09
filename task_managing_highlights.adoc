@@ -62,7 +62,7 @@ image:screenshot_compliance_save_as_highlight.png[A screenshot showing how to sa
 .. Enter a unique name and description.
 .. Optionally, check the box if you want notification emails sent to Cloud Manager users, and choose the interval at which the email is sent.
 .. Optionally, check the box to automatically assign AIP labels to files that match the highlight parameters, and select the label. (Learn more about <<Categorizing your data using AIP labels,AIP labels>>.)
-.. Click *Save Highlight*.
+.. Click *Create Highlight*.
 +
 image:screenshot_compliance_save_highlight.png[A screenshot that shows how to configure the highlight and save it.]
 
