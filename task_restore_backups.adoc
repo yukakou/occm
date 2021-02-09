@@ -42,27 +42,18 @@ On-premises ONTAP system |
 
 |===
 
-== Enabling the Restore service
-
-You must enable the Restore service for each working environment where you plan to restore data from backups.
-
-NOTE: The Cloud Backup service must already be activated for this working environment.
-
-.Steps
-
-. From the Canvas, select the working environment.
-
-. Click the *Enable* button for the Restore service.
-+
-image:screenshot_restore_activate_button.png[A screenshot of the Enable button to enable the restore functionality.]
-
-You are directed to the Restore Dashboard under the Restore tab.
-
 == The Restore Dashboard
 
-The Restore Dashboard provides buttons for you to restore volumes and files. Clicking these buttons starts the wizard to walk you through the steps to restore that data. The dashboard also provides a list of all the volumes and all the files you have restored in case you need to view previous restore actions. You can expand the row for each restored volume or file to view the details about the source and destination locations for the volume or file.
+You access the Restore Dashboard by clicking the *Restore* tab from the top of Cloud Manager, or you can click the *Activate* or *Enable* button for the Restore service from the Services panel.
+
+NOTE: The Cloud Backup service must already be activated for at least one working environment.
 
 image:screenshot_restore_dashboard.png[The Restore Dashboard showing the buttons to restore volumes and files, and showing how to view all restored data.]
+
+The Restore Dashboard provides buttons for you to restore volumes and files. Clicking the _Restore Volumes_ or _Restore Files_ buttons starts a wizard that walks you through the steps to restore that data.
+
+The dashboard also provides a list of all the volumes and all the files you have restored in case you need a history of previous restore actions. You can expand the row for each restored volume or file to view the details about the source and destination locations for the volume or file.
+
 //
 // Note that you can also initiate a volume or file restore operation from a working environment in the Services panel. When started from this location the source working environment selection is automatically filled with the name of the current working environment.
 //
