@@ -25,7 +25,7 @@ Get started quickly by following these steps or scroll down to the remaining sec
 * You're running Cloud Volumes ONTAP 9.7P5 or later in GCP.
 * You have a valid GCP subscription for the storage space where your backups will be located.
 * You have a service account in your Google Cloud Project that has the predefined Storage Admin role.
-* You have subscribed to the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Backup to Cloud BYOL license from NetApp.
+* You have subscribed to the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[Cloud Manager Marketplace Backup offering^], or you have purchased link:task_managing_licenses.html#adding-and-updating-your-backup-byol-license[and activated^] a Cloud Backup BYOL license from NetApp.
 
 ==== image:number2.png[Number 2] Enable Cloud Backup on your new or existing system
 
