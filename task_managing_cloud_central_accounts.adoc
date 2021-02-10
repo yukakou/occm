@@ -180,4 +180,4 @@ CAUTION: This is an irreversible action that will prevent you from using the Clo
 
 . From the top of Cloud Manager, click the *Account* drop-down and click *Manage Account*.
 
-. In the Overview tab, toggle the option to disable use of the SaaS platform.
+. In the *Overview* tab, toggle the option to enable use the SaaS platform.
