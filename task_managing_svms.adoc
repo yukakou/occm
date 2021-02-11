@@ -109,14 +109,14 @@ network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gatew
 . Create a NAS LIF.
 +
 [source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address html-m*pass:[_]_private_ip_x_ -netmask node1Mask -lif ip_nas_2 -home-node cvo-node
+network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node
 +
 Where _private_ip_x_ is an unused secondary private IP on e0a.
 
 . Optional: Create a storage VM management LIF.
 +
 [source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address html-m*pass:[_]_private_ip_y_ -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node
+network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address private_ip_y -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node
 +
 Where _private_ip_y_ is another unused secondary private IP on e0a.
 
@@ -139,14 +139,14 @@ network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gatew
 . Create a NAS LIF on node 1.
 +
 [source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address html-m*pass:[_]_private_ip_x_ -netmask node1Mask -lif ip_nas_2 -home-node cvo-node1
+network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address private_ip_x -netmask node1Mask -lif ip_nas_2 -home-node cvo-node1
 +
 Where _private_ip_x_ is an unused secondary private IP on e0a of cvo-node1. This IP address can be relocated to the e0a of cvo-node2 in case of takeover because the service policy default-data-files indicates that IPs can migrate to the partner node.
 
 . Optional: Create a storage VM management LIF on node 1.
 +
 [source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address html-m*pass:[_]_private_ip_y_ -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node1
+network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address private_ip_y -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node1
 +
 Where _private_ip_y_ is another unused secondary private IP on e0a.
 
@@ -171,7 +171,7 @@ network route create -destination 0.0.0.0/0 -vserver svm_2 -gateway subnet_gatew
 . Create a NAS LIF on node 1.
 +
 [source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address html-m*pass:[_]_floating_ip_ -netmask node1Mask -lif ip_nas_floating_2 -home-node cvo-node1
+network interface create -auto-revert true -vserver svm_2 -service-policy default-data-files -home-port e0a -address floating_ip -netmask node1Mask -lif ip_nas_floating_2 -home-node cvo-node1
 +
 * The floating IP address must be outside of the CIDR blocks for all VPCs in the AWS region in which you deploy the HA configuration. 192.168.209.27 is an example floating IP address. link:reference_networking_aws.html#requirements-for-ha-pairs-in-multiple-azs[Learn more about choosing a floating IP address].
 * `-service-policy default-data-files` indicates that IPs can migrate to the partner node.
@@ -179,12 +179,12 @@ network interface create -auto-revert true -vserver svm_2 -service-policy defaul
 . Optional: Create a storage VM management LIF on node 1.
 +
 [source,cli]
-network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address html-m*pass:[_]_floating_ip_ -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node1
+network interface create -auto-revert true -vserver svm_2 -service-policy default-management -home-port e0a -address floating_ip -netmask node1Mask -lif ip_svm_mgmt_2 -home-node cvo-node1
 
 . Create an iSCSI LIF on node 1.
 +
 [source,cli]
-network interface create -vserver svm_2 -service-policy default-data-blocks -home-port e0a -address html-m*pass:[_]_private_ip_ -netmask nodei1Mask -lif ip_node1_iscsi_2 -home-node cvo-node1
+network interface create -vserver svm_2 -service-policy default-data-blocks -home-port e0a -address private_ip -netmask nodei1Mask -lif ip_node1_iscsi_2 -home-node cvo-node1
 +
 * This iSCSI LIF is required to support LIF migration of the floating IPs in the storage VM. It doesn't have to be an iSCSI LIF, but it can't be configured to migrate between nodes.
 * `-service-policy default-data-block` indicates that an IP address does not migrate between nodes.
@@ -193,7 +193,7 @@ network interface create -vserver svm_2 -service-policy default-data-blocks -hom
 . Create an iSCSI LIF on node 2.
 +
 [source,cli]
-network interface create -vserver svm_2 -service-policy default-data-blocks -home-port e0a -address _private_ip_ -netmaskNode2Mask -lif ip_node2_iscsi_2 -home-node cvo-node2
+network interface create -vserver svm_2 -service-policy default-data-blocks -home-port e0a -address private_ip -netmaskNode2Mask -lif ip_node2_iscsi_2 -home-node cvo-node2
 +
 * This iSCSI LIF is required to support LIF migration of the floating IPs in the storage VM. It doesn't have to be an iSCSI LIF, but it can't be configured to migrate between nodes.
 * `-service-policy default-data-block` indicates that an IP address does not migrate between nodes.
