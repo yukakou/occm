@@ -54,6 +54,8 @@ Each EC2 instance supports a maximum number of private IPv4 addresses per networ
 
 Private IPv4 addresses must be assigned to port e0a in AWS before you create LIFs for the new storage VM.
 
+Note that an optional management LIF for a storage VM requires a private IP address on a single node system and on an HA pair in a single AZ. This management LIF provides a connection to management tools like SnapCenter.
+
 .Steps
 
 . Log in to AWS and open the EC2 service.
@@ -82,8 +84,12 @@ If an IP address isn't in use, then you can use it with the new storage VM.
 
 . Back in the AWS Console, click *Assign new IP address* to assign additional IP addresses based on the amount that you need for the new storage VM.
 +
-* Single node system: Two unused secondary private IPs are required.
+* Single node system: One unused secondary private IP is required.
++
+An optional secondary private IP is required if you want to create a management LIF on the storage VM.
 * HA pair in a single AZ: One unused secondary private IP is required on node 1.
++
+An optional secondary private IP is required if you want to create a management LIF on the storage VM.
 * HA pair in multiple AZs: One unused secondary private IP is required on each node.
 
 . If you're allocating the IP address on an HA pair in a single AZ, enable *Allow secondary private IPv4 addresses to be reassigned*.
@@ -154,7 +160,7 @@ Where _private_ip_y_ is another unused secondary private IP on e0a.
 
 These steps create a new storage VM on an HA pair in multiple AZs.
 
-A _floating_ IP address is required for a NAS LIF and is optional for a management LIF. These floating IP addresses don't require you to allocate private IPs in AWS. Instead, the floating IPs are configured in the AWS route table to point to a specific node's ENI in the same VPC.
+A _floating_ IP address is required for a NAS LIF and is optional for a management LIF. These floating IP addresses don't require you to allocate private IPs in AWS. Instead, the floating IPs are automatically configured in the AWS route table to point to a specific node's ENI in the same VPC.
 
 In order for floating IPs to work with ONTAP, a private IP address must be configured on every storage VM on each node. This is reflected in the steps below where an iSCSI LIF is created on node 1 and on node 2.
 
