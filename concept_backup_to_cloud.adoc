@@ -13,13 +13,15 @@ summary: Cloud Backup is an add-on service for Cloud Volumes ONTAP and on-premis
 :imagesdir: ./media/
 
 [.lead]
-Cloud Backup is an add-on service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are stored in an object store in your cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+Cloud Backup is an add-on service for Cloud Volumes ONTAP and on-premises ONTAP clusters that delivers backup and restore capabilities for protection, and long-term archive of your cloud data. Backups are automatically generated and stored in an object store in your cloud account, independent of volume Snapshot copies used for near-term recovery or cloning.
+
+A snapshot is an instant record of your system metadata at a given moment in similar storage as the original file, while a data backup is a standalone replica of your data, stored away in a separate system.
 
 There are two services that provide the full suite of backup and restore functionality:
 
-* The *Cloud Backup service* enables you to create backup files and to restore an entire volume to the same or different working environment.
+* The *Cloud Backup service* enables you to create backup files from volumes on your Cloud Volumes ONTAP and on-prem ONTAP clusters.
 
-* The *Restore service* enables you to use the same backup file to restore one or more *files* to a volume in the same or different working environment. This is also called Single File Restore.
+* The *Restore service* enables you to restore an entire volume, or one or more *files*, from the backup file to the same or different working environment.
 
 link:https://cloud.netapp.com/cloud-backup-service[Learn more about the Cloud Backup Service^].
 
@@ -87,7 +89,7 @@ There are two types of costs associated with using Cloud Backup: resource charge
 
 Resource charges are paid to the cloud provider for storage and for running a virtual machine/instance in the cloud.
 
-* For Backup, you pay your cloud provider for object storage costs.
+* For backup, you pay your cloud provider for object storage costs.
 +
 Since Cloud Backup preserves the storage efficiencies of the source volume, you pay the cloud provider object storage costs for the data _after_ ONTAP efficiencies (for the smaller amount of data after deduplication and compression have been applied).
 
@@ -241,10 +243,9 @@ There are certain things you need to be aware of when the volume you are backing
 ** Subsequent backups are incremental and do not have this effect.
 ** If the tiering policy is assigned to the volume when it is initially created you will not see this issue.
 
-* Consider the impact of backups before assigning the `all` tiering policy to volumes. Because data is tiered immediately, Cloud Backup will read data from the cloud tier rather than the local tier. Because concurrent backup operations share the network link to the cloud object store, performance degradation might occur if network resources become saturated. In this case you may want to proactively configure multiple network interfaces (LIFs) to decrease this type of network saturation.
+* Consider the impact of backups before assigning the `all` tiering policy to volumes. Because data is tiered immediately, Cloud Backup will read data from the cloud tier rather than from the local tier. Because concurrent backup operations share the network link to the cloud object store, performance degradation might occur if network resources become saturated. In this case, you may want to proactively configure multiple network interfaces (LIFs) to decrease this type of network saturation.
 
-
-* A backup operation does not "reheat" the cold data in object storage.
+* A backup operation does not "reheat" the cold data tiered in object storage.
 
 == Limitations
 
