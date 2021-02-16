@@ -19,6 +19,28 @@ TIP: Looking for a previous release?
 link:https://docs.netapp.com/us-en/occm38/reference_new_occm.html[What's new in 3.8^]
 link:https://docs.netapp.com/us-en/occm37/reference_new_occm.html[What's new in 3.7^]
 
+== Cloud Manager 3.9.3 update (14 Feb 2021)
+
+=== Cloud Compliance enhancements
+
+* View and manage Azure Information Protection (AIP) labels in files you are scanning.
+
+** After you integrate the AIP label functionality into Cloud Compliance, you can view the labels that are assigned to files, add labels to files, and change labels. See link:task_managing_highlights.html#categorizing-your-data-using-aip-labels[how to integrate AIP labels^] in your workspace.
+** Assign labels individually to files, or use the Highlights functionality to link:task_managing_highlights.html#assigning-aip-labels-automatically-with-highlights[add labels to all files that match the Highlight criteria^]. With Highlights, labels are updated continuously as Cloud Compliance finds matches in your files.
+** Filter data in the Investigation page by AIP label to view all files that match the label.
+
+* Send email alerts to Cloud Manager users (daily, weekly, or monthly) when any of your Highlights return results so you can get notifications to protect your data.
++
+Select this option when link:task_managing_highlights.html#creating-custom-highlights[creating or editing any highlight^].
+
+* View File Owner and Permission information when link:task_controlling_private_data.html#viewing-file-metadata-and-permissions[viewing individual file details^].
++
+You can also use this criteria to further filter your data in the Investigation page.
+
+* Delete files directly from Cloud Compliance.
++
+You can link:task_managing_highlights.html#deleting-source-files[permanently remove files^] that seem insecure or risky to leave in your storage system.
+
 == Cloud Manager 3.9.3 update (10 Feb 2021)
 
 * <<Cloud Tiering enhancements>>
